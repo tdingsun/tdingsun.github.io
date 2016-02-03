@@ -19,9 +19,24 @@ p:hover{
 }
 
 img{
+	width: 300px
+}
+
+.wiki{
 	margin: -90px;
 	width: 95vw;
-	height:auto;
+	height:95vw;
+	background-image: url(wikipedia.png);
+	background-repeat: no-repeat;
+}
+
+.love{
+	margin: -90px;
+	width: 95vw;
+	height:700px;
+	background-image: url(Love.png);
+	background-repeat: no-repeat;
+	background-position: center
 }
 
 iframe{
@@ -42,4 +57,12 @@ iframe{
 
 .people:hover{
 	color: cyan;
+}
+
+.floated_img
+{
+    float: left;
+    width:300px;
+	height: 200px;
+}
 }
