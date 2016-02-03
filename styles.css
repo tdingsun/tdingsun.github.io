@@ -1,0 +1,45 @@
+body {
+	font-family: Montserrat;
+	padding: 100px;
+
+}
+
+a:hover{
+	font-size: 30px;
+	background-color: blue;
+	color: blue;
+}
+
+h2:hover{
+	background-color: aliceblue;
+}
+
+p:hover{
+	background-color: aliceblue;
+}
+
+img{
+	margin: -90px;
+	width: 95vw;
+	height:auto;
+}
+
+iframe{
+	margin-top: 100px;
+}
+
+.definition{
+	margin-top: 50px;
+}
+
+.definition:hover{
+	color:blue;
+}
+
+.people{
+	color: blue;
+}
+
+.people:hover{
+	color: cyan;
+}
