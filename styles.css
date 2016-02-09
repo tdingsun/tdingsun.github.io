@@ -4,10 +4,16 @@ body {
 
 }
 
-a:hover{
+a:visited{
 	font-size: 30px;
 	background-color: blue;
-	color: blue;
+	color: white;
+	text-decoration: none;
+}
+
+a{
+	color: white;
+	text-decoration: none;
 }
 
 h2:hover{
@@ -22,14 +28,17 @@ p:hover{
 	padding: 10px;
 	margin: 20px;
 	background-color: white;
-	border: 2px;
-	color:black;
+	border: 5px;
+	color: white;
 	border-color: blue;
-	border-style:double;
+	border-style: dashed;
+	text-align: center;
+	text-decoration:none;
 	
 }
 
 .button:hover{
 	background-color: blue;
-	color: blue;
+	color: white;
+	text-decoration: none;
 }
