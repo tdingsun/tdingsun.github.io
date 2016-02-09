@@ -1,7 +1,16 @@
+html {
+	height: 100%;
+}
+
 body {
 	font-family: Montserrat;
 	padding: 100px;
+	min-height: 100%;
 
+}
+
+embed {
+	min-height: 100%;
 }
 
 a:visited{
