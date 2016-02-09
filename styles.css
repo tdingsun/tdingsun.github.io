@@ -18,51 +18,18 @@ p:hover{
 	background-color: aliceblue;
 }
 
-img{
-	width: 300px
+.button{
+	padding: 10px;
+	margin: 20px;
+	background-color: white;
+	border: 2px;
+	color:black;
+	border-color: blue;
+	border-style:double;
+	
 }
 
-.wiki{
-	margin: -90px;
-	width: 95vw;
-	height:95vw;
-	background-image: url(wikipedia.png);
-	background-repeat: no-repeat;
-}
-
-.love{
-	margin: -90px;
-	width: 95vw;
-	height:700px;
-	background-image: url(Love.png);
-	background-repeat: no-repeat;
-	background-position: center
-}
-
-iframe{
-	margin-top: 100px;
-}
-
-.definition{
-	margin-top: 50px;
-}
-
-.definition:hover{
-	color:blue;
-}
-
-.people{
+.button:hover{
+	background-color: blue;
 	color: blue;
-}
-
-.people:hover{
-	color: cyan;
-}
-
-.floated_img
-{
-    float: left;
-    width:300px;
-	height: 200px;
-}
 }
