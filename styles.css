@@ -1,13 +1,10 @@
-html {
-	height: 100%;
-}
+
 
 body {
 	font-family: Arial;
 	min-height: 100%;
 
 }
-
 
 canvas {
 	position: fixed;
@@ -20,7 +17,7 @@ canvas {
 	font-size: 72px;
 	line-height: 60px;
 	margin-left: 550px;
-	margin-top: 312px;
+	margin-top: 295px;
 	color: Blue;
 }
 
@@ -52,7 +49,7 @@ canvas {
 }
 
 
-.contact:focus .dropdown-content3 {
+.contact:hover .dropdown-content3 {
     display: block;
 	visibility: visible;
 	transition-delay: 0.1s;
@@ -74,7 +71,7 @@ canvas {
     display: inline-block;
 }
 
-.dropdown-content, .dropdown-content2, .dropdown-content3{
+.dropdown-content{
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -84,6 +81,15 @@ canvas {
 }
 
 .dropdown-content3 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    /*box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);*/
+    padding: 12px 16px;
+}
+
+.dropdown-content2 {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
