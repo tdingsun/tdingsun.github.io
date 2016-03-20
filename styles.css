@@ -3,51 +3,91 @@ html {
 }
 
 body {
-	font-family: Montserrat;
-	padding: 100px;
+	font-family: Arial;
 	min-height: 100%;
 
 }
 
-embed {
-	min-height: 100%;
+
+canvas {
+	position: fixed;
+	z-index: -1;
 }
 
-a:visited{
-	font-size: 30px;
-	background-color: blue;
-	color: white;
-	text-decoration: none;
+.tabs {
+	position: absolute;
+	font-family: Arial;
+	font-size: 72px;
+	line-height: 60px;
+	margin-left: 550px;
+	margin-top: 312px;
+	color: Blue;
 }
 
-a{
-	color: white;
-	text-decoration: none;
-}
-
-h2:hover{
-	background-color: aliceblue;
-}
-
-p:hover{
-	background-color: aliceblue;
-}
-
-.button{
-	padding: 10px;
-	margin: 20px;
-	background-color: white;
-	border: 5px;
-	color: white;
-	border-color: blue;
-	border-style: dashed;
-	text-align: center;
-	text-decoration:none;
+.blockchain:hover .dropdown-content {
+    display: block;
+	transition-delay: 0.1s;
 	
 }
 
-.button:hover{
-	background-color: blue;
-	color: white;
-	text-decoration: none;
+#blockchain{
+	opacity: 0.3;
+}
+#blockchain:hover{
+	opacity: 1.0;
+	transition-delay: 0.1s;
+}
+
+.phases:hover .dropdown-content2 {
+    display: block;
+	transition-delay: 0.1s;
+}
+
+#phases{
+	opacity: 0.3;
+}
+#phases:hover{
+	opacity: 1.0;
+	transition-delay: 0.1s;
+}
+
+
+.contact:focus .dropdown-content3 {
+    display: block;
+	visibility: visible;
+	transition-delay: 0.1s;
+	
+}
+
+#contact{
+	opacity: 0.3;
+}
+#contact:hover{
+	opacity: 1.0;
+	transition-delay: 0.1s;
+
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content, .dropdown-content2, .dropdown-content3{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    /*box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);*/
+    padding: 12px 16px;
+}
+
+.dropdown-content3 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    /*box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);*/
+    padding: 12px 16px;
 }
