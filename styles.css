@@ -24,7 +24,7 @@ canvas {
 .blockchain:hover .dropdown-content {
     display: block;
 	transition-delay: 0.1s;
-	
+	font-size: 24px;
 }
 
 #blockchain{
@@ -38,6 +38,7 @@ canvas {
 .phases:hover .dropdown-content2 {
     display: block;
 	transition-delay: 0.1s;
+	font-size:24px;
 }
 
 #phases{
@@ -53,6 +54,7 @@ canvas {
     display: block;
 	visibility: visible;
 	transition-delay: 0.1s;
+	font-size:24px;
 	
 }
 
