@@ -96,11 +96,11 @@
 				scene.add( directionalLight );
     
 
-scene.fog = new THREE.FogExp2( 0xcec9b3, 0.0035 );
+scene.fog = new THREE.FogExp2( 0xcec9b3, 0.0 );
     
       //the sky
       material = new THREE.MeshBasicMaterial({
-          map: THREE.ImageUtils.loadTexture("../tiger/pano.jpg"),
+          map: THREE.ImageUtils.loadTexture("../tiger/background.png"),
           side: THREE.DoubleSide
       });
       sky = new THREE.Mesh(new THREE.SphereGeometry(500, 60, 40 ), material);
@@ -124,17 +124,17 @@ scene.fog = new THREE.FogExp2( 0xcec9b3, 0.0035 );
 		THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
     
 			var loader = new THREE.OBJMTLLoader();
-				loader.load( '../tiger/model/laptopcharger.obj', '../tiger/model/laptopcharger.mtl', function ( object ) {
+				loader.load( '../tiger/model/heavensgate.obj', '../tiger/model/heavensgate.mtl', function ( object ) {
 					model = object;
 					//Use these to set the object's position
 					object.position.y = 0;
-					object.position.x = 0;
-					object.position.z = 200;
+					object.position.x = 100;
+					object.position.z = 0;
 					
 					//Use these to change the object's scale
-					object.scale.y = 4;
-					object.scale.x = 4;
-					object.scale.z = 4;
+					object.scale.y = .8;
+					object.scale.x = .8;
+					object.scale.z = .8;
 					
 					scene.add( model );
 
@@ -142,6 +142,7 @@ scene.fog = new THREE.FogExp2( 0xcec9b3, 0.0035 );
 		
 		//End of model loader
 		
+
 		     window.addEventListener('resize', resize, false);
       setTimeout(resize, 1);
      
@@ -178,7 +179,11 @@ scene.fog = new THREE.FogExp2( 0xcec9b3, 0.0035 );
 		//Use this to control rotation
  if (model) 
     { 
+				model.rotation.x += -0.001;
 				model.rotation.y += 0.01;
+				model.rotation.z += -0.001;
+
+
 	}
 
 				
@@ -201,6 +206,9 @@ scene.fog = new THREE.FogExp2( 0xcec9b3, 0.0035 );
     function getRandomArbitrary(min, max) {
         return Math.random() * (max - min) + min;
     }
+	  
+
+
   </script>
   </body>
 </html>
