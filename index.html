@@ -100,7 +100,7 @@ scene.fog = new THREE.FogExp2( 0xcec9b3, 0.0 );
     
       //the sky
       material = new THREE.MeshBasicMaterial({
-          map: THREE.ImageUtils.loadTexture("../tiger/background.png"),
+          map: THREE.ImageUtils.loadTexture("../tiger/back.png"),
           side: THREE.DoubleSide
       });
       sky = new THREE.Mesh(new THREE.SphereGeometry(500, 60, 40 ), material);
