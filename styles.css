@@ -22,9 +22,13 @@ canvas {
 }
 
 .blockchain:hover .dropdown-content {
+	opacity: 1.0;
     display: block;
 	transition-delay: 0.1s;
-	font-size: 14px;
+	font-size: 20px;
+	line-height: 30px;
+	margin-left: -450px;
+	margin-right: 350px;
 }
 
 #blockchain{
@@ -49,12 +53,26 @@ canvas {
 	transition-delay: 0.1s;
 }
 
+a {
+	text-decoration: none;
+}
+a:visited{
+	font-family: Arial;
+	font-size: 72px;
+	line-height: 60px;
+	margin-left: 550px;
+	margin-top: 295px;
+	color: Blue;
+}
+
 
 .contact:hover .dropdown-content3 {
     display: block;
 	visibility: visible;
 	transition-delay: 0.1s;
 	font-size:14px;
+	margin-left: -450px;
+	margin-right: 350px;
 	
 }
 
@@ -64,6 +82,7 @@ canvas {
 #contact:hover{
 	opacity: 1.0;
 	transition-delay: 0.1s;
+	
 
 }
 
@@ -80,6 +99,7 @@ canvas {
     min-width: 160px;
     /*box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);*/
     padding: 12px 16px;
+	opacity: 1.0;
 }
 
 .dropdown-content3 {
@@ -89,6 +109,8 @@ canvas {
     min-width: 160px;
     /*box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);*/
     padding: 12px 16px;
+		opacity: 1.0;
+
 }
 
 .dropdown-content2 {
@@ -98,4 +120,6 @@ canvas {
     min-width: 160px;
     /*box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);*/
     padding: 12px 16px;
+		opacity: 1.0;
+
 }
