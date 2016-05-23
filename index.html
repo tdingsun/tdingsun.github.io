@@ -1,55 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <title>fetus</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+      body {
+        margin: 0px;
+        overflow: hidden;
+      }
+      #example {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="example"></div>
 
-	<head>
-				<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="styles.css">
-		<script src="processing.min.js"></script>
-
-	</head>
+<!--	  Remember to change 3jsTemplate to your folder name!-->
+	  
+  <script src="../static/js/three.js"></script>
+	  <script src="../static/js/loaders/DDSLoader.js"></script>
+		<script src="../static/js/loaders/MTLLoader.js"></script>
+		<script src="../static/js/loaders/OBJMTLLoader.js"></script>
 	
-	<body>
-		<div class="main">
-	<canvas data-processing-sources="random_dot.pde"></canvas>
+  <script src="../static/js/StereoEffect.js"></script>
+  <script src="../static/js/DeviceOrientationControls.js"></script>
+  <script src="../static/js/OrbitControls.js"></script>
 
-		<div class="tabs">	
+  <script>
+    var camera, scene, renderer, model;
+    var effect, controls;
+    var element, container;
 
-			<div id="blockchain" class="blockchain">Blockchain
-			 
-			<div class="dropdown-content">
+    var clock = new THREE.Clock();
+    
+
+    init();
+    animate();
+	  
+	  //Beginning of init
+
+    function init() {
+      renderer = new THREE.WebGLRenderer();
+      element = renderer.domElement;
+      container = document.getElementById('example');
+      container.appendChild(element);
+
+      effect = new THREE.StereoEffect(renderer);
+
+      scene = new THREE.Scene();
+     
+
+      // camera = new THREE.PerspectiveCamera(90, 1, 0.001, 700);
+      camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 100000);
+      camera.position.set(40,30, 0);
+	camera.rotation.y = -90 * Math.PI / 180;
+      scene.add(camera);
+
+      controls = new THREE.OrbitControls(camera, element);
+      controls.rotateUp(Math.PI / 4);
+      controls.target.set(
+        camera.position.x + 0.1,
+        camera.position.y,
+        camera.position.z
+      );
+      controls.noZoom = true;
+      controls.noPan = true;
+
+      function setOrientationControls(e) {
+        if (!e.alpha) {
+          return;
+        }
+
+        controls = new THREE.DeviceOrientationControls(camera, true);
+        controls.connect();
+        controls.update();
+
+        element.addEventListener('click', fullscreen, false);
+
+        window.removeEventListener('deviceorientation', setOrientationControls, true);
+      }
+      window.addEventListener('deviceorientation', setOrientationControls, true);
+    
+      //Control Lighting
+	var ambient = new THREE.AmbientLight( 0xf2f2f2 );
+				scene.add( ambient );
+
+				var directionalLight = new THREE.DirectionalLight( 0xffeedd );
+				directionalLight.position.set( 0, 0, 1 ).normalize();
+				scene.add( directionalLight );
+    
+    
+      //the sky
+      material = new THREE.MeshBasicMaterial({
+          map: THREE.ImageUtils.loadTexture("../fetus.jpg"),
+          side: THREE.DoubleSide
+      });
+      sky = new THREE.Mesh(new THREE.SphereGeometry(500, 60, 40 ), material);
+      scene.add(sky);
 		
-				<p>	Hyperfeit is a system that utilizes a block chain in order to provide verification, authentication and traceability along all steps of the supply chain. Specifically, it stores information about the origin and authenticity of every physical product in a decentralized database, which can be accessed by all actors within the system.</p>
+	//models
+		
+		var onProgress = function ( xhr ) {
+					if ( xhr.lengthComputable ) {
+						var percentComplete = xhr.loaded / xhr.total * 100;
+						console.log( Math.round(percentComplete, 2) + '% downloaded' );
+					}
+				};
+
+				var onError = function ( xhr ) {
+				};
+
+		
+		//Beginnning of model loader. Remember to change 3jsTemplate to your folder name!
+		
+		THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+    
+			var loader = new THREE.OBJMTLLoader();
+				loader.load( '../model/Model.obj', '../model/Modek.mtl', function ( object ) {
+					model = object;
+					//Use these to set the object's position
+					//object.position.y = 0;
+					//object.position.x = 0;
+					//object.position.z = 0;
+					
+					//Use these to change the object's scale
+					//object.scale.y = 5;
+					//object.scale.x = 5;
+					//object.scale.z = 5;
+					
+					scene.add( model );
+
+				}, onProgress, onError );
+		
+		//End of model loader
+		
+		     window.addEventListener('resize', resize, false);
+      setTimeout(resize, 1);
+     
+      }
 
 
-</div>
-			
-			
-			</div>			
-			
+
+    function resize() {
+      var width = container.offsetWidth;
+      var height = container.offsetHeight;
+
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+
+      renderer.setSize(width, height);
+      effect.setSize(width, height);
+    }
+
+    function update(dt) {
+      resize();
+
+      camera.updateProjectionMatrix();
+
+      controls.update(dt);
+    }
+
+    function render(dt) {
+      effect.render(scene, camera);
+    }
+
+    function animate(t) {
+      requestAnimationFrame(animate);
+		
+		//Use this to control rotation
+ if (model) 
+    { 
+				model.rotation.y += 0.001;
+	}
+
 				
-			<div id="phases" class="phases"><a href="report.html">Report</a>
-			
-			<!--<div class="dropdown-content2">
-			<p>
-			testing
-				</p>
-</div> -->
-			
-			</div>
-			
-			
-	 						<div id="contact" class="contact">Contact
-			
-			
-			<div class="dropdown-content3" tabindex="0">
-			Thomas Abebe <a href="mailto:thomas_abebe@brown.edu" target="_top">Email</a>
-				<br>Andrej Simeski <a href="mailto:andrej_simeski@brown.edu" target="_top">Email</a>
-				<br>Tiger Dingsun <a href="tiger_dingsun@brown.edu" target="_top">Email</a></p>
-</div>
-		</div>	
-			</div>
-		</div>
-		
-		</body>
+      update(clock.getDelta());
+      render(clock.getDelta());
+    }
+
+    function fullscreen() {
+      if (container.requestFullscreen) {
+        container.requestFullscreen();
+      } else if (container.msRequestFullscreen) {
+        container.msRequestFullscreen();
+      } else if (container.mozRequestFullScreen) {
+        container.mozRequestFullScreen();
+      } else if (container.webkitRequestFullscreen) {
+        container.webkitRequestFullscreen();
+      }
+    }
+
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+  </script>
+  </body>
 </html>
