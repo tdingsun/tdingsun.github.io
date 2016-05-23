@@ -1,0 +1,51 @@
+.main {
+	max-width: 800px;
+	padding-left: 100px;
+	line-height: 24px;
+	font-family: 'Droid Serif', 'avenir', serif;
+}
+
+canvas {
+	position: absolute;
+	z-index: -1;
+	margin-top: -200px;
+}
+
+#header {
+	font-size: 28px;
+	font-family: montserrat;
+	line-height: 36px;
+	padding-left: 250px;
+	padding-top: 200px;
+}
+
+
+#names {
+	font-size: 20px;
+}
+
+img {
+	
+}
+
+#screenshot {
+	max-width: 380px;
+}
+
+#landscape {
+	max-width: 780px;
+}
+
+.imgContainer{
+	float: left;
+	padding: 10px;
+}
+
+.sourcebox{
+	background-color: cornflowerblue;
+	color: white;
+	padding-left: 100px;
+	padding-top: 20px;
+	padding-bottom: 50px;
+	padding-right: 400px;
+}
