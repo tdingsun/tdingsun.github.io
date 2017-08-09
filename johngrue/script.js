@@ -58,7 +58,7 @@ function draw() {
 		textSize(30);
 		textAlign(LEFT);
 		text("If " + nouns[0] + "\nwere " + nouns[1] + ",\nI was " + nouns[2] + "\nand she was\n" + nouns[3] + ".", windowWidth/6, windowHeight/2 - 100);
-		text("- John Green", windowWidth/3, 2*windowHeight/3);
+		text("- John Green", windowWidth/3, 3*windowHeight/4);
 	}
 	
 }
