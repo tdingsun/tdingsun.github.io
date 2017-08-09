@@ -26,7 +26,7 @@ function draw() {
 		var rand = int(random(4));
 
 		if(rand < 2){
-			nouns[int(random(2))] = RiTa.randomWord("nns");
+			nouns[rand] = RiTa.randomWord("nns");
 
 		} else if(rand == 2){
 			var newThree = RiTa.randomWord("nn");
