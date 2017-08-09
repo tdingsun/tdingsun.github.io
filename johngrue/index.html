@@ -7,10 +7,87 @@
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.3/p5.min.js"></script>
  		<script src="./rita-full.min.js"></script>
 		<script type="text/javascript" src="script.js"></script>
-		<style> body {padding: 0; margin: 0;} </style>
+		<style>
+
+		div {
+			padding-top: 100px;
+			position: absolute;
+			width: 80%;
+			margin-left: 10%;
+
+		}
+
+		p {
+			cursor: default;
+			text-align: left;
+			font-size: 40px;
+			font-family: helvetica, sans-serif;
+			line-height: 50px;
+			color: white;
+			text-shadow:
+				-1px -1px 0 #000,
+				1px -1px 0 #000,
+				-1px 1px 0 #000,
+				1px 1px 0 #000;
+
+
+		}
+
+		#author {
+			text-align: right;
+			padding-right: 50px;
+		}
+
+		span {
+			display: inline-block;
+		}
+
+		label {
+			-webkit-transition: width 2s; /* Safari */
+   			transition: width 10s;
+   			cursor: pointer;
+		}
+
+		label:hover {
+			color: blue;
+			text-shadow: none;
+		}
+		label:active {
+		}
+
+		@media only screen and (min-width: 600px) {
+			p {font-size: 50px; line-height: 65px;}
+			div {padding-top: 200px;}
+			#author {padding-right: 100px;}
+		}
+
+
+
+		</style>
 	</head>
 	<body>
-		
+		<div>
+			<p>
+				<span>
+					If <label id="one">people</label> 
+				</span>
+				<span>
+					were <label id="two">rain</label>,
+				</span>
+				<span>
+					<span>
+						I was <label id="three">a drizzle</label>
+					</span>
+					<span> 
+						and she was <label id = "four">a hurricane</label>.
+					</span>
+				</span>
+							 
+			</p>
+			<p id="author">
+				- John Green
+			</p>
+		</div>
 	</body>
 
 </html>
