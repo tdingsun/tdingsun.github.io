@@ -17,7 +17,7 @@ function setup() {
 
 function draw() {
 	background(255,255,255);
-	textSize(50);
+	textSize(windowWidth/22);
 	textAlign(CENTER);
 	// for(var i = 0; i < 10; i++){
 
@@ -53,7 +53,7 @@ function draw() {
 	}
 
 	text("If " + nouns[0] + " were " + nouns[1] + ",\nI was " + nouns[2] + " and she was " + nouns[3] + ".", windowWidth/2, windowHeight/2 - 100);
-	text("- John Green", windowWidth/2 + 300, windowHeight/2 + 100);
+	text("- John Green", 3*windowWidth/4, windowHeight/2 + 100);
 }
 
 
