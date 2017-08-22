@@ -1,0 +1,135 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass";
+@import "compass/layout";
+
+$primary-color: red;
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin row() {
+	font-size: 0;
+}
+
+@mixin col($col, $sum, $gap: 20px, $align: top, $first: false, $last: false, $fs: 12vw) {
+	width: 100%;
+	font-size: 70px;
+	display: inline-block;
+	vertical-align: $align;
+	padding-left: if($first, 0, $gap);
+	padding-right: if($last, 0, $gap);
+	padding-bottom: 50px;
+	letter-spacing: -10px;
+	transition: 10s;
+	 &:hover{
+	 	color: blue;
+	 	transform: (rotate(360deg)); 
+	 }
+
+	@media only screen and (min-width: 768px) {
+		width: percentage($col/$sum);
+		vertical-align: $align;
+		font-size: $fs;
+	}
+}
+
+body {
+	color: $primary-color;
+	font-style: serif;
+}
+
+h2 {
+	font-size: 25px;
+	padding-bottom: 50px;
+	margin-left: 25px;
+	letter-spacing: 1px;
+
+	@media only screen and (min-width: 768px) {
+	font-size: 3vw;
+	margin-left: 0px;
+	text-align: center;
+}
+}
+
+#container {
+	width:90%;
+	margin-left: 5%;
+	margin-top: 50px;
+}
+
+.row {
+	@include row();
+	margin-bottom: 50px;
+}
+
+@for $i from 1 through 4{
+
+	@if $i == 1{
+		#row-#{$i} {
+			article{
+				@include col(1, 6);
+			}
+		}
+	}
+
+		@if $i == 2{
+		#row-#{$i} {
+			article{
+				@include col(1, 4, $fs: 10vw);
+			}
+		}
+	}
+
+		@if $i == 3{
+		#row-#{$i} {
+			article{
+				@include col(1, 3, $fs: 9vw);
+			}
+		}
+	}
+
+		@if $i == 4{
+		#row-#{$i} {
+			article{
+				@include col(1, 2, $fs: 7vw);
+			}
+		}
+	}
+
+}
+
+
+// #row-1{
+// 	article {
+// 	}	
+// }
+
+// #row-2 {
+// 	article {
+// 		@include col(1, 4, $fs: 10vw);
+// 	}	
+
+// }
+
+// #row-3 {
+// 	article {
+// 		@include col(1, 3, $fs: 9vw);
+// 	}	
+// }
+
+// #row-4 {
+// 		article {
+// 	@include col(1, 2, $fs: 7vw);
+// 	}	
+// }
+
+
+
