@@ -15,6 +15,21 @@
 				background-color: #f6f6f6;
 			}
 
+			a {
+				text-decoration: none;
+			}
+
+
+			a:visited {
+				color: #555;
+			}
+
+			
+			a:hover {
+				color: #083;
+				opacity: 0.5;
+			}
+
 
 
 			loadingdiv {
@@ -38,8 +53,12 @@
 			
 			img {
 				position: fixed;
-				z-index: -1;
+				/*z-index: -1;*/
 				width: 300px;
+			}
+
+			img:hover {
+				/*opacity: 0.5;*/
 			}
 
 			#container {
@@ -52,6 +71,7 @@
 
 			#container p:hover {
 				color: #083;
+				cursor: pointer;
 
 			}
 
@@ -65,10 +85,12 @@
 		</style>
 	</head>
 	<body>
-		<img id = "image" src="wet.jpeg">
+		<a href="http://tiger.exposed">
+			<img id = "image" src="wet.jpeg" >
+		</a>
 		
 		<div id="container">
-			<h1>Key Words in Wet's<br><span><i>Don't You</i></span> by Frequency</h1>
+			<a href="http://wet.band"><h1>Key Words in Wet's<br><span><i>Don't You</i></span> by Frequency</h1></a>
 		</div>
 		<div id="kwic-container">
 		</div>
