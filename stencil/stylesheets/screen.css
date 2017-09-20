@@ -1,0 +1,445 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 81, ../sass/screen.scss */
+#reset {
+  width: 70px;
+  height: 20px;
+  margin: 0 0 0 20px;
+  position: fixed;
+  border: solid 0.25px red;
+  color: red;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 1px 1px 5px red;
+  cursor: pointer;
+}
+
+/* line 95, ../sass/screen.scss */
+#container {
+  box-sizing: content-box;
+  border: solid 1px #dddddd;
+  padding-top: 65%;
+  margin-top: 7%;
+  margin-left: 17.5%;
+  width: 65%;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 95, ../sass/screen.scss */
+  #container {
+    padding-top: 650px;
+    margin-top: 70px;
+    margin-left: 175px;
+    width: 650px;
+  }
+}
+
+/* line 112, ../sass/screen.scss */
+#circle-1 {
+  width: 30vw;
+  height: 30vw;
+  border: solid 15px;
+  opacity: 0.3;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: #dddddd transparent transparent #dddddd;
+  border-radius: 40vw 0px 0px 0px;
+  left: 20vw;
+  top: 10vw;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 112, ../sass/screen.scss */
+  #circle-1 {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 112, ../sass/screen.scss */
+  #circle-1 {
+    border-radius: 400px 0px 0px 0px;
+    left: 200px;
+    top: 100px;
+  }
+}
+
+/* line 112, ../sass/screen.scss */
+#circle-2 {
+  width: 30vw;
+  height: 30vw;
+  border: solid 15px;
+  opacity: 0.3;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: #dddddd #dddddd transparent transparent;
+  border-radius: 0px 40vw 0px 0px;
+  left: 50vw;
+  top: 10vw;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 112, ../sass/screen.scss */
+  #circle-2 {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 112, ../sass/screen.scss */
+  #circle-2 {
+    border-radius: 0px 400px 0px 0px;
+    left: 500px;
+    top: 100px;
+  }
+}
+
+/* line 112, ../sass/screen.scss */
+#circle-3 {
+  width: 30vw;
+  height: 30vw;
+  border: solid 15px;
+  opacity: 0.3;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: transparent #dddddd #dddddd transparent;
+  border-radius: 0px 0px 50vw 0px;
+  left: 50vw;
+  top: 40vw;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 112, ../sass/screen.scss */
+  #circle-3 {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 112, ../sass/screen.scss */
+  #circle-3 {
+    border-radius: 0px 0 500px 0px;
+    left: 500px;
+    top: 400px;
+  }
+}
+
+/* line 112, ../sass/screen.scss */
+#circle-4 {
+  width: 30vw;
+  height: 30vw;
+  border: solid 15px;
+  opacity: 0.3;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: transparent transparent #dddddd #dddddd;
+  border-radius: 0px 0px 0px 50vw;
+  left: 20vw;
+  top: 40vw;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 112, ../sass/screen.scss */
+  #circle-4 {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 112, ../sass/screen.scss */
+  #circle-4 {
+    border-radius: 0px 0px  0px 500px;
+    left: 200px;
+    top: 400px;
+  }
+}
+
+/* line 117, ../sass/screen.scss */
+#star-1 {
+  width: 30vw;
+  height: 30vw;
+  border: solid 15px;
+  opacity: 0.3;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: transparent #dddddd #dddddd transparent;
+  border-radius: 0px 0px 50vw 0px;
+  left: 50vw;
+  top: 40vw;
+  left: 20vw;
+  top: 10vw;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 117, ../sass/screen.scss */
+  #star-1 {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 117, ../sass/screen.scss */
+  #star-1 {
+    border-radius: 0px 0 500px 0px;
+    left: 500px;
+    top: 400px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 117, ../sass/screen.scss */
+  #star-1 {
+    left: 200px;
+    top: 100px;
+  }
+}
+
+/* line 128, ../sass/screen.scss */
+#star-2 {
+  width: 30vw;
+  height: 30vw;
+  border: solid 15px;
+  opacity: 0.3;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: transparent transparent #dddddd #dddddd;
+  border-radius: 0px 0px 0px 50vw;
+  left: 20vw;
+  top: 40vw;
+  left: 50vw;
+  top: 10vw;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 128, ../sass/screen.scss */
+  #star-2 {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 128, ../sass/screen.scss */
+  #star-2 {
+    border-radius: 0px 0px  0px 500px;
+    left: 200px;
+    top: 400px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 128, ../sass/screen.scss */
+  #star-2 {
+    left: 500px;
+    top: 100px;
+  }
+}
+
+/* line 139, ../sass/screen.scss */
+#star-3 {
+  width: 30vw;
+  height: 30vw;
+  border: solid 15px;
+  opacity: 0.3;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: #dddddd transparent transparent #dddddd;
+  border-radius: 40vw 0px 0px 0px;
+  left: 20vw;
+  top: 10vw;
+  left: 50vw;
+  top: 40vw;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 139, ../sass/screen.scss */
+  #star-3 {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 139, ../sass/screen.scss */
+  #star-3 {
+    border-radius: 400px 0px 0px 0px;
+    left: 200px;
+    top: 100px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 139, ../sass/screen.scss */
+  #star-3 {
+    left: 500px;
+    top: 400px;
+  }
+}
+
+/* line 150, ../sass/screen.scss */
+#star-4 {
+  width: 30vw;
+  height: 30vw;
+  border: solid 15px;
+  opacity: 0.3;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: #dddddd #dddddd transparent transparent;
+  border-radius: 0px 40vw 0px 0px;
+  left: 50vw;
+  top: 10vw;
+  left: 20vw;
+  top: 40vw;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 150, ../sass/screen.scss */
+  #star-4 {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 150, ../sass/screen.scss */
+  #star-4 {
+    border-radius: 0px 400px 0px 0px;
+    left: 500px;
+    top: 100px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  /* line 150, ../sass/screen.scss */
+  #star-4 {
+    left: 200px;
+    top: 400px;
+  }
+}
+
+/* line 161, ../sass/screen.scss */
+#cross-1 {
+  width: 30vw;
+  padding-top: 15px;
+  left: 20vw;
+  top: 39.15vw;
+  opacity: 0.3;
+  background-color: #dddddd;
+  position: absolute;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 161, ../sass/screen.scss */
+  #cross-1 {
+    width: 300px;
+    left: 200px;
+    top: 391.5px;
+  }
+}
+
+/* line 175, ../sass/screen.scss */
+#cross-2 {
+  width: 15px;
+  padding-top: 30vw;
+  left: 49.15vw;
+  top: 10vw;
+  opacity: 0.3;
+  background-color: #dddddd;
+  position: absolute;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 175, ../sass/screen.scss */
+  #cross-2 {
+    padding-top: 300px;
+    left: 491.5px;
+    top: 100px;
+  }
+}
+
+/* line 189, ../sass/screen.scss */
+#cross-3 {
+  width: 30vw;
+  padding-top: 15px;
+  top: 39.15vw;
+  left: 50vw;
+  opacity: 0.3;
+  background-color: #dddddd;
+  position: absolute;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 189, ../sass/screen.scss */
+  #cross-3 {
+    width: 300px;
+    left: 500px;
+    top: 391.5px;
+  }
+}
+
+/* line 203, ../sass/screen.scss */
+#cross-4 {
+  width: 15px;
+  padding-top: 30vw;
+  top: 40vw;
+  left: 49.15vw;
+  opacity: 0.3;
+  background-color: #dddddd;
+  position: absolute;
+}
+@media only screen and (min-width: 1000px) {
+  /* line 203, ../sass/screen.scss */
+  #cross-4 {
+    padding-top: 300px;
+    left: 491.5px;
+    top: 400px;
+  }
+}

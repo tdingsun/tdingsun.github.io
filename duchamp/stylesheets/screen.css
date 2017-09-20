@@ -74,13 +74,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   box-sizing: border-box;
 }
 
-/* line 44, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
 body {
   color: red;
   font-style: serif;
 }
 
-/* line 49, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 h2 {
   font-size: 25px;
   padding-bottom: 50px;
@@ -88,7 +88,7 @@ h2 {
   letter-spacing: 1px;
 }
 @media only screen and (min-width: 768px) {
-  /* line 49, ../sass/screen.scss */
+  /* line 50, ../sass/screen.scss */
   h2 {
     font-size: 3vw;
     margin-left: 0px;
@@ -96,20 +96,20 @@ h2 {
   }
 }
 
-/* line 62, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 #container {
   width: 90%;
   margin-left: 5%;
   margin-top: 50px;
 }
 
-/* line 68, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 .row {
   font-size: 0;
   margin-bottom: 50px;
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 #row-1 article {
   width: 100%;
   font-size: 70px;
@@ -119,15 +119,16 @@ h2 {
   padding-right: 20px;
   padding-bottom: 50px;
   letter-spacing: -10px;
-  transition: 10s;
+  transition: 20s;
 }
 /* line 32, ../sass/screen.scss */
 #row-1 article:hover {
   color: blue;
   transform: rotate(360deg);
+  transition: 1s;
 }
 @media only screen and (min-width: 768px) {
-  /* line 77, ../sass/screen.scss */
+  /* line 78, ../sass/screen.scss */
   #row-1 article {
     width: 16.66667%;
     vertical-align: top;
@@ -135,7 +136,7 @@ h2 {
   }
 }
 
-/* line 85, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 #row-2 article {
   width: 100%;
   font-size: 70px;
@@ -145,15 +146,16 @@ h2 {
   padding-right: 20px;
   padding-bottom: 50px;
   letter-spacing: -10px;
-  transition: 10s;
+  transition: 20s;
 }
 /* line 32, ../sass/screen.scss */
 #row-2 article:hover {
   color: blue;
   transform: rotate(360deg);
+  transition: 1s;
 }
 @media only screen and (min-width: 768px) {
-  /* line 85, ../sass/screen.scss */
+  /* line 86, ../sass/screen.scss */
   #row-2 article {
     width: 25%;
     vertical-align: top;
@@ -161,7 +163,7 @@ h2 {
   }
 }
 
-/* line 93, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 #row-3 article {
   width: 100%;
   font-size: 70px;
@@ -171,15 +173,16 @@ h2 {
   padding-right: 20px;
   padding-bottom: 50px;
   letter-spacing: -10px;
-  transition: 10s;
+  transition: 20s;
 }
 /* line 32, ../sass/screen.scss */
 #row-3 article:hover {
   color: blue;
   transform: rotate(360deg);
+  transition: 1s;
 }
 @media only screen and (min-width: 768px) {
-  /* line 93, ../sass/screen.scss */
+  /* line 94, ../sass/screen.scss */
   #row-3 article {
     width: 33.33333%;
     vertical-align: top;
@@ -187,7 +190,7 @@ h2 {
   }
 }
 
-/* line 101, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 #row-4 article {
   width: 100%;
   font-size: 70px;
@@ -197,15 +200,16 @@ h2 {
   padding-right: 20px;
   padding-bottom: 50px;
   letter-spacing: -10px;
-  transition: 10s;
+  transition: 20s;
 }
 /* line 32, ../sass/screen.scss */
 #row-4 article:hover {
   color: blue;
   transform: rotate(360deg);
+  transition: 1s;
 }
 @media only screen and (min-width: 768px) {
-  /* line 101, ../sass/screen.scss */
+  /* line 102, ../sass/screen.scss */
   #row-4 article {
     width: 50%;
     vertical-align: top;

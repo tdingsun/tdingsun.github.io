@@ -31,9 +31,12 @@ function setup() {
 			}
 
 		}
+		
+
 
 		//sorts the list of words in the concordance by its frequency
-		insertion_sort(c_array); 
+		//insertion_sort(c_array); 
+		selection_sort(c_array);
 
 		//make every word into its own <p> with an id.
 		for(let i = 0; i < c_array.length; i++){
@@ -50,9 +53,10 @@ function setup() {
 }
 
 //your basic insertion_sort algorithm
+//o(n squared)
 function insertion_sort(array){
-	var n = array.length;
-	var temp;
+	let n = array.length;
+	let temp;
 
 	for (let i = 1; i <= n-1; i++){
 		for(let j = i; j >= 1; j--){
@@ -64,6 +68,29 @@ function insertion_sort(array){
 				break;
 			}
 		}
+	}
+}
+
+//o(n squared)
+function selection_sort(a){
+	let n = a.length;
+	let temp;
+	let max;
+	let max_index;
+	for (let i = 0; i <= n-2; i++){
+		//find max
+		max = a[i][1];
+		max_index = i;
+		for (let j = i; j <= n-1; j++){
+			if (a[j][1] > max){
+				max = a[j][1];
+				max_index = j;
+			}
+		}
+		//swap
+		temp = a[max_index];
+		a[max_index] = a[i];
+		a[i] = temp;
 	}
 }
 

@@ -28,10 +28,11 @@ $primary-color: red;
 	padding-right: if($last, 0, $gap);
 	padding-bottom: 50px;
 	letter-spacing: -10px;
-	transition: 10s;
+	transition: 20s;
 	 &:hover{
 	 	color: blue;
 	 	transform: (rotate(360deg)); 
+	 	transition: 1s;
 	 }
 
 	@media only screen and (min-width: 768px) {

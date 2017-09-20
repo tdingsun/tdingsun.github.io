@@ -1,0 +1,215 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+@mixin curve($orientation){
+		width: 30vw;
+		height: 30vw;
+		border: solid 15px;
+		opacity: 0.3;
+		box-sizing: border-box;
+		position: absolute;
+
+		@media only screen and (min-width: 1000px){
+			width: 300px;
+			height: 300px;
+		}
+
+	@if $orientation == 1{
+		border-color: rgb(221, 221, 221) transparent transparent rgb(221, 221, 221);
+		border-radius: 40vw 0px 0px 0px;
+		left:20vw;
+		top:10vw;
+
+		@media only screen and (min-width: 1000px) {
+			border-radius: 400px 0px 0px 0px;
+			left: 200px;
+			top: 100px;
+		}
+
+	}
+	@if $orientation == 2{
+		border-color: rgb(221, 221, 221) rgb(221, 221, 221) transparent transparent ;
+		border-radius: 0px 40vw 0px 0px;
+		left: 50vw;
+		top: 10vw;
+
+		@media only screen and (min-width: 1000px) {
+			border-radius: 0px 400px 0px 0px;
+			left: 500px;
+			top: 100px;
+		}		
+
+	}
+	@if $orientation == 3{
+		border-color: transparent rgb(221, 221, 221) rgb(221, 221, 221) transparent;
+		border-radius: 0px 0px 50vw 0px;
+		left: 50vw;
+		top: 40vw;
+
+		@media only screen and (min-width: 1000px) {
+			border-radius: 0px 0 500px 0px;
+			left: 500px;
+			top: 400px;
+		}		
+
+	}
+	@if $orientation ==4{
+		border-color: transparent transparent rgb(221, 221, 221) rgb(221, 221, 221);
+		border-radius: 0px 0px 0px 50vw;
+		left: 20vw;
+		top: 40vw;
+
+		@media only screen and (min-width: 1000px) {
+			border-radius: 0px 0px  0px 500px;
+			left: 200px;
+			top: 400px;
+		}		
+	}
+
+}
+
+@mixin crossstuff(){
+	opacity: 0.3;
+	background-color: rgb(221, 221, 221);
+	position: absolute;
+}
+
+#reset{
+	width: 70px;
+	height: 20px;
+	margin: 0 0 0 20px;
+	position: fixed;
+	border: solid 0.25px red;
+	color: red;
+	border-radius: 2px;
+	background-color: white;
+	box-shadow: 1px 1px 5px red;
+	cursor: pointer;
+}
+
+
+#container{
+	box-sizing: content-box;
+	border: solid 1px rgb(221, 221, 221);
+	padding-top: 65%;
+	margin-top: 7%;
+	margin-left: 17.5%;
+	width: 65%;
+
+	@media only screen and (min-width: 1000px) {
+		padding-top: 650px;
+		margin-top: 70px;
+		margin-left: 175px;
+		width: 650px;
+	}
+}
+
+@for $i from 1 through 4{
+	#circle-#{$i} {
+		@include curve($i);
+	}
+}
+
+#star-1{
+	@include curve(3);
+	left: 20vw;
+	top: 10vw;
+
+	@media only screen and (min-width: 1000px) {
+		left: 200px;
+		top: 100px;
+	}
+}
+
+#star-2{
+	@include curve(4);
+	left: 50vw;
+	top: 10vw;
+
+	@media only screen and (min-width: 1000px) {
+		left: 500px;
+		top: 100px;
+	}
+}
+
+#star-3{
+	@include curve(1);
+	left: 50vw;
+	top: 40vw;
+
+	@media only screen and (min-width: 1000px) {
+		left: 500px;
+		top: 400px;
+	}
+}
+
+#star-4{
+	@include curve(2);
+	left: 20vw;
+	top: 40vw;
+
+	@media only screen and (min-width: 1000px) {
+		left: 200px;
+		top: 400px;
+	}
+}
+
+#cross-1{
+	width: 30vw;
+	padding-top: 15px;
+	left: 20vw;
+	top: 39.15vw;
+	@include crossstuff();
+
+	@media only screen and (min-width: 1000px) {
+		width: 300px;
+		left: 200px;
+		top: 391.5px;
+	}
+}
+
+#cross-2{
+	width: 15px;
+	padding-top: 30vw;
+	left:49.15vw;
+	top: 10vw;
+	@include crossstuff();
+
+	@media only screen and (min-width: 1000px) {
+		padding-top: 300px;
+		left: 491.5px;
+		top: 100px;
+	}
+}
+
+#cross-3{
+	width: 30vw;
+	padding-top: 15px;
+	top: 39.15vw;
+	left:50vw;
+	@include crossstuff();
+
+	@media only screen and (min-width: 1000px) {
+		width: 300px;
+		left: 500px;
+		top: 391.5px;
+	}
+}
+
+#cross-4{
+	width: 15px;
+	padding-top: 30vw;
+	top: 40vw;
+	left:49.15vw;
+	@include crossstuff();
+
+	@media only screen and (min-width: 1000px) {
+		padding-top: 300px;
+		left: 491.5px;
+		top: 400px;
+	}
+}
