@@ -1,0 +1,150 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/typography";
+@import "compass/css3";
+
+$orange: #F05324;
+
+@mixin saira {
+	font-family: 'Saira Extra Condensed', sans-serif;
+}
+
+@mixin noto {
+	font-family: 'Noto Serif', serif;
+}
+
+body {
+	font-family: 'Noto Serif', serif;
+	color: $orange;
+	font-size: 5vw;
+	line-height: 1.4;
+}
+
+hr {
+	border-color: #F05324;
+	border-style: solid;
+	border-width: .5px;
+}
+
+#header {
+	padding: 20px;
+	color: white;
+	background-color: $orange;
+}
+
+#this-is {
+	font-size: 2em;
+}
+
+h1 {
+	@include saira;
+	font-size: 8.2em;
+	line-height: .85;
+}
+
+i {
+	font-style: italic;
+}
+
+iframe {
+	filter: hue-rotate(23deg) brightness(135%) saturate(78%);
+}
+
+#about-button {
+	position: absolute;
+	top: 30px;
+	right: 25px;
+	@include saira;
+	color: lightgrey;
+	cursor: pointer;
+	font-size: 1.4em;
+}
+
+#about {
+	box-sizing: border-box;
+	border: 1px solid $orange;
+	margin: 20px;
+	padding: 20px;
+}
+// .m-scene {
+
+// 	width: 100%;
+// 	height: 500px;
+// 	border: 1px solid red;
+
+// 	.scene_element{
+// 		@include animation-duration(0.25s);
+// 		@include transition-timing-function(ease-in);
+// 		@include animation-fill-mode(both);
+// 		border: 1px solid blue;
+// 		height: 200px;
+// 	}
+
+// 	.scene_element--fadein : hover{
+// 		@include animation-name(fadeIn);
+// 		border: 1px solid green;
+// 		height: 200px;
+// 	}
+
+// 	.scene_element--fadeinup :hover{
+// 		@include animation-name(fadeInUp);
+// 		border: 1px solid orange;
+// 		height: 200px;
+// 	}
+
+// 	.scene_element--fadeinright : hover{
+// 		@include animation-name(fadeInRight);
+// 		border: 1px solid black;
+// 		height: 200px;
+// 	}
+// }
+
+@include keyframes(fadeIn) {
+	0% {
+		@include transparent;
+	}
+	100% {
+		@include opaque;
+	}
+}
+
+@include keyframes(fadeInUp) {
+	0% {
+		@include transparent;
+		@include transform(translate3d(0, 100%, 0));
+	}
+	100% {
+		@include opaque;
+		@include transform(none);
+
+	}
+}
+
+@include keyframes(fadeInRight) {
+	0% {
+		@include transparent;
+		@include transform(translate3d(100%, 0, 0));
+	}
+	100% {
+		@include opaque;
+		@include transform(none);
+
+	}
+}
+
+@include keyframes(fadeInLeft) {
+	0% {
+		@include transparent;
+		@include transform(translate3d(-100%, 0, 0));
+	}
+	100% {
+		@include opaque;
+		@include transform(none);
+
+	}
+}
+
