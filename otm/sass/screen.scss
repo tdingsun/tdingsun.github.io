@@ -24,13 +24,44 @@ body {
 	line-height: 1.4;
 }
 
-hr {
+a {
+	color: $orange;
+	text-decoration: none;
+}
+
+.cue {
+	display: inline;
+	@include saira;
+	color: grey;
+}
+
+.hr {
 	border-color: #F05324;
 	border-style: solid;
 	border-width: .5px;
+	width: 17%;
+	transition: width 0.25s;
+	margin:auto;
 }
 
-#header {
+#hr-about {
+	transition: 0.25s;
+}
+
+.hr-long {
+	border-color: #F05324;
+	border-style: solid;
+	border-width: .5px;
+	width: 100%;
+	transition: width 0.5s;
+	margin:auto;
+}
+
+.hr-white {
+	border-color: white;
+}
+
+.head-foot {
 	padding: 20px;
 	color: white;
 	background-color: $orange;
@@ -46,105 +77,146 @@ h1 {
 	line-height: .85;
 }
 
+h2 {
+	@include saira;
+	font-size: 3.4em;
+	line-height: .9;
+	padding-top: 10px;
+}
+
+h3 {
+	@include saira;
+	font-size: 2em;
+	line-height: .85;
+	display: inline;
+	padding-left: 10px;
+}
+
 i {
 	font-style: italic;
 }
 
 iframe {
+	padding-top: 20px;
+	padding-bottom: 20px;
 	filter: hue-rotate(23deg) brightness(135%) saturate(78%);
 }
 
-#about-button {
-	position: absolute;
-	top: 30px;
-	right: 25px;
-	@include saira;
-	color: lightgrey;
+#about-container {
+	padding: 20px;
+	margin: 20px;
+	border: 1px solid $orange;
 	cursor: pointer;
-	font-size: 1.4em;
+	transition: 0.25s;
+}
+
+#about-button {
+	text-align: center;
 }
 
 #about {
 	box-sizing: border-box;
+	margin-top: 20px;
+}
+
+#episode-list {
+}
+
+.episode {
+	border: 1px solid $orange;
+	margin: 20px;
+	cursor: pointer;
+
+
+}
+
+.episode-button {
+	padding: 20px;
+	transition: 0.25s;
+
+
+	&:hover {
+		background-color: $orange;
+		color: white;
+	}
+}
+
+.episode-button-open {
+	border-bottom: 1px solid $orange;
+}
+
+.episode-container {
+	padding: 20px;
+
+}
+
+.show {
+	display: block;
+	transition: 0.25s;
+}
+
+.date {
+	font-style: italic;
+	float: left;
+}
+
+.length {
+	font-style: italic;
+	float: right;
+}
+
+.listen-button {
+	padding: 20px;
+	margin: 20px -20px -20px -20px;
+	color: $orange;
+	background-color: white;
+	text-align: center;
+	border-top: 1px solid $orange;
+
+	&:hover {
+		color: white;
+		background-color: $orange;
+		border-top: none;
+	}
+}
+
+#footer {
+	font-size: 0.75em;
+	line-height: 1.5;
+}
+
+
+
+.episode-page {
 	border: 1px solid $orange;
 	margin: 20px;
 	padding: 20px;
-}
-// .m-scene {
 
-// 	width: 100%;
-// 	height: 500px;
-// 	border: 1px solid red;
-
-// 	.scene_element{
-// 		@include animation-duration(0.25s);
-// 		@include transition-timing-function(ease-in);
-// 		@include animation-fill-mode(both);
-// 		border: 1px solid blue;
-// 		height: 200px;
-// 	}
-
-// 	.scene_element--fadein : hover{
-// 		@include animation-name(fadeIn);
-// 		border: 1px solid green;
-// 		height: 200px;
-// 	}
-
-// 	.scene_element--fadeinup :hover{
-// 		@include animation-name(fadeInUp);
-// 		border: 1px solid orange;
-// 		height: 200px;
-// 	}
-
-// 	.scene_element--fadeinright : hover{
-// 		@include animation-name(fadeInRight);
-// 		border: 1px solid black;
-// 		height: 200px;
-// 	}
-// }
-
-@include keyframes(fadeIn) {
-	0% {
-		@include transparent;
+	h2 {
+		padding-bottom: 20px;
 	}
-	100% {
-		@include opaque;
+
+	hr {
+		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 }
 
-@include keyframes(fadeInUp) {
-	0% {
-		@include transparent;
-		@include transform(translate3d(0, 100%, 0));
-	}
-	100% {
-		@include opaque;
-		@include transform(none);
-
-	}
+.nav {
+	@extend i;
+	position: fixed;
+	top: 0;
+	margin: 20px;
+	padding: 20px;
+	background-color: white;
+	color: $orange;
+	border: 1px solid $orange;
+	transition: top 0.25s ease-in-out;
 }
 
-@include keyframes(fadeInRight) {
-	0% {
-		@include transparent;
-		@include transform(translate3d(100%, 0, 0));
-	}
-	100% {
-		@include opaque;
-		@include transform(none);
 
-	}
-}
 
-@include keyframes(fadeInLeft) {
-	0% {
-		@include transparent;
-		@include transform(translate3d(-100%, 0, 0));
-	}
-	100% {
-		@include opaque;
-		@include transform(none);
-
-	}
+.nav-up {
+	top: -20%;
 }
 

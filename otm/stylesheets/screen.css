@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+b, u, i, .nav, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -76,201 +76,213 @@ body {
 }
 
 /* line 27, ../sass/screen.scss */
-hr {
+a {
+  color: #F05324;
+  text-decoration: none;
+}
+
+/* line 32, ../sass/screen.scss */
+.cue {
+  display: inline;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  color: grey;
+}
+
+/* line 38, ../sass/screen.scss */
+.hr {
   border-color: #F05324;
   border-style: solid;
   border-width: .5px;
+  width: 17%;
+  transition: width 0.25s;
+  margin: auto;
 }
 
-/* line 33, ../sass/screen.scss */
-#header {
+/* line 47, ../sass/screen.scss */
+#hr-about {
+  transition: 0.25s;
+}
+
+/* line 51, ../sass/screen.scss */
+.hr-long {
+  border-color: #F05324;
+  border-style: solid;
+  border-width: .5px;
+  width: 100%;
+  transition: width 0.5s;
+  margin: auto;
+}
+
+/* line 60, ../sass/screen.scss */
+.hr-white {
+  border-color: white;
+}
+
+/* line 64, ../sass/screen.scss */
+.head-foot {
   padding: 20px;
   color: white;
   background-color: #F05324;
 }
 
-/* line 39, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 #this-is {
   font-size: 2em;
 }
 
-/* line 43, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 h1 {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 8.2em;
   line-height: .85;
 }
 
-/* line 49, ../sass/screen.scss */
-i {
+/* line 80, ../sass/screen.scss */
+h2 {
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 3.4em;
+  line-height: .9;
+  padding-top: 10px;
+}
+
+/* line 87, ../sass/screen.scss */
+h3 {
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 2em;
+  line-height: .85;
+  display: inline;
+  padding-left: 10px;
+}
+
+/* line 95, ../sass/screen.scss */
+i, .nav {
   font-style: italic;
 }
 
-/* line 53, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 iframe {
+  padding-top: 20px;
+  padding-bottom: 20px;
   filter: hue-rotate(23deg) brightness(135%) saturate(78%);
 }
 
-/* line 57, ../sass/screen.scss */
-#about-button {
-  position: absolute;
-  top: 30px;
-  right: 25px;
-  font-family: 'Saira Extra Condensed', sans-serif;
-  color: lightgrey;
+/* line 105, ../sass/screen.scss */
+#about-container {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #F05324;
   cursor: pointer;
-  font-size: 1.4em;
+  transition: 0.25s;
 }
 
-/* line 67, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
+#about-button {
+  text-align: center;
+}
+
+/* line 117, ../sass/screen.scss */
 #about {
   box-sizing: border-box;
+  margin-top: 20px;
+}
+
+/* line 125, ../sass/screen.scss */
+.episode {
+  border: 1px solid #F05324;
+  margin: 20px;
+  cursor: pointer;
+}
+
+/* line 133, ../sass/screen.scss */
+.episode-button {
+  padding: 20px;
+  transition: 0.25s;
+}
+/* line 138, ../sass/screen.scss */
+.episode-button:hover {
+  background-color: #F05324;
+  color: white;
+}
+
+/* line 144, ../sass/screen.scss */
+.episode-button-open {
+  border-bottom: 1px solid #F05324;
+}
+
+/* line 148, ../sass/screen.scss */
+.episode-container {
+  padding: 20px;
+}
+
+/* line 153, ../sass/screen.scss */
+.show {
+  display: block;
+  transition: 0.25s;
+}
+
+/* line 158, ../sass/screen.scss */
+.date {
+  font-style: italic;
+  float: left;
+}
+
+/* line 163, ../sass/screen.scss */
+.length {
+  font-style: italic;
+  float: right;
+}
+
+/* line 168, ../sass/screen.scss */
+.listen-button {
+  padding: 20px;
+  margin: 20px -20px -20px -20px;
+  color: #F05324;
+  background-color: white;
+  text-align: center;
+  border-top: 1px solid #F05324;
+}
+/* line 176, ../sass/screen.scss */
+.listen-button:hover {
+  color: white;
+  background-color: #F05324;
+  border-top: none;
+}
+
+/* line 183, ../sass/screen.scss */
+#footer {
+  font-size: 0.75em;
+  line-height: 1.5;
+}
+
+/* line 190, ../sass/screen.scss */
+.episode-page {
   border: 1px solid #F05324;
   margin: 20px;
   padding: 20px;
 }
+/* line 195, ../sass/screen.scss */
+.episode-page h2 {
+  padding-bottom: 20px;
+}
+/* line 199, ../sass/screen.scss */
+.episode-page hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
-@-moz-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+/* line 205, ../sass/screen.scss */
+.nav {
+  position: fixed;
+  top: 0;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  color: #F05324;
+  border: 1px solid #F05324;
+  transition: top 0.25s ease-in-out;
 }
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-moz-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -moz-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -moz-transform: none;
-    transform: none;
-  }
-}
-@-webkit-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -moz-transform: translate3d(0, 100%, 0);
-    -ms-transform: translate3d(0, 100%, 0);
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -moz-transform: none;
-    -ms-transform: none;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-@-moz-keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    -moz-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-  }
-  100% {
-    opacity: 1;
-    -moz-transform: none;
-    transform: none;
-  }
-}
-@-webkit-keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    -moz-transform: translate3d(100%, 0, 0);
-    -ms-transform: translate3d(100%, 0, 0);
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-  }
-  100% {
-    opacity: 1;
-    -moz-transform: none;
-    -ms-transform: none;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-@-moz-keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    -moz-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-  100% {
-    opacity: 1;
-    -moz-transform: none;
-    transform: none;
-  }
-}
-@-webkit-keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    -moz-transform: translate3d(-100%, 0, 0);
-    -ms-transform: translate3d(-100%, 0, 0);
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-  100% {
-    opacity: 1;
-    -moz-transform: none;
-    -ms-transform: none;
-    -webkit-transform: none;
-    transform: none;
-  }
+
+/* line 219, ../sass/screen.scss */
+.nav-up {
+  top: -20%;
 }
