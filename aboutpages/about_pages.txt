@@ -43,20 +43,25 @@ Moving Health Forward
 
 It's no secret that healthcare in the U.S. and across the world has major challenges. For us, the problem is personal. Each of our founders experienced a close friend or family member not getting the care they should have. Those experiences inspired us to create Forward: a new healthcare system built from scratch to serve the needs of people, rather than those of the legacy healthcare industry. Our mission is to combine the best aspects of physicians – judgment, empathy, and experience - with the best aspects of technology – scalability, cost and convenience – to bring higher quality, lower cost healthcare to as many people as possible.
  
-AN EMPTY SPACE
-OUTFITTED WITH MODULAR COMPONENTS
-BECOMES A TACTILE VIRTUAL ADVENTURE
-COMING TO A NEIGHBORHOOD NEAR YOU
+An empty space outfitted with modular components becomes a tactile virtual adventure.
+Coming to a neighborhood near you.
  
-WHO WE ARE
+Who we are:
+
 Nomadic is an immersive entertainment company creating tactile VR adventures for neighborhoods everywhere. Our team brings decades of experience from top film, gaming, brand and retail companies, including Disney, Electronic Arts and Industrial Light and Magic.
+
 Our Mission
+
 Our mission is to create the highest quality tactile VR adventures and bring them to neighborhoods globally.
+
 Our Vision
+
 Our vision is to be the universally recognized brand for next generation out-of-home entertainment.
 
-A FULL-STACK HD MAPPING SERVICE.
+A full-stack HD mapping service.
+
 HD maps are essential to self-driving safety. Before we hand over the wheel to self-driving cars, they need a rich understanding of the world they drive in. Our HD maps empower autonomous vehicles with a precise understanding of traffic rules and their 3D environment, allowing them to “see” around the corner. 
+
 From mapping complex environments at centimeter accuracy to serving real-time localization for self-driving car fleets at scale, DeepMap provides a robust, full-stack mapping service. Our solution transforms your self-driving fleet data into high performance maps — Your data, Your maps. 
 
 
@@ -64,14 +69,18 @@ From mapping complex environments at centimeter accuracy to serving real-time lo
 
 
 Unlock the value of your materials.
+
 Advancing sustainability through recycling technology development, program benchmarking, and managed operations.
 
 Give Your Website Superpowers.
+
 With our bot, we’re bringing the power of Artificial Intelligence to the most important part of your business: the relationships you have with your customers. 
+
 Driftbot is able to understand the conversations your customers are having with your company, and help get the right message to the right person at the right time.
 
 
 Save money, without thinking about it.™
+
 Digit calculates the perfect amount of money to set aside every day — based on your income and spending — and automatically saves it for you. Most days it'll feel invisible, but it won't take long to feel like the future you're working toward is within reach.
 
 We believe in a better home buying and selling experience.
@@ -79,6 +88,7 @@ We believe in a better home buying and selling experience.
 We’re helping people move on to life’s next chapter.
 
 In 2014, we set out to reinvent life’s most important transaction with home sellers and buyers in mind. Since then, we’ve helped thousands of people sell their homes and move in one simple, seamless transaction.
+
 We’ve worked with people in Phoenix, Dallas-Fort Worth, Vegas, and Atlanta to find their dream homes. And we’ve generated over $15 million in commissions for Realtors.
  
 
@@ -87,181 +97,156 @@ Lifesaving Deliveries by Drone
 Zipline operates the world’s only drone delivery system at national scale to send urgent medicines like blood to patients, no matter where they live.
 
 
- 
+
 
 More than two billion people lack adequate access to essential medical products, such as blood and vaccines, due to challenging terrain and gaps in infrastructure.
+
 Zipline improves access to these supplies by flying over impassable mountains and washed-out roads, delivering directly to remote clinics. We centralize supply and provide on-demand deliveries, completely reducing waste and stock-outs.
+
 Zipline provides a seamless delivery system at an affordable price, obsessing over every detail, so you can focus on patient health.
 
-
- 
 
 Pay over time, on your terms
 
 Buy with Affirm – and pay off your purchase in easy, fixed monthly payments.
 
 
- 
+Welcome to a new kind of finance company.
 
-Welcome to a new kind of  finance company.
 Our Story
 
 SoFi is a new kind of finance company taking a radical approach to lending and wealth management. From unprecedented products and tools to faster service and open conversations, we’re all about helping our members get ahead and find success. Whether they’re looking to buy a home, save money on student loans, ascend in their careers, or invest in the future, the SoFi community works to empower our members to accomplish the goals they set and achieve financial greatness as a result.
-
-
 
 What we believe
 
 We live in an age of access. Anyone can go everywhere. The world is a shared place, and every trip is part of the exchange, no matter the destination. We believe in making connections: on the road, online, and in person. We value access over aspiration, and exploration over escape. For us, all time away is time well spent.
  
 Joya was founded in 2012 to help people feel close no matter the distance, enabling people to remain connected in convenient and meaningful ways. 
-
-
 Make memories.
  
-
-
 Ever is a company dedicated to helping you capture and rediscover your life's memories. 
- 
-
-We are Ripple.
- 
-We are built on the truth that even the smallest actions can have far reaching impacts.
-
+ We are Ripple.
+ We are built on the truth that even the smallest actions can have far reaching impacts.
 
 Shyp is better shipping.
  
-
 We’re focused on making it easy for people and businesses to get things from here to there. 
-
-
-
-
-
 
 Shyp was founded in 2013 by Kevin Gibbon, who faced the challenges of shipping firsthand as an eBay Power Seller. The more his business grew, the more time he found himself spending on shipping rather than selling.  
 
 As the costs and inefficiencies of shipping eroded his business, Kevin was forced to shut down his eBay shop, and, inspired by his experience, set out to build Shyp. 
 
-
 The original idea was simple: Shipping should be as easy as taking a photo. The full-service operation — including pickup, packaging, and low shipping rates — started in San Francisco and soon expanded to New York, Los Angeles, and Chicago. 
- 
 As word spread about Shyp, the product grew accordingly. A dedicated flow for online returns launched in early 2015, and by the end of the year, a partnership was forged with eBay that allowed sellers to link their account and ship their sales with just a few taps. 
- 
 With the unveiling of a cloud-based shipping dashboard and label-printing software, Shyp is now available nationwide. Additional products, features and integrations are in the works, though the goal remains the same: to make shipping easy and affordable for all. 
- 
-
-Where Work Happens 
+Where Work Happens:
 
 When your team needs to kick off a project, hire a new employee, deploy some code, review a sales contract, finalize next year's budget, measure an A/B test, plan your next office opening, and more, Slack has you covered. 
- 
 
 Making work simpler, more pleasant, and more productive 
 
 At Slack, we’re building the platform that connects teams with the apps, services, and resources they need to get work done. Launched in 2014, Slack is the fastest growing business application in history. Millions of people around the world use Slack to bring their teams together, make sense of their work, and drive their business forward. 
 
-
- 
-
 Building the ecosystem for work 
 
 Connect your conversations with the tools and services that you use to get the job done. With over 1,000 apps and a robust API, the Slack platform team works with partners and developers globally to build apps and integrations that streamline your work, automates mundane tasks and brings context into your conversations in Slack. 
- 
 
 Located around the globe, and growing 
 
 Across our offices, teams at Slack come together with a shared purpose. We believe everyone deserves to work in a welcoming, respectful, and empathetic culture, and we work hard to make sure everyone at Slack has the support they need to thrive. Join us and do the best work of your life. 
- 
-
-Atrium LTS 
 
 We are dedicated to providing exceptional tools and processes to transform the delivery of corporate legal services. 
 
-
-
-
-
 Revolutionizing Legal Services
+
 Gone are the days of expensive legal staff collecting, copying and pasting signature blocks and charging companies for time spent on administrative tasks. The companies in our community deserve the level of innovation and efficiency that they promise their customers.
+
 Join our talented team of serial entrepreneurs, engineers, and lawyers to deliver on that promise.
 
 Discover. Unbox. Enjoy.
+
 Watch your favorite experts share the latest tech trends to help you discover and buy products you’ll love.
 
 A family of apps offering a new mobile shopping experience.
 
 It starts with communities
+
 The Villages is an amazing community of over 4,000 residents, 15 miles of challenging road, and tons of transportation problems to solve. Our goal is to connect every home inside the community to every point of interest, every resident to every resident.
 
-
-
 Building the future of transport
+
 The Villages is only the beginning of Voyage’s journey. We are slowly expanding community-by-community across the country, and with each deployment we are targeting communities with more residents, more road, and their own set of unique challenges. Today, Voyage communities are retirement communities, but it won’t be long until we connect the ultimate community: cities.
-Voyage’s mission is to bring communities together with self-driving cars. We are running toward a world where we provide free access to safe self-driving transportation, a world where there is no friction involved in   moving from A to B.
+
+Voyage’s mission is to bring communities together with self-driving cars. We are running toward a world where we provide free access to safe self-driving transportation, a world where there is no friction involved in moving from A to B.
 
 At Voyage we're working to bring about the end-goal of self-driving cars: a world where anyone, anywhere can summon a car directly to their doorstep, travel safely to their destination, all for an extremely low price.
 
 Manufacturing line intelligence that works
+
 Discover issues early. Solve problems faster. Stop delays before they start.
+
 We are Instrumental
+
 We are excited to build a world where the broad use of artificial intelligence transforms human lives for the better by saving massive amounts of human and natural resources. Intelligent manufacturing will change and improve how millions of things we all touch and use every day are made.
+
 With deep product development, software, and manufacturing expertise from the world’s most admired companies — we’re creating manufacturing intelligence that can autonomously sense, learn, and react. Manufacturing ecosystems are complex, so Instrumental Systems are crafted to be simple. We combine intuitive software with lightweight inspection stations that are easy to incorporate into any manual or semi-manual line-flow without slowing you down. We want to get you the information you need to do your best work on time.
 
 
-TRUE OR FALSE?
 Robots will become our friends, co-workers, and a part of our families. They will be personable robots that benefit everyone’s lives.
 If you answered true… become part of the mission.
 
-
-
 Our Vision
+
 Revolutionize how organizations use data science and security technology to combat cyber threats across hybrid-cloud environments.
 
 
 Led by former founding team members of Cylance and Carbon Black, Obsidian Security is a Southern California technology company living at the intersection of cybersecurity, artificial intelligence, and hybrid-cloud environments. Backed by Greylock Partners, Obsidian Security is based in Newport Beach, CA.
 
 
-What can technology
-do for trucking?
-Convoy is building the world's largest network of
-reliable trucks, with upfront pricing and
-real-time GPS tracking on all shipments.
+What can technology do for trucking?
+
+Convoy is building the world's largest network of reliable trucks, with upfront pricing and real-time GPS tracking on all shipments.
 
 
 The world moves on reliable trucks. Convoy is building innovative trucking services to match shipments with reliable carriers.
+
 For shippers:
+
 With a large network of independent trucking companies, Convoy uses technology to find the right truck for every shipment. And with real-time GPS on all loads, shippers never have to wonder where their freight is. 
+
 Convoy collects and analyzes relevant data, providing valuable insights that help shippers optimize supply chain performance.
 
 
 Management and Security
  
 for Mission Critical SaaS Apps
+
 Finally, one place to manage all your applications, users, groups, files, privileges, and more.
 
-OUR MISSION
+Our Mission
+
 To empower people to run the world's best workplaces through technology
 
 
 
 Better lending starts with Blend
+
 Welcome to a home buying experience that’s simple and smart, for everyone.
 
 
 Home lending for a modern, mobile world
+
 With Blend, the home buying process is digital, like the rest of your financial life. So both buyers and lenders can enjoy an application experience they’ve come to expect: faster, smarter, and more secure.
 
 We stand for better lending
+
 Following the financial crisis of 2008, we saw a generation of Americans apprehensive about the future, and a $10 trillion industry in severe need of simplicity and transparency.
-
-
 
 We founded Blend in response: to help reduce risk, increase trust, and open access—all while bringing delight to a stressful, inefficient process.
 
-
 We are creators and technologists
-We believe in partnership: industry experts and product innovators solving tough compliance and workflow challenges together. And designers working with data scientists to craft welcome and refreshing experiences. We see technology as a powerful tool that can help solve systemic problems at scale—while opening up access to the American dream.
 
+We believe in partnership: industry experts and product innovators solving tough compliance and workflow challenges together. And designers working with data scientists to craft welcome and refreshing experiences. We see technology as a powerful tool that can help solve systemic problems at scale—while opening up access to the American dream.
 
 Our mission: Remake Secondary Storage
 
@@ -271,31 +256,26 @@ Cohesity DataPlatform is the only hyperconverged platform designed to consolidat
 
 Simple data protection for the cloud era
 
+Freight forwarder for the internet age 
 
-FREIGHT FORWARDER
- 
-FOR THE INTERNET AGE 
+Full-service air and ocean freight forwarder providing visibility and control over your entire supply chain through software.
 
-FULL-SERVICE AIR AND OCEAN FREIGHT FORWARDER PROVIDING VISIBILITY
+Free trade through technology
 
-AND CONTROL OVER YOUR ENTIRE SUPPLY CHAIN THROUGH SOFTWARE.
-
-FREE TRADE THROUGH TECHNOLOGY
 We’re building a future where businesses can trade without
 
 concern for geographic distance or logistical complexity.
 
-
-
-
-People-Driven Service
- 
+People-Driven Service 
 Extended Through Software  
+
 Flexport is a licensed freight forwarder that uses people and software to manage the complexity of international trade.
+
 Shipping something from Shenzhen to Cincinnati or Rotterdam to LA requires complex coordination. Currently that’s done by telephones, spreadsheets, and fax machines. Flexport provides a web-based app that offers real-time visibility of your shipments. And we’re not just a software platform: Our experienced logistics and customs experts are here to help at every step of the way.
+
 We offer services in air freight, ocean freight, trucking, warehouse & fulfillment, customs brokerage, andcargo insurance. Learn more about our services and request a live demo.
+
 Flexport is a freight forwarder for the Internet age. “What we do at Flexport” explains what we mean.
- 
 
 Funds to grow your business.
 
@@ -308,21 +288,23 @@ Our mission is to simplify and improve the way that small businesses pay and are
 
 
 We use cutting-edge technology, data science, and common sense to create better financial options for small businesses.
+
 Because of us, small businesses across the U.S. already have more control over their finances, and are better able to succeed and grow. Over 50,000 customers trust us with their data. And we’re just getting started.
 
 
 Ginkgo Bioworks is the organism company. We design custom microbes for customers across multiple markets. We build our foundries to scale the process of organism engineering using software and hardware automation. Organism engineers at Ginkgo learn from nature to develop new organisms that replace technology with biology.
 
 
-INTELLIGENT VIRTUAL ASSISTANTS FOR CUSTOMER CARE
+Intelligent virtual assistants for customer care
+
 Every day, we're the front door to millions of great customer interactions for many of the most well-known companies.
 
 
-WE BELIEVE THAT EVERY CONVERSATION SHOULD BE A GREAT ONE.
+We believe that every conversation should be a great one.
 
 
 
-OUR STORY
+Our Story
 
 Interactions was founded with the belief that we could combine technology and human intelligence to improve the way businesses and their customers communicate. To us, that meant helping people have natural, open conversations with the brands they trust – when, how and where they want.
 
@@ -448,17 +430,15 @@ Segment unblocks every team, from engineering to product to marketing.
 
 
 
-MACHINES DON’T HAVE
-
-TO BREAK.
+Machines don’t have to break.
 
 
 Uptake helps people and machines work better, smarter and faster. Just turn our products on and we'll save you time and money.
 
 
 
-UPTAKE HARNESSES THE POWER OF DATA TO HELP PEOPLE AND MACHINES WORK BETTER, SMARTER AND FASTER.
 
+Uptake harnesses the power of data to help people and machines work better, smarter and faster.
 
 
 Did you know that as little as 1% of industrial data is being used today?
@@ -483,62 +463,60 @@ We love the internet, but not the complicated plans, bloated bundles, and poor s
 
 
 
-Internet service from
- 
-another galaxy. 
+Internet service from another galaxy. 
 
 Starry is a different kind of internet service. We use next-generation technology to beam nothing but lightning-fast internet. And we’ve designed everything around the simple goal of making your internet life happier.
 
 
 About Us
+
 Founded in 2009, after graduating from the TechStars program, SendGrid developed an industry-disrupting, cloud-based email service to solve the challenges of reliably delivering emails on behalf of growing companies. Like many great solutions, SendGrid was born from the frustration of three engineers whose application emails didn’t get delivered, so they built an app for email deliverability. Today, SendGrid is responsible for sending billions of emails for some of the best and brightest companies in the world.
 
 
 Our Mission
-WE DELIVER CUSTOMER COMMUNICATION THAT DRIVES ENGAGEMENT AND GROWTH
-Email is the most effective way to build and nurture customer relationships today. Companies that think strategically about email as a set of meaningful customer touchpoints—taking care to send it at the right time, with the right content, and for the right people—will yield a competitive advantage.
+
+We deliver customer communication that drives engagement and growth
+
+Email is the most effective way to build and nurture customer relationships today. 
+
+Companies that think strategically about email as a set of meaningful customer touchpoints—taking care to send it at the right time, with the right content, and for the right people—will yield a competitive advantage.
+
 SendGrid’s trusted platform, tools, and expert services team make it effortless for developers and marketers to craft, segment, test, and successfully deliver all of their email, no matter the use case: purchase confirmations, password reset instructions, an upcoming sale, or a nurture campaign.
 
 
 
 Our Vision
-THE WORLD'S MOST-TRUSTED COMMUNICATION PLATFORM
+
+The world's most-trusted communication platform
+
 SendGrid is a leader in trusted email delivery. Over 55,000 paying customers like Spotify, Uber and Airbnb trust SendGrid to send over 30 billion emails every month.
 
 
 
 Our Values
+
 At SendGrid, engagement is our passion. We love our customers and are dedicated to helping them connect with their users. We spend every day nurturing our unique “4H” culture, holding ourselves to a standard worthy of our customers.
+
 HONEST
 We are transparent, sharing information and feedback freely. We act with integrity, are honest with ourselves, and use data to provide the best insights.
+
 HAPPY
 We love what we do. It shows in the positive and constructive attitude we bring to everything we do. We know how to have a good time; life is more than work.
+
 HUMBLE
 We exemplify a customer-first mindset across everything we do, always learning from our colleagues, partners, and customers. We are one team, focused on the “we” rather than the “I.”
+
 HUNGRY
 We have high expectations, and expect high performance of ourselves and of our teams. We constantly look to innovate and improve. We play to win and keep raising the bar to deliver results.
 
-
-
-
-
-
 With Spotify, it’s easy to find the right music for every moment – on your phone, your computer, your tablet and more.
+
 There are millions of tracks on Spotify. So whether you’re working out, partying or relaxing, the right music is always at your fingertips. Choose what you want to listen to, or let Spotify surprise you.
+
 You can also browse through the music collections of friends, artists and celebrities, or create a radio station and just sit back.
 
 
 Empower end users while making your life easier.
-
-
-
-
-
-
-
-
-
-
 
 Jamf was born from the desire to create a better technology management solution for the hundreds of Macs on the University of Wisconsin — Eau Claire (UWEC) campus.
 As a student at UWEC, Zach Halmstad, Jamf co-founder, worked full-time in the IT department deploying, updating and tracking over 400 student and faculty Macs.
@@ -546,12 +524,11 @@ After years of wishing there was a smarter, more efficient way to do his job, he
 As Zach worked, went to class and studied, he coded a solution that revolutionized Apple management and changed the perception of Mac in education and enterprises around the world.
 
 
-
-
-YOUR SHORTCUT TO AMAZING DINING EXPERIENCES
+Your Shortcut To Amazing Dining Experiences
 
 While we are a technology company, at our core we are a hospitality business. We are dedicated to ensuring that every user, restaurant or consumer, achieves success with our products and are determined to improve the way businesses run and people live their lives.
 Nowait began as a simple solution to a major pain point. While waiting 45 minutes for brunch one morning, our founder Robb Myer had an ah-ha moment. He realized that if you gave guests more control over how and where they waited for service, you would also help restaurants run more efficiently.
+
 In 2016, we partnered with Yelp to connect tens of millions of consumers to our restaurant partners. In 2017, we are thrilled to announce that Yelp has acquired Nowait. Together, we’ll make even bigger strides in the restaurant industry by allowing guests to go more quickly from search and discovery, to dining at our partner restaurants.
 What began as a text message waitlist system is now a complete restaurant management solution driving incremental sales for thousands of restaurants and a powerful consumer tool saving millions of users the most precious asset of their life, their time. A mutually beneficial network connecting guests and restaurants and disrupting the way the world dines out.
 
@@ -577,26 +554,17 @@ We created an FDIC-insured checking account built to help you save money, and to
 Sometimes, all it takes to change things is to start asking questions. 
 We hope that no matter what brought you here, whether you’re a poor poet in need of some budgeting help (true story) or a budget-wise financial wizard who wants an account to replace their spreadsheets (also a true story), a round-the-country-traveler in need of a banking experience to support that mobile lifestyle (oh hey, true again), you know that we see you. We see the banking industry and agree that it needs to change. And we’re working to change it for all of us.
 
-
-
 Nucleus is a family communication device that connects you with the people you love, whether they’re downstairs or across the country.
-
-
-
 
 Four core experiences of business.
  
 Four applications to get them right. 
 
-
-
-
 We are spread across 12 countries 
  
 on 3 continents. We have 1 purpose. 
 
-BUILD TECHNOLOGY THAT CLOSES EXPERIENCE GAPS
-
+Build technology that closes experience gaps
 
 
 How we roll
@@ -611,7 +579,6 @@ ONE TEAM
 There is only one team at Qualtrics. We win and lose together and never say, "That's not my job."
 SCRAPPY
 We're smart, resourceful, and find a way. We write our own story instead of following others.
- 
 
 
 Everyone needs a few good friends—
@@ -619,20 +586,14 @@ Everyone needs a few good friends—
 even hyper-growth-cash-flow-positive-global-juggernauts 
 
 
- 
-
 Travel like a VIP
 
 Don't waste your time with the irritating details of travel. Flight changes? Cancellations? No problem. As a Lola VIP, you'll experience the sweet convenience of having a travel assistant at your service 24/7 to smooth out any bumps in the road.
 Enter your email to register for a year of free VIP travel assistance*.
  
- 
-
 Finally, an advanced travel app for the most advanced travelers.
 Lola, the new booking and concierge service for road warriors from the travel innovators who brought you KAYAK.
 
-
- 
 
 Last year, Paul English, co-founder of Kayak, launched Lola to explore the possibilities for real human-and-AI-driven service in travel. The idea was to put the needs of the traveler first, like no other travel app.
 We’ve learned what can and should be handled by humans vs. AI, and how we can leverage both to improve and innovate travel for the people who really needs us: the true road warriors.
@@ -640,41 +601,8 @@ Sometimes business travel just plain sucks.
 Road warriors travel the most but are served the least. They’re on the road for business, but left to fend for themselves to book flights, hunt down accommodations that offer perks or at least points, and keep track of all the details. And that’s when things go well. On bad days, weather delays, mechanical problems, traffic snarls, missed flights, botched connections, and late check- ins can make business travel feel like the absolute worst—especially when you need to be at your best. Sound familiar?
 
 
- 
- 
- 
-
 So Lola’s mission is this: to provide the busiest travelers with the best travel tech, making it super-easy to plan, book, and manage their business trips. And when things go south, as they sometimes do for every traveler, our team is standing by 24/7 to help smooth out the bumps in the road.
 If you need Lola, you'll love Lola.
 You're welcome.
 
-
- 
- 
-Our mission is to give every person the power to control their own mental and physical health by capturing realtime bio-signals and making the data useful and actionable. We are the recognized market leader in continuous respiration sensing, real-time interventions, and actionable feedback. 
- 
- 
-
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
- 
-
-
- 
- 
- 
- 
+Our mission is to give every person the power to control their own mental and physical health by capturing realtime bio-signals and making the data useful and actionable. We are the recognized market leader in continuous respiration sensing, real-time interventions, and actionable feedback.
