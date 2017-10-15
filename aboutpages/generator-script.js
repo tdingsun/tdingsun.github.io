@@ -10,7 +10,7 @@ function preload() {
 
 function setup() {
 
-		let rm = new RiMarkov(1);
+		let rm = new RiMarkov(2);
 
 		lyrics = data.join(" ");
 		rm.loadText(lyrics);
