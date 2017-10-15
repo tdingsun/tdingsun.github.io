@@ -16,7 +16,7 @@ function setup() {
 		rm.loadText(lyrics);
 		let sentences = rm.generateSentences(5);
 
-		let p = document.document.createElement("p");
+		let p = document.createElement("p");
 		for (var j = 0; j < sentences[j].length; j++){
 			p.innerHTML += sentences[j];
 			p.innerHTML += " ";
