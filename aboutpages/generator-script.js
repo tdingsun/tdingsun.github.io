@@ -30,19 +30,19 @@ function setup() {
 		let sentences_5 = rm_5.generateSentences(10);
 		let sentences_6 = rm_6.generateSentences(10);
 
-		for (var i = 0; i < sentences.length; i++){
+		for (var i = 0; i < sentences_6.length; i++){
 			println(sentences_6[i]);
 		}
-		for (var i = 0; i < sentences.length; i++){
+		for (var i = 0; i < sentences_5.length; i++){
 			println(sentences_5[i]);
 		}
-		for (var i = 0; i < sentences.length; i++){
+		for (var i = 0; i < sentences_4.length; i++){
 			println(sentences_4[i]);
 		}
-		for (var i = 0; i < sentences.length; i++){
+		for (var i = 0; i < sentences_3.length; i++){
 			println(sentences_3[i]);
 		}
-		for (var i = 0; i < sentences.length; i++){
+		for (var i = 0; i < sentences_2.length; i++){
 			println(sentences_2[i]);
 		}
 		// //make every word into its own <p> with an id.
