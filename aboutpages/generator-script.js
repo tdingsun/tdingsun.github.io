@@ -30,34 +30,33 @@ function setup() {
 		let sentences_5 = rm_5.generateSentences(10);
 		let sentences_6 = rm_6.generateSentences(10);
 
+		let p_2 = document.createElement("p");
+		let p_3 = document.createElement("p");
+		let p_4 = document.createElement("p");
+		let p_5 = document.createElement("p");
+		let p_6 = document.createElement("p");
+
 		for (var i = 0; i < sentences_6.length; i++){
-			println(sentences_6[i]);
+			p_6.innerHTML += sentences_6[i];
 		}
 		for (var i = 0; i < sentences_5.length; i++){
-			println(sentences_5[i]);
+			p_5.innerHTML += sentences_5[i];
 		}
 		for (var i = 0; i < sentences_4.length; i++){
-			println(sentences_4[i]);
+			p_4.innerHTML += sentences_4[i];
 		}
 		for (var i = 0; i < sentences_3.length; i++){
-			println(sentences_3[i]);
+			p_3.innerHTML += sentences_3[i];
 		}
 		for (var i = 0; i < sentences_2.length; i++){
-			println(sentences_2[i]);
+			p_2.innerHTML += sentences_2[i];
 		}
-		// //make every word into its own <p> with an id.
-		// for(let i = 0; i < c_array.length; i++){
-		// 	var p = document.createElement("p");
-		// 	p.id = "entry-" + i;
 
-		// 	//when you click the word, it shows the word in context
-		// 	p.onclick = function() {kwic(i)};
-
-		// 	//p.innerHTML += (c_array[i][0] + " : " + c_array[i][1]);
-		// 	p.innerHTML += (c_array[i][0]);
-		// 	document.getElementById("container").appendChild(p);
-		// }
-
+		document.getElementById("container").appendChild(p_6);
+		document.getElementById("container").appendChild(p_5);
+		document.getElementById("container").appendChild(p_4);
+		document.getElementById("container").appendChild(p_3);
+		document.getElementById("container").appendChild(p_2);
 }
 
 //your basic insertion_sort algorithm
