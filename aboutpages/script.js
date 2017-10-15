@@ -14,9 +14,8 @@ function preload() {
 function setup() {
 
 		let args = {
-			wordCount: 3,
 			ignoreCase: true,
-			ignoreStopWords: false,
+			ignoreStopWords: true,
 			ignorePunctuation: true
 		}
 
@@ -47,7 +46,8 @@ function setup() {
 			//when you click the word, it shows the word in context
 			p.onclick = function() {kwic(i)};
 
-			p.innerHTML += (c_array[i][0] + " : " + c_array[i][1]);
+			//p.innerHTML += (c_array[i][0] + " : " + c_array[i][1]);
+			p.innerHTML += (c_array[i][0]);
 			document.getElementById("container").appendChild(p);
 		}
 
