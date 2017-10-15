@@ -1,6 +1,6 @@
 We believe in free expression and think every voice has the power to impact the world.
 
-Finding the way
+Finding the way:
 
 Creating possibilities for riders, drivers, and cities
 
@@ -12,10 +12,10 @@ One billion connections. And counting.
 Across borders, cultures, and languages, we’re proud to connect people who need a reliable ride with people looking to earn money driving their car. Your journeys inspire us. Thank you.
 Soylent™ is a pioneer in food technology, producing healthy, functional foods that are good for the body and the planet. In 2013, Founder and CEO Rob Rhinehart developed the first iteration in his kitchen after recognizing the need for a simpler, more efficient food source. Soylent uses science and technology to solve the challenges plaguing the current food system and work toward its mission of providing access to quality nutrition to people across the globe. 
 Expand access to quality nutrition through food system innovation. 
-Future vision
+Future vision:
 We at Soylent seek to use science, technology, and enterprise as tools to help make eating easier. We aim to create a portfolio of products that make eating an easier part of your day.
 
-Bringing the world closer together 
+Bringing the world closer together: 
 Give people the power to build community and bring the world closer together.
 Founded in August of 2008 and based in San Francisco, California, Airbnb is a trusted community marketplace for people to list, discover, and book unique accommodations around the world — online or from a mobile phone or tablet.
 Whether an apartment for a night, a castle for a week, or a villa for a month, Airbnb connects people to unique travel experiences, at any price point, in more than 65,000 cities and 191 countries. And with world-class customer service and a growing community of users, Airbnb is the easiest way for people to monetize their extra space and showcase it to an audience of millions.
@@ -28,18 +28,18 @@ Not just for some. For everyone.
 Creating opportunity for everyone 
 We believe everyone deserves the chance to learn, succeed, and be heard.
 Everyday essentials. Instantly. 
-Obsessed with the Last Hundred Feet
+Obsessed with the Last Hundred Feet.
 At Bodega, we’re combining the convenience of online ordering with the instant gratification of real world retail. We’re building hardware, software and supply chain operations to create delightful automated stores that are only a few feet away and always stocked with what you need.
 Based in San Francisco and Minneapolis, Brandless was brought to life on July 11, 2017. We’re a group of thinkers, eaters, doers, and lovers of life with big dreams about changing the world. Our mission is deeply rooted in quality, transparency, and community-driven values. Better stuff, fewer dollars. It's that simple. 
 Everyone deserves better.
 We've created a thoughtful, irresistible selection of the food and household products you reach for every day. Searching far and wide for high-quality materials and healthy ingredients, everything that's Brandless is also bad-stuff-less and goodness‑ful.
-Just What Matters™ 
+Just What Matters™. 
 At Brandless, we put people first. That means you. We know your values are important and you look for better-for-you products in every aspect of your life. So do we! Around here we focus on “just what matters.” That starts with offering products that match your values, preferences, and at times requirements—where it matters our products are non-GMO, sometimes organic, fair trade, kosher, gluten free, no added sugar and more. It’s different for everyone.
 We rigorously vet, taste, try, and sometimes create hundreds of formulations for deliciousness, safety, quality, and pure goodness. From there, we partner with our suppliers to create packaging that makes sense, limits waste, and distills the values and ingredients you care about most. We try to keep it simple, so hopefully you can easily find Just What Matters™ to you. We really care about that.
 A New Kind of Health Membership, Augmented with Technology 
-Forward combines the best of doctors and new technology to provide a personalized and better primary care experience
+Forward combines the best of doctors and new technology to provide a personalized and better primary care experience.
 
-Moving Health Forward
+Moving Health Forward.
 
 It's no secret that healthcare in the U.S. and across the world has major challenges. For us, the problem is personal. Each of our founders experienced a close friend or family member not getting the care they should have. Those experiences inspired us to create Forward: a new healthcare system built from scratch to serve the needs of people, rather than those of the legacy healthcare industry. Our mission is to combine the best aspects of physicians – judgment, empathy, and experience - with the best aspects of technology – scalability, cost and convenience – to bring higher quality, lower cost healthcare to as many people as possible.
  
@@ -50,11 +50,11 @@ Who we are:
 
 Nomadic is an immersive entertainment company creating tactile VR adventures for neighborhoods everywhere. Our team brings decades of experience from top film, gaming, brand and retail companies, including Disney, Electronic Arts and Industrial Light and Magic.
 
-Our Mission
+Our Mission:
 
 Our mission is to create the highest quality tactile VR adventures and bring them to neighborhoods globally.
 
-Our Vision
+Our Vision:
 
 Our vision is to be the universally recognized brand for next generation out-of-home entertainment.
 
@@ -92,7 +92,7 @@ In 2014, we set out to reinvent life’s most important transaction with home se
 We’ve worked with people in Phoenix, Dallas-Fort Worth, Vegas, and Atlanta to find their dream homes. And we’ve generated over $15 million in commissions for Realtors.
  
 
-Lifesaving Deliveries by Drone
+Lifesaving Deliveries by Drone.
 
 Zipline operates the world’s only drone delivery system at national scale to send urgent medicines like blood to patients, no matter where they live.
 
@@ -106,18 +106,18 @@ Zipline improves access to these supplies by flying over impassable mountains an
 Zipline provides a seamless delivery system at an affordable price, obsessing over every detail, so you can focus on patient health.
 
 
-Pay over time, on your terms
+Pay over time, on your terms.
 
 Buy with Affirm – and pay off your purchase in easy, fixed monthly payments.
 
 
 Welcome to a new kind of finance company.
 
-Our Story
+Our Story:
 
 SoFi is a new kind of finance company taking a radical approach to lending and wealth management. From unprecedented products and tools to faster service and open conversations, we’re all about helping our members get ahead and find success. Whether they’re looking to buy a home, save money on student loans, ascend in their careers, or invest in the future, the SoFi community works to empower our members to accomplish the goals they set and achieve financial greatness as a result.
 
-What we believe
+What we believe:
 
 We live in an age of access. Anyone can go everywhere. The world is a shared place, and every trip is part of the exchange, no matter the destination. We believe in making connections: on the road, online, and in person. We value access over aspiration, and exploration over escape. For us, all time away is time well spent.
  
@@ -143,21 +143,21 @@ Where Work Happens:
 
 When your team needs to kick off a project, hire a new employee, deploy some code, review a sales contract, finalize next year's budget, measure an A/B test, plan your next office opening, and more, Slack has you covered. 
 
-Making work simpler, more pleasant, and more productive 
+Making work simpler, more pleasant, and more productive.
 
 At Slack, we’re building the platform that connects teams with the apps, services, and resources they need to get work done. Launched in 2014, Slack is the fastest growing business application in history. Millions of people around the world use Slack to bring their teams together, make sense of their work, and drive their business forward. 
 
-Building the ecosystem for work 
+Building the ecosystem for work.
 
 Connect your conversations with the tools and services that you use to get the job done. With over 1,000 apps and a robust API, the Slack platform team works with partners and developers globally to build apps and integrations that streamline your work, automates mundane tasks and brings context into your conversations in Slack. 
 
-Located around the globe, and growing 
+Located around the globe, and growing.
 
 Across our offices, teams at Slack come together with a shared purpose. We believe everyone deserves to work in a welcoming, respectful, and empathetic culture, and we work hard to make sure everyone at Slack has the support they need to thrive. Join us and do the best work of your life. 
 
 We are dedicated to providing exceptional tools and processes to transform the delivery of corporate legal services. 
 
-Revolutionizing Legal Services
+Revolutionizing Legal Services:
 
 Gone are the days of expensive legal staff collecting, copying and pasting signature blocks and charging companies for time spent on administrative tasks. The companies in our community deserve the level of innovation and efficiency that they promise their customers.
 
@@ -169,11 +169,11 @@ Watch your favorite experts share the latest tech trends to help you discover an
 
 A family of apps offering a new mobile shopping experience.
 
-It starts with communities
+It starts with communities.
 
 The Villages is an amazing community of over 4,000 residents, 15 miles of challenging road, and tons of transportation problems to solve. Our goal is to connect every home inside the community to every point of interest, every resident to every resident.
 
-Building the future of transport
+Building the future of transport.
 
 The Villages is only the beginning of Voyage’s journey. We are slowly expanding community-by-community across the country, and with each deployment we are targeting communities with more residents, more road, and their own set of unique challenges. Today, Voyage communities are retirement communities, but it won’t be long until we connect the ultimate community: cities.
 
@@ -181,11 +181,11 @@ Voyage’s mission is to bring communities together with self-driving cars. We a
 
 At Voyage we're working to bring about the end-goal of self-driving cars: a world where anyone, anywhere can summon a car directly to their doorstep, travel safely to their destination, all for an extremely low price.
 
-Manufacturing line intelligence that works
+Manufacturing line intelligence that works.
 
 Discover issues early. Solve problems faster. Stop delays before they start.
 
-We are Instrumental
+We are Instrumental.
 
 We are excited to build a world where the broad use of artificial intelligence transforms human lives for the better by saving massive amounts of human and natural resources. Intelligent manufacturing will change and improve how millions of things we all touch and use every day are made.
 
@@ -195,7 +195,7 @@ With deep product development, software, and manufacturing expertise from the wo
 Robots will become our friends, co-workers, and a part of our families. They will be personable robots that benefit everyone’s lives.
 If you answered true… become part of the mission.
 
-Our Vision
+Our Vision:
 
 Revolutionize how organizations use data science and security technology to combat cyber threats across hybrid-cloud environments.
 
@@ -217,57 +217,55 @@ With a large network of independent trucking companies, Convoy uses technology t
 Convoy collects and analyzes relevant data, providing valuable insights that help shippers optimize supply chain performance.
 
 
-Management and Security
+Management and Security:
  
-for Mission Critical SaaS Apps
+for Mission Critical SaaS Apps:
 
 Finally, one place to manage all your applications, users, groups, files, privileges, and more.
 
-Our Mission
+Our Mission:
 
-To empower people to run the world's best workplaces through technology
+To empower people to run the world's best workplaces through technology.
 
 
 
-Better lending starts with Blend
+Better lending starts with Blend.
 
 Welcome to a home buying experience that’s simple and smart, for everyone.
 
 
-Home lending for a modern, mobile world
+Home lending for a modern, mobile world.
 
 With Blend, the home buying process is digital, like the rest of your financial life. So both buyers and lenders can enjoy an application experience they’ve come to expect: faster, smarter, and more secure.
 
-We stand for better lending
+We stand for better lending.
 
 Following the financial crisis of 2008, we saw a generation of Americans apprehensive about the future, and a $10 trillion industry in severe need of simplicity and transparency.
 
 We founded Blend in response: to help reduce risk, increase trust, and open access—all while bringing delight to a stressful, inefficient process.
 
-We are creators and technologists
+We are creators and technologists.
 
 We believe in partnership: industry experts and product innovators solving tough compliance and workflow challenges together. And designers working with data scientists to craft welcome and refreshing experiences. We see technology as a powerful tool that can help solve systemic problems at scale—while opening up access to the American dream.
 
-Our mission: Remake Secondary Storage
+Our mission: Remake Secondary Storage.
 
 Cohesity provides the only hyper converged platform designed to eliminate secondary storage silos. We consolidate all secondary data and associated management functions on one unified solution - including backups, files, objects, test/dev copies, and analytics.
 
-Cohesity DataPlatform is the only hyperconverged platform designed to consolidate and manage all your secondary data at web scale – including backups, test/dev copies, files, analytics data, and objects. DataPlatform provides distributed storage with best-in-class space efficiency, efficient copy data management, and native cloud integration. The platform incorporates data management functions for converged data protection, in-place analytics, and copy data management to automate DevOps workflows
+Cohesity DataPlatform is the only hyperconverged platform designed to consolidate and manage all your secondary data at web scale – including backups, test/dev copies, files, analytics data, and objects. DataPlatform provides distributed storage with best-in-class space efficiency, efficient copy data management, and native cloud integration. The platform incorporates data management functions for converged data protection, in-place analytics, and copy data management to automate DevOps workflows.
 
-Simple data protection for the cloud era
+Simple data protection for the cloud era.
 
-Freight forwarder for the internet age 
+Freight forwarder for the internet age.
 
 Full-service air and ocean freight forwarder providing visibility and control over your entire supply chain through software.
 
-Free trade through technology
+Free trade through technology.
 
-We’re building a future where businesses can trade without
+We’re building a future where businesses can trade without concern for geographic distance or logistical complexity.
 
-concern for geographic distance or logistical complexity.
-
-People-Driven Service 
-Extended Through Software  
+People-Driven Service. 
+Extended Through Software.  
 
 Flexport is a licensed freight forwarder that uses people and software to manage the complexity of international trade.
 
@@ -295,7 +293,7 @@ Because of us, small businesses across the U.S. already have more control over t
 Ginkgo Bioworks is the organism company. We design custom microbes for customers across multiple markets. We build our foundries to scale the process of organism engineering using software and hardware automation. Organism engineers at Ginkgo learn from nature to develop new organisms that replace technology with biology.
 
 
-Intelligent virtual assistants for customer care
+Intelligent virtual assistants for customer care.
 
 Every day, we're the front door to millions of great customer interactions for many of the most well-known companies.
 
@@ -304,7 +302,7 @@ We believe that every conversation should be a great one.
 
 
 
-Our Story
+Our Story;
 
 Interactions was founded with the belief that we could combine technology and human intelligence to improve the way businesses and their customers communicate. To us, that meant helping people have natural, open conversations with the brands they trust – when, how and where they want.
 
@@ -314,7 +312,7 @@ Since 2004, we’ve been expanding what’s possible in customer sales, service 
 In fact, Interactions successfully connects hundreds of thousands of people with leading brands each day. And along the way, we’re creating happier, more loyal customers and saving businesses millions of dollars.
 
 
-Your Business Phone System in the Cloud
+Your Business Phone System in the Cloud.
 Jive Hosted VoIP is the easiest and most affordable option for your business phone system. Jive’s cloud VoIP service helps thousands of organizations simplify how they manage their phone setup.
 
 
@@ -322,25 +320,25 @@ Why use Jive Hosted VoIP phone system?
 Cloud based phone services make your business more efficient and easier to manage. Jive replaces existing phone equipment with a cloud hosted PBX, which means your desk and smart phones work together and can be managed from your web browser and a mobile app. Cloud phone systems make it easier for your customer to contact your teams, turn any location into a workplace and reduce your current expenses.
 
 
-Analytics Evolved
+Analytics Evolved.
 Finally, a data platform with insights for every department.
 
 
-We're on a Mission
+We're on a Mission.
 Bringing better insights and data-driven decisions to every business.
 
 
 
 
-Inspiring curiosity
+Inspiring curiosity.
 Data is no longer just a place to find answers. It’s the place where ideas originate. And when everyone in your company is looking at the same numbers, sharing the same truth, they’ll be able to collectively make smarter, more informed decisions. This is the core of our mission at Looker: To inspire everyone to embrace their curiosity, dig deeper and keep asking questions.
 
-THE WORLD’S LEADING REVERSE LOGISTICS PLATFORM
+The world’s leading reverse logistics platform.
 
 Optoro offers a superior end-to-end reverse logistics solution that helps retailers process, manage, and sell their returned and excess inventory.
 
 
-Creating the future of sustainable commerce
+Creating the future of sustainable commerce.
 
 We’re a technology company building software that reimagines how retailers work and how consumers buy.
 Customers’ preferences are changing; as eCommerce grows, consumers return more products and in-store inventory stockpiles. Brands need to tap into a hidden asset to stay ahead—returned and excess inventory.  
@@ -359,7 +357,7 @@ Optoro is disrupting an old-fashioned, $500B reverse logistics industry by inc
  
  
 
-Geospatial Analytics for an Interconnected World 
+Geospatial Analytics for an Interconnected World. 
 
 
  
@@ -371,55 +369,55 @@ Orbital Insight’s mission is to source, process, and analyze this information 
 
  
 
-Discover an Interconnected World
+Discover an Interconnected World.
 
 Orbital Insight turns millions of images into a big-picture understanding of Earth. Not only does this create unprecedented transparency, but it also empowers business and policy decision makers with new insights and unbiased knowledge of socio-economic trends. As the number of Earth-observing devices grows and their data output expands, Orbital Insight’s geospatial analytics platform finds observational truth in an interconnected world. We map out and quantify the world’s complexities so that organizations can make more informed decisions.
 
 
  
 
-Artificial Intelligence + Data Science = 20 / 20 Vision
+Artificial Intelligence + Data Science = 20 / 20 Vision.
 
 
 
 
 
-Geospatial Big Data Fuels Action
+Geospatial Big Data Fuels Action.
 By applying artificial intelligence to satellite, UAV, and other geospatial data sources, we seek to discover and quantify societal and economic trends on Earth that are indistinguishable to the human eye. Combining this information with terrestrial data, such as mobile and location-based data, unlocks new sources of intelligence.
 Orbital Insight informs companies, governments, humanitarian, and environmental organizations about natural and man-made events on our planet and how they are often interconnected. Monitoring, tracking, and measuring elements across the globe, and understanding how they relate to one another, leads to a greater level of confidence in decision-making.
  
-How Orbital Insight Began
+How Orbital Insight Began.
 When the commercial space industry started building smaller, cheaper satellites and remote vehicles to observe Earth, it created a data explosion. However, no software existed to interpret the trillions of pixels these devices transmitted to Earth from space.
 Because the ability to depict and understand our physical environment is uniquely human, Orbital Insight was founded to develop software that derives meaning and insight from geospatial big data. Now, satellite and aerial images are more than just beautiful pictures – they are a source of intelligence about our ever-changing world.
 Founded in 2013 by James ‘Jimi’ Crawford, PhD., a former NASA scientist and Engineering Director at Google Books, Orbital Insight develops software that makes it possible to characterize economic and societal trends at global, regional, and hyper­local scales.
 
-Meet Orbital Insight
+Meet Orbital Insight.
 We're focused and creative thinkers. Our team is made up of scientists, engineers and business people who are intent on making the world a better place.
  
  
 
-Develop the future of financial services
+Develop the future of financial services.
 
-Plaid enables applications to connect with users’ bank accounts
+Plaid enables applications to connect with users’ bank accounts.
 
-Our vision
+Our vision:
 
 Plaid is focused on democratizing financial services through technology. We build beautiful consumer experiences, developer-friendly infrastructure, and intelligence tools that give everyone the ability to create amazing products that solve big problems.
 
 
 
-Our business
+Our business:
 
 We started out by building the technical infrastructure APIs that connect consumers, traditional financial institutions, and developers. Today, we add key insight to the data access we provide with our suite of analytics products.
 
-Our culture
+Our culture:
 
 We value cross-team collaboration and diversity of thought. There's always an opportunity to learn from each other outside of day-to-day work, whether it's company-wide off-sites, internal hackathons, or co-worker meetups.
 
 
 
 
-Our people
+Our people:
 
 We have diverse backgrounds and skills, but we're all passionate about building a more efficient and inclusive financial infrastructure—together.
 
@@ -450,12 +448,12 @@ We believe companies and people should love the technology they experience. We a
 
 
 
-CREATING WORLD-CHANGING SOLUTIONS  TO GIVE BACK.
+Creating world-changing solutions to give back.
 
 Uptake's philanthropic and civic innovation arm solves pressing problems around the globe to make the world a better place.
 
 
-Welcome to  Happy Interneting.
+Welcome to Happy Interneting.
 
 We love the internet, but not the complicated plans, bloated bundles, and poor service. So we reinvented it from top to bottom.
 
@@ -468,14 +466,14 @@ Internet service from another galaxy.
 Starry is a different kind of internet service. We use next-generation technology to beam nothing but lightning-fast internet. And we’ve designed everything around the simple goal of making your internet life happier.
 
 
-About Us
+About Us:
 
 Founded in 2009, after graduating from the TechStars program, SendGrid developed an industry-disrupting, cloud-based email service to solve the challenges of reliably delivering emails on behalf of growing companies. Like many great solutions, SendGrid was born from the frustration of three engineers whose application emails didn’t get delivered, so they built an app for email deliverability. Today, SendGrid is responsible for sending billions of emails for some of the best and brightest companies in the world.
 
 
-Our Mission
+Our Mission:
 
-We deliver customer communication that drives engagement and growth
+We deliver customer communication that drives engagement and growth.
 
 Email is the most effective way to build and nurture customer relationships today. 
 
@@ -485,28 +483,28 @@ SendGrid’s trusted platform, tools, and expert services team make it effortles
 
 
 
-Our Vision
+Our Vision:
 
-The world's most-trusted communication platform
+The world's most-trusted communication platform.
 
 SendGrid is a leader in trusted email delivery. Over 55,000 paying customers like Spotify, Uber and Airbnb trust SendGrid to send over 30 billion emails every month.
 
 
 
-Our Values
+Our Values:
 
 At SendGrid, engagement is our passion. We love our customers and are dedicated to helping them connect with their users. We spend every day nurturing our unique “4H” culture, holding ourselves to a standard worthy of our customers.
 
-HONEST
+HONEST:
 We are transparent, sharing information and feedback freely. We act with integrity, are honest with ourselves, and use data to provide the best insights.
 
-HAPPY
+HAPPY:
 We love what we do. It shows in the positive and constructive attitude we bring to everything we do. We know how to have a good time; life is more than work.
 
-HUMBLE
+HUMBLE:
 We exemplify a customer-first mindset across everything we do, always learning from our colleagues, partners, and customers. We are one team, focused on the “we” rather than the “I.”
 
-HUNGRY
+HUNGRY:
 We have high expectations, and expect high performance of ourselves and of our teams. We constantly look to innovate and improve. We play to win and keep raising the bar to deliver results.
 
 With Spotify, it’s easy to find the right music for every moment – on your phone, your computer, your tablet and more.
@@ -524,7 +522,7 @@ After years of wishing there was a smarter, more efficient way to do his job, he
 As Zach worked, went to class and studied, he coded a solution that revolutionized Apple management and changed the perception of Mac in education and enterprises around the world.
 
 
-Your Shortcut To Amazing Dining Experiences
+Your Shortcut To Amazing Dining Experiences.
 
 While we are a technology company, at our core we are a hospitality business. We are dedicated to ensuring that every user, restaurant or consumer, achieves success with our products and are determined to improve the way businesses run and people live their lives.
 Nowait began as a simple solution to a major pain point. While waiting 45 minutes for brunch one morning, our founder Robb Myer had an ah-ha moment. He realized that if you gave guests more control over how and where they waited for service, you would also help restaurants run more efficiently.
@@ -534,8 +532,8 @@ What began as a text message waitlist system is now a complete restaurant manage
 
 
 
-Save easily
-Bank beautifully
+Save easily.
+Bank beautifully.
 
 
 This Is Simple.
@@ -560,33 +558,29 @@ Four core experiences of business.
  
 Four applications to get them right. 
 
-We are spread across 12 countries 
- 
-on 3 continents. We have 1 purpose. 
+We are spread across 12 countries on 3 continents. We have 1 purpose. 
 
-Build technology that closes experience gaps
+Build technology that closes experience gaps.
 
 
-How we roll
+How we roll:
 
-TRANSPARENT
+TRANSPARENT:
 We are a meritocracy and hold ourselves accountable. We reward the competent over the confident. 
-ALL IN
+ALL IN:
 We bet on Qualtrics and Qualtrics bets on us. This is our company. We deliver whatever it takes. 
-CUSTOMER OBSESSED
+CUSTOMER OBSESSED:
 If a customer is upset, we failed. Period. We learn, and we fix it. 
-ONE TEAM
+ONE TEAM:
 There is only one team at Qualtrics. We win and lose together and never say, "That's not my job."
-SCRAPPY
+SCRAPPY:
 We're smart, resourceful, and find a way. We write our own story instead of following others.
 
 
-Everyone needs a few good friends—
- 
-even hyper-growth-cash-flow-positive-global-juggernauts 
+Everyone needs a few good friends— even hyper-growth-cash-flow-positive-global-juggernauts 
 
 
-Travel like a VIP
+Travel like a VIP.
 
 Don't waste your time with the irritating details of travel. Flight changes? Cancellations? No problem. As a Lola VIP, you'll experience the sweet convenience of having a travel assistant at your service 24/7 to smooth out any bumps in the road.
 Enter your email to register for a year of free VIP travel assistance*.
