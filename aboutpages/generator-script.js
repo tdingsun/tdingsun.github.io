@@ -17,7 +17,12 @@ function setup() {
 		let rm_6 = new RiMarkov(6);
 
 		lyrics = data.join(" ");
-		rm.loadText(lyrics);
+		rm_2.loadText(lyrics);
+		rm_3.loadText(lyrics);
+		rm_4.loadText(lyrics);
+		rm_5.loadText(lyrics);
+		rm_6.loadText(lyrics);
+
 
 		let sentences_2 = rm_2.generateSentences(10);
 		let sentences_3 = rm_3.generateSentences(10);
