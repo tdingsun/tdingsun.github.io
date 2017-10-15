@@ -17,7 +17,7 @@ function setup() {
 
 		let sentences = rm.generateSentences(10);
 
-		for (int i = 0; i < sentences.length; i++){
+		for (var i = 0; i < sentences.length; i++){
 			println(sentences[i])l
 		}
 		// //make every word into its own <p> with an id.
