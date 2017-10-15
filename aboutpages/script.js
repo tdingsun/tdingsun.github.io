@@ -7,7 +7,7 @@ var lyrics;
 
 
 function preload() {
-	data = loadStrings('about-pages.txt', setup);
+	data = loadStrings('about_pages.txt', setup);
 
 }
 
