@@ -10,15 +10,35 @@ function preload() {
 
 function setup() {
 
-		let rm = new RiMarkov(2);
+		let rm_2 = new RiMarkov(2);
+		let rm_3 = new RiMarkov(3);
+		let rm_4 = new RiMarkov(4);
+		let rm_5 = new RiMarkov(5);
+		let rm_6 = new RiMarkov(6);
 
 		lyrics = data.join(" ");
 		rm.loadText(lyrics);
 
-		let sentences = rm.generateSentences(10);
+		let sentences_2 = rm_2.generateSentences(10);
+		let sentences_3 = rm_3.generateSentences(10);
+		let sentences_4 = rm_4.generateSentences(10);
+		let sentences_5 = rm_5.generateSentences(10);
+		let sentences_6 = rm_6.generateSentences(10);
 
 		for (var i = 0; i < sentences.length; i++){
-			println(sentences[i]);
+			println(sentences_6[i]);
+		}
+		for (var i = 0; i < sentences.length; i++){
+			println(sentences_5[i]);
+		}
+		for (var i = 0; i < sentences.length; i++){
+			println(sentences_4[i]);
+		}
+		for (var i = 0; i < sentences.length; i++){
+			println(sentences_3[i]);
+		}
+		for (var i = 0; i < sentences.length; i++){
+			println(sentences_2[i]);
 		}
 		// //make every word into its own <p> with an id.
 		// for(let i = 0; i < c_array.length; i++){
