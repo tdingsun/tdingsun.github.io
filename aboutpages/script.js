@@ -14,6 +14,7 @@ function preload() {
 function setup() {
 
 		let args = {
+			wordCount: 1,
 			ignoreCase: true,
 			ignoreStopWords: true,
 			ignorePunctuation: true
