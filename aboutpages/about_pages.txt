@@ -495,16 +495,16 @@ Our Values:
 
 At SendGrid, engagement is our passion. We love our customers and are dedicated to helping them connect with their users. We spend every day nurturing our unique “4H” culture, holding ourselves to a standard worthy of our customers.
 
-HONEST:
+Honest:
 We are transparent, sharing information and feedback freely. We act with integrity, are honest with ourselves, and use data to provide the best insights.
 
-HAPPY:
+Happy:
 We love what we do. It shows in the positive and constructive attitude we bring to everything we do. We know how to have a good time; life is more than work.
 
-HUMBLE:
+Humble:
 We exemplify a customer-first mindset across everything we do, always learning from our colleagues, partners, and customers. We are one team, focused on the “we” rather than the “I.”
 
-HUNGRY:
+Hungry:
 We have high expectations, and expect high performance of ourselves and of our teams. We constantly look to innovate and improve. We play to win and keep raising the bar to deliver results.
 
 With Spotify, it’s easy to find the right music for every moment – on your phone, your computer, your tablet and more.
@@ -565,15 +565,15 @@ Build technology that closes experience gaps.
 
 How we roll:
 
-TRANSPARENT:
+Transparent:
 We are a meritocracy and hold ourselves accountable. We reward the competent over the confident. 
-ALL IN:
+All in:
 We bet on Qualtrics and Qualtrics bets on us. This is our company. We deliver whatever it takes. 
-CUSTOMER OBSESSED:
+Customer Obsessed:
 If a customer is upset, we failed. Period. We learn, and we fix it. 
-ONE TEAM:
+One Team:
 There is only one team at Qualtrics. We win and lose together and never say, "That's not my job."
-SCRAPPY:
+Scrappy:
 We're smart, resourceful, and find a way. We write our own story instead of following others.
 
 
@@ -600,3 +600,193 @@ If you need Lola, you'll love Lola.
 You're welcome.
 
 Our mission is to give every person the power to control their own mental and physical health by capturing realtime bio-signals and making the data useful and actionable. We are the recognized market leader in continuous respiration sensing, real-time interventions, and actionable feedback.
+
+Secure Tactical Collaboration Platform.
+
+An encrypted communication platform centered around an intuitive collaboration interface, 
+GlobeKeeper utilizes standard equipment to create a secure, end-to-end solution that keeps your personnel safe, reduces costs, and enhances decision making capabilities.
+
+Real-Time Media Transfer.
+
+GlobeKeeper is a tactical and strategic operational platform that introduces military-grade security and encryption into civilian communication devices, elevating familiar personal communication features to mission-critical standards. 
+
+GlobeKeeper enables users to transmit live video and streaming, share files, text messages and pictures - all in real time and in a secure environment while using the iPhones, Androids and tablets they already have.
+
+Your customers don’t like online surveys. But they love to text.
+We empower you to have a text message conversation with your customer right after they’ve interacted with your brand. Get immediate feedback to help you run your business.
+
+AVISION was founded on the idea of improving our life with the help of robotic solutions. The team is comprised of industry experts in aviation, robotics, simulation, artificial intelligence, and embedded systems. Having expertise in both software and hardware engineering helps us effectively design and integrate advanced solutions.
+
+Our hardware and embedded professionals engineered unmanned aerial vehicles and custom sensor capabilities for different domains of our life: structure inspection, agriculture, and military. The latest innovation is computer-vision based collision avoidance system which enables autonomous UAV operation.
+
+Mobile phone insurance how it should be.
+
+The Platform for App-Enabled Healthcare.
+
+Bring healthcare innovations to market faster.
+
+MedStack delivers built-in privacy and security protocols and an HL7 FHIR data model in a developer-flexible cloud hosting environment with pre-written HIPAA privacy policy documentation, accelerating healthcare apps to market.
+
+Automate your manufacturing processes with ease. The world’s top performing manufacturers use Workflow to automate their business processes, reducing 30% in lead time per product and eliminating more than 90% of errors.
+
+Achieve seamless connectivity.
+
+Manufacturers have a hard time connecting people, machines, and data. By using Workflow, connect all using a single application to capture enterprise-wide metrics, reduce error, and ensure security and compliance.
+
+
+Essential:
+An entirely new type of company, creating solutions for the way people live in the 21st century.
+
+The Leading Enterprise Contract Management Platform in the Cloud.
+Easy. Intelligent. Enterprise-wide.
+
+Transforming the Foundation of Commerce.
+
+The velocity of business is increasing. Change is the only constant. The rewards – and the risks – have never been higher. To succeed in this new world, businesses must take a new approach to managing the relationships that drive commerce. Contracts are the foundation of those relationships.
+
+The Icertis Contract Management (ICM) platform transforms contracts into strategic business assets, giving global enterprises powerful new capabilities to maximize revenue, control costs, and manage risk.
+
+Highly configurable and flexible, the Icertis Contract Management (ICM) platform is easy to deploy. Designed for the modern enterprise with an intuitive user experience, it’s easy to use. Configure the platform to adapt to existing business processes, allow for unique contracts and workflows, or set up specialized user interfaces for individual roles making it easy to adopt.
+
+Read and analyze documents and third-party paper to provide authorized users with detailed risk reports, automatic obligation tracking and smart notifications. The smart, contextual interface makes it easy to understand an entire portfolio of agreements and dependent relationships at a glance.
+
+Streamline and systemize all types of contracts and associated documentation, for your entire organization, in a single solution. The platform also integrates and exchanges data with all major ERP, Sourcing, Procurement, CRM, CPQ, PLM, Project Management, Service Management, and Document Management solutions, unlocking the potential for true visibility across global enterprises.
+
+Every byte of data has a story to tell, something of significance that will inform the next thing to be done. In a data-driven enterprise, how we move our data becomes nearly as important as the data itself. With greater speed and agility, data’s value increases exponentially.
+
+From its very early days, we have open-sourced Apache Kafka™ and have led it to impressive industry-wide adoption across several thousand companies. Now we are focusing on building a streaming platform to help other companies get easy access to enterprise data as real-time streams.
+
+The world’s leading AI & IoT software platform for digital transformation.
+
+Proven Technology Stack.
+
+The world’s leading AI and IoT software platform for digital transformation, C3 IoT delivers a comprehensive platform as a service (PaaS) for rapidly developing and operating big data, predictive analytics, AI/machine learning, and IoT software as a service (SaaS) applications.
+
+The C3 Type System, a data object-centric abstraction layer that binds all C3 IoT Platform components, enables programmers and data scientists to develop and deploy production big data, predictive analytics, AI/machine learning, and IoT applications in 1/10th the time and cost of alternative technologies.
+
+Organizations need a way to get work done, not just talk about it. Smartsheet is the best way to plan, track, automate, and report on work, enabling you to move from idea to impact — fast.
+
+Getting From Idea to Impact.
+
+At a time when organizational speed and world-class execution are critical to gaining a competitive edge, modern work — especially at scale — is increasingly bogged down by legacy tools and legacy thinking.
+
+Smartsheet is designed to unleash the benefits of greater work agility and collaboration by providing a powerful platform for organizations to plan, track, automate, and report on work. Smartsheet empowers teams to execute with speed and accountability — and make better decisions, faster.
+
+We are in the business of training employees to make smarter security decisions.
+
+We are happy to go against the grain.
+We’re not a company that turns out bloatware year after year.
+We don’t work with only the bottom line in mind.
+And we feel fine with all that.
+
+We’re a team of free-thinking techies, who look at IT security issues a little differently.
+Where other IT security companies may value profits, we value, well…security.
+We are not in the pocket of any of the large players.
+We answer to no one but IT admins in the trenches.
+
+Our rules are: “Do it right the first time, do it fast, and have fun while you do it”.
+We work like that, because we think it’s the only way to go.
+We believe that only with community can you effectively secure your domains.
+We believe that as IT Admins we need to hang together, because if we don’t we will hang alone.
+
+We’re not just a different kind of security company, we are a security company that together with you, makes a difference.
+
+Welcome to intelligent mail.
+Lob's powerful suite of APIs delivers robust automation and scale for anything with a stamp.
+
+We gave mail an upgrade.
+
+Now you can program and control physical mail just like e-mail, from automatic triggers to lightning-fast delivery and everything in between. The result? A more timely, relevant, and personal customer experience that's fully automated and trackable. If it's mail, Lob does it better.
+
+Achieve scale for complex, labor-intensive, expensive processes that no one likes doing. Just set it and forget it.
+
+Lob automatically routes print requests through our vast network of vetted printers, so mail gets to its destination faster than ever.
+
+Forget rigid templates—our personalization makes your data truly variable, so you can iterate quickly, easily make changes, and do multivariate testing.
+
+Aggregate and piece-by-piece delivery tracking, complete mail history, and comprehensive logging—it's all right there.
+
+Making the world programmable.
+
+Lob makes it possible for enterprises to programmatically send physical mail at scale. Founded in 2013 and venture-backed, we pride ourselves in providing the building blocks for developers to automate the offline world.
+
+Textio is the augmented writing platform for creating highly effective job listings. By analyzing the hiring outcomes of more than 10 million job posts a month, Textio predicts the performance of your listing and gives you real-time guidance on how to improve it.
+On average, hiring teams with a high Textio Score recruit 25% more people qualified enough to interview and 23% more women—and they do it 17% faster.
+How does your company stack up?
+
+Be the learning loop.
+Textio’s predictive engine is fueled by global hiring data. More than 10 million new job posts and their real-world outcomes are added every month. Textio analyzes this data to find the meaningful language patterns that cause some posts to succeed where others fail. Then it feeds that guidance back to users, creating a learning loop that gets smarter with every keystroke.
+
+actionable intelligence for lean factories.
+Fast deployment. Pre-built ERP integration. Immediate results.
+
+Meeting customer's needs in an on-demand supply chain environment
+
+Optimization challenges are prevalent across supply chain and lean manufacturing domains. Customers demand more variety, delivered faster and at a lower cost. In the face of increased speed and complexity of data, LeanDNA is here to help make fast and accurate procurement decisions.
+
+World-class experts in cloud computing and operational excellence
+
+Our mission is to drive radical improvements in  manufacturing and supply chain operations
+
+Over the past 20 years, dramatic innovations in lean manufacturing techniques, technology and management have set in motion a third industrial revolution. Leading manufacturers have migrated from traditional, mass-production models to demand-driven manufacturing models. Information Technology is quickly becoming a commodity. Innovations in business management have provided corporations with new potential for organizational efficiency and effectiveness. Leading companies understand that fundamental changes are required to remain competitive, yet they struggle with the proper application of core process change, system implementation, and organizational policy deployment to drive real value within their company.
+
+LeanDNA’s team members have implemented major lean conversions in over 16 countries across industries ranging from food and personal productions to automotive and heavy industry. Having won the Shingo Prize for lean excellence for their software development efforts in 2001, LeanDNA® is the next generation of software to power the lean enterprise.
+
+Founded in 2015, Instabase's mission is to advance the state of the art by building tools that will help people solve problems, make discoveries, and create new breakthroughs.
+
+Founded in 2009 and holed up in the gritty part of San Francisco’s South of Market neighborhood, we’re a small collective of foodies and engineers with decades of robotics and restaurant experience. In the past five-plus years, we’ve solved many difficult engineering and manufacturing challenges, helped each other grow, and built some interesting intellectual property.
+
+Our first device makes gourmet burgers from scratch with no human interaction. These burgers are fresh-ground and grilled to order and accented by an infinitely personalizable variety of produce, seasonings, and sauces. Serving a burger this great at such affordable prices would be impossible without culinary automation.
+
+We’re building an engineering-focused group of analytic and creative individuals. The team consists of roboticists from institutions including Berkeley and Stanford and firms like Tesla and NASA as well as product managers with restaurant experience.
+
+Momentum is advised by some of the top restaurant operators, culinary experts, roboticists, and designers, including the former Head of R&D at Fat Duck.
+
+We’re building an engineering-focused group of analytic and creative individuals. This team includes wonderful advisers, consultants, investors, interns, service professionals, and engineers. Presented below is the leadership of that group, people who live to help each other blossom.
+
+We seek to catalyze a true sustainable revolution in agriculture. In order to create real change, we must account for the scientific and technical complexity of that challenge. We must also account for the complexity of a system that includes stakeholders across the private, public, and non-governmental sectors, groups that have historically struggled to find win-win solutions. We believe that there are non-zero-sum solutions to sustainable production that leave the planet and the people better off. We are passionate about building the technology to make this a reality.
+
+multi-cloud management platform.
+
+Reduce costs, automate tasks, and secure your entire cloud ecosystem in a unified view. CloudCheckr Cloud Management Platform (CMP) enables enterprises and service providers to take control of their cloud governance and cybersecurity posture.
+
+actionable visibility and control.
+
+enterprise cloud management for the public cloud.
+
+The CloudCheckr CMP offers a single pane of glass view to help modern enterprises manage and optimize their public cloud. DevOps, SecOps, and FinOps teams from hundreds of global enterprises and service providers rely on CloudCheckr to manage their Azure, AWS, and Google cloud investments so they can quickly optimize spend, eliminate waste, and improve security and compliance throughout their cloud journey.
+
+We design and deliver the most advanced automation platform. Businesses of all sizes, BPO providers and shared service organizations around the world use our software to provide exceptional benefits in operational quality, speed and cost.
+
+We believe human work should be creative and inspiring
+
+Our mission is to eradicate repetitive tasks through intelligent use of software automation. 
+We help businesses automate more efficiently and develop an agile robotic workforce by providing state-of-the-art technology.
+
+Designing intelligent solutions for today’s (and tomorrow’s) enterprises.
+ 
+Created to be accurate, open and extensible, our platform delivers the fastest and most reliable RPA that enhances business performance at unlimited scale; if it is easy to use, highly responsive, instantly scalable and allows you to build your own intellectual property on top, you know it’s UiPath.
+ 
+Because technology evolves every day, and leading-edge technology even more so, UiPath continuously integrates cognitive, AI and predictive analytics tools to help companies automate more processes and stay future-proofed.
+ 
+Staying on top is harder than getting there. This is why UiPath is committed to two product releases per year. We have the largest development team of any RPA vendor and we hire the best engineers and researchers in the fields of natural language processing, machine—and deep—learning.
+
+From outside, HackerEarth’s story may seem as one of those much talked about dorm room startups that has shown promise and rapidly growing. While most of that is true, HackerEarth’s story has been about perseverance and focus towards one goal - making technical recruitment simple and efficient. And this journey has been no walk in the park - we have had our share of challenges and we know there are more to come in the future. 
+
+But HackerEarth’s real story is that of the people who run it. From the two college friends who willed an idea to reality, to the people who put their faith into the aim of the startup and took it as their own, HackerEarth is many stories, of the people who make it. Our story is continually changing, as the people at HackerEarth keep writing new ones, everyday.
+
+More and more home buyers & sellers are starting their process online, but most brokers aren't set up to consistently turn online inquiries into transactions. Opcity's platform delivers close rates 3-5x the industry average. Our executive team and investors combine expertise in applied analytics, machine learning, and operations that uniquely position Opcity to disrupt this $500 billion market.
+
+Say hello to the future.
+
+Our vision has always been to create an iPhone that is entirely screen. One so immersive the device itself disappears into the experience. And so intelligent it can respond to a tap, your voice, and even a glance. With iPhone X, that vision is now a reality. Say hello to the future.
+
+
+We believe that technology should be accessible to everyone.
+The most powerful technology in the world is technology that everyone, including people with disabilities, can use. To work, create, communicate, stay in shape, and be entertained. So we don’t design products for some people or even most people. We design them for every single person.
+
+Embracing Disruption.
+
+Built for developers.
+
+GitHub is a development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside millions of other developers.
