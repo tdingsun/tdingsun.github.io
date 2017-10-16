@@ -10,13 +10,13 @@ function preload() {
 
 function setup() {
 	lyrics = data.join(" ");
-
-	for(var i = 6; i >= 2; i--){
+	let p = document.createElement("p");
+	for(var i = 4; i >= 2; i--){
 		let rm = new RiMarkov(i);
 		rm.loadText(lyrics);
-		let sentences = rm.generateSentences(3);
+		let sentences = rm.generateSentences(2);
 
-		let p = document.createElement("p");
+		
 		for (var j = 0; j < sentences.length; j++){
 			p.innerHTML += sentences[j];
 			p.innerHTML += " ";
