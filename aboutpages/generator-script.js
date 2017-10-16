@@ -11,7 +11,7 @@ function preload() {
 function setup() {
 	lyrics = data.join(" ");
 
-	for(var i = 6; i >= 2; i++){
+	for(var i = 6; i >= 2; i--){
 		let rm = new RiMarkov(i);
 		rm.loadText(lyrics);
 		let sentences = rm.generateSentences(5);
