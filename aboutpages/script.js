@@ -104,7 +104,7 @@ function kwic(index){
     scrollTop: $(element).offset().top - 150
 	}, 1000);
 
-	element.style.color = "#083";
+	element.style.color = "#00f";
 	if (prevElement != null && prevElement != element){
 		prevElement.style.color = "#555";
 	}
@@ -135,7 +135,7 @@ function kwic(index){
 			if (j == (parts.length - 1)){ //end the line with ... and a line break
 				kw_frame.innerHTML += parts[j] + " ... <br>";
 			} else { // put all the parts in the innerHTML with the word (in red) between the parts.
-				kw_frame.innerHTML += parts[j] + "<span style='color: #083; border: 1px solid #083; padding: 0 5px 0 5px; margin: 5px  0 5px 0;'>" + word + "</span>";
+				kw_frame.innerHTML += parts[j] + "<span style='color: #00f; border: 1px solid #00f; padding: 0 5px 0 5px; margin: 5px  0 5px 0;'>" + word + "</span>";
 			}
 		}
 	}
