@@ -14,7 +14,7 @@ function setup() {
 	for(var i = 4; i >= 2; i--){
 		let rm = new RiMarkov(i);
 		rm.loadText(lyrics);
-		let sentences = rm.generateSentences(30);
+		let sentences = rm.generateSentences(100);
 
 		
 		for (var j = 0; j < sentences.length; j++){
