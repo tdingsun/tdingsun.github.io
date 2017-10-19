@@ -1,4 +1,4 @@
-var w;
+//var w;
 $(document).ready(function(){
 	$("#about").hide();
 	$(".episode-container").hide();

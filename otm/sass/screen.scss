@@ -102,7 +102,7 @@ i {
 }
 
 iframe {
-	padding-bottom: 20px;
+	//padding-bottom: 20px;
 	filter: hue-rotate(23deg) brightness(135%) saturate(78%);
 	height: 50px;
 }
@@ -230,7 +230,7 @@ iframe {
 	text-align: center;
 	padding-left: 10px;
 	padding-right: 10px;
-	line-height: 40px;
+	padding-top: 10px;
 	font-size: 0.7em;
 	&:hover {
 		text-decoration: underline;
