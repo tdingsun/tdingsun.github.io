@@ -104,6 +104,7 @@ i {
 iframe {
 	padding-bottom: 20px;
 	filter: hue-rotate(23deg) brightness(135%) saturate(78%);
+	height: 50px;
 }
 
 #about-container {
@@ -307,6 +308,7 @@ iframe {
 		}
 		iframe {
 			padding: 0px;
+			height: 120px;
 		}
 		padding: 0;
 		box-sizing: border-box;

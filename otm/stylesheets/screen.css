@@ -168,9 +168,10 @@ i {
 iframe {
   padding-bottom: 20px;
   filter: hue-rotate(23deg) brightness(135%) saturate(78%);
+  height: 50px;
 }
 
-/* line 109, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 #about-container {
   padding: 20px;
   margin: 20px;
@@ -179,64 +180,64 @@ iframe {
   transition: 0.25s;
 }
 
-/* line 117, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 #about-button {
   text-align: center;
 }
 
-/* line 121, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 #about {
   box-sizing: border-box;
   margin-top: 20px;
 }
 
-/* line 129, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 .episode {
   border: 1px solid #F05324;
   margin: 20px;
   cursor: pointer;
 }
 
-/* line 137, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .episode-button {
   padding: 20px;
   transition: 0.25s;
 }
-/* line 142, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .episode-button:hover {
   background-color: #F05324;
   color: white;
 }
 
-/* line 148, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .episode-button-open {
   border-bottom: 1px solid #F05324;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 .episode-container {
   padding: 20px;
 }
 
-/* line 157, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 .show {
   display: block;
   transition: 0.25s;
 }
 
-/* line 162, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 .date {
   font-style: italic;
   float: left;
 }
 
-/* line 167, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 .length {
   font-style: italic;
   float: right;
 }
 
-/* line 172, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 .button {
   padding: 20px;
   margin: 20px -20px -20px -20px;
@@ -246,31 +247,31 @@ iframe {
   border-top: 1px solid #F05324;
   transition: 0.25s;
 }
-/* line 181, ../sass/screen.scss */
+/* line 182, ../sass/screen.scss */
 .button:hover {
   color: white;
   background-color: #F05324;
   border-top: none;
 }
 
-/* line 188, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 #footer {
   font-size: 0.75em;
   line-height: 1.5;
 }
 
-/* line 195, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 .episode-page {
   border: 1px solid #F05324;
   margin: 20px;
   padding: 20px;
 }
-/* line 201, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 .episode-page h2 {
   padding-bottom: 20px;
 }
 
-/* line 206, ../sass/screen.scss */
+/* line 207, ../sass/screen.scss */
 .nav {
   position: fixed;
   top: 0;
@@ -286,12 +287,12 @@ iframe {
   box-sizing: border-box;
 }
 
-/* line 222, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 .nav-up {
   top: -290px;
 }
 
-/* line 226, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 .nav-item {
   font-family: 'Noto Serif', serif;
   flex-grow: 1;
@@ -301,7 +302,7 @@ iframe {
   line-height: 40px;
   font-size: 0.7em;
 }
-/* line 234, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 .nav-item:hover {
   text-decoration: underline;
   -webkit-text-decoration-style: wavy;
@@ -310,7 +311,7 @@ iframe {
   font-style: italic;
 }
 
-/* line 243, ../sass/screen.scss */
+/* line 244, ../sass/screen.scss */
 .wavy_line {
   overflow: hidden;
   color: white;
@@ -325,28 +326,28 @@ iframe {
   font-size: 30px;
 }
 
-/* line 257, ../sass/screen.scss */
+/* line 258, ../sass/screen.scss */
 .nav-side {
   display: none;
 }
 
-/* line 261, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 .side-bar {
   display: none;
 }
 
-/* line 265, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 .section-des {
   display: none;
 }
 
 @media only screen and (min-width: 786px) {
-  /* line 270, ../sass/screen.scss */
+  /* line 271, ../sass/screen.scss */
   body {
     font-size: 18px;
   }
 
-  /* line 274, ../sass/screen.scss */
+  /* line 275, ../sass/screen.scss */
   .head-foot {
     margin-left: 20px;
     margin-top: 20px;
@@ -355,26 +356,26 @@ iframe {
     box-sizing: border-box;
   }
 
-  /* line 281, ../sass/screen.scss */
+  /* line 282, ../sass/screen.scss */
   #about-container {
     float: right;
     width: calc(40% - 105px);
   }
 
-  /* line 286, ../sass/screen.scss */
+  /* line 287, ../sass/screen.scss */
   #episode-list {
     margin-left: 20px;
     float: left;
     width: 60%;
   }
 
-  /* line 291, ../sass/screen.scss */
+  /* line 292, ../sass/screen.scss */
   .episode {
     margin-left: 0;
     width: 100%;
   }
 
-  /* line 295, ../sass/screen.scss */
+  /* line 296, ../sass/screen.scss */
   .nav {
     width: 60%;
     max-width: 800px;
@@ -384,16 +385,17 @@ iframe {
     padding: 0;
     box-sizing: border-box;
   }
-  /* line 305, ../sass/screen.scss */
+  /* line 306, ../sass/screen.scss */
   .nav a {
     display: none;
   }
-  /* line 308, ../sass/screen.scss */
+  /* line 309, ../sass/screen.scss */
   .nav iframe {
     padding: 0px;
+    height: 120px;
   }
 
-  /* line 314, ../sass/screen.scss */
+  /* line 316, ../sass/screen.scss */
   .episode-page {
     width: 60%;
     max-width: 800px;
@@ -402,7 +404,7 @@ iframe {
     box-sizing: border-box;
   }
 
-  /* line 321, ../sass/screen.scss */
+  /* line 323, ../sass/screen.scss */
   .nav-side {
     display: block;
     position: fixed;
@@ -414,18 +416,18 @@ iframe {
     width: 98px;
   }
 
-  /* line 333, ../sass/screen.scss */
+  /* line 335, ../sass/screen.scss */
   .nav-item {
     font-size: 1em;
   }
 
-  /* line 337, ../sass/screen.scss */
+  /* line 339, ../sass/screen.scss */
   .clip {
     margin-left: 80px;
   }
 }
 @media only screen and (min-width: 1100px) {
-  /* line 345, ../sass/screen.scss */
+  /* line 347, ../sass/screen.scss */
   .section-des {
     display: block;
     position: absolute;
@@ -434,19 +436,19 @@ iframe {
     font-size: 1em;
     color: #F05324;
   }
-  /* line 353, ../sass/screen.scss */
+  /* line 355, ../sass/screen.scss */
   .section-des h2 {
     color: #F05324;
   }
 
-  /* line 359, ../sass/screen.scss */
+  /* line 361, ../sass/screen.scss */
   .section-des-body {
     position: relative;
     top: -47px;
     z-index: -1;
   }
 
-  /* line 365, ../sass/screen.scss */
+  /* line 367, ../sass/screen.scss */
   .caption {
     font-size: 0.7em;
   }
