@@ -217,6 +217,13 @@ iframe {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	box-sizing: border-box;
+	text-align: center;
+	a:last-child {
+		text-align: right;
+	}
+	a:first-of-type {
+		text-align: left;
+	}
 
 }
 
@@ -227,10 +234,11 @@ iframe {
 .nav-item {
 	@include noto;
 	flex-grow: 1;
+	width: auto;
 	text-align: center;
 	padding-left: 10px;
 	padding-right: 10px;
-	padding-top: 10px;
+	padding-top: 20px;
 	font-size: 0.7em;
 	&:hover {
 		text-decoration: underline;
@@ -266,6 +274,10 @@ iframe {
 .section-des {
 	display: none;
 }
+
+.clip {
+		margin-left: 40px;
+	}
 
 @media only screen and (min-width: 786px){
 	body {

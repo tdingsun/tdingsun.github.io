@@ -284,24 +284,34 @@ iframe {
   flex-wrap: wrap;
   justify-content: space-between;
   box-sizing: border-box;
+  text-align: center;
+}
+/* line 221, ../sass/screen.scss */
+.nav a:last-child {
+  text-align: right;
+}
+/* line 224, ../sass/screen.scss */
+.nav a:first-of-type {
+  text-align: left;
 }
 
-/* line 223, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 .nav-up {
   top: -290px;
 }
 
-/* line 227, ../sass/screen.scss */
+/* line 234, ../sass/screen.scss */
 .nav-item {
   font-family: 'Noto Serif', serif;
   flex-grow: 1;
+  width: auto;
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 10px;
+  padding-top: 20px;
   font-size: 0.7em;
 }
-/* line 235, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 .nav-item:hover {
   text-decoration: underline;
   -webkit-text-decoration-style: wavy;
@@ -310,7 +320,7 @@ iframe {
   font-style: italic;
 }
 
-/* line 244, ../sass/screen.scss */
+/* line 252, ../sass/screen.scss */
 .wavy_line {
   overflow: hidden;
   color: white;
@@ -325,28 +335,33 @@ iframe {
   font-size: 30px;
 }
 
-/* line 258, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 .nav-side {
   display: none;
 }
 
-/* line 262, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
 .side-bar {
   display: none;
 }
 
-/* line 266, ../sass/screen.scss */
+/* line 274, ../sass/screen.scss */
 .section-des {
   display: none;
 }
 
+/* line 278, ../sass/screen.scss */
+.clip {
+  margin-left: 40px;
+}
+
 @media only screen and (min-width: 786px) {
-  /* line 271, ../sass/screen.scss */
+  /* line 283, ../sass/screen.scss */
   body {
     font-size: 18px;
   }
 
-  /* line 275, ../sass/screen.scss */
+  /* line 287, ../sass/screen.scss */
   .head-foot {
     margin-left: 20px;
     margin-top: 20px;
@@ -355,26 +370,26 @@ iframe {
     box-sizing: border-box;
   }
 
-  /* line 282, ../sass/screen.scss */
+  /* line 294, ../sass/screen.scss */
   #about-container {
     float: right;
     width: calc(40% - 105px);
   }
 
-  /* line 287, ../sass/screen.scss */
+  /* line 299, ../sass/screen.scss */
   #episode-list {
     margin-left: 20px;
     float: left;
     width: 60%;
   }
 
-  /* line 292, ../sass/screen.scss */
+  /* line 304, ../sass/screen.scss */
   .episode {
     margin-left: 0;
     width: 100%;
   }
 
-  /* line 296, ../sass/screen.scss */
+  /* line 308, ../sass/screen.scss */
   .nav {
     width: 60%;
     max-width: 800px;
@@ -384,17 +399,17 @@ iframe {
     padding: 0;
     box-sizing: border-box;
   }
-  /* line 306, ../sass/screen.scss */
+  /* line 318, ../sass/screen.scss */
   .nav a {
     display: none;
   }
-  /* line 309, ../sass/screen.scss */
+  /* line 321, ../sass/screen.scss */
   .nav iframe {
     padding: 0px;
     height: 120px;
   }
 
-  /* line 316, ../sass/screen.scss */
+  /* line 328, ../sass/screen.scss */
   .episode-page {
     width: 60%;
     max-width: 800px;
@@ -403,7 +418,7 @@ iframe {
     box-sizing: border-box;
   }
 
-  /* line 323, ../sass/screen.scss */
+  /* line 335, ../sass/screen.scss */
   .nav-side {
     display: block;
     position: fixed;
@@ -415,18 +430,18 @@ iframe {
     width: 98px;
   }
 
-  /* line 335, ../sass/screen.scss */
+  /* line 347, ../sass/screen.scss */
   .nav-item {
     font-size: 1em;
   }
 
-  /* line 339, ../sass/screen.scss */
+  /* line 351, ../sass/screen.scss */
   .clip {
     margin-left: 80px;
   }
 }
 @media only screen and (min-width: 1100px) {
-  /* line 347, ../sass/screen.scss */
+  /* line 359, ../sass/screen.scss */
   .section-des {
     display: block;
     position: absolute;
@@ -435,19 +450,19 @@ iframe {
     font-size: 1em;
     color: #F05324;
   }
-  /* line 355, ../sass/screen.scss */
+  /* line 367, ../sass/screen.scss */
   .section-des h2 {
     color: #F05324;
   }
 
-  /* line 361, ../sass/screen.scss */
+  /* line 373, ../sass/screen.scss */
   .section-des-body {
     position: relative;
     top: -47px;
     z-index: -1;
   }
 
-  /* line 367, ../sass/screen.scss */
+  /* line 379, ../sass/screen.scss */
   .caption {
     font-size: 0.7em;
   }
