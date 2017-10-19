@@ -73,7 +73,7 @@ $(document).ready(function(){
 	//Hide Header on on scroll down
 	var didScroll;
 	var lastScrollTop = 0;
-	var delta = 10;
+	var delta = 50;
 	var navbarHeight = $('.nav').outerHeight();
 
 	$(window).scroll(function(event){
