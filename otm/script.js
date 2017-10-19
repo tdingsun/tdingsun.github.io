@@ -3,7 +3,6 @@ $(document).ready(function(){
 	$("#about").hide();
 	$(".episode-container").hide();
 
-	//checkSize();
 	var nav_height = $('.nav').outerHeight();
 	$(".container").css("padding-top", nav_height + 20);
 	
