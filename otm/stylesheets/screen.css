@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, .nav, center,
+b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -160,7 +160,7 @@ h3 {
 }
 
 /* line 100, ../sass/screen.scss */
-i, .nav {
+i {
   font-style: italic;
 }
 
@@ -286,12 +286,12 @@ iframe {
   box-sizing: border-box;
 }
 
-/* line 223, ../sass/screen.scss */
+/* line 222, ../sass/screen.scss */
 .nav-up {
   top: -290px;
 }
 
-/* line 227, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 .nav-item {
   font-family: 'Noto Serif', serif;
   flex-grow: 1;
@@ -301,12 +301,13 @@ iframe {
   line-height: 40px;
   font-size: 0.7em;
 }
-/* line 235, ../sass/screen.scss */
+/* line 234, ../sass/screen.scss */
 .nav-item:hover {
   text-decoration: underline;
   -webkit-text-decoration-style: wavy;
   -moz-text-decoration-style: wavy;
   text-decoration-style: wavy;
+  font-style: italic;
 }
 
 /* line 243, ../sass/screen.scss */
@@ -376,51 +377,55 @@ iframe {
   /* line 295, ../sass/screen.scss */
   .nav {
     width: 60%;
+    max-width: 800px;
     margin-left: 20px;
     margin-top: 20px;
     border: none;
     padding: 0;
     box-sizing: border-box;
   }
-  /* line 304, ../sass/screen.scss */
+  /* line 305, ../sass/screen.scss */
   .nav a {
     display: none;
   }
-  /* line 307, ../sass/screen.scss */
+  /* line 308, ../sass/screen.scss */
   .nav iframe {
     padding: 0px;
   }
 
-  /* line 313, ../sass/screen.scss */
+  /* line 314, ../sass/screen.scss */
   .episode-page {
     width: 60%;
+    max-width: 800px;
     margin-left: 20px;
     margin-right: 0px;
     box-sizing: border-box;
   }
 
-  /* line 319, ../sass/screen.scss */
+  /* line 321, ../sass/screen.scss */
   .nav-side {
     display: block;
     position: fixed;
+    margin-top: 20px;
     right: 20px;
     text-align: right;
     border: 1px solid #F05324;
     padding: 20px;
-    width: 100px;
+    width: 98px;
   }
 
-  /* line 330, ../sass/screen.scss */
+  /* line 333, ../sass/screen.scss */
   .nav-item {
     font-size: 1em;
   }
 
-  /* line 334, ../sass/screen.scss */
+  /* line 337, ../sass/screen.scss */
   .clip {
     margin-left: 80px;
   }
-
-  /* line 338, ../sass/screen.scss */
+}
+@media only screen and (min-width: 1100px) {
+  /* line 345, ../sass/screen.scss */
   .section-des {
     display: block;
     position: absolute;
@@ -429,19 +434,19 @@ iframe {
     font-size: 1em;
     color: #F05324;
   }
-  /* line 346, ../sass/screen.scss */
+  /* line 353, ../sass/screen.scss */
   .section-des h2 {
     color: #F05324;
   }
 
-  /* line 352, ../sass/screen.scss */
+  /* line 359, ../sass/screen.scss */
   .section-des-body {
     position: relative;
     top: -47px;
     z-index: -1;
   }
 
-  /* line 358, ../sass/screen.scss */
+  /* line 365, ../sass/screen.scss */
   .caption {
     font-size: 0.7em;
   }

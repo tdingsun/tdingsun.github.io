@@ -204,7 +204,6 @@ iframe {
 }
 
 .nav {
-	@extend i;
 	position: fixed;
 	top: 0;
 	margin: 20px;
@@ -237,6 +236,7 @@ iframe {
 		-webkit-text-decoration-style: wavy;
 		-moz-text-decoration-style: wavy;
 		text-decoration-style: wavy;
+		font-style: italic;
 	}
 }
 
@@ -294,6 +294,7 @@ iframe {
 	}
 	.nav {
 		width: 60%;
+		max-width: 800px;
 		margin-left: 20px;
 		margin-top: 20px;
 		border: none;
@@ -312,6 +313,7 @@ iframe {
 	}
 	.episode-page {
 		width: 60%;
+		max-width: 800px;
 		margin-left: 20px;
 		margin-right: 0px;
 		box-sizing: border-box;
@@ -319,12 +321,13 @@ iframe {
 	.nav-side {
 		display: block;
 		position: fixed;
+		margin-top: 20px;
 		//left: calc(70% + 20px);
 		right: 20px;
 		text-align: right;
 		border: 1px solid $orange;
 		padding: 20px;
-		width: 100px;
+		width: 98px;
 	}
 
 	.nav-item {
@@ -335,6 +338,10 @@ iframe {
 		margin-left: 80px;
 	}
 
+	
+}
+
+@media only screen and (min-width: 1100px){
 	.section-des {
 		display: block;
 		position: absolute;
@@ -358,7 +365,5 @@ iframe {
 	.caption {
 		font-size: 0.7em;
 	}
-
-
 }
 
