@@ -309,7 +309,6 @@ iframe {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 20px;
-  font-size: 0.7em;
 }
 /* line 243, ../sass/screen.scss */
 .nav-item:hover {
@@ -322,6 +321,7 @@ iframe {
 
 /* line 252, ../sass/screen.scss */
 .wavy_line {
+  width: 80vw;
   overflow: hidden;
   color: white;
   text-decoration: underline;
@@ -335,33 +335,33 @@ iframe {
   font-size: 30px;
 }
 
-/* line 266, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .nav-side {
   display: none;
 }
 
-/* line 270, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 .side-bar {
   display: none;
 }
 
-/* line 274, ../sass/screen.scss */
+/* line 275, ../sass/screen.scss */
 .section-des {
   display: none;
 }
 
-/* line 278, ../sass/screen.scss */
+/* line 279, ../sass/screen.scss */
 .clip {
   margin-left: 40px;
 }
 
 @media only screen and (min-width: 786px) {
-  /* line 283, ../sass/screen.scss */
+  /* line 284, ../sass/screen.scss */
   body {
     font-size: 18px;
   }
 
-  /* line 287, ../sass/screen.scss */
+  /* line 288, ../sass/screen.scss */
   .head-foot {
     margin-left: 20px;
     margin-top: 20px;
@@ -370,26 +370,26 @@ iframe {
     box-sizing: border-box;
   }
 
-  /* line 294, ../sass/screen.scss */
+  /* line 295, ../sass/screen.scss */
   #about-container {
     float: right;
     width: calc(40% - 105px);
   }
 
-  /* line 299, ../sass/screen.scss */
+  /* line 300, ../sass/screen.scss */
   #episode-list {
     margin-left: 20px;
     float: left;
     width: 60%;
   }
 
-  /* line 304, ../sass/screen.scss */
+  /* line 305, ../sass/screen.scss */
   .episode {
     margin-left: 0;
     width: 100%;
   }
 
-  /* line 308, ../sass/screen.scss */
+  /* line 309, ../sass/screen.scss */
   .nav {
     width: 60%;
     max-width: 800px;
@@ -399,17 +399,17 @@ iframe {
     padding: 0;
     box-sizing: border-box;
   }
-  /* line 318, ../sass/screen.scss */
+  /* line 319, ../sass/screen.scss */
   .nav a {
     display: none;
   }
-  /* line 321, ../sass/screen.scss */
+  /* line 322, ../sass/screen.scss */
   .nav iframe {
     padding: 0px;
     height: 120px;
   }
 
-  /* line 328, ../sass/screen.scss */
+  /* line 329, ../sass/screen.scss */
   .episode-page {
     width: 60%;
     max-width: 800px;
@@ -418,31 +418,35 @@ iframe {
     box-sizing: border-box;
   }
 
-  /* line 335, ../sass/screen.scss */
+  /* line 336, ../sass/screen.scss */
   .nav-side {
     display: block;
     position: fixed;
     margin-top: 20px;
     right: 20px;
-    text-align: right;
+    text-align: left;
     border: 1px solid #F05324;
     padding: 20px;
-    width: 98px;
-  }
-
-  /* line 347, ../sass/screen.scss */
-  .nav-item {
+    width: 70px;
     font-size: 1em;
   }
 
-  /* line 351, ../sass/screen.scss */
+  /* line 350, ../sass/screen.scss */
+  .nav-item {
+    font-size: 1em;
+    text-decoration: none;
+    font-style: normal;
+  }
+
+  /* line 357, ../sass/screen.scss */
   .clip {
     margin-left: 80px;
   }
 }
 @media only screen and (min-width: 1100px) {
-  /* line 359, ../sass/screen.scss */
+  /* line 365, ../sass/screen.scss */
   .section-des {
+    margin-top: -20px;
     display: block;
     position: absolute;
     left: calc(60% + 40px);
@@ -450,19 +454,19 @@ iframe {
     font-size: 1em;
     color: #F05324;
   }
-  /* line 367, ../sass/screen.scss */
+  /* line 374, ../sass/screen.scss */
   .section-des h2 {
     color: #F05324;
   }
 
-  /* line 373, ../sass/screen.scss */
+  /* line 380, ../sass/screen.scss */
   .section-des-body {
     position: relative;
     top: -47px;
     z-index: -1;
   }
 
-  /* line 379, ../sass/screen.scss */
+  /* line 386, ../sass/screen.scss */
   .caption {
     font-size: 0.7em;
   }
