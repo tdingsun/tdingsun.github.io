@@ -48,13 +48,18 @@ a {
 	transition: 0.25s;
 }
 
+.hr-back-to-menu {
+	width: 39%;
+}
 .hr-long {
 	border-color: #F05324;
-	border-style: solid;
+	border-style: solid wavy;
 	border-width: .5px;
 	width: 100%;
 	transition: width 0.5s;
 	margin:auto;
+
+
 }
 
 .hr-white {
@@ -97,7 +102,7 @@ i {
 }
 
 iframe {
-	padding-top: 20px;
+	padding-bottom: 20px;
 	filter: hue-rotate(23deg) brightness(135%) saturate(78%);
 }
 
@@ -164,13 +169,14 @@ iframe {
 	float: right;
 }
 
-.listen-button {
+.button {
 	padding: 20px;
 	margin: 20px -20px -20px -20px;
 	color: $orange;
 	background-color: white;
 	text-align: center;
 	border-top: 1px solid $orange;
+	transition: 0.25s;
 
 	&:hover {
 		color: white;
@@ -190,14 +196,10 @@ iframe {
 	border: 1px solid $orange;
 	margin: 20px;
 	padding: 20px;
+	//margin-top: 260px;
 
 	h2 {
 		padding-bottom: 20px;
-	}
-
-	hr {
-		margin-top: 20px;
-		margin-bottom: 20px;
 	}
 }
 
@@ -211,11 +213,152 @@ iframe {
 	color: $orange;
 	border: 1px solid $orange;
 	transition: top 0.25s ease-in-out;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	box-sizing: border-box;
+
 }
 
-
-
 .nav-up {
-	top: -40%;
+	top: -290px;
+}
+
+.nav-item {
+	@include noto;
+	flex-grow: 1;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height: 40px;
+	font-size: 0.7em;
+	&:hover {
+		text-decoration: underline;
+		-webkit-text-decoration-style: wavy;
+		-moz-text-decoration-style: wavy;
+		text-decoration-style: wavy;
+	}
+}
+
+.wavy_line {
+	overflow: hidden;
+	color: rgb(255, 255, 255);
+	text-decoration: underline;
+	-webkit-text-decoration-color: $orange;
+	-moz-text-decoration-color: $orange;
+	text-decoration-color: $orange;
+	-webkit-text-decoration-style: wavy;
+	-moz-text-decoration-style: wavy;
+	text-decoration-style: wavy;
+	padding-bottom: 30px;
+	font-size: 30px;
+}
+
+.nav-side {
+	display: none;
+}
+
+.side-bar {
+	display: none;
+}
+
+.section-des {
+	display: none;
+}
+
+@media only screen and (min-width: 786px){
+	body {
+		font-size: 18px;
+	}
+
+	.head-foot {
+		margin-left: 20px;
+		margin-top: 20px;
+		float: left;
+		width: 60%;
+		box-sizing: border-box;
+	}
+	#about-container {
+
+		float: right;
+		width: calc(40% - 105px);
+	}
+	#episode-list {
+		margin-left: 20px;
+		float: left;
+		width: 60%;
+	}
+	.episode {
+		margin-left: 0;
+		width: 100%;
+	}
+	.nav {
+		width: 60%;
+		margin-left: 20px;
+		margin-top: 20px;
+		border: none;
+		//width: calc(30% - 120px);
+		//margin-right: 20px;
+		
+		//float: right;
+		a {
+			display: none;
+		}
+		iframe {
+			padding: 0px;
+		}
+		padding: 0;
+		box-sizing: border-box;
+	}
+	.episode-page {
+		width: 60%;
+		margin-left: 20px;
+		margin-right: 0px;
+		box-sizing: border-box;
+	}
+	.nav-side {
+		display: block;
+		position: fixed;
+		//left: calc(70% + 20px);
+		right: 20px;
+		text-align: right;
+		border: 1px solid $orange;
+		padding: 20px;
+		width: 100px;
+	}
+
+	.nav-item {
+		font-size: 1em;
+	}
+
+	.clip {
+		margin-left: 80px;
+	}
+
+	.section-des {
+		display: block;
+		position: absolute;
+		left: calc(60% + 40px);
+		width: calc(40% - 220px);
+		font-size: 1em;
+		color: $orange;
+
+		h2 {
+			color: $orange;
+		}
+
+	}
+
+	.section-des-body {
+		position: relative;
+		top: -47px;
+		z-index: -1;
+	}
+
+	.caption {
+		font-size: 0.7em;
+	}
+
+
 }
 

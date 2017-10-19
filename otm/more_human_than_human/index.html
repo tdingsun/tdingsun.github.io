@@ -8,18 +8,26 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../script.js"></script>
 </head>
-<body style="padding-top: calc(16% + 210px);">
+<body>
 	<div class="nav">
-		<a href="#">Top</a>
-		<a href="#">Section 1</a>
-		<a href="#">Section 2</a>
-		<a href="#">Section 3</a>
-		<a href="#">Section 4</a>
-		<a href="#">Section 5</a>
-		<a href="#">Section 6</a>
-		<iframe name="iframe1" id="iframe1" frameborder="0" scrolling="no" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnyc/#file=/audio/json/802222/&share=1"></iframe>
+		
+		<iframe name="iframe1" id="iframe1" frameborder="0" scrolling="no" height="120" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnyc/#file=/audio/json/802222/&share=1"></iframe>
+		<a class="nav-item top-button" href="#page_top">Top</a>
+		<a class="nav-item" href="#section-1">Section 1</a>
+		<a class="nav-item" href="#section-2">Section 2</a>
+		<a class="nav-item" href="#section-3">Section 3</a>
+		<a class="nav-item" href="#section-4">Section 4</a>
+		<a class="nav-item" href="#section-5">Section 5</a>
 	</div>
-	<div class="episode-page">
+	<div class="nav-side">
+		<a class="nav-item" href="#page_top">Top</a>
+		<a class="nav-item" href="#section-1">Section 1</a>
+		<a class="nav-item" href="#section-2">Section 2</a>
+		<a class="nav-item" href="#section-3">Section 3</a>
+		<a class="nav-item" href="#section-4">Section 4</a>
+		<a class="nav-item" href="#section-5">Section 5</a>
+	</div>
+	<div class="episode-page" id="page_top">
 		<p class="date">10-06-17</p>
 		<p class="length">50 min</p>
 		<hr class="hr-long">
@@ -27,83 +35,110 @@
 		<img src="images/cover.jpg" width="100%">
 		
 		<p><i>
-		1. Bob ruminates on the media’s knee-jerk attempts to quantify a crisis. And Omaya Sosa Pascual, a journalist with the Center for Investigative Journalism in Puerto Rico, discusses the scale of devastation on the island.
+		1. Bob ruminates on the media&rsquo;s knee-jerk attempts to quantify a crisis. And Omaya Sosa Pascual, a journalist with the Center for Investigative Journalism in Puerto Rico, discusses the scale of devastation on the island.
 		<br><br>
-		2. New Yorker columnist Masha Gessen explains why the media should apply the term “terrorism” with care.
+		2. New Yorker columnist Masha Gessen explains why the media should apply the term &ldquo;terrorism&rdquo; with care.
 		<br><br>
-		3. Buzzfeed News’s world correspondent J. Lester Feder on how country music went conservative. 
+		3. Buzzfeed News&rsquo;s world correspondent J. Lester Feder on how country music went conservative. 
 		<br><br>
 		4. Historian Nadine Hubbs examines generic assumptions about country music, and how they betray an underlying discomfort with the working class in America.
 		<br><br>
 		5. Historian Alison Landsberg speaks with Brooke about Blade Runner and human memory.
 		</i></p>
-		<hr class="hr-long">
-		<p>
+		<div class="divider">
+			<div class="wavy_line" id="section-1">
+				____________________________________________________________________________________
+			</div>
+			<div class="section-des">
+				<h2>IT'S NOT ABOUT THE NUMBER</h2>
+				<div class="section-des-body">
+					<img src="images/section-1.jpg" width="100%">
+					<p class="caption">
+						The aftermath of Hurricane Maria in Toa Alta, Puerto Rico, seen from above. ( Gerald Herbert / AP Images )
+					</p>
+					<br>
+					<p><i>
+						This week, the news was awash in grim numbers the death tolls for the Las Vegas shooting, the ongoing devastation in Puerto Rico, and how these tragedies stack up against those of mass shootings and hurricanes past.
+						<br><br>
+						In this essay, Bob examines the media&rsquo;s longstanding emphasis on the number of deceased and why this convention is both misleading and ripe for abuse. He also speaks with Omaya Sosa Pascual, a journalist with the Center for Investigative Journalism in Puerto Rico, about how current death toll reports fail to capture the scale of devastation and suffering on the island.
+					</i></p>
+				</div>
+			</div>
+		</div>
+		<p class="section">
 			<span class="cue">[PROMOS/MUSIC UP & UNDER]</span>
 			<br><br>
-			<span class="cue">BROOKE GLADSTONE</span>  From WNYC in New York, this is On the Media. I’m Brooke Gladstone.
+			<span class="cue">BROOKE GLADSTONE</span>  From WNYC in New York, this is On the Media. I&rsquo;m Brooke Gladstone.
 			<br><br>
-			<span class="cue">BOB GARFIELD</span>  And I’m Bob Garfield.
+			<span class="cue">BOB GARFIELD</span>  And I&rsquo;m Bob Garfield.
 			<br><br>
 			<span class="cue">[MUSIC UP & UNDER]</span>
 			<br><br>
 			Anxious about an autumn of catastrophe? Take a number.
 			<br><br>
-			<span class="cue">[CLIPS]</span>
-			<br><br>
-			<span class="cue">FEMALE CORRESPONDENT</span> The deadliest mass shooting in modern US history.
-			<br><br>
-			<span class="cue">MALE CORRESPONDENT</span>  The most deadly mass shooting in recent American history.
-			<br><br>
-			<span class="cue">MALE CORRESPONDENT</span>  The deadliest mass shooting in American history, more than 50 —
-			<br><br>
-			<span class="cue">[END CLIP]</span>
-			<br><br>
+			<div class="clip">
+				<span class="cue">[CLIPS]</span>
+				<br><br>
+				<span class="cue">FEMALE CORRESPONDENT</span> The deadliest mass shooting in modern US history.
+				<br><br>
+				<span class="cue">MALE CORRESPONDENT</span>  The most deadly mass shooting in recent American history.
+				<br><br>
+				<span class="cue">MALE CORRESPONDENT</span>  The deadliest mass shooting in American history, more than 50 &mdash;
+				<br><br>
+				<span class="cue">[END CLIP]</span>
+			</div>
+			<br>
 			<span class="cue">BOB GARFIELD</span>  As the hours ticked by, Sunday, Monday and Tuesday, the media, in a vacuum of information and understanding that so often accompanies tragedy, offered up-to-the-minute reckonings of the Las Vegas death toll 20, 50, 58, breathlessly watching every nudge upwards, like a pledge thermometer at a telethon.
 			<br><br>
-			<span class="cue">[CLIPS]</span>
-			<br><br>
-			<span class="cue">MALE CORRESPONDENT</span>  It was 58, now up to 59 dead.
-			<br><br>
-			<span class="cue">MALE CORRESPONDENT</span>  It’s also more than the total amount killed in the Virginia Tech and Sandy Hook Elementary shootings, combined. In fact, Sunday night’s shooting in Las Vegas was deadlier than the deadliest single day for Americans in the entire war in Afghanistan, and that is all 16 years’ worth.
-			<br><br>
-			<span class="cue">[END CLIP]</span>
-			<br><br>
+			<div class="clip">
+				<span class="cue">[CLIPS]</span>
+				<br><br>
+				<span class="cue">MALE CORRESPONDENT</span>  It was 58, now up to 59 dead.
+				<br><br>
+				<span class="cue">MALE CORRESPONDENT</span>  It&rsquo;s also more than the total amount killed in the Virginia Tech and Sandy Hook Elementary shootings, combined. In fact, Sunday night&rsquo;s shooting in Las Vegas was deadlier than the deadliest single day for Americans in the entire war in Afghanistan, and that is all 16 years&rsquo; worth.
+				<br><br>
+				<span class="cue">[END CLIP]</span>
+			</div>
+			<br>
 			<span class="cue">BOB GARFIELD</span>  Okay, sickening fact noted. Look, there are reasons for such impulses. Once again, amid chaos, hard facts seem so urgent and fetching. And, obviously, death tolls are a convenient shorthand for the enormity of tragic events. But they are also blunt, misleading and ripe for abuse.
 			<br><br>
-			<span class="cue">[CLIP]</span>
-			<br><br>
-			<span class="cue">MALE CORRESPONDENT</span>  The South Vietnamese lost 216 killed, enemy dead numbered 827, second-highest weekly figure this year.
-			<br><br>
-			<span class="cue">[END CLIP]</span>
-			<br><br>
+			<div class="clip">
+				<span class="cue">[CLIP]</span>
+				<br><br>
+				<span class="cue">MALE CORRESPONDENT</span>  The South Vietnamese lost 216 killed, enemy dead numbered 827, second-highest weekly figure this year.
+				<br><br>
+				<span class="cue">[END CLIP]</span>
+			</div>
+			<br>
 			<span class="cue">BOB GARFIELD</span>  In Vietnam, an entire war was fed with a weekly body count, not just dubious in its accounting but ruinous in its effect, suggesting a steady path to victory in a lost cause. This could not have taken place with the media not a reliable messenger of an ongoing big lie. And this is a lesson we simply have never learned.
 			<br><br>
-			<span class="cue">[CLIP]</span>
-			<br><br>
-			<span class="cue">FEMALE CORRESPONDENT</span>  In Puerto Rico, at least 16 people are now dead, thousands of homes —
-			<br><br>
-			<span class="cue">[END CLIP]</span>
-			<br><br>
+			<div class="clip">
+				<span class="cue">[CLIP]</span>
+				<br><br>
+				<span class="cue">FEMALE CORRESPONDENT</span>  In Puerto Rico, at least 16 people are now dead, thousands of homes &mdash;
+				<br><br>
+				<span class="cue">[END CLIP]</span>
+			</div>
+			<br>
 			<span class="cue">BOB GARFIELD</span>  Sixteen dead? Hey, not bad in the overall scheme of things, right? Except that when communications are restored and a full accounting takes place, the number will rise by multiples.
 			<br><br>
 			Omaya Sosa Pascual of the Center for Investigative Journalism in Puerto Rico has been trying to run down a more accurate count.
 			<br><br>			
-			<span class="cue">OMAYA SOSA PASCUAL</span>  We could at least corroborate around 60 more deaths, and we only spoke to people, let’s say, from six or seven municipalities, and there are 78. So certainly, it could be in the hundreds. Even the agency that takes care of certifying deaths here was down for the first whole week. They still don’t have computers, they still don’t have electricity, so their 16 death count number means nothing. And yesterday, just a couple of hours after President Trump left, they revised the number for the first time, and now it’s 34, more than double.
+			<span class="cue">OMAYA SOSA PASCUAL</span>  We could at least corroborate around 60 more deaths, and we only spoke to people, let&rsquo;s say, from six or seven municipalities, and there are 78. So certainly, it could be in the hundreds. Even the agency that takes care of certifying deaths here was down for the first whole week. They still don&rsquo;t have computers, they still don&rsquo;t have electricity, so their 16 death count number means nothing. And yesterday, just a couple of hours after President Trump left, they revised the number for the first time, and now it&rsquo;s 34, more than double.
 			<br><br>
 			<span class="cue">BOB GARFIELD</span>  That, too, will rise.
 			<br><br>
-			<span class="cue">OMAYA SOSA PASCUAL</span>  This has not ended. They still don’t have electricity. All the elderly homes don’t have electricity, either. And you can ask yourself what’s happening with those human beings? They are dying every day!
+			<span class="cue">OMAYA SOSA PASCUAL</span>  This has not ended. They still don&rsquo;t have electricity. All the elderly homes don&rsquo;t have electricity, either. And you can ask yourself what&rsquo;s happening with those human beings? They are dying every day!
 			<br><br>
-			<span class="cue">BOB GARFIELD</span>  Hurricane Maria has equally played havoc with buildings, bridges, roads, water supply, sewers, a critical dam, communications and the island’s very ecology that will require years, decades to repair. An entire society has been paralyzed with unknowable consequences.
+			<span class="cue">BOB GARFIELD</span>  Hurricane Maria has equally played havoc with buildings, bridges, roads, water supply, sewers, a critical dam, communications and the island&rsquo;s very ecology that will require years, decades to repair. An entire society has been paralyzed with unknowable consequences.
 			<br><br>
-			<span class="cue">OMAYA SOSA PASCUAL</span>  Many people are just leaving, sending their children away so they can be safe. And it’s going to be a couple of months before people can just go to work. And many people are, are just being laid off. Nobody’s talking about that yet. Many people have not left shelters yet. There’s people even  making improvised shelters in the center of the island, like breaking into a school, for example, because some people, when they go back, they don’t have a roof, they don’t have anything.
+			<span class="cue">OMAYA SOSA PASCUAL</span>  Many people are just leaving, sending their children away so they can be safe. And it&rsquo;s going to be a couple of months before people can just go to work. And many people are, are just being laid off. Nobody&rsquo;s talking about that yet. Many people have not left shelters yet. There&rsquo;s people even  making improvised shelters in the center of the island, like breaking into a school, for example, because some people, when they go back, they don&rsquo;t have a roof, they don&rsquo;t have anything.
 			<br><br>
 			<span class="cue">BOB GARFIELD</span>  Not even a destination for their dead.
 			<br><br>
 			<span class="cue">OMAYA SOSA PASCUAL</span>  People have even had to bury their loved ones themselves in some kind of a home grave or something like that.
 			<br><br>
-			<span class="cue">BOB GARFIELD</span>  But if you were a president who waited a week to facilitate relief shipments, ongoing calamity doesn’t justify your indifference. So, death toll.
+			<span class="cue">BOB GARFIELD</span>  But if you were a president who waited a week to facilitate relief shipments, ongoing calamity doesn&rsquo;t justify your indifference. So, death toll.
 			<br><br>
 			<span class="cue">[CLIP]</span>
 			<br><br>
@@ -117,10 +152,661 @@
 			<br><br>
 			<span class="cue">BOB GARFIELD</span>  Using an affluent, less ravaged enclave of the island as a backdrop, the president of the United States then tossed paper towels to survivors, like a teeshirt gun at a sports arena, just the latest clown show from a man who views the world through Nielsen ratings.
 			<br><br>
-			But history is not a show or a competition or a tally sheet. In 1914, Austria's archduke and duchess were assassinated in Sarajevo. The death toll was two; the result was World War I. There is also the danger on the other side of news as cost accounting. If numbers define the toll of horror, the estimated 45 million souls who died in Mao Zedong’s Great China Famine would render 9/11 insignificant. They would render the Holocaust insignificant. But, of course, it doesn't work that way. Ask anybody who's ever lost a child. Las Vegas cannot be measured against Sandy Hook and Puerto Rico cannot be measured against New Orleans. Pay no attention to the headline declarations of “worst in American history.” There is not meter, there is no calculus, there is no rating system for tragedy.
+			But history is not a show or a competition or a tally sheet. In 1914, Austria&rsquo;s archduke and duchess were assassinated in Sarajevo. The death toll was two; the result was World War I. There is also the danger on the other side of news as cost accounting. If numbers define the toll of horror, the estimated 45 million souls who died in Mao Zedong&rsquo;s Great China Famine would render 9/11 insignificant. They would render the Holocaust insignificant. But, of course, it doesn&rsquo;t work that way. Ask anybody who&rsquo;s ever lost a child. Las Vegas cannot be measured against Sandy Hook and Puerto Rico cannot be measured against New Orleans. Pay no attention to the headline declarations of “worst in American history.” There is not meter, there is no calculus, there is no rating system for tragedy.
 			<br><br>
 			<span class="cue">[MUSIC UP & UNDER]</span>
 		</p>
+		<div class="divider">
+			<div class="wavy_line" id="section-2">
+				____________________________________________________________________________________
+			</div>
+			<div class="section-des">
+				<h2>THE TROUBLE WITH DEFINING &ldquo;TERRORISM&rdquo;</h2>
+				<div class="section-des-body">
+					<img src="images/section-2.jpg" width="100%">
+					<p class="caption">
+						Investigators walk around the festival grounds across the street from the site of the mass shooting in Las Vegas. ( Marcio Jose Sanchez / AP Images )
+					</p>
+					<br>
+					<p><i>
+						After the shooting in Las Vegas last week, old debates have gained new purchase is this the time to talk about gun violence? Why are the vast majority of mass homicides committed by white men? And should we call what happened terrorism? Brooke speaks with New Yorker columnist Masha Gessen, author of The Future is History How Totalitarianism Reclaimed Russia, about why so many people are insistent on calling this latest act of violence &ldquo;terrorism.&rdquo; Gessen argues for restraint with use of the term, cautioning that it won’t serve to correct systemic injustices.
+
+					</i></p>
+				</div>
+			</div>
+		</div>
+		<p class="section">
+			<span class="cue">[MUSIC UP & UNDER]</span>
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  And yet, we keep grasping for shorthand, applying numbers to quantify pain and terms to explain the inexplicable, words that, for instance, cast a random act of violence as a tactic in a forever war.
+			<br><br>
+			<span class="cue">[CLIP]</span>
+			<br><br>
+			<span class="cue">MALE CORRESPONDENT</span>  Was the attack in Las Vegas domestic terrorism? It depends on who you ask.
+			<br><br>
+			<span class="cue">MALE CORRESPONDENT</span>  Ariana Grande tweeted, &ldquo;look at this & call this what it is = terrorism.&rdquo;
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  According to the FBI, for something to be called “domestic terrorism” the perpetrator must be pursuing a political or social objective. According to the Patriot Act, acts of domestic terrorism involve crimes dangerous to human life, primarily in the United States, intended to intimidate or coerce the population or to influence the policy or conduct of the government.
+			<br><br>
+			But New Yorker columnist Masha Gessen says there are plenty of other reasons besides the matter of definition why we should beware calling what happened in Las Vegas &ldquo;terrorism.&rdquo;
+			<br><br>
+			<span class="cue">MASHA GESSEN</span>  I think most people don't realize this but in the years since the war on terror began, we've established what amounts to sort of a parallel system of law enforcement against suspected terrorists. And according to the Human Rights Watch in Columbia Law School, a human rights project study, a third of the people who have been convicted on terrorism-related charges in this country were arrested as a result of an FBI sting operation in which the informant engineered the suppose terrorist plot. And the people who are targeted are invariably Muslim, usually brown and often immigrants.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  And once they&rsquo;re treated as terrorists, what happens to them?
+			<br><br>
+			<span class="cue">MASHA GESSEN</span>  And then what happens is that there are separate sentencing guidelines for terrorism-related crimes. So, to give you an example, if somebody were convicted of, say, obstruction of justice related to a non-terrorism prosecution, that person would get something like six years less than somebody who is convicted of the exact same crime for the exact same actions but related to a terrorism-related prosecution. Almost everyone who is accused of terrorism is held in special isolation cells, and, and this is a very important and painful part for immigrants,  correspondence and telephone conversations are allowed only in English because an FBI agent is always listening in and they have to accommodate the FBI agents. So solitary, as such, is a torture practice, but this is like super-solitary.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  You argue that what we saw in Las Vegas doesn't fit traditional definitions of terrorism, and there were similar calls to apply the word after the death of Heather Heyer in Charlottesville. Could you make a case against the word in both incidents?
+			<br><br>
+			<span class="cue">MASHA GESSEN</span>  I don't think either case can be called terrorism because, as far as we know in the Las Vegas shooting, there was no political objective. As for Charlottesville, as far as we know, there was a political objective or at least there was political motivation, but this was not a symbolic victim.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Right.
+			<br><br>
+			<span class="cue">MASHA GESSEN</span>  This was a direct attack on counter-protesters.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  And why is this important?
+			<br><br>
+			<span class="cue">MASHA GESSEN</span>  Because the word “terrorism” stands for a very destructive force in American politics that has been operative for the last 16 years. We have created a paralegal system. We have created all sorts of extralegal weapons for fighting terrorism. And we have also imbued acts of senseless violence with meaning. What happens to an aspiring thug when he stumbles upon the possibility of allying himself with, say, ISIS, whether or not that connection is real, he goes from being a common criminal to being an enemy combatant. And, you know, I reported on the Tsarnaev trial in Boston, and I literally lost count of the number of times that the assistant district attorney used the words “they attacked us.”
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  You&rsquo;re talking about the two brothers who committed the Boston Marathon bombing in 2014.
+			<br><br>
+			<span class="cue">MASHA GESSEN</span>  Right. So these two young men committed an absolutely heinous crime. They killed three people, they maimed 264 others, but that crime was not an act of war. And I think that it's doing terrorists a lot of favors to sort of endow them with the power of attacking a great power and sort of accepting the declaration of war.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  But weren&rsquo;t they allied with Chechens engaged in terrorism?
+			<br><br>
+			<span class="cue">MASHA GESSEN</span>  There is no evidence that it was anything but these two men, filled with rage. And, in this sense, they&rsquo;re much more similar to the mass shootings that are epidemic in this country than they are to acts committed by ISIS.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  So how do you explain demands by activists and commentators to call it “terrorism”?
+			<br><br>
+			<span class="cue">MASHA GESSEN</span>  There is this hope that if President Trump calls it “terrorism” &mdash; and this is a man who seems to be incapable of compassion and incapable of taking on political responsibility, so maybe if he mouths the word, for a second it will feel like things are real and we&rsquo;re protected, because as much as terrorists benefit from having their violence imbued with meaning, in a weird way, people who are terrorized by senseless violence also benefit from imbuing it with meaning. Just ascribing it to a terrorist plot makes us feel a little bit less defenseless.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  But there's also an attempt to make a broader political point with the word, isn't there? You know, who poses a statistically greater risk to the population in this country?
+			<br><br>
+			<span class="cue">MASHA GESSEN</span>  Right, so there are no two ways about it. A statistically greater risk to Americans is posed by white men who have easy access to guns and not by Muslims, immigrants, brown people. And so, it seems like getting him to call the Las Vegas shooting “terrorism” is a shortcut to acknowledging that. But I don't think it is.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  So, to sum up, the problem with using the word “terrorism” is it's not going to correct the racism with which it's used and the debasement of the political system simply by applying it more broadly, and &mdash;
+			<br><br>
+			<span class="cue">[BOTH SPEAK/OVERLAP]</span>
+			<br><br>
+			<span class="cue">MASHA GESSEN</span>  I mean, basically, it's, it's the proposal to 
+			spread injustice more fairly. It doesn't stop being injustice because of it.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Masha, thank you very much.
+			<br><br>
+			<span class="cue">MASHA GESSEN</span>  Thank you.
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Masha Gessen is a columnist for The New Yorker and the author of The Future is History How Totalitarianism Reclaimed Russia.
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  Coming up, country music has deep ties to American conservatism but it wasn&rsquo;t always that way.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  This is On the Media.
+		</p>
+		<div class="wavy_line" id="section-3">
+			____________________________________________________________________________________
+		</div>
+		<p class="section">
+			<span class="cue">BROOKE GLADSTONE</span>  This is On the Media. I'm Brooke Gladstone.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  And I'm Bob Garfield. As of Friday afternoon, the police had yet to find a motive for the Las Vegas massacre targeting patrons of a country music concert. But Fox News Channel was quick to air a theory.
+
+			<br><br>
+			<span class="cue">[CLIP]</span>
+
+			<br><br>
+			<span class="cue">RETIRED ARMY LIEUTENANT COLONEL TONY SHAFFER</span>  It was a politically-selected target. I think the perception was there was going to be a lot of pro-gun folks there, Trump supporters at this concert. So, therefore, I believe the perception was, by the shooter, that this was a legitimate target of political expression.
+
+			<br><br>
+			<span class="cue">[END CLIP]</span>
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  What's striking about this particular baseless allegation is the association of country music fandom with political conservatism. It's true that country music&rsquo;s fan base does include many of the very white working class credited for the rise of Donald Trump, but it wasn't always that way.
+
+			J. Lester Feder is a world correspondent for BuzzFeed News and the author of a study of country music&rsquo;s political roots, ranging from 1920 to 1974. Lester, welcome to On the Media.
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  Thank you very much for having me.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  So the roots of country music, as we know it today, are a combination of blues, blue grass, folk. How did those disparate art forms come to be what they are today?
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  It was really simple. It was about race. The record companies created what were called “race records” to sell to black people and what were then called “hillbilly records” to sell to white people in the South. Really, it&rsquo;s after World War II that Nashville emerges as a kind of capital of country music and a very tightly-controlled stream from production to what then became popular. In the late 20th century, radio was king. If you didn't make it on country radio, which was controlled by a handful of very large corporations, you couldn&rsquo;t make it in mainstream country, And that largely remains the case today.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  Country music's first political marriages were not with conservatism, they were kind of new deal-ish, which is lefty.
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  Well, at the time, white Southerners were Democrats. Southern politics, the politics of the federal government and public assistance, had a lot of support among the white South. It was really only in the 1960s where the conservative movement used a lot of the anger and frustration over the civil rights movement to turn a lot of white Southerners against what became big government, where you had the federal government stepping in to desegregate. But that became a national phenomenon by the middle or late ‘60s, and some of the most violent backlashes were happening in places like Boston, where forced busing was highly controversial. And, in that time, you saw a brand of white southern conservative politics being nationalized, and the biggest force for that was Alabama Governor George Wallace who was a segregationist Democrat who ran for president four times, both as an Independent and as a Democrat, and really transformed the politics of race in America.
+
+			<br><br>
+			<span class="cue">[CLIP/&ldquo;WALLACE IN THE WHITE HOUSE&rdquo; BY LAMAR MORRIS]</span>
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  He was finding audiences in places like Wisconsin, in what we call the Rust Belt now. That 1968-1969 period was really transformative, both for the politics of race in America and also for the politics of country music.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  We&rsquo;ve been talking about 1968-1969, which 
+			happened to be the year when this song was released.
+
+			<br><br>
+			<span class="cue">[CLIP/&ldquo;OKIE FROM MUSKOGEE&rdquo;]</span>
+			<br><br>
+			MERLE HAGGARD SINGING
+			<br><br>
+			We don't smoke marijuana in Muskogee;
+			<br><br>
+			We don't take our trips on LSD
+			<br><br>
+			We don't burn our draft cards down on Main Street;
+			<br><br>
+			‘Cause we like livin' right and bein' free.
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  Merle Haggard, “Okie from Muskogee.” Tell me about that song.
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  So Haggard says that he initially wrote that song as a joke. The story that Haggard told about it is that they were on their tour bus going through Oklahoma. They were smoking weed. They went past the sign for Muskogee. Somebody said, I bet they don&rsquo;t smoke marijuana in Muskogee, and then they wrote the rest of the lyrics.
+
+			<br><br>
+			<span class="cue">MERLE HAGGARD/SINGING</span>
+
+			Like the hippies out in San Francisco do.
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  And when he started performing it, it got this explosive reaction. What he had written as a parody became an anthem.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  The song became a sensation, and then what happened?
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  So he then followed that song up with a song called &ldquo;The Fightin&rsquo; Side of Me,&rdquo; which was a very direct attack on people protesting against the Vietnam War, and that sounds much more like it was intended to be anthemic.
+
+			<br><br>
+			<span class="cue">[CLIP/&ldquo;THE FIGHTIN&rsquo; SIDE OF ME&rdquo;]</span>
+
+			<br><br>
+			MERLE HAGGARD SINGING
+			<br><br>
+			Yeah, walkin' on the fightin' side of me.
+			<br><br>
+			Runnin' down the way of life,
+			<br><br>
+			Our fightin' men have fought and died to keep.
+			<br><br>
+			If you don't love it, leave it
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  That song was also very popular. And other people in the industry realized that there was a real marketing opportunity here.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  The historian Diane Pecknold observes that it wasn&rsquo;t so much that country music moved to the right but that the right moved toward country music.
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  I think that's right. The Nixon campaign in &rsquo;68 did run some furtive country music advertisements it was considered too tacky to do too publicly but that was happening a little bit under the radar. After the election, Nixon was the first to issue a declaration in honor of country music. He was the first president to visit the Grand Ole Opry when he was trying to save his skin during the, sort of the height of the Watergate scandal, trying to use it as a way of substantiating the claim that the Republican Party spoke for the heartland and the Democrats did not.
+
+			<br><br>
+			But there was a real hunger in a lot of parts of America for representation, and country music did offer a landscape that was talking a lot about old-fashioned values. But it wasn't uniform, and, and one of the most interesting examples was the Loretta Lynn song called ”The Pill,” which was talking about the liberation that it gave for women because they had access to birth control.
+			
+			<br><br>
+			<span class="cue">[CLIP/&ldquo;THE PILL&rdquo;]</span>
+			<br><br>
+			LORETTA LYNN, SINGING
+			<br><br>
+			… all I've seen of this old world
+			<br><br>
+			Is a bed and a doctor bill
+			<br><br>
+			I'm tearin' down your brooder house
+			<br><br>
+			'Cause now I've got the pill
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  So there was complexity in it, but it was one of the few places in popular culture where people who were scared of that kind of change really could gather.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  All right, so maybe the conservative embrace of country music was fully organic because of shared values or maybe was manipulated by pols and music executives. However you interpret it, by the mid-‘70s the trajectory was established, and overlap seems to get greater and greater all the time.
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  I think a lot of that has to do with the fact that country radio, which remains very corporate, does have a lock on who can become a superstar and who cannot. And so, if you get sort of an organized fan backlash against a musician over their politics. their career is done. And the most &mdash; the high-profile example of that that people will be familiar with is what happened to the Dixie Chicks during the Iraq War.
+
+			<br><br>
+			<span class="cue">[CLIP]</span>
+
+			<br><br>
+			<span class="cue">DIXIE CHICKS LEAD SINGER NATALIE MAINES</span>  We&rsquo;re ashamed the President of the United States is from Texas.
+
+			<br><br>
+			<span class="cue">[ROAR OF CROWD/END CLIP]</span>
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  Overnight, their career fell apart.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  After the presidential election, there was a whole lot of handwringing by the political class and the media about how we could have so missed this phenomenon. Looking back, you, you could make an argument that all anyone had to do was turn on the radio. Is country music the, the pulse of a nation?
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  Well, I think it&rsquo;s a hugely influential cultural sphere, you know, as much, if not more so, than, than a lot of pop music that gets a lot more attention. Whether it would have signaled Trump coming, I was not aware of a tremendous swing in country music politics leading up to that election or really a tremendous swing in country music politics in the last 20 years. That said, it is one of, if not the most, popular form of music in America on radio and it would be a huge mistake not to pay attention to it.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  Lester, thank you.
+
+			<br><br>
+			<span class="cue">J. LESTER FEDER</span>  My pleasure.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  J. Lester Feder is a world correspondent for BuzzFeed News. 
+		</p>
+		<div class="wavy_line" id="section-4">
+			____________________________________________________________________________________
+		</div>
+		<p class="section">
+			<span class="cue">BOB GARFIELD</span> Hubbs is author of Rednecks, Queers and Country Music, and she says that generic assumptions about country betray an underlying discomfort with and misunderstanding of the working class in America.
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  It really takes the working class seriously in a way that no other major culture form in America does. The songs, the lyrics about normal people's concerns and joys and sorrows, whatever comes up in ordinary life very often comes up in a country song. So a kid spilling his orange drink in his car seat [LAUGHS] all over the upholstery, that comes up in a country song.
+
+			<br><br>
+			<span class="cue">[CLIP/&rsquo;WATCHING YOU”]</span>
+
+			<br><br>
+			<span class="cue">RODNEY ATKINS SINGING</span>
+			<br><br>
+			A green traffic light turned straight to red
+			<br><br>
+			I hit my brakes and mumbled under my breath
+			<br><br>
+			As fries went a flyin&rsquo; and his orange drink covered
+			his lap
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  There are all kinds of really banal topics that may come up in country songs because, indeed, they do represent everyday life of people who would call themselves “normal folks.” What has been happening over the past several decades is that there is an ever-wider chasm between the upper middle class and the working class, and that plays out geographically, where folks get educated, who they hang out. We don&rsquo;t rub elbows anymore and we may not rub elbows with working-class music. Whatever its actual contours are, we keep our distance.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  You never do have to look far for a country music song that plays directly to the stereotype. Just before the Iraq War in 2002, Toby Keith, "Courtesy of the Red, White and Blue.”
+
+			<br><br>
+			<span class="cue">[CLIP/TOBY KEITH SINGING]</span>
+			<br><br>
+			And you'll be sorry that you messed with
+			<br><br>
+			The U.S. of A.
+			<br><br>
+			'Cause we'll put a boot in your ass
+			<br><br>
+			It's the American way
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  Country is often read as even jingoistic. I think that that has to be read not as a political position but rather a familial gesture, given that one study showed that about 80% of US military casualties in Afghanistan were working class. It&rsquo;s more about country music's constituency actually knowing people who were in the military, unlike many of us. The Toby Keith song started life as a song that he wrote and performed on his USO tours. The troops loved the song and kept asking him, why don&rsquo;t you record this song? And then he did, perhaps ill- advisedly. [LAUGHS]
+			<br><br>
+			Understood in the context of a bunch of 18- and 20-year-olds who are about to be sent into harm&rsquo;s way, it's very different from the context in which I may hear that song come over the radio in my car.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  What else in this vast genre is not so easily dismissed by people with a different worldview? What has it to offer that tells us more about its audience than people like me understand?
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  I could give two examples. One would be the hillbilly humanism that features in country songs, one after another for 70 years, and another more challenging theme is the antibourgeois theme that features in a lot of country songs, too. So hillbilly humanism is what really many country songs boil down to, and it's a very simple message Nobody's better than anyone else. Hank Williams, Sr. is one of the earliest sources of hillbilly humanism, so a song like "Pictures from Life's Other Side.”
+
+			<br><br>
+			<span class="cue">[CLIP/HANK WILLIAMS, SR. SINGING]</span>
+
+			… from life's other side someone has fell by the way
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  Even like I&rsquo;ve got “Friends in Low Places” &mdash;
+
+			<br><br>
+			<span class="cue">[CLIP/GARTH BROOKS SINGING]</span>
+			<br><br>
+			'Cause I've got friends in low places
+			<br><br>
+			Where the whiskey drowns
+			<br><br>
+			And the beer chases my blues away
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  &mdash; a Garth Brooks song. It&rsquo;s about him being pissed off with an ex-girlfriend, it seems, and now she&rsquo;s marrying a fancy guy and he thinks about how he,  [LAUGHS] he went over and threw a wrench into the fancy wedding and then went back over to the bar and joined his friends and spent the rest of the night drinking and having fun. That song has, I would say, both a hillbilly humanism theme in it. It also has the antibourgeois theme in it, that is thumbing the nose at those who look down on, on us. Sometimes they're funny, sometimes they're really angry. Those are the kinds of songs that when a non-country fan would happen to hear one of the songs, they might be 
+			really offended, confirming their negative stereotypes. 
+			One of those songs is “Redneck Woman,” a very big hit 
+			by Gretchen Wilson in 2004.
+
+			<br><br>
+			<span class="cue">[CLIP/GRETCHEN WILSON SINGING]</span>
+			<br><br>
+			Some people look down on me
+			But I don't give a rip
+			<br><br>
+			I stand barefooted in my own front yard with a baby 
+			on my hip
+			<br><br>
+			'Cause I'm redneck woman
+			<br><br>
+			I ain't no high class broad
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  She&rsquo;s talking about how, yeah, her lingerie doesn&rsquo;t come from Victoria's Secret, it comes from Walmart, but she&rsquo;s still sexy. It&rsquo;s really clever, and the entire song is just about telling off the people who look down on her and people like her.
+			<br><br>
+			One of the things that we could hear in country music, if we listened, is that, while we&rsquo;re often in denial that we have class differences, country songs every day are showing us otherwise. I mean, you know a song from the &rsquo;70s like &ldquo;Take This Job and Shove It.&rdquo;
+
+			<br><br>
+			<span class="cue">[CLIP/JOHNNY PAYCHECK SINGING]</span>
+			<br><br>
+			Take this job and shove it
+			<br><br>
+			I ain't working here no more
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  He&rsquo;s having a fantasy about telling off his supervisor who&rsquo;s a superior, kind of a middle-class person.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  I&rsquo;m glad you brought up &ldquo;Take This Job and Shove It&rdquo; because the author of that song, an outlaw country artist named David Allan Coe, wrote another song, which we can't play much of here. <span class="cue">[LAUGHS]</span> Tell me about that song, <span class="cue">[CHUCKLES]</span>  to, to the extent that you can on public radio, and explain why it's actually significant.
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  Well, I think you're talking about David Allan Coe&rsquo;s 1978 underground track, &ldquo;F-Aneta Briant.&rdquo;
+
+			<br><br>
+			<span class="cue">[CLIP]</span>
+			<br><br>
+			F-Anita Bryant
+			<br><br>
+			Who the Hell is she
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  Anita Bryant was a 1958 runner-up in the Miss America Pageant. She was a middle-of-the-road singer who had some Top 40 hits, and then she became the spokeswoman for the Florida Citrus Growers Association in the &rsquo;70s. As a resident of Miami-Dade, she opposed a local ordinance that would have extended some equal rights protection to what we would now call LGBTQ citizens. Only months after she first spearheaded that campaign, David Allan Coe, of all people, this outlaw country star, wrote a song, &ldquo;F-Aneta Briant.&rdquo; It was certainly nothing that was playable on country radio or any other kind of radio. And in the song, he makes it clear that he's <span class="cue">[LAUGHS]</span> very familiar not only with men who had sex with men in prison, he  implies pretty strongly that he's familiar with it in every way and that, actually, those people she calls homosexuals are a lot more diverse than she imagines. <span class="cue">[LAUGHS]</span> In his lyrics, he goes through a whole list. Some are yellow bellied, that some are mean.
+
+			<br><br>
+			<span class="cue">[CLIP/DAVID ALLAN COE SINGING]</span> 
+			<br><br>
+			Some are killers
+			<br><br>
+			Some are thieves
+			<br><br>
+			And some are singers too
+			<br><br>
+			In fact, Anita Bryant
+			<br><br>
+			Some act just like you
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  The problems of a lot of our assumptions about who has been the hero and savior of liberal causes, such as LGBTQ rights, for the first 100 years of homosexuality, from around 1870, when that label was devised, to about the 1970s, the sin of the working class was not that they were queer haters but that they were queer lovers. It&rsquo;s only been since the civil rights era when tolerance rose in importance, then the middle class became the owners of queer acceptance and the working-class sin was suddenly that they were queer haters.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  Maybe, at this point, we should also discuss a song from Merle Haggard, the very person who turned &ldquo;Okie from Muskogee&rdquo; into a sort of anthem, actually &mdash;
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  Uh huh.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  &mdash; in defense of &mdash; interracial marriage.
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  He released &ldquo;Okie from Muskogee&rdquo; in 1969. 
+			It catapulted him into a level of stardom that he had not known before. He gained lots of new fans who were suburban conservatives. His fan base had previously overlapped with Dylan's fan base, you know, songs about social justice, songs about the downtrodden. After Haggard had such an enormous hit, his record company asked him, okay, what's gonna be your follow-up? And back then, in any pop musical category, if you had a big hit, you would try to strike while the iron is hot and launch another song. Often it would sound the same. It might have, more or less, the same chord changes or the same groove. Merle Haggard's answer was he wanted to release &ldquo;Irma Jackson.&rdquo;
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			It was the antithesis of &ldquo;Okie from Muskogee.&rdquo; The narrator sings to a woman he has loved since childhood and who he will love &ldquo;&rsquo;til I die&rdquo; who is forbidden to him because she's black.
+
+			<br><br>
+			<span class="cue">[CLIP/MERLE HAGGARD SINGING]</span>
+			<br><br>
+			There's no way the world will understand that love is color blind
+			<br><br>
+			That's why Irma Jackson can't be mine
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  The record company said, no, Merle, we want another song that&rsquo;s gonna appeal to the same people who are lovin&rsquo; &ldquo;Okie.&rdquo; And the song that he did release was another song that appealed to those who didn't like hippies and didn't like Vietnam War protesters. It was called &ldquo;The Fightin&rsquo; Side of Me.&rdquo;
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  If our goal is to really understand not just 
+			country music as a genre but its audience and a wide swath of America, what do we do?
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  The problem is confirmation bias. If you 
+			already hate the sound of country music and country music is something you&rsquo;ve learned to associate with this group of people who you think of as &mdash; the phrase I coin in my book, “the bigot class,” the racist people, the homophobic people, the sexist people &mdash;  it's a nice fantasy that takes the middle class, upper middle class off the hook, despite the fact that they actually have their hands on the levers of institutional power that could really make changes in society. To blame America's social ills on some of its least influential citizens is distortive wishful thinking. So how do we stop or slow down a stereotype? I'd be happy to share a playlist <span class="cue">[LAUGHS]</span> that could give you a broader picture of country music fans but the problem would be maybe you would wince at <span class="cue">[LAUGHS]</span> every song.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  You know, one of the sad ironies of this 
+			conversation is that there is a song that is about exactly what we&rsquo;re discussing. It&rsquo;s called “They Don&rsquo;t Know” and it's by Jason Aldean &mdash;
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  Uh huh.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  &mdash; who was the artist performing &mdash;
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  Yeah.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  &mdash; in Las Vegas when the shots rang out.
+
+			<br><br>
+			<span class="cue">[CLIP/JASON ALDEAN SINGING]</span>
+			<br><br>
+			But those folks ain&rsquo;t lived in our lives
+			<br><br>
+			They ain&rsquo;t seen the blood, sweat and tears it took to live their dreams
+			<br><br>
+			When everything&rsquo;s on the line
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  Nowadays, in country music, this theme comes up again and again. It comes up with melancholy. It comes up with rage. Being judged, being misunderstood, &1dquo;they don't know.&rdquo;
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  Nadine, thank you very much
+
+			<br><br>
+			<span class="cue">NADINE HUBBS</span>  Thank you, Bob. It's been a pleasure.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  Nadine Hubbs is a professor of women&rsquo;s studies and music at the University of Michigan and author of &ldquo;Rednecks, Queers and Country Music.&rdquo;
+
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Coming up, the new Blade Runner. Like the original it examines the slippery concept of memory.
+
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  This is On the Media. 
+		</p>
+		<div class="wavy_line" id="section-5">
+			____________________________________________________________________________________
+		</div>
+		<p class="section">
+			<span class="cue">BOB GARFIELD</span>  This is On the Media. I&rsquo;m Bob Garfield.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  And I&rsquo;m Brooke Gladstone. It&rsquo;s been 35 years since the release of Ridley Scott&rsquo;s Blade Runner. Today, it&rsquo;s widely acknowledged as hugely influential, but in 1982 it was a box office flop. The sequel, Blade Runner 2049, comes out this weekend. It&rsquo;s not as good as the first. How could it be? But I liked it.
+			<br><br>
+			<span class="cue">[BLADE RUNNER 2049 CLIP/PAUSE, SOUNDS IN BACKGROUND]</span>
+			<br><br>
+			<span class="cue">JARED LETO AS WALLACE</span>  Replicants are the future, but I can only make so many. I have the lock and he has the key.
+			<br><br>
+			<span class="cue">[END CLIP]</span>
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  It&rsquo;s a film that pays true homage to its forbear, maintaining continuity with the original&rsquo;s singular sights and sounds, and even its star, Harrison Ford. The first film, loosely based on Philip K. Dick&rsquo;s Do Androids Dream of Electric Sheep, is set in 2019 Los Angeles, swathed in smog and rain, so much rain, the streets steaming and teeming with the world&rsquo;s dead enders, losers. The film presented an unusually bleak vision of the future, but it has since set the template for many future-oriented movies, dark depictions of economic inequality and technology run amok, sending the world spiraling into environmental and moral decline. 
+			<br><br>
+			Even if you haven&rsquo;t seen Blade Runner, you&rsquo;ve seen its visual and thematic DNA expressed in The Matrix, Aquirra, Dark Knight, Strange Days, Ghost in the Shell, Batman Begins, so many others.
+			<br><br>
+			In Blade Runner, the Tyrell Corporation makes androids called replicants. Tyrell, himself, explains to Deckard, played by Ford, who&rsquo;s forced back into his old job of killing rogue replicants, how the company is tweaking its creations to make them more tractable.
+			<br><br>
+			<span class="cue">[CLIP]</span>
+			<br><br>
+			<span class="cue">JOE TURKEL AS DR. ELDON TYRELL</span>  We began to recognize in them a strange obsession. After all, they are emotionally inexperienced, with only a few years in which to store up the experiences which you and I take for granted. If we gift them a past, we create a cushion or a pillow for their emotions and, consequently, we can control them better.
+			<br><br>
+			<span class="cue">HARRISON FORD AS RICK DECKARD</span>  Memories, you&rsquo;re talkin&rsquo; about memories.
+			<br><br>
+			<span class="cue">[END CLIP]</span>
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  I had an abiding interest in memory and the relationship between memory and identity, and I don&rsquo;t think that there is a film that more directly tackles that question than Blade Runner.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Alison Landsberg is a professor of history and cultural studies at George Mason University and the author of Prosthetic Memory The Transformation of American Remembrance in the Age of Mass Culture. Alison, welcome to the show.
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  Thank you so much. It&rsquo;s a pleasure to be here.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Blade Runner, obviously, was the first of Philip K. Dick&rsquo;s works to be adapted. Total Recall with Arnold Schwarzenegger came out in 1990. It was based on the story, &ldquo;We Can Remember It for You Wholesale,&rdquo; in which a company called Rekall offers to implant memories.
+			<br><br>
+			<span class="cue">[TV COMMERCIAL CLIP]</span>
+			<br><br>
+			<span class="cue">NARRATOR</span>  Have you always wanted to climb the mountains of Mars &mdash; but now you&rsquo;re over the hill? Then come to Rekall, Incorporated, where you can buy the memory of your ideal vacation cheaper, safer and better than the real thing.
+			<br><br>
+			<span class="cue">[END CLIP]</span>
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  I was interested in both of these films because they actually seemed to be tackling the same question Do the memories that we have need to be real for us to take them seriously? I think that both of these films end up arguing quite powerfully that authenticity is not the most important criteria for memory and that what&rsquo;s more important is how it is that we use those memories in our daily life, how does memory shape our worldviews?
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  In the case of the Arnold Schwarzenegger film, his character Quaid signs up for the memories of a trip to Mars as a secret agent; you can pick your identity. But the procedure goes wrong because his authentic memories and personality had already been overwritten, that, in fact, he was a secret agent but he couldn&rsquo;t remember. And, as you wrote, it turns out that we like the fake identity better than the original one.
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  That&rsquo;s right because Quaid is the identity that wants to do the right thing, <span class="cue">[LAUGHS]</span> to protect the mutants on Mars from oxygen deprivation, So even though those memories weren&rsquo;t actually memories of events that he lived through, those memories were the ones that enabled him to engage in a progressive social mission.
+			<br><br>
+			<span class="cue">[TOTAL RECALL CLIP]</span>
+			<br><br>
+			<span class="cue">KUATO</span>  What do you want, Mr. Quaid?
+			<br><br>
+			<span class="cue">DOUGLAS QUAID</span>  Same as you, to remember. To be 
+			myself again.
+			<br><br>
+			<span class="cue">KUATO</span>  You are what you do.  A man is defined by 
+			his actions, not his memory.
+			<br><br>
+			<span class="cue">[END CLIP]</span>
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  But you wrote, &ldquo;A man is defined by his actions but whether those actions are made possible by prosthetic memories or memories based on lived experience makes little difference.&rdquo;
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  Right, and it&rsquo;s a provocative statement because we tend to put a high premium on authenticity when it comes to memory, as a society. We want to be able to count on memories and we want to be able to check their validity.
+			<br><br>
+			One of the things that Blade Runner does really beautifully, I think, is show it&rsquo;s more important how the replicants use the memories than whether or not they&rsquo;re real. And there&rsquo;s a really beautiful scene when Rachael has realized that she is a replicant and she&rsquo;s with Deckard, and she&rsquo;s starting to play the piano.
+			<br><br>
+			<span class="cue">[CLIP]</span>
+			<br><br>
+			<span class="cue">RACHAEL</span>  I didn&rsquo;t know if I could play. I remember lessons. I don&rsquo;t know if it&rsquo;s me or Tyrell&rsquo;s niece.
+			<br><br>
+			<span class="cue">DECKARD</span>  You play beautifully.
+			<br><br>
+			<span class="cue">[END CLIP]</span>
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  There again, as long as she plays the piano beautifully, it doesn&rsquo;t matter how she learned, right?
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  That&rsquo;s right, that these memories that might not have come from her own lived experience enable her to live a life.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Before we get deep into the philosophy of this, let&rsquo;s make a brief stop at the HBO series Westworld, which I know you&rsquo;ve seen, right?
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  I have.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  There is a scientist by the name of Bernard played by Jeffrey Wright who, like the character Rachael, didn&rsquo;t know that he was artificial. So he asks his maker, played by Anthony Hopkins, some questions.
+			<br><br>
+			<span class="cue">[CLIP]</span>
+			<br><br>
+			<span class="cue">BERNARD</span>  … I do not understand the things that I feel. Are they real, the things I experienced? My wife? The loss of my son?
+			<br><br>
+			<span class="cue">FORD</span>  Every host needs a backstory, Bernard. You know that. The self is a kind of fiction, for hosts and humans alike. It&rsquo;s a story we tell ourselves.
+			<br><br>
+			<span class="cue">[END CLIP]</span>
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  That&rsquo;s something that I think is really quite important. We are bombarded with narratives about the past, images, stories of all kinds. We feel these things to be real, even if they&rsquo;re not authentic. I don&rsquo;t mean to suggest for a minute that when we watch a, a media representation of the past we&rsquo;re confused and believe it to be our past. What I&rsquo;m trying to get out, instead, is that by engaging with these images we feel a personal connection to it so that it matters more to us, so  it feels real and meaningful.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Right. In a paper you wrote back in the ‘90s, you refer to the work of scholar Steven Shaviro &mdash;
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  Mm-hmm. [AFFIRMATIVE]
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  &mdash; who says there&rsquo;s something about film, in particular, that enables us to wear images prosthetically. We can experience them in a bodily fashion. And so, he argues that cinematic experiences are not representations; they are events.
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  I would go back even before Shaviro to Siegfried Kracauer, the very keen observer of mass culture in its early days, and film, in particular. He argued that film grabs the viewer with skin and hair. We&rsquo;re taken by these images and our bodies are engaged in that visceral way that has a kind of profound effect on our own memories.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  But how does that affect our values, our understanding of the world, our personalities? We&rsquo;re seeing the rapid development now, finally, of virtual reality, which will make those memories even more physical, and we are physical beings.
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  It&rsquo;s really daunting, isn&rsquo;t it? When I began working on this project, I was really responding to a body of theorists who were very critical of mass culture and film and television &mdash; this is the 1930s and ‘40s &mdash; theorists like Theodor Adorno and Max Wertheimer. They believed that viewers were being brainwashed and made passive. That skepticism about mass culture persisted. And so, what I was trying to do in my work was to think about instances where it seemed like this very powerful technology might be used to see through somebody else&rsquo;s eyes to develop empathy.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Understand the world more completely.
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span> Absolutely.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  There&rsquo;s a famous monologue at the end of the 1982 Blade Runner, delivered and supposedly written by Rutger Hauer, who plays the replicant Roy Batty.
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  Mm-hmm, mm-hmm.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  And he&rsquo;s finally reconciled himself to his pre-programmed death and he sits with Deckard, who&rsquo;s been trying to kill him and failing, and Batty saves his life in order to have him there in his final moments.
+			<br><br>
+			<span class="cue">[CLIP]</span>
+			<br><br>
+			<span class="cue">ROY BATTY</span>  I&rsquo;ve seen things you people wouldn&rsquo;t believe. Attack ships on fire off the shoulder of Orion. I watched C-beams glitter in the dark near the Tannhäuser Gate. All those moments will be lost in time, like tears in rain. Time to die.
+			<br><br>
+			<span class="cue">[END CLIP]</span>
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  An inauthentic human with genuinely authentic experiences. Do you think that we can be individual without holding memories?
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  We rely on memories, whether they&rsquo;re real or whether they&rsquo;re borrowed or memories that we have constructed, based on what people have told us about our past. We use these memories to narrate ourselves. We call on the past to open up trajectories for us to become the kind of people that we want to be. Cultures do this all the time, that societies or nation states select particular aspects or events of the past that justify who they are in the present. Memory becomes justification for the present but also opens up possibilities for the future.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  But what we encode of the past is determined by the market. I mean, think of how many people saw Gone With the Wind and formed their views of slavery, thereby.
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  Oh, for sure. There are plenty of good reasons to be skeptical about the narratives about the past that circulate in the mass media. What I&rsquo;m interested in is the possibility that&rsquo;s opened up by the medium, and is this possibility realized or not? And mostly it&rsquo;s not.
+			<br><br>
+			And what&rsquo;s so interesting to me about the genre of science fiction is that it explores these possibilities in ways that we haven&rsquo;t quite caught up to in society.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Let me ask you, is there a scene or a moment that we haven&rsquo;t played, you know, that sort of sums up your principal idea, a clip that you think we should end this discussion on?
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  I mean, one scene that I think is really important is the scene when Deckard seems to have a memory of a unicorn, clearly a memory that he couldn&rsquo;t have had, right, because unicorns don&rsquo;t exist.
+			<br><br>
+			<span class="cue">[CLIP/MUSIC, SOUND OF HORSE NEIGHING]</span>
+			<br><br>
+			It&rsquo;s an indication to both Deckard and to us that he also is a replicant, that the memory of the unicorn had been implanted. And I think this is kind of important because there&rsquo;s a way in which all of our memories are implanted, right? Some of them are implanted by the stories that we&rsquo;re told by our parents when we&rsquo;re children. Some of them are from the photographs that we see of our childhood, some of them from the movies and television shows that we watch. But it&rsquo;s what use we make of these memories, real or not, that&rsquo;s most important, so that even if Deckard, himself, turns out to be a replicant, he&rsquo;s chosen to help Rachael, to fight for her and protect her. And he&rsquo;s made this ethical decision, whether or not the memories that make him up are implanted or real.
+			<br><br>
+			<span class="cue">[MUSIC UP & UNDER]</span>
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Alison, thank you very much.
+			<br><br>
+			<span class="cue">ALISON LANDSBERG</span>  My pleasure, thank you for having me.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Alison Landsberg is a professor of history and cultural studies at George Mason University and the author of Prosthetic Memory The Transformation of American Remembrance in the Age of Mass Culture.
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  That&rsquo;s it for this week&rsquo;s show. On the Media is produced by Alana Casanova&mdash;Burgess, Jesse Brenneman, Micah Loewinger and Leah Feder. We had more help from Monique Laborde. And our show was edited &mdash; by Brooke. Our technical director is Jennifer Munson. Our engineers this week were Sam Bair and Terence Bernardo.
+			<br><br>
+			<span class="cue">BROOKE GLADSTONE</span>  Katya Rogers is our executive producer. On the Media is a production of WNYC Studios. I&rsquo;m Brooke Gladstone.
+			<br><br>
+			<span class="cue">BOB GARFIELD</span>  And I&rsquo;m Bob Garfield.
+		</p>
+		<a href="../index.html">
+			<div class="button">
+				<p><i>Back to Menu</i></p>
+				<hr class="hr hr-back-to-menu">
+			</div>
+		</a>
 	</div>
 </body>
 </html>

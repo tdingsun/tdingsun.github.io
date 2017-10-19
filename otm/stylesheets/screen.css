@@ -104,40 +104,45 @@ a {
 }
 
 /* line 51, ../sass/screen.scss */
+.hr-back-to-menu {
+  width: 39%;
+}
+
+/* line 54, ../sass/screen.scss */
 .hr-long {
   border-color: #F05324;
-  border-style: solid;
+  border-style: solid wavy;
   border-width: .5px;
   width: 100%;
   transition: width 0.5s;
   margin: auto;
 }
 
-/* line 60, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 .hr-white {
   border-color: white;
 }
 
-/* line 64, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 .head-foot {
   padding: 20px;
   color: white;
   background-color: #F05324;
 }
 
-/* line 70, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 #this-is {
   font-size: 2em;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 h1 {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 8.2em;
   line-height: .85;
 }
 
-/* line 80, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 h2 {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 3.4em;
@@ -145,7 +150,7 @@ h2 {
   padding-top: 10px;
 }
 
-/* line 87, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 h3 {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 2em;
@@ -154,18 +159,18 @@ h3 {
   padding-left: 10px;
 }
 
-/* line 95, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 i, .nav {
   font-style: italic;
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 iframe {
-  padding-top: 20px;
+  padding-bottom: 20px;
   filter: hue-rotate(23deg) brightness(135%) saturate(78%);
 }
 
-/* line 104, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 #about-container {
   padding: 20px;
   margin: 20px;
@@ -174,102 +179,98 @@ iframe {
   transition: 0.25s;
 }
 
-/* line 112, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 #about-button {
   text-align: center;
 }
 
-/* line 116, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 #about {
   box-sizing: border-box;
   margin-top: 20px;
 }
 
-/* line 124, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .episode {
   border: 1px solid #F05324;
   margin: 20px;
   cursor: pointer;
 }
 
-/* line 132, ../sass/screen.scss */
+/* line 137, ../sass/screen.scss */
 .episode-button {
   padding: 20px;
   transition: 0.25s;
 }
-/* line 137, ../sass/screen.scss */
+/* line 142, ../sass/screen.scss */
 .episode-button:hover {
   background-color: #F05324;
   color: white;
 }
 
-/* line 143, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 .episode-button-open {
   border-bottom: 1px solid #F05324;
 }
 
-/* line 147, ../sass/screen.scss */
+/* line 152, ../sass/screen.scss */
 .episode-container {
   padding: 20px;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 .show {
   display: block;
   transition: 0.25s;
 }
 
-/* line 157, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
 .date {
   font-style: italic;
   float: left;
 }
 
-/* line 162, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .length {
   font-style: italic;
   float: right;
 }
 
-/* line 167, ../sass/screen.scss */
-.listen-button {
+/* line 172, ../sass/screen.scss */
+.button {
   padding: 20px;
   margin: 20px -20px -20px -20px;
   color: #F05324;
   background-color: white;
   text-align: center;
   border-top: 1px solid #F05324;
+  transition: 0.25s;
 }
-/* line 175, ../sass/screen.scss */
-.listen-button:hover {
+/* line 181, ../sass/screen.scss */
+.button:hover {
   color: white;
   background-color: #F05324;
   border-top: none;
 }
 
-/* line 182, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 #footer {
   font-size: 0.75em;
   line-height: 1.5;
 }
 
-/* line 189, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 .episode-page {
   border: 1px solid #F05324;
   margin: 20px;
   padding: 20px;
 }
-/* line 194, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
 .episode-page h2 {
   padding-bottom: 20px;
 }
-/* line 198, ../sass/screen.scss */
-.episode-page hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 
-/* line 204, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 .nav {
   position: fixed;
   top: 0;
@@ -279,9 +280,169 @@ iframe {
   color: #F05324;
   border: 1px solid #F05324;
   transition: top 0.25s ease-in-out;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
-/* line 218, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 .nav-up {
-  top: -40%;
+  top: -290px;
+}
+
+/* line 227, ../sass/screen.scss */
+.nav-item {
+  font-family: 'Noto Serif', serif;
+  flex-grow: 1;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 40px;
+  font-size: 0.7em;
+}
+/* line 235, ../sass/screen.scss */
+.nav-item:hover {
+  text-decoration: underline;
+  -webkit-text-decoration-style: wavy;
+  -moz-text-decoration-style: wavy;
+  text-decoration-style: wavy;
+}
+
+/* line 243, ../sass/screen.scss */
+.wavy_line {
+  overflow: hidden;
+  color: white;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #F05324;
+  -moz-text-decoration-color: #F05324;
+  text-decoration-color: #F05324;
+  -webkit-text-decoration-style: wavy;
+  -moz-text-decoration-style: wavy;
+  text-decoration-style: wavy;
+  padding-bottom: 30px;
+  font-size: 30px;
+}
+
+/* line 257, ../sass/screen.scss */
+.nav-side {
+  display: none;
+}
+
+/* line 261, ../sass/screen.scss */
+.side-bar {
+  display: none;
+}
+
+/* line 265, ../sass/screen.scss */
+.section-des {
+  display: none;
+}
+
+@media only screen and (min-width: 786px) {
+  /* line 270, ../sass/screen.scss */
+  body {
+    font-size: 18px;
+  }
+
+  /* line 274, ../sass/screen.scss */
+  .head-foot {
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+    width: 60%;
+    box-sizing: border-box;
+  }
+
+  /* line 281, ../sass/screen.scss */
+  #about-container {
+    float: right;
+    width: calc(40% - 105px);
+  }
+
+  /* line 286, ../sass/screen.scss */
+  #episode-list {
+    margin-left: 20px;
+    float: left;
+    width: 60%;
+  }
+
+  /* line 291, ../sass/screen.scss */
+  .episode {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* line 295, ../sass/screen.scss */
+  .nav {
+    width: 60%;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* line 304, ../sass/screen.scss */
+  .nav a {
+    display: none;
+  }
+  /* line 307, ../sass/screen.scss */
+  .nav iframe {
+    padding: 0px;
+  }
+
+  /* line 313, ../sass/screen.scss */
+  .episode-page {
+    width: 60%;
+    margin-left: 20px;
+    margin-right: 0px;
+    box-sizing: border-box;
+  }
+
+  /* line 319, ../sass/screen.scss */
+  .nav-side {
+    display: block;
+    position: fixed;
+    right: 20px;
+    text-align: right;
+    border: 1px solid #F05324;
+    padding: 20px;
+    width: 100px;
+  }
+
+  /* line 330, ../sass/screen.scss */
+  .nav-item {
+    font-size: 1em;
+  }
+
+  /* line 334, ../sass/screen.scss */
+  .clip {
+    margin-left: 80px;
+  }
+
+  /* line 338, ../sass/screen.scss */
+  .section-des {
+    display: block;
+    position: absolute;
+    left: calc(60% + 40px);
+    width: calc(40% - 220px);
+    font-size: 1em;
+    color: #F05324;
+  }
+  /* line 346, ../sass/screen.scss */
+  .section-des h2 {
+    color: #F05324;
+  }
+
+  /* line 352, ../sass/screen.scss */
+  .section-des-body {
+    position: relative;
+    top: -47px;
+    z-index: -1;
+  }
+
+  /* line 358, ../sass/screen.scss */
+  .caption {
+    font-size: 0.7em;
+  }
 }

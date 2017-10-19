@@ -3,12 +3,29 @@ $(document).ready(function(){
 	$("#about").hide();
 	$(".episode-container").hide();
 
+	//checkSize();
+	var nav_height = $('.nav').outerHeight();
+	$(".episode-page").css("margin-top", nav_height + 40);
+
+	$(window).resize(function(){
+		//checkSize();
+		var nav_height = $('.nav').outerHeight();
+		$(".episode-page").css("margin-top", nav_height + 40);
+
+	});
+
 	//about toggle
 	$("#about-container").hover(function() {
 		$("#hr-about").toggleClass('hr-long');
 	});
 	$("#about-container").click(function() {
 		$("#about").slideToggle();
+	});
+
+	$(".button").hover(function() {
+		$(".button hr").toggleClass('hr-white');
+		$(".button hr").toggleClass('hr-long');
+
 	});
 
 	//episode toggle -- gotta change from slidetoggle
@@ -73,5 +90,25 @@ $(document).ready(function(){
 	    lastScrollTop = st;
 	}
 
+
+
+
+	$(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    	}, 1000);
+	});
+
 });
+
+// function checkSize(){
+// 	if (window.matchMedia('(max-width: 786px)').matches) {
+// 		var nav_height = $('.nav').outerHeight();
+// 		$(".episode-page").css("margin-top", nav_height + 40);
+// 	} else {
+// 		$(".episode-page").css("margin-top", "20px");
+// 	}
+// }
 
