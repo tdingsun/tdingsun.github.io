@@ -19,9 +19,9 @@ $orange: #F05324;
 
 body {
 	font-family: 'Noto Serif', serif;
-	color: $orange;
+	color: light-grey;
 	font-size: 5vw;
-	line-height: 1.4;
+	line-height: 1.5;
 }
 
 a {
@@ -32,7 +32,7 @@ a {
 .cue {
 	display: inline;
 	@include saira;
-	color: grey;
+	color: $orange;
 }
 
 .hr {
@@ -66,11 +66,7 @@ a {
 	border-color: white;
 }
 
-.head-foot {
-	padding: 20px;
-	color: white;
-	background-color: $orange;
-}
+
 
 #this-is {
 	font-size: 2em;
@@ -80,6 +76,7 @@ h1 {
 	@include saira;
 	font-size: 8.2em;
 	line-height: .85;
+	color: $orange;
 }
 
 h2 {
@@ -87,6 +84,7 @@ h2 {
 	font-size: 3.4em;
 	line-height: .9;
 	padding-top: 10px;
+	color: $orange;
 }
 
 h3 {
@@ -94,11 +92,14 @@ h3 {
 	font-size: 2em;
 	line-height: .85;
 	display: inline;
-	padding-left: 10px;
+	color: $orange;
 }
+
+
 
 i {
 	font-style: italic;
+	color: $orange;
 }
 
 iframe {
@@ -113,6 +114,7 @@ iframe {
 	border: 1px solid $orange;
 	cursor: pointer;
 	transition: 0.25s;
+	color: $orange;
 }
 
 #about-button {
@@ -125,12 +127,15 @@ iframe {
 }
 
 #episode-list {
+	margin-left: 20px;
+
 }
 
 .episode {
 	border: 1px solid $orange;
 	margin: 20px;
 	cursor: pointer;
+	color: $orange;
 
 
 }
@@ -143,6 +148,12 @@ iframe {
 	&:hover {
 		background-color: $orange;
 		color: white;
+		p {
+			color: white;
+		}
+		h2 {
+			color: white;
+		}
 	}
 }
 
@@ -163,11 +174,13 @@ iframe {
 .date {
 	font-style: italic;
 	float: left;
+	color: $orange;
 }
 
 .length {
 	font-style: italic;
 	float: right;
+	color: $orange;
 }
 
 .button {
@@ -183,6 +196,12 @@ iframe {
 		color: white;
 		background-color: $orange;
 		border-top: none;
+		p {
+			color: white;
+		}
+		i {
+			color: white;
+		}
 	}
 }
 
@@ -250,7 +269,8 @@ iframe {
 }
 
 .wavy_line {
-	width: 80vw;
+	width: 100%;
+	margin: auto;
 	overflow: hidden;
 	color: rgb(255, 255, 255);
 	text-decoration: underline;
@@ -280,14 +300,39 @@ iframe {
 		margin-left: 40px;
 	}
 
+.mobile-section-header {
+	display: block;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.head-foot {
+	padding: 20px;
+	color: white;
+	background-color: $orange;
+
+	h1 {
+		color: white;
+	}
+
+	p {
+		color: white;
+	}
+
+	i {
+		color: white;
+	}
+}
+
 @media only screen and (min-width: 786px){
 	body {
 		font-size: 18px;
 	}
 
+
 	.head-foot {
 		margin-left: 20px;
-		margin-top: 20px;
+		//margin-top: 20px;
 		float: left;
 		width: 60%;
 		box-sizing: border-box;
@@ -297,8 +342,8 @@ iframe {
 		float: right;
 		width: calc(40% - 105px);
 	}
+
 	#episode-list {
-		margin-left: 20px;
 		float: left;
 		width: 60%;
 	}
@@ -328,7 +373,7 @@ iframe {
 	}
 	.episode-page {
 		width: 60%;
-		max-width: 800px;
+		max-width: 700px;
 		margin-left: 20px;
 		margin-right: 0px;
 		box-sizing: border-box;
@@ -358,16 +403,47 @@ iframe {
 		margin-left: 80px;
 	}
 
+	.mobile-section-header {
+		display: none;
+	}
 	
 }
 
-@media only screen and (min-width: 1100px){
+@media only screen and (min-width: 1166px){
+	#about-container {
+		position: absolute;
+		left: 800px; 
+		width: calc(100vw - 960px);
+		max-width: 350px;
+	}
+	#episode-list {
+		margin-left: 100px;
+		max-width: 700px;
+	}
+
+	.head-foot {
+		margin-left: 100px;
+		max-width: 700px;
+	}
+	.wavy_line{
+		width: calc(100vw - 320px);
+		max-width: 1400px;
+	}
+	.nav {
+		margin-left: 100px;
+		width: 700px;
+	}
+
+	 .episode-page {
+	 	margin-left: 100px;
+	 }
 	.section-des {
 		margin-top: -20px;
 		display: block;
 		position: absolute;
 		left: calc(60% + 40px);
 		width: calc(40% - 220px);
+		max-width: 700px;
 		font-size: 1em;
 		color: $orange;
 

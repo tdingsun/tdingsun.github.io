@@ -70,9 +70,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 20, ../sass/screen.scss */
 body {
   font-family: 'Noto Serif', serif;
-  color: #F05324;
+  color: light-grey;
   font-size: 5vw;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* line 27, ../sass/screen.scss */
@@ -85,7 +85,7 @@ a {
 .cue {
   display: inline;
   font-family: 'Saira Extra Condensed', sans-serif;
-  color: grey;
+  color: #F05324;
 }
 
 /* line 38, ../sass/screen.scss */
@@ -123,120 +123,133 @@ a {
   border-color: white;
 }
 
-/* line 69, ../sass/screen.scss */
-.head-foot {
-  padding: 20px;
-  color: white;
-  background-color: #F05324;
-}
-
-/* line 75, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 #this-is {
   font-size: 2em;
 }
 
-/* line 79, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 h1 {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 8.2em;
   line-height: .85;
+  color: #F05324;
 }
 
-/* line 85, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 h2 {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 3.4em;
   line-height: .9;
   padding-top: 10px;
+  color: #F05324;
 }
 
-/* line 92, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 h3 {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 2em;
   line-height: .85;
   display: inline;
-  padding-left: 10px;
+  color: #F05324;
 }
 
 /* line 100, ../sass/screen.scss */
 i {
   font-style: italic;
+  color: #F05324;
 }
 
-/* line 104, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 iframe {
   filter: hue-rotate(23deg) brightness(135%) saturate(78%);
   height: 50px;
 }
 
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 #about-container {
   padding: 20px;
   margin: 20px;
   border: 1px solid #F05324;
   cursor: pointer;
   transition: 0.25s;
+  color: #F05324;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 #about-button {
   text-align: center;
 }
 
-/* line 122, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 #about {
   box-sizing: border-box;
   margin-top: 20px;
 }
 
-/* line 130, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
+#episode-list {
+  margin-left: 20px;
+}
+
+/* line 134, ../sass/screen.scss */
 .episode {
   border: 1px solid #F05324;
   margin: 20px;
   cursor: pointer;
+  color: #F05324;
 }
 
-/* line 138, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .episode-button {
   padding: 20px;
   transition: 0.25s;
 }
-/* line 143, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 .episode-button:hover {
   background-color: #F05324;
   color: white;
 }
+/* line 151, ../sass/screen.scss */
+.episode-button:hover p {
+  color: white;
+}
+/* line 154, ../sass/screen.scss */
+.episode-button:hover h2 {
+  color: white;
+}
 
-/* line 149, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 .episode-button-open {
   border-bottom: 1px solid #F05324;
 }
 
-/* line 153, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .episode-container {
   padding: 20px;
 }
 
-/* line 158, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 .show {
   display: block;
   transition: 0.25s;
 }
 
-/* line 163, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 .date {
   font-style: italic;
   float: left;
+  color: #F05324;
 }
 
-/* line 168, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 .length {
   font-style: italic;
   float: right;
+  color: #F05324;
 }
 
-/* line 173, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 .button {
   padding: 20px;
   margin: 20px -20px -20px -20px;
@@ -246,31 +259,39 @@ iframe {
   border-top: 1px solid #F05324;
   transition: 0.25s;
 }
-/* line 182, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 .button:hover {
   color: white;
   background-color: #F05324;
   border-top: none;
 }
+/* line 199, ../sass/screen.scss */
+.button:hover p {
+  color: white;
+}
+/* line 202, ../sass/screen.scss */
+.button:hover i {
+  color: white;
+}
 
-/* line 189, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 #footer {
   font-size: 0.75em;
   line-height: 1.5;
 }
 
-/* line 196, ../sass/screen.scss */
+/* line 215, ../sass/screen.scss */
 .episode-page {
   border: 1px solid #F05324;
   margin: 20px;
   padding: 20px;
 }
-/* line 202, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
 .episode-page h2 {
   padding-bottom: 20px;
 }
 
-/* line 207, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 .nav {
   position: fixed;
   top: 0;
@@ -286,21 +307,21 @@ iframe {
   box-sizing: border-box;
   text-align: center;
 }
-/* line 221, ../sass/screen.scss */
+/* line 240, ../sass/screen.scss */
 .nav a:last-child {
   text-align: right;
 }
-/* line 224, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 .nav a:first-of-type {
   text-align: left;
 }
 
-/* line 230, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 .nav-up {
   top: -290px;
 }
 
-/* line 234, ../sass/screen.scss */
+/* line 253, ../sass/screen.scss */
 .nav-item {
   font-family: 'Noto Serif', serif;
   flex-grow: 1;
@@ -310,7 +331,7 @@ iframe {
   padding-right: 10px;
   padding-top: 20px;
 }
-/* line 243, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 .nav-item:hover {
   text-decoration: underline;
   -webkit-text-decoration-style: wavy;
@@ -319,9 +340,10 @@ iframe {
   font-style: italic;
 }
 
-/* line 252, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 .wavy_line {
-  width: 80vw;
+  width: 100%;
+  margin: auto;
   overflow: hidden;
   color: white;
   text-decoration: underline;
@@ -335,61 +357,85 @@ iframe {
   font-size: 30px;
 }
 
-/* line 267, ../sass/screen.scss */
+/* line 287, ../sass/screen.scss */
 .nav-side {
   display: none;
 }
 
-/* line 271, ../sass/screen.scss */
+/* line 291, ../sass/screen.scss */
 .side-bar {
   display: none;
 }
 
-/* line 275, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 .section-des {
   display: none;
 }
 
-/* line 279, ../sass/screen.scss */
+/* line 299, ../sass/screen.scss */
 .clip {
   margin-left: 40px;
 }
 
+/* line 303, ../sass/screen.scss */
+.mobile-section-header {
+  display: block;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* line 309, ../sass/screen.scss */
+.head-foot {
+  padding: 20px;
+  color: white;
+  background-color: #F05324;
+}
+/* line 314, ../sass/screen.scss */
+.head-foot h1 {
+  color: white;
+}
+/* line 318, ../sass/screen.scss */
+.head-foot p {
+  color: white;
+}
+/* line 322, ../sass/screen.scss */
+.head-foot i {
+  color: white;
+}
+
 @media only screen and (min-width: 786px) {
-  /* line 284, ../sass/screen.scss */
+  /* line 328, ../sass/screen.scss */
   body {
     font-size: 18px;
   }
 
-  /* line 288, ../sass/screen.scss */
+  /* line 333, ../sass/screen.scss */
   .head-foot {
     margin-left: 20px;
-    margin-top: 20px;
     float: left;
     width: 60%;
     box-sizing: border-box;
   }
 
-  /* line 295, ../sass/screen.scss */
+  /* line 340, ../sass/screen.scss */
   #about-container {
     float: right;
     width: calc(40% - 105px);
   }
 
-  /* line 300, ../sass/screen.scss */
+  /* line 346, ../sass/screen.scss */
   #episode-list {
-    margin-left: 20px;
     float: left;
     width: 60%;
   }
 
-  /* line 305, ../sass/screen.scss */
+  /* line 350, ../sass/screen.scss */
   .episode {
     margin-left: 0;
     width: 100%;
   }
 
-  /* line 309, ../sass/screen.scss */
+  /* line 354, ../sass/screen.scss */
   .nav {
     width: 60%;
     max-width: 800px;
@@ -399,26 +445,26 @@ iframe {
     padding: 0;
     box-sizing: border-box;
   }
-  /* line 319, ../sass/screen.scss */
+  /* line 364, ../sass/screen.scss */
   .nav a {
     display: none;
   }
-  /* line 322, ../sass/screen.scss */
+  /* line 367, ../sass/screen.scss */
   .nav iframe {
     padding: 0px;
     height: 120px;
   }
 
-  /* line 329, ../sass/screen.scss */
+  /* line 374, ../sass/screen.scss */
   .episode-page {
     width: 60%;
-    max-width: 800px;
+    max-width: 700px;
     margin-left: 20px;
     margin-right: 0px;
     box-sizing: border-box;
   }
 
-  /* line 336, ../sass/screen.scss */
+  /* line 381, ../sass/screen.scss */
   .nav-side {
     display: block;
     position: fixed;
@@ -431,42 +477,85 @@ iframe {
     font-size: 1em;
   }
 
-  /* line 350, ../sass/screen.scss */
+  /* line 395, ../sass/screen.scss */
   .nav-item {
     font-size: 1em;
     text-decoration: none;
     font-style: normal;
   }
 
-  /* line 357, ../sass/screen.scss */
+  /* line 402, ../sass/screen.scss */
   .clip {
     margin-left: 80px;
   }
+
+  /* line 406, ../sass/screen.scss */
+  .mobile-section-header {
+    display: none;
+  }
 }
-@media only screen and (min-width: 1100px) {
-  /* line 365, ../sass/screen.scss */
+@media only screen and (min-width: 1166px) {
+  /* line 413, ../sass/screen.scss */
+  #about-container {
+    position: absolute;
+    left: 800px;
+    width: calc(100vw - 960px);
+    max-width: 350px;
+  }
+
+  /* line 419, ../sass/screen.scss */
+  #episode-list {
+    margin-left: 100px;
+    max-width: 700px;
+  }
+
+  /* line 424, ../sass/screen.scss */
+  .head-foot {
+    margin-left: 100px;
+    max-width: 700px;
+  }
+
+  /* line 428, ../sass/screen.scss */
+  .wavy_line {
+    width: calc(100vw - 320px);
+    max-width: 1400px;
+  }
+
+  /* line 432, ../sass/screen.scss */
+  .nav {
+    margin-left: 100px;
+    width: 700px;
+  }
+
+  /* line 437, ../sass/screen.scss */
+  .episode-page {
+    margin-left: 100px;
+  }
+
+  /* line 440, ../sass/screen.scss */
   .section-des {
     margin-top: -20px;
     display: block;
     position: absolute;
     left: calc(60% + 40px);
     width: calc(40% - 220px);
+    max-width: 700px;
     font-size: 1em;
     color: #F05324;
   }
-  /* line 374, ../sass/screen.scss */
+  /* line 450, ../sass/screen.scss */
   .section-des h2 {
     color: #F05324;
   }
 
-  /* line 380, ../sass/screen.scss */
+  /* line 456, ../sass/screen.scss */
   .section-des-body {
     position: relative;
     top: -47px;
     z-index: -1;
   }
 
-  /* line 386, ../sass/screen.scss */
+  /* line 462, ../sass/screen.scss */
   .caption {
     font-size: 0.7em;
   }

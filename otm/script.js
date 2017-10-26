@@ -6,14 +6,15 @@ $(document).ready(function(){
 	var nav_height = $('.nav').outerHeight();
 	$(".container").css("padding-top", nav_height + 20);
 	
-	if ($(window).width() < 1333){
+	if ($(window).width() < 1166){
 		$(".section-des").css("width", "calc(40% - 220px)");
 		$(".section-des").css("left", "calc(60% + 40px)");
 
 	} else {
 		var des_w = $(window).width() - 1020;
 		$(".section-des").css("width", des_w);
-		$(".section-des").css("left", "840px");
+		$(".section-des").css("left", "820px");
+
 	}
 
 	$(window).resize(function(){
@@ -21,14 +22,14 @@ $(document).ready(function(){
 		var nav_height = $('.nav').outerHeight();
 		$(".container").css("padding-top", nav_height + 20);
 
-		if ($(window).width() < 1333){
+		if ($(window).width() < 1166){
 			$(".section-des").css("width", "calc(40% - 220px)");
 			$(".section-des").css("left", "calc(60% + 40px)");
 
 		} else {
 			var des_w = $(window).width() - 1020;
 			$(".section-des").css("width", des_w);
-			$(".section-des").css("left", "840px");
+			$(".section-des").css("left", "820px");
 		}
 
 	});
