@@ -1,0 +1,166 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+body {
+	padding-top: 20px;
+	background: linear-gradient(papayawhip, lightblue);
+	background-color: papayawhip;
+	color: green;
+	font-size: 20px;
+	overflow-x: hidden;
+	hanging-punctuation: first;
+}
+
+#main {
+	z-index: 0;
+	margin-left: 20%;
+	margin-right: 20%;
+	
+
+
+}
+
+a {
+	color: green;
+}
+
+p {
+	position: relative;
+	padding-bottom: 10px;
+	line-height: 1.2em;
+	z-index: 3;
+	
+
+}
+
+h1 {
+	position: relative;
+	font-family: sans-serif;
+	font-size: 2.5em;
+	//padding-bottom: 20px;
+	padding-top: 20px;
+	line-height: 1.2em;
+	z-index: 2;
+}
+
+h2 {
+
+	@extend h1;
+	font-size: 1.5em;
+	padding-bottom: 20px;
+}
+
+h3 {
+	@extend h1;
+	font-size: 1.5em;
+}
+
+ul {
+	list-style-type: cjk-ideographic;
+}
+
+ol {
+	padding-top: 10px;
+	list-style-type: cjk-ideographic;
+}
+		
+li {
+	padding-bottom: 20px;
+	margin-left: 50px;
+
+}
+
+i {
+	font-style: italic;
+}
+
+b {
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+span {
+	background-color: #FFFF00;
+}
+
+img {
+	animation: bounce 0.5s ease-out 0 infinite alternate;
+	position: relative;
+	border: none;
+	padding-bottom: 20px;
+	height: 50vh;
+}
+
+#footer {
+	background: linear-gradient(rgba(173,216,230,0), darkblue);
+	color: papayawhip;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	h3 {
+		margin-right: 20%;
+		margin-left: 20%;
+	}
+	span {
+		background-color: green;
+	}
+
+}
+#block {
+	position: absolute;
+	width: 100%;
+	//margin-left: -20%;
+	background: linear-gradient(papayawhip, papayawhip, rgba(255,239,213,0));
+	height: 800px;
+	z-index: 1;
+}
+
+
+
+#runner-right{
+	position: fixed;
+	text-align: right;
+	transform: rotate(90deg);
+	right: -80px;
+	top: 33vh;
+	font-family: sans-serif;
+	color: green;
+	text-decoration: underline;
+	-webkit-text-decoration-style: wavy;
+	-moz-text-decoration-style: wavy;
+	text-decoration-style: wavy;
+	&:hover{
+		background-color: #FFFF00;
+	}
+
+
+}
+#runner-left{
+	position: fixed;
+	font-family: sans-serif;
+	transform: rotate(90deg);
+	top: 30vh;
+	left: -50px;
+	color: green;
+	text-decoration: underline;
+	-webkit-text-decoration-style: wavy;
+	-moz-text-decoration-style: wavy;
+	text-decoration-style: wavy;
+	&:hover{
+		background-color: #FFFF00;
+	}
+}
+
+@keyframes bounce {
+	0% {
+		top: 0px;
+	}
+
+	100% {
+		top: -30px;
+
+	}
+}
