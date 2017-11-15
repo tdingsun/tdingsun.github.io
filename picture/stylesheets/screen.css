@@ -1,0 +1,717 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 8, ../sass/screen.scss */
+body {
+  background-color: lightgrey;
+}
+
+/* line 12, ../sass/screen.scss */
+h1 {
+  position: absolute;
+  font-size: 50px;
+}
+
+/* line 17, ../sass/screen.scss */
+#fixed {
+  width: 100%;
+  height: 0;
+  position: fixed;
+}
+
+/* line 23, ../sass/screen.scss */
+#edifice {
+  float: left;
+}
+
+/* line 27, ../sass/screen.scss */
+#hmm {
+  transform: rotate(90deg);
+  margin-top: 50px;
+  margin-right: -50px;
+  float: right;
+  position: relative;
+}
+
+/* line 36, ../sass/screen.scss */
+#modernity {
+  transform: rotate(-90deg);
+  float: left;
+  position: relative;
+  margin-top: 600px;
+  margin-left: -370px;
+}
+
+/* line 44, ../sass/screen.scss */
+img {
+  margin-left: 10%;
+  position: absolute;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  filter: grayscale(100%);
+}
+/* line 53, ../sass/screen.scss */
+img:hover {
+  filter: grayscale(0%);
+  animation: none;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_1 {
+  animation-delay: 1s;
+  animation-duration: 43s;
+  top: 400px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_2 {
+  animation-delay: 1s;
+  animation-duration: 42s;
+  top: 1000px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_3 {
+  animation-delay: 1s;
+  animation-duration: 41s;
+  top: 1600px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_4 {
+  animation-delay: 1s;
+  animation-duration: 40s;
+  top: 2200px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_5 {
+  animation-delay: 1s;
+  animation-duration: 39s;
+  top: 2800px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_6 {
+  animation-delay: 1s;
+  animation-duration: 38s;
+  top: 3400px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_7 {
+  animation-delay: 1s;
+  animation-duration: 37s;
+  top: 4000px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_8 {
+  animation-delay: 1s;
+  animation-duration: 36s;
+  top: 4600px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_9 {
+  animation-delay: 1s;
+  animation-duration: 35s;
+  top: 5200px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_10 {
+  animation-delay: 1s;
+  animation-duration: 34s;
+  top: 5800px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_11 {
+  animation-delay: 1s;
+  animation-duration: 33s;
+  top: 6400px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_12 {
+  animation-delay: 1s;
+  animation-duration: 32s;
+  top: 7000px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_13 {
+  animation-delay: 1s;
+  animation-duration: 31s;
+  top: 7600px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_14 {
+  animation-delay: 1s;
+  animation-duration: 30s;
+  top: 8200px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_15 {
+  animation-delay: 1s;
+  animation-duration: 29s;
+  top: 8800px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_16 {
+  animation-delay: 1s;
+  animation-duration: 28s;
+  top: 9400px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_17 {
+  animation-delay: 1s;
+  animation-duration: 27s;
+  top: 10000px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_18 {
+  animation-delay: 1s;
+  animation-duration: 26s;
+  top: 10600px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_19 {
+  animation-delay: 1s;
+  animation-duration: 25s;
+  top: 11200px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_20 {
+  animation-delay: 1s;
+  animation-duration: 24s;
+  top: 11800px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_21 {
+  animation-delay: 1s;
+  animation-duration: 23s;
+  top: 12400px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_22 {
+  animation-delay: 1s;
+  animation-duration: 22s;
+  top: 13000px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_23 {
+  animation-delay: 1s;
+  animation-duration: 21s;
+  top: 13600px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_24 {
+  animation-delay: 1s;
+  animation-duration: 20s;
+  top: 14200px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_25 {
+  animation-delay: 1s;
+  animation-duration: 19s;
+  top: 14800px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_26 {
+  animation-delay: 1s;
+  animation-duration: 18s;
+  top: 15400px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_27 {
+  animation-delay: 1s;
+  animation-duration: 17s;
+  top: 16000px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_28 {
+  animation-delay: 1s;
+  animation-duration: 16s;
+  top: 16600px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_29 {
+  animation-delay: 1s;
+  animation-duration: 15s;
+  top: 17200px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_30 {
+  animation-delay: 1s;
+  animation-duration: 14s;
+  top: 17800px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_31 {
+  animation-delay: 1s;
+  animation-duration: 13s;
+  top: 18400px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_32 {
+  animation-delay: 1s;
+  animation-duration: 12s;
+  top: 19000px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_33 {
+  animation-delay: 1s;
+  animation-duration: 11s;
+  top: 19600px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_34 {
+  animation-delay: 1s;
+  animation-duration: 10s;
+  top: 20200px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_35 {
+  animation-delay: 1s;
+  animation-duration: 9s;
+  top: 20800px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_36 {
+  animation-delay: 1s;
+  animation-duration: 8s;
+  top: 21400px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_37 {
+  animation-delay: 1s;
+  animation-duration: 7s;
+  top: 22000px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_38 {
+  animation-delay: 1s;
+  animation-duration: 6s;
+  top: 22600px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_39 {
+  animation-delay: 1s;
+  animation-duration: 5s;
+  top: 23200px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_40 {
+  animation-delay: 1s;
+  animation-duration: 4s;
+  top: 23800px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_41 {
+  animation-delay: 1s;
+  animation-duration: 3s;
+  top: 24400px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_42 {
+  animation-delay: 1s;
+  animation-duration: 2s;
+  top: 25000px;
+}
+
+/* line 61, ../sass/screen.scss */
+#tech_43 {
+  animation-delay: 1s;
+  animation-duration: 1s;
+  top: 25600px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_1 {
+  animation-duration: 46s;
+  top: 100px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_2 {
+  animation-duration: 45s;
+  top: 700px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_3 {
+  animation-duration: 44s;
+  top: 1300px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_4 {
+  animation-duration: 43s;
+  top: 1900px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_5 {
+  animation-duration: 42s;
+  top: 2500px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_6 {
+  animation-duration: 41s;
+  top: 3100px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_7 {
+  animation-duration: 40s;
+  top: 3700px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_8 {
+  animation-duration: 39s;
+  top: 4300px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_9 {
+  animation-duration: 38s;
+  top: 4900px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_10 {
+  animation-duration: 37s;
+  top: 5500px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_11 {
+  animation-duration: 36s;
+  top: 6100px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_12 {
+  animation-duration: 35s;
+  top: 6700px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_13 {
+  animation-duration: 34s;
+  top: 7300px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_14 {
+  animation-duration: 33s;
+  top: 7900px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_15 {
+  animation-duration: 32s;
+  top: 8500px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_16 {
+  animation-duration: 31s;
+  top: 9100px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_17 {
+  animation-duration: 30s;
+  top: 9700px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_18 {
+  animation-duration: 29s;
+  top: 10300px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_19 {
+  animation-duration: 28s;
+  top: 10900px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_20 {
+  animation-duration: 27s;
+  top: 11500px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_21 {
+  animation-duration: 26s;
+  top: 12100px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_22 {
+  animation-duration: 25s;
+  top: 12700px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_23 {
+  animation-duration: 24s;
+  top: 13300px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_24 {
+  animation-duration: 23s;
+  top: 13900px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_25 {
+  animation-duration: 22s;
+  top: 14500px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_26 {
+  animation-duration: 21s;
+  top: 15100px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_27 {
+  animation-duration: 20s;
+  top: 15700px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_28 {
+  animation-duration: 19s;
+  top: 16300px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_29 {
+  animation-duration: 18s;
+  top: 16900px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_30 {
+  animation-duration: 17s;
+  top: 17500px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_31 {
+  animation-duration: 16s;
+  top: 18100px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_32 {
+  animation-duration: 15s;
+  top: 18700px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_33 {
+  animation-duration: 14s;
+  top: 19300px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_34 {
+  animation-duration: 13s;
+  top: 19900px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_35 {
+  animation-duration: 12s;
+  top: 20500px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_36 {
+  animation-duration: 11s;
+  top: 21100px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_37 {
+  animation-duration: 10s;
+  top: 21700px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_38 {
+  animation-duration: 9s;
+  top: 22300px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_39 {
+  animation-duration: 8s;
+  top: 22900px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_40 {
+  animation-duration: 7s;
+  top: 23500px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_41 {
+  animation-duration: 6s;
+  top: 24100px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_42 {
+  animation-duration: 5s;
+  top: 24700px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_43 {
+  animation-duration: 4s;
+  top: 25300px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_44 {
+  animation-duration: 3s;
+  top: 25900px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_45 {
+  animation-duration: 2s;
+  top: 26500px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_46 {
+  animation-duration: 1s;
+  top: 27100px;
+}
+
+/* line 69, ../sass/screen.scss */
+#colonial_47 {
+  animation-duration: 0s;
+  top: 27700px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}

@@ -3,10 +3,8 @@ var c_array = [];
 var prevElement;
 var lyrics;
 
-
-
-
 function preload() {
+	//loads the data before loading the page
 	data = loadStrings('lyrics.txt', setup);
 
 }
@@ -19,6 +17,7 @@ function setup() {
 			ignorePunctuation: true
 		}
 
+		//create a concordance
 		lyrics = data.join(" ");
 		let c = RiTa.concordance(lyrics, args);
 
@@ -46,6 +45,7 @@ function setup() {
 			//when you click the word, it shows the word in context
 			p.onclick = function() {kwic(i)};
 
+			//add every item to the HTML doc
 			p.innerHTML += (c_array[i][0] + " : " + c_array[i][1]);
 			document.getElementById("container").appendChild(p);
 		}
@@ -71,6 +71,7 @@ function insertion_sort(array){
 	}
 }
 
+//your basic selection_sort algorithm
 //o(n squared)
 function selection_sort(a){
 	let n = a.length;
@@ -94,6 +95,8 @@ function selection_sort(a){
 	}
 }
 
+
+//creates the key word in context panel
 function kwic(index){
 
 	//when you click on a word, it turns red, and then the word you previously clicked returns to grey

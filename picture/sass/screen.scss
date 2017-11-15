@@ -1,0 +1,82 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+body {
+	background-color: lightgrey;
+}
+
+h1 {
+	position: absolute;
+	font-size: 50px;
+}
+
+#fixed {
+	width: 100%;
+	height: 0;
+	position: fixed;
+}
+
+#edifice {
+	float: left;
+}
+
+#hmm {
+	
+	transform: rotate(90deg);
+	margin-top: 50px;
+	margin-right: -50px;
+	float: right;
+	position: relative;
+}
+
+#modernity {
+	transform: rotate(-90deg);
+	float: left;
+	position: relative;
+	margin-top: 600px;
+	margin-left: -370px;
+}
+
+img {
+	margin-left: 10%;
+	position: absolute;
+	animation-name: rotate;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	filter: grayscale(100%);
+
+	&:hover {
+		filter: grayscale(0%);
+		animation: none;
+	}
+
+}
+
+@for $i from 0 through 42 {
+	#tech_#{$i+1} {
+		animation-delay: 1s;
+		animation-duration: (43 - $i) + s;
+		top: ($i * 600px) + 400px;
+	}
+}
+
+@for $i from 0 through 46 {
+	#colonial_#{$i+1} {
+		animation-duration: (46 - $i) + s;
+		top: ($i * 600px) + 100px;
+	}
+}
+
+
+
+
+
+@keyframes rotate {
+	from{transform: rotateY(0deg);}
+	to{transform: rotateY(360deg);}
+}

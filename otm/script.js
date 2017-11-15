@@ -1,11 +1,14 @@
-//var w;
 $(document).ready(function(){
+
+	//hide about page and episode container initially
 	$("#about").hide();
 	$(".episode-container").hide();
 
+	//add padding to the top of the episode continer equal to the height of the nav bar
 	var nav_height = $('.nav').outerHeight();
 	$(".container").css("padding-top", nav_height + 20);
 	
+	//moving the position and width of the section description div to be more responsive
 	if ($(window).width() < 1166){
 		$(".section-des").css("width", "calc(40% - 220px)");
 		$(".section-des").css("left", "calc(60% + 40px)");
@@ -14,11 +17,10 @@ $(document).ready(function(){
 		var des_w = $(window).width() - 1020;
 		$(".section-des").css("width", des_w);
 		$(".section-des").css("left", "820px");
-
 	}
 
+	//on window resizing, update the width and position of the section description div
 	$(window).resize(function(){
-		//checkSize();
 		var nav_height = $('.nav').outerHeight();
 		$(".container").css("padding-top", nav_height + 20);
 
@@ -31,10 +33,9 @@ $(document).ready(function(){
 			$(".section-des").css("width", des_w);
 			$(".section-des").css("left", "820px");
 		}
-
 	});
 
-	//about toggle
+	//toggling the visibility and appearance of the about container div on hover and on click
 	$("#about-container").hover(function() {
 		$("#hr-about").toggleClass('hr-long');
 	});
@@ -45,11 +46,9 @@ $(document).ready(function(){
 	$(".button").hover(function() {
 		$(".button hr").toggleClass('hr-white');
 		$(".button hr").toggleClass('hr-long');
-
 	});
 
-	//episode toggle -- gotta change from slidetoggle
-	//to toggleclass
+	//toggling the visibility and appearance of the 'listen' button
 	$(".episode-button").hover(function() {
 		var hr = jQuery(this).find(".hr-long");
 		$(hr).toggleClass("hr-white");
@@ -63,10 +62,6 @@ $(document).ready(function(){
 		var st = $("body").scrollTop();
 		$(ec).slideToggle(250);
 
-		
-		// var sibs = $(this).siblings(".episode");
-		// var other_ec = jQuery(sibs).find(".episode-container");
-		// $(other_ec).slideUp();
 		$(eb).toggleClass("episode-button-open");
 	});
 
@@ -111,8 +106,7 @@ $(document).ready(function(){
 	}
 
 
-
-
+	//animating scrolling to an anchored section on the page
 	$(document).on('click', 'a[href^="#"]', function (event) {
     event.preventDefault();
 
@@ -122,13 +116,4 @@ $(document).ready(function(){
 	});
 
 });
-
-// function checkSize(){
-// 	if (window.matchMedia('(max-width: 786px)').matches) {
-// 		var nav_height = $('.nav').outerHeight();
-// 		$(".episode-page").css("margin-top", nav_height + 40);
-// 	} else {
-// 		$(".episode-page").css("margin-top", "20px");
-// 	}
-// }
 
