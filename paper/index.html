@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="style.css">
 
 	<script type="text/javascript" src="paper-full.min.js"></script>
+	<script type ="text/javascript" src="script.js"></script>
 
 	<script type="text/paperscript" canvas="myCanvas">
 		var layer = project.activeLayer;
@@ -15,19 +16,19 @@
 		 //path.shadowColor = 'red';
 		 //path.shadowBlur = 20;
 		 //path.shadowOffset = 10;
-		prepath.add(new Point(165, 219));
-		prepath.add(new Point(386, 92));
-		prepath.add(new Point(386, 807));
-		prepath.add(new Point(431, 854));
-		prepath.add(new Point(509, 854));
-		prepath.add(new Point(509, 886));
-		prepath.add(new Point(162, 886));
-		prepath.add(new Point(162, 854));
-		prepath.add(new Point(241, 854));
-		prepath.add(new Point(283, 807));
-		prepath.add(new Point(283, 197));
-		prepath.add(new Point(165, 254));
-		prepath.add(new Point(165, 219));
+		prepath.add(new Point(365, 219));
+		prepath.add(new Point(586, 92));
+		prepath.add(new Point(586, 807));
+		prepath.add(new Point(631, 854));
+		prepath.add(new Point(709, 854));
+		prepath.add(new Point(709, 886));
+		prepath.add(new Point(362, 886));
+		prepath.add(new Point(362, 854));
+		prepath.add(new Point(441, 854));
+		prepath.add(new Point(483, 807));
+		prepath.add(new Point(483, 197));
+		prepath.add(new Point(365, 254));
+		prepath.add(new Point(365, 219));
 		prepath.closed = true;
 
 		// for(var i = 0; i < 5; i++){
@@ -42,8 +43,8 @@
 		// 	}
 		// }
 		var path = new Path();
-		path.strokeColor = 'blue';
-		path.fillColor = 'blue';
+		//path.strokeColor = 'red';
+		path.fillColor = 'red';
 
 		 for(var i = 0; i < 70; i++){
 			var offset = (prepath.length / 70) * i;
@@ -61,31 +62,31 @@
 
 		 var path2 = new Path();
 		 //path2.strokeColor = 'black';
-		 path2.add(new Point(680, 100));
-		 path2.add(new Point(993, 100));
-		 path2.add(new Point(1045, 87));
-		 path2.add(new Point(1022, 200));
-		 path2.add(new Point(730, 200));
-		 path2.add(new Point(666, 429));
-		 var p1 = new Point(848, 360);
+		 path2.add(new Point(880, 100));
+		 path2.add(new Point(1193, 100));
+		 path2.add(new Point(1245, 87));
+		 path2.add(new Point(1222, 200));
+		 path2.add(new Point(930, 200));
+		 path2.add(new Point(866, 429));
+		 var p1 = new Point(1048, 360);
 		 var p2 = new Point(-150, 0);
 		 var p3 = new Point(150, 0);
 		 path2.add(new Segment(p1, p2, p3));
-		 path2.add(new Segment(new Point(1082, 628), new Point(0, -150), new Point(0, 150)));
-		 path2.add(new Segment(new Point(819, 900), p3, new Point(-180, 0)));
-		 path2.add(new Point(579, 704));
-		 path2.add(new Point(605, 691));
-		 path2.add(new Segment(new Point(813, 802), p2, p3));
-		 path2.add(new Segment(new Point(987, 599), new Point(0, 80), new Point(0, -150)));
-		 path2.add(new Segment(new Point(817, 399), new Point(80, 0), p2));
-		 path2.add(new Point(646, 526));
-		 path2.add(new Point(613, 526));
-		 path2.add(new Point(680, 100));
+		 path2.add(new Segment(new Point(1282, 628), new Point(0, -150), new Point(0, 150)));
+		 path2.add(new Segment(new Point(1019, 900), p3, new Point(-180, 0)));
+		 path2.add(new Point(779, 704));
+		 path2.add(new Point(805, 691));
+		 path2.add(new Segment(new Point(1013, 802), p2, p3));
+		 path2.add(new Segment(new Point(1187, 599), new Point(0, 80), new Point(0, -150)));
+		 path2.add(new Segment(new Point(1017, 399), new Point(80, 0), p2));
+		 path2.add(new Point(846, 526));
+		 path2.add(new Point(813, 526));
+		 path2.add(new Point(880, 100));
 		 path2.closed = true;
 
 		 var path3 = new Path();
-		 path3.strokeColor = 'blue';
-		 path3.fillColor = 'blue';
+		 //path3.strokeColor = 'red';
+		 path3.fillColor = 'red';
 		 //path3.shadowColor = 'red';
 		 //path3.shadowBlur = 20;
 		 //path3.shadowOffset = 10;
@@ -111,80 +112,56 @@
 		for(var i = 0; i < path.segments.length; i++){
 			path5.add(new Point(path.segments[i].point.x, path.segments[i].point.y));
 		}
-		//path4.strokeColor = "red";
 
-		function onFrame(event) {
-			// for(var i = 0; i < path3.segments.length; i++){
-			// 	//new Shape.circle(new Point(path2.segments[i].point.x, path2.segments[i].point.y), 5);
-			// 	var randx = (Math.random() * 10) - 5;
-			// 	var randy = (Math.random() * 10) - 5;
-			// 	path3.segments[i].point.x = path4.segments[i].point.x + randx;
-			// 	path3.segments[i].point.y = path4.segments[i].point.y + randy;
-			// }
 
-			 for(var i = 0; i < path3.segments.length; i++){
-			 	//new Shape.circle(new Point(path2.segments[i].point.x, path2.segments[i].point.y), 5);
-			 	var randx = (Math.random() * 1) - 0.5;
-			 	var randy = (Math.random() * 1) - 0.5;
-			 	var dif = path3.segments[i].point - path4.segments[i].point;
-			 	//var distx = ((path3.segments[i].point.x + randx) - path4.segments[i].point.x).length;
-			 	//var disty = ((path3.segments[i].point.y + randy) - path4.segments[i].point.y).length;
-			 	if(dif.length > 50){
-			 		path3.segments[i].point.x = path4.segments[i].point.x;
-			 		path3.segments[i].point.y = path4.segments[i].point.y;
+		for(var i = 0; i < path3.segments.length; i++){
+			console.log(path.segments[i].point.x, path.segments[i].point.y);
+			//console.log();
 
-			 	} else {
-			 		path3.segments[i].point.x += randx;
-			 		path3.segments[i].point.y += randy;
-			 		//path3.segments[i].handleIn += randx/3;
-			 		//path3.segments[i].handleOut += randy/3;
-			 	}
-			 	//path3.segments[i].point.x += randx;
-			 	//path3.segments[i].point.y += randy;
-			 }
-
-			// for(var i = 0; i < path.segments.length; i++){
-			// 	var randx = (Math.random() * 2) - 1;
-			// 	var randy = (Math.random() * 2) - 1;
-			// 	//path.segments[i].handleIn += randx;
-			// 	//path.segments[i].handleOut += randy;
-			// 	path.segments[i].point.x += randx;
-			// 	path.segments[i].point.y += randy;
-			// }
-
-			for(var i = 0; i < path.segments.length; i++){
-			 	//new Shape.circle(new Point(path2.segments[i].point.x, path2.segments[i].point.y), 5);
-			 	var randx = (Math.random() * 1) - 0.5;
-			 	var randy = (Math.random() * 1) - 0.5;
-			 	var dif = path.segments[i].point - path5.segments[i].point;
-			 	//var distx = ((path3.segments[i].point.x + randx) - path4.segments[i].point.x).length;
-			 	//var disty = ((path3.segments[i].point.y + randy) - path4.segments[i].point.y).length;
-			 	if(dif.length > 100){
-			 		path.segments[i].point.x = path5.segments[i].point.x;
-			 		//path.segments[i].point.y = path5.segments[i].point.y;
-
-			 		
-			 	} else {
-			 		path.segments[i].point.x += randx;
-			 		path.segments[i].point.y += randy;
-			 		//path.segments[i].handleIn += randx;
-			 	}
-
-			
-			 		//path.segments[i].handleOut += randy;
-			 	
-			 	//path3.segments[i].point.x += randx;
-			 	//path3.segments[i].point.y += randy;
-			 }
-
-			
 		}
+		//path4.strokeColor = "red";
+		// var speed = 2;
+		// var randx;
+		// var randy;
+		// function onFrame(event) {			
+		// 	 for(var i = 0; i < path3.segments.length; i++){
+		// 	 	randx = (Math.random() * 2) - 1;
+		// 	 	randy = (Math.random() * 2) - 1;
+
+		// 	 	path3.segments[i].point.x += randx;
+		// 	 	path3.segments[i].point.y += randy;
+
+		// 	 }
+
+		// 	for(var i = 0; i < path.segments.length; i++){
+
+		// 	 	randx = (Math.random() * 2) - 1;
+		// 	 	randy = (Math.random() * 2) - 1;
+
+		// 	 	path.segments[i].point.x += randx;
+		// 	 	path.segments[i].point.y += randy;
+
+		// 	 }
+		// 	  // if (speed < 50){
+		// 	  // 	speed *= 1.01;
+		// 	  // } else {
+		// 	  // 	speed *= 0.9;
+		// 	  // }
+			
+		// }
 
 </script>
 </head>
-<body>
+<body onLoad="window.scroll(1000,800)">
 	<!-- <h1>documenta</h1> -->
-	<canvas id="myCanvas" resize></canvas>
+	<canvas id="myCanvas" hidpi="off"></canvas>
+	<div id="frame">
+	</div>
+	
+	
+
+
+	
 
 </body>
 </html>

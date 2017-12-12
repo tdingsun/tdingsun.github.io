@@ -1,7 +1,7 @@
 /* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+* In this file you should write your main styles. (or centralize your imports)
+* Import this file using the following HTML or equivalent:
+* <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* line 5, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -76,30 +76,37 @@ body {
 h1 {
   position: absolute;
   font-size: 50px;
+  hanging-punctuation: first;
+  line-height: 35px;
 }
 
-/* line 17, ../sass/screen.scss */
+/* line 19, ../sass/screen.scss */
+i {
+  font-style: italic;
+}
+
+/* line 23, ../sass/screen.scss */
 #fixed {
   width: 100%;
   height: 0;
   position: fixed;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 #edifice {
   float: left;
 }
 
-/* line 27, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 #hmm {
   transform: rotate(90deg);
-  margin-top: 50px;
-  margin-right: -50px;
+  margin-top: 355px;
+  margin-right: -345px;
   float: right;
   position: relative;
 }
 
-/* line 36, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 #modernity {
   transform: rotate(-90deg);
   float: left;
@@ -108,603 +115,770 @@ h1 {
   margin-left: -370px;
 }
 
-/* line 44, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 img {
-  margin-left: 10%;
+  margin-left: 25%;
   position: absolute;
-  animation-name: rotate;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
   filter: grayscale(100%);
 }
-/* line 53, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 img:hover {
   filter: grayscale(0%);
   animation: none;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
+.animated {
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* line 72, ../sass/screen.scss */
+.no_animation {
+  animation: none;
+}
+
+/* line 77, ../sass/screen.scss */
 #tech_1 {
-  animation-delay: 1s;
-  animation-duration: 43s;
+  width: 50%;
+  animation-duration: 40s;
   top: 400px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_2 {
-  animation-delay: 1s;
-  animation-duration: 42s;
+  width: 50%;
+  animation-duration: 39s;
   top: 1000px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_3 {
-  animation-delay: 1s;
-  animation-duration: 41s;
+  width: 50%;
+  animation-duration: 38s;
   top: 1600px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_4 {
-  animation-delay: 1s;
-  animation-duration: 40s;
+  width: 50%;
+  animation-duration: 37s;
   top: 2200px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_5 {
-  animation-delay: 1s;
-  animation-duration: 39s;
+  width: 50%;
+  animation-duration: 36s;
   top: 2800px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_6 {
-  animation-delay: 1s;
-  animation-duration: 38s;
+  width: 50%;
+  animation-duration: 35s;
   top: 3400px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_7 {
-  animation-delay: 1s;
-  animation-duration: 37s;
+  width: 50%;
+  animation-duration: 34s;
   top: 4000px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_8 {
-  animation-delay: 1s;
-  animation-duration: 36s;
+  width: 50%;
+  animation-duration: 33s;
   top: 4600px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_9 {
-  animation-delay: 1s;
-  animation-duration: 35s;
+  width: 50%;
+  animation-duration: 32s;
   top: 5200px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_10 {
-  animation-delay: 1s;
-  animation-duration: 34s;
+  width: 50%;
+  animation-duration: 31s;
   top: 5800px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_11 {
-  animation-delay: 1s;
-  animation-duration: 33s;
+  width: 50%;
+  animation-duration: 30s;
   top: 6400px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_12 {
-  animation-delay: 1s;
-  animation-duration: 32s;
+  width: 50%;
+  animation-duration: 29s;
   top: 7000px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_13 {
-  animation-delay: 1s;
-  animation-duration: 31s;
+  width: 50%;
+  animation-duration: 28s;
   top: 7600px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_14 {
-  animation-delay: 1s;
-  animation-duration: 30s;
+  width: 50%;
+  animation-duration: 27s;
   top: 8200px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_15 {
-  animation-delay: 1s;
-  animation-duration: 29s;
+  width: 50%;
+  animation-duration: 26s;
   top: 8800px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_16 {
-  animation-delay: 1s;
-  animation-duration: 28s;
+  width: 50%;
+  animation-duration: 25s;
   top: 9400px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_17 {
-  animation-delay: 1s;
-  animation-duration: 27s;
+  width: 50%;
+  animation-duration: 24s;
   top: 10000px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_18 {
-  animation-delay: 1s;
-  animation-duration: 26s;
+  width: 50%;
+  animation-duration: 23s;
   top: 10600px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_19 {
-  animation-delay: 1s;
-  animation-duration: 25s;
+  width: 50%;
+  animation-duration: 22s;
   top: 11200px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_20 {
-  animation-delay: 1s;
-  animation-duration: 24s;
+  width: 50%;
+  animation-duration: 21s;
   top: 11800px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_21 {
-  animation-delay: 1s;
-  animation-duration: 23s;
+  width: 50%;
+  animation-duration: 20s;
   top: 12400px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_22 {
-  animation-delay: 1s;
-  animation-duration: 22s;
+  width: 50%;
+  animation-duration: 19s;
   top: 13000px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_23 {
-  animation-delay: 1s;
-  animation-duration: 21s;
+  width: 50%;
+  animation-duration: 18s;
   top: 13600px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_24 {
-  animation-delay: 1s;
-  animation-duration: 20s;
+  width: 50%;
+  animation-duration: 17s;
   top: 14200px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_25 {
-  animation-delay: 1s;
-  animation-duration: 19s;
+  width: 50%;
+  animation-duration: 16s;
   top: 14800px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_26 {
-  animation-delay: 1s;
-  animation-duration: 18s;
+  width: 50%;
+  animation-duration: 15s;
   top: 15400px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_27 {
-  animation-delay: 1s;
-  animation-duration: 17s;
+  width: 50%;
+  animation-duration: 14s;
   top: 16000px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_28 {
-  animation-delay: 1s;
-  animation-duration: 16s;
+  width: 50%;
+  animation-duration: 13s;
   top: 16600px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_29 {
-  animation-delay: 1s;
-  animation-duration: 15s;
+  width: 50%;
+  animation-duration: 12s;
   top: 17200px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_30 {
-  animation-delay: 1s;
-  animation-duration: 14s;
+  width: 50%;
+  animation-duration: 11s;
   top: 17800px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_31 {
-  animation-delay: 1s;
-  animation-duration: 13s;
+  width: 50%;
+  animation-duration: 10s;
   top: 18400px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_32 {
-  animation-delay: 1s;
-  animation-duration: 12s;
+  width: 50%;
+  animation-duration: 9s;
   top: 19000px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_33 {
-  animation-delay: 1s;
-  animation-duration: 11s;
+  width: 50%;
+  animation-duration: 8s;
   top: 19600px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_34 {
-  animation-delay: 1s;
-  animation-duration: 10s;
+  width: 50%;
+  animation-duration: 7s;
   top: 20200px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_35 {
-  animation-delay: 1s;
-  animation-duration: 9s;
+  width: 50%;
+  animation-duration: 6s;
   top: 20800px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_36 {
-  animation-delay: 1s;
-  animation-duration: 8s;
+  width: 50%;
+  animation-duration: 5s;
   top: 21400px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_37 {
-  animation-delay: 1s;
-  animation-duration: 7s;
+  width: 50%;
+  animation-duration: 4s;
   top: 22000px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_38 {
-  animation-delay: 1s;
-  animation-duration: 6s;
+  width: 50%;
+  animation-duration: 3s;
   top: 22600px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_39 {
-  animation-delay: 1s;
-  animation-duration: 5s;
+  width: 50%;
+  animation-duration: 2s;
   top: 23200px;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #tech_40 {
-  animation-delay: 1s;
-  animation-duration: 4s;
+  width: 50%;
+  animation-duration: 1s;
   top: 23800px;
 }
 
-/* line 61, ../sass/screen.scss */
-#tech_41 {
-  animation-delay: 1s;
-  animation-duration: 3s;
-  top: 24400px;
-}
-
-/* line 61, ../sass/screen.scss */
-#tech_42 {
-  animation-delay: 1s;
-  animation-duration: 2s;
-  top: 25000px;
-}
-
-/* line 61, ../sass/screen.scss */
-#tech_43 {
-  animation-delay: 1s;
-  animation-duration: 1s;
-  top: 25600px;
-}
-
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_1 {
-  animation-duration: 46s;
+  width: 50%;
+  animation-duration: 40s;
   top: 100px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_2 {
-  animation-duration: 45s;
+  width: 50%;
+  animation-duration: 39s;
   top: 700px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_3 {
-  animation-duration: 44s;
+  width: 50%;
+  animation-duration: 38s;
   top: 1300px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_4 {
-  animation-duration: 43s;
+  width: 50%;
+  animation-duration: 37s;
   top: 1900px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_5 {
-  animation-duration: 42s;
+  width: 50%;
+  animation-duration: 36s;
   top: 2500px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_6 {
-  animation-duration: 41s;
+  width: 50%;
+  animation-duration: 35s;
   top: 3100px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_7 {
-  animation-duration: 40s;
+  width: 50%;
+  animation-duration: 34s;
   top: 3700px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_8 {
-  animation-duration: 39s;
+  width: 50%;
+  animation-duration: 33s;
   top: 4300px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_9 {
-  animation-duration: 38s;
+  width: 50%;
+  animation-duration: 32s;
   top: 4900px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_10 {
-  animation-duration: 37s;
+  width: 50%;
+  animation-duration: 31s;
   top: 5500px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_11 {
-  animation-duration: 36s;
+  width: 50%;
+  animation-duration: 30s;
   top: 6100px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_12 {
-  animation-duration: 35s;
+  width: 50%;
+  animation-duration: 29s;
   top: 6700px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_13 {
-  animation-duration: 34s;
+  width: 50%;
+  animation-duration: 28s;
   top: 7300px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_14 {
-  animation-duration: 33s;
+  width: 50%;
+  animation-duration: 27s;
   top: 7900px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_15 {
-  animation-duration: 32s;
+  width: 50%;
+  animation-duration: 26s;
   top: 8500px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_16 {
-  animation-duration: 31s;
+  width: 50%;
+  animation-duration: 25s;
   top: 9100px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_17 {
-  animation-duration: 30s;
+  width: 50%;
+  animation-duration: 24s;
   top: 9700px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_18 {
-  animation-duration: 29s;
+  width: 50%;
+  animation-duration: 23s;
   top: 10300px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_19 {
-  animation-duration: 28s;
+  width: 50%;
+  animation-duration: 22s;
   top: 10900px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_20 {
-  animation-duration: 27s;
+  width: 50%;
+  animation-duration: 21s;
   top: 11500px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_21 {
-  animation-duration: 26s;
+  width: 50%;
+  animation-duration: 20s;
   top: 12100px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_22 {
-  animation-duration: 25s;
+  width: 50%;
+  animation-duration: 19s;
   top: 12700px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_23 {
-  animation-duration: 24s;
+  width: 50%;
+  animation-duration: 18s;
   top: 13300px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_24 {
-  animation-duration: 23s;
+  width: 50%;
+  animation-duration: 17s;
   top: 13900px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_25 {
-  animation-duration: 22s;
+  width: 50%;
+  animation-duration: 16s;
   top: 14500px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_26 {
-  animation-duration: 21s;
+  width: 50%;
+  animation-duration: 15s;
   top: 15100px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_27 {
-  animation-duration: 20s;
+  width: 50%;
+  animation-duration: 14s;
   top: 15700px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_28 {
-  animation-duration: 19s;
+  width: 50%;
+  animation-duration: 13s;
   top: 16300px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_29 {
-  animation-duration: 18s;
+  width: 50%;
+  animation-duration: 12s;
   top: 16900px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_30 {
-  animation-duration: 17s;
+  width: 50%;
+  animation-duration: 11s;
   top: 17500px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_31 {
-  animation-duration: 16s;
+  width: 50%;
+  animation-duration: 10s;
   top: 18100px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_32 {
-  animation-duration: 15s;
+  width: 50%;
+  animation-duration: 9s;
   top: 18700px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_33 {
-  animation-duration: 14s;
+  width: 50%;
+  animation-duration: 8s;
   top: 19300px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_34 {
-  animation-duration: 13s;
+  width: 50%;
+  animation-duration: 7s;
   top: 19900px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_35 {
-  animation-duration: 12s;
+  width: 50%;
+  animation-duration: 6s;
   top: 20500px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_36 {
-  animation-duration: 11s;
+  width: 50%;
+  animation-duration: 5s;
   top: 21100px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_37 {
-  animation-duration: 10s;
+  width: 50%;
+  animation-duration: 4s;
   top: 21700px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_38 {
-  animation-duration: 9s;
+  width: 50%;
+  animation-duration: 3s;
   top: 22300px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_39 {
-  animation-duration: 8s;
+  width: 50%;
+  animation-duration: 2s;
   top: 22900px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #colonial_40 {
-  animation-duration: 7s;
+  width: 50%;
+  animation-duration: 1s;
   top: 23500px;
 }
 
-/* line 69, ../sass/screen.scss */
-#colonial_41 {
+/* line 94, ../sass/screen.scss */
+#crops_1 {
+  animation-duration: 12s;
+  top: 500px;
+  left: 1000px;
+  max-width: 300px;
+}
+
+/* line 94, ../sass/screen.scss */
+#crops_2 {
+  animation-duration: 11s;
+  top: 1500px;
+  left: -300px;
+  max-width: 300px;
+}
+
+/* line 94, ../sass/screen.scss */
+#crops_3 {
+  animation-duration: 10s;
+  top: 2500px;
+  left: -300px;
+  max-width: 300px;
+}
+
+/* line 94, ../sass/screen.scss */
+#crops_4 {
+  animation-duration: 9s;
+  top: 3500px;
+  left: 1000px;
+  max-width: 300px;
+}
+
+/* line 94, ../sass/screen.scss */
+#crops_5 {
+  animation-duration: 8s;
+  top: 4500px;
+  left: -300px;
+  max-width: 300px;
+}
+
+/* line 94, ../sass/screen.scss */
+#crops_6 {
+  animation-duration: 7s;
+  top: 5500px;
+  left: -300px;
+  max-width: 300px;
+}
+
+/* line 94, ../sass/screen.scss */
+#crops_7 {
   animation-duration: 6s;
-  top: 24100px;
+  top: 6500px;
+  left: 1000px;
+  max-width: 300px;
 }
 
-/* line 69, ../sass/screen.scss */
-#colonial_42 {
+/* line 94, ../sass/screen.scss */
+#crops_8 {
   animation-duration: 5s;
-  top: 24700px;
+  top: 7500px;
+  left: -300px;
+  max-width: 300px;
 }
 
-/* line 69, ../sass/screen.scss */
-#colonial_43 {
+/* line 94, ../sass/screen.scss */
+#crops_9 {
   animation-duration: 4s;
-  top: 25300px;
+  top: 8500px;
+  left: -300px;
+  max-width: 300px;
 }
 
-/* line 69, ../sass/screen.scss */
-#colonial_44 {
+/* line 94, ../sass/screen.scss */
+#crops_10 {
   animation-duration: 3s;
-  top: 25900px;
+  top: 9500px;
+  left: -300px;
+  max-width: 300px;
 }
 
-/* line 69, ../sass/screen.scss */
-#colonial_45 {
+/* line 94, ../sass/screen.scss */
+#crops_11 {
   animation-duration: 2s;
-  top: 26500px;
+  top: 10500px;
+  left: -300px;
+  max-width: 300px;
 }
 
-/* line 69, ../sass/screen.scss */
-#colonial_46 {
+/* line 94, ../sass/screen.scss */
+#crops_12 {
   animation-duration: 1s;
-  top: 27100px;
+  top: 11500px;
+  left: 1000px;
+  max-width: 300px;
 }
 
-/* line 69, ../sass/screen.scss */
-#colonial_47 {
-  animation-duration: 0s;
-  top: 27700px;
+/* line 102, ../sass/screen.scss */
+#q {
+  color: black;
+}
+
+/* line 107, ../sass/screen.scss */
+#q1 {
+  left: 100px;
+  top: 1000px;
+  width: 500px;
+  font-size: 30px;
+}
+/* line 112, ../sass/screen.scss */
+#q1:hover {
+  z-index: 9999;
+}
+
+/* line 117, ../sass/screen.scss */
+#q2 {
+  left: 1200px;
+  top: 4000px;
+  width: 500px;
+  font-size: 30px;
+}
+
+/* line 124, ../sass/screen.scss */
+#q3 {
+  left: 200px;
+  top: 7000px;
+  width: 500px;
+  font-size: 30px;
+}
+
+/* line 131, ../sass/screen.scss */
+#q4 {
+  left: 1200px;
+  top: 10000px;
+  width: 500px;
+  font-size: 30px;
+}
+
+/* line 138, ../sass/screen.scss */
+#q5 {
+  left: 100px;
+  top: 13000px;
+  width: 800px;
+  font-size: 30px;
+}
+
+/* line 145, ../sass/screen.scss */
+#q6 {
+  left: 1100px;
+  top: 16000px;
+  width: 700px;
+  font-size: 30px;
+}
+
+/* line 152, ../sass/screen.scss */
+#q7 {
+  left: 100px;
+  top: 19000px;
+  width: 500px;
+  font-size: 30px;
+}
+
+/* line 159, ../sass/screen.scss */
+#tab1 {
+  margin-left: 300px;
+}
+
+/* line 163, ../sass/screen.scss */
+#q8 {
+  left: 1300px;
+  top: 22000px;
+  width: 500px;
+  font-size: 30px;
+}
+
+/* line 170, ../sass/screen.scss */
+#q9 {
+  left: 200px;
+  top: 25000px;
+  width: 500px;
+  font-size: 30px;
 }
 
 @keyframes rotate {

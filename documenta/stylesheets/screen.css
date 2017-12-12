@@ -1,0 +1,319 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rvm/gems/ruby-2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 8, ../sass/screen.scss */
+body, html {
+  color: white;
+  font-family: serif;
+  font-size: 100px;
+  margin: 0;
+  width: 3755px;
+  height: 2513px;
+  background-color: black;
+  background-image: url("../ocean.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: -1;
+  cursor: pointer;
+}
+/* line 23, ../sass/screen.scss */
+body:active, html:active {
+  cursor: url(hand.png), pointer;
+}
+
+/* line 29, ../sass/screen.scss */
+p {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+/* line 34, ../sass/screen.scss */
+i {
+  font-style: italic;
+}
+
+/* line 38, ../sass/screen.scss */
+h1 {
+  font-size: 50px;
+}
+
+/* line 42, ../sass/screen.scss */
+ol {
+  list-style-type: decimal;
+  font-size: 16px;
+  line-height: 25px;
+  width: 160px;
+  margin-right: 20px;
+  margin-left: 20px;
+  float: left;
+}
+
+/* line 53, ../sass/screen.scss */
+.underline {
+  font-style: italic;
+}
+
+/* line 58, ../sass/screen.scss */
+#ocean {
+  position: absolute;
+}
+
+/* line 66, ../sass/screen.scss */
+.canvas {
+  mix-blend-mode: color-burn;
+}
+
+/* line 71, ../sass/screen.scss */
+#kassel {
+  position: relative;
+  float: left;
+  margin-left: 30px;
+  margin-top: 20px;
+  transition: 0.25s;
+}
+/* line 77, ../sass/screen.scss */
+#kassel:hover {
+  transform: rotate(5deg);
+}
+
+/* line 83, ../sass/screen.scss */
+#documenta {
+  position: relative;
+  font-style: italic;
+  float: right;
+  margin-right: 30px;
+  margin-top: 20px;
+  transition: 0.25s;
+}
+/* line 90, ../sass/screen.scss */
+#documenta:hover {
+  transform: rotate(-5deg);
+}
+
+/* line 95, ../sass/screen.scss */
+#date {
+  position: absolute;
+  top: 2393px;
+  left: 30px;
+  transition: 0.25s;
+}
+/* line 100, ../sass/screen.scss */
+#date:hover {
+  transform: rotate(-5deg);
+}
+
+/* line 105, ../sass/screen.scss */
+#year {
+  position: absolute;
+  left: 3520px;
+  top: 2393px;
+  transition: 0.25s;
+}
+/* line 110, ../sass/screen.scss */
+#year:hover {
+  transform: rotate(5deg);
+}
+
+/* line 115, ../sass/screen.scss */
+.blocks {
+  position: absolute;
+  padding: 50px;
+  border: 1px solid white;
+  transition: 0.25s;
+  z-index: 1;
+}
+/* line 120, ../sass/screen.scss */
+.blocks:hover {
+  background-color: white;
+  color: #333;
+  border: none;
+}
+
+/* line 130, ../sass/screen.scss */
+#tickets {
+  width: 500px;
+  left: 250px;
+  top: 250px;
+}
+/* line 134, ../sass/screen.scss */
+#tickets:hover {
+  transform: rotate(-5deg);
+}
+
+/* line 139, ../sass/screen.scss */
+#directions {
+  width: 500px;
+  left: 1000px;
+  top: 1250px;
+}
+/* line 143, ../sass/screen.scss */
+#directions:hover {
+  transform: rotate(5deg);
+}
+
+/* line 148, ../sass/screen.scss */
+#locations {
+  left: 2500px;
+  top: 200px;
+}
+/* line 151, ../sass/screen.scss */
+#locations p {
+  width: 190px;
+  margin-left: 10px;
+  float: left;
+}
+/* line 156, ../sass/screen.scss */
+#locations:hover {
+  transform: rotate(-5deg);
+}
+
+/* line 161, ../sass/screen.scss */
+#hours {
+  width: 500px;
+  left: 600px;
+  top: 600px;
+}
+/* line 165, ../sass/screen.scss */
+#hours:hover {
+  transform: rotate(5deg);
+}
+
+/* line 170, ../sass/screen.scss */
+#reader {
+  width: 500px;
+  left: 2500px;
+  top: 1496px;
+}
+/* line 174, ../sass/screen.scss */
+#reader img {
+  box-shadow: 10px 10px 15px 1px red;
+}
+/* line 177, ../sass/screen.scss */
+#reader:hover {
+  transform: rotate(5deg);
+}
+
+/* line 183, ../sass/screen.scss */
+#note1 {
+  width: 500px;
+  left: 1700px;
+  top: 100px;
+}
+/* line 187, ../sass/screen.scss */
+#note1 p {
+  font-size: 16px;
+  line-height: 20px;
+}
+/* line 192, ../sass/screen.scss */
+#note1:hover {
+  transform: rotate(5deg);
+}
+
+/* line 197, ../sass/screen.scss */
+#note2 {
+  width: 500px;
+  left: 425px;
+  top: 1800px;
+}
+/* line 201, ../sass/screen.scss */
+#note2 p {
+  font-size: 16px;
+  line-height: 20px;
+}
+/* line 206, ../sass/screen.scss */
+#note2:hover {
+  transform: rotate(-5deg);
+}
+
+/* line 212, ../sass/screen.scss */
+#note3 {
+  width: 500px;
+  left: 1500px;
+  top: 1950px;
+}
+/* line 216, ../sass/screen.scss */
+#note3 p {
+  font-size: 16px;
+  line-height: 20px;
+}
+/* line 221, ../sass/screen.scss */
+#note3:hover {
+  transform: rotate(5deg);
+}
+
+@keyframes bounce {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -30px;
+  }
+}

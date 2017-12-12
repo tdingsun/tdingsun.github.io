@@ -1,0 +1,238 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+body, html {
+	color: white;
+	font-family: serif;
+	font-size: 100px;
+	margin: 0;
+	width: 3755px;
+  height: 2513px;
+  background-color: black;
+  background-image: url("../ocean.jpg");
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-attachment: fixed;
+  background-size: cover;
+    z-index: -1;
+    cursor: pointer;
+    &:active {
+    	cursor: url(hand.png), pointer;
+    }
+    
+}
+
+p {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+i {
+	font-style: italic;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+ol {
+	list-style-type: decimal;
+	font-size: 16px;
+	line-height: 25px;
+	width: 160px;
+	margin-right: 20px;
+	margin-left: 20px;
+	float: left;
+
+}
+
+.underline {
+	font-style: italic;
+
+}
+
+#ocean {
+  position: absolute;
+  
+  //ackground-blend-mode: color-burn;
+ 
+
+}
+
+.canvas {
+	mix-blend-mode: color-burn;
+
+}
+
+#kassel {
+	position: relative;
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+	transition: 0.25s;
+	&:hover {
+		transform: rotate(5deg);
+	}
+
+}
+
+#documenta {
+	position: relative;
+	font-style: italic;
+	float: right;
+	margin-right: 30px;
+	margin-top: 20px;
+	transition: 0.25s;
+	&:hover {
+		transform: rotate(-5deg);
+	}
+}
+
+#date {
+	position: absolute;
+	top: 2393px;
+	left: 30px;
+	transition: 0.25s;
+	&:hover {
+		transform: rotate(-5deg);
+	}
+}
+
+#year {
+	position: absolute;
+	left: 3520px;
+	top: 2393px;
+	transition: 0.25s;
+	&:hover {
+		transform: rotate(5deg);
+	}
+}
+
+.blocks {
+	position: absolute;
+	padding: 50px;
+	border: 1px solid white;
+	transition: 0.25s;
+	&:hover {
+		//animation: bounce 1s ease-out 0 infinite alternate;
+
+		background-color: white;
+		color: #333;
+		border: none;
+	}
+	z-index: 1;
+}
+
+#tickets {
+	width: 500px;
+	left: 250px;
+	top: 250px;
+	&:hover{
+		transform: rotate(-5deg);
+	}
+}
+
+#directions {
+	width: 500px;
+	left: 1000px;
+	top: 1250px;
+	&:hover{
+		transform: rotate(5deg);
+	}
+}
+
+#locations {
+	left: 2500px;
+	top: 200px;
+	p {
+		width: 190px;
+		margin-left: 10px;
+		float: left;
+	}
+	&:hover{
+		transform: rotate(-5deg);
+	}
+}
+
+#hours {
+	width: 500px;
+	left: 600px;
+	top: 600px;
+	&:hover{
+		transform: rotate(5deg);
+	}
+}
+
+#reader {
+	width: 500px;
+	left: 2500px;
+	top: 1496px;
+	img {
+		box-shadow: 10px 10px 15px 1px red;
+	}
+	&:hover{
+		transform: rotate(5deg);
+	}
+
+}
+
+#note1 {
+	width: 500px;
+	left: 1700px;
+	top: 100px;
+	p {
+		font-size: 16px;
+		line-height: 20px;
+
+	}
+	&:hover{
+		transform: rotate(5deg);
+	}
+}
+
+#note2 {
+	width: 500px;
+	left: 425px;
+	top: 1800px;
+	p {
+		font-size: 16px;
+		line-height: 20px;
+
+	}
+	&:hover{
+		transform: rotate(-5deg);
+	}
+
+}
+
+#note3 {
+	width: 500px;
+	left: 1500px;
+	top: 1950px;
+	p {
+		font-size: 16px;
+		line-height: 20px;
+
+	}
+	&:hover{
+		transform: rotate(5deg);
+	}
+}
+
+@keyframes bounce {
+	0% {
+		margin-top: 0px;
+	}
+
+	100% {
+		margin-top: -30px;
+
+	}
+}
+
+
+
