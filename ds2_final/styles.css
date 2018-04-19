@@ -1,0 +1,260 @@
+
+#img_1 {
+	background-image: url('images/1a.png');
+	width: 385px;
+	height: 595px;
+}
+#img_1:after {
+	background-image: url('images/1b.png');
+	width: 385px;
+	height: 595px;
+}
+
+#img_2 {
+	background-image: url('images/2a.png');
+	width: 595px;
+	height: 385px;
+}
+#img_2:after {
+	background-image: url('images/2b.png');
+	width: 385px;
+	height: 595px;
+}
+
+#img_3 {
+	background-image: url('images/3a.png');
+	width: 595px;
+	height: 385px;
+}
+#img_3:after {
+	background-image: url('images/3b.png');
+	width: 385px;
+	height: 595px;
+}
+
+#img_4 {
+	background-image: url('images/4a.png');
+	width: 595px;
+	height: 385px;
+}
+#img_4:after {
+	background-image: url('images/4b.png');
+	;width: 595px;
+	height: 385px
+}
+
+#img_5 {
+	background-image: url('images/5a.png');
+	width: 595px;
+	height: 385px;
+}
+#img_5:after {
+	background-image: url('images/5b.png');
+	width: 385px;
+	height: 595px;
+}
+
+#img_6 {
+	background-image: url('images/6a.png');
+	width: 385px;
+	height: 595px;
+	box-shadow: none;
+}
+
+#img_7 {
+	background-image: url('images/7a.png');
+	width: 385px;
+	height: 595px;
+}
+#img_7:after {
+	background-image: url('images/7b.png');
+	width: 385px;
+	height: 595px;
+}
+
+#img_8 {
+	background-image: url('images/8a.png');
+	width: 595px;
+	height: 385px;
+	box-shadow: none;
+}
+
+#img_9 {
+	background-image: url('images/9a.png');
+	width: 595px;
+	height: 385px;
+}
+#img_9:after {
+	background-image: url('images/9b.png');
+	width: 385px;
+	height: 595px;
+}
+
+#img_10 {
+	background-image: url('images/10a.png');
+	width: 595px;
+	height: 385px;
+}
+#img_10:after {
+	background-image: url('images/10b.png');
+	width: 385px;
+	height: 595px;
+}
+
+#img_11 {
+	background-image: url('images/11a.png');
+	width: 600px;
+	height: 650px;
+}
+#img_11:after {
+	background-image: url('images/11b.png');
+	width: 600px;
+	height: 650px;
+}
+
+#pentagram_key {
+	width: 300px;
+	height: auto;
+	color: red;
+}
+
+#text_1 {
+		background-image: url('images/text1.png');
+		background-repeat: no-repeat;
+		width: 1200px;
+		height: 500px;
+		box-shadow: none;
+}
+
+#text_2 {
+		background-image: url('images/text2.png');
+		background-repeat: no-repeat;
+		width: 1200px;
+		height: 200px;
+		box-shadow: none;
+}
+
+#text_3 {
+		background-image: url('images/text3.png');
+		background-repeat: no-repeat;
+		width: 1000px;
+		height: 350px;
+		box-shadow: none;
+		margin-left: 500px;
+		margin-top: 500px;
+}
+
+#text_4 {
+		background-image: url('images/text4.png');
+		background-repeat: no-repeat;
+		width: 1200px;
+		height: 200px;
+		box-shadow: none;
+}
+
+#text_5 {
+		background-image: url('images/text5.png');
+		background-repeat: no-repeat;
+		width: 1110px;
+		height: 500px;
+		box-shadow: none;
+}
+
+#text_6 {
+	background-image: url('images/text6a.png');
+	width: 300px;
+	height: 300px;
+}
+#text_6:after {
+	background-image: url('images/text6b.png');
+	width: 300px;
+	height: 300px;
+}
+
+#text_7 {
+	background-image: url('images/text7a.png');
+	width: 300px;
+	height: 350px;
+}
+#text_7:after {
+	background-image: url('images/text7b.png');
+	width: 350px;
+	height: 300px;
+}
+
+#text_8 {
+	background-image: url('images/text8.png');
+	width: 800px;
+	height: 400px;
+}
+#text_8:after {
+	background-image: url('images/text11.png');
+	width: 800px;
+	height: 600px;
+}
+
+#text_10 {
+	background-image: url('images/text10.png');
+	width: 300px;
+	height: 350px;
+}
+
+#text_10:after {
+	background-image: url('images/text9.png');
+	width: 300px;
+	height: 850px;
+}
+
+
+.bodytext {
+	width: 600px;
+	color: red;
+}
+
+#body_text_2 {
+	margin-left: 900px;
+	margin-top: 300px;
+}
+
+[tabindex = "0" ] {
+	cursor: pointer;
+}
+
+
+
+
+.draggable {
+    background-size: contain;
+  	top: 0px;
+    left: 0px;
+    position: absolute;
+    transition: all 1s ease;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+     box-shadow: 3px 3px 7px red;
+
+     margin-left: 500px;
+     margin-top: 300px;
+
+}
+
+.draggable:after {
+	 background-size: contain;
+    content: '';
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    -webkit-transform: rotate3d( 1,-5,0,180deg );
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+     box-shadow: 3px 3px 7px red;
+
+}
+
+.draggable:focus {
+	 -webkit-transform: rotate3d(1,-5, 0,180deg );
+}
+
+
