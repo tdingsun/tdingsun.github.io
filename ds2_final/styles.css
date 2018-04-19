@@ -140,8 +140,8 @@
 		width: 1000px;
 		height: 350px;
 		box-shadow: none;
-		margin-left: 500px;
-		margin-top: 500px;
+		margin-left: 650px;
+		margin-top: 550px;
 }
 
 #text_4 {
@@ -212,7 +212,7 @@
 }
 
 #body_text_2 {
-	margin-left: 900px;
+	margin-left: 950px;
 	margin-top: 300px;
 }
 
@@ -225,16 +225,11 @@
 
 .draggable {
     background-size: contain;
-  	top: 0px;
-    left: 0px;
     position: absolute;
     transition: all 1s ease;
     -webkit-transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
      box-shadow: 3px 3px 7px red;
-
-     margin-left: 500px;
-     margin-top: 300px;
 
 }
 
