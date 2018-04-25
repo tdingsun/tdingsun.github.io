@@ -1,17 +1,23 @@
+
+
 $(document).ready(function() {
+
+	var l = 2000 - (($(window).width() - 1000)/2);
+	var t = 1050;
+	console.log(l);
+	console.log(t);
+	window.scroll(l,t);
+
+
 	$(".draggable").draggable({
 		stack: ".draggable",
 		cursor: "grabbing",
-		grid: [50,50],
 		start: function(event, ui){
 			$(this).css("transition", "0s");
-			// $(this).css("position", "relative");
 			$(this).blur();
 		},
 		stop: function(event, ui){
 			$(this).css("transition", "0s");
-			// $(this).css("position", "relative");
-
 			$(this).blur();
 		}
 
