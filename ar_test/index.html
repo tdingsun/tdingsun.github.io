@@ -4,10 +4,7 @@
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs>
-    <!-- assets for scene -->
-    <a-assets>
-      <img id="test-image" src="https://upload.wikimedia.org/wikipedia/commons/4/48/Hiro_marker_ARjs.png">
-    </a-assets>
+
     <!-- create your content here. just a box for now -->
     <a-text position='0 0.5 0' rotation="270 0 0" value="Welcome to\nJohnson and Johnson\nHome" color="#FF0000" align="center">
         <a-animation attribute="rotation" dur="1000" fill="forwards" from="270 -30 0" to="270 30 0" direction="alternate" repeat="indefinite"></a-animation>
