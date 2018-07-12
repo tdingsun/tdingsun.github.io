@@ -100,7 +100,9 @@
              rotation="-90 0 0"
              position="-1.2 0.25 1"
              scale="0.75 0.75 0"></a-text>
-      <a-entity gltf-model="#dog" scale="0.01 0.01 0.01"></a-entity>
+      <a-entity gltf-model="#dog" scale="0.01 0.01 0.01" rotation="-90 0 0" position="1 1 1">
+          <a-animation attribute="rotation" dur="1000" fill="forwards" from="-90 0 0" to="-90 0 360" direction="normal" repeat="indefinite" easing="linear"></a-animation>
+      </a-entity>
     </a-marker>
 
 
