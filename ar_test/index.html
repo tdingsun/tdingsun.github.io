@@ -2,44 +2,105 @@
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <!-- include ar.js for A-Frame -->
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="script.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs>
     <!-- assets for scene -->
     <a-assets>
-      <img id="test-image" src="https://upload.wikimedia.org/wikipedia/commons/4/48/Hiro_marker_ARjs.png">
+        <a-asset-item id="dog" src="Mesh_Beagle.gltf"></a-asset-item>
     </a-assets>
     <!-- create your content here. just a box for now -->
     <!-- <a-text position='0 0.5 0' rotation="270 0 0" value="Welcome to\nJohnson and Johnson\nHome" color="#FF0000" align="center">
         <a-animation attribute="rotation" dur="1000" fill="forwards" from="270 -30 0" to="270 30 0" direction="alternate" repeat="indefinite"></a-animation>
     </a-text> -->
 
+
     <a-marker type='pattern' url="jj.patt">
       <a-plane color="white" height="6" width="4.5" rotation="-90 0 0"></a-plane>
-      <a-text color="grey"
+      <a-text color="#000099"
               value="Meeting Room 5"
               rotation="-90 0 0"
-              position="-1 0.5 -1"></a-text>
-      <a-text color="blue"
-              value="Free for the next \n30 minutes"
+              position="-1.75 0.5 -2.5"></a-text>
+      <a-text color="#000099" value="Free for the next" rotation="-90 0 0" position="-1.75 0.5 -1" scale="2 2 1"></a-text>
+      <a-text id="meeting-time" color="blue" value="30min" rotation="-90 0 0" position="-1.85 0.5 0" scale="2 2">
+            <a-animation attribute="scale" dur="1000" fill="forwards" from="5 5 1" to="5.25 5.25 1" direction="alternate" repeat="indefinite" easing="linear"></a-animation>
+      </a-text>
+      <a-text color="#000099"
+              value="Next Booking by Bob Smith"
               rotation="-90 0 0"
-              position="0 0.5 0"></a-text>
+              position="-1.75 0.5 2">
+      </a-text>
+      <a-text color="#000099"
+              value="Next Availability at"
+              rotation="-90 0 0"
+              position="-1.75 0.5 2.3">
+      </a-text>
+      <a-text color="#E9212D"
+              value="4:00PM"
+              rotation="-90 0 0"
+              position="0.1 0.5 2.3">
+      </a-text>
     </a-marker>
 
-    <a-marker preset='hiro'>
-      <a-triangle color="red" rotation="-90 0 0" position="0 0 -2"></a-triangle>
-      <a-triangle color="red" rotation="-90 -90 0" position="2 0 0"></a-triangle>
-      <a-triangle color="red" rotation="-90 90 0" position="-2 0 0"></a-triangle>
-      <a-triangle color="red" rotation="-90 180 0" position="0 0 2"></a-triangle>
+    <!-- <a-marker preset='hiro'>
+      <a-triangle color="red" rotation="-90 0 0" position="0 0 -2">
+        <a-animation attribute="position" dur="1000" fill="forwards" from="0 0 -2" to="0 0 -2.5" direction="alternate" repeat="indefinite" easing="linear"></a-animation>
+      </a-triangle>
+      <a-triangle color="red" rotation="-90 -90 0" position="2 0 0">
+        <a-animation attribute="position" dur="1000" fill="forwards" from="2 0 0" to="2.5 0 0" direction="alternate" repeat="indefinite" easing="linear"></a-animation>
+      </a-triangle>
+      <a-triangle color="red" rotation="-90 90 0" position="-2 0 0">
+        <a-animation attribute="position" dur="1000" fill="forwards" from="-2 0 0" to="-2.5 0 0" direction="alternate" repeat="indefinite" easing="linear"></a-animation>
+      </a-triangle>
+      <a-triangle color="red" rotation="-90 180 0" position="0 0 2">
+        <a-animation attribute="position" dur="1000" fill="forwards" from="0 0 2" to="0 0 2.5" direction="alternate" repeat="indefinite" easing="linear"></a-animation>
+      </a-triangle>
 
-      <a-text color="red" rotation="-90 0 0" position="0 0 -3" value="Meeting Room 2" align="center"
-              font-"CircularStd-Book-msdf.json" shader="msdf"></a-text>
-      <a-text color="red" rotation="-90 -90 0" position="3 0 0" value="Bathrooms" align="center"
-              font-"CircularStd-Book-msdf.json"></a-text>
-      <a-text color="red" rotation="-90 90 0" position="-3 0 0" value="Kitchen" align="center"
-              font-"CircularStd-Book-msdf.json"></a-text>
-      <a-text color="red" rotation="-90 180 0" position="0 0 3" value="Phone Room G" align="center"
-              font-"CircularStd-Book-msdf.json"></a-text>
+      <a-plane color="white" height="1" width="4" rotation="-90 0 0" position="0 0 -4">
+      </a-plane>
+      <a-plane color="white" height="1" width="4" rotation="-90 -90 0" position="4 0 0">
+      </a-plane>
+      <a-plane color="white" height="1" width="4" rotation="-90 90 0" position="-4 0 0">
+      </a-plane>
+      <a-plane color="white" height="1" width="4" rotation="-90 180 0" position="0 0 4">
+      </a-plane>
+      <a-text color="red" rotation="-90 0 0" position="0 0.5 -4" value="Meeting Room 2" align="center"
+              scale="2 2 0"></a-text>
+      <a-text color="red" rotation="-90 -90 0" position="4 0.5 0" value="Bathrooms" align="center"
+              scale="2 2 0"></a-text>
+      <a-text color="red" rotation="-90 90 0" position="-4 0.5 0" value="Kitchen" align="center"
+              scale="2 2 0"></a-text>
+      <a-text color="red" rotation="-90 180 0" position="0 0.5 4" value="Phone Room G" align="center"
+              scale="2 2 0"></a-text>
 
+    </a-marker> -->
+
+    <a-marker preset="hiro">
+
+      <a-plane color="#000099"
+                width="3"
+                height="4"
+                rotation="-90 0 0"></a-plane>
+      <a-text color="white"
+              value="Radhika"
+              rotation="-90 0 0"
+              position="-1.25 0.25 -1.5"
+              scale="2 2 0"></a-text>
+       <a-text color="white"
+              value="Manager\nConsumer Digital Marketing\n\n~Talk to me about dogs~"
+              rotation="-90 0 0"
+              position="-1.2 0.25 -0.75"
+              scale="0.75 0.75 0"></a-text>
+      <a-text color="white"
+             value="Strengths\n\nMarketing\nInterviewing\nHiring\nPublic Relations\nProject Managing"
+             rotation="-90 0 0"
+             position="-1.2 0.25 1"
+             scale="0.75 0.75 0"></a-text>
+      <a-glft-model src="#dog"></a-glft-model>
     </a-marker>
 
 
