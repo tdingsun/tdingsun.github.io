@@ -11,7 +11,7 @@
   <a-scene embedded arjs>
     <!-- assets for scene -->
     <a-assets>
-        <a-asset-item id="dog" src="dog.gltf"></a-asset-item>
+        <a-asset-item id="dog" src="Mesh_Beagle.gltf"></a-asset-item>
     </a-assets>
     <!-- create your content here. just a box for now -->
     <!-- <a-text position='0 0.5 0' rotation="270 0 0" value="Welcome to\nJohnson and Johnson\nHome" color="#FF0000" align="center">
@@ -100,7 +100,7 @@
              rotation="-90 0 0"
              position="-1.2 0.25 1"
              scale="0.75 0.75 0"></a-text>
-      <a-glft-model src="./dog.gltf"></a-glft-model>
+      <a-entity obj-model="obj: url(dog.obj); mtl: url(dog.mtl)"></a-entity>
     </a-marker>
 
 
