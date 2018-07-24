@@ -1,0 +1,21 @@
+body {
+  background-color: rgba(0,0,0,0);
+}
+
+.text {
+  width: 60%;
+  margin: auto;
+  padding-top: 100px;
+  font-size: 60px;
+
+}
+
+span {
+  color: black;
+  text-decoration: none;
+}
+
+span:hover {
+  color: white;
+  cursor: pointer;
+}
