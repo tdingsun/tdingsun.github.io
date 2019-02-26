@@ -1,12 +1,24 @@
 initGrid();
 
+
+
+
 function initGrid() {
   var grid = new Muuri('.grid', {
     dragEnabled: true,
-    layoutOnInit: false
+    layoutOnInit: false,
   }).on('move', function () {
     saveLayout(grid);
   });
+
+  $("#filter-places").click(function() {
+    var str = '.place'
+    filterItems(grid, str);
+  });
+
+  $("#filter-all").click(function() {
+    filterReset(grid);
+  })
 
   var layout = window.localStorage.getItem('layout');
   if (layout) {
@@ -14,6 +26,10 @@ function initGrid() {
   } else {
     grid.layout(true);
   }
+
+
+
+
 }
 
 function serializeLayout(grid) {
@@ -47,4 +63,12 @@ function loadLayout(grid, serializedLayout) {
   }
 
   grid.sort(newItems, {layout: 'instant'});
+}
+
+function filterItems(grid, str) {
+  grid.filter(str);
+}
+
+function filterReset(grid) {
+  grid.filter('*');
 }
