@@ -1,4 +1,14 @@
 
+  $(".item").each(function(){
+  var rand = Math.floor(Math.random() * 200) + 350;
+  $(this).css("width", rand);
+  console.log("heyall");
+  });
+
+  $(window).resize(function(){
+    var h = $("#top-nav").css("height");
+    $("#grid-container").css("padding-top", h);
+  })
 
 initGrid();
 
@@ -7,9 +17,14 @@ initGrid();
 
 
 function initGrid() {
+
+
+
   var grid = new Muuri('.grid', {
     dragEnabled: true,
     layoutOnInit: true,
+    showDuration: 0,
+    hideDuration: 0,
     layout: {
       fillGaps: true
     }
@@ -17,11 +32,6 @@ function initGrid() {
     //saveLayout(grid);
   });
 
-  $(".item").each(function(){
-  var rand = Math.floor(Math.random() * 200) + 400;
-  $(this).css("width", rand);
-  console.log("heyall");
-})
 
 
   $(".filter-btn").click(function() {

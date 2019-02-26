@@ -2,17 +2,61 @@ body {
   font-family: "arial", sans-serif;
   font-size: 20px;
   color: green;
+  padding: 0px;
+  margin: 0px;
+}
+
+#top-nav {
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 999;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.header-left {
+  display: inline-block;
+  flex-grow: 1;
+    text-align: left;
+
+}
+.header {
+    display: inline-block;
+
+  text-align: center;
+    flex-grow: 1;
+
+}
+
+.header-right {
+    display: inline-block;
+
+    flex-grow: 1;
+      text-align: right;
+
+
+}
+
+#grid-container {
+  padding: 110px 10px 10px 10px;
 }
 
 .grid {
   position: relative;
 }
+
 .item {
   position: absolute;
   width: 400px;
   height: auto;
   margin: 5px;
   z-index: 1;
+
 }
 .item.muuri-item-hidden {
   z-index: 0;
@@ -29,26 +73,30 @@ body {
   height: 100%;
   padding: 10px;
   box-sizing: border-box;
-
   text-align: left;
   background: white;
   border: 1px solid green;
   cursor: pointer;
 }
 .item.muuri-item-dragging .item-content {
-  background: blue;
+  background: yellow;
 }
 .item.muuri-item-releasing .item-content {
-  background: blueViolet;
+  background: white;
+}
+
+.filter-container {
+  text-align: center;
 }
 
 .filter-btn {
   border: 1px solid green;
   color: green;
+  background-color: white;
   padding: 10px;
   width: auto;
   display: inline-block;
-  margin: 5px;
+  margin: 2.5px 2.5px 5px 2.5px;
   cursor: pointer;
 }
 
