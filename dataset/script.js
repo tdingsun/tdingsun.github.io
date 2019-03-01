@@ -1,5 +1,4 @@
-
-  $(".item").each(function(){
+$(".item").each(function(){
   var rand = Math.floor(Math.random() * 200) + 350;
   $(this).css("width", rand);
   console.log("heyall");
@@ -12,13 +11,7 @@
 
 initGrid();
 
-
-
-
-
 function initGrid() {
-
-
 
   var grid = new Muuri('.grid', {
     dragEnabled: true,
