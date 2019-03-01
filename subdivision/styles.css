@@ -13,9 +13,15 @@ div {
 }
 
 .leaf {
-  border: 1px solid cornsilk;
-  color: cornsilk;
-  background-color: saddlebrown;
+  border: 1px solid saddlebrown;
+  color: saddlebrown;
+  background-color: cornsilk;
   padding-left: 1px;
   padding-top: 1px;
+  background-position: center center;
+  background-size: cover;
+}
+
+img {
+  width: 100%;
 }
