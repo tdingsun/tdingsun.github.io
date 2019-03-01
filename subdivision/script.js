@@ -47,7 +47,7 @@ $(document).ready(function(){
         div_2.append(words[count]);
         count++;
       } else {
-        div_2.append('<img src="images/bluesky"/>');
+        div_2.append('<img src="images/bluesky.png"/>');
       }
       //div_2.css("color", "hsl(" + hue + ", 75%, 50%)");
       //div_2.css("border-color", "hsl(" + hue + ", 75%, 50%)");
