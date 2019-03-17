@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 150px;
+  line-height: 1em;
+  text-align: left;
+
+}
+
+div {
+  box-sizing: border-box;
+  float: left;
+  word-wrap: break-word;
+  word-break: break-all;
+
+}
+
+
+
+.blurry {
+  color: transparent;
+  text-shadow: 0 0 0px rgba(0, 100, 100, 1);
+}
+
+.blurry-r {
+  color: transparent;
+  text-shadow: 0 0 0px rgba(0, 100, 100, 1);
+  font-family: serif;
+
+}
+
+img {
+  width: 100%;
+}
