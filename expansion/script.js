@@ -17,9 +17,9 @@ $(document).ready(function(event){
   width = $(window).width();
   height = $(window).height();
 
-  for(var i = 0; i < 5; i++){ //number of columns
-      var div = $('<div />').addClass("container");
-      div.css("z-index", 5-i);
+  for(var i = 0; i < 10; i++){ //number of columns
+      var div = $('<div />').addClass("container parent");
+      div.css("z-index", 10-i);
       var index = Math.floor(Math.random() * words_arr.length);
 
       div.text(words_arr[index].toLowerCase());
@@ -79,8 +79,11 @@ function timer() {
   s = today.getSeconds();
   ms = today.getMilliseconds();
   var size = $(".container").size();
-  var randIndex = Math.floor(Math.random() * size);
-  $(".container").eq(randIndex).trigger("click");
+ // var randIndex = Math.floor(Math.random() * size);
+  var randParentIndex = Math.floor(Math.random() * 5);
+  var sizeChildren = $(".parent").eq(randParentIndex).children().size();
+  var randIndex = Math.floor(Math.random() * sizeChildren);
+  $(".parent").eq(randParentIndex).children().eq(randIndex).trigger("click");
   var t = setTimeout(timer, 1000);
 }
 
