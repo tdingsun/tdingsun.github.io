@@ -9,8 +9,18 @@ var word_queue = [];
 var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
 var notes = Tone.Frequency("C3").harmonize([0, 4, 7, 12]);
 
+StartAudioContext(Tone.context, 'div').then(function(){
+  //started
+  console.log("clicked");
+
+});
+
+$('div').click(function(){
+  Tone.start();
+  console.log("clicked");
+});
+
 $(document).ready(function(event){
-  document.querySelector('#container').addEventListener('click', () => Tone.start());
     
   
 
