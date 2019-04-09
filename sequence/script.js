@@ -10,7 +10,7 @@ var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
 var notes = Tone.Frequency("C3").harmonize([0, 4, 7, 12]);
 
 $(document).ready(function(event){
-  document.querySelector('body').addEventListener('click', () => Tone.start())
+  document.querySelector('div').addEventListener('click', () => Tone.start())
 
   resize();
   // if(navigator.onLine){
