@@ -86,27 +86,3 @@ function timer() {
   $(".parent").eq(randParentIndex).children().eq(randIndex).trigger("click");
   var t = setTimeout(timer, 1000);
 }
-
-function changeColor(m, s, ms){
-  var hue = 6*m + 0.1*s;
-  $("body").css("color", "hsl(" + hue + ", 100%, 50%)");
-}
-
-function changeText(s, ms){
-  var n = s + 1;
-  var fsize = height/(n);
-
-  $(".container").css("font-size", fsize);
-  $(".container").empty();
-  for(var i = 0; i < n; i++){
-      var index = Math.floor(Math.random() * words_arr.length);
-     $(".container").append(words_arr[index] + "<br>");
-  }
-
-}
-
-function setTimer(){
-  $(".timer").text(numSeconds);
-  numSeconds += 1;
-
-}

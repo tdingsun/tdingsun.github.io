@@ -9,8 +9,11 @@ var myCanvas = document.getElementById('world'); //everything is in a canvas
 $("#world").css("width", width);
 $("#world").css("height", height);
 //text
-const str = "I love when people twist the harmonic context and warp it and switch gears. I thought it was so beautiful and so creative. It's like ambient music because I can just be in it. Sometimes you catch what the original composition is, but it's always vague enough that you can be in it without following a structure or melody.";
-const words_arr = str.split(" "); //split text into array
+var str = prompt("enter your text");
+if (str == null){
+	str = "I love when people twist the harmonic context and warp it and switch gears. I thought it was so beautiful and so creative. It's like ambient music because I can just be in it. Sometimes you catch what the original composition is, but it's always vague enough that you can be in it without following a structure or melody.";
+}
+var words_arr = str.split(" "); //split text into array
 var wordIndex = 0; //initiallize index of words_arr
 var bodies_list = []; //initiallize array of bodies(rendered rectangles)
 
