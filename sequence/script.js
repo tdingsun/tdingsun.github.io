@@ -30,8 +30,11 @@ $(window).resize(function(){
 function timer(prevIndex) {
   var randNote = Math.floor(Math.random() * notes.length);
   synth.triggerAttackRelease(notes[randNote], "1n");
+  if("vibrate" in navigator){
+      navigator.vibrate(200);
+      //navigator.vibrate(0);
+  }
 
-  window.navigator.vibrate(200);
   var randIndex = Math.floor(Math.random() * 13);
   if(randIndex > 7){
     position_index++;
