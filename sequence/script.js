@@ -33,7 +33,10 @@ function timer(prevIndex) {
   if("vibrate" in navigator){
       navigator.vibrate(200);
       //navigator.vibrate(0);
+      $("div").css("background-color", "red");
+
   }
+
 
   var randIndex = Math.floor(Math.random() * 13);
   if(randIndex > 7){
