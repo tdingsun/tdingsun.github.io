@@ -34,3 +34,40 @@ div{
 #c, #h, #m {
   text-align: right;
 }
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  position: fixed;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  right: 300px;
+  top: calc(50vh + 5px);
+
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  left: 300px;
+  top: calc(50vh + 5px);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  left: calc(50vw - 5px);
+  top: 100px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  left: calc(50vw - 5px);
+  top: calc(100vh - 100px);
+}
