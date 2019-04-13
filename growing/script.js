@@ -11,19 +11,22 @@ class SObject {
 		var divheight = parseFloat(this.div.css("height"));
 		var divwidth = parseFloat(this.div.css("width"));
 
-		if(left <= 20 || left >= (width - (margin + divwidth))){
-			if(left <= 20){
-				left = 21;
+		if(left <= margin || left >= (width - (margin + divwidth))){
+			this.xdir *= -1;
+			if(left <= margin){
+				left = margin + 1;
+				console.log("hi");
 			}
 			if(left >= (width - (margin + divwidth))){
-				left = (width - (margin + divwidth)) - 1;
+				left = (width - (margin + divwidth + 1));
+				console.log("yo");
+
 			}
-			this.xdir *= -1;
 		}
 
-		if(top <= 20 || top >= (height - (margin + divheight))){
-			if(top <= 20){
-				top = 21;
+		if(top <= margin || top >= (height - (margin + divheight))){
+			if(top <= margin){
+				top = margin + 1;
 			}
 			if(top >= (height - (margin + divheight))){
 				top = (height - (margin + divheight + 1));
@@ -49,6 +52,7 @@ var word_index = 0;
 var position_index = 0;
 var syllable_count = 1;
 const speed = 1;
+const wordSpeed = 250;
 var s_objects = [];
 setupSObjects();
 
@@ -64,8 +68,8 @@ $('div').click(function(){
 
 $(document).ready(function(event){
   resize();
-  setInterval(syllableCount, 50);
-  setInterval(beat, 250);
+  setInterval(syllableCount, wordSpeed/5);
+  setInterval(beat, wordSpeed);
   setTimeout(timer, 1000);
 
 });
@@ -87,7 +91,7 @@ function timer(prevIndex) {
  	//number of syllables determines timeout time
 	var syllables = RiTa.getSyllables(words_arr[word_index - 1]);
 	var syllables_arr = syllables.split("/");
-	var time = syllables_arr.length * 250;
+	var time = syllables_arr.length * wordSpeed;
 
 	if(word_index <= 3){
 		time = 1000;

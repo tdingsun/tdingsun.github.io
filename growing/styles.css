@@ -36,5 +36,5 @@ div{
 }
 
 #index-3, #index-4 {
-  right: 20px;
+  left: calc(100vw - 30px);
 }
