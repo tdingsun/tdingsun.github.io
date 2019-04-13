@@ -59,7 +59,7 @@ $(document).ready(function(event){
 
 
 
-  setInterval(rotateRandom, 1000);
+  setInterval(rotateRandom, 500);
 
 });
 
@@ -67,6 +67,7 @@ $(window).resize(function(){
   clearTimeout(window.resizeFinished);
   window.resizeFinished = setTimeout(function(){
       resizeSwitch = !resizeSwitch;
+      console.log("resize finished")
   }, 250);
   resize();
 });
@@ -78,9 +79,10 @@ function rotate(currDiv, index){
     var x = Math.random();
     var y = Math.random();
     var z = Math.random();
-    var a = "180deg";
+    var a = Math.random() * 180 + 90;
+
     $(currDiv).css({
-      transform: "rotate3d(" + x + ", " + y + ", " + z + ", " + a + ")"
+      transform: "rotate3d(" + x + ", " + y + ", " + z + ", " + a + "deg)"
     });
     $(currDiv).children().text(words_arr[word_index]);
     word_index++;
