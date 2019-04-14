@@ -2,7 +2,8 @@ var width = $(window).width();
 var height = $(window).height();
 var divWidth;
 const margin = 20;
-var fontsize = parseInt($("body").css("font-size"));
+var fontsize = width/40;
+$("body").css("font-size", fontsize);
 
 var str = "RED CARMINE CRIMSON CORAL BLUSH ORANGE APRICOT AMBER PEACH OCHER SAND BEIGE LEMON GERANIUM SPRING GRASS VIRIDIAN ROSEMARY FOREST OLIVE CERULEAN INDIGO VIOLET LILAC MAUVE PERIWINKLE LAVENDER PLUM SLATE GLASS COMMON MORAL MORTAL STONY STARRY CONSTANT VENGEFUL ROLLING SMOOTH ROCKY FUZZY FURRY CLEAN RICH TIGHT SPINY SHINY LUMPY LOVELY FIZZY RUNNY FUNNY FAST CANDID SHARP FORTUNE SORROW COIL MASON FIRE FREEZE ZEPHYR CONIFER MORTICIAN CORE FORK MISTAKE RAGE FEVER FERVOR CANDOR CANTILEVER HEAVEN HEATHEN ANTHEM CRAYON PASTURE DODGER CUNNING FLAKE SHATTER FLEE FLEX CARVE LIQUID FOLLOWS CORRAL STATION LOVER CONCH DIRT STEEL CLANG VIOLA CLARITY MARSH CLUE SWAMP BREEZE TOME RUNE FUME MOON MAGIC BOOK FUEL FUSE SPARK DOG SHADOW FACADE FLAT HONEY CURRY RICE PINE CYPRESS MUSK OCEAN SPICY SOUR VETIVER WOODSY MILDEW ACRID LOAM PEPPER JUNIPER EARTH TOBACCO YUZU CITRUS MOSS FRANKINCENSE VANILLA  BERRY THYME SPRUCE  SAGE RAIN PETRICHOR TEA HYACINTH  CAMPHOR CHICORY";
 var words_arr = str.split(" ");
@@ -11,8 +12,9 @@ var position_index = 0;
 var word_queue = [];
 
 var resizeSwitch = true;
-
-var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
+var currInterval = 1000;
+var intervalDelta = 0.99;
+var synth = new Tone.PolySynth(8, Tone.Synth).toMaster();
 var notes = Tone.Frequency("G2").harmonize([0, 2, 5, 7, 9, 12, 14, 17, 19, 21, 24, 26, 29, 31, 33]);
 
 StartAudioContext(Tone.context, 'div').then(function(){
@@ -44,22 +46,17 @@ $(document).ready(function(event){
   // /* geolocation IS NOT available */
   // console.log("geolocation NOT available");
   // }
-  
   setupDivs();
 
-  $(".panel").click(function(e){
-    var currDiv = e.target;
-    if(e.target !== this){
-      return;
-    }
-    var index = $(".panel").index(currDiv);
-    rotate(currDiv, index);
+  $(".panel").click(function(){
+    var index = $(".panel").index(this);
+    rotate(this, index);
   });
 
 
 
 
-  setInterval(rotateRandom, 500);
+  setTimeout(rotateRandom, currInterval);
 
 });
 
@@ -92,10 +89,17 @@ function rotate(currDiv, index){
 }
 
 function rotateRandom(){
+  if (currInterval <= 50){
+    intervalDelta = 1.005;
+  }
+  currInterval *= intervalDelta;
+
   var randIndex = Math.floor(Math.random() * 15);
   var currDiv = $("#container").children().eq(randIndex);
 
   rotate(currDiv, randIndex);
+
+  setTimeout(rotateRandom, currInterval);
 }
 
 function setupDivs(){
@@ -119,7 +123,7 @@ function setupDivs(){
         top: height/6 - (fontsize/2)
       });
 
-      innerDiv.text("hello");
+      innerDiv.text("HELLO");
       newDiv.append(innerDiv);
       $("#container").append(newDiv);
     }
@@ -208,5 +212,4 @@ function resize(){
       });
     }
   }
-
 }

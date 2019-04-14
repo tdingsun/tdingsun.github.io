@@ -10,13 +10,10 @@ body {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
   perspective: 3000px;
+  overflow: hidden;
   background-color: cornflowerBlue;
 
-}
 
-#container {
-  width: 100%;
-  height: 100%;
 }
 
 div{
@@ -26,12 +23,27 @@ div{
 
 .panel {
   text-align: center;
-  background-color: White;
-  border: 1px solid cornflowerBlue;
+  background-color: white;
+  border: 1px solid red;
   box-sizing: content-box;
-  transition: 1s;
+  transition: 0.25s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+
 }
 
 .innertext {
-  color: cornflowerBlue;
+  color: red;
+  cursor: pointer;
+}
+
+.grid {
+    border: 1px solid #ccc;
+    border-width: 1px 0 0 1px;
+}
+
+.grid div {
+    border: 1px solid #ccc;
+    border-width: 0 1px 1px 0;
+    float: left;
 }
