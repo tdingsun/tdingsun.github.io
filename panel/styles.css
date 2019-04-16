@@ -23,7 +23,7 @@ div{
 
 .panel {
   text-align: center;
-  background-color: white;
+  background-color: floralWhite;
   border: 1px solid red;
   box-sizing: content-box;
   transition: 0.25s;

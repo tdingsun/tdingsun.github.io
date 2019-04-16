@@ -4,14 +4,14 @@ var divWidth;
 const margin = 20;
 const fontsize = parseInt($("body").css("font-size"));
 
-var str = "Always so depressing in the cramped isolation of a 6 hour flight, the recycled air pushes you further and further within yourself. Being ten thousand feet in the air, you see your entire life stretching out in all directions, and your tired and frazzled brain can only pass the time by taking stock of everything you’ve ever done, everything you’ve ever thought, everyone you’ve ever met. You tell yourself that it’s a depression that you crave, this vast and lonesome introspection. You tell yourself that it’s useful to take inventory: who do you love, who do you want to spend time with, what’s stopping you... Maybe this line of thought is helpful, maybe it’s not. There’s no way to tell right now. Figure-A pretends to take a nap in the other room, hoping figure-B will take notice of A’s absence. Instead, as A lies in bed alone, A hears B talking to figure C, and laughing, outside the room. Eventually the voices quiet and A suspects that B and C have left together. Nothing is left but disappointment. Figure-A has decided not to feel this way anymore, and not to play games. But A still truly wishes that B would value A more. A knows that B loves A, but A wishes it was a more active love. A wants to talk to B like, all the time. A is willing to do anything for B, and wishes that B was willing to do the same. A is trying to show love in a healthier way. A has reconciled with the foreclosure of any romantic relationship, and only wants the closeness of something resembling brotherhood. Above all, A refuses to do things that makes A feel pathetic. A feels like this is working. A realizes that being best friends with B feels so good. A is optimistic that this is enough. A literally refuses to feel bad anymore. A knew that B also watched Juno on the plane. This is the type of bond that A wants, even craves, and luckily has. A rereads the notes A wrote before, even just a couple of days ago. Always there is a level of remove. A hated the idea of seeing his entire life stretched out in front of them. A hates making mistakes. A loves emptiness and feels a deep affiliation with the void. A does not think this is incompatible with the pursuit of a fulfilling life. A realizes that some people may not understand this. A thinks B is so cute! A thinks that everything B does is so cute, that every part of B’s body, and mannerisms, are so cute. A feels like A will always love B. B makes A feel loved. All A wants to do is make B feel loved. A feels like B is like a brother to A. A is trying to cement this framework of familial love. B is like the cutest puppy, and at the same time a brother, and at the same time the cutest cat. Where you go, I follow";
+var str = "Homage to dictee // Peal, that word peal. A bell, the clearest tone, a blue so light it is almost transparent, but also thunder and laughter. Peal, I read on the last page of a book, peal, I try to imitate. A plastic cross and through that, a silhouette of bird black and soaring. Before that, chain link hole tree thickening through. Deeper as I crane my neck, lighter towards the horizon flocks bell peal, a full ringing, perfect oscillation, a child’s arms outstretched, raise me towards the sky, towards the sky the skies up there carry me forward falling asleep slowly rolling on your back. Self-admonishment paints you well, Through self-denial only enlightenment. Come. Come here, please. Turn back and so will I. Will this to propel me forward. Will this to be enough, the question remains. You, like a brother, reciprocation with something you are more likely like familial love, something like the word I can replace it with when it occurs to me. Starts to subside only partially through jealousy and love. The pangs of thinking around you start as soon as we part ways for the day. Quiet tongue held scratching heavily pen on paper. Object objective to love lover loving in a loving way. /// A loving way, loving lover love to object.  Paper, pen, heavy scratching held quiet tongue. The day, we part ways, soon around you to start thinking the pains. Of love and something else, starting to subside only partially when it occurs. Desire replaced with something like familial love, likely something you reciprocate, brother. You, a brother, remains the question. Enough to propel me forward, I will so and to turn back. Please, come here. Come here, please. Enlightenment only through self-denial Painting you well with self-admonishment. Back rolling slowly asleep, falling, lift me up the skies the sky lift me up towards the sky, outstretched like a child’s arms, perfections and a full ringing, peals the bell flocks horizon towards light, crane my neck and I see deeper blue. Through thickening trees hole link chain fence, before that soaring and black bird shadow and through that, a cross and me looking out. Try to imitate a bell, peals, the last page of a book, peal, of laughter and of thunder. A blue so light, almost transparent, the clearest tone, a bell peals, peal, that word, beautiful that word peal. ";
 var words_arr = str.split(" ");
 var word_index = 0;
 var position_index = 0;
 var word_queue = [];
 
 var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
-var notes = Tone.Frequency("G2").harmonize([0, 4, 7, 12]);
+var notes = Tone.Frequency("G2").harmonize([0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40]);
 
 StartAudioContext(Tone.context, 'div').then(function(){
   //started
@@ -70,15 +70,23 @@ function timer(prevIndex) {
  word_index++;
  //recurse
  var randTime = Math.floor(Math.random() * 4) * 250 + 250;
-  if(word_index == 122){
+  if(word_index == 210){
     randTime = 3000;
  }
 
- if(word_index == 123){
-    $("div").css("background-color", "OrangeRed");
+ if(word_index == 211){
+    $("#container").css("background", "linear-gradient(to bottom, CornflowerBlue, #b3cbf6)");
     $("div").css("color", "white");
+
     randTime = 1000; //force to linger of first word of second section
  }
+
+ if(words_arr[word_index-1] == "blue"){
+    $("#container").css("background", "linear-gradient(to top, white, #b3cbf6)");
+    $("div").css("color", "CornflowerBlue");
+ }
+
+
  if(word_index < words_arr.length){
     var t = setTimeout(timer, randTime, position_index);
  }
