@@ -9,7 +9,7 @@ var myCanvas = document.getElementById('world'); //everything is in a canvas
 $("#world").css("width", width);
 $("#world").css("height", height);
 //text
-var str = prompt("enter your text");
+var str = prompt("enter your text or click 'cancel' to read mine");
 if (str == null){
 	str = "I love when people twist the harmonic context and warp it and switch gears. I thought it was so beautiful and so creative. It's like ambient music because I can just be in it. Sometimes you catch what the original composition is, but it's always vague enough that you can be in it without following a structure or melody.";
 }
