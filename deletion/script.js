@@ -7,7 +7,7 @@ var str = "It Feels Like Floating. A dull ache — laughter. Miraculous night, 
 
 
 var timer_queue = [];
-var numDivs = 40;
+var numDivs = 30;
 
 var synth = new Tone.PolySynth(8, Tone.Synth).toMaster();
 var notes = Tone.Frequency("G1").harmonize([0, 2, 5, 7, 9, 12]);
