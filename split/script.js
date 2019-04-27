@@ -16,7 +16,7 @@ var numDivs = 1;
 var divisor = 2;
 var intervalDelta = 0.95;
 var synth = new Tone.PolySynth(8, Tone.Synth).toMaster();
-var notes = Tone.Frequency("G2").harmonize([0, 2, 5, 7, 9, 12, 14, 17, 19, 21, 24, 26, 29, 31, 33]);
+var notes = Tone.Frequency("G2").harmonize([0, 2, 5, 7, 9, 12]);
 
 StartAudioContext(Tone.context, 'div').then(function(){
   //started
@@ -77,6 +77,9 @@ function interval(){
 }
 
 function split(){
+  var randNote = Math.floor(Math.random() * notes.length);
+  synth.triggerAttackRelease(notes[randNote], "16n");
+
   $("#container").empty();
   numDivs *= divisor;
   for(var i = 0; i < numDivs; i++){
