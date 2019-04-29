@@ -15,11 +15,9 @@ class SObject {
 			this.xdir *= -1;
 			if(left <= margin){
 				left = margin + 1;
-				console.log("hi");
 			}
 			if(left >= (width - (margin + divwidth))){
 				left = (width - (margin + divwidth + 1));
-				console.log("yo");
 
 			}
 		}
