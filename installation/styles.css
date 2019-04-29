@@ -30,7 +30,7 @@ body {
   transform: translateZ(-350px); 
   transition: transform 1s;
   animation-name: rotation;
-  animation-duration: 30s;
+  animation-duration: 50s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -40,12 +40,13 @@ body {
   position: absolute;
   width: 400px;
   height: 400px;
-  padding-top: 370px;
+  padding: 10px;
   box-sizing: border-box;
   text-align: center;
   font-size: 30px;
   color: black;
   border: 1px solid black;
+  /*background-color: rgba(255, 255, 0, 0.9);*/
 }
 
 #center {

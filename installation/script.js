@@ -1,22 +1,18 @@
 var width = $(window).width();
 var height = $(window).height();
-var divWidth;
 const fontsize = $("body").css("font-size");
 
+var obj;
+var peripheryStr;
+var cube_size = 700;
+
 $.getJSON('http://tdingsun.github.io/installation/text.json', function(data){
-  console.log("hello");
-  console.log(data);
+  obj = data;
+  peripheryStr = obj.periphery[0];
 });
 
-var str = ".....It Feels Like Floating. A dull ache — laughter. Miraculous night, silent night, holy night, holy trinity, as I look up into the star-filled sky, forgive me for I have lied. Lied in order to get what I want. Made concessions but not amends. Making split-second decisions and pretending that that was the plan all along. Wanting to seem independent but all actions rely on someone else’s movements. Words coded in such a way so as to reflect well on the speaker. Words that make you seem smart. Imagine a grotto. Something revealed at low tides when the water rushes back to the sea. Standing in three inches of ice cold water. Drips on your shoulder. A casual sign. A cinematic moment. A thin membrane. In front of you is the craggy opening, revealing the midnight ocean gleaming under the light of the full moon. The stars are in perfect alignment with each other. Gleaming. Foam and detritus wrap around your ankles. Seaweed creeps up your calves. Dragonflies buzz, graze past your ear. A myriad of sighs from last year. Hushed tones. The particular articulations of a French pop star singing in English. Hidden energy. Tidal water, cesspool. Crumbling limestone. If you licked, it would taste salty. Residual particles. Encrusted. Growths. The true cesspool of hum. A take — sea caves, twinkling but slow. Localized arrhythmia. Constellations … something special about the beach. Grain after grain after grain. A beaded necklace. Moments strung together. Pale yellow. Cornflower blue. Peach. Lavender. Beige. Orange. Indigo. Forest green. Red. Amber. Cerulean. Eucalyptus. Cedarwood. Lichen. Algae. Something to be said about the way it feels — not real — when drifting (in and out, like tides) like in and out of a fever dream. It must feel like how it feels to stop playing a video game. Suddenly everything is rendered inconsequential. Not relevant anymore. But time remains so terrifying to me. The thought one day my bones will be exposed to bare dirt. My skin should sag and reach the ground. There is no longer a desire to say anything novel. There is only the desire to reiterate old cliches, to dwell in tropes, to relish in trite sentiments. There is nothing to say because nothing ever happens. I vow to abhor world-building in favor of complete self-annihilation. I will always be unresolved, and the feeling of not being will always be—";
-var words_arr = str.split(" ");
-var word_index = 0;
-var face_index = 0;
 var char_offset = 0;
 var curr_offset = 0;
-
-var timer_queue = [];
-var numDivs = 30;
 
 var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
 var notes = Tone.Frequency("C4").harmonize([0, 2, 5, 7, 9, 12]);
@@ -33,29 +29,11 @@ $('div').click(function(){
   console.log("clicked");
 });
 
-// $('#cube').click(function(){
-//   console.log("hi");
-//   $("#cube").css({
-//     animation: "none"
-//   })
-//   $('.cube-face').css({
-//     color: "red",
-//     transform: "none",
-//     width: 400,
-//     height: 80,
-//     position: "relative",
-//     padding: 0
-//   });
-
-//   $("#container").css({
-//     top: 0
-//   })
-// });
-
 $(document).ready(function(event){
+
   resize();
   for(var i = 0; i < 7; i++){
-    setInterval(cubeText, 1000 + i, i);
+    setTimeout(cubeText, 150 + i*50, i);
   }
   for(var i = 0; i < 4; i++){
     setInterval(peripheryText, 150, i);
@@ -74,42 +52,79 @@ $(window).resize(function(){
 });
 
 function cubeText(index){
-  synth.triggerAttackRelease(notes[face_index], "8n");
-  $(".cube-face").eq(index).text(words_arr[word_index]);
-    word_index++;
-    if(word_index >= words_arr.length){
-      word_index = 0;
-    }
-    if(face_index >= 6){
-      face_index = 0;
-    } else {
-      face_index++;
-    }
+  synth.triggerAttackRelease(notes[index], "8n");
+
+
+  if(index == 0){ //center
+    var randIndex = Math.floor(Math.random() * obj.center.length);
+    $(".cube-face").eq(index).children().text(obj.center[randIndex]);
+  } else if(index == 1){ //above
+    var randIndex = Math.floor(Math.random() * obj.above.length);
+    $(".cube-face").eq(index).children().text(obj.above[randIndex]);
+  } else if(index == 2){ //below
+    var randIndex = Math.floor(Math.random() * obj.below.length);
+    $(".cube-face").eq(index).children().text(obj.below[randIndex]);
+  } else if(index == 3){ //south
+    var randIndex = Math.floor(Math.random() * obj.south.length);
+    $(".cube-face").eq(index).children().text(obj.south[randIndex]);
+    
+  } else if(index == 4){ //north
+    var randIndex = Math.floor(Math.random() * obj.north.length);
+    $(".cube-face").eq(index).children().text(obj.north[randIndex]);
+    
+  } else if(index == 5){ //west
+    var randIndex = Math.floor(Math.random() * obj.west.length);
+    $(".cube-face").eq(index).children().text(obj.west[randIndex]);
+    
+  } else if(index == 6){ //east
+    var randIndex = Math.floor(Math.random() * obj.east.length);
+    $(".cube-face").eq(index).children().text(obj.east[randIndex]);
+  }
+  if(parseInt($(".cube-face").eq(index).children().css("height")) >= cube_size){
+    $(".cube-face").eq(index).css({
+      "font-size": 20
+    });
+  } else {
+    $(".cube-face").eq(index).css({
+      "font-size": 30
+    });
+  }
+  $(".cube-face").eq(index).css({
+    "padding-top": cube_size/2 - parseInt($(".cube-face").eq(index).children().css("height"))/2
+  });
+
+  setTimeout(cubeText, 5000 + index*50, index);
+
 }
 
 function peripheryText(index){
+
   var wLength = Math.floor(width/10.3);
   var shortWLength = Math.floor(height/10.3);
   
   if(index == 0){
       curr_offset = char_offset;
-      $(".periphery").eq(index).children().text(str.slice(curr_offset, curr_offset + wLength));
+      $(".periphery").eq(index).children().text(peripheryStr.slice(curr_offset, curr_offset + wLength));
       curr_offset += wLength;
   } else if(index == 1){
-      $(".periphery").eq(index).children().text(str.slice(curr_offset, curr_offset + shortWLength));
+      $(".periphery").eq(index).children().text(peripheryStr.slice(curr_offset, curr_offset + shortWLength));
       curr_offset += shortWLength;
 
   } else if(index == 2){
-      $(".periphery").eq(index).children().text(str.slice(curr_offset, curr_offset + wLength));
+      $(".periphery").eq(index).children().text(peripheryStr.slice(curr_offset, curr_offset + wLength));
       curr_offset += wLength;
 
   } else if(index == 3){
-      $(".periphery").eq(index).children().text(str.slice(curr_offset, curr_offset + shortWLength));
+      $(".periphery").eq(index).children().text(peripheryStr.slice(curr_offset, curr_offset + shortWLength));
       curr_offset += shortWLength;
 
   }
   if(index == 3){
     char_offset += 1;
+  }
+
+  if(char_offset >= peripheryStr.length){
+    char_offset = 1;
   }
 }
 
@@ -118,7 +133,6 @@ function peripheryText(index){
 function resize(){
   width = $(window).width();
   height = $(window).height();
-  var cube_size = 700;
   var p_height = 40;
   var p_padding = 10;
   $("#container").css({
