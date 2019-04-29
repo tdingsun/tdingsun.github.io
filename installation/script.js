@@ -3,7 +3,7 @@ var height = $(window).height();
 var divWidth;
 const fontsize = $("body").css("font-size");
 
-$.getJSON('http://tdingsun.github.io/installation/text.json', function(data){
+$.getJSON('https://api.myjson.com/bins/1dywmk', function(data){
   console.log("hello");
   console.log(data);
 });
