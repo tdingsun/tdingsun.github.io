@@ -2,6 +2,22 @@ var width = $(window).width();
 var height = $(window).height();
 var str = "";
 
+var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
+var notes = Tone.Frequency("G3").harmonize([0, 2, 4, 5, 7, 9, 11, 12]);
+var noteIndex = 0;
+
+StartAudioContext(Tone.context, 'div').then(function(){
+  //started
+  console.log("clicked");
+
+});
+
+//have to click to start audio context
+$('div').click(function(){
+  //Tone.start();
+  console.log("clicked");
+});
+
 $(document).ready(function() {
   resize();
   $("#container").click();
@@ -59,7 +75,17 @@ function resize(){
 
 
 function mutate(){
+  synth.triggerAttackRelease(notes[noteIndex], "8n");
+  noteIndex++;
+  if(noteIndex >= notes.length){
+    noteIndex = 0;
+  }
+
   $("#history").prepend(str + '<br>');
+  console.log($('#history').text().length);
+  if($('#history').text().length > 20000){
+    $('#history').text($('#history').text().substring(0, 10000));
+  }
 
   var lastCharIsSpace = false;
   if(str[str.length - 1] == " "){

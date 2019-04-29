@@ -38,7 +38,6 @@ $(document).ready(function(event){
   }
   $(".cube-face").click(function(event){
     var index = $(".cube-face").index(this);
-    console.log(index);
     cubeText(index, true);
   });
 
@@ -52,6 +51,7 @@ $(document).ready(function(event){
 
       clearTimeout(t1);
       clearTimeout(t2);
+      
       $("#cube").css({
         "animation-name": "none",
         transition: "0.25s"
