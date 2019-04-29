@@ -4,6 +4,7 @@ var divWidth;
 const fontsize = $("body").css("font-size");
 
 $.getJSON('http://tdingsun.github.io/installation/text.json', function(data){
+  console.log("hello");
   console.log(data);
 });
 
