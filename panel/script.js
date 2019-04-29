@@ -30,22 +30,6 @@ $('div').click(function(){
 });
 
 $(document).ready(function(event){
-  // if ("geolocation" in navigator) {
-  // /* geolocation is available */
-  // console.log("geolocation available");
-  // var geo_options = {
-  //   enableHightAccuracy: true,
-  //   maximumAge : 30000,
-  //   timeout : 27000
-  // };
-  // var watchID = navigator.geolocation.watchPosition(function(position) {
-  //   console.log(position.coords.latitude);
-  //   console.log(position.coords.longitude);
-  // }, error, geo_options);
-  // } else {
-  // /* geolocation IS NOT available */
-  // console.log("geolocation NOT available");
-  // }
   setupDivs();
 
   $(".panel").click(function(){

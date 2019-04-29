@@ -12,8 +12,45 @@ body {
   /*overflow: hidden;*/
   background-color: yellow;
   overflow: hidden;
+  transition: 0.25s;
+}
 
+.marker {
+  position: fixed;
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid black;
+  left: 60px;
+  transition: 0.25s;
 
+}
+
+#loss {
+  top: 180px;
+}
+
+#desire {
+  top: 120px;
+}
+
+#alienation {
+  top: 60px;
+}
+
+#handle {
+  width: 20px;
+  height: 20px;
+  right: 60px;
+  top: 60px;
+  border-radius: 20px;
+  background-color: yellow;
+  border: 1px solid black;
+  position: fixed;
+  cursor: grab;
+}
+
+#handle:active{
+  cursor: grabbing;
 }
 
 #container {
@@ -28,7 +65,8 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transform: translateZ(-350px); 
-  transition: transform 1s;
+  transition: 1s;
+  transition-timing-function: linear;
   animation-name: rotation;
   animation-duration: 50s;
   animation-iteration-count: infinite;
@@ -41,12 +79,17 @@ body {
   width: 400px;
   height: 400px;
   padding: 10px;
+  padding-top: 330px;
   box-sizing: border-box;
   text-align: center;
   font-size: 30px;
-  color: black;
   border: 1px solid black;
-  /*background-color: rgba(255, 255, 0, 0.9);*/
+  cursor: pointer;
+
+}
+
+.cube-face div {
+  cursor: pointer;
 }
 
 #center {

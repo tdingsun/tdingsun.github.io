@@ -1,10 +1,11 @@
 var width = $(window).width();
 var height = $(window).height();
-const fontsize = $("body").css("font-size");
+var cube_size = 700;
 
 var obj;
 var peripheryStr;
-var cube_size = 700;
+var t1;
+var t2;
 
 $.getJSON('http://tdingsun.github.io/installation/text.json', function(data){
   obj = data;
@@ -15,7 +16,7 @@ var char_offset = 0;
 var curr_offset = 0;
 
 var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
-var notes = Tone.Frequency("C4").harmonize([0, 2, 5, 7, 9, 12]);
+var notes = Tone.Frequency("G3").harmonize([0, 3, 5, 7, 9, 12, 17]);
 
 StartAudioContext(Tone.context, 'div').then(function(){
   //started
@@ -33,53 +34,153 @@ $(document).ready(function(event){
 
   resize();
   for(var i = 0; i < 7; i++){
-    setTimeout(cubeText, 150 + i*50, i);
+    setTimeout(cubeText, 2000 + i*50, i, false);
   }
-  for(var i = 0; i < 4; i++){
-    setInterval(peripheryText, 150, i);
-  }
-
   $(".cube-face").click(function(event){
-    var x = event.pageX;
-    var y = event.pageY;
-    $("#cube").css('transform', "translateZ(-350px) rotateX(" + event.pageY + "deg) rotateY(" + event.pageX + "deg)");
-  })
+    var index = $(".cube-face").index(this);
+    console.log(index);
+    cubeText(index, true);
+  });
 
+  for(var i = 0; i < 4; i++){
+    setTimeout(peripheryText, 2000, i);
+  }
+
+  $("#handle").draggable({
+    start: function(event, ui){
+      $("body").css('background-color', "white");
+
+      clearTimeout(t1);
+      clearTimeout(t2);
+      $("#cube").css({
+        "animation-name": "none",
+        transition: "0.25s"
+      });
+    },
+
+    drag: function(event, ui){
+      ui.position.left = Math.min(width - 30, Math.max(10, ui.position.left));
+      ui.position.top = Math.min(height - 30, Math.max(10, ui.position.top));
+      var x = 360 - (ui.position.left / width * 360);
+      var y = 360 - (ui.position.top / height * 360);
+      $("#cube").css('transform', "translateZ(-350px) rotateX(" + y + "deg) rotateY(" + x + "deg)");
+    },
+
+    stop: function(event, ui){
+      $("#cube").css("transition", "5s");
+      $("body").css('background-color', "yellow");
+
+      t1 = setTimeout(function(){
+        $("#cube").css("transform", "translateZ(-350px) rotateX(0deg) rotateY(0deg)");
+      }, 5000);
+      t2 = setTimeout(function(){
+          $("#cube").css("animation-name", "rotation");
+      }, 10000);
+    }
+  });
 });
 
 $(window).resize(function(){
   resize();
 });
 
-function cubeText(index){
+function cubeText(index, clicked){
+  $(".cube-face").eq(index).children().css({
+      color: "black"
+    });
+  $(".cube-face").eq(index).css({
+    "border-color": "black"
+  })
+  if(index == 0){
+    $("#alienation").css({
+        "background-color": "transparent",
+        color: "black",
+        "border-color": "black"
+    });
+    $("#desire").css({
+          "background-color": "transparent",
+          color: "black",
+          "border-color": "black"
+    });
+    $("#loss").css({
+          "background-color": "transparent",
+          color: "black",
+          "border-color": "black"
+    });
+  }
+  
   synth.triggerAttackRelease(notes[index], "8n");
 
+  var selectedObj;
+  if(Math.random() < 0.8){ //rate of normal texts
+    $("body").css("color", "black");
+    if(index == 0){ //center
+      selectedObj = obj.center;
+    } else if(index == 1){ //above
+      selectedObj = obj.above;
+    } else if(index == 2){ //below
+      selectedObj = obj.below;
+    } else if(index == 3){ //south
+      selectedObj = obj.south;
+    } else if(index == 4){ //north
+      selectedObj = obj.north;
+    } else if(index == 5){ //west
+      selectedObj = obj.west;
+    } else if(index == 6){ //east
+      selectedObj = obj.east;
+    }
+  } else { //low chance of loss, desire, alienation texts
+    
+    var rand = Math.random();
+    if(rand <= 0.33){ //loss
+      selectedObj = obj.loss;
+      $("#loss").css({
+        "background-color": "red",
+        color: "yellow",
+        "border-color": "yellow"
+      });
+      $(".cube-face").eq(index).children().css({
+        color: "red"
+      });
+      $(".cube-face").eq(index).css({
+        "border-color": "red"
 
-  if(index == 0){ //center
-    var randIndex = Math.floor(Math.random() * obj.center.length);
-    $(".cube-face").eq(index).children().text(obj.center[randIndex]);
-  } else if(index == 1){ //above
-    var randIndex = Math.floor(Math.random() * obj.above.length);
-    $(".cube-face").eq(index).children().text(obj.above[randIndex]);
-  } else if(index == 2){ //below
-    var randIndex = Math.floor(Math.random() * obj.below.length);
-    $(".cube-face").eq(index).children().text(obj.below[randIndex]);
-  } else if(index == 3){ //south
-    var randIndex = Math.floor(Math.random() * obj.south.length);
-    $(".cube-face").eq(index).children().text(obj.south[randIndex]);
-    
-  } else if(index == 4){ //north
-    var randIndex = Math.floor(Math.random() * obj.north.length);
-    $(".cube-face").eq(index).children().text(obj.north[randIndex]);
-    
-  } else if(index == 5){ //west
-    var randIndex = Math.floor(Math.random() * obj.west.length);
-    $(".cube-face").eq(index).children().text(obj.west[randIndex]);
-    
-  } else if(index == 6){ //east
-    var randIndex = Math.floor(Math.random() * obj.east.length);
-    $(".cube-face").eq(index).children().text(obj.east[randIndex]);
+      });
+
+    } else if(rand <= 0.66){ //desire
+      selectedObj = obj.desire;
+      $("#desire").css({
+        "background-color": "green",
+        color: "yellow",
+        "border-color": "yellow"
+      });
+      $(".cube-face").eq(index).children().css({
+        color: "green"
+      });
+      $(".cube-face").eq(index).css({
+        "border-color": "green",
+      });
+
+    } else { //alienation
+      selectedObj = obj.alienation;
+      $("#alienation").css({
+        "background-color": "blue",
+        color: "yellow",
+        "border-color": "yellow"
+      });
+      $(".cube-face").eq(index).children().css({
+        color: "blue"
+      });
+      $(".cube-face").eq(index).css({
+        "border-color": "blue"
+      });
+    }
   }
+
+  var selectedText = selectedObj[Math.floor(Math.random()*selectedObj.length)];
+  $(".cube-face").eq(index).children().text(selectedText);
+
+  //font size change if too much text
   if(parseInt($(".cube-face").eq(index).children().css("height")) >= cube_size){
     $(".cube-face").eq(index).css({
       "font-size": 20
@@ -89,12 +190,15 @@ function cubeText(index){
       "font-size": 30
     });
   }
+
+  //center text vertically
   $(".cube-face").eq(index).css({
     "padding-top": cube_size/2 - parseInt($(".cube-face").eq(index).children().css("height"))/2
   });
 
-  setTimeout(cubeText, 5000 + index*50, index);
-
+  if(!clicked){
+    setTimeout(cubeText, 6000 + index*50, index);
+  }
 }
 
 function peripheryText(index){
@@ -126,9 +230,9 @@ function peripheryText(index){
   if(char_offset >= peripheryStr.length){
     char_offset = 1;
   }
+
+  setTimeout(peripheryText, 150, index);
 }
-
-
 
 function resize(){
   width = $(window).width();
