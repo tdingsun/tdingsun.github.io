@@ -1,0 +1,126 @@
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+  font-size: 5px;
+  text-align: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  /*background: linear-gradient(-180deg, red 0%, black 50%, black 100%);*/
+  background: black;
+  color: white;
+
+
+}
+
+#black_pane {
+  background: black;
+  opacity: 1;
+  transition: opacity 100s;
+
+  width: 80vh;
+  height: 80vh;
+  border: 1px solid red;
+  position: fixed;
+  top: 10vh;
+  left: calc((100vw - 80vh)/2);
+  margin: auto;
+  border-radius: 1000px;
+  background: black;
+
+}
+
+#circle {
+  width: 80vh;
+  height: 80vh;
+  border: 1px solid red;
+  position: fixed;
+  top: 10vh;
+  left: calc((100vw - 80vh)/2);
+  margin: auto;
+  border-radius: 1000px;
+  background: radial-gradient(circle, rgba(0,0,0,1) 10%, rgba(31,0,0,1) 35%, rgba(128,0,0,1) 70%, rgba(189,0,0,1) 86%, rgba(255,0,0,1) 95%);
+
+}
+
+
+div{
+  box-sizing: border-box;
+  position: relative;
+
+}
+
+#center {
+  text-align: center;
+  position: absolute;
+  top: 50px;
+  cursor: grab;
+  transition: 0.5s;
+  text-transform: uppercase;
+
+
+}
+
+#center:active {
+  cursor: grabbing;
+}
+
+.line {
+  width: inherit;
+  transition: 2s;
+  border: 1px solid red;
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+#timer {
+  text-align: center;
+  width: 80vh;
+  position: fixed;
+  bottom: 30px;
+  left: calc((100vw - 80vh)/2);
+
+  padding: 5px;
+  border: 1px solid red;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: red;
+}
+
+#leftText{
+  font-family: sans-serif;
+  color: red;
+  font-size: 40px;
+  float: left;
+  text-align: left;
+  width: 300px;
+  left: 20px;
+  top: 20px;
+}
+
+#rightText{
+  font-family: sans-serif;
+  font-size: 40px;
+  color: red;
+  text-align: right;
+  float: right;
+  width: 300px;
+  right: 20px;
+  top: 20px;
+}
+
+#centerText{
+  position: fixed;
+  font-family: sans-serif;
+  font-size: 40px;
+  color: red;
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  top: 20px;
+}
