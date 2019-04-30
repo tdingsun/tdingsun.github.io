@@ -23,7 +23,7 @@ var setTimer_intervalID;
 var setSides_intervalID;
 var setCenter_intervalID;
 
-var synth = new Tone.PolySynth(5, Tone.Synth).toMaster();
+var synth = new Tone.PolySynth(8, Tone.Synth).toMaster();
 var notes = Tone.Frequency("C1").harmonize([0, 3, 7, 11, 13]);
 var noise = new Tone.Noise("brown").start();
 var autoFilter = new Tone.AutoFilter({
@@ -47,10 +47,11 @@ $('div').click(function(){
 
 
 $(document).ready(function(event){
-  setTimer_intervalID = setInterval(setTimer, 50);
-  setInterval(raiseTone, 3000);
   setupDivs();
   resize();
+
+  setTimer_intervalID = setInterval(setTimer, 50);
+  setInterval(raiseTone, 3000);
   setTimeout(beat, wordSpeed);
   setTimeout(timer, 1000);
   setTimeout(function(){
@@ -62,15 +63,8 @@ $(document).ready(function(event){
   $("#black_pane").css({
   	opacity: 0,
   });
+
   $("#center").draggable({
-  	drag: function(event, ui){
-  		console.log($(event.target).css("top"));
-  		// if (parseInt($(event.target).css("top")) <= 100){
-  		// 	$("#black_pane").css({
-  		// 		opacity: 0,
-  		// 	});
-  		// }
-  	}
   });
 
 });
@@ -89,7 +83,7 @@ function setupDivs(){
 
 function timer() {
 	resize();
-	//play music notes
+	//play  notes
 	var randNote = Math.floor(Math.random() * notes.length);
 	synth.triggerAttackRelease(notes[randNote], "1n");
 	
@@ -112,7 +106,6 @@ function timer() {
  		row_index = 0;
  	}
 
- 	 
 	//increase word index
 	word_index++;
 	if(word_index >= words_arr.length){
@@ -143,7 +136,7 @@ function jumpScare(){
 	setInterval(function(){
 		$(".jump").remove();
 		noise.stop();
-	}, 1000);
+	}, 250);
 	setTimeout(function(){
 		clearInterval(setTimer_intervalID);
   		clearInterval(beat_intervalID);
