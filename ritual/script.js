@@ -10,7 +10,7 @@ var rightSideIndex = 1;
 var centerIndex = 0;
 var demonArray = ["Amon", "Abaddon", "Abezethibou", "Abraxas", "Abyzou", "Adrammelech", "Aeshma", "Agaliarept", "Agares", "Agiel", "Angra Mainyu", "Aim", "Alastor", "Amaymon", "Andromalius", "Anti", "Antichrist", "Anzu", "Apophis", "Armaros", "Archon", "Arunasura", "Asag", "Asakku", "Asb'el", "Asmodeus", "Astaroth", "Asura", "Azazel", "Baal", "Bakasura", "Baku", "Banshee", "Baphomet", "Barbatos", "Beelzebub", "Behemoth", "Belial", "Beleth", "Belphegor", "Berith", "Bifrons", "Botis", "Buer", "Caim", "Charun", "Chemosh", "Cimejes", "Corson", "Dagon", "Dantalion", "Danjal", "Decarabia", "Demiurge", "Demogorgon", "Devil", "Eblis", "Eligos", "Eisheth", "Erlik", "Focalor", "Foras", "Forneus", "Furfur", "Gaap", "Gaki", "Gamigin", "Ghoul", "Gorgon", "Gremory", "Grigori", "Gualichu", "Haagenti", "Hades", "Halphas", "Haures", "Ifrit", "Incubus", "Ipos", "Jinn", "Jikininki", "Leviathan", "Lilith", "Lucifer", "Malphas", "Mammon", "Mara", "Maricha", "Mephistopheles", "Merihem", "Naamah", "Oni", "Orcus", "Oriax", "Orobas", "Paimon", "Pazuzu", "Pelesit", "Pithius", "Puloman", "Rahab", "Raum", "Ryuk", "Samael", "Satan", "Set", "Seir", "Shaitan", "Silver", "Stolas", "Succubus", "Shinigami", "Vassago", "Wendigo", "Ziminiar"];
 var poemArray = ["Listen to the sound of the ocean", "Draw lines in the sand", "Glisten in the round of the forbidden", "Thaw rinds in the band", "Frission in the bide of the hidden", "Raw hides marked with fans", "Incision in the side of the hand", "Fawn dies harkens red clan", "Derision in the eyes of each man", "Dawn climbs darkens weak minds"];
-
+var endText = "<br><br>You<br>have<br>summoned<br>me,<br>young<br>one.<br>And<br>now<br>what?";
 var ms = 0;
 
 var word_index = 0;
@@ -131,7 +131,7 @@ function jumpScare(){
 	});
 	$("body").append(newDiv);
 	noise.start();
-	synth.triggerAttackRelease("A4", "1n");
+	synth.triggerAttackRelease("C5", "1n");
 
 	setInterval(function(){
 		$(".jump").remove();
@@ -147,6 +147,9 @@ function jumpScare(){
 		Tone.stop();
 		$("#center").remove();
 	}, 3000);
+	setTimeout(function(){
+		$("#circle").html(endText);
+	});
 
 }
 

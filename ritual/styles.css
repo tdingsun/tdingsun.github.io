@@ -46,6 +46,10 @@ body {
   border-radius: 1000px;
   background: radial-gradient(circle, rgba(0,0,0,1) 10%, rgba(31,0,0,1) 35%, rgba(128,0,0,1) 70%, rgba(189,0,0,1) 86%, rgba(255,0,0,1) 95%);
 
+  color: red;
+  font-family: sans-serif;
+  font-size: 40px;
+  text-align: center;
 }
 
 
