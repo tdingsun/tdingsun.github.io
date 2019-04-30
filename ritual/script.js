@@ -118,7 +118,7 @@ function timer() {
 function jumpScare(){
 	var newDiv = $("<div>");
 	newDiv.addClass("jump");
-	newDiv.text("JUMP");
+	newDiv.html("HELLO,<br>WORLD");
 	newDiv.css({
 		position: "fixed",
 		width: width,
@@ -127,7 +127,7 @@ function jumpScare(){
 		color: "black",
 		top: 0,
 		left: 0,
-		"font-size": width/3.25,
+		"font-size": width/4,
 	});
 	$("body").append(newDiv);
 	noise.start();
