@@ -34,6 +34,7 @@ $(document).ready(function() {
       synth.triggerAttackRelease("G2", "8n");
       intervalID = setInterval(timer, 500);
     } else {
+      synth.triggerAttackRelease("D3", "8n");
       clearInterval(zeroIntervalID);
     }
   }, function(){
