@@ -1,0 +1,32 @@
+body {
+  font-family: serif;
+  margin: 0;
+  padding: 0;
+  color: blue;
+  background-color: black;
+
+}
+
+#container {
+}
+
+.hidden {
+  width: 100px;
+  height: 100px;
+  cursor: crosshair;
+  position: absolute;
+
+
+}
+
+.hidden:hover {
+  cursor: crosshair;
+  border: 1px dashed blue;
+}
+
+#timer {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 100px;
+  position: absolute;
+}
