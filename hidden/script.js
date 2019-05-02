@@ -20,7 +20,7 @@ StartAudioContext(Tone.context, 'div').then(function(){
 });
 
 //have to click to start audio context
-$('div').click(function(){
+$(document).click(function(){
   //Tone.start();
   console.log("clicked");
 });
