@@ -60,7 +60,7 @@ var notes = Tone.Frequency("C3").harmonize([0, 4, 7, 12]);
 StartAudioContext(Tone.context, 'div');
 
 //have to click to start audio context
-$('div').click(function(){
+$(document).click(function(){
 	Tone.start();
 });
 
