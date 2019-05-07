@@ -203,8 +203,8 @@ function cubeText(index, clicked){
 
 function peripheryText(index){
 
-  var wLength = Math.floor(width/10.3);
-  var shortWLength = Math.floor(height/10.3);
+  var wLength = Math.floor(width/9);
+  var shortWLength = Math.floor(height/10);
   
   if(index == 0){
       curr_offset = char_offset;

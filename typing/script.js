@@ -13,7 +13,7 @@ StartAudioContext(Tone.context, 'div').then(function(){
 });
 
 //have to click to start audio context
-$('div').click(function(){
+$(document).click(function(){
   //Tone.start();
   console.log("clicked");
 });
@@ -81,8 +81,7 @@ function mutate(){
     noteIndex = 0;
   }
 
-  $("#history").prepend(str + '<br>');
-  console.log($('#history').text().length);
+  $("#history").prepend(str + '<br><hr>' );
   if($('#history').text().length > 20000){
     $('#history').text($('#history').text().substring(0, 10000));
   }
@@ -108,8 +107,12 @@ function mutate(){
   str += " ";
  }
  $("#container").html(str + "<span>_</span>");
-
- var interval = 5000/words.length;
+ var interval;
+ if(words.length > 2){
+   interval = Math.min(5000/Math.log(words.length), 5000);
+ } else {
+    interval = 5000;
+ }
 
  setTimeout(mutate, interval);
 }

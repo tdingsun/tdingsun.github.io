@@ -9,10 +9,10 @@ var myCanvas = document.getElementById('world'); //everything is in a canvas
 $("#world").css("width", width);
 $("#world").css("height", height);
 //text
-var str = prompt("enter your text or click 'cancel' to read mine");
-if (str == null){
-	str = "I love when people twist the harmonic context and warp it and switch gears. I thought it was so beautiful and so creative. It's like ambient music because I can just be in it. Sometimes you catch what the original composition is, but it's always vague enough that you can be in it without following a structure or melody.";
-}
+// var str = prompt("enter your text or click 'cancel' to read mine");
+// if (str == null){
+	var str = "I am interested in writing within structures. My core belief is that the anonymous, mostly hidden structures of the internet does not deny the possibility of poetry. I imagine words springing up from technical jargon like moss in the cracks of pavement. There is the possibility of subjectivity even in the most banal of metadata. Hopefully. There is poetry in the listing of things. There is also poetry in the un-catalog-able-ness of things. The embrace of structure and the refusal of structure can cohabitate multipliciously. After the structuralism of modernity and the deconstruction / post-structuralist impulses of post-modernity, I think that what emerges is a type of pragmatism about the material reality of structure. There are certain structures like race and class and capitalism and the internet, etc. etc. that most likely are not going away anytime soon. I think that what emerges as being most important is a reckoning of the daily mundanity (and the mundanity of violence) of living within these structures existing at the same time, in the same place as a constant pushing against these structures. Contradictions no longer need to be resolved. This mirrors my interest in structure, lists, taxonomies, pantheons, etc. as ways to generate graphic content. It also recalls the adage of learning the grid and then learning how to break it. Beyond using structures to generate text, I am also interested in different forms/paradigms to display this text. I want to re-imagine what reading can be, and create different structures or paradigms for reading. What is reading beyond books? How can reading be done through different frameworks, and operate on different time-systems? Traditionally reading a book is done linearly, but at the reader’s own pace. What would it mean for a reader to have to constantly catch up to a text? What would it mean for a reader to experience a text non-linearly?";
+//}
 var words_arr = str.split(" "); //split text into array
 var wordIndex = 0; //initiallize index of words_arr
 var bodies_list = []; //initiallize array of bodies(rendered rectangles)
@@ -61,7 +61,11 @@ var mouseConstraint = MouseConstraint.create(engine, {
 
 World.add(engine.world, mouseConstraint);
 
-addBlock(); //embedded in this is a recursive setTimeOut so it adds a block every second until there are no more new words in the word array
+$(document).ready(function(){
+  $("#toggleStyle").click();
+  $("#toggleGravity").click();
+  addBlock(); //embedded in this is a recursive setTimeOut so it adds a block every second until there are no more new words in the word array
+});
 
 //on click, change word of clicked block to random word within the word array
 $(window).click(function(){
@@ -195,7 +199,7 @@ function addBlock(){
   World.add(engine.world, [body]);
 
   if(bodies_list.length < words_arr.length){
-      var t = setTimeout(addBlock, 1000);
+      var t = setTimeout(addBlock, 500);
   }
 }
 
