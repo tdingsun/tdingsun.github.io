@@ -2,8 +2,8 @@ body {
   font-family: serif;
   margin: 0;
   padding: 0;
-  color: blue;
-  background-color: black;
+  color: darkkhaki;
+  background-color: #F5F5F5;
 
 }
 
@@ -21,12 +21,12 @@ body {
 
 .hidden:hover {
   cursor: crosshair;
-  border: 1px dashed blue;
+  border: 2px dashed darkkhaki;
 }
 
 #timer {
   text-align: center;
   font-family: sans-serif;
-  font-size: 100px;
+  font-size: 100vh;
   position: absolute;
 }
