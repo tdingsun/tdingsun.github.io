@@ -2,22 +2,41 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 1em;
   text-align: left;
+    color: darkgreen;
 
+
+}
+
+#container {
+  background-color: yellow;
+  margin: 0;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 div {
   box-sizing: border-box;
   float: left;
-  word-wrap: break-word;
-  word-break: break-all;
+  text-align: center;
+  padding: 20px;
+  margin: 5px; 
+
 
 }
 
 .link {
-  border: 1px solid black;
-  padding: 30px;
-  margin: 10px;
+  border: 1px solid green;
+  color: darkgreen;
+  background-color: yellow;
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.link:hover {
+  background-color: white;
 }
