@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  font-size: 50px;
+  font-size: 1.5em;
   text-align: left;
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -10,6 +10,7 @@ body {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
+    background-color: black;
 
 }
 
@@ -23,51 +24,22 @@ div{
   position: absolute;
 }
 
-#a, #f, #k {
-  text-align: left;
+#picture {
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  background-origin: content-box;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-#b, #d, #e, #g, #i, #j, #l {
-  text-align: center
-}
+#subtitle {
+  position: absolute;
+  width: calc(100% - 100px);
+  left: 50px;
+  text-align: center;
+  bottom: 50px;
+  color: yellow;
 
-#c, #h, #m {
-  text-align: right;
-}
-
-i {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  position: fixed;
-}
-
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  right: 300px;
-  top: calc(50vh + 5px);
-
-}
-
-.left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  left: 300px;
-  top: calc(50vh + 5px);
-}
-
-.up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  left: calc(50vw - 5px);
-  top: 100px;
-}
-
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  left: calc(50vw - 5px);
-  top: calc(100vh - 100px);
 }
