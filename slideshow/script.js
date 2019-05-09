@@ -71,7 +71,7 @@ function loadImage(index){
   console.log(index);
   $('<img/>').attr('src', path).load(function(){
     randNote = Math.floor(Math.random()*notes.length);
-    synth.triggerAttackRelease(notes[randNote], "1n");
+    synth.triggerAttackRelease(notes[randNote], "2m");
     $(this).remove();
     $('#picture').css({
       "background-image": 'url("' + path + '")'
