@@ -9,7 +9,6 @@ for(let i = 1; i <= numImages; i++){
 }
 
 imgIndices = shuffle(imgIndices);
-console.log(imgIndices);
 
 
 
@@ -68,7 +67,6 @@ function loadText(index){
 
 function loadImage(index){
   var path = "images/" + imgIndices[index] + ".jpg";
-  console.log(index);
   $('<img/>').attr('src', path).load(function(){
     randNote = Math.floor(Math.random()*notes.length);
     synth.triggerAttackRelease(notes[randNote], "2m");
