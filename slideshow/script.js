@@ -1,7 +1,7 @@
 var width;
 var height;
 var divWidth;
-const numImages = 167;
+const numImages = 163;
 //randomize order
 var imgIndices = [];
 for(let i = 1; i <= numImages; i++){
@@ -67,18 +67,21 @@ function loadText(index){
 }
 
 function loadImage(index){
-  randNote = Math.floor(Math.random()*notes.length);
-  synth.triggerAttackRelease(notes[randNote], "1n");
-
   var path = "images/" + imgIndices[index] + ".jpg";
   console.log(index);
-  console.log(imgIndices[index]);
-  $('#picture').css({
-    "background-image": 'url("' + path + '")'
+  $('<img/>').attr('src', path).load(function(){
+    randNote = Math.floor(Math.random()*notes.length);
+    synth.triggerAttackRelease(notes[randNote], "1n");
+    $(this).remove();
+    $('#picture').css({
+      "background-image": 'url("' + path + '")'
+     });
+    if(index < numImages - 1){
+      setTimeout(loadImage, 50, index + 1);
+     }
   });
-  if(index < numImages){
-    setTimeout(loadImage, 500, index + 1);
-  }
+  
+
 }
 
 
