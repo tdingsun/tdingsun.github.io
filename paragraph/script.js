@@ -5,7 +5,7 @@ var o = 0;
 var len = 30;
 $(document).ready(function () {
   //initial display
-  disp(str_array.slice(0, len));
+  disp(str_array.slice(0, len)); 
   //on click
   $(".text").on('click', 'span', function() {
     var word = $(this).text();
