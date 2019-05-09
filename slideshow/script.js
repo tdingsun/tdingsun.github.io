@@ -77,9 +77,9 @@ function loadImage(index){
       "background-image": 'url("' + path + '")'
      });
     if(index < numImages - 1){
-      setTimeout(loadImage, 500, index + 1);
+      setTimeout(loadImage, 50, index + 1);
      } else {
-      setTimeout(loadImage, 500, 0);
+      setTimeout(loadImage, 50, 0);
      }
   });
   
