@@ -5,6 +5,7 @@ const numImages = 163;
 
 
 var intervalID;
+var svgArray = [];
 
 const margin = 20;
 const fontsize = parseInt($("body").css("font-size"));
@@ -16,6 +17,7 @@ var sentences = str.split("\\");
 var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
 var notes = Tone.Frequency("G2").harmonize([0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40]);
 var randNote;
+
 StartAudioContext(Tone.context, 'div').then(function(){
   //started
   console.log("clicked");
@@ -32,6 +34,8 @@ $(document).ready(function(event){
   //intervalID = setTimeout(loadImage, 2000, 0);
   //setTimeout(loadText, 2000, 0);
   //setTimeout(changeTitle, 10000);
+  loadSVGs();
+
 
  //$("#spread").attr("src", "images/Untitled-3-02.svg");
   jQuery.get("images/Untitled-3-02.svg", function(data){
@@ -48,69 +52,42 @@ $(document).ready(function(event){
     });
     $("#picture").append($svg);
   });
+
+  $(document).scroll(function(){
+    console.log("scroll");
+    var randIndex = Math.floor(Math.random() * svgArray.length);
+    $("#picture").empty();
+    $("#picture").append(svgArray[randIndex]);
+  });
 });
 
-function changeTitle(){
-  var spanIndex = Math.floor(Math.random() * $("span").length);
-  var text = $("span").eq(spanIndex).text();
-  var newText = changeString(text);
-  $("span").eq(spanIndex).text(newText);
-  setTimeout(changeTitle, 1000);
-}
 
-function loadText(index){
-  randNote = Math.floor(Math.random()*notes.length);
-  synth.triggerAttackRelease(notes[randNote], "1n");
-  $("#subtitle").text(sentences[index]);
-  var time = sentences[index].length * 50;
-  if(time < 1000){
-    time = 1000;
-  }
-  if(index < sentences.length - 1){
-    setTimeout(loadText, time, index + 1);
-  } else {
-    $("#ltitle").remove();
-    $("#rtitle").remove();
-    $("#ctitle").html(" ");
-    setTimeout(function(){
-      clearTimeout(intervalID);
 
-      setTimeout(function(){
-        synth.triggerAttackRelease("G4", "1n");
-        $("#picture").remove();
-        // $("#ctitle").html("Bring your Laptop<br><br>1:40PM<br>Room 704<br><br>Tiger Dingsun<br>Advised by<br>Anastasiia Raina<br><br>I Never Want to See the Same Image Twice!");
-      }, 1000);
-    }, 5000);
-  }
 
-}
-
-function loadImage(index){
-  var path = "images/" + imgIndices[index] + ".jpg";
-  $('<img/>').attr('src', path).load(function(){
-    randNote = Math.floor(Math.random()*notes.length);
-    synth.triggerAttackRelease(notes[randNote], "2m");
-    $(this).remove();
-    $('#picture').css({
-      "background-image": 'url("' + path + '")'
-     });
-    if(index < numImages - 1){
-      intervalID = setTimeout(loadImage, 500, index + 1);
-     } else {
-      intervalID = setTimeout(loadImage, 500, 0);
-     }
-  });
-  
-
-}
 
 
 $(window).resize(function(){
   resize();
 });
 
-function timer(){
-
+function loadSVGs() {
+  for(let i = 2; i < 76; i++){
+    jQuery.get("images/Untitled-3-" + "i" + ".svg", function(data){
+      var $svg = jQuery(data).find('svg');
+      $svg.attr("preserveAspectRatio", "none");
+      $svg.find("line").each(function(){
+        $(this).attr("preserveAspectRatio", "none");
+      });
+      $svg.find("rect").each(function(){
+        $(this).attr("preserveAspectRatio", "none");
+      });
+      $svg.find("path").each(function(){
+        $(this).attr("preserveAspectRatio", "none");
+      });
+      svgArray.push($svg);
+      
+    });
+  }
 }
 
 function resize(){
