@@ -7,16 +7,16 @@ for (let i = 0; i < n; i++){
   div_array = div_array.concat(document.createElement('div'));
 }
 
-StartAudioContext(Tone.context, 'div').then(function(){
+StartAudioContext(Tone.context, 'document').then(function(){
   //started
   console.log("clicked");
 });
 
 //have to click to start audio context
-// $(document).click(function(){
-//   Tone.start();
-//   console.log("clicked");
-// });
+$(document).click(function(){
+  Tone.start();
+  console.log("clicked");
+});
 
 var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
 var notes = Tone.Frequency("G2").harmonize([1, 3, 6, 8, 10, 
@@ -48,7 +48,6 @@ $(document).ready(function() {
     stack: "div",
     grid: [50, 50],
     start: function(){
-      console.log("yo");
       var ref = this;
       intervalID = setInterval(function(){
         new_string = changeString($(ref).text());
@@ -66,7 +65,6 @@ $(document).ready(function() {
 
   var intervalID;
   $("div").hover(function(){
-    console.log('hi');
     var old_top = parseInt($(this).css('top'), 10);
     $(this).css('top', old_top-(Math.floor(Math.random()*10)+5));
 
