@@ -20,7 +20,14 @@ a {
 
 a:hover{
   text-decoration: underline;
+    color: darkgreen;
 
+
+}
+
+a:visited{
+  text-decoration: none;
+  color: darkgreen;
 }
 
 #container {
