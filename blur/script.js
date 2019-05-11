@@ -13,6 +13,28 @@ var blur = 0;
 var blur_r = 0;
 var reverse = false;
 
+
+var synth = new Tone.PolySynth(8, Tone.Synth).toMaster();
+var notes = Tone.Frequency("C1").harmonize([0, 3, 7, 11, 13]);
+var noise = new Tone.Noise("brown").start();
+var autoFilter = new Tone.AutoFilter({
+  "frequency" : "4m",
+  "depth": 0.1,
+  "min" : 800,
+  "max" : 5000
+}).connect(Tone.Master);
+
+//connect the noise
+noise.connect(autoFilter);
+//start the autofilter LFO
+autoFilter.start()
+
+StartAudioContext(Tone.context, 'div');
+//have to click to start audio context
+$('div').click(function(){
+  Tone.start();
+});
+
 $(document).ready(function(event){
   for(let sentence of sentences){
       var span;
@@ -33,6 +55,7 @@ $(window).scroll(function(event){
     $(".blurry-r").css("text-shadow", "0 0 " + blur_r + "px rgba(0, 100, 100, 1)");
   console.log(st);
   if (st > lastScrollTop){
+    synth.triggerAttackRelease("G2", "2n");
     //scrolled down
     if(blur < 100){
       blur += 2;
@@ -42,6 +65,7 @@ $(window).scroll(function(event){
     }
 
   } else {
+    synth.triggerAttackRelease("C3", "2n");
     //scrolled up
     if(blur_r < 100){
       blur_r += 2;

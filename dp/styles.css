@@ -1,4 +1,7 @@
 body {
+  height: 100%;
+  width: 100%;
+  position: absolute;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -7,6 +10,16 @@ body {
   text-align: left;
     color: darkgreen;
 
+}
+
+a {
+  color: darkgreen;
+  text-decoration: none;
+
+}
+
+a:hover{
+  text-decoration: underline;
 
 }
 
@@ -30,7 +43,7 @@ div {
 }
 
 .link {
-  border: 1px solid green;
+  border: 1px solid darkgreen;
   color: darkgreen;
   background-color: yellow;
   text-decoration: none;

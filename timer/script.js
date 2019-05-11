@@ -12,6 +12,32 @@ var hue = 0;
 var str = "RED CARMINE CRIMSON CORAL BLUSH ORANGE APRICOT AMBER PEACH OCHER SAND BEIGE LEMON GERANIUM SPRING GRASS VIRIDIAN ROSEMARY FOREST OLIVE CERULEAN INDIGO VIOLET LILAC MAUVE PERIWINKLE LAVENDER PLUM SLATE GLASS COMMON MORAL MORTAL STONY STARRY CONSTANT VENGEFUL ROLLING SMOOTH ROCKY FUZZY FURRY CLEAN RICH TIGHT SPINY SHINY LUMPY LOVELY FIZZY RUNNY FUNNY FAST CANDID SHARP FORTUNE SORROW COIL MASON FIRE FREEZE ZEPHYR CONIFER MORTICIAN CORE FORK MISTAKE RAGE FEVER FERVOR CANDOR CANTILEVER HEAVEN HEATHEN ANTHEM CRAYON PASTURE DODGER CUNNING FLAKE SHATTER FLEE FLEX CARVE LIQUID FOLLOWS CORRAL STATION LOVER CONCH DIRT STEEL CLANG VIOLA CLARITY MARSH CLUE SWAMP BREEZE TOME RUNE FUME MOON MAGIC BOOK FUEL FUSE SPARK DOG SHADOW FACADE FLAT HONEY CURRY RICE PINE CYPRESS MUSK OCEAN SPICY SOUR VETIVER WOODSY MILDEW ACRID LOAM PEPPER JUNIPER EARTH TOBACCO YUZU CITRUS MOSS FRANKINCENSE VANILLA  BERRY THYME SPRUCE  SAGE RAIN PETRICHOR TEA HYACINTH  CAMPHOR CHICORY";
 var words_arr = str.split(" ");
 
+StartAudioContext(Tone.context, 'div').then(function(){
+  //started
+  console.log("clicked");
+});
+
+//have to click to start audio context
+$(document).click(function(){
+  //Tone.start();
+  console.log("clicked");
+});
+
+var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
+var notes = Tone.Frequency("G2").harmonize([1, 3, 6, 8, 10, 
+                                            3, 6, 8, 10, 13, 
+                                            6, 8, 10, 13, 15, 
+                                            8, 10, 13, 15, 18,
+                                            10, 13, 15, 18, 20,
+                                            13, 15, 18, 20, 22,
+                                            15, 18, 20, 22, 25,
+                                            18, 20, 22, 25, 27,
+                                            20, 22, 25, 27, 30,
+                                            22, 25, 27, 30, 32,
+                                            25, 27, 30, 32, 34,
+                                            27, 30, 32, 34, 37]);
+var noteIndex = 0;
+
 
 $(document).ready(function(event){
   width = $(window).width();
@@ -58,6 +84,11 @@ $(document).ready(function(event){
 
 $(window).scroll(function(event){
   changeText(s, ms);
+  synth.triggerAttackRelease(notes[noteIndex], "8n");
+      noteIndex++;
+      if(noteIndex >= notes.length){
+        noteIndex = 0;
+      }
 });
 
 
@@ -77,6 +108,11 @@ $(window).resize(function(){
 });
 
 function timer() {
+  synth.triggerAttackRelease(notes[noteIndex], "2n");
+      noteIndex++;
+      if(noteIndex >= notes.length){
+        noteIndex = 0;
+      }
   var today = new Date();
   h = today.getHours();
   m = today.getMinutes();

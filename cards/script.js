@@ -7,6 +7,20 @@ for (let i = 0; i < n; i++){
   div_array = div_array.concat(document.createElement('div'));
 }
 
+StartAudioContext(Tone.context, 'div').then(function(){
+  //started
+  console.log("clicked");
+});
+
+//have to click to start audio context
+// $(document).click(function(){
+//   Tone.start();
+//   console.log("clicked");
+// });
+
+var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
+var notes = Tone.Frequency("G2").harmonize([1, 3, 6, 8, 10, 
+                                            3, 6, 8, 10, 13]);
 
 var offset_x = 50;
 var x_dir = 1;
@@ -33,12 +47,14 @@ $(document).ready(function() {
   $("div").draggable({
     stack: "div",
     grid: [50, 50],
-    // start: function(event, ui){
-		// 	$(this).css("transition", "0s");
-		// },
-		// stop: function(event, ui){
-		// 	$(this).css("transition", "0.25s");
-		// }
+    start: function(){
+      console.log("yo");
+      var ref = this;
+      intervalID = setInterval(function(){
+        new_string = changeString($(ref).text());
+        $(ref).text(new_string);
+       }, (Math.floor(Math.random()*5000 + 5000)));
+    }
   });
 
   $("div").click(function(){
@@ -50,16 +66,15 @@ $(document).ready(function() {
 
   var intervalID;
   $("div").hover(function(){
+    console.log('hi');
     var old_top = parseInt($(this).css('top'), 10);
-    // var old_left = parseInt($(this).css('left'), 10);
     $(this).css('top', old_top-(Math.floor(Math.random()*10)+5));
-    // $(this).css('left', old_left+Math.floor(Math.random()*2)-1);
 
-    var ref = this;
-    intervalID = setInterval(function(){
-      new_string = changeString($(ref).text());
-      $(ref).text(new_string);
-    }, (Math.floor(Math.random()*5000 + 5000)));
+    // var ref = this;
+    // intervalID = setInterval(function(){
+    //   new_string = changeString($(ref).text());
+    //   $(ref).text(new_string);
+    // }, (Math.floor(Math.random()*5000 + 5000)));
 
   }, function(){
     var old_top = parseInt($(this).css('top'), 10);
@@ -93,6 +108,10 @@ $(document).ready(function() {
 
 
 function changeString(string){
+  var randIndex = Math.floor(Math.random() * notes.length);
+  synth.triggerAttackRelease(notes[randIndex], "8n");
+
+
   var words = RiTa.tokenize(string);
   var rand = Math.floor(Math.random()*words.length);
   var tag = RiTa.getPosTags(words[rand]);

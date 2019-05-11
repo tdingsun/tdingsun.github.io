@@ -10,7 +10,6 @@ var words = str.split(" ");
 StartAudioContext(Tone.context, 'div').then(function(){
   //started
   console.log("clicked");
-
 });
 
 //have to click to start audio context

@@ -17,6 +17,22 @@ var words_arr = str.split(" "); //split text into array
 var wordIndex = 0; //initiallize index of words_arr
 var bodies_list = []; //initiallize array of bodies(rendered rectangles)
 
+StartAudioContext(Tone.context, 'div').then(function(){
+  //started
+  console.log("clicked");
+});
+
+//have to click to start audio context
+$(document).click(function(){
+  //Tone.start();
+  console.log("clicked");
+});
+
+var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
+var notes = Tone.Frequency("C2").harmonize([1, 5, 8, 12, 15]);
+var noteIndex = 0;
+
+
 //matter.js initialization stuff
 var Engine = Matter.Engine,
     Render = Matter.Render,
@@ -64,14 +80,19 @@ World.add(engine.world, mouseConstraint);
 $(document).ready(function(){
   $("#toggleStyle").click();
   $("#toggleGravity").click();
+  console.log("added");
   addBlock(); //embedded in this is a recursive setTimeOut so it adds a block every second until there are no more new words in the word array
 });
 
 //on click, change word of clicked block to random word within the word array
 $(window).click(function(){
+  
+
   if(mouseConstraint.body != null){
     Events.on(mouseConstraint, "mousedown", function(){
+
       if(mouseConstraint.body != null){
+
         var body = mouseConstraint.body;
         var id = parseInt(body.label);
         var curr = $(".box").eq(id);
@@ -83,7 +104,7 @@ $(window).click(function(){
         var angle = body.angle;
         Body.setAngle(body, 0);
         Body.scale(body, newW/prevW, 1);
-        Body.setAngle(body, angle);        
+        Body.setAngle(body, angle);   
       }    
     });
   }
@@ -161,6 +182,9 @@ $("#toggleStyle").click(function(e){
 });
 
 function addBlock(){
+  var randNote = Math.floor(Math.random() * notes.length);
+  synth.triggerAttackRelease(notes[randNote], "2m");
+
   var randWidth = Math.floor(Math.random() * 300) + (width/2 - 150);
   var divLeft = randWidth;
 

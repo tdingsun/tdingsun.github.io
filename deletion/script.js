@@ -10,7 +10,22 @@ var timer_queue = [];
 var numDivs = text_array.length;
 
 var synth = new Tone.PolySynth(8, Tone.Synth).toMaster();
-var notes = Tone.Frequency("G1").harmonize([0, 2, 5, 7, 9, 12]);
+
+var notes = Tone.Frequency("E2").harmonize([0, 2, 5, 7, 9, 12]);
+
+var noise = new Tone.Noise("brown").start();
+noise.volume.value = -10;
+var autoFilter = new Tone.AutoFilter({
+  "frequency" : "2m",
+  "depth": 0.1,
+  "min" : 800,
+  "max" : 5000
+}).connect(Tone.Master);
+
+//connect the noise
+noise.connect(autoFilter);
+//start the autofilter LFO
+autoFilter.start()
 
 StartAudioContext(Tone.context, 'div').then(function(){
   //started
@@ -28,6 +43,8 @@ $(document).ready(function(event){
   setupDivs();
 
   $(".block").click(function(){
+    var randNote = Math.floor(Math.random() * notes.length);
+      synth.triggerAttackRelease(notes[randNote], "8n");
   	$(this).remove();
   })
 
