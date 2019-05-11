@@ -72,7 +72,7 @@ $(window).resize(function(){
 
 function loadSVGs() {
   for(let i = 2; i < 76; i++){
-    jQuery.get("images/Untitled-3-" + "i" + ".svg", function(data){
+    jQuery.get("images/Untitled-3-" + i + ".svg", function(data){
       var $svg = jQuery(data).find('svg');
       $svg.attr("preserveAspectRatio", "none");
       $svg.find("line").each(function(){
@@ -85,7 +85,7 @@ function loadSVGs() {
         $(this).attr("preserveAspectRatio", "none");
       });
       svgArray.push($svg);
-      
+
     });
   }
 }
