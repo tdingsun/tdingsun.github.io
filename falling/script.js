@@ -17,7 +17,7 @@ var words_arr = str.split(" "); //split text into array
 var wordIndex = 0; //initiallize index of words_arr
 var bodies_list = []; //initiallize array of bodies(rendered rectangles)
 
-StartAudioContext(Tone.context, 'div').then(function(){
+StartAudioContext(Tone.context, 'document').then(function(){
   //started
   console.log("clicked");
 });
