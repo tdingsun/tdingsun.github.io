@@ -36,7 +36,7 @@ $(document).ready(function(event){
  //$("#spread").attr("src", "images/Untitled-3-02.svg");
   jQuery.get("images/Untitled-3-02.svg", function(data){
     var $svg = jQuery(data).find('svg');
-    $svg.atrr("preserveAspectRatio", "none");
+    $svg.attr("preserveAspectRatio", "none");
     $("#picture").append($svg);
   });
 });
