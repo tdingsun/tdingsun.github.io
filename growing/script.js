@@ -57,7 +57,7 @@ setupSObjects();
 var synth = new Tone.PolySynth(5, Tone.Synth).toMaster();
 var notes = Tone.Frequency("C3").harmonize([0, 4, 7, 12]);
 
-StartAudioContext(Tone.context, 'document');
+StartAudioContext(Tone.context, 'div');
 //have to click to start audio context
 $(document).click(function(){
 	console.log("clicked");
