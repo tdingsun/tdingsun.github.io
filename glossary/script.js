@@ -34,11 +34,11 @@ $(document).ready(function(event){
   //setTimeout(changeTitle, 10000);
 
  //$("#spread").attr("src", "images/Untitled-3-02.svg");
- jQuery.get("images/Untitled-3-02.svg", function(data){
-  var $svg = jQuery(data).find('svg');
-  $("#spread").append($svg);
- });
-
+  jQuery.get("images/Untitled-3-02.svg", function(data){
+    var $svg = jQuery(data).find('svg');
+    $svg.atrr("preserveAspectRatio", "none");
+    $("#picture").append($svg);
+  });
 });
 
 function changeTitle(){

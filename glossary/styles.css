@@ -33,48 +33,5 @@ div{
 
 #picture {
   width: 100%;
-  height: 100vh;
-  padding: 50px;
-  padding-bottom: 150px;
-  background-origin: content-box;
-  background-position: center center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-#subtitle {
-  position: absolute;
-  width: calc(100% - 100px);
-  left: 50px;
-  text-align: center;
-  bottom: 50px;
-  color: yellow;
-  font-size: 40px;
-  background-color: black;
-
-}
-
-#ctitle{
-  top: 10px;
-  width: 100%;
-  text-align: center;
-  text-transform: capitalize;
-
-}
-
-#ltitle {
-    top: 10px;
-  position: absolute;
-  left: 20px;
-  text-align: left;
-  text-transform: capitalize;
-}
-
-#rtitle {
-  position: absolute;
-  right: 20px;
-    top: 10px;
-  text-align: right;
-  text-transform: capitalize;
-
+  height: 100%;
 }
