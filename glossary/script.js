@@ -37,6 +37,15 @@ $(document).ready(function(event){
   jQuery.get("images/Untitled-3-02.svg", function(data){
     var $svg = jQuery(data).find('svg');
     $svg.attr("preserveAspectRatio", "none");
+    $svg.find("line").each(function(){
+      $(this).attr("preserveAspectRatio", "none");
+    });
+    $svg.find("rect").each(function(){
+      $(this).attr("preserveAspectRatio", "none");
+    });
+    $svg.find("path").each(function(){
+      $(this).attr("preserveAspectRatio", "none");
+    });
     $("#picture").append($svg);
   });
 });
