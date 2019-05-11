@@ -7,7 +7,7 @@ for (let i = 0; i < n; i++){
   div_array = div_array.concat(document.createElement('div'));
 }
 
-StartAudioContext(Tone.context, 'div').then(function(){
+StartAudioContext(Tone.context, 'body').then(function(){
   //started
   console.log("clicked");
 });
@@ -30,7 +30,7 @@ $(document).ready(function() {
     $(d).css("left", offset_x);
     $(d).css("top", offset_y);
     $(d).css("position", "absolute");
-    $("#container").append(d);
+    $("body").append(d);
     if(offset_x >= $(window).width() - (100+$(d).width())){
       x_dir = -1;
     } else if(offset_x <= 50){
