@@ -29,7 +29,7 @@ $(document).ready(function(event){
   loadSVGs();
 
 
-  jQuery.get("images/Untitled-3-02.svg", function(data){
+  jQuery.get("images/2.svg", function(data){
     var $svg = jQuery(data).find('svg');
     $svg.attr("preserveAspectRatio", "none");
     $svg.find("line").each(function(){
@@ -63,7 +63,7 @@ $(window).resize(function(){
 
 function loadSVGs() {
   for(let i = 2; i < 76; i++){
-    jQuery.get(i + ".svg", function(data){
+    jQuery.get("images/" + i + ".svg", function(data){
       var $svg = jQuery(data).find('svg');
       $svg.attr("preserveAspectRatio", "none");
       $svg.find("line").each(function(){
