@@ -11,8 +11,10 @@ var notes = Tone.Frequency("G2").harmonize([0, 4, 7, 12, 16, 19, 24, 28, 31, 36,
 var randNote;
 StartAudioContext(Tone.context, 'svg').then(function(){
   //started
-  console.log("clicked");
+  console.log("startedAudioContext");
 });
+
+document.querySelector('svg').addEventListener('click', () => Tone.start());
 
 //have to click to start audio context
 $(document).click(function(){
@@ -54,13 +56,12 @@ function nextSVG(){
 
 function randomize(){
   randNote = Math.floor(Math.random()*notes.length);
-  synth.triggerAttackRelease(notes[randNote], "1n");
+  synth.triggerAttackRelease(notes[randNote], "8n");
 
   var randIndex = Math.floor(Math.random() * svgArray.length);
   currIndex = randIndex;
   $("#picture").empty();
   $("#picture").append(svgArray[randIndex]);
-  console.log("rando");
 }
 
 function loadAllSVGs() {
