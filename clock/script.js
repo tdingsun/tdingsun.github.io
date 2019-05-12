@@ -71,11 +71,8 @@ $(document).ready(function(event){
   numSeconds = 0;
 
 
-  // if(navigator.onLine){
-  //   $(".container").html("You are connected");
-  // } else {
-  //   $(".container").html("Welcome to the world of disconnection");
-  // }
+  window.addEventListener("wheel", scrolling, {passive: false});
+
 
   timer();
   changeText(s, ms);
@@ -83,12 +80,7 @@ $(document).ready(function(event){
 });
 
 $(window).scroll(function(event){
-  changeText(s, ms);
-  synth.triggerAttackRelease(notes[noteIndex], "8n");
-      noteIndex++;
-      if(noteIndex >= notes.length){
-        noteIndex = 0;
-      }
+  scrolling();
 });
 
 
@@ -106,6 +98,15 @@ $(window).resize(function(){
       }
   })
 });
+
+function scrolling() {
+    changeText(s, ms);
+  synth.triggerAttackRelease(notes[noteIndex], "8n");
+      noteIndex++;
+      if(noteIndex >= notes.length){
+        noteIndex = 0;
+      }
+}
 
 function timer() {
   synth.triggerAttackRelease(notes[noteIndex], "2n");
