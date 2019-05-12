@@ -20,7 +20,18 @@ var notes = Tone.Frequency("G2").harmonize([1, 3, 6, 8, 10,
                                             25, 27, 30, 32, 34,
                                             27, 30, 32, 34, 37]);
 var noteIndex = 0;
-
+StartAudioContext(Tone.context, 'document.body').then(function(){
+	console.log("audocontextfromdocumentbody");
+});
+StartAudioContext(Tone.context, 'div').then(function(){
+	console.log("audiocontextfromdocumentbody");
+});
+//have to click to start audio context
+$(document).click(function(){
+	console.log("clicked");
+	Tone.context.start();
+	Tone.context.resume();
+});
 
 $(document).ready(function(event){
   width = $(window).width();

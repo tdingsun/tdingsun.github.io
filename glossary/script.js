@@ -26,8 +26,7 @@ $(document).click(function(){
 
 $(document).ready(function(event){
 
-  loadAllSVGs(); //load all SVGs
-  //$("#picture").append(svgArray[currIndex]); //start with the first one
+  loadAllSVGs(); //load all SVGs and sets first one initially
 
   //event listener for scroll: have to do it this way because of chrome
   window.addEventListener("wheel", randomize, {passive: false});
