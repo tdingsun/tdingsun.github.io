@@ -33,6 +33,18 @@ $(document).ready(function(event){
     randomize();
   });
 
+  $(document).scroll(function(){
+    console.log("docunment scroll");
+    randomize();
+  });
+
+  $("#picture").scroll(function(){
+    console.log("picture scrool");
+    randomize();
+  });
+
+
+
   $("#picture").click(function(){
     randomize();
   });
