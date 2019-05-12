@@ -13,7 +13,7 @@ var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
 var notes = Tone.Frequency("G2").harmonize([0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40]);
 var randNote;
 
-StartAudioContext(Tone.context, 'div').then(function(){
+StartAudioContext(Tone.context, 'svg').then(function(){
   //started
   console.log("clicked");
 });
@@ -53,10 +53,6 @@ $(document).ready(function(event){
 });
 
 
-
-
-
-
 $(window).resize(function(){
   resize();
 });
@@ -76,6 +72,7 @@ function loadSVGs() {
         $(this).attr("preserveAspectRatio", "none");
       });
       svgArray.push($svg);
+      console.log("loaded");
 
     });
   }
