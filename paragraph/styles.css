@@ -10,11 +10,11 @@ body {
 }
 
 .text {
-  width: 60%;
+  width: 70%;
   margin: auto;
-  padding-top: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   font-size: 60px;
-
 }
 
 span {
@@ -25,4 +25,5 @@ span {
 span:hover {
   color: white;
   cursor: pointer;
+  text-decoration: underline;
 }

@@ -68,7 +68,7 @@ function interval(){
   if(currInterval <= 10){
     intervalDelta = 1.05;
   }
-  if(currInterval >= 500){
+  if(currInterval >= 1000){
     intervalDelta = 0.95;
   }
   console.log(currInterval * intervalDelta);

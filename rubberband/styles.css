@@ -9,7 +9,7 @@ body {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
-  background-color: blue;
+  background-color: white;
 
 
 }
@@ -23,34 +23,26 @@ div{
   height: 100vh;
 }
 
-
-.panel {
-  text-align: center;
-  background-color: white;
-  border: 1px solid red;
-  box-sizing: content-box;
-  transition: 0.25s;
-  transition-timing-function: ease-in-out;
-  cursor: pointer;
-
-}
-
 .innertext {
   background-color: white;
   cursor: pointer;
   text-align: center;
   float: left;
   position: relative;
-  border: 1px solid blue;
   box-sizing: content-box;
   padding-top: 10px;
   padding-bottom: 10px;
-}
+  border-radius: 200px;
 
-.innertext:nth-child(odd){
-  color: red;
 }
 
 .innertext:nth-child(even){
+  color: red;
+  border: 1px solid red;
+}
+
+.innertext:nth-child(odd){
   color: blue;
+  border: 1px solid blue;
+
 }

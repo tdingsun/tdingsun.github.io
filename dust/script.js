@@ -135,11 +135,11 @@ $("#toggleGravity").click(function(e){
   if(toggleG){
     engine.world.gravity.y = 0;
     toggleG = false;
-    $(e.target).css("background-color", "green");
+    $(e.target).css("background-color", "white");
   } else {
     engine.world.gravity.y = 1;
     toggleG = true;
-    $(e.target).css("background-color", "white");
+    $(e.target).css("background-color", "green");
 
   }
 });
@@ -172,11 +172,11 @@ $("#toggleStyle").click(function(e){
   }
   if(toggle){
     toggle = false;
-    $(e.target).css("background-color", "green");
+    $(e.target).css("background-color", "white");
 
   } else {
     toggle = true;
-    $(e.target).css("background-color", "white");
+    $(e.target).css("background-color", "green");
 
   }
 });

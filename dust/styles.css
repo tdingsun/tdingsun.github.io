@@ -9,6 +9,8 @@ body {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
+    color: darkgreen;
+
 
 }
 
@@ -16,8 +18,15 @@ body {
   position: fixed;
   width: 20px;
   height: 20px;
+  border-radius: 20px;
   background-color: white;
   border: 1px solid green;
+}
+
+.btn p {
+  position: relative;
+  top: -20px;
+  left: 30px;
 }
 
 #toggleStyle {
@@ -26,8 +35,8 @@ body {
 }
 
 #toggleGravity {
-  left: 40px;
-  top: 20px;
+  left: 20px;
+  top: 50px;
 }
 
 .btn:hover {
@@ -41,7 +50,6 @@ body {
   box-sizing: border-box;
   position: absolute;
   border: 1px solid green;
-  color: green;
   background-color: white;
   text-align: center;
 }
