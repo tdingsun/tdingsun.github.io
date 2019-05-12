@@ -4,6 +4,7 @@ body {
   font-family: sans-serif;
   font-size: 1.5em;
   text-align: left;
+  cursor: pointer;
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
