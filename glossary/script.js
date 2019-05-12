@@ -79,9 +79,11 @@ function loadAllSVGs() {
         $(this).attr("preserveAspectRatio", "none");
       });
       svgArray.push($svg);
+      if(i == 2){
+        $("#picture").append($svg); 
+      }
     });
   }
-  $("#picture").append(svgArray[0]); 
 }
 
 function resize(){
