@@ -5,7 +5,21 @@ var height;
 var svgArray = [];
 var currIndex = 0;
 
+//////SOUND SETUP/////
+var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
+var notes = Tone.Frequency("G2").harmonize([0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40]);
+var randNote;
+StartAudioContext(Tone.context, 'svg').then(function(){
+  //started
+  console.log("clicked");
+});
 
+//have to click to start audio context
+$(document).click(function(){
+  Tone.start();
+  console.log("clicked");
+});
+//////SOUND SETUP END/////
 
 
 $(document).ready(function(event){
@@ -26,6 +40,9 @@ $(window).resize(function(){
 });
 
 function nextSVG(){
+  randNote = Math.floor(Math.random()*notes.length);
+  synth.triggerAttackRelease(notes[randNote], "8n");
+
   if(currIndex == svgArray.length - 1){
     currIndex = 0;
   } else {
@@ -36,6 +53,9 @@ function nextSVG(){
 }
 
 function randomize(){
+  randNote = Math.floor(Math.random()*notes.length);
+  synth.triggerAttackRelease(notes[randNote], "1n");
+
   var randIndex = Math.floor(Math.random() * svgArray.length);
   currIndex = randIndex;
   $("#picture").empty();
