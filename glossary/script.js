@@ -1,28 +1,12 @@
 var width;
 var height;
-var divWidth;
 const numImages = 163;
 
 
 var svgArray = [];
 
-const margin = 20;
 
 
-var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
-var notes = Tone.Frequency("G2").harmonize([0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40]);
-var randNote;
-
-StartAudioContext(Tone.context, 'svg').then(function(){
-  //started
-  console.log("clicked");
-});
-
-//have to click to start audio context
-$(document).click(function(){
-  Tone.start();
-  console.log("clicked");
-});
 
 $(document).ready(function(event){
 
@@ -44,18 +28,29 @@ $(document).ready(function(event){
     $("#picture").append($svg);
   });
 
-  $(document).scroll(function(){
+  $(window).scroll(function(){
     console.log("scroll");
-    var randIndex = Math.floor(Math.random() * svgArray.length);
-    $("#picture").empty();
-    $("#picture").append(svgArray[randIndex]);
+    randomize();
   });
+
+  $("#picture").click(function(){
+    randomize();
+  });
+
+  document.onscroll  = randomize;
 });
 
 
 $(window).resize(function(){
   resize();
+  randomize();
 });
+
+function randomize(){
+  var randIndex = Math.floor(Math.random() * svgArray.length);
+  $("#picture").empty();
+  $("#picture").append(svgArray[randIndex]);
+}
 
 function loadSVGs() {
   for(let i = 2; i < 76; i++){
@@ -81,7 +76,6 @@ function loadSVGs() {
 function resize(){
   width = $(window).width();
   height = $(window).height();
-  divWidth = width/3 - margin;
 }
 
 function shuffle(array){
