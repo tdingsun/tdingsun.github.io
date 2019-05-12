@@ -28,20 +28,12 @@ $(document).ready(function(event){
     $("#picture").append($svg);
   });
 
-  $(window).scroll(function(){
-    console.log("scroll");
-    randomize();
-  });
+  // $(window).scroll(function(){
+  //   console.log("scroll");
+  //   randomize();
+  // });
 
-  $(document).scroll(function(){
-    console.log("docunment scroll");
-    randomize();
-  });
-
-  $("#picture").scroll(function(){
-    console.log("picture scrool");
-    randomize();
-  });
+  window.addEventListener("wheel", randomize, {passive: false});
 
 
 
@@ -62,6 +54,7 @@ function randomize(){
   var randIndex = Math.floor(Math.random() * svgArray.length);
   $("#picture").empty();
   $("#picture").append(svgArray[randIndex]);
+  console.log("rando");
 }
 
 function loadSVGs() {

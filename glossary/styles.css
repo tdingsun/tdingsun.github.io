@@ -12,6 +12,7 @@ body {
     user-select: none;
     background-color: white;
     color: yellow;
+    overflow: hidden;
 
 }
 
