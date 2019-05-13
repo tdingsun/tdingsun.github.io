@@ -7,7 +7,7 @@ var peripheryStr;
 var t1;
 var t2;
 
-$.getJSON('http://tdingsun.github.io/installation/text.json', function(data){
+$.getJSON('http://tdingsun.github.io/geography/text.json', function(data){
   obj = data;
   peripheryStr = obj.periphery[0];
 });

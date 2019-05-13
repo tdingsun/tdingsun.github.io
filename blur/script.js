@@ -76,12 +76,6 @@ $(window).scroll(function(event){
   }
   lastScrollTop = st;
 
-  // if($(window).scrollTop() + $(window).height() >= $(document).height() + 20){
-  //   $(window).scrollTop(0);
-  // } else if($(window).scrollTop() <= 20){
-  //   $(window).scrollTop($(document).height());
-  // }
-
 
 });
 

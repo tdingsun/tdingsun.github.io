@@ -20,7 +20,7 @@ body {
   height: 20px;
   border-radius: 20px;
   background-color: white;
-  border: 1px solid green;
+  border: 1px solid darkgreen;
 }
 
 .btn p {
@@ -49,7 +49,7 @@ body {
   z-index: -1;
   box-sizing: border-box;
   position: absolute;
-  border: 1px solid green;
+  border: 1px solid darkgreen;
   background-color: white;
   text-align: center;
 }

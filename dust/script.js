@@ -139,7 +139,7 @@ $("#toggleGravity").click(function(e){
   } else {
     engine.world.gravity.y = 1;
     toggleG = true;
-    $(e.target).css("background-color", "green");
+    $(e.target).css("background-color", "darkgreen");
 
   }
 });
@@ -158,7 +158,7 @@ $("#toggleStyle").click(function(e){
             });
           } else {
             $(".box").eq(i).css({
-              border: "1px solid green",
+              border: "1px solid darkgreen",
               padding: "20px"
             });
           }
@@ -176,7 +176,7 @@ $("#toggleStyle").click(function(e){
 
   } else {
     toggle = true;
-    $(e.target).css("background-color", "green");
+    $(e.target).css("background-color", "darkgreen");
 
   }
 });

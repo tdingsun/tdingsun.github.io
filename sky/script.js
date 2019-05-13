@@ -44,14 +44,7 @@ $(window).resize(function(){
 function timer(prevIndex) {
   var randNote = Math.floor(Math.random() * notes.length);
   synth.triggerAttackRelease(notes[randNote], "1n");
-  // if("vibrate" in navigator){
-  //     navigator.vibrate(200);
-  //     //navigator.vibrate(0);
-  //     $("div").css("background-color", "red");
 
-  // }
-
-  //
   var change = Math.floor(Math.random() * 2);
   if(change > 0){
     position_index++;
