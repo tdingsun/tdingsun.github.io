@@ -422,6 +422,7 @@ iframe {
   #episode-list {
     float: left;
     width: 60%;
+    margin-left: 20px;
   }
 
   /* line 349, ../sass/screen.scss */
