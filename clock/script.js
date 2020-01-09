@@ -9,7 +9,7 @@ var ms;
 var numSeconds;
 
 var hue = 0;
-var str = "Arcanist  Archer Assassin Astrologian Bard Beastmaster Berserker Bishop Black-Mage Cannoneer Chemist Conjurer Dancer Dark Knight Defender Devout Dragoon  Evoker Exorcist Fencer Fighter Gambler Geomancer Guardian Gunner Hawkeye Illusionist Kaiser Knight Merchant Monk Necromancer Ninja Oracle Paladin Performer Pirate Ranger Red-Mage Runeseeker Sage Salve-maker Samurai Scholar Seer Sniper Soldier Spiritmaster Summoner Swordmaster Templar Thief Time-Mage Viking  Warrior  White-Mage Wizard Yokai";
+var str = "Arcanist Archer Assassin Astrologian Bard Beastmaster Berserker Bishop Black-Mage Cannoneer Chemist Conjurer Dancer Dark Knight Defender Devout Dragoon Evoker Exorcist Fencer Fighter Gambler Geomancer Guardian Gunner Hawkeye Illusionist Kaiser Knight Merchant Monk Necromancer Ninja Oracle Paladin Performer Pirate Ranger Red-Mage Runeseeker Sage Salve-maker Samurai Scholar Seer Sniper Soldier Spiritmaster Summoner Swordmaster Templar Thief Time-Mage Viking Warrior White-Mage Wizard Yokai";
 var words_arr = str.split(" ");
 
 StartAudioContext(Tone.context, 'html').then(function(){
