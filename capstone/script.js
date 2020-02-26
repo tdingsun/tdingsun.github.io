@@ -10,13 +10,17 @@
 //   var element = document.scrollingElement || document.documentElement;
 //   element.addEventListener('wheel', transformScroll);
 
+// var colors = ["#fcf", "#fcc", "#fc9", "#fc6", "#fc3", "#fc0"];
+// var cc = 0
+
 $(document).ready(function(){
     $(window).keydown(function(event){
         event.preventDefault();
-
         var currPos = $(window).scrollLeft()
         remainder = Math.floor(currPos) % Math.floor(window.innerWidth);
         if(event.key === "ArrowLeft"){
+            // $("body").css("background-color", colors[cc]);
+            // cc = (cc - 1) % colors.length
             if (remainder <= 1){
                 $(window).scrollLeft((currPos - remainder) - window.innerWidth);
             } else {
@@ -24,6 +28,8 @@ $(document).ready(function(){
             }
         }
         if(event.key === "ArrowRight"){
+            // $("body").css("background-color", colors[cc]);
+            // cc = (cc + 1) % colors.length
             $(window).scrollLeft((currPos - remainder) + window.innerWidth);
         }
     })
