@@ -42,11 +42,13 @@ $(document).ready(function(){
             l = new_l
             $(".navitem").css({
                 'background-color': "pink",
-                'color': "blue"           
+                'color': "blue",
+                'border-color': "blue"                   
             });
             $(`#nav${l}`).css({
                 'background-color': "blue",
-                'color': "pink"    
+                'color': "pink",
+                'border-color': "pink"          
             });
         }
     });
@@ -56,11 +58,13 @@ $(document).ready(function(){
         e.stopPropagation();
         $(".navitem").css({
             'background-color': "pink",
-            'color': "blue"           
+            'color': "blue",
+            'border-color': "blue"          
         });
         $(this).css({
             'background-color': "blue",
-            'color': "pink"    
+            'color': "pink",
+            'border-color': "pink"          
         });
     });
 });
