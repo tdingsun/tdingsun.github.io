@@ -2,9 +2,11 @@
 // var colors = ["#fcf", "#fcc", "#fc9", "#fc6", "#fc3", "#fc0"];
 var l = 0;
 var new_l = 0;
+var clicked = false;
 
 $(document).ready(function(){
     $(window).keydown(function(event){
+        clicked = false;
         event.preventDefault();
         var currPos = $(window).scrollLeft();
         remainder = Math.floor(currPos) % Math.floor(window.innerWidth);
@@ -36,7 +38,7 @@ $(document).ready(function(){
             }
         }
 
-        if(l != new_l){
+        if(l != new_l && clicked != true){
             l = new_l
             $(".navitem").css({
                 'background-color': "pink",
@@ -50,6 +52,7 @@ $(document).ready(function(){
     });
 
     $('.navitem').click(function(e){
+        clicked = true;
         e.stopPropagation();
         $(".navitem").css({
             'background-color': "pink",
