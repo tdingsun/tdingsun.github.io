@@ -63,9 +63,9 @@ body::-webkit-scrollbar {
   color: blue;
 }
 .navitem:hover {
-  color: pink;
+  color: pink!important;
   border-color: pink;
-  background-color: blue;
+  background-color: blue!important;
   transform-origin: center;
   transform: rotate(45deg);
 }
