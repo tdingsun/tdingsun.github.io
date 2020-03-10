@@ -26,9 +26,7 @@ function makeNewWord(el) {
         rnn.generate({length: 33, temperature: temperature}, (err, results) => {
             var res = results.sample.split(" ");
             $(el).text(res[1]);
-
             makeLines(el);
-
             runningInference = false;
         });   
     }
@@ -38,7 +36,7 @@ function makeLines(el) {
     var id = parseInt($(el).attr('id'));
     var n = calculateNeighbors(id);
     var pos1 = $(el).offset();
-    
+
     var r = [];
     for(let i = 0; i < 8; i++){
         r.push(Math.random() > 0.5);
