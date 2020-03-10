@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 1.5vw;
   text-align: left;
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -11,7 +11,8 @@ body {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
   background-color: #111;
-  color: magenta;
+  color: #ff7300;
+  text-shadow: 0 0 1vw #FA1C16, 0 0 2vw #ff7300, 0 0 .4vw #FED128;
 }
 
 * {
@@ -27,6 +28,10 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 50px;
+  letter-spacing: -1px;
+  text-shadow: 0 0 1vw #FA1C16, 0 0 2vw #ff7300;
+
+
 }
 #container {
   width: 100vw;
@@ -56,7 +61,8 @@ body {
 
 
 .line {
-  background-color: magenta;
+  background-color: #00ffaa;
+  box-shadow: 0px 0px 3px 1px #00ffaa;
   position: absolute;
 }
 
@@ -66,11 +72,20 @@ body {
 
 .worda:hover {
   text-decoration: underline;
+  animation: glow 0.1s ease infinite;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+
+
+
 }
 
 @media only screen and (max-width: 790px) {
+  body{
+    font-size: 5vw;
+  }
   #title {
-    border-bottom: 2px solid magenta;
+    border-bottom: 2px solid #00ffaa;
     background-color: black;
   }
   #container {
@@ -81,5 +96,16 @@ body {
     width: 100%;
     height: auto;
     padding: 20px;
+  }
+}
+
+
+@keyframes glow {
+  0%,
+  100% {
+  text-shadow: 0 0 1vw #FA1C16, 0 0 2vw #ff7300, 0 0 .4vw #FED128;
+  }
+  50% {
+  text-shadow: 0 0 .5vw #ff7300, 0 0 1.5vw #800E0B, 0 0 2vw #ff7300, 0 0 2vw #800E0B, 0 0 .2vw #ff7300;
   }
 }
