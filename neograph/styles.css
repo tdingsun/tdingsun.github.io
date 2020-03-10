@@ -85,12 +85,12 @@ body {
     font-size: 5vw;
   }
   #title {
-    border-bottom: 2px solid #00ffaa;
+    border-bottom: 2px solid #ff7300;
     background-color: black;
   }
   #container {
     height: auto;
-    padding-top: 100px;
+    padding-top: 200px;
   }
   .word {
     width: 100%;
