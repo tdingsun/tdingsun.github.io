@@ -61,8 +61,8 @@ body {
 
 
 .line {
-  background-color: #00ffaa;
-  box-shadow: 0px 0px 3px 1px #00ffaa;
+  background-color: #ff7300;
+  box-shadow: 0px 0px 3px 1px #ff7300;
   position: absolute;
 }
 
@@ -73,8 +73,8 @@ body {
 .worda:hover {
   text-decoration: underline;
   animation: glow 0.1s ease infinite;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+  /* text-transform: uppercase; */
+  /* letter-spacing: -1px; */
 
 
 
