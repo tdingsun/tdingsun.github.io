@@ -1,5 +1,11 @@
-var title = "Various";
+var title = "10 Poems";
 var author = "Greta Sk"
+
+var colors = ["red", "forestgreen", "orange", "magenta", "cornflowerblue", "gold", "pink", "purple", "blue"];
+var color_index = 0;
+
+var lh = 1.5;
+var lh_unit = 1.5;
 
 var padding = 100;
 var i = 0;
@@ -27,7 +33,8 @@ $("document").ready(function(){
     setInterval(rotateHorizontal, speed*2);
 });
 
-$("#body").on("click", "span", function(e){
+$("#body").on("click", ".link", function(e){
+    var el = $(this);
     console.log("span");
     var link = this.getAttribute("data-link");
     console.log(link);
@@ -37,7 +44,33 @@ $("#body").on("click", "span", function(e){
         success: function(markdown){
             console.log(markdown);
             let html = md.render(markdown);
-            $("#body").html(html);
+
+            let div = $("<div class='poem'></div>");
+
+            div.css({
+                "color": colors[color_index % colors.length],
+                "padding-top": lh + "em",
+                "z-index": -1
+            });
+
+            div.html(html);
+            el.after(div);
+
+            lh += lh_unit;
+
+            $("#body").css({
+                "line-height": lh + "em",
+                "margin-top": "calc(" + -0.5*lh + "em" + " + 18px)"
+            });
+            $("p").css({
+                "margin-bottom": lh + "em" 
+            })
+            $("h3").css({
+                "margin-bottom": lh + "em" 
+            })
+
+
+            color_index++;
         }
     });
 });
