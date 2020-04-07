@@ -27,14 +27,14 @@
 
 <!--	  Remember to change tiger to your folder name!-->
 	  
-  <script src="../tiger/static/js/three.js"></script>
-	  <script src="../tiger/static/js/loaders/DDSLoader.js"></script>
-		<script src="../tiger/static/js/loaders/MTLLoader.js"></script>
-		<script src="../tiger/static/js/loaders/OBJMTLLoader.js"></script>
+  <script src="../static/js/three.js"></script>
+	  <script src="../static/js/loaders/DDSLoader.js"></script>
+		<script src="../static/js/loaders/MTLLoader.js"></script>
+		<script src="../static/js/loaders/OBJMTLLoader.js"></script>
 	
-  <script src="../tiger/static/js/StereoEffect.js"></script>
-  <script src="../tiger/static/js/DeviceOrientationControls.js"></script>
-  <script src="../tiger/static/js/OrbitControls.js"></script>
+  <script src="../static/js/StereoEffect.js"></script>
+  <script src="../static/js/DeviceOrientationControls.js"></script>
+  <script src="../static/js/OrbitControls.js"></script>
 
   <script>
     var camera, scene, renderer, model;
@@ -104,7 +104,7 @@ scene.fog = new THREE.FogExp2( 0xcec9b3, 0.0 );
     
       //the sky
       material = new THREE.MeshBasicMaterial({
-          map: THREE.ImageUtils.loadTexture("../tiger/back.png"),
+          map: THREE.ImageUtils.loadTexture("../back.png"),
           side: THREE.DoubleSide
       });
       sky = new THREE.Mesh(new THREE.SphereGeometry(500, 60, 40 ), material);
@@ -128,7 +128,7 @@ scene.fog = new THREE.FogExp2( 0xcec9b3, 0.0 );
 		THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
     
 			var loader = new THREE.OBJMTLLoader();
-				loader.load( '../tiger/model/heavensgate.obj', '../tiger/model/heavensgate.mtl', function ( object ) {
+				loader.load( '../model/heavensgate.obj', '../model/heavensgate.mtl', function ( object ) {
 					model = object;
 					//Use these to set the object's position
 					object.position.y = 0;
