@@ -18,16 +18,32 @@ $(document).click(function(){
 	Tone.start();
 });
 
+let md = window.markdownit({html: true});
 
 $("document").ready(function(){
     displayTitle(title, author);
-    setTimeout(distplayFirst, 2500);
+    setTimeout(displayFirst, 500);
     setInterval(rotateVertical, speed);
     setInterval(rotateHorizontal, speed*2);
-})
+});
+
+$("#body").on("click", "span", function(e){
+    console.log("span");
+    var link = this.getAttribute("data-link");
+    console.log(link);
+    $.ajax({
+        url: link,
+        datatype: "html",
+        success: function(markdown){
+            console.log(markdown);
+            let html = md.render(markdown);
+            $("#body").html(html);
+        }
+    });
+});
 
 function displayTitle(title, author){
-    $("#center").html(title + "<br> BY <br>" + author);
+    $("#title").html(title + "<br> by <br>" + author);
     var randNote = Math.floor(Math.random() * notes.length);
 
     synth.triggerAttackRelease(notes[randNote], "1n");
@@ -36,8 +52,15 @@ function displayTitle(title, author){
 
 function displayFirst(){
     $.ajax({
-        url: ""
-    })
+        url: "chasing.md",
+        datatype: "html",
+        success: function(markdown){
+            console.log(markdown);
+            let html = md.render(markdown);
+            $("#title").removeClass("centered").addClass("runner");
+            $("#body").html(html);
+        }
+    });
 }
 
 
