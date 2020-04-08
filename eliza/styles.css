@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "menlo";
+  src: url("fonts/Menlo-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: left;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  background-color: thistle;
+  color: darkslategray;
+
+
+}
+
+#title {
+  font-size: 6em;
+  letter-spacing: -2px;
+  line-height: 0.9em;
+  position: fixed;
+  display: block;
+  top: 20px;
+  left: 20px;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+#container {
+  width: 100vw;
+  display: block;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#blob-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+
+}
+#blob {
+  width: 20vw;
+  height: 20vw;
+  border-radius: 2000px / 700px;
+  border: 20px solid khaki;
+  animation: expand 1.5s infinite ease;
+}
+
+.text {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  transition: 0.5s;
+  line-height: 0.9em;
+  text-align: center;
+}
+
+#clockContainer {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+
+#vertical {
+  width: 20px;
+  height: 100px;
+  background-color: darkslategray;
+  position: absolute;
+  left: 40px;
+}
+
+#horizontal{
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  background-color: darkslategray;
+}
+
+@keyframes expand {
+  0% {width: 80vw; border-radius: 2000px / 700px;}
+  50% {width: 20vw; border-radius: 500px;}
+  100% {width: 80vw; border-radius: 2000px / 700px;}
+}
