@@ -1,11 +1,13 @@
 var title = "10 Poems";
 var author = "Greta Sk"
 
-var colors = ["red", "forestgreen", "orange", "magenta", "cornflowerblue", "gold", "pink", "purple", "blue"];
+var colors = ["red", "forestgreen", "orange", "magenta", "cornflowerblue", "darkgoldenrod", "teal", "purple", "yellowgreen"];
 var color_index = 0;
 
-var lh = 1.5;
-var lh_unit = 1.5;
+var offset_dict = {}
+
+var lh = 1;
+var lh_unit = 1;
 
 var padding = 100;
 var i = 0;
@@ -28,39 +30,54 @@ let md = window.markdownit({html: true});
 
 $("document").ready(function(){
     displayTitle(title, author);
-    setTimeout(displayFirst, 500);
+    setTimeout(displayFirst, 1000);
     setInterval(rotateVertical, speed);
     setInterval(rotateHorizontal, speed*2);
 });
 
-$("#body").on("click", ".link", function(e){
+$("#title").click(function(){
+    displayFirst()
+    $("#body").css({
+        "line-height": "1.5em",
+        "margin-top": "5px"
+    });
+    lh = 1;
+    lh_unit = 1;
+    offset_dict = {};
+
+});
+
+$("#container").on("click", ".link", function(e){
     var el = $(this);
-    console.log("span");
+    var level = el.parents().length
+    if (offset_dict[level] == null){
+        offset_dict[level] = 1
+    }
+    console.log(level);
+    console.log(offset_dict[level]);
     var link = this.getAttribute("data-link");
-    console.log(link);
     $.ajax({
         url: link,
         datatype: "html",
         success: function(markdown){
-            console.log(markdown);
             let html = md.render(markdown);
 
             let div = $("<div class='poem'></div>");
 
             div.css({
                 "color": colors[color_index % colors.length],
-                "padding-top": lh + "em",
-                "z-index": -1
+                "padding-top": offset_dict[level] + "em",
+                "z-index": 0,
             });
+            color_index++;
+            offset_dict[level] += lh_unit;
+            lh += lh_unit;
 
             div.html(html);
             el.after(div);
 
-            lh += lh_unit;
-
             $("#body").css({
                 "line-height": lh + "em",
-                "margin-top": "calc(" + -0.5*lh + "em" + " + 18px)"
             });
             $("p").css({
                 "margin-bottom": lh + "em" 
@@ -69,17 +86,47 @@ $("#body").on("click", ".link", function(e){
                 "margin-bottom": lh + "em" 
             })
 
+            setTimeout(cloneLinks(div), 500);
 
-            color_index++;
+
+            el.get(0).scrollIntoView({behavior: "smooth", block: "start"});
+            el.css({
+                color: "white",
+                "background-color": "black",
+                padding: "3px"
+            });
+            el.removeClass("link");
         }
     });
 });
 
-function displayTitle(title, author){
-    $("#title").html(title + "<br> by <br>" + author);
-    var randNote = Math.floor(Math.random() * notes.length);
+function cloneLinks(div){
+    var newlinks = div.find(".link");
+    console.log(newlinks)
+    newlinks.each(function(index, element){
+        console.log(element);
+        let offset = $(element).offset();
+        let left = offset.left;
+        let top = offset.top;
+        console.log(left);
+        console.log(top);
+        let clone = $(element).clone();
+        let divwrapper = $("<div></div>");
 
-    synth.triggerAttackRelease(notes[randNote], "1n");
+        $(divwrapper).css({
+            position: "absolute",
+            top: top,
+            left: left,
+            "z-index": 1,
+            "padding": "2px",
+        });
+        divwrapper.append(clone);
+        $("#body").append(divwrapper);
+    });
+}
+
+function displayTitle(title, author){
+    $("#title").html(title + "<br>by<br>" + author);
 }
 
 
@@ -88,56 +135,14 @@ function displayFirst(){
         url: "chasing.md",
         datatype: "html",
         success: function(markdown){
-            console.log(markdown);
             let html = md.render(markdown);
             $("#title").removeClass("centered").addClass("runner");
             $("#body").html(html);
+            $("h3").css({
+                "line-height": 0
+            });
         }
     });
-}
-
-
-function textCycle(){
-    var randNote = Math.floor(Math.random() * notes.length);
-    synth.triggerAttackRelease(notes[randNote], "1n");
-
-    var word = txt_array[i];
-    updateField(word);
-    var metrics = getTextWidth(word, "180px arial");
-    var scaleXFactor = (window.innerWidth - padding) / metrics.width;
-    var scaleYFactor = (window.innerHeight - padding) / 
-        (metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent);
-    $("#center").text(word);
-    $("#center").css({
-        "transform": `scale(${scaleXFactor}, ${scaleYFactor})`
-    })
-    var syllables = RiTa.getSyllables(word);
-	var syllables_arr = syllables.split("/");
-    var time = syllables_arr.length * speed;
-    i++;
-
-    if (word.charAt(word.length - 1) == '.'){
-        time += speed;
-    }
-    if(i < txt_array.length){
-        setTimeout(textCycle, time);
-    }
-
-}
-
-function updateField(word){
-    var curr = $("#field").text();
-    $("#field").text(curr + " " + word);
-}
-
-
-function getTextWidth(text, font) {
-    // re-use canvas object for better performance
-    var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
-    var context = canvas.getContext("2d");
-    context.font = font;
-    var metrics = context.measureText(text);
-    return metrics;
 }
 
 function rotateVertical() {

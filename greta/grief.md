@@ -11,7 +11,7 @@ It is winter and there\
 is nothing\
 but\
 my coat\
-my exposed\
+my <span class='link' data-link='ralph.md'>exposed</span>\
 ankles
 
 Invite\
@@ -20,8 +20,8 @@ She grab it by collar\
 Come in out\
 of that night
 
-Coarse shell\ 
-fall\ 
+Coarse shell\
+fall\
 away\
 will you? She is\
 trying\

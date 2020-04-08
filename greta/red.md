@@ -6,7 +6,7 @@ which I split on a barnacle Today\
 I put my eye to the gash\
 The water shone pink\
 The surface slid The light\
-moved like a fleet of extinct animals\
+moved like a fleet of extinct animals
 
 Parted the edges (seething inhale) To regard Him\
 floating in the center, knees 45 and right and resting\
@@ -21,10 +21,10 @@ in underwear\
 Ögedei in metal\
 To slip my hand Between\
 His hammered plates\
-To thumb that flesh underneath\
+To thumb that flesh underneath
 
 I, freshly twenty and having just\
-thrown in The Towel, can hear a voice\
+<span class='link' data-link='ralph.md'>thrown in The Towel,</span> can hear a voice\
 A mother’s voice \
 lingering in my head’s dank catacomb\
 *Isn’t he handsome?*
@@ -48,8 +48,8 @@ Howl, an offshore baby:\
 *Ögedei please I’ll do\
 anything for a flake of that striving geode\
 Guitarist\
-Anything for a shred of that dignity\
-Don’t start the show without me*
+Anything for a shred of that dignit*y*\
+<span class='link' data-link='show.md'>*Don’t start the show without me*</span>
 
 But I have never\
 been ready I am the dog\

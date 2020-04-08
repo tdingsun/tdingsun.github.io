@@ -1,77 +1,97 @@
 @font-face {
-  font-family: "aa";
-  src: url("fonts/aa_gothic_regular.otf"),
-      url("fonts/aa_gothic_bold.otf");
+  font-family: "menlo";
+  src: url("fonts/Menlo-Regular.ttf");
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "menlo", monospace, sans-serif;
   text-align: left;
-  width: 100vw;
-  height: 100vh;
-  font-size: 18px;
+  font-size: 14px;
   color: blue;
-  overflow: hidden;
 }
 
 * {
   box-sizing: border-box;
 }
 
+#img-container {
+  background-color: blue;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+  z-index: 1;
+}
+
+#dog {
+  mix-blend-mode: screen;
+  max-width: 100%;
+  height: auto;
+}
+
 .link {
-  border: 1px solid blue;
+  position: relative;
+  color: black;
   padding: 2px;
+  border: 1px solid black;
   cursor: pointer;
+  transform: translate(0);
+  z-index: 9999;
+}
+.link:hover {
+  color: white;
+  background-color: black;
 }
 
 .poem {
   display: inline-block;
   position: absolute;
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0);
 }
-
+ 
 h3 {
   margin-top: 0em;
   font-size: 1em;
   line-height: unset;
+  text-transform: uppercase;
+}
+
+p {
+  max-width: 550px;
+  padding-right: 20px;
 }
 
 #container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: space-around;
   padding: 20px;
-  overflow-y: auto;
 }
 
 .centered {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 8em;
   letter-spacing: -2px;
-  transition: all 0.3s;
   line-height: 0.9em;
 }
 
 .runner {
-  top: 20px;
-  left: 20px;
   font-size: 2em;
-  padding-right: 20px;
   position: fixed;
+  cursor: pointer;
+  color: blue;
+  z-index: 1;
+}
+
+.runner:hover {
+  text-decoration: underline;
 }
 
 #body {
+  flex-grow: 2;
   position: relative;
   font-size: 1em;
   line-height: 1.5em;
-  margin: 5px 20px 0 180px;
-  transition: 0.25s;
+  margin: 15px 20px 20px 180px;
 }
 
 #clockContainer {
@@ -85,7 +105,7 @@ h3 {
 #vertical {
   width: 20px;
   height: 100px;
-  background-color: cornsilk;
+  background-color: blue;
   position: absolute;
   left: 40px;
 }
@@ -95,5 +115,5 @@ h3 {
   height: 20px;
   position: absolute;
   top: 40px;
-  background-color: cornsilk;
+  background-color: blue;
 }

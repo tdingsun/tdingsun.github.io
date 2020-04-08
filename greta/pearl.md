@@ -31,7 +31,7 @@ of a cloisonné factory—
 
 You, North Star!\
 Evergreen!\
-Pray\
+<span class='link' data-link='ode.md'>Pray</span>\
 I not be saddened:\
 Lottery is lottery is law
 
