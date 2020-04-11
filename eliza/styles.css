@@ -72,6 +72,11 @@ body {
   transition: 0.5s;
   line-height: 0.9em;
   text-align: center;
+  width: 200vw;
+}
+
+.text:hover {
+  font-size: 3em!important;
 }
 
 #clockContainer {

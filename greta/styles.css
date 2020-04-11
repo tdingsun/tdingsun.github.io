@@ -32,6 +32,7 @@ html, body {
 }
 
 .link {
+  pointer-events: all!important;
   position: relative;
   color: black;
   padding: 2px;
@@ -46,6 +47,7 @@ html, body {
 }
 
 .poem {
+  pointer-events: none;
   display: inline-block;
   position: absolute;
   width: 550px;

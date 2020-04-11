@@ -1,7 +1,7 @@
 var title = "10 Poems";
 var author = "Greta Sk"
 
-var colors = ["red", "forestgreen", "orange", "magenta", "cornflowerblue", "darkgoldenrod", "teal", "purple", "yellowgreen"];
+var colors = ["red", "forestgreen", "orange", "magenta", "cornflowerblue", "darkgoldenrod", "teal", "purple", "blue"];
 var color_index = 0;
 
 var offset_dict = {}
@@ -41,6 +41,7 @@ $("#title").click(function(){
         "line-height": "1.5em",
         "margin-top": "5px"
     });
+    changeUIColor("blue");
     lh = 1;
     lh_unit = 1;
     offset_dict = {};
@@ -63,12 +64,13 @@ $("#container").on("click", ".link", function(e){
             let html = md.render(markdown);
 
             let div = $("<div class='poem'></div>");
-
+            let new_color = colors[color_index % colors.length];
             div.css({
-                "color": colors[color_index % colors.length],
+                "color": new_color,
                 "padding-top": offset_dict[level] + "em",
                 "z-index": 0,
             });
+            changeUIColor(new_color);
             color_index++;
             offset_dict[level] += lh_unit;
             lh += lh_unit;
@@ -86,19 +88,34 @@ $("#container").on("click", ".link", function(e){
                 "margin-bottom": lh + "em" 
             })
 
-            setTimeout(cloneLinks(div), 500);
+            // setTimeout(cloneLinks(div), 500);
 
 
             el.get(0).scrollIntoView({behavior: "smooth", block: "start"});
             el.css({
                 color: "white",
-                "background-color": "black",
+                "background-color": new_color,
                 padding: "3px"
             });
             el.removeClass("link");
         }
     });
 });
+
+function changeUIColor(new_color){
+    $("#img-container").css({
+        "background-color": new_color
+    });
+    $("#vertical").css({
+        "background-color": new_color
+    });
+    $("#horizontal").css({
+        "background-color": new_color
+    });
+    $(".runner").css({
+        "color": new_color
+    });
+}
 
 function cloneLinks(div){
     var newlinks = div.find(".link");
@@ -119,6 +136,7 @@ function cloneLinks(div){
             left: left,
             "z-index": 1,
             "padding": "2px",
+            "line-height": 2
         });
         divwrapper.append(clone);
         $("#body").append(divwrapper);

@@ -48,7 +48,7 @@ Howl, an offshore baby:\
 *Ögedei please I’ll do\
 anything for a flake of that striving geode\
 Guitarist\
-Anything for a shred of that dignit*y*\
+Anything for a shred of that dignity*\
 <span class='link' data-link='show.md'>*Don’t start the show without me*</span>
 
 But I have never\
