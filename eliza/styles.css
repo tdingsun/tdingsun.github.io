@@ -19,6 +19,7 @@ body {
   color: darkslategray;
 
 
+
 }
 
 #title {
@@ -36,10 +37,11 @@ body {
 }
 
 #container {
-  width: 100vw;
-  display: block;
+  display: fixed;
   padding: 20px;
+  width: 100vw;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 #blob-container {
@@ -67,7 +69,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   transition: 0.5s;
   line-height: 0.9em;
   text-align: center;
