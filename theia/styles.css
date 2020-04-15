@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "menlo";
+  src: url("fonts/Menlo-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 24px;
+  text-align: left;
+
+  background-color: whitesmoke;
+  color: forestgreen;
+}
+
+hr {
+  border: 1px solid forestgreen;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+table, tbody, tr, td{
+  border: 1.5px solid forestgreen;
+  border-radius: 1000px;
+  transition: 0.25s;
+}
+
+td {
+  padding: 10px;
+  vertical-align: center;
+  text-align: center;
+  color: forestgreen;
+  font-size: 12px;
+  border-radius: 100px;
+}
+
+@media (min-width: 768px) {
+  td {
+    font-size: 18px;
+    padding: 20px;
+  }
+}
+
+
+td:not(.largeCell):hover {
+  background-color: forestgreen;
+  color: whitesmoke
+}
+
+
+#title {
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 0.9em;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+  z-index: -1;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 150px 25px;
+  box-sizing: border-box;
+  letter-spacing: -0.2px;
+}
+
+.largeCell {
+  font-size: 6vw!important;
+  line-height: 1;
+
+}
+
+
+.indicator {
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  border: 1.5px solid forestgreen;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  transition: 0.25s;
+}
+
+#clockContainer {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+
+#vertical {
+  width: 20px;
+  height: 100px;
+  background-color: forestgreen;
+  position: absolute;
+  left: 40px;
+}
+
+#horizontal{
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  background-color: forestgreen;
+}
