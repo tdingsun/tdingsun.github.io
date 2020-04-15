@@ -18,21 +18,15 @@ var currRotateH = 0;
 
 var synth = new Tone.PolySynth(5, Tone.Synth).toMaster();
 var notes = Tone.Frequency("A3").harmonize([0, 2, 5, 7, 9, 12]);
-
-StartAudioContext(Tone.context, 'div');
-//have to click to start audio context
-$(document).click(function(){
-	console.log("clicked");
-	Tone.start();
-});
+var noteIndex = 0;
 
 let md = window.markdownit({html: true});
 
 $("document").ready(function(){
     displayTitle(title, author);
     setTimeout(displayFirst, 1000);
-    setInterval(rotateVertical, speed);
-    setInterval(rotateHorizontal, speed*2);
+    setInterval(rotateVertical, 1000);
+    setInterval(rotateHorizontal, 2000);
 });
 
 $("#title").click(function(){
@@ -49,7 +43,7 @@ $("#title").click(function(){
 });
 
 $("#container").on("click", ".link", function(e){
-    var randNote = word_index % notes.length;
+    var randNote = noteIndex % notes.length;
     synth.triggerAttackRelease(notes[randNote], "1n");
     
     var el = $(this);

@@ -44,8 +44,8 @@ $(document).ready(function(event){
   displayTitle(title, author);
   setTimeout(setupText, 1500);
 
-  setInterval(rotateVertical, speed);
-  setInterval(rotateHorizontal, speed*2);
+  setInterval(rotateVertical, 1000);
+  setInterval(rotateHorizontal, 2000);
   requestAnimationFrame(timer);
 
   $("#text-container").on("mouseenter", ".deactivated", function(){

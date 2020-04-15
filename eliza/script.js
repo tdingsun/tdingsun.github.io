@@ -38,8 +38,8 @@ $(document).ready(function(event){
       color: "thistle"
     });
   }, 2000);
-  setInterval(rotateVertical, speed);
-  setInterval(rotateHorizontal, speed*2);
+  setInterval(rotateVertical, 1000);
+  setInterval(rotateHorizontal, 2000);
   setTimeout(timer, 2000);
 });
 

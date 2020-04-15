@@ -29,6 +29,7 @@ hr {
   left: 20px;
   cursor: pointer;
   pointer-events: all;
+  transition: 0.25s;
 }
 
 #title:hover {
