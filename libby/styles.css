@@ -22,22 +22,22 @@ body {
 }
 
 #title {
-  font-size: 6em;
+  font-size: 6rem;
   letter-spacing: -2px;
-  line-height: 0.9em;
+  line-height: 0.9;
   position: fixed;
   display: block;
   top: 20px;
   left: 20px;
-  width: 100vw;
-  height: 100vh;
   z-index: -1;
-  color: khaki;
+  color: cornflowerblue;
+  transition: 0.25s;
 }
 
 #container {
-  width: 300%;
-  height: 300%;
+  width: 5000px;
+  height: 3000px;
+  font-size: 1rem;
 }
 
 #viewfinder {
@@ -50,7 +50,7 @@ body {
   border: 1px solid cornflowerblue;
 }
 
-div{
+.word {
   box-sizing: border-box;
   position: absolute;
   display: flex;
@@ -71,9 +71,11 @@ div{
 #vertical {
   width: 20px;
   height: 100px;
-  background-color: khaki;
+  background-color: cornflowerblue;
   position: absolute;
   left: 40px;
+  transition: 0.25s;
+
 }
 
 #horizontal{
@@ -81,5 +83,7 @@ div{
   height: 20px;
   position: absolute;
   top: 40px;
-  background-color: khaki;
+  background-color: cornflowerblue;
+  transition: 0.25s;
+
 }
