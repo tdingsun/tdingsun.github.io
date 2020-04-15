@@ -49,6 +49,9 @@ $("#title").click(function(){
 });
 
 $("#container").on("click", ".link", function(e){
+    var randNote = word_index % notes.length;
+    synth.triggerAttackRelease(notes[randNote], "1n");
+    
     var el = $(this);
     var level = el.parents().length
     if (offset_dict[level] == null){

@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "menlo";
+  src: url("fonts/Menlo-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 24px;
+  text-align: left;
+
+  background-color: whitesmoke;
+  color: blue;
+}
+
+hr {
+  border: 0.5px solid blue;
+  width: 200%;
+  margin-left: -50%;
+}
+
+#title {
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 0.9em;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+#title:hover {
+  text-decoration: underline;
+}
+
+#container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  padding-top: 150px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+#text-container {
+  font-size: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+  letter-spacing: -0.2px;
+}
+
+span {
+  padding: 3px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.activated {
+  color: purple;
+  box-sizing: border-box;
+}
+
+#clockContainer {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+
+#vertical {
+  width: 20px;
+  height: 100px;
+  background-color: blue;
+  position: absolute;
+  left: 40px;
+}
+
+#horizontal{
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  background-color: blue;
+}
