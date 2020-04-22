@@ -8,9 +8,8 @@ body {
   padding: 0;
   font-family: sans-serif;
   text-align: left;
-  background-color: none;
-  color: silver;
-  background-color: rebeccapurple;
+=  color: black;
+  background-color: white;
   overflow: hidden;
 }
 
@@ -24,70 +23,68 @@ body {
   cursor: pointer;
   transition: 0.25s;
   z-index: -1;
-  color: red;
+  color: black;
 }
 
 #container {
   position: relative;
   box-sizing: border-box;
+  padding-top: 100px;
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  display: none;
 }
 
 .row {
+  height: 33.33333%;
   display: flex;
-  width: 100%;
-  height: 50%;
-}
-
-#row1 {
-  flex-grow: 0;
-  flex-shrink: 2;
-}
-
-#row2 {
-  flex-grow: 1;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.row div:first-child {
+  justify-content: center;
+  align-items: flex-end;
   flex-grow: 0;
   flex-shrink: 0;
 }
 
-.paragraph {
-  border: 1px solid red;
-  font-size: 6rem;
-  width: 50%;
-  height: 100%;
-  overflow: auto;
-  flex-grow: 1;
-  flex-shrink: 1;
-  border-radius: 62px;
-  margin: 0 0 0 -1px;
+.box {
+  width: calc(33vw - 50px);
+  margin: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+
 }
 
-
-#handle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  border: 1px solid red;
-  position: absolute;
-  left: calc(50vw - 25px);
-  top: calc(50vh - 25px);
-  cursor: grab;
+.box div {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: calc(33vw - 50px);
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid black;
 }
 
-#handle:hover {
-  background-color: red;
+.offcycle {
+  color: white;
+  background-color: black;
 }
-#handle:active {
-  cursor: grabbing;
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
 }
+
+/* Common */
 
 #clockContainer {
   width: 100px;
@@ -100,7 +97,7 @@ body {
 #vertical {
   width: 20px;
   height: 100px;
-  background-color: red;
+  background-color: black;
   position: absolute;
   left: 40px;
 }
@@ -110,11 +107,11 @@ body {
   height: 20px;
   position: absolute;
   top: 40px;
-  background-color: red;
+  background-color: black;
 }
 
 #mute-btn {
-  color: red;
+  color: black;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -124,6 +121,6 @@ body {
 }
 
 #mute-btn:hover {
-  color: purple;
-  background-color: red;
+  color: white;
+  background-color: black;
 }

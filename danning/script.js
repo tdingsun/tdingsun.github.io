@@ -9,46 +9,47 @@ var paragraphs = ["有人将夜色切了一个完美的洞, 露出它乳白的�
 var pDivs = [];
 
 var word_index = 0;
-var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
-var notes = Tone.Frequency("G4").harmonize([0, 4, 7, 11, 14, 17, 21, 24, 28, 31, 28, 24, 21, 17, 14, 11, 7, 4]);
-
-StartAudioContext(Tone.context, 'div').then(function(){
-  //started
-  console.log("clicked");
-
-});
-
-
+var volume = new Tone.Volume(-6);
+var synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
+var notes = Tone.Frequency("E1").harmonize([0, 4, 7, 11, 14, 17, 21]);
 
 $(document).ready(function(event){
   width = $(window).innerWidth();
   height = $(window).innerHeight();
   displayTitle(title, author);
   setTimeout(setupText, 1500);
-
   setInterval(rotateVertical, 1000);
   setInterval(rotateHorizontal, 2000);
-  // requestAnimationFrame(timer);
 
-
-});
-
-var lastScrollTop = 0;
-var blur = 0;
-var blur_r = 0;
-var reverse = false;
-var zoom = 100;
-
-$(window).click(function(event){
-  event.preventDefault();
-  pDivs.forEach(function(obj, index){
-    let div = obj[0];
-    let zVal = obj[1];
-    div.css("transform", "translateZ(" + (zVal - zoom) + "px)");
+  $('.row').on("scroll", ".paragraph", function(event){
+    console.log("hi");
+    var randNote = Math.floor(Math.random() * notes.length);
+    synth.triggerAttackRelease(notes[randNote], "16n");
   });
-  zoom += 100;
+  
 });
 
+$("#mute-btn").click(function(){
+  Tone.Master.mute = !Tone.Master.mute;
+  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+});
+
+
+$("#handle").draggable({
+  start: function(event, ui){
+
+  },
+  drag: function(event, ui){
+    let x = ui.position.left + 25;
+    let y = ui.position.top + 25;  
+    $("#row1").children().first().css("width", x);
+    $("#row2").children().first().css("width", x);
+    $("#row1").css("height", y);
+
+    var randNote = Math.floor(Math.random() * notes.length);
+    synth.triggerAttackRelease(notes[randNote], "16n");
+  }
+});
 
 function displayTitle(title, author){
   $("#title").html(title + "<br>by " + author);
@@ -56,12 +57,13 @@ function displayTitle(title, author){
 
 function setupText(){
   paragraphs.forEach(function(p, index){
-    let newP = $("<p></p>");
     let newDiv = $(`<div class="paragraph"></div>`);
-    newP.text(p);
-    newDiv.append(newP);
-    pDivs.push([newDiv, index * 1000]);
-    $("#container").append(newDiv);
+    newDiv.text(p);
+    if(index < 2){
+      $("#row1").append(newDiv);
+    } else {
+      $("#row2").append(newDiv);
+    }
   });
 
   $("#title").css({
@@ -69,14 +71,6 @@ function setupText(){
   });
 }
 
-function timer() {
-  $(".activated").each(function() {  
-    $(this).offset({top: ($(this).offset().top + (Math.random() * 5 - 2.5)), left: ($(this).offset().left + (Math.random() * 5 - 2.5))});
-  });
-
-  requestAnimationFrame(timer);
-
-}
 
 var currRotateV = 0;
 var currRotateH = 0;

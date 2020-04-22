@@ -84,9 +84,14 @@ td:not(.largeCell):hover {
   border-radius: 25px;
   border: 1.5px solid forestgreen;
   position: absolute;
-  right: 25px;
+  left: calc(100vw - 230px);
   top: 25px;
   transition: 0.25s;
+  cursor: pointer;
+}
+
+.indicator:hover {
+  background-color: yellow;
 }
 
 #clockContainer {
@@ -110,5 +115,20 @@ td:not(.largeCell):hover {
   height: 20px;
   position: absolute;
   top: 40px;
+  background-color: forestgreen;
+}
+
+#mute-btn {
+  color: forestgreen;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: whitesmoke;
   background-color: forestgreen;
 }

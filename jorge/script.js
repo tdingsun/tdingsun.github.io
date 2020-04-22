@@ -15,7 +15,7 @@ var word_index = 0;
 var hist = [];
 
 var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
-var notes = Tone.Frequency("G3").harmonize([0, 2, 4, 5, 7, 9, 11, 12]);
+var notes = Tone.Frequency("F3").harmonize([0, 2, 4, 5, 7, 9, 11, 12]);
 
 StartAudioContext(Tone.context, 'div').then(function(){
   //started

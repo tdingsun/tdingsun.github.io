@@ -9,16 +9,9 @@ var paragraphs = ["#hot sports girl. She touched my shoulder. The kind of girl t
 "Went to a bash in said suit. Huge guys all over. Bam #hot sports girl spot. Tower girl smashes her fist. Let’s look into each others’ eyes, be my maid I’ll be yours! Pulls out a hockey stick so you know you’re done for. She headlocks you, you push up against her a couple of times and you guys are good again. I feel like a virgin when she smiles at me. Girl puppy. On Sunday you’re so riled up you’re on reddit again. Dreamed of her there’s that too. Basking in the sexual undercurrent that every image you ever knew of her holds. Don’t you just love #hot sports girl"];
 
 var word_index = 0;
-var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
-var notes = Tone.Frequency("G4").harmonize([0, 4, 7, 11, 14, 17, 21, 24, 28, 31, 28, 24, 21, 17, 14, 11, 7, 4]);
-
-StartAudioContext(Tone.context, 'div').then(function(){
-  //started
-  console.log("clicked");
-
-});
-
-
+var volume = new Tone.Volume(-6);
+var synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
+var notes = Tone.Frequency("G4").harmonize([0, 2, 4, 5, 7, 11, 14, 17, 21]);
 
 $(document).ready(function(event){
   width = $(window).innerWidth();
@@ -33,7 +26,16 @@ $(document).ready(function(event){
 
 });
 
+$("#mute-btn").click(function(){
+  Tone.Master.mute = !Tone.Master.mute;
+  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+});
+
+
 $("#container").on("click", "td", function(){
+  var randNote = Math.floor(Math.random() * notes.length);
+  synth.triggerAttackRelease(notes[randNote], "32n");
+
   let el = this;
   $("td").removeClass("largeCell");
   $(el).addClass("largeCell");
@@ -52,19 +54,26 @@ $("#container").on("click", "td", function(){
     });
     $("#x2").css({
       top: tableTop - 12.5,
-      left: left + w + 37.5
+      left: left + w + 12.5
     });
     $("#y1").css({
       top: top - 12.5,
       left: "12.5px"
     });
     $("#y2").css({
-      top: top + h + 37.5,
+      top: top + h + 12.5,
       left: "12.5px"
     });
   }, 250);
 });
 
+$(".indicator").click(function(){
+  $("td").removeClass("largeCell");
+  $(".indicator").css({
+    "left": "calc(100vw - 230px)",
+    "top": "25px"
+  });
+});
 
 function displayTitle(title, author){
   $("#title").html(title + "<br>by " + author);
