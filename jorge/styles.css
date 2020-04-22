@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: left;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  background-color: rosybrown;
+  color: black;
+  overflow: hidden;
+
+
+}
+
+#title {
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 0.9;
+  position: fixed;
+  display: block;
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+  color: black;
+  transition: 0.25s;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  font-size: 1.5rem;
+}
+
+.colormode2 {
+  color: white;
+  background-color: mediumseagreen;
+}
+
+
+.word {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  letter-spacing: -1px;
+}
+
+#clockContainer {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: -1;
+}
+
+#vertical {
+  width: 20px;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  left: 40px;
+  transition: 0.25s;
+
+}
+
+#horizontal{
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  background-color: black;
+  transition: 0.25s;
+
+}
