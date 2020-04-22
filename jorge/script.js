@@ -107,9 +107,14 @@ function timer() {
 
   //remove old
   var rand = Math.random();
-  if((rand < 0.2 && hist.length > 5) || hist.length > 20){
+  if( (rand < 0.5 && hist.length > 5) || (hist.length > 20) ){
     let oldDiv = hist.shift();
     oldDiv.remove();
+    if (oldDiv.text() == '*'){
+      $("#txt").append('<br></br>');
+    } else {
+      $("#txt").append(oldDiv.text() + " ");
+    }
   }
 
   // increment counter
@@ -132,7 +137,15 @@ function timer() {
   if(word_index < words_arr.length){
     t = setTimeout(timer, time);
   } else {
-    clearTimeout(t);
+    t = setTimeout(clearLeftovers, speed);
+  }
+}
+
+function clearLeftovers(){
+  let oldDiv = hist.shift();
+  $("#txt").append(oldDiv.text() + " ");
+  if(hist.length > 0){
+    t = setTimeout(clearLeftovers, speed);
   }
 }
 

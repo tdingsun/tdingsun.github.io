@@ -33,6 +33,7 @@ body {
   width: 100vw;
   height: 100vh;
   font-size: 1.5rem;
+  transition: 0.25s;
 }
 
 .colormode2 {
@@ -50,6 +51,15 @@ body {
   width: 100px;
   height: 100px;
   letter-spacing: -1px;
+}
+
+#txt {
+  padding: 25px;
+  position: absolute;
+  width: 30%;
+  right: 0;
+  font-size: 12px;
+
 }
 
 #clockContainer {
