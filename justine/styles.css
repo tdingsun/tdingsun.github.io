@@ -8,9 +8,10 @@ body {
   padding: 0;
   font-family: sans-serif;
   text-align: left;
-=  color: black;
-  background-color: white;
+  color: forestgreen;
+  background-color: khaki;
   overflow: hidden;
+
 }
 
 #title {
@@ -22,8 +23,12 @@ body {
   left: 20px;
   cursor: pointer;
   transition: 0.25s;
-  z-index: -1;
-  color: black;
+  z-index: 1;
+  color: forestgreen;
+}
+
+#title:hover{
+  text-decoration: underline;
 }
 
 #container {
@@ -62,20 +67,39 @@ body {
 .box div {
   flex-grow: 0;
   flex-shrink: 0;
-  width: calc(33vw - 50px);
   height: 25vh;
+  width: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 20px;
-  border: 1px solid black;
+  padding: 10px;
+  border: 1px solid forestgreen;
+  background-color: forestgreen;
+  color: forestgreen;
+  overflow-x: hidden;
+  transition: 0.25s;
+  border-radius: 3px;
+  cursor: pointer;
+
+
 }
 
-.offcycle {
-  color: white;
-  background-color: black;
+.box div:hover{
+  box-shadow: 0 2px 6px rgba(0,100,0,0.24), 0 2px 4px rgba(0,100,0,0.48);
+
+}
+
+.on div{
+  width: calc(33vw - 50px);
+  background-color: khaki;
+  color: forestgreen;
+}
+
+.off div{
+  width: calc(33vw - 50px)!important;
+  color: khaki!important;
 }
 
 p {
@@ -97,7 +121,7 @@ p {
 #vertical {
   width: 20px;
   height: 100px;
-  background-color: black;
+  background-color: forestgreen;
   position: absolute;
   left: 40px;
 }
@@ -107,11 +131,11 @@ p {
   height: 20px;
   position: absolute;
   top: 40px;
-  background-color: black;
+  background-color: forestgreen;
 }
 
 #mute-btn {
-  color: black;
+  color: forestgreen;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -122,5 +146,5 @@ p {
 
 #mute-btn:hover {
   color: white;
-  background-color: black;
+  background-color: forestgreen;
 }

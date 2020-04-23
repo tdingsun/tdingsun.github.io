@@ -2,7 +2,7 @@ var width;
 var height;
 var title = "7 Poems";
 var author = "Justine Nguyễn-Nguyễn"
-var speed = 500;
+var speed = 250;
 
 var poems = [
   "we approach the cotton anniversary of the day I ponder accidence. * * * * * * * * * * a jeep, I think * * * * * * * * * * ",
@@ -21,6 +21,8 @@ var poems = [
 ];
 
 var poems_split = [];
+var timeouts = [null, null, null, null, null, null, null];
+var curr_index = [];
 
 //have to click to start audio context
 StartAudioContext(Tone.context, window);
@@ -42,10 +44,28 @@ $(document).ready(function(event){
   setInterval(rotateHorizontal, 2000);
 });
 
-$("#mute-btn").click(function(){
-  Tone.Master.mute = !Tone.Master.mute;
-  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+$("#title").click(function(event){
+  $(".box").removeClass("on");
+  $(".box").removeClass("off");
+  timeouts.forEach(function(t, index){
+    clearTimeout(t);
+  });
 });
+
+$(".box").click(function(event){
+  let id = $(this).attr('id')[2] - 1;
+
+  if($(this).hasClass("on")){
+    clearTimeout(timeouts[id]);
+    $(this).addClass("off");
+    $(this).removeClass("on");
+  } else {
+    cycle(id, poems_split[id].length);
+    $(this).removeClass("off");
+    $(this).addClass("on");
+  }
+});
+
 
 function displayTitle(title, author){
   $("#title").html(title + "<br>by " + author);
@@ -55,8 +75,7 @@ function setupText(){
 
   poems_split.forEach(function(poem, index){
     let max = poem.length;
-    let word_index = 0;
-    cycle(index, max, word_index);
+    curr_index[index] = 0;
   });
 
   $("#container").show();
@@ -67,14 +86,15 @@ function setupText(){
 
 }
 
-function cycle(i, max, word_index){
-  if(word_index % max == 0){
-    $(`#box${i + 1}`).toggleClass("offcycle");
+function cycle(i, max){
+  if(curr_index[i] % max == 0){
+    curr_index[i] = 0;
   }
-  let word = poems_split[i][word_index % max];
+
+  let word = poems_split[i][curr_index[i]];
 
   if(word == "*"){
-    $(`#box${i + 1}`).text(" ");
+    $(`#box${i + 1}`).html("“&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;”");
   } else{
 
     synth.triggerAttackRelease(notes[i], "1n");
@@ -86,15 +106,16 @@ function cycle(i, max, word_index){
       $(`#box${i + 1}`).text(word);
     }
   } 
-  word_index++;
+  curr_index[i]++;
 
   var syllables = RiTa.getSyllables(word);
 	var syllables_arr = syllables.split("/");
   var time = syllables_arr.length * speed;
 
-  setTimeout(cycle, time, i, max, word_index);
+  timeouts[i] = setTimeout(cycle, time, i, max);
 }
 
+// Common
 
 var currRotateV = 0;
 var currRotateH = 0;
@@ -112,3 +133,8 @@ function rotateHorizontal() {
       "transform": `rotate(${currRotateH}deg)`
   })
 }
+
+$("#mute-btn").click(function(){
+  Tone.Master.mute = !Tone.Master.mute;
+  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+});
