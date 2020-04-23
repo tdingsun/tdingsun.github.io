@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "menlo";
+  src: url("fonts/Menlo-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: sans-serif;
+  text-align: left;
+
+  background-color: midnightblue;
+  color: darkkhaki;
+  overflow: hidden;
+}
+
+hr {
+  border: 0.5px solid darkkhaki;
+}
+
+h1 {
+  margin: 0px 12.5px;
+  padding-bottom: 12.5px;
+  border-bottom: 1px solid darkkhaki;
+  font-weight: normal;
+
+}
+
+p {
+  margin-bottom: 1.6em;
+}
+
+#title {
+  max-width: 1000px;
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 0.9em;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 20px;
+  padding-top: 150px;
+  box-sizing: border-box;
+}
+
+#panel {
+  flex-grow: 1;
+  border-radius: 150px 150px 0px 0px;
+  background-color: darkkhaki;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding-top: 50px;  
+}
+
+.btn {
+  color: midnightblue;
+  border: 1px solid midnightblue;
+  border-radius: 50px;
+  margin: 20px;
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: darkkhaki;
+  background-color: midnightblue;
+}
+
+.btn:active {
+  color: midnightblue;
+  background-color: darkkhaki;
+}
+
+.selected {
+  color: darkkhaki;
+  background-color: midnightblue;
+}
+
+
+.col {
+  width: 20vw;
+  flex-grow: 0;
+  flex-shrink: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  border-bottom: 1px solid darkkhaki;
+  overflow-x: visible;
+
+}
+
+.col:last-child {
+  border-right: 1px solid darkkhaki;
+}
+
+.col:first-child {
+  border-left: 1px solid darkkhaki;
+}
+
+.part {
+  padding-left: 12.5px;
+  padding-right: 12.5px;
+  line-height: 1.2;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: auto;
+  overflow-x: visible;
+}
+/* 
+.col:first-child {
+  padding-left: 0;
+}
+
+.col:last-child{
+  padding-right: 0;
+} */
+
+.highlight {
+  color: midnightblue;
+  background-color: darkkhaki;
+  padding: 5px;
+  border-radius: 50px;
+  margin: -2.5px;
+}
+
+span {
+  padding: 2.5px;
+  display: inline-block;
+}
+
+#clockContainer {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+}
+
+#vertical {
+  width: 20px;
+  height: 100px;
+  background-color: darkkhaki;
+  position: absolute;
+  left: 40px;
+}
+
+#horizontal{
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  background-color: darkkhaki;
+}
