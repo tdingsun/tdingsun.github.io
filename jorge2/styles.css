@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "menlo";
+  src: url("fonts/Menlo-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: left;
+  background-color: none;
+  overflow: hidden;
+  background-color: darkslategray;
+}
+
+#title {
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 0.9em;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+  color: khaki;
+}
+
+#container {
+  position: relative;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.feeling {
+  width: 100px;
+  padding: 10px;
+  background-color: khaki;
+  color: khaki;
+  position: absolute;
+  left: calc(50vw - 100px);
+  top: calc(50vh - 100px);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  cursor: grab;
+}
+
+.feeling:active {
+  cursor: grabbing;
+}
+
+.feeling:hover {
+  color: khaki;
+  background-color: darkslategray;
+}
+
+.activated{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  color: darkslategray;
+  border: none;
+
+}
+
+#clockContainer {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+
+#vertical {
+  width: 20px;
+  height: 100px;
+  background-color: khaki;
+  position: absolute;
+  left: 40px;
+}
+
+#horizontal{
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  background-color: khaki;
+}
+
+#mute-btn {
+  color: khaki;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: darkslategray;
+  background-color: khaki;
+}

@@ -7,12 +7,13 @@ var textdivsize = 100;
 var halfsize = textdivsize/2;
 var cycleLen = 100;
 var t;
-var speed = 200;
+var speed = 250;
 var str = "All their life, they wanted to become a meaning-maker. A being at the forefront of making any meaning there is to be made. Meanings made so that non-meaning-makers may be entertained by meaning-maker made meanings. Or meanings made to inspire other beings to make meaning of their own. Perhaps to enlighten those undecided in the life meaning which they must make. * The meaning-maker had never considered anything less, for their meaning in life was to be a meaning-maker. To go from people to place to institution to natural habitat, making meaning out of beings with meanings of their own, however to never disingenuously make up meanings that are made from what the meaning-maker perceived their meaning to mean, it would be inauthentic to their original meaning. The meaning-maker scoffed at non-meaning makers’ inept self-awareness to withhold their own life meaning from the meanings which they made. * But the meaning-maker never thought about falling in love. Especially not with a non-meaning-maker. The meaning-maker knew others had meanings of their own, but never considered any life meaning where they meant anything other than the meaning that they had made for themselves as a meaning-maker. And thus the meaning-maker must decide on whether they would rather * live a life as a meaning maker with the meanings they’ve made on their own * or, though not originally what the meaning-maker had meant to mean, live a life with a non-meaning-maker that is meaningful to them, together co-authoring a meaning made from equal parts meaning-maker meanings and non-meaning-maker meanings.";
 var words_arr = str.split(" ");
 var word_index = 0;
 
 var hist = [];
+var histLimit = 20;
 
 var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
 var notes = Tone.Frequency("F3").harmonize([0, 2, 4, 5, 7, 9, 11, 12]);
@@ -107,7 +108,7 @@ function timer() {
 
   //remove old
   var rand = Math.random();
-  if( (rand < 0.5 && hist.length > 5) || (hist.length > 20) ){
+  if( (rand < 0.5 && hist.length > 5) || (hist.length > histLimit) ){
     let oldDiv = hist.shift();
     oldDiv.remove();
     if (oldDiv.text() == '*'){
@@ -126,7 +127,7 @@ function timer() {
   var time = syllables_arr.length * speed;
 
   if (word.charAt(word.length - 1) == '.'){
-      time += 1000;
+      time += (speed * 2);
   }
 
   if(word == "*"){
