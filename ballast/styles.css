@@ -45,6 +45,7 @@ p {
 
 #container {
   width: 2300px;
+  height: auto;
   padding-bottom: 25px;
   padding-top: 25px;
   display: flex;

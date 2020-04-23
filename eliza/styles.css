@@ -8,15 +8,10 @@ body {
   padding: 0;
   font-family: sans-serif;
   font-size: 20px;
-  text-align: left;
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none;
+
   background-color: thistle;
   color: darkslategray;
+  overflow-y: hidden;
 
 
 
@@ -37,12 +32,15 @@ body {
 }
 
 #container {
-  display: fixed;
+  position: fixed;
+  display: flex;
   padding: 20px;
   width: 100vw;
+  height: 100vh;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
+
 
 #blob-container {
   position: fixed;
@@ -59,24 +57,21 @@ body {
 #blob {
   width: 20vw;
   height: 20vw;
-  border-radius: 2000px / 700px;
-  border: 20px solid khaki;
-  animation: expand 1.5s infinite ease;
+  border-radius: 2000px;
+  border: 2px solid darkslategray;
+  animation: expand 30s infinite ease;
 }
 
 .text {
-  box-sizing: border-box;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: 0.5s;
-  line-height: 0.9em;
+  transition: 0.35s;
   text-align: center;
-  width: 200vw;
-}
-
-.text:hover {
-  font-size: 3em!important;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 0;
+  padding: 25px;
+  line-height: 1.1;
 }
 
 #clockContainer {
@@ -104,7 +99,7 @@ body {
 }
 
 @keyframes expand {
-  0% {width: 80vw; border-radius: 2000px / 700px;}
-  50% {width: 20vw; border-radius: 500px;}
-  100% {width: 80vw; border-radius: 2000px / 700px;}
+  0% {width: 100vh; height: 100vh;}
+  50% {width: 20vh; height: 20vh;}
+  100% {width: 100vh; height: 100vh;}
 }

@@ -22,11 +22,27 @@ var noteIndex = 0;
 
 let md = window.markdownit({html: true});
 
+var width;
+var height;
+
 $("document").ready(function(){
+    width = $(window).width();
+    height = $(window).height();
     displayTitle(title, author);
     setTimeout(displayText, 1000);
     setInterval(rotateVertical, 1000);
     setInterval(rotateHorizontal, 2000);
+});
+
+$(".page").draggable({
+    grid: [50, 50],
+    containment: "#container",
+    zIndex: 100,
+    stack: ".page",
+    drag: function(event, ui){
+      var randNote = Math.floor(Math.random() * notes.length);
+      synth.triggerAttackRelease(notes[randNote], "16n");
+    }
 });
 
 function displayTitle(title, author){
