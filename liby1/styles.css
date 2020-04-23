@@ -87,3 +87,18 @@ span {
   top: 40px;
   background-color: blue;
 }
+
+#mute-btn {
+  color: blue;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: white;
+  background-color: blue;
+}

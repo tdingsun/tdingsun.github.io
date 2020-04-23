@@ -27,7 +27,8 @@ var paragraphs = ["It was the day I met Paula Abdul on an airplane, and she was 
 "The Lady Abdul."];
 var word_index = 0;
 
-var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
+var volume = new Tone.Volume(-24);
+var synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
 var notes = Tone.Frequency("G4").harmonize([0, 4, 7, 11, 14, 17, 21, 24, 28, 31, 28, 24, 21, 17, 14, 11, 7, 4]);
 
 StartAudioContext(Tone.context, 'div').then(function(){
@@ -64,12 +65,16 @@ $(document).ready(function(event){
 });
 
 $("#title").click(function(){
-  console.log("reset");
   $(".activated").each(function() {
-    console.log("reset");
     $(this).addClass("deactivated");
     $(this).removeClass("activated");
   });
+});
+
+$("#container").on('click', '.activated', function(){
+  console.log("clicked");
+  $(this).addClass("deactivated");
+  $(this).removeClass("activated");
 });
 
 
@@ -123,3 +128,8 @@ function rotateHorizontal() {
       "transform": `rotate(${currRotateH}deg)`
   })
 }
+
+$("#mute-btn").click(function(){
+  Tone.Master.mute = !Tone.Master.mute;
+  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+});

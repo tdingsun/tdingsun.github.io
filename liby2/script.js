@@ -50,8 +50,9 @@ var keywords = {"dance": ["dance"],
             }
 var word_index = 0;
 
-var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
-var notes = Tone.Frequency("G4").harmonize([0, 4, 7, 11, 14, 17, 21, 24, 28, 31, 28, 24, 21, 17, 14, 11, 7, 4]);
+var volume = new Tone.Volume(-12);
+var synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
+var notes = Tone.Frequency("G3").harmonize([0, 4, 7, 12]);
 
 StartAudioContext(Tone.context, 'div').then(function(){
   //started
@@ -70,6 +71,8 @@ $(document).ready(function(event){
 });
 
 $("#container").on("click", ".btn", function(event){
+  var randNote = parseInt(Math.random() * notes.length);
+  synth.triggerAttackRelease(notes[randNote], "4n");
   $(this).toggleClass("selected");
   let key = $(this).text();
   keywords[key].forEach(function(word, index){
@@ -136,3 +139,8 @@ function rotateHorizontal() {
       "transform": `rotate(${currRotateH}deg)`
   })
 }
+
+$("#mute-btn").click(function(){
+  Tone.Master.mute = !Tone.Master.mute;
+  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+});

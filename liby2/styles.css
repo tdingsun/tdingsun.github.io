@@ -33,6 +33,7 @@ p {
 }
 
 #title {
+  width: 80%;
   max-width: 1000px;
   font-size: 6rem;
   letter-spacing: -2px;
@@ -51,6 +52,7 @@ p {
   padding: 20px;
   padding-top: 150px;
   box-sizing: border-box;
+  overflow: auto;
 }
 
 #panel {
@@ -144,6 +146,8 @@ span {
   display: inline-block;
 }
 
+/* common */
+
 #clockContainer {
   width: 100px;
   height: 100px;
@@ -166,4 +170,20 @@ span {
   position: absolute;
   top: 40px;
   background-color: darkkhaki;
+}
+
+
+#mute-btn {
+  color: khaki;
+  position: fixed;
+  padding: 25px;
+  left: calc(80vw - 25px);
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: midnightblue;
+  background-color: khaki;
 }
