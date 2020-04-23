@@ -68,6 +68,7 @@ body {
   flex-shrink: 1;
   border-radius: 62px;
   margin: 0 0 0 -1px;
+  line-height: 8rem;
 }
 
 

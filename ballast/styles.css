@@ -1,0 +1,108 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: left;
+  font-size: 14px;
+  color: darkslategrey;
+  background-color: thistle;
+}
+
+h1 {
+  font-weight: normal;
+  padding-bottom: 25px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+
+}
+
+p {
+  padding-bottom: 25px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+* {
+  box-sizing: border-box;
+}
+
+
+
+.centered {
+  padding: 50px;
+  font-size: 8rem;
+  line-height: 1em;
+  letter-spacing: -2px;
+}
+
+.runner {
+  padding: 50px;
+  font-size: 8rem;
+  line-height: 1em;
+  letter-spacing: -2px;
+  position: fixed;
+  z-index: 0;
+}
+
+#container {
+  width: 2300px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page {
+  width: 400px;
+  height: 550px;
+  overflow: auto;
+  padding: 25px;
+  margin: 25px;
+  font-size: 1rem;
+  border: 1px solid darkslategrey;
+  background-color: thistle;
+
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  z-index: 1;
+}
+
+.page:hover {
+  color: thistle;
+  background-color: darkslategrey;
+}
+
+/* Common */
+
+#clockContainer {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+
+#vertical {
+  width: 20px;
+  height: 100px;
+  background-color: darkslategrey;
+  position: absolute;
+  left: 40px;
+  transition: 0.25s;
+
+}
+
+#horizontal{
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  background-color: darkslategrey;
+  transition: 0.25s;
+
+}
