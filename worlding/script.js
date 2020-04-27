@@ -1,30 +1,12 @@
 var title = "<span id='maintitle'>HYBRID WORLDING:</span><br><i>What Can Graphic Design Learn from Poetics and World-building?</i>";
 var author = "<a class='author' href='tiger.exposed'>Tiger Dingsun</a>"
 
-var offset_dict = {}
-
-var lh = 1;
-var lh_unit = 1;
-
-var padding = 100;
-var i = 0;
-var speed = 500;
-
-var currRotateV = 0;
-var currRotateH = 0;
-
-var synth = new Tone.PolySynth(5, Tone.Synth).toMaster();
-var notes = Tone.Frequency("A3").harmonize([0, 2, 5, 7, 9, 12]);
-var noteIndex = 0;
-
 let md = window.markdownit({html: true});
 
 var width;
-var height;
 
 $("document").ready(function(){
     width = $(window).width();
-    height = $(window).height();
     displayText();
 });
 
@@ -60,18 +42,4 @@ function displayText(){
             $(`#left`).append(html);
         }
     });
-}
-
-function rotateVertical() {
-    currRotateV += 15;
-    $("#vertical").css({
-        "transform": `rotate(${currRotateV}deg)`
-    })
-}
-
-function rotateHorizontal() {
-    currRotateH += 7.5;
-    $("#horizontal").css({
-        "transform": `rotate(${currRotateH}deg)`
-    })
 }
