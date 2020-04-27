@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "menlo";
+  src: url("fonts/Menlo-Regular.ttf");
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: left;
+  color: olive;
+  background-color: gainsboro;
+  line-height: 1.4;
+  overflow: hidden;
+  border-width: 1.5px;
+}
+
+a {
+  color: unset;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:visited {
+  color: unset;
+}
+
+hr {
+  border-style: solid;
+}
+
+h1 {
+  font-weight: normal;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 20px 20px 20px;
+  line-height: 1;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+p {
+  padding: 0px 20px 20px 20px;
+  max-width: 900px;
+  margin: auto;
+  /* border-bottom-style: solid;
+  border-bottom-width: 2px; */
+}
+
+blockquote {
+  margin: 0 0 0 60px;
+}
+
+ol {
+  /* font-size: 1.5rem; */
+  padding-left: 70px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.caption{
+  font-size: 0.85rem;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  display: inline-block;
+}
+
+.nobreak {
+  white-space: nowrap;
+}
+
+#title {
+  padding: 20px;
+  font-size: 5rem;
+  line-height: 1em;
+  letter-spacing: -4px;
+  font-family: sans-serif;
+
+  /* box-shadow: 0px 0px 10px 0px darkslategray; */
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  font-size: 1.2rem;
+  
+}
+
+#left {
+  border-right-width: 1.5px;
+  border-right-style: solid;  
+  font-family: "menlo", sans-serif;
+  letter-spacing: -1px;
+  font-size: 1rem;
+  width: 50vw;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+#right {
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding-top: 20px;
+}
+#left, #right {
+  overflow: auto;
+  -ms-overflow-style: none;
+  transition: 0.25s;
+
+}
+
+#left::-webkit-scrollbar {
+  display: none;
+}
+
+#right::-webkit-scrollbar {
+  display: none;
+}
+
+#handle {
+  width: 25px;
+  height: 25px;
+  position: fixed;
+  left: calc(50vw - 12.5px);
+  top: calc(50vh - 12.5px);
+  border-width: 1.5px;
+  border-style: solid;
+  background-color: inherit;
+  border-radius: 50px;
+  cursor: grab;
+}
+
+#handle:hover {
+  background-color: olive;
+}
+
+#handle:active {
+  cursor: grabbing;
+  background-color: olive;
+
+  transition: 0.25s;
+}
