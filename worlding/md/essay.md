@@ -1,4 +1,4 @@
-*Key Concepts: Poetics, World-Building, Structure, Mythos, Narrative, Ambiguity, Epistemic Disobedience, Non-Teleological Reading.*
+*Key Words: Poetics, World-Building, Structure, Mythos, Narrative, Ambiguity, Epistemic Disobedience, Non-Teleological Reading.*
 
 # ![Worldbuilding](md/title-img.png)
 <span class="caption">*Various frameworks for phylogenetic diagrams*</span>
