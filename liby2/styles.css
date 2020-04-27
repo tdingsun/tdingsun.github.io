@@ -123,6 +123,11 @@ p {
   flex-direction: column;
   overflow: auto;
   overflow-x: visible;
+  -ms-overflow-style: none;
+}
+
+.part::-webkit-scrollbar {
+  display: none;
 }
 /* 
 .col:first-child {
