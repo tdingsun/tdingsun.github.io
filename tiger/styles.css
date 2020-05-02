@@ -10,10 +10,16 @@ html, body {
 
 h1 {
   font-weight: normal;
+  font-size: 24px;
+  margin: 0;
+  white-space: nowrap;
+
+}
+
+.expanded h1 {
   padding-bottom: 25px;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-
 }
 
 p {
@@ -21,6 +27,7 @@ p {
   border-bottom-width: 1px;
   border-bottom-style: solid;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -44,38 +51,67 @@ p {
 }
 
 #container {
-  width: 2300px;
-  height: auto;
-  padding-bottom: 25px;
-  padding-top: 25px;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  transition: 0.25s;
+
 }
 
 .col {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin-left: -1px;
+  width: 0px;
+  transition: 0.25s;
+}
+
+#col1 {
+  align-items: flex-start;
+}
+
+#col2 {
+  align-items: center;
+}
+
+#col3 {
+  align-items: flex-end;
 }
 
 .page {
-  width: 400px;
-  height: 550px;
+  flex-shrink: 1;
   overflow: auto;
-  padding: 25px;
-  margin: 25px;
+  padding: 20px;
   font-size: 1rem;
   border: 1px solid darkslategrey;
   background-color: thistle;
 
   font-size: 1.2rem;
-  line-height: 1.6rem;
-  z-index: 1;
+  line-height: 1.8rem;
+  transition: 0.25s;
+  min-height: 62px;
+  height: 62px;
+  width: 100%;
+  margin-top: -1px;
 }
 
 .page:hover {
   color: thistle;
   background-color: darkslategrey;
+  cursor: pointer;
+}
+
+.expanded {
+  height: 1000px;
+  max-width: 400px;
+  background-color: darkslategrey;
+  color: thistle;
+  border: 1px solid thistle;
 }
 
 /* Common */
@@ -106,4 +142,20 @@ p {
   background-color: darkslategrey;
   transition: 0.25s;
 
+}
+
+#mute-btn {
+  color: darkslategray;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+  z-index: 0;
+}
+
+#mute-btn:hover {
+  color: thistle;
+  background-color: darkslategray;
 }

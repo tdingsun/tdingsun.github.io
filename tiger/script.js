@@ -29,30 +29,55 @@ $("document").ready(function(){
     width = $(window).width();
     height = $(window).height();
     displayTitle(title, author);
-    setTimeout(displayText, 1000);
+    setTimeout(displayText, 1500);
     setInterval(rotateVertical, 1000);
     setInterval(rotateHorizontal, 2000);
 });
 
-$(".page").draggable({
-    grid: [50, 50],
-    containment: "#container",
-    zIndex: 100,
-    stack: ".page",
-    drag: function(event, ui){
-      var randNote = Math.floor(Math.random() * notes.length);
-      synth.triggerAttackRelease(notes[randNote], "16n");
+$(".page").click(function(e){
+    var randNote = Math.floor(Math.random() * notes.length);
+    synth.triggerAttackRelease(notes[randNote], "8n");
+
+    $(this).siblings().removeClass("expanded");
+    $(this).siblings().children().not("h1").hide();
+
+    $(this).toggleClass("expanded");
+    if($(this).hasClass("expanded")){
+        $(this).closest(".col").css({
+            'flex-grow': 2
+        });
+        $(this).children().show();
+        $(this).siblings().css({
+            'z-index': 0
+        })
+        $(this).css({
+            'z-index': 100
+        })
+    } else {
+        $(this).closest(".col").css({
+            'flex-grow': 1
+        });
+        $(this).children().hide();
+        $(this).children('h1').show();
     }
 });
 
+
 function displayTitle(title, author){
     $("#title").html(title + "<br>by<br>" + author);
+    $("#container").css({
+        top: '50vh',
+        height: '50vh'
+    })
 }
 
 function displayText(){
-    $("#title").removeClass("centered").addClass("runner");
+    $("#container").css({
+        top: 0,
+        height: '100vh'
+    })
 
-    for(var i = 1; i <= 17; i++){
+    for(var i = 17; i >= 1; i--){
         getMD(i);
     }
 }
@@ -62,8 +87,11 @@ function getMD(i){
         url: `md/${i}.md`,
         datatype: "html",
         success: function(markdown){
+            let page = $(`#page${i}`)
             let html = md.render(markdown);
-            $(`#page${i}`).html(html);
+            page.html(html);
+            page.children().hide();
+            page.children('h1').show();
         }
     });
 }
@@ -81,3 +109,8 @@ function rotateHorizontal() {
         "transform": `rotate(${currRotateH}deg)`
     })
 }
+
+$("#mute-btn").click(function(){
+    Tone.Master.mute = !Tone.Master.mute;
+    $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+  });
