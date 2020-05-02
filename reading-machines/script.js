@@ -7,7 +7,7 @@ var links = {
     "author": "Anonymous"
   },
   "anonymous2": {
-    "name": "Itchy, Fulffy, and Incomplete Things",
+    "name": "Itchy, Fluffy, and Incomplete Things",
     "author": "Anonymous"
   },
   "eliza": {
@@ -50,6 +50,10 @@ var links = {
     "name": "#hot sports girl",
     "author": "Théïa Flynn"
   },
+  "tiger": {
+    "name": "Ballast",
+    "author": "Tiger Dingsun"
+  },
 
 
   
@@ -64,13 +68,15 @@ $(window).resize(function(){
 });
 
 function makeLinks() {
+
   for (var [key, value] of Object.entries(links)) {
-    let newA = $("<a></a>");
     let title = value.name;
     let author = value.author;
-    newA.attr("href", linkBody + key);
-    newA.text(title + " by " + author);
-    $("#container").append(newA);
+    let contents = $(`<span class="title"><a href="${linkBody + key}">${title}</a></span><span class="by">by<span><span class="author">${author}</span>`)
+
+    let newli = $("<li></li>");
+    newli.append(contents);
+    $("#linkList").append(newli);
   }
   
 }

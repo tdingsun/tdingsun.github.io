@@ -5,59 +5,60 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1em;
-  text-align: left;
-    color: darkgreen;
+  color: black;
+  letter-spacing: -0.01em;
 
 }
 
-a {
-  color: darkgreen;
-  text-decoration: none;
-  border: 1px solid darkgreen;
-  padding: 20px;
-  margin: 10px;
-  display: block;
+ol {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style-position: inside;
+  border-bottom: 0.5px solid black;
+  padding: 2px 2px 2px 10px;
+}
 
+a {
+  color: black;
+  text-decoration: none;
 }
 
 a:hover{
   text-decoration: underline;
-    color: darkgreen;
-
-
 }
 
-a:visited{
+a:visited {
   text-decoration: none;
   color: darkgreen;
+}
+
+.title {
+  position: absolute;
+  left: 50px;
+}
+
+.by {
+  position: absolute;
+  left: 350px;
+}
+
+.author {
+  position: absolute;
+  left: 50px;
+  width: 200px;
 }
 
 #container {
-  margin: 0;
   width: 100vw;
 }
 
-
-div {
-  box-sizing: border-box;
-  float: left;
-  text-align: center;
-  padding: 20px;
-  margin: 5px; 
-
-
+#header {
+  padding: 10px 2px 5px 10px;
+  border-bottom: 0.5px solid black;
+  margin-bottom: ;
 }
 
-.link {
-  border: 1px solid darkgreen;
-  color: darkgreen;
-  background-color: yellow;
-  text-decoration: none;
-  transition: 0.1s;
-}
-
-.link:hover {
-  background-color: white;
-}
