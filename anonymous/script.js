@@ -45,13 +45,19 @@ function textCycle(){
     var word = txt_array[i];
     updateField(word);
     var metrics = getTextWidth(word, "180px arial");
+    console.log(metrics);
     var scaleXFactor = (window.innerWidth - padding) / metrics.width;
-    var scaleYFactor = (window.innerHeight - padding) / 
-        (metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent);
+    var scaleYFactor = (window.innerHeight - padding) / (metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent);
     $("#center").text(word);
-    $("#center").css({
-        "transform": `scale(${scaleXFactor}, ${scaleYFactor})`
-    })
+    var scales = [scaleXFactor, scaleYFactor]
+    console.log(scales);
+    $("#center").transition({scale: scales}, 300);
+    // $("#center").css({
+    //     "-webkit-transform": `scale(${scaleXFactor}, ${scaleYFactor})`,
+    //     "-moz-transform": `scale(${scaleXFactor}, ${scaleYFactor})`,
+    //     "-o-transform": `scale(${scaleXFactor}, ${scaleYFactor})`,
+    //     "transform": `scale(${scaleXFactor}, ${scaleYFactor})`,
+    // });
     var syllables = RiTa.getSyllables(word);
 	var syllables_arr = syllables.split("/");
     var time = syllables_arr.length * speed;
