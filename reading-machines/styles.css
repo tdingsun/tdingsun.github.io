@@ -1,0 +1,63 @@
+body {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 20px;
+  line-height: 1em;
+  text-align: left;
+    color: darkgreen;
+
+}
+
+a {
+  color: darkgreen;
+  text-decoration: none;
+  border: 1px solid darkgreen;
+  padding: 20px;
+  margin: 10px;
+  display: block;
+
+}
+
+a:hover{
+  text-decoration: underline;
+    color: darkgreen;
+
+
+}
+
+a:visited{
+  text-decoration: none;
+  color: darkgreen;
+}
+
+#container {
+  margin: 0;
+  width: 100vw;
+}
+
+
+div {
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  padding: 20px;
+  margin: 5px; 
+
+
+}
+
+.link {
+  border: 1px solid darkgreen;
+  color: darkgreen;
+  background-color: yellow;
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.link:hover {
+  background-color: white;
+}

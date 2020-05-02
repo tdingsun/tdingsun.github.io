@@ -10,7 +10,7 @@
 
 4. Arrange your next poster based on sacred geometries, either pulled from historical references or created by you. 
 
-5. Create your own magic system, as if you were a sci-fi or fantasy writer, but then represent it all visually.  There are writing worksheets available online to help you get started: https://www.eadeverell.com/magic-system/ for example. https://www.eadeverell.com/wp-content/uploads/technology.pdf
+5. Create your own magic system, as if you were a sci-fi or fantasy writer, but then represent it all visually.  There are writing worksheets available online to help you [get](https://www.eadeverell.com/magic-system/) [started](https://www.eadeverell.com/wp-content/uploads/technology.pdf).
 
 6. Make a list of your favorite words or phrases, and then map/graph out how all of those words relate to each other. Make oppositions and alliances. Experiment with how these words would map onto other, existing structures. (Ex: which words are phlegmatic, which are choleric, melancholic, and sanguine? Or, which words would you associate with each tarot card in the major arcana? Or, map the words onto a chart that classifies fragrances: which words smell floral to you? which smell woody? which are musky? Or, which words are birds? which are reptiles? which are mammals? which are bugs? which are mushrooms?)
 
