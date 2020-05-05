@@ -23,10 +23,6 @@ a:hover {
   color: blue;
 }
 
-a:visited {
-  color: unset;
-}
-
 hr {
   border-style: solid;
 }
