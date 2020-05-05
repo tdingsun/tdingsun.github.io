@@ -2,6 +2,8 @@
 
 # Exercises
 
+*12 Exercises that illustrate various ways this methodology of Hybrid Worlding can be applied.*
+
 1. Overlay multiple systems of knowledge, classification, and taxonomic schemes that govern your world or are most relevant to you.  See how they interact. (For example, map the 5 Spice girls with the 5 elements in Chinese philosophy, then overlay a soil classification chart over it, then map it all onto a political compass). 
 
 2. Create your own library of personal symbols. assign each symbol with its own associated color, temperament, element, ruling planet, scent, musical genre, species of flower, etc. Which symbols are weak against other symbols? which symbols harmonize and strengthen each other? which symbols negate each other? which symbols dominate over others? 

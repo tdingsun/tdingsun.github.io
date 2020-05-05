@@ -1,4 +1,4 @@
-var title = "<span id='maintitle'>HYBRID WORLDING:</span><br><i>What Can Graphic Design Learn from Poetics and World-building?</i>";
+var title = "<span id='maintitle'>CHIMERIC WORLDING:</span><br><i>What Can Graphic Design Learn from Poetics and World-building?</i>";
 var author = "<a class='author' href='tiger.exposed'>Tiger Dingsun</a>"
 
 let md = window.markdownit({html: true});
