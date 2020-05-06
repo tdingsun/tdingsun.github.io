@@ -48,6 +48,9 @@ function textCycle(){
     console.log(metrics);
     var scaleXFactor = (window.innerWidth - padding) / metrics.width;
     var scaleYFactor = (window.innerHeight - padding) / (metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent);
+    if(metrics.actualBoundingBoxAscent == null){
+        scaleYFactor = (window.innerHeight - padding) / 180;
+    }
     $("#center").text(word);
     var scales = [scaleXFactor, scaleYFactor]
     console.log(scales);
