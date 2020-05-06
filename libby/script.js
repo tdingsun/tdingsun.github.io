@@ -13,6 +13,9 @@ var str = "A spiral begins at a point in space and winds away from its center in
 var words_arr = str.split(" ");
 var word_index = 0;
 
+var tv;
+var th;
+
 var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
 var notes = Tone.Frequency("G3").harmonize([0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28, 29, 31, 33, 35, 36]);
 
@@ -32,8 +35,8 @@ $(document).ready(function(event){
   width = $(window).innerWidth();
   height = $(window).innerHeight();
   displayTitle(title, author);
-  setInterval(rotateVertical, 500);
-  setInterval(rotateHorizontal, 1000);
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 2000);
   setTimeout(function(){
     timer();
     $("#title").css({
@@ -119,3 +122,17 @@ function rotateHorizontal() {
       "transform": `rotate(${currRotateH}deg)`
   })
 }
+
+$("#clockContainer").mouseenter(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 30);
+  th = setInterval(rotateHorizontal, 30);
+});
+
+$("#clockContainer").mouseleave(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 1000);
+});

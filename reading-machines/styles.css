@@ -92,7 +92,7 @@ a {
   transition:0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   letter-spacing: -0.3rem;
   margin-right: 100px;
-  padding: 0px 10px;
+  padding: 0px 10px 0px 8px;
 }
 
 .line-alt:not(#th):hover{
@@ -102,6 +102,8 @@ a {
   font-style: italic;
   background-color: cornsilk;
   color: cornflowerblue;
+  border-radius: 2px;
+
 }
 
 .th-alt {
@@ -126,6 +128,10 @@ a {
   letter-spacing: -0.05rem;
   padding-right: 5px;
   white-space: nowrap;
+  color: cornflowerblue;
+  background-color: cornsilk;
+  padding: 2px;
+  border-radius: 2px;
 }
 
 .by-alt {

@@ -25,13 +25,16 @@ let md = window.markdownit({html: true});
 var width;
 var height;
 
+var tv;
+var th;
+
 $("document").ready(function(){
     width = $(window).width();
     height = $(window).height();
     displayTitle(title, author);
     setTimeout(displayText, 1500);
-    setInterval(rotateVertical, 1000);
-    setInterval(rotateHorizontal, 2000);
+    tv = setInterval(rotateVertical, 1000);
+    th = setInterval(rotateHorizontal, 2000);
 });
 
 $(".page").click(function(e){
@@ -113,4 +116,18 @@ function rotateHorizontal() {
 $("#mute-btn").click(function(){
     Tone.Master.mute = !Tone.Master.mute;
     $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+  });
+
+  $("#clockContainer").mouseenter(function(){
+    clearInterval(tv);
+    clearInterval(th);
+    tv = setInterval(rotateVertical, 30);
+    th = setInterval(rotateHorizontal, 30);
+  });
+  
+  $("#clockContainer").mouseleave(function(){
+    clearInterval(tv);
+    clearInterval(th);
+    tv = setInterval(rotateVertical, 1000);
+    th = setInterval(rotateHorizontal, 1000);
   });

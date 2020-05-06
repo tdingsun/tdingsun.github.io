@@ -24,6 +24,9 @@ var poems_split = [];
 var timeouts = [null, null, null, null, null, null, null];
 var curr_index = [];
 
+var tv;
+var th;
+
 //have to click to start audio context
 StartAudioContext(Tone.context, window);
 
@@ -40,8 +43,8 @@ $(document).ready(function(event){
   height = $(window).innerHeight();
   displayTitle(title, author);
   setTimeout(setupText, 1500);
-  setInterval(rotateVertical, 1000);
-  setInterval(rotateHorizontal, 2000);
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 2000);
 });
 
 $("#title").click(function(event){
@@ -137,4 +140,18 @@ function rotateHorizontal() {
 $("#mute-btn").click(function(){
   Tone.Master.mute = !Tone.Master.mute;
   $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+});
+
+$("#clockContainer").mouseenter(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 30);
+  th = setInterval(rotateHorizontal, 30);
+});
+
+$("#clockContainer").mouseleave(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 1000);
 });

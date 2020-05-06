@@ -33,6 +33,8 @@ StartAudioContext(Tone.context, 'div').then(function(){
 
 });
 
+var tv;
+var th;
 
 $(document).ready(function(event){
   width = $(window).innerWidth();
@@ -43,8 +45,8 @@ $(document).ready(function(event){
       color: "thistle"
     });
   }, 2000);
-  setInterval(rotateVertical, 1000);
-  setInterval(rotateHorizontal, 2000);
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 2000);
   setTimeout(timer, 2000);
 });
 
@@ -112,3 +114,17 @@ function rotateHorizontal() {
       "transform": `rotate(${currRotateH}deg)`
   })
 }
+
+$("#clockContainer").mouseenter(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 30);
+  th = setInterval(rotateHorizontal, 30);
+});
+
+$("#clockContainer").mouseleave(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 1000);
+});

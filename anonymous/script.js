@@ -12,6 +12,9 @@ var speed = 350;
 var currRotateV = 0;
 var currRotateH = 0;
 
+var tv;
+var th;
+
 var synth = new Tone.PolySynth(5, Tone.Synth).toMaster();
 var notes = Tone.Frequency("A3").harmonize([0, 2, 5, 7, 9, 12]);
 
@@ -26,9 +29,10 @@ $(document).click(function(){
 $("document").ready(function(){
     displayTitle(title, author);
     setTimeout(textCycle, 2500);
-    setInterval(rotateVertical, speed);
-    setInterval(rotateHorizontal, speed*2);
+    tv = setInterval(rotateVertical, speed);
+    th = setInterval(rotateHorizontal, speed*2);
 })
+
 
 function displayTitle(title, author){
     $("#center").html(title + "<br> BY <br>" + author);
@@ -107,3 +111,17 @@ function rotateHorizontal() {
         "transform": `rotate(${currRotateH}deg)`
     })
 }
+
+$("#clockContainer").mouseenter(function(){
+    clearInterval(tv);
+    clearInterval(th);
+    tv = setInterval(rotateVertical, 30);
+    th = setInterval(rotateHorizontal, 30);
+});
+  
+$("#clockContainer").mouseleave(function(){
+    clearInterval(tv);
+    clearInterval(th);
+    tv = setInterval(rotateVertical, 1000);
+    th = setInterval(rotateHorizontal, 1000);
+});

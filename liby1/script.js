@@ -37,7 +37,8 @@ StartAudioContext(Tone.context, 'div').then(function(){
 
 });
 
-
+var tv;
+var th;
 
 $(document).ready(function(event){
   width = $(window).innerWidth();
@@ -45,8 +46,8 @@ $(document).ready(function(event){
   displayTitle(title, author);
   setTimeout(setupText, 1500);
 
-  setInterval(rotateVertical, 1000);
-  setInterval(rotateHorizontal, 2000);
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 2000);
   requestAnimationFrame(timer);
 
   $("#text-container").on("mouseenter", ".deactivated", function(){
@@ -132,4 +133,18 @@ function rotateHorizontal() {
 $("#mute-btn").click(function(){
   Tone.Master.mute = !Tone.Master.mute;
   $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+});
+
+$("#clockContainer").mouseenter(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 30);
+  th = setInterval(rotateHorizontal, 30);
+});
+
+$("#clockContainer").mouseleave(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 1000);
 });

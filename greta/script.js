@@ -22,11 +22,14 @@ var noteIndex = 0;
 
 let md = window.markdownit({html: true});
 
+var tv;
+var th;
+
 $("document").ready(function(){
     displayTitle(title, author);
     setTimeout(displayFirst, 1000);
-    setInterval(rotateVertical, 1000);
-    setInterval(rotateHorizontal, 2000);
+    tv = setInterval(rotateVertical, 1000);
+    th = setInterval(rotateHorizontal, 2000);
 });
 
 $("#title").click(function(){
@@ -173,3 +176,17 @@ function rotateHorizontal() {
         "transform": `rotate(${currRotateH}deg)`
     })
 }
+
+$("#clockContainer").mouseenter(function(){
+    clearInterval(tv);
+    clearInterval(th);
+    tv = setInterval(rotateVertical, 30);
+    th = setInterval(rotateHorizontal, 30);
+  });
+  
+  $("#clockContainer").mouseleave(function(){
+    clearInterval(tv);
+    clearInterval(th);
+    tv = setInterval(rotateVertical, 1000);
+    th = setInterval(rotateHorizontal, 1000);
+  });

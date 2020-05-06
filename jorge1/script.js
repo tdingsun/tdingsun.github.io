@@ -18,6 +18,9 @@ var histLimit = 20;
 var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
 var notes = Tone.Frequency("F3").harmonize([0, 2, 4, 5, 7, 9, 11, 12]);
 
+var tv;
+var th;
+
 StartAudioContext(Tone.context, 'div').then(function(){
   //started
   console.log("clicked");
@@ -33,8 +36,8 @@ $(document).ready(function(event){
   width = parseInt($(window).innerWidth());
   height = parseInt($(window).innerHeight());
   displayTitle(title, author);
-  setInterval(rotateVertical, 500);
-  setInterval(rotateHorizontal, 1000);
+  tv = setInterval(rotateVertical, 500);
+  th = setInterval(rotateHorizontal, 1000);
   setTimeout(function(){
     timer();
 
@@ -166,3 +169,17 @@ function rotateHorizontal() {
       "transform": `rotate(${currRotateH}deg)`
   })
 }
+
+$("#clockContainer").mouseenter(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 30);
+  th = setInterval(rotateHorizontal, 30);
+});
+
+$("#clockContainer").mouseleave(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 1000);
+});
