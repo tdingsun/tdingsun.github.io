@@ -10,6 +10,12 @@ const linePaddingOrtho = 40;
 const lineWidth = "2px";
 const lineWidthOrtho = "2px";
 
+var tv;
+var th;
+$(document).ready(function(){
+    tv = setInterval(rotateVertical, 1000);
+    th = setInterval(rotateHorizontal, 2000);
+});
 
 function modelLoaded() {
     console.log('Model Loaded!');
@@ -259,4 +265,35 @@ function setupGrid() {
         }
         runningInference = false;
     });
+}
+
+$("#clockContainer").mouseenter(function(){
+    clearInterval(tv);
+    clearInterval(th);
+    tv = setInterval(rotateVertical, 30);
+    th = setInterval(rotateHorizontal, 30);
+  });
+  
+$("#clockContainer").mouseleave(function(){
+    clearInterval(tv);
+    clearInterval(th);
+    tv = setInterval(rotateVertical, 1000);
+    th = setInterval(rotateHorizontal, 1000);
+  });
+
+var currRotateV = 0;
+var currRotateH = 0;
+
+function rotateVertical() {
+  currRotateV += 15;
+  $("#vertical").css({
+      "transform": `rotate(${currRotateV}deg)`
+  })
+}
+
+function rotateHorizontal() {
+  currRotateH += 7.5;
+  $("#horizontal").css({
+      "transform": `rotate(${currRotateH}deg)`
+  })
 }

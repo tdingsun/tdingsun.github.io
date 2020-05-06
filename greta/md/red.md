@@ -24,7 +24,7 @@ His hammered plates\
 To thumb that flesh underneath
 
 I, freshly twenty and having just\
-<span class='link' data-link='ralph.md'>thrown in The Towel,</span> can hear a voice\
+<span class='link' data-link='md/ralph.md'>thrown in The Towel,</span> can hear a voice\
 A mother’s voice \
 lingering in my head’s dank catacomb\
 *Isn’t he handsome?*
@@ -49,7 +49,7 @@ Howl, an offshore baby:\
 anything for a flake of that striving geode\
 Guitarist\
 Anything for a shred of that dignity*\
-<span class='link' data-link='show.md'>*Don’t start the show without me*</span>
+<span class='link' data-link='md/show.md'>*Don’t start the show without me*</span>
 
 But I have never\
 been ready I am the dog\

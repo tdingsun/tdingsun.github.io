@@ -11,7 +11,7 @@ Or when you whispered poems to me\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;into the light and onto the page\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dripping, still beating\
 Reciting one you memorized\
-<span class='link' data-link='chasing.md'>the part about a bloody skull</span> stuck with me even though I was raw\
+<span class='link' data-link='md/chasing.md'>the part about a bloody skull</span> stuck with me even though I was raw\
 to the morning
 
 *Deepbreath, up!*
@@ -21,7 +21,7 @@ After all this I was pushed\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and kept my eyelids half-lowered, my neck half-loosened\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to better absorb the impact\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the awful, the errant shoelace, the teeth smack on linoleum\
-and <span class='link' data-link='red.md'>I sucked the wound</span>, boarded a train car which filled with\
+and <span class='link' data-link='md/red.md'>I sucked the wound</span>, boarded a train car which filled with\
 smoke\
 & voices of frantic button pressers\
 as we were leaving the station and I\

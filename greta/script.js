@@ -46,16 +46,15 @@ $("#title").click(function(){
 });
 
 $("#container").on("click", ".link", function(e){
-    var randNote = noteIndex % notes.length;
-    synth.triggerAttackRelease(notes[randNote], "1n");
+    var note = noteIndex % notes.length;
+    synth.triggerAttackRelease(notes[note], "1n");
+    noteIndex += 1;
     
     var el = $(this);
     var level = el.parents().length
     if (offset_dict[level] == null){
         offset_dict[level] = 1
     }
-    console.log(level);
-    console.log(offset_dict[level]);
     var link = this.getAttribute("data-link");
     $.ajax({
         url: link,
@@ -150,7 +149,7 @@ function displayTitle(title, author){
 
 function displayFirst(){
     $.ajax({
-        url: "chasing.md",
+        url: "md/chasing.md",
         datatype: "html",
         success: function(markdown){
             let html = md.render(markdown);

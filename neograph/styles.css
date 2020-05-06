@@ -74,11 +74,13 @@ body {
 
 @media only screen and (max-width: 790px) {
   body{
-    font-size: 5vw;
+    font-size: 10vw;
   }
   #title {
     border-bottom: 2px solid thistle;
-    background-color: black;
+    font-size: 15vw;
+    padding-top: 0;
+    background-color: darkslategray;
   }
   #container {
     height: auto;
@@ -89,4 +91,28 @@ body {
     height: auto;
     padding: 20px;
   }
+}
+
+#clockContainer {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+}
+
+#vertical {
+  width: 20px;
+  height: 100px;
+  background-color: thistle;
+  position: absolute;
+  left: 40px;
+}
+
+#horizontal{
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  background-color: thistle;
 }

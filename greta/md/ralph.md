@@ -9,7 +9,7 @@ I will let it spur a hemorrhage*
 Watching the returns\
 in my cesspool of a bed\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Made more rank with each falling tear\
-You wanted Low Culture? <span class='link' data-link='ode.md'>Look no further</span>\
+You wanted Low Culture? <span class='link' data-link='md/ode.md'>Look no further</span>\
 I smother myself in it\
 A paste worked by some softest hands\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{dirt & venn diagrams & paint to wing the eyes}

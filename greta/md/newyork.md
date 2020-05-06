@@ -24,12 +24,12 @@ while pushing a handle down
 
 *I want to dig into my foot\
 into Maslow’s sharpest point\
-I want to dance on freshly fallen* <span class='link' data-link='red.md'>*teeth*</span>\
+I want to dance on freshly fallen* <span class='link' data-link='md/red.md'>*teeth*</span>\
 *I want to hurt sometimes*
 
 Imagine an elastic arm\
 reaching across the Continental United States\
-touching him in <span class='link' data-link='pearl.md'>Tacoma</span>\
+touching him in <span class='link' data-link='md/pearl.md'>Tacoma</span>\
 At its thinnest point a Sparrow could\
 bite clean through it
 
