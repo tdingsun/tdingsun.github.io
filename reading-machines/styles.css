@@ -2,20 +2,22 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  font-size: 14px;
-  color: black;
+  font-size: 16px;
+  color: cornsilk;
+  line-height: 1;
+  background-color: cornflowerblue;
 }
 
 * {
   box-sizing: border-box;
 }
 
-#linkList {
+#linklist {
   letter-spacing: -0.01em;
 }
 
 #th {
-  border-top: 1px solid black;
+  border-top: 1px solid cornsilk;
   font-size: 2rem;
 }
 
@@ -33,7 +35,7 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid cornsilk;
   padding: 3px 0px 3px 0px;
   transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -64,44 +66,123 @@ a {
 
 #container {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   padding: 5px;
 }
 
+#spacer {
+  height: 100px;
+  width: 100vw;
+  display: block;
+}
+
 #header {
-  height: auto;
   font-size: 6rem;
   letter-spacing: -0.3rem;
   margin-left: -5px;
+  display: inline;
 }
+
+/* Alternate */
+
+.line-alt {
+  display: inline;
+  border-bottom: none;
+  font-size: 6rem;
+  transition:0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  letter-spacing: -0.3rem;
+  margin-right: 100px;
+  padding: 0px 10px;
+}
+
+.line-alt:not(#th):hover{
+  /* color: white;
+  background-color: black; */
+  font-size: 6rem;
+  font-style: italic;
+  background-color: cornsilk;
+  color: cornflowerblue;
+}
+
+.th-alt {
+  display: none;
+}
+
+.title-alt {
+  word-break: break-all;
+}
+
+.about-alt {
+  width: 300px;
+  line-height: 1.2;
+  display: inline-block;
+  margin: 0;
+}
+
+.number-alt {
+  position: relative;
+  top: -50px;
+  font-size: 1rem;
+  letter-spacing: -0.05rem;
+  padding-right: 5px;
+  white-space: nowrap;
+}
+
+.by-alt {
+  font-size: 2rem;
+  letter-spacing: -0.1rem;
+  padding: 7px;
+}
+
+.author-alt {
+  font-size: 2rem;
+  letter-spacing: -0.1rem;
+  margin-right: -72px;
+}
+
+.mobile-alt {
+  position: relative;
+  font-size: 1rem;
+  letter-spacing: -0.05rem;
+  top: -50px;
+  white-space: nowrap;
+}
+
+.mobile-alt::before {
+  content: "Mobile? ";
+}
+
 
 /* Common */
 #clockContainer {
-  width: 60px;
-  height: 60px;
-  left: 10px;
+  width: 70px;
+  height: 70px;
+  left: 5px;
+  top: 5px;
+  margin-right: 20px;
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 
 #vertical {
   width: 12px;
-  height: 60px;
-  background-color: black;
+  height: 70px;
+  background-color: cornsilk;
   position: absolute;
-  left: 24px;
+  left: 29px;
 }
 
 #horizontal{
-  width: 60px;
+  width: 70px;
   height: 12px;
   position: absolute;
-  top: 24px;
-  background-color: black;
+  top: 29px;
+  background-color: cornsilk;
 }
 
 #mute-btn {
-  color: black;
+  color: cornsilk;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -111,7 +192,7 @@ a {
 }
 
 #mute-btn:hover {
-  color: whitesmoke;
-  background-color: black;
+  color: cornflowerblue;
+  background-color: cornsilk;
 }
 

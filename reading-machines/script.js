@@ -65,20 +65,57 @@ var links = {
     "number": "12",
     "name": "Ballast",
     "author": "Tiger Dingsun"
-  },
-
-
-  
+  }, 
 }
+
+var volume = new Tone.Volume(-6);
+var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
+var notes = Tone.Frequency("C3").harmonize([0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 31, 33, 36]);
+
+var tv;
+var th;
+
 $(document).ready(function(event){
   makeLinks();
-  setInterval(rotateVertical, 1000);
-  setInterval(rotateHorizontal, 2000);
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 1200);
 });
 
 $(window).resize(function(){
   w = $(window).width();
   h = $(window).height();
+});
+
+$("#container").on("mouseenter", ".line", function(){
+  let i = $(this).index() - 3;
+  console.log(i);
+  synth.triggerAttackRelease(notes[i], "8n");
+});
+
+$("#clockContainer").click(function(){
+  $("#about").toggleClass('about-alt');
+  $("#th").toggleClass('th-alt');
+  $("#linklist").toggleClass('linklist-alt');
+  $(".line").toggleClass('line-alt');
+  $(".number").toggleClass('number-alt');
+  $(".title").toggleClass('title-alt');
+  $(".by").toggleClass('by-alt');
+  $(".author").toggleClass('author-alt');
+  $(".mobile").toggleClass('mobile-alt');
+});
+
+$("#clockContainer").mouseenter(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 30);
+  th = setInterval(rotateHorizontal, 30);
+});
+
+$("#clockContainer").mouseleave(function(){
+  clearInterval(tv);
+  clearInterval(th);
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 1000);
 });
 
 function makeLinks() {
@@ -89,14 +126,14 @@ function makeLinks() {
     let number = value.number;
     let mobile = value.mobile ? "Yes" : "No";
 
-    let newline = $(`<a class='line' href='${linkBody + key}'></a>`);
+    let newline = $(`<a class='line' href='${linkBody + key}' target='_blank'></a>`);
     newline.append($(`<span class="number">RM–${number}</span>`));
     newline.append($(`<span class="title"><a ">${title}</a></span>`));
     newline.append($(`<span class="by">by</span>`));
     newline.append($(`<span class="author">${author}</span>`));
     newline.append($(`<span class="mobile">${mobile}</span>`));
 
-    $("#linkList").append(newline);
+    $("#container").append(newline);
   }
   
 }
@@ -118,3 +155,8 @@ function rotateHorizontal() {
       "transform": `rotate(${currRotateH}deg)`
   })
 }
+
+$("#mute-btn").click(function(){
+  Tone.Master.mute = !Tone.Master.mute;
+  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+});
