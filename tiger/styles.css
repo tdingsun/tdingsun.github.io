@@ -35,8 +35,8 @@ p {
 
 
 .centered {
-  padding: 50px;
-  font-size: 8rem;
+  padding: 15px;
+  font-size: 6rem;
   line-height: 1em;
   letter-spacing: -2px;
 }
@@ -56,6 +56,7 @@ p {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   transition: 0.25s;
 
 }
@@ -67,7 +68,7 @@ p {
   flex-grow: 1;
   flex-shrink: 1;
   margin-left: -1px;
-  width: 0px;
+  width: 100vw;
   transition: 0.25s;
 }
 
@@ -82,6 +83,7 @@ p {
 #col3 {
   align-items: flex-end;
 }
+
 
 .page {
   flex-shrink: 1;
@@ -100,14 +102,30 @@ p {
   margin-top: -1px;
 }
 
+
 .page:hover {
   color: thistle;
   background-color: darkslategrey;
   cursor: pointer;
 }
 
+@media (min-width: 768px) {
+  #container {
+    flex-direction: row;
+  }
+
+  .expanded {
+    height: 1000px;
+  }
+
+  .col {
+    width: 0;
+  }
+}
+
+
 .expanded {
-  height: 1000px;
+  height: 550px;
   max-width: 400px;
   background-color: darkslategrey;
   color: thistle;
