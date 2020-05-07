@@ -10,7 +10,14 @@ body {
   color: cornsilk;
   background-color: black;
   overflow: hidden;
+}
 
+#title {
+  font-size: 6rem;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  line-height: 1;
 
 }
 
@@ -40,8 +47,9 @@ body {
      -o-transition:      -o-transform 0.3s;
         transition:         transform 0.3s; */
   line-height: 0.9em;
-
 }
+
+
 
 #field {
   width: calc(100vw - 40px);
@@ -79,5 +87,20 @@ body {
   height: 20px;
   position: absolute;
   top: 40px;
+  background-color: cornsilk;
+}
+
+#mute-btn {
+  color: cornsilk;
+  position: fixed;
+  padding: 25px;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: black;
   background-color: cornsilk;
 }

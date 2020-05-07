@@ -31,17 +31,20 @@ $("document").ready(function(){
     setTimeout(textCycle, 2500);
     tv = setInterval(rotateVertical, speed);
     th = setInterval(rotateHorizontal, speed*2);
-})
+});
 
-
+$("#mute-btn").click(function(){
+    Tone.Master.mute = !Tone.Master.mute;
+    $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+});
+  
 function displayTitle(title, author){
-    $("#center").html(title + "<br> BY <br>" + author);
-    var randNote = Math.floor(Math.random() * notes.length);
-
-    synth.triggerAttackRelease(notes[randNote], "1n");
-
-
+    $("#title").html(title + "<br> by " + author);
+    setTimeout(() => {
+        $("#title").hide();
+    }, 2500);
 }
+
 function textCycle(){
     var randNote = Math.floor(Math.random() * notes.length);
     synth.triggerAttackRelease(notes[randNote], "1n");
