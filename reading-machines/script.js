@@ -16,7 +16,7 @@ var links = {
   },
   "eliza": {
     "number": "03",
-    "name": "Third Form: A First Month on Testosterone",
+    "name": "Third Form: One Month on Testosterone",
     "author": "Eliza Chen",
     "mobile": true
   },
