@@ -38,13 +38,29 @@ a {
   border-bottom: 1px solid cornsilk;
   padding: 3px 0px 3px 0px;
   transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-size: 1.2rem;
 }
 
 .line:not(#th):hover{
-  /* color: white;
-  background-color: black; */
+  color: cornflowerblue;
+  background-color: cornsilk;
   justify-content: space-around;
-  font-size: 2rem;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .line:not(#th):hover{
+    color: cornflowerblue;
+    background-color: cornsilk;
+    justify-content: space-around;
+    font-size: 2rem;
+    letter-spacing: -0.05rem;
+  }
+
+  .line-alt:not(#th):hover {
+    letter-spacing: -0.2rem;
+    font-size: 6rem;
+  }
 }
 
 .number {
@@ -95,7 +111,7 @@ a {
   padding: 0px 10px 0px 8px;
 }
 
-.line-alt:not(#th):hover{
+.line-alt:hover{
   /* color: white;
   background-color: black; */
   font-size: 6rem;
