@@ -94,7 +94,19 @@ p {
   position: relative;
   font-size: 1em;
   line-height: 1.5em;
-  margin: 15px 20px 20px 180px;
+  margin: 180px 10px 10px 10px;
+
+}
+
+@media (min-width: 768px) {
+  #body {
+    margin: 15px 20px 20px 180px;
+  }
+
+  #mute-btn {
+    right: 210px;
+    top: 0;
+  }
 }
 
 #clockContainer {
@@ -129,8 +141,8 @@ p {
   color: blue;
   position: fixed;
   padding: 25px;
-  right: 210px;
-  top: 0;
+  right: 0;
+  top: 130px;
   text-align: center;
   cursor: pointer;
 }

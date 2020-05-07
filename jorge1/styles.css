@@ -22,8 +22,8 @@ body {
   line-height: 0.9;
   position: fixed;
   display: block;
-  top: 20px;
-  left: 20px;
+  top: 10px;
+  left: 10px;
   z-index: -1;
   color: black;
   transition: 0.25s;

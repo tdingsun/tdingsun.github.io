@@ -10,8 +10,6 @@ body {
   text-align: left;
   color: forestgreen;
   background-color: khaki;
-  overflow: hidden;
-
 }
 
 #title {
@@ -35,8 +33,8 @@ body {
   position: relative;
   box-sizing: border-box;
   padding-top: 100px;
+  padding-bottom: 150px;
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,16 +44,41 @@ body {
 .row {
   height: 33.33333%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   flex-grow: 0;
   flex-shrink: 0;
 }
 
-.box {
-  width: calc(33vw - 50px);
-  margin: 25px;
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row;
+  }
 
+  #container {
+    height: 100vh;
+    padding-bottom: 0;
+
+  }
+
+  .box {
+    width: calc(33vw - 50px);
+  }
+
+  .on div{
+    width: calc(33vw - 50px)!important;
+  }
+
+  .off div{
+    width: calc(33vw - 50px)!important;
+  }
+
+}
+
+.box {
+  margin: 25px;
+  width: calc(100vw - 50px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,13 +115,13 @@ body {
 }
 
 .on div{
-  width: calc(33vw - 50px);
+  width: calc(100vw - 50px);
   background-color: khaki;
   color: forestgreen;
 }
 
 .off div{
-  width: calc(33vw - 50px)!important;
+  width: calc(100vw - 50px);
   color: khaki!important;
 }
 
