@@ -133,7 +133,7 @@ function makeLinks() {
     let number = value.number;
     let mobile = value.mobile ? "Yes" : "No";
 
-    let newline = $(`<a class='line' href='${linkBody + key}' target='_blank'></a>`);
+    let newline = $(`<a class='line' href='${linkBody + key}' target='_self'></a>`);
     newline.append($(`<span class="number">RM–${number}</span>`));
     newline.append($(`<span class="title"><a ">${title}</a></span>`));
     newline.append($(`<span class="by">by</span>`));

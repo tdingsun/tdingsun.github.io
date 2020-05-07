@@ -2,8 +2,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  font-size: 1.5vw;
   text-align: left;
+  font-size: 1.75vw;
+
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -21,14 +22,16 @@ body {
 #title {
   width: 100vw;
   position: fixed;
-  top: 0;
-  left: 0;
-  font-size: 2em;
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
+  top: 10px;
+  left: 10px;
+  font-size: 6rem;
   letter-spacing: -1px;
 }
+
+.title-small {
+  font-size: 2rem!important;
+}
+
 #container {
   width: 100vw;
   height: 100vh;
@@ -38,7 +41,7 @@ body {
   align-items: center;
   align-content: center;
   justify-content: center;
-  padding: 100px 50px 50px 50px;
+  padding: 100px 0px 0px 0px;
 }
 
 .word {

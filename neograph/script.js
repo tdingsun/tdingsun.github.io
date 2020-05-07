@@ -10,9 +10,19 @@ const linePaddingOrtho = 40;
 const lineWidth = "2px";
 const lineWidthOrtho = "2px";
 
+var title = "Neograph";
+var author = "Tiger Dingsun"
+
+var volume = new Tone.Volume(-12);
+var synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
+var notes = Tone.Frequency("G3").harmonize([0, 4, 7, 12]);
+
+StartAudioContext(Tone.context, window);
+
 var tv;
 var th;
 $(document).ready(function(){
+    displayTitle(title, author);
     tv = setInterval(rotateVertical, 1000);
     th = setInterval(rotateHorizontal, 2000);
 });
@@ -20,6 +30,10 @@ $(document).ready(function(){
 function modelLoaded() {
     console.log('Model Loaded!');
     setupGrid();
+}
+
+function displayTitle(title, author){
+    $("#title").html(title + "<br>by " + author);
 }
 
 $("#container").on('click', '.worda', function() {
@@ -34,6 +48,8 @@ function makeNewWord(el) {
             $(el).text(res[1]);
             makeLines(el);
             runningInference = false;
+            var randNote = parseInt(Math.random() * notes.length);
+            synth.triggerAttackRelease(notes[randNote], "4n");
         });   
     }
 }
@@ -264,6 +280,7 @@ function setupGrid() {
             $("#container").append(`<div class='word'><a id=${i} class='worda'>${res[i+1]}</a></div>`);
         }
         runningInference = false;
+        $("#title").addClass("title-small");
     });
 }
 
