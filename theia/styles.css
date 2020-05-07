@@ -84,8 +84,8 @@ td:not(.largeCell):hover {
   border-radius: 25px;
   border: 1.5px solid forestgreen;
   position: absolute;
-  left: calc(100vw - 230px);
-  top: 25px;
+  left: 25px;
+  top: 125px;
   transition: 0.25s;
   cursor: pointer;
 }
@@ -126,6 +126,7 @@ td:not(.largeCell):hover {
   top: 0;
   text-align: center;
   cursor: pointer;
+  font-size: 16px;
 }
 
 #mute-btn:hover {

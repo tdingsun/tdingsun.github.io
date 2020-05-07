@@ -57,14 +57,14 @@ $("#container").on("click", "td", function(){
     });
     $("#x2").css({
       top: tableTop - 12.5,
-      left: left + w + 12.5
+      left: left + w + 25
     });
     $("#y1").css({
       top: top - 12.5,
       left: "12.5px"
     });
     $("#y2").css({
-      top: top + h + 12.5,
+      top: top + h + 25,
       left: "12.5px"
     });
   }, 250);
@@ -73,8 +73,8 @@ $("#container").on("click", "td", function(){
 $(".indicator").click(function(){
   $("td").removeClass("largeCell");
   $(".indicator").css({
-    "left": "calc(100vw - 230px)",
-    "top": "25px"
+    "left": "25px",
+    "top": "125px"
   });
 });
 
