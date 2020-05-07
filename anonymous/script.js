@@ -15,27 +15,22 @@ var currRotateH = 0;
 var tv;
 var th;
 
-var synth = new Tone.PolySynth(5, Tone.Synth).toMaster();
+var volume = new Tone.Volume(-8);
+var synth = new Tone.PolySynth(5, Tone.Synth);
+synth.chain(volume, Tone.Master);
 var notes = Tone.Frequency("A3").harmonize([0, 2, 5, 7, 9, 12]);
 
-StartAudioContext(Tone.context, 'div');
-//have to click to start audio context
-$(document).click(function(){
-	console.log("clicked");
-	Tone.start();
-});
-
+StartAudioContext(Tone.context, window);
 
 $("document").ready(function(){
+    Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+    let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+    $("#mute-btn").text(text);
+
     displayTitle(title, author);
     setTimeout(textCycle, 2500);
     tv = setInterval(rotateVertical, speed);
     th = setInterval(rotateHorizontal, speed*2);
-});
-
-$("#mute-btn").click(function(){
-    Tone.Master.mute = !Tone.Master.mute;
-    $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
 });
   
 function displayTitle(title, author){
@@ -52,7 +47,6 @@ function textCycle(){
     var word = txt_array[i];
     updateField(word);
     var metrics = getTextWidth(word, "180px arial");
-    console.log(metrics);
     var scaleXFactor = (window.innerWidth - padding) / metrics.width;
     var scaleYFactor = (window.innerHeight - padding) / (metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent);
     if(metrics.actualBoundingBoxAscent == null){
@@ -60,7 +54,6 @@ function textCycle(){
     }
     $("#center").text(word);
     var scales = [scaleXFactor, scaleYFactor]
-    console.log(scales);
     $("#center").transition({scale: scales}, 300);
     // $("#center").css({
     //     "-webkit-transform": `scale(${scaleXFactor}, ${scaleYFactor})`,
@@ -97,10 +90,6 @@ function getTextWidth(text, font) {
     return metrics;
 }
 
-function makeClocks(){
-
-}
-
 function rotateVertical() {
     currRotateV += 15;
     $("#vertical").css({
@@ -128,3 +117,9 @@ $("#clockContainer").mouseleave(function(){
     tv = setInterval(rotateVertical, 1000);
     th = setInterval(rotateHorizontal, 1000);
 });
+
+$("#mute-btn").click(function(){
+    Tone.Master.mute = !Tone.Master.mute;
+    localStorage.setItem('mute', Tone.Master.mute);
+    $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
+  });

@@ -1,20 +1,9 @@
 var title = "Ballast";
 var author = "Tiger Dingsun"
 
-var colors = ["red", "forestgreen", "orange", "magenta", "cornflowerblue", "darkgoldenrod", "teal", "purple", "blue"];
-var color_index = 0;
 
-var offset_dict = {}
 
-var lh = 1;
-var lh_unit = 1;
-
-var padding = 100;
-var i = 0;
-var speed = 500;
-
-var currRotateV = 0;
-var currRotateH = 0;
+StartAudioContext(Tone.context, window);
 
 var synth = new Tone.PolySynth(5, Tone.Synth).toMaster();
 var notes = Tone.Frequency("A3").harmonize([0, 2, 5, 7, 9, 12]);
@@ -29,6 +18,10 @@ var tv;
 var th;
 
 $("document").ready(function(){
+    Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+    let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+    $("#mute-btn").text(text);
+
     width = $(window).width();
     height = $(window).height();
     displayTitle(title, author);
@@ -99,6 +92,9 @@ function getMD(i){
     });
 }
 
+var currRotateV = 0;
+var currRotateH = 0;
+
 function rotateVertical() {
     currRotateV += 15;
     $("#vertical").css({
@@ -115,7 +111,8 @@ function rotateHorizontal() {
 
 $("#mute-btn").click(function(){
     Tone.Master.mute = !Tone.Master.mute;
-    $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+    localStorage.setItem('mute', Tone.Master.mute);
+    $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
   });
 
   $("#clockContainer").mouseenter(function(){

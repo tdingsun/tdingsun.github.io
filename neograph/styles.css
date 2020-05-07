@@ -82,7 +82,8 @@ body {
   #title {
     border-bottom: 2px solid thistle;
     font-size: 15vw;
-    padding-top: 0;
+    top: 0;
+    padding: 10px;
     background-color: darkslategray;
   }
   #container {

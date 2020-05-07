@@ -22,6 +22,10 @@ StartAudioContext(Tone.context, window);
 var tv;
 var th;
 $(document).ready(function(){
+    Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+    let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+    $("#mute-btn").text(text);
+
     displayTitle(title, author);
     tv = setInterval(rotateVertical, 1000);
     th = setInterval(rotateHorizontal, 2000);
@@ -314,3 +318,10 @@ function rotateHorizontal() {
       "transform": `rotate(${currRotateH}deg)`
   })
 }
+
+$("#mute-btn").click(function(){
+    Tone.Master.mute = !Tone.Master.mute;
+    localStorage.setItem('mute', Tone.Master.mute);
+    $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
+  });
+  

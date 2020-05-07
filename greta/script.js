@@ -16,7 +16,11 @@ var speed = 350;
 var currRotateV = 0;
 var currRotateH = 0;
 
-var synth = new Tone.PolySynth(5, Tone.Synth).toMaster();
+StartAudioContext(Tone.context, window);
+
+var synth = new Tone.PolySynth(5, Tone.Synth);
+var volume = new Tone.Volume(-8);
+synth.chain(volume, Tone.Master);
 var notes = Tone.Frequency("A3").harmonize([0, 2, 5, 7, 9, 12]);
 var noteIndex = 0;
 
@@ -26,6 +30,10 @@ var tv;
 var th;
 
 $("document").ready(function(){
+    Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+    let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+    $("#mute-btn").text(text);
+
     displayTitle(title, author);
     setTimeout(displayFirst, 1000);
     tv = setInterval(rotateVertical, 1000);
@@ -196,5 +204,6 @@ $("#clockContainer").mouseenter(function(){
 
   $("#mute-btn").click(function(){
     Tone.Master.mute = !Tone.Master.mute;
-    $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+    localStorage.setItem('mute', Tone.Master.mute);
+    $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
   });

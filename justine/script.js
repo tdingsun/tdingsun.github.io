@@ -39,6 +39,10 @@ var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
 var notes = Tone.Frequency("C3").harmonize([0, 4, 7, 12, 16, 19, 24]);
 
 $(document).ready(function(event){
+  Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+  let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+  $("#mute-btn").text(text);
+  
   width = $(window).innerWidth();
   height = $(window).innerHeight();
   displayTitle(title, author);
@@ -139,8 +143,10 @@ function rotateHorizontal() {
 
 $("#mute-btn").click(function(){
   Tone.Master.mute = !Tone.Master.mute;
-  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+  localStorage.setItem('mute', Tone.Master.mute);
+  $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
 });
+
 
 $("#clockContainer").mouseenter(function(){
   clearInterval(tv);

@@ -24,20 +24,22 @@ var str = "Up until the moment * the needle entered my body * and I pushed down 
 var words_arr = str.split("*");
 var word_index = 0;
 
+var volume = new Tone.Volume(-8);
+var synth = new Tone.PolySynth(4, Tone.Synth);
+synth.chain(volume, Tone.Master);
+var notes = Tone.Frequency("G2").harmonize([0, 4, 7, 11, 14, 17, 21, 24, 28, 31, 35, 36]);
 
-var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
-var notes = Tone.Frequency("F2").harmonize([0, 4, 7, 11, 14, 17, 21, 24, 28, 31, 35, 36]);
+StartAudioContext(Tone.context, window);
 
-StartAudioContext(Tone.context, 'div').then(function(){
-  //started
-  console.log("clicked");
-
-});
 
 var tv;
 var th;
 
 $(document).ready(function(event){
+  Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+  let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+  $("#mute-btn").text(text);
+
   width = $(window).innerWidth();
   height = $(window).innerHeight();
   displayTitle(title, author);
@@ -123,4 +125,10 @@ $("#clockContainer").mouseleave(function(){
   clearInterval(th);
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 1000);
+});
+
+$("#mute-btn").click(function(){
+  Tone.Master.mute = !Tone.Master.mute;
+  localStorage.setItem('mute', Tone.Master.mute);
+  $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
 });

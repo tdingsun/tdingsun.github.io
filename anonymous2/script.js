@@ -8,34 +8,31 @@ var paragraphs = ["有人将夜色切了一个完美的洞，露出它乳白的�
 var pDivs = [];
 
 var word_index = 0;
-var volume = new Tone.Volume(-6);
-var synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
-var notes = Tone.Frequency("E1").harmonize([0, 4, 7, 11, 14, 17, 21]);
+
+StartAudioContext(Tone.context, window);
+
+var noise = new Tone.Noise("brown");
+noise.start();
+var filter = new Tone.Filter(200, 'bandpass');
+var volume = new Tone.Volume(-8);
+noise.chain(filter, volume, Tone.Master);
+
 
 var tv;
 var th;
 
 $(document).ready(function(event){
+  Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+  let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+  $("#mute-btn").text(text);
+
   width = $(window).innerWidth();
   height = $(window).innerHeight();
   displayTitle(title, author);
   setTimeout(setupText, 1500);
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 2000);
-
-  $('.row').on("scroll", ".paragraph", function(event){
-    console.log("hi");
-    var randNote = Math.floor(Math.random() * notes.length);
-    synth.triggerAttackRelease(notes[randNote], "16n");
-  });
-  
 });
-
-$("#mute-btn").click(function(){
-  Tone.Master.mute = !Tone.Master.mute;
-  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
-});
-
 
 $("#handle").draggable({
   drag: function(event, ui){
@@ -44,12 +41,22 @@ $("#handle").draggable({
 
     let x = ui.position.left + 25;
     let y = ui.position.top + 25;  
-    $("#row1").children().first().css("width", x);
-    $("#row2").children().first().css("width", x);
-    $("#row1").css("height", y);
-
-    var randNote = Math.floor(Math.random() * notes.length);
-    synth.triggerAttackRelease(notes[randNote], "16n");
+    $("#top-left").css({
+      width: x + 0.5,
+      height: y + 0.5
+    });
+    $("#top-right").css({
+      width: width - x + 0.5,
+      height: y + 0.5
+    });
+    $("#bottom-left").css({
+      width: x + 0.5,
+      height: height - y + 0.5
+    });
+    $("#bottom-right").css({
+      width: width - x + 0.5,
+      height: height - y + 0.5
+    })
   }
 });
 
@@ -61,13 +68,7 @@ function displayTitle(title, author){
 
 function setupText(){
   paragraphs.forEach(function(p, index){
-    let newDiv = $(`<div class="paragraph"></div>`);
-    newDiv.text(p);
-    if(index < 2){
-      $("#row1").append(newDiv);
-    } else {
-      $("#row2").append(newDiv);
-    }
+    $(".paragraph").eq(index).text(p);
   });
 
   $("#title").css({
@@ -105,4 +106,10 @@ $("#clockContainer").mouseleave(function(){
   clearInterval(th);
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 1000);
+});
+
+$("#mute-btn").click(function(){
+  Tone.Master.mute = !Tone.Master.mute;
+  localStorage.setItem('mute', Tone.Master.mute);
+  $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
 });

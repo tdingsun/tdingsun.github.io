@@ -2,76 +2,22 @@ var w = $(window).width();
 var h = $(window).height();
 var linkBody = "https://tdingsun.github.io/";
 var links = {
-  "anonymous": {
-    "number": "01",
-    "name": "Untitled",
-    "author": "Anonymous",
+  "wen": {
+    "number": "16",
+    "name": "Portraits and Repetition",
+    "author": "Wen Zhuang",
     "mobile": false
-  },
-  "anonymous2": {
-    "number": "02",
-    "name": "Itchy, Fluffy, and Incomplete Things",
-    "author": "Anonymous",
+  }, 
+  "aayushi": {
+    "number": "15",
+    "name": "Dream Dress",
+    "author": "Aayushi Khowala",
     "mobile": false
-  },
-  "eliza": {
-    "number": "03",
-    "name": "Third Form: One Month on Testosterone",
-    "author": "Eliza Chen",
-    "mobile": true
-  },
-  "greta": {
-    "number": "04",
-    "name": "10 Poems",
-    "author": "Greta Sk",
-    "mobile": true
-  },
-  "jorge1": {
-    "number": "05",
-    "name": "The Meaning Maker",
-    "author": "Jorge Palacios",
-    "mobile": true
-  },
-  "jorge2": {
-    "number": "06",
-    "name": "Glossary of Feelings~~~",
-    "author": "Jorge Palacios",
-    "mobile": false
-  },
-  "justine": {
-    "number": "07",
-    "name": "7 Poems",
-    "author": "Justine Nguyễn-Nguyễn",
-    "mobile": true
-  },
-  "libby": {
-    "number": "08",
-    "name": "SPIRAL",
-    "author": "Libby Marrs",
-    "mobile": true
-  },
-  "liby1": {
-    "number": "09",
-    "name": "Pissed Pants Academy",
-    "author": "Liby Hays",
-    "mobile": true
-  },
-  "liby2": {
-    "number": "10",
-    "name": "Can't Run Trip Over Your Fucking Swag",
-    "author": "Liby Hays",
-    "mobile": false
-  },
-  "theia": {
-    "number": "11",
-    "name": "#hot sports girl",
-    "author": "Théïa Flynn",
-    "mobile": true
-  },
-  "tiger": {
-    "number": "12",
-    "name": "Ballast",
-    "author": "Tiger Dingsun",
+  }, 
+  "ali": {
+    "number": "14",
+    "name": "Excerpts from No Man's Land",
+    "author": "Ali Dipp",
     "mobile": true
   }, 
   "neograph": {
@@ -80,18 +26,86 @@ var links = {
     "author": "Tiger Dingsun",
     "mobile": true
   }, 
-  "ali": {
-    "number": "14",
-    "name": "Excerpts from No Man's Land",
-    "author": "Ali Dipp",
+  "anonymous2": {
+    "number": "12",
+    "name": "Itchy, Fluffy, and Incomplete Things",
+    "author": "Anonymous",
+    "mobile": false
+  },
+  "jorge2": {
+    "number": "11",
+    "name": "Glossary of Feelings~~~",
+    "author": "Jorge Palacios",
+    "mobile": false
+  },
+  "justine": {
+    "number": "10",
+    "name": "7 Poems",
+    "author": "Justine Nguyễn-Nguyễn",
+    "mobile": true
+  },
+
+  "liby2": {
+    "number": "09",
+    "name": "Can't Run Trip Over Your Fucking Swag",
+    "author": "Liby Hays",
+    "mobile": false
+  },
+  "greta": {
+    "number": "08",
+    "name": "10 Poems",
+    "author": "Greta Sk",
+    "mobile": true
+  },
+  "liby1": {
+    "number": "07",
+    "name": "Pissed Pants Academy",
+    "author": "Liby Hays",
+    "mobile": true
+  },
+  "jorge1": {
+    "number": "06",
+    "name": "The Meaning Maker",
+    "author": "Jorge Palacios",
+    "mobile": true
+  },
+
+
+  "theia": {
+    "number": "05",
+    "name": "#hot sports girl",
+    "author": "Théïa Flynn",
+    "mobile": true
+  },
+  "libby": {
+    "number": "04",
+    "name": "SPIRAL",
+    "author": "Libby Marrs",
+    "mobile": true
+  },
+  "tiger": {
+    "number": "03",
+    "name": "Ballast",
+    "author": "Tiger Dingsun",
     "mobile": true
   }, 
-  "aayushi": {
-    "number": "15",
-    "name": "Dream Dress",
-    "author": "Aayushi Khowala",
+  "eliza": {
+    "number": "02",
+    "name": "Third Form: One Month on Testosterone",
+    "author": "Eliza Chen",
+    "mobile": true
+  },
+
+
+  "anonymous": {
+    "number": "01",
+    "name": "Untitled",
+    "author": "Anonymous",
     "mobile": false
-  }, 
+  },
+
+
+
 }
 
 var volume = new Tone.Volume(-6);
@@ -117,7 +131,6 @@ $(window).resize(function(){
 
 $("#container").on("mouseenter", ".line", function(){
   let i = $(this).index() - 3;
-  console.log(i);
   synth.triggerAttackRelease(notes[i], "8n");
 });
 

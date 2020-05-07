@@ -60,6 +60,10 @@ var tv;
 var th;
 
 $(document).ready(function(event){
+  Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+  let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+  $("#mute-btn").text(text);
+
   width = $(window).innerWidth();
   height = $(window).innerHeight();
   displayTitle(title, author);
@@ -146,7 +150,8 @@ function rotateHorizontal() {
 
 $("#mute-btn").click(function(){
   Tone.Master.mute = !Tone.Master.mute;
-  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+  localStorage.setItem('mute', Tone.Master.mute);
+  $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
 });
 
 $("#clockContainer").mouseenter(function(){

@@ -121,6 +121,10 @@ function animate() {
 };
 
 $(document).ready(function(event){
+  Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+  let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+  $("#mute-btn").text(text);
+
   poems.forEach(function(poem, index){
     poems_split.push(poem.split(". "));
   });
@@ -317,8 +321,10 @@ function rotateHorizontal() {
 
 $("#mute-btn").click(function(){
   Tone.Master.mute = !Tone.Master.mute;
-  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+  localStorage.setItem('mute', Tone.Master.mute);
+  $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
 });
+
 
 $("#clockContainer").mouseenter(function(){
   clearInterval(tv);

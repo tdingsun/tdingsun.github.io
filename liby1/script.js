@@ -31,16 +31,17 @@ var volume = new Tone.Volume(-24);
 var synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
 var notes = Tone.Frequency("G4").harmonize([0, 4, 7, 11, 14, 17, 21, 24, 28, 31, 28, 24, 21, 17, 14, 11, 7, 4]);
 
-StartAudioContext(Tone.context, 'div').then(function(){
-  //started
-  console.log("clicked");
+StartAudioContext(Tone.context, window);
 
-});
 
 var tv;
 var th;
 
 $(document).ready(function(event){
+  Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+  let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+  $("#mute-btn").text(text);
+
   width = $(window).innerWidth();
   height = $(window).innerHeight();
   displayTitle(title, author);
@@ -132,7 +133,8 @@ function rotateHorizontal() {
 
 $("#mute-btn").click(function(){
   Tone.Master.mute = !Tone.Master.mute;
-  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+  localStorage.setItem('mute', Tone.Master.mute);
+  $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
 });
 
 $("#clockContainer").mouseenter(function(){

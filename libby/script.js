@@ -17,11 +17,17 @@ var tv;
 var th;
 
 var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
+var volume = new Tone.Volume(-8);
+synth.chain(volume, Tone.Master);
 var notes = Tone.Frequency("G2").harmonize([0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28, 29, 31, 33, 35, 36]);
 
 StartAudioContext(Tone.context, window);
 
 $(document).ready(function(event){
+  Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+  let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+  $("#mute-btn").text(text);
+
   width = $(window).innerWidth();
   height = $(window).innerHeight();
   displayTitle(title, author);
@@ -129,5 +135,6 @@ $("#clockContainer").mouseleave(function(){
 
 $("#mute-btn").click(function(){
   Tone.Master.mute = !Tone.Master.mute;
-  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+  localStorage.setItem('mute', Tone.Master.mute);
+  $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
 });

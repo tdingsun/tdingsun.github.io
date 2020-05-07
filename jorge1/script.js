@@ -26,6 +26,10 @@ StartAudioContext(Tone.context, window);
 
 
 $(document).ready(function(event){
+  Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+  let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+  $("#mute-btn").text(text);
+
   width = parseInt($(window).innerWidth());
   height = parseInt($(window).innerHeight());
   displayTitle(title, author);
@@ -180,5 +184,7 @@ $("#clockContainer").mouseleave(function(){
 
 $("#mute-btn").click(function(){
   Tone.Master.mute = !Tone.Master.mute;
-  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+  localStorage.setItem('mute', Tone.Master.mute);
+  $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
 });
+
