@@ -19,7 +19,7 @@ body {
   position: fixed;
   top: 20px;
   left: 20px;
-  width: 100vw;
+  width: calc(100vw - 20px);
   height: 100vh;
   z-index: -1;
   transition: 0.5s;
