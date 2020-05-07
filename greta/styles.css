@@ -10,6 +10,7 @@ html, body {
   text-align: left;
   font-size: 14px;
   color: blue;
+  background-color: whitesmoke;
 }
 
 * {
@@ -19,8 +20,8 @@ html, body {
 #img-container {
   background-color: blue;
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 0;
+  right: 0;
   width: 200px;
   z-index: 1;
 }
@@ -122,4 +123,19 @@ p {
   background-color: blue;
   transition: 0.25s;
 
+}
+
+#mute-btn {
+  color: blue;
+  position: fixed;
+  padding: 25px;
+  right: 210px;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: white;
+  background-color: blue;
 }

@@ -114,6 +114,10 @@ function changeUIColor(new_color){
     $(".runner").css({
         "color": new_color
     });
+    $("#mute-btn").css({
+        "color": new_color
+    });
+    $('head').append(`<style>#mute-btn:hover {background-color : ${new_color}; color: whitesmoke!important;}</style>`)
 }
 
 function cloneLinks(div){
@@ -188,4 +192,9 @@ $("#clockContainer").mouseenter(function(){
     clearInterval(th);
     tv = setInterval(rotateVertical, 1000);
     th = setInterval(rotateHorizontal, 1000);
+  });
+
+  $("#mute-btn").click(function(){
+    Tone.Master.mute = !Tone.Master.mute;
+    $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
   });
