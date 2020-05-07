@@ -10,7 +10,7 @@ html, body {
   text-align: left;
   font-size: 14px;
   color: blue;
-  background-color: whitesmoke;
+  background-color: seashell;
 }
 
 * {
@@ -20,9 +20,9 @@ html, body {
 #img-container {
   background-color: blue;
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 200px;
+  bottom: 0;
+  left: 0;
+  width: 180px;
   z-index: 1;
 }
 
@@ -110,39 +110,38 @@ p {
 }
 
 #clockContainer {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 #vertical {
-  width: 20px;
-  height: 100px;
+  width: 12px;
+  height: 70px;
   background-color: blue;
   position: absolute;
-  left: 40px;
-  transition: 0.25s;
-
+  left: 29px;
 }
 
 #horizontal{
-  width: 100px;
-  height: 20px;
+  width: 70px;
+  height: 12px;
   position: absolute;
-  top: 40px;
+  top: 29px;
   background-color: blue;
-  transition: 0.25s;
-
 }
+
 
 #mute-btn {
   color: blue;
   position: fixed;
   padding: 25px;
   right: 0;
-  top: 130px;
+  top: 0px;
   text-align: center;
   cursor: pointer;
 }

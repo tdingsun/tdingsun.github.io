@@ -64,28 +64,31 @@ body {
 }
 
 #clockContainer {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 #vertical {
-  width: 20px;
-  height: 100px;
+  width: 12px;
+  height: 70px;
   background-color: khaki;
   position: absolute;
-  left: 40px;
+  left: 29px;
 }
 
 #horizontal{
-  width: 100px;
-  height: 20px;
+  width: 70px;
+  height: 12px;
   position: absolute;
-  top: 40px;
+  top: 29px;
   background-color: khaki;
 }
+
 
 #mute-btn {
   color: khaki;

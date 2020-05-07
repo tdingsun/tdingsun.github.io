@@ -61,35 +61,34 @@ body {
 }
 
 #clockContainer {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 #vertical {
-  width: 20px;
-  height: 100px;
+  width: 12px;
+  height: 70px;
   background-color: cornflowerblue;
   position: absolute;
-  left: 40px;
-  transition: 0.25s;
-
+  left: 29px;
 }
 
 #horizontal{
-  width: 100px;
-  height: 20px;
+  width: 70px;
+  height: 12px;
   position: absolute;
-  top: 40px;
+  top: 29px;
   background-color: cornflowerblue;
-  transition: 0.25s;
-
 }
 
 
 #mute-btn {
+  font-size: 16px;
   color: cornflowerblue;
   position: fixed;
   padding: 25px;
@@ -100,6 +99,6 @@ body {
 }
 
 #mute-btn:hover {
-  color: cornflowerblue;
-  background-color: khaki;
+  color: gainsboro;
+  background-color: cornflowerblue;
 }

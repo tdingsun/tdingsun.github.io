@@ -11,8 +11,8 @@ body {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
-  background-color: darkslategrey;
-  color: thistle;
+  background-color: tan;
+  color: royalblue;
 }
 
 * {
@@ -41,7 +41,7 @@ body {
   align-items: center;
   align-content: center;
   justify-content: center;
-  padding: 100px 0px 0px 0px;
+  padding: 75px 0px 50px 0px;
 }
 
 .word {
@@ -60,7 +60,7 @@ body {
 
 
 .line {
-  background-color: thistle;
+  background-color: royalblue;
   position: absolute;
 }
 
@@ -70,7 +70,6 @@ body {
 
 .worda:hover {
   text-decoration: underline;
-  animation: glow 0.1s ease infinite;
   /* text-transform: uppercase; */
   /* letter-spacing: -1px; */
 }
@@ -80,11 +79,11 @@ body {
     font-size: 10vw;
   }
   #title {
-    border-bottom: 2px solid thistle;
+    border-bottom: 2px solid tan;
     font-size: 15vw;
     top: 0;
     padding: 10px;
-    background-color: darkslategray;
+    background-color: tan;
   }
   #container {
     height: auto;
@@ -98,25 +97,43 @@ body {
 }
 
 #clockContainer {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
   position: fixed;
-  top: 25px;
-  right: 25px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 #vertical {
-  width: 20px;
-  height: 100px;
-  background-color: thistle;
+  width: 12px;
+  height: 70px;
+  background-color: royalblue;
   position: absolute;
-  left: 40px;
+  left: 29px;
 }
 
 #horizontal{
-  width: 100px;
-  height: 20px;
+  width: 70px;
+  height: 12px;
   position: absolute;
-  top: 40px;
-  background-color: thistle;
+  top: 29px;
+  background-color: royalblue;
+}
+
+#mute-btn {
+  font-size: 16px;
+  color: royalblue;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: tan;
+  background-color: royalblue;
 }

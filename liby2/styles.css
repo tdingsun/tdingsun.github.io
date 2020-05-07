@@ -154,35 +154,37 @@ span {
 /* common */
 
 #clockContainer {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
   position: fixed;
-  top: 25px;
-  right: 25px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 #vertical {
-  width: 20px;
-  height: 100px;
+  width: 12px;
+  height: 70px;
   background-color: darkkhaki;
   position: absolute;
-  left: 40px;
+  left: 29px;
 }
 
 #horizontal{
-  width: 100px;
-  height: 20px;
+  width: 70px;
+  height: 12px;
   position: absolute;
-  top: 40px;
+  top: 29px;
   background-color: darkkhaki;
 }
 
 
 #mute-btn {
-  color: khaki;
+  color: darkkhaki;
   position: fixed;
   padding: 25px;
-  left: calc(80vw - 25px);
+  right: 0;
   top: 0;
   text-align: center;
   cursor: pointer;
@@ -190,5 +192,5 @@ span {
 
 #mute-btn:hover {
   color: midnightblue;
-  background-color: khaki;
+  background-color: darkkhaki;
 }

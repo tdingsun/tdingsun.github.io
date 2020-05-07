@@ -10,12 +10,12 @@ body {
   font-size: 24px;
   text-align: left;
 
-  background-color: whitesmoke;
-  color: blue;
+  background-color: gainsboro;
+  color: darkgoldenrod;
 }
 
 hr {
-  border: 0.5px solid blue;
+  border: 0.5px solid darkgoldenrod;
   width: 200%;
   margin-left: -50%;
 }
@@ -65,31 +65,34 @@ span {
 }
 
 #clockContainer {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 #vertical {
-  width: 20px;
-  height: 100px;
-  background-color: blue;
+  width: 12px;
+  height: 70px;
+  background-color: darkgoldenrod;
   position: absolute;
-  left: 40px;
+  left: 29px;
 }
 
 #horizontal{
-  width: 100px;
-  height: 20px;
+  width: 70px;
+  height: 12px;
   position: absolute;
-  top: 40px;
-  background-color: blue;
+  top: 29px;
+  background-color: darkgoldenrod;
 }
 
+
 #mute-btn {
-  color: blue;
+  color: darkgoldenrod;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -101,5 +104,5 @@ span {
 
 #mute-btn:hover {
   color: white;
-  background-color: blue;
+  background-color: darkgoldenrod;
 }
