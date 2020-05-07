@@ -2,9 +2,6 @@ var width = $(window).width(); //window width
 var height = $(window).height(); //window height
 var myCanvas = document.getElementById('world'); //everything is in a canvas
 const blockMargin = 12;
-$("#world").css("width", width);
-$("#world").css("height", height);
-
 var fallingSpeed = 800;
 
 var bodies_list = []; //initiallize array of bodies(rendered rectangles)
@@ -21,7 +18,6 @@ var Engine = Matter.Engine,
     Events = Matter.Events;
 
 var engine = Engine.create();
-
 
 var render = Render.create({
   canvas: myCanvas,
@@ -64,7 +60,6 @@ animate();
 
 var title = "Portraits and Repetition";
 var author = "Wen Zhuang"
-var speed = 250;
 
 var poems = [
   "Adrian is my friend, who wears nude, but not the nude of the skin, more so the nude of what is protected by skin, flesh, in other words he is my friend, who is not of the skin, but of the flesh. Adrian is my friend, who you saw naked, but not the naked of the skin, even more naked than what is protected with skin, flesh, in other words, he is my friend, who is not of the skin, but of the meat. Adrian is a friend of mine, whom I have seen naked, but not naked from the skin, but skin naked rather than flesh, in other words, he is my friend, not from the skin, from the flesh. Adrian is a friend of mine, whom I’ve seen naked but not naked from skin, but skin, naked, not flesh, in other words, he is my friend, not from leather, from flesh. Adrian is a friend of mine, whom I’ve seen naked, but not naked by skin, but skin, naked, not flesh, in other words, he’s my friend, not skin, by flesh. Adrian is my friend, and I saw him naked, but not naked, but bare skin, not meat. In other words, it is my friend, not bare skin. Adrian is my friend, and I saw him naked, but not naked but bare skin, not meat. In other words, this is my friend, not bare skin.",
@@ -96,27 +91,27 @@ var curr_y = 0;
 //have to click to start audio context
 StartAudioContext(Tone.context, window);
 
-var volume = new Tone.Volume(-6);
+var volume = new Tone.Volume(-12);
 var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
-var notes = Tone.Frequency("C3").harmonize([0, 4, 7, 12, 16, 19, 24]);
+var notes = Tone.Frequency("C2").harmonize([0, 4, 7, 12, 16, 19, 24]);
 
 //main animation loop refreshes frame, 60fps
 
 function animate() {
   for(var i = 0; i < bodies_list.length; i++){
     let ri = $(".box").size() - i - 1;
+    let box = $(".box").eq(ri);
     var x = bodies_list[i].position.x;
     var y = bodies_list[i].position.y;
     const {min, max} = bodies_list[i].bounds;
-    var w = parseInt($(".box").eq(ri).css("width"));
-    var h = parseInt($(".box").eq(ri).css("height"));
+    var w = parseInt(box.css("width"));
+    var h = parseInt(box.css("height"));
     var angle = bodies_list[i].angle;
-    $(".box").eq(ri).css("position", "absolute");
-    $(".box").eq(ri).css("left", x - w/2 - blockMargin);
-    $(".box").eq(ri).css("top", y - h/2);
-    $(".box").eq(ri).css("transform", "rotate(" + angle + "rad)");
+    box.css("position", "absolute");
+    box.css("left", x - w/2 - blockMargin);
+    box.css("top", y - h/2);
+    box.css("transform", "rotate(" + angle + "rad)");
   }
-
   window.requestAnimationFrame(animate); 
 };
 
@@ -128,8 +123,6 @@ $(document).ready(function(event){
   poems.forEach(function(poem, index){
     poems_split.push(poem.split(". "));
   });
-  width = $(window).innerWidth();
-  height = $(window).innerHeight();
   displayTitle(title, author);
   setTimeout(setupText, 1500);
   tv = setInterval(rotateVertical, 1000);
@@ -152,14 +145,23 @@ function addSpans(){
   if(curr_x < poems_split[curr_y].length - 1){
     sentence += ".";
   }
+
   words = sentence.split(" ");
   words.forEach(function(word, index){
-    var newSpan = $(`<span class='box'>${word}</span>`);
+    var newSpan = $(`<span class='word'></span>`);
+
+    chars = word.split("");
+    chars.forEach(function(char, index){
+      newSpan.append(`<span class='box'>${char}</span>`)
+    })
     $("#container").append(newSpan);
   }); 
 }
 
 function addBlock(i){
+  var randNote = Math.floor(Math.random() * notes.length);
+  synth.triggerAttackRelease(notes[randNote], "8n");
+
   let ri = $(".box").size() - i - 1;
   var spanLeft = parseInt($(".box").eq(ri).offset().left);
   var spanTop = parseInt($(".box").eq(ri).offset().top);
@@ -167,15 +169,15 @@ function addBlock(i){
   var spanH = parseInt($(".box").eq(ri).css("height"));
 
   var body = Bodies.rectangle(spanLeft + spanW/2, spanTop + spanH/2, spanW, spanH, {
-    restitution: 0.9,
-    torque: 0.5,
-    sleepThreshold: 30 
+    restitution: 0.5,
+    torque: 0.1,
+    sleepThreshold: 10 
   });
   bodies_list.push(body);
   World.add(engine.world, [body]);
   if(i <= $(".box").size() - 2){
-    if(fallingSpeed > 15){
-      fallingSpeed *= 0.9;
+    if(fallingSpeed > 50){
+      fallingSpeed *= 0.96;
     }
     blocktimeout = setTimeout(addBlock, fallingSpeed, i + 1);
   }
@@ -184,9 +186,7 @@ function addBlock(i){
 function displayTitle(title, author){
   $("#title").html(title + "<br>by " + author);
   setTimeout(() => {
-    $("#title").css({
-      "font-size": "2rem"
-    });
+    $("#title").addClass("title-small");
   }, 1500);
 }
 

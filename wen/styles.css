@@ -32,8 +32,9 @@ body {
   z-index: 1;
 }
 
-#title:hover{
-  text-decoration: underline;
+.title-small {
+  font-size: 2rem!important;
+  letter-spacing: -1.25px!important;
 }
 
 #container {
@@ -57,13 +58,14 @@ body {
 
 span {
   display: inline-block;
-  margin-left: 10px;
   line-height: 0.8;
   padding: 0;
   cursor: pointer;
   letter-spacing: -0.1rem;
+}
 
-
+.word {
+  margin-left: 10px;
 }
 
 .arrow {
@@ -109,26 +111,28 @@ span {
 /* Common */
 
 #clockContainer {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 #vertical {
-  width: 20px;
-  height: 100px;
+  width: 12px;
+  height: 70px;
   background-color: seagreen;
   position: absolute;
-  left: 40px;
+  left: 29px;
 }
 
 #horizontal{
-  width: 100px;
-  height: 20px;
+  width: 70px;
+  height: 12px;
   position: absolute;
-  top: 40px;
+  top: 29px;
   background-color: seagreen;
 }
 
