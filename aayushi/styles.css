@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "menlo";
+  src: url("fonts/Menlo-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: left;
+  background-color: darkkhaki;
+  overflow: hidden;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#title {
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 0.9em;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+  color: black;
+}
+
+#title:hover{
+  text-decoration: underline;
+}
+
+.container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  padding: 5px;
+}
+
+#grid-0 {
+  /* color: black; */
+}
+
+#grid-0 .word {
+  width: calc(20% - 5px);
+  height: calc(25% - 5px);
+  justify-content: center;
+  align-items: fcenter;
+  padding: 30px;
+  font-size: 1.2rem;
+
+
+
+}
+
+#grid-1 {
+  /* color: black; */
+}
+
+#grid-1 .word {
+  width: calc(25% - 5px);
+  height: calc(20% - 5px);
+  font-size: 1.2rem;
+
+}
+
+#grid-2 {
+  /* color: black; */
+}
+
+#grid-2 .word {
+
+  width: calc(50% - 5px);
+  height: calc(50% - 5px);
+  font-size: 5rem;
+
+  /* border: 1px solid black; */
+
+}
+
+#grid-3 {
+  /* color: black; */
+}
+
+#grid-3 .word {
+
+  width: calc(10% - 5px);
+  height: calc(12.5% - 5px);
+  font-size: 1.2rem;
+
+  /* border: 1px solid black; */
+
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+
+}
+
+.word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 1;
+  color: black;
+  border: 1px solid black;
+  background-color: darkkhaki;
+  margin-left: 5px;
+  margin-bottom: 5px;
+
+}
+
+/* Common */
+
+#clockContainer {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 0;
+}
+
+#vertical {
+  width: 20px;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  left: 40px;
+}
+
+#horizontal{
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  background-color: black;
+}
+
+#mute-btn {
+  color: black;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: darkkhaki;
+  background-color: black;
+}
