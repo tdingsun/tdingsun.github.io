@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "menlo";
+  src: url("fonts/Menlo-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: left;
+  color: seagreen;
+  background-color: seashell;
+  overflow: hidden;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+
+}
+
+#title {
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 0.9em;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+  z-index: 1;
+}
+
+#title:hover{
+  text-decoration: underline;
+}
+
+#container {
+  position: fixed;
+  box-sizing: border-box;
+  font-size: 3rem;
+  padding: 125px 50px 25px 50px;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+#world {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+}
+
+span {
+  display: inline-block;
+  margin-left: 10px;
+  line-height: 0.8;
+  padding: 0;
+  cursor: pointer;
+  letter-spacing: -0.1rem;
+
+
+}
+
+.arrow {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+.arrow:hover{
+  color: blue;
+}
+
+#left-arrow {
+  position: fixed;
+  left: 10px;
+  top: calc(50vh - 5px);
+}
+
+#right-arrow {
+  position: fixed;
+  right: 10px;
+  top: calc(50vh - 5px);
+}
+
+#up-arrow {
+  position: fixed;
+  left: calc(50vw - 5px);
+  top: 10px;
+}
+#down-arrow {
+  position: fixed;
+  left: calc(50vw - 5px);
+  bottom: 10px;
+}
+/* Common */
+
+#clockContainer {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+
+#vertical {
+  width: 20px;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  left: 40px;
+}
+
+#horizontal{
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  background-color: black;
+}
+
+#mute-btn {
+  color: black;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: white;
+  background-color: black;
+}

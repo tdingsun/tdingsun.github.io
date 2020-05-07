@@ -73,7 +73,7 @@ var mouseConstraint = MouseConstraint.create(engine, {
                 visible: true
             }
         }
-    });
+});
 
 World.add(engine.world, mouseConstraint);
 

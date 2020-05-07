@@ -17,7 +17,7 @@ var tv;
 var th;
 
 var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
-var notes = Tone.Frequency("G3").harmonize([0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28, 29, 31, 33, 35, 36]);
+var notes = Tone.Frequency("G2").harmonize([0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28, 29, 31, 33, 35, 36]);
 
 StartAudioContext(Tone.context, window);
 
