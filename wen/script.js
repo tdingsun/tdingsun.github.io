@@ -181,36 +181,12 @@ function addBlock(i){
   }
 }
 
-
-$("#title").click(function(event){
-  // $(".box").removeClass("on");
-  // $(".box").removeClass("off");
-  // timeouts.forEach(function(t, index){
-  //   clearTimeout(t);
-  // });
-});
-
-$(".box").click(function(event){
-  let id = $(this).attr('id')[2] - 1;
-
-  if($(this).hasClass("on")){
-    clearTimeout(timeouts[id]);
-    $(this).addClass("off");
-    $(this).removeClass("on");
-  } else {
-    cycle(id, poems_split[id].length);
-    $(this).removeClass("off");
-    $(this).addClass("on");
-  }
-});
-
 function displayTitle(title, author){
   $("#title").html(title + "<br>by " + author);
   setTimeout(() => {
     $("#title").css({
       "font-size": "2rem"
     });
-
   }, 1500);
 }
 
@@ -247,14 +223,7 @@ function setArrows(){
   }
 }
 
-$("#left-arrow").click(lUpdate);
-
-$("#right-arrow").click(rUpdate);
-
-$("#down-arrow").click(dUpdate);
-
-$("#up-arrow").click(uUpdate);
-
+//arrow key functionality
 $(document).keydown(function(e) {
   let key = e.keyCode;
   switch(key) {
@@ -272,6 +241,11 @@ $(document).keydown(function(e) {
       break;
   }
 });
+
+$("#left-arrow").click(lUpdate);
+$("#right-arrow").click(rUpdate);
+$("#down-arrow").click(dUpdate);
+$("#up-arrow").click(uUpdate);
 
 function lUpdate(){
   curr_x = curr_x <= 0 ? 0 : curr_x-1;
@@ -296,9 +270,17 @@ function dUpdate(){
   setupText();
 }
 
+//defines and adds the walls
+function addStaticBlocks(){
+  //x, y, width, height
+  var ground = Bodies.rectangle(width/2, height - 30, width, 60, { isStatic: true});
+  var leftWall = Bodies.rectangle(0, height, 40, height*2, { isStatic: true });
+  var rightWall = Bodies.rectangle(width, height, 40, height*2, { isStatic: true });
+  var ceiling = Bodies.rectangle(width/2, -100, width, 200, {isStatic: true});
 
-
-
+  // add all of the bodies to the world
+  World.add(engine.world, [ground, leftWall, rightWall, ceiling]);
+}
 
 // Common
 
@@ -325,7 +307,6 @@ $("#mute-btn").click(function(){
   $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
 });
 
-
 $("#clockContainer").mouseenter(function(){
   clearInterval(tv);
   clearInterval(th);
@@ -340,23 +321,3 @@ $("#clockContainer").mouseleave(function(){
   th = setInterval(rotateHorizontal, 1000);
 });
 
-
-//defines and adds the walls
-function addStaticBlocks(){
-  //x, y, width, height
-  var ground = Bodies.rectangle(width/2, height - 30, width, 60, { isStatic: true});
-  var leftWall = Bodies.rectangle(0, height, 40, height*2, { isStatic: true });
-  var rightWall = Bodies.rectangle(width, height, 40, height*2, { isStatic: true });
-  var ceiling = Bodies.rectangle(width/2, -100, width, 200, {isStatic: true});
-  // var diagonalWall_1 = Bodies.rectangle(500, 500, 500, 20, {
-  //   isStatic: true,
-  //   angle: 0.5
-  // });
-  // var diagonalWall_2 = Bodies.rectangle(500, 500, 500, 20, {
-  //   isStatic: true,
-  //   angle: 2.5
-  // });
-
-  // add all of the bodies to the world
-  World.add(engine.world, [ground, leftWall, rightWall, ceiling]);
-}

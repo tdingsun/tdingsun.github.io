@@ -69,23 +69,31 @@ span {
 .arrow {
   font-size: 2rem;
   cursor: pointer;
-  display: none;
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
 }
 
 .arrow:hover{
-  color: blue;
+  color: seashell;
+  background-color: seagreen;
+
+  
+
 }
 
 #left-arrow {
   position: fixed;
   left: 10px;
-  top: calc(50vh - 5px);
+  top: calc(50vh - 20px);
 }
 
 #right-arrow {
   position: fixed;
   right: 10px;
-  top: calc(50vh - 5px);
+  top: calc(50vh - 20px);
 }
 
 #up-arrow {
@@ -111,7 +119,7 @@ span {
 #vertical {
   width: 20px;
   height: 100px;
-  background-color: black;
+  background-color: seagreen;
   position: absolute;
   left: 40px;
 }
@@ -121,11 +129,11 @@ span {
   height: 20px;
   position: absolute;
   top: 40px;
-  background-color: black;
+  background-color: seagreen;
 }
 
 #mute-btn {
-  color: black;
+  color: seagreen;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -135,6 +143,6 @@ span {
 }
 
 #mute-btn:hover {
-  color: white;
-  background-color: black;
+  color: seashell;
+  background-color: seagreen;
 }
