@@ -19,17 +19,7 @@ var th;
 var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
 var notes = Tone.Frequency("G3").harmonize([0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28, 29, 31, 33, 35, 36]);
 
-StartAudioContext(Tone.context, 'div').then(function(){
-  //started
-  console.log("clicked");
-
-});
-
-//have to click to start audio context
-$('div').click(function(){
-  Tone.start();
-  console.log("clicked");
-});
+StartAudioContext(Tone.context, window);
 
 $(document).ready(function(event){
   width = $(window).innerWidth();
@@ -135,4 +125,9 @@ $("#clockContainer").mouseleave(function(){
   clearInterval(th);
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 1000);
+});
+
+$("#mute-btn").click(function(){
+  Tone.Master.mute = !Tone.Master.mute;
+  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
 });

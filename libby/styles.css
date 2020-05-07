@@ -87,3 +87,19 @@ body {
   transition: 0.25s;
 
 }
+
+
+#mute-btn {
+  color: cornflowerblue;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: cornflowerblue;
+  background-color: khaki;
+}
