@@ -35,18 +35,30 @@ body {
 .title-small {
   font-size: 2rem!important;
   letter-spacing: -1.25px!important;
+  width: calc(100vw - 100px);
 }
 
 #container {
   position: fixed;
   box-sizing: border-box;
-  font-size: 3rem;
-  padding: 125px 50px 25px 50px;
+  font-size: 2rem;
+  padding: 125px 10px 25px 10px;
   width: 100vw;
   height: 100vh;
   left: 0;
   top: 0;
   z-index: -1;
+}
+
+@media (min-width: 768px) {
+  #title-small {
+    width: 100vw;
+  }
+
+  #container {
+    font-size: 3rem;
+    padding: 125px 50px 25px 50px;
+  }
 }
 
 #world {
@@ -58,7 +70,6 @@ body {
 
 span {
   display: inline-block;
-  line-height: 0.8;
   padding: 0;
   cursor: pointer;
   letter-spacing: -0.1rem;

@@ -163,18 +163,21 @@ function addBlock(i){
   synth.triggerAttackRelease(notes[randNote], "8n");
 
   let ri = $(".box").size() - i - 1;
-  var spanLeft = parseInt($(".box").eq(ri).offset().left);
-  var spanTop = parseInt($(".box").eq(ri).offset().top);
-  var spanW = parseInt($(".box").eq(ri).css("width"));
-  var spanH = parseInt($(".box").eq(ri).css("height"));
+  let box = $(".box").eq(ri);
+  var spanLeft = box.offset().left;
+  var spanTop = box.offset().top;
+  var spanW = parseInt(box.css("width"));
+  var spanH = parseInt(box.css("height"));
 
   var body = Bodies.rectangle(spanLeft + spanW/2, spanTop + spanH/2, spanW, spanH, {
-    restitution: 0.5,
+    restitution: 0.7,
     torque: 0.1,
     sleepThreshold: 10 
   });
+
   bodies_list.push(body);
   World.add(engine.world, [body]);
+
   if(i <= $(".box").size() - 2){
     if(fallingSpeed > 50){
       fallingSpeed *= 0.96;
@@ -254,7 +257,6 @@ function lUpdate(){
 
 function rUpdate(){
   curr_x = curr_x >= (poems_split[curr_y].length - 1) ? curr_x : curr_x+1;
-  console.log(curr_x);
   setupText();
 }
 

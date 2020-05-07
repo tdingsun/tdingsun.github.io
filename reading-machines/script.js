@@ -6,7 +6,7 @@ var links = {
     "number": "16",
     "name": "Portraits and Repetition",
     "author": "Wen Zhuang",
-    "mobile": false
+    "mobile": true
   }, 
   "aayushi": {
     "number": "15",
