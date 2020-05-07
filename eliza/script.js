@@ -1,3 +1,4 @@
+//horizontal scroll
 function transformScroll(event) {
   if (!event.deltaY) {
     return;
@@ -9,10 +10,10 @@ function transformScroll(event) {
 var element = document.getElementById("container")
 element.addEventListener("wheel", transformScroll);
 
-
+/////
 var width;
 var height;
-var title = "Third Form:<br>A First Month on Testosterone";
+var title = "Third Form:<br>One Month on Testosterone";
 var author = "Eliza Chen"
 var speed = 750;
 var hist = [];
