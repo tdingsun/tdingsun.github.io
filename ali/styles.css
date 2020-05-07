@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "menlo";
+  src: url("fonts/Menlo-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: left;
+  background-color: darkgoldenrod;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#title {
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 0.9em;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+  color: thistle;
+  z-index: -1;
+  position: fixed;
+}
+
+.title-small {
+  font-size: 3rem!important;
+}
+
+#container {
+  width: 100vw;
+  padding: 5px;
+  padding-top: 100vh;
+}
+
+.word {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 1;
+  border: 1px solid thistle;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  font-size: 1.3rem;
+}
+
+/* Common */
+
+#clockContainer {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 0;
+}
+
+#vertical {
+  width: 20px;
+  height: 100px;
+  background-color: thistle;
+  position: absolute;
+  left: 40px;
+}
+
+#horizontal{
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  background-color: thistle;
+}
+
+#mute-btn {
+  color: thistle;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: darkgoldenrod;
+  background-color: thistle;
+}
