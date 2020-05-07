@@ -4,8 +4,8 @@ html, body {
   font-family: sans-serif;
   text-align: left;
   font-size: 14px;
-  color: darkslategrey;
-  background-color: thistle;
+  color: orangered;
+  background-color: cornsilk;
 }
 
 h1 {
@@ -90,8 +90,9 @@ p {
   overflow: auto;
   padding: 20px;
   font-size: 1rem;
-  border: 1px solid darkslategrey;
-  background-color: thistle;
+  border: 1px solid orangered;
+  background-color: cornsilk;
+  color: orangered;
 
   font-size: 1.2rem;
   line-height: 1.8rem;
@@ -100,14 +101,23 @@ p {
   height: 62px;
   width: 100%;
   margin-top: -1px;
+  border-radius: 10px;
 }
-
 
 .page:hover {
-  color: thistle;
-  background-color: darkslategrey;
   cursor: pointer;
 }
+
+.page:not(.expanded):hover {
+  font-style: italic;
+}
+
+.expanded:hover {
+  color: cornsilk;
+  background-color: orangered;
+  border: 1px solid cornsilk;
+}
+
 
 @media (min-width: 768px) {
   #container {
@@ -125,45 +135,41 @@ p {
 
 
 .expanded {
-  height: 550px;
+  height: 1000px;
   max-width: 400px;
-  background-color: darkslategrey;
-  color: thistle;
-  border: 1px solid thistle;
 }
 
 /* Common */
 
+
 #clockContainer {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 #vertical {
-  width: 20px;
-  height: 100px;
-  background-color: darkslategrey;
+  width: 12px;
+  height: 70px;
+  background-color: orangered;
   position: absolute;
-  left: 40px;
-  transition: 0.25s;
-
+  left: 29px;
 }
 
 #horizontal{
-  width: 100px;
-  height: 20px;
+  width: 70px;
+  height: 12px;
   position: absolute;
-  top: 40px;
-  background-color: darkslategrey;
-  transition: 0.25s;
-
+  top: 29px;
+  background-color: orangered;
 }
 
 #mute-btn {
-  color: darkslategray;
+  color: orangered;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -174,6 +180,6 @@ p {
 }
 
 #mute-btn:hover {
-  color: thistle;
-  background-color: darkslategray;
+  color: cornsilk;
+  background-color: orangered;
 }

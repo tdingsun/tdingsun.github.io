@@ -72,28 +72,31 @@ body {
   line-height: 1.1;
 }
 
+
 #clockContainer {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 #vertical {
-  width: 20px;
-  height: 100px;
-  background-color: darkslategray;
+  width: 12px;
+  height: 70px;
+  background-color: darkslategrey;
   position: absolute;
-  left: 40px;
+  left: 29px;
 }
 
 #horizontal{
-  width: 100px;
-  height: 20px;
+  width: 70px;
+  height: 12px;
   position: absolute;
-  top: 40px;
-  background-color: darkslategray;
+  top: 29px;
+  background-color: darkslategrey;
 }
 
 #mute-btn {

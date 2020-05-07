@@ -95,17 +95,12 @@ var links = {
     "author": "Eliza Chen",
     "mobile": true
   },
-
-
   "anonymous": {
     "number": "01",
     "name": "Untitled",
     "author": "Anonymous",
     "mobile": false
-  },
-
-
-
+  }
 }
 
 var volume = new Tone.Volume(-6);
