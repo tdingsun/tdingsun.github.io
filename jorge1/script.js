@@ -15,22 +15,15 @@ var word_index = 0;
 var hist = [];
 var histLimit = 20;
 
-var synth = new Tone.PolySynth(4, Tone.Synth).toMaster();
+var volume = new Tone.Volume(-12);
+var synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
 var notes = Tone.Frequency("F3").harmonize([0, 2, 4, 5, 7, 9, 11, 12]);
 
 var tv;
 var th;
 
-StartAudioContext(Tone.context, 'div').then(function(){
-  //started
-  console.log("clicked");
-});
+StartAudioContext(Tone.context, window);
 
-//have to click to start audio context
-$('div').click(function(){
-  Tone.start();
-  console.log("clicked");
-});
 
 $(document).ready(function(event){
   width = parseInt($(window).innerWidth());
@@ -135,6 +128,7 @@ function timer() {
 
   if(word == "*"){
     $("body").toggleClass("colormode2");
+    $("#mute-btn").toggleClass("mute-alt");
   }
 
   // continue/end condition
@@ -182,4 +176,9 @@ $("#clockContainer").mouseleave(function(){
   clearInterval(th);
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 1000);
+});
+
+$("#mute-btn").click(function(){
+  Tone.Master.mute = !Tone.Master.mute;
+  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
 });

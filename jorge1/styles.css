@@ -58,6 +58,7 @@ body {
   position: absolute;
   width: 30%;
   right: 0;
+  top: 0;
   font-size: 12px;
 
 }
@@ -89,4 +90,28 @@ body {
   background-color: black;
   transition: 0.25s;
 
+}
+
+#mute-btn {
+  color: mediumaquamarine;
+  position: fixed;
+  padding: 25px;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: black;
+  background-color: mediumaquamarine;
+}
+
+.mute-alt {
+  color: white!important;
+}
+
+.mute-alt:hover {
+  color: mediumaquamarine!important;
+  background-color: white!important;
 }
