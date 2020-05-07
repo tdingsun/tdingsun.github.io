@@ -33,12 +33,6 @@ body {
   text-decoration: underline;
 }
 
-.container {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  padding: 5px;
-}
 
 #grid-0 {
   /* color: black; */
@@ -86,17 +80,17 @@ body {
 }
 
 #grid-3 .word {
-
   width: calc(10% - 5px);
   height: calc(12.5% - 5px);
   font-size: 1.2rem;
-
   /* border: 1px solid black; */
-
 }
 
-
 .container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  padding: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
