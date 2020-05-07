@@ -123,7 +123,12 @@ function setupText(){
 function fillPanel() {
   for (const [key, value] of Object.entries(keywords)){
     $("#panel").append($(`<div id='${key}-btn' class="btn">${key}</div>`));
+
+    keywords[key].forEach(function(word, index){
+      $(`.${word}`).css("color", "midnightblue");
+    });
   } 
+
 }
 
 var currRotateV = 0;
