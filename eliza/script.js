@@ -40,22 +40,17 @@ $(document).ready(function(event){
   width = $(window).innerWidth();
   height = $(window).innerHeight();
   displayTitle(title, author);
-  setTimeout(function(){
-    $("#title").css({
-      color: "thistle"
-    });
-  }, 2000);
+
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 2000);
   setTimeout(timer, 2000);
 });
 
-
-
-
-
 function displayTitle(title, author){
   $("#title").html(title + "<br>by " + author);
+  setTimeout(function(){
+    $("#title").addClass("title-small");
+  }, 2000);
 }
 
 

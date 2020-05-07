@@ -13,7 +13,7 @@ body {
 }
 
 #title {
-  font-size: 6em;
+  font-size: 6rem;
   letter-spacing: -2px;
   line-height: 0.9em;
   position: fixed;
@@ -24,6 +24,10 @@ body {
   height: 100vh;
   z-index: -1;
   transition: 0.5s;
+}
+
+.title-small {
+  font-size: 2rem!important;
 }
 
 #container {
@@ -90,6 +94,21 @@ body {
   height: 20px;
   position: absolute;
   top: 40px;
+  background-color: darkslategray;
+}
+
+#mute-btn {
+  color: darkslategray;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: thistle;
   background-color: darkslategray;
 }
 
