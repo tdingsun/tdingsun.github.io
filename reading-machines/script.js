@@ -97,10 +97,10 @@ var links = {
     "author": "Eliza Chen",
     "mobile": true
   },
-  "anonymous": {
+  "sb": {
     "number": "01",
-    "name": "Untitled",
-    "author": "Anonymous",
+    "name": "Wet Dreams",
+    "author": "S.B.",
     "mobile": false
   }
 }

@@ -1,5 +1,5 @@
-var title = "Untitled";
-var author = "Anonymous"
+var title = "Wet Dreams";
+var author = "S.B."
 
 var txt = "When I had my first wet dream. At the age of 20. I was able to swallow him whole – without pinching my insides. I felt uncomfortable but I knew it was good for me. I fantasize about straight guys hardcore, its stupid but helps me reclaim a tiny bit of the power that patriarchy takes away from me. I’m not going to apologize for that, ever. I get the chance to strip them of their subjecthood, treat them like objects of my fantasy. In this minute circumstance I am able to control what traumatizes me. That creamy sweet feeling escaping me. The smoothness of my thoughts taking a very direct physical form – kinda ontological. a pulsating release, delicate attachments releasing – an awkward first auto-orgasm."
 
