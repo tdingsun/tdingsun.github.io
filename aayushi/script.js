@@ -20,7 +20,7 @@ paragraphs.forEach(function(p, index){
 var tv;
 var th;
 
-wordID = 0;
+var wordID = 0;
 
 var volume = new Tone.Volume(-6);
 var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
