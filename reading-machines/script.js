@@ -101,7 +101,7 @@ var links = {
     "number": "01",
     "name": "Wet Dreams",
     "author": "S.B.",
-    "mobile": false
+    "mobile": true
   }
 }
 
