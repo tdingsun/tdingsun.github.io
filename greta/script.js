@@ -1,5 +1,5 @@
 var title = "10 Poems";
-var author = "Greta<br>Huang<br>Skagerlind"
+var author = "Greta Huang Skagerlind"
 
 var colors = ["red", "forestgreen", "orange", "magenta", "cornflowerblue", "darkgoldenrod", "teal", "purple", "blue"];
 var color_index = 0;
@@ -158,7 +158,7 @@ function cloneLinks(div){
 }
 
 function displayTitle(title, author){
-    $("#title").html(title + "<br>by<br>" + author);
+    $("#title").html(title + "<br>by " + author);
 }
 
 

@@ -51,6 +51,7 @@ html, body {
   display: inline-block;
   position: absolute;
   width: 550px;
+  max-width: calc(100vw - 20px);
   background-color: rgba(255, 255, 255, 0);
 }
  
@@ -74,6 +75,7 @@ p {
   font-size: 8em;
   letter-spacing: -2px;
   line-height: 0.9em;
+  width: 100vw;
 }
 
 .runner {
@@ -105,6 +107,10 @@ p {
   #mute-btn {
     right: 210px;
     top: 0;
+  }
+
+  .runner {
+    max-width: 180px;
   }
 }
 
