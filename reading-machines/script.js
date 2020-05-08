@@ -116,6 +116,9 @@ if ( window.location !== window.parent.location ) {
   var notes = Tone.Frequency("C3").harmonize([0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 31, 33, 36]);
   
   StartAudioContext(Tone.context, window);  
+  $(window).click(function(){
+    Tone.context.resume();
+  });
 }
 
 

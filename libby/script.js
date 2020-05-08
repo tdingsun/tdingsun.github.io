@@ -22,6 +22,9 @@ synth.chain(volume, Tone.Master);
 var notes = Tone.Frequency("G2").harmonize([0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24, 26, 28, 29, 31, 33, 35, 36]);
 
 StartAudioContext(Tone.context, window);
+$(window).click(function(){
+  Tone.context.resume();
+});
 
 $(document).ready(function(event){
   Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;

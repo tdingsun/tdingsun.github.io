@@ -55,6 +55,9 @@ var synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
 var notes = Tone.Frequency("G3").harmonize([0, 4, 7, 12]);
 
 StartAudioContext(Tone.context, window);
+$(window).click(function(){
+  Tone.context.resume();
+});
 
 var tv;
 var th;

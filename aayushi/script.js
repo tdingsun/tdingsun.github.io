@@ -27,8 +27,11 @@ var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
 var notes = Tone.Frequency("C3").harmonize([0, 4, 7, 12, 16, 19, 24, 28, 31, 36]);
 
 //have to click to start audio context
-StartAudioContext(Tone.context, window);
+StartAudioContext(Tone.context, 'window');
 
+$(window).click(function(){
+  Tone.context.resume();
+});
 
 $(document).ready(function(event){
   Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;

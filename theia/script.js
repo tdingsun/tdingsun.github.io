@@ -14,7 +14,9 @@ var synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
 var notes = Tone.Frequency("G4").harmonize([0, 2, 4, 5, 7, 11, 14, 17, 21]);
 
 StartAudioContext(Tone.context, window);
-
+$(window).click(function(){
+  Tone.context.resume();
+});
 
 var tv;
 var th;

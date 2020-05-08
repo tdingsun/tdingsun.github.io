@@ -90,10 +90,13 @@ var curr_y = 0;
 
 //have to click to start audio context
 StartAudioContext(Tone.context, window);
+$(window).click(function(){
+  Tone.context.resume();
+});
 
 var volume = new Tone.Volume(-12);
 var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
-var notes = Tone.Frequency("C2").harmonize([0, 4, 7, 12, 16, 19, 24]);
+var notes = Tone.Frequency("C3").harmonize([0, 4, 7, 12, 16, 0, 4, 7, 12, 16, 0, 4, 7, 12, 16, 0, 4, 7, 12, 16, 12, 16, 19, 24, 12, 16, 19, 24, 12, 16, 19, 24, 12, 16, 19, 24, 12, 16, 19, 24, 28]);
 
 //main animation loop refreshes frame, 60fps
 
@@ -159,8 +162,7 @@ function addSpans(){
 }
 
 function addBlock(i){
-  var randNote = Math.floor(Math.random() * notes.length);
-  synth.triggerAttackRelease(notes[randNote], "8n");
+  synth.triggerAttackRelease(notes[i % notes.length], "8n");
 
   let ri = $(".box").size() - i - 1;
   let box = $(".box").eq(ri);

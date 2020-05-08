@@ -30,7 +30,9 @@ synth.chain(volume, Tone.Master);
 var notes = Tone.Frequency("G2").harmonize([0, 4, 7, 11, 14, 17, 21, 24, 28, 31, 35, 36]);
 
 StartAudioContext(Tone.context, window);
-
+$(window).click(function(){
+  Tone.context.resume();
+});
 
 var tv;
 var th;

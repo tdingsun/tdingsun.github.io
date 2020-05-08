@@ -4,6 +4,9 @@ var author = "Tiger Dingsun"
 
 
 StartAudioContext(Tone.context, window);
+$(window).click(function(){
+    Tone.context.resume();
+});
 
 var synth = new Tone.PolySynth(5, Tone.Synth).toMaster();
 var notes = Tone.Frequency("A3").harmonize([0, 2, 5, 7, 9, 12]);

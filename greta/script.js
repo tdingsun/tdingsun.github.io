@@ -17,6 +17,9 @@ var currRotateV = 0;
 var currRotateH = 0;
 
 StartAudioContext(Tone.context, window);
+$(window).click(function(){
+    Tone.context.resume();
+});
 
 var synth = new Tone.PolySynth(5, Tone.Synth);
 var volume = new Tone.Volume(-8);

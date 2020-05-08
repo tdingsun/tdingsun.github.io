@@ -87,6 +87,7 @@ span {
   width: 40px;
   height: 40px;
   border-radius: 40px;
+  z-index: 1;
 }
 
 .arrow:hover{

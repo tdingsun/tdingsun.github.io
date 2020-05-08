@@ -86,7 +86,11 @@ var feelings = ["The comfort and love you feel when you look at someone you’re
 var pDivs = [];
 
 var word_index = 0;
+
 StartAudioContext(Tone.context, window);
+$(window).click(function(){
+  Tone.context.resume();
+});
 
 var noise = new Tone.Noise("brown");
 noise.start();

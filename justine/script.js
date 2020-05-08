@@ -29,6 +29,9 @@ var th;
 
 //have to click to start audio context
 StartAudioContext(Tone.context, window);
+$(window).click(function(){
+  Tone.context.resume();
+});
 
 poems.forEach(function(poem, index){
   poems_split.push(poem.split(" "));

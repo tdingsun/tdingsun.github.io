@@ -23,7 +23,9 @@ var tv;
 var th;
 
 StartAudioContext(Tone.context, window);
-
+$(window).click(function(){
+  Tone.context.resume();
+});
 
 $(document).ready(function(event){
   Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
