@@ -118,6 +118,8 @@ $("#clockContainer").mouseenter(function(){
   clearInterval(th);
   tv = setInterval(rotateVertical, 30);
   th = setInterval(rotateHorizontal, 30);
+  $("#nav").addClass("showNav");
+  $("#clockContainer").children().addClass("navClock");
 });
 
 $("#clockContainer").mouseleave(function(){
@@ -127,8 +129,14 @@ $("#clockContainer").mouseleave(function(){
   th = setInterval(rotateHorizontal, 1000);
 });
 
+$("#nav").mouseleave(function(){
+  $("#nav").removeClass("showNav");
+  $("#clockContainer").children().removeClass("navClock");
+});
+
 $("#mute-btn").click(function(){
   Tone.Master.mute = !Tone.Master.mute;
   localStorage.setItem('mute', Tone.Master.mute);
   $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
 });
+

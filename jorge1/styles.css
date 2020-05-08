@@ -71,6 +71,7 @@ body {
   position: fixed;
   display: inline-block;
   cursor: pointer;
+  z-index: 2;
 }
 
 #vertical {
@@ -110,5 +111,25 @@ body {
 
 .mute-alt:hover {
   color: seagreen!important;
+  background-color: cornsilk!important;
+}
+
+#nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 0px;
+  height: 100vh;
+  border: 0;
+  transition: 0.25s;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.showNav {
+  width: 400px!important;
+}
+
+.navClock {
   background-color: cornsilk!important;
 }

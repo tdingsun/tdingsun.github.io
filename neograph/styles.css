@@ -25,11 +25,14 @@ body {
   top: 10px;
   left: 10px;
   font-size: 6rem;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
+  transition: 0.25s;
 }
 
 .title-small {
   font-size: 2rem!important;
+  letter-spacing: -1.5px!important;
+
 }
 
 #container {
@@ -104,6 +107,7 @@ body {
   position: fixed;
   display: inline-block;
   cursor: pointer;
+  z-index: 2;
 }
 
 #vertical {
@@ -136,4 +140,24 @@ body {
 #mute-btn:hover {
   color: tan;
   background-color: royalblue;
+}
+
+#nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 0px;
+  height: 100vh;
+  border: 0;
+  transition: 0.25s;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.showNav {
+  width: 400px!important;
+}
+
+.navClock {
+  background-color: cornsilk!important;
 }
