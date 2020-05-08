@@ -26,6 +26,9 @@ $(document).ready(function(event){
   displayTitle(title, author);
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 2000);
+
+  var randNote = Math.floor(Math.random() * notes.length);
+  synth.triggerAttackRelease(notes[randNote], "8n");
 });
 
 // Common

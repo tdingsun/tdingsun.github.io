@@ -28,7 +28,6 @@ a {
 
 #about {
   font-style: italic;
-  padding-bottom: 10px;
 }
 
 #about a {
@@ -56,25 +55,7 @@ a {
   font-size: 1.2rem;
 }
 
-@media (min-width: 768px) {
-  #header {
-    font-size: 6rem;
-    letter-spacing: -0.3rem;
-  }
 
-  .line:not(#th):hover{
-    color: cornflowerblue;
-    background-color: cornsilk;
-    justify-content: space-around;
-    font-size: 2rem;
-    letter-spacing: -0.05rem;
-  }
-
-  .line-alt:not(#th):hover {
-    letter-spacing: -0.2rem;
-    font-size: 6rem;
-  }
-}
 
 .number {
 }
@@ -107,32 +88,39 @@ a {
 
 #header {
   font-size: 4rem;
+  line-height: 1;
+  max-width: calc(100vw - 50px);
   letter-spacing: -0.2rem;
-  margin-left: -5px;
-  display: inline;
+  margin-left: -2px;
+  display: inline-block;
 }
+
+
 
 /* Alternate */
 
 .line-alt {
   display: inline;
   border-bottom: none;
-  font-size: 6rem;
+  font-size: 4rem;
   transition:0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  letter-spacing: -0.3rem;
+  letter-spacing: -0.1rem;
   margin-right: 100px;
   padding: 0px 10px 0px 8px;
+  line-height: 1;
 }
 
 .line-alt:not(#th):hover{
   /* color: white;
   background-color: black; */
-  font-size: 6rem;
+  font-size: 4rem;
   font-style: italic;
   background-color: cornsilk;
   color: cornflowerblue;
   border-radius: 2px;
 }
+
+
 
 .th-alt {
   display: none;
@@ -151,7 +139,7 @@ a {
 
 .number-alt {
   position: relative;
-  top: -50px;
+  top: -30px;
   font-size: 1rem;
   letter-spacing: -0.05rem;
   padding-right: 5px;
@@ -178,12 +166,44 @@ a {
   position: relative;
   font-size: 1rem;
   letter-spacing: -0.05rem;
-  top: -50px;
+  top: -30px;
   white-space: nowrap;
 }
 
 .mobile-alt::before {
   content: "Mobile? ";
+}
+
+@media (min-width: 768px) {
+  #header {
+    font-size: 6rem;
+    letter-spacing: -0.3rem;
+  }
+
+  .line:not(#th):hover{
+    color: cornflowerblue;
+    background-color: cornsilk;
+    justify-content: space-around;
+    font-size: 2rem;
+    letter-spacing: -0.05rem;
+  }
+
+  .line-alt:not(#th):hover {
+    letter-spacing: -0.2rem;
+    font-size: 6rem;
+  }
+
+  .line-alt {
+    font-size: 6rem;
+  }
+
+  .mobile-alt {
+    top: -50px;
+  }
+
+  .number-alt {
+    top: -50px;
+  }
 }
 
 
