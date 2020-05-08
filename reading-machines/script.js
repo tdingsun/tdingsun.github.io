@@ -1,3 +1,5 @@
+
+
 var w = $(window).width();
 var h = $(window).height();
 var linkBody = "https://tdingsun.github.io/";
@@ -103,17 +105,28 @@ var links = {
   }
 }
 
-var volume = new Tone.Volume(-6);
-var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
-var notes = Tone.Frequency("C3").harmonize([0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 31, 33, 36]);
-
-StartAudioContext(Tone.context, window);
+if ( window.location !== window.parent.location ) {	
+  $("#mute-btn").hide();
+  $("#clockContainer").hide();
+  Tone.Master.mute = true;
+  // The page is in an iframe	
+} else {
+  var volume = new Tone.Volume(-6);
+  var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
+  var notes = Tone.Frequency("C3").harmonize([0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 31, 33, 36]);
+  
+  StartAudioContext(Tone.context, window);  
+}
 
 
 var tv;
 var th;
 
 $(document).ready(function(event){
+  Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
+  let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
+  $("#mute-btn").text(text);
+
   makeLinks();
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 1200);
@@ -163,7 +176,7 @@ function makeLinks() {
     let number = value.number;
     let mobile = value.mobile ? "Yes" : "No";
 
-    let newline = $(`<a class='line' href='${linkBody + key}' target='_self'></a>`);
+    let newline = $(`<a class='line' href='${linkBody + key}' target='_top'></a>`);
     newline.append($(`<span class="number">RM–${number}</span>`));
     newline.append($(`<span class="title"><a ">${title}</a></span>`));
     newline.append($(`<span class="by">by</span>`));
@@ -195,5 +208,6 @@ function rotateHorizontal() {
 
 $("#mute-btn").click(function(){
   Tone.Master.mute = !Tone.Master.mute;
-  $(this).text($(this).text() == 'MUTE' ? 'SOUND ON' : 'MUTE');
+  localStorage.setItem('mute', Tone.Master.mute);
+  $(this).text(Tone.Master.mute ? "SOUND ON" : "MUTE");
 });

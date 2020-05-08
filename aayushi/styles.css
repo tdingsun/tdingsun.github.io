@@ -3,7 +3,7 @@
   src: url("fonts/Menlo-Regular.ttf");
 }
 
-body {
+body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -122,6 +122,8 @@ body {
   position: fixed;
   display: inline-block;
   cursor: pointer;
+  z-index: 2;
+  
 }
 
 #vertical {
@@ -130,6 +132,7 @@ body {
   background-color: black;
   position: absolute;
   left: 29px;
+  transition: background-color 0.25s;
 }
 
 #horizontal{
@@ -138,6 +141,7 @@ body {
   position: absolute;
   top: 29px;
   background-color: black;
+  transition: background-color 0.25s;
 }
 
 #mute-btn {
@@ -153,4 +157,24 @@ body {
 #mute-btn:hover {
   color: darkkhaki;
   background-color: black;
+}
+
+#nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 0px;
+  height: 100vh;
+  border: 0;
+  transition: 0.25s;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.showNav {
+  width: 400px!important;
+}
+
+.navClock {
+  background-color: cornsilk!important;
 }
