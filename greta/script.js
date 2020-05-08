@@ -1,5 +1,5 @@
 var title = "10 Poems";
-var author = "Greta Sk"
+var author = "Greta Huang Skagerlind"
 
 var colors = ["red", "forestgreen", "orange", "magenta", "cornflowerblue", "darkgoldenrod", "teal", "purple", "blue"];
 var color_index = 0;

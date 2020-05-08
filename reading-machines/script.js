@@ -56,7 +56,7 @@ var links = {
   "greta": {
     "number": "08",
     "name": "10 Poems",
-    "author": "Greta Sk",
+    "author": "Greta Huang Skagerlind",
     "mobile": true
   },
   "liby1": {
