@@ -26,15 +26,15 @@ a {
   text-decoration: none;
 }
 
-#about {
+.about {
   font-style: italic;
 }
 
-#about a {
+.about a {
   text-decoration: underline;
 }
 
-#about a:hover {
+.about a:hover {
   font-style: normal;
 }
 
@@ -131,7 +131,7 @@ a {
 }
 
 .about-alt {
-  width: 300px;
+  width: 315px;
   line-height: 1.2;
   display: inline-block;
   margin: 0;

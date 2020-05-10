@@ -146,7 +146,7 @@ $("#container").on("mouseenter", ".line", function(){
 });
 
 $("#clockContainer").click(function(){
-  $("#about").toggleClass('about-alt');
+  $(".about").toggleClass('about-alt');
   $("#th").toggleClass('th-alt');
   $("#linklist").toggleClass('linklist-alt');
   $(".line").toggleClass('line-alt');
