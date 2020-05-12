@@ -33,6 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 25px;
+  z-index: 0;
 }
 
 .feeling {
