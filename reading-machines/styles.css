@@ -128,11 +128,18 @@ a {
 }
 
 .bio a {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  border-radius: 20px;
+  border: 1px solid cornflowerblue;
+  /* background-color: cornflowerblue;
+  color: cornsilk; */
+  transition: background-color 0.25s;
 }
 
 .bio a:hover {
   font-style: italic;
+  background-color: cornflowerblue;
+  color: cornsilk;
 }
 
 .bio-alt {

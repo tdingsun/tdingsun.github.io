@@ -26,13 +26,14 @@ var links = {
     "number": "13",
     "name": "Neograph",
     "author": "Tiger Dingsun",
+    "bio": "is my second language. <a href='https://tiger.exposed/'>Website</a>",
     "mobile": true
   }, 
   "danning": {
     "number": "12",
     "name": "Itchy, Fluffy, and Incomplete Things",
     "author": "Danning Niu",
-    "bio": "Working towards a sound and compassionate grasp of our concrete realities. <a href='https://danningniu.com/'>danningniu.com</a>",
+    "bio": "is working towards a sound and compassionate grasp of our concrete realities. <a href='https://danningniu.com/'>Website</a>",
     "mobile": false
   },
   "jorge2": {
@@ -53,21 +54,21 @@ var links = {
     "number": "09",
     "name": "Can't Run Trip Over Your Fucking Swag",
     "author": "Liby Hays",
-    "bio": "Liby Hays is a writer and streetwear designer from Montclair, NJ. Her first graphic novel, <i>Geniacs!</i> should be out sometime in 2020. <a href='http://libyhays.net/'>Website</a>",
+    "bio": "is a writer and streetwear designer from Montclair, NJ. Her first graphic novel, <i>Geniacs!</i> should be out sometime in 2020. <a href='http://libyhays.net/'>Website</a>",
     "mobile": false
   },
   "greta": {
     "number": "08",
     "name": "10 Poems",
     "author": "Greta Huang Skagerlind",
-    "bio": "Greta Huang Skagerlind is a designer and writer. <a href='http://gskagerlind.com/'>Website</a>",
+    "bio": "is a designer and writer. <a href='http://gskagerlind.com/'>Website</a>",
     "mobile": true
   },
   "liby1": {
     "number": "07",
     "name": "Pissed Pants Academy",
     "author": "Liby Hays",
-    "bio": "Liby Hays is a writer and streetwear designer from Montclair, NJ. Her first graphic novel, <i>Geniacs!</i> should be out sometime in 2020. <a href='http://libyhays.net/'>Website</a>",
+    "bio": "is a writer and streetwear designer from Montclair, NJ. Her first graphic novel, <i>Geniacs!</i> should be out sometime in 2020. <a href='http://libyhays.net/'>Website</a>",
     "mobile": true
   },
   "jorge1": {
@@ -94,6 +95,7 @@ var links = {
     "number": "03",
     "name": "Ballast",
     "author": "Tiger Dingsun",
+    "bio": "is my second language. <a href='https://tiger.exposed/'>Website</a>",
     "mobile": true
   }, 
   "eliza": {
