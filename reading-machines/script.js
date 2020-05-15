@@ -182,16 +182,12 @@ $("#clockContainer").mouseleave(function(){
 });
 
 $("#container").on('mouseenter', '.author', function(){
-  // $(".bio").hide();
   $(".bio").removeClass("bio-show");
-  // $(this).find(".bio").show();
   $(this).find(".bio").addClass("bio-show");
-
 });
 
-$("#container").on('mouseleave', '.author', function(){
+$("#container").on('mouseleave', '.line', function(){
   $(".bio").removeClass("bio-show");
-  // $(".bio").hide();
 });
 
 function makeLinks() {
@@ -218,9 +214,6 @@ function makeLinks() {
 
     $("#container").append(newline);
   }
-  // $(".bio").hide();
-
-  
 }
 
 
