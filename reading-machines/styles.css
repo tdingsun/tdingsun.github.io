@@ -36,11 +36,16 @@ a {
 }
 
 #more-info a {
-  text-decoration: underline;
+  border-radius: 20px;
+  border: 1px solid cornsilk;
+  transition: background-color 0.25s;
 }
+
 
 #more-info a:hover {
   font-style: italic;
+  background-color: cornsilk;
+  color: cornflowerblue;
 }
 
 .line {
