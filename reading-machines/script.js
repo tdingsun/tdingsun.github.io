@@ -28,10 +28,10 @@ var links = {
     "author": "Tiger Dingsun",
     "mobile": true
   }, 
-  "anonymous2": {
+  "danning": {
     "number": "12",
     "name": "Itchy, Fluffy, and Incomplete Things",
-    "author": "Anonymous",
+    "author": "Danning Niu",
     "mobile": false
   },
   "jorge2": {
