@@ -108,6 +108,7 @@ var links = {
 if ( window.location !== window.parent.location ) {	
   $("#mute-btn").hide();
   $("#clockContainer").hide();
+  $("#more-info").hide();
   Tone.Master.mute = true;
   // The page is in an iframe	
 } else {

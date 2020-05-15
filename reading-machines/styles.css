@@ -28,14 +28,19 @@ a {
 
 .about {
   font-style: italic;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+  display: inline-block;
+  vertical-align: top;
 }
 
-.about a {
+#more-info a {
   text-decoration: underline;
 }
 
-.about a:hover {
-  font-style: normal;
+#more-info a:hover {
+  font-style: italic;
 }
 
 .line {
@@ -81,7 +86,7 @@ a {
 }
 
 #spacer {
-  height: 100px;
+  height: 75px;
   width: 100vw;
   display: block;
 }
@@ -95,6 +100,13 @@ a {
   display: inline-block;
 }
 
+#more-info {
+  border-top: 1px solid cornsilk;
+  margin: 5px;
+  max-width: 550px;
+  line-height: 1.2;
+  font-size: 1rem;
+}
 
 
 /* Alternate */
@@ -131,10 +143,8 @@ a {
 }
 
 .about-alt {
-  width: 315px;
-  line-height: 1.2;
-  display: inline-block;
-  margin: 0;
+  width: 200px;
+  line-height: 1.3;
 }
 
 .number-alt {
