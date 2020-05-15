@@ -73,7 +73,11 @@ a {
 }
 
 .author {
+  border-color: cornsilk;
+}
 
+.author:hover {
+  border-color: cornflowerblue;
 }
 
 .mobile {
@@ -107,6 +111,34 @@ a {
   line-height: 1.2;
   font-size: 1rem;
 }
+
+.bio {
+  max-width: 250px;
+  font-size: 1rem;
+  border-color: inherit;
+  letter-spacing: 0;
+  font-size: 0em;
+  transition: font-size 0.25s;
+}
+
+.bio-show{
+  font-size: 1rem!important;
+  border-top: 1px solid cornflowerblue;
+  padding-top: 5px;
+}
+
+.bio a {
+  text-decoration: underline;
+}
+
+.bio a:hover {
+  font-style: italic;
+}
+
+.bio-alt {
+  display: none;
+}
+
 
 
 /* Alternate */

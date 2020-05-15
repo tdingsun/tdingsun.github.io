@@ -32,6 +32,7 @@ var links = {
     "number": "12",
     "name": "Itchy, Fluffy, and Incomplete Things",
     "author": "Danning Niu",
+    "bio": "Working towards a sound and compassionate grasp of our concrete realities. <a href='https://danningniu.com/'>danningniu.com</a>",
     "mobile": false
   },
   "jorge2": {
@@ -44,6 +45,7 @@ var links = {
     "number": "10",
     "name": "7 Poems",
     "author": "Justine Nguyễn-Nguyễn",
+    "bio": "<a href='https://www.jn-n.com/'>Website</a>",
     "mobile": true
   },
 
@@ -51,18 +53,21 @@ var links = {
     "number": "09",
     "name": "Can't Run Trip Over Your Fucking Swag",
     "author": "Liby Hays",
+    "bio": "Liby Hays is a writer and streetwear designer from Montclair, NJ. Her first graphic novel, <i>Geniacs!</i> should be out sometime in 2020. <a href='http://libyhays.net/'>Website</a>",
     "mobile": false
   },
   "greta": {
     "number": "08",
     "name": "10 Poems",
     "author": "Greta Huang Skagerlind",
+    "bio": "Greta Huang Skagerlind is a designer and writer. <a href='http://gskagerlind.com/'>Website</a>",
     "mobile": true
   },
   "liby1": {
     "number": "07",
     "name": "Pissed Pants Academy",
     "author": "Liby Hays",
+    "bio": "Liby Hays is a writer and streetwear designer from Montclair, NJ. Her first graphic novel, <i>Geniacs!</i> should be out sometime in 2020. <a href='http://libyhays.net/'>Website</a>",
     "mobile": true
   },
   "jorge1": {
@@ -156,6 +161,7 @@ $("#clockContainer").click(function(){
   $(".by").toggleClass('by-alt');
   $(".author").toggleClass('author-alt');
   $(".mobile").toggleClass('mobile-alt');
+  $(".bio").toggleClass('bio-alt');
 });
 
 $("#clockContainer").mouseenter(function(){
@@ -172,23 +178,45 @@ $("#clockContainer").mouseleave(function(){
   th = setInterval(rotateHorizontal, 1000);
 });
 
+$("#container").on('mouseenter', '.author', function(){
+  // $(".bio").hide();
+  $(".bio").removeClass("bio-show");
+  // $(this).find(".bio").show();
+  $(this).find(".bio").addClass("bio-show");
+
+});
+
+$("#container").on('mouseleave', '.author', function(){
+  $(".bio").removeClass("bio-show");
+  // $(".bio").hide();
+});
+
 function makeLinks() {
 
   for (var [key, value] of Object.entries(links)) {
     let title = value.name;
     let author = value.author;
     let number = value.number;
+    let bio = value.bio;
     let mobile = value.mobile ? "Yes" : "No";
 
     let newline = $(`<a class='line' href='${linkBody + key}' target='_top'></a>`);
     newline.append($(`<span class="number">RM–${number}</span>`));
     newline.append($(`<span class="title"><a ">${title}</a></span>`));
     newline.append($(`<span class="by">by</span>`));
-    newline.append($(`<span class="author">${author}</span>`));
+    let authorSpan = $(`<span class="author">${author}</span>`);
+    if(bio){
+      let bioDiv = $(`<div class="bio">${bio}</div>`);
+      authorSpan.append(bioDiv);
+
+    }
+    newline.append(authorSpan);
     newline.append($(`<span class="mobile">${mobile}</span>`));
 
     $("#container").append(newline);
   }
+  // $(".bio").hide();
+
   
 }
 
