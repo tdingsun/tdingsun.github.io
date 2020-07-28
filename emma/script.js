@@ -7,7 +7,7 @@ var curr_subdivide = 0;
 var curr_subdivide_max = 1;
 var curr_brick_subdivide = 0;
 var curr_brick_subdivide_max = 1;
-var brick_speed = 500;
+var brick_speed = 250;
 var tv;
 var th;
 
@@ -57,7 +57,7 @@ var chunkIdx = 0;
 
 var volume = new Tone.Volume(-12);
 var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
-var notes = Tone.Frequency("G3").harmonize([7, 5, 3, 2, 0, -1, -3, -5, -7, -9, -10, 12, 10, 8, 7, 5, 3, 2, 0, -2, -4, -5, 15, 14, 12, 10, 8, 7, 5, 3, 2, 0, -2, 19, 17, 15, 14, 12, 11, 9, 7, 5, 3, 2]);
+var notes = Tone.Frequency("G3").harmonize([7, 5, 3, 2, 0, -1, -3, -5, -7, 12, 10, 8, 7, 5, 3, 2, 0, -2, 15, 14, 12, 10, 8, 7, 5, 3, 2, 19, 17, 15, 14, 12, 11, 9, 7, 5, 3, 2]);
 var noteIdx = 0;
 
 //have to click to start audio context
