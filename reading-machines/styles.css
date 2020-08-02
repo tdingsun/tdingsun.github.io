@@ -53,28 +53,15 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
   border-bottom: 1px solid cornsilk;
-  padding: 3px 0px 3px 0px;
+  padding: 5px 0px 5px 0px;
   transition: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .line:not(#th):hover{
   color: cornflowerblue;
   background-color: cornsilk;
-  justify-content: space-around;
   font-size: 1.2rem;
-}
-
-
-
-.number {
-}
-
-.title {
-}
-
-.by {
-
 }
 
 .author {
@@ -85,8 +72,6 @@ a {
   border-color: cornflowerblue;
 }
 
-.mobile {
-}
 
 #container {
   width: 100vw;

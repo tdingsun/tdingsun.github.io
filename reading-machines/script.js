@@ -134,7 +134,7 @@ if ( window.location !== window.parent.location ) {
 
   var volume = new Tone.Volume(-12);
   var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
-  var notes = Tone.Frequency("C3").harmonize([0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 31, 33, 36, 28]);
+  var notes = Tone.Frequency("G2").harmonize([0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 31, 33, 36, 38]);
 
 }
 
@@ -158,7 +158,8 @@ $(window).resize(function(){
 });
 
 $("#container").on("mouseenter", ".line", function(){
-  let i = $(this).index() - 3;
+  let i = $(this).index() - 2;
+  console.log(i);
   synth.triggerAttackRelease(notes[i], "8n");
 });
 
@@ -190,8 +191,11 @@ $("#clockContainer").mouseleave(function(){
 });
 
 $("#container").on('mouseenter', '.author', function(){
-  $(".bio").removeClass("bio-show");
-  $(this).find(".bio").addClass("bio-show");
+  if ( window.location == window.parent.location ) {	
+    $(".bio").removeClass("bio-show");
+    $(this).find(".bio").addClass("bio-show");
+  }
+
 });
 
 $("#container").on('mouseleave', '.line', function(){
