@@ -131,11 +131,13 @@ if ( window.location !== window.parent.location ) {
   $(window).click(function(){
     Tone.context.resume();
   });
+
+  var volume = new Tone.Volume(-6);
+  var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
+  var notes = Tone.Frequency("C3").harmonize([0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 31, 33, 36]);
+
 }
 
-var volume = new Tone.Volume(-6);
-var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
-var notes = Tone.Frequency("C3").harmonize([0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 31, 33, 36]);
 
 var tv;
 var th;
