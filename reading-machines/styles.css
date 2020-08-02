@@ -88,7 +88,8 @@ a {
 #header {
   font-size: 4rem;
   line-height: 1;
-  max-width: calc(100vw - 50px);
+  width: calc(100vw - 50px);
+  min-width: 375px;
   letter-spacing: -0.2rem;
   margin-left: -2px;
   display: inline-block;
