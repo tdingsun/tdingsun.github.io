@@ -4,6 +4,12 @@ var w = $(window).width();
 var h = $(window).height();
 var linkBody = "https://tdingsun.github.io/";
 var links = {
+  "emma": {
+    "number": "17",
+    "name": "GUSHGUSHGUSH",
+    "author": "Emma Kemp",
+    "mobile": false
+  }, 
   "wen": {
     "number": "16",
     "name": "Portraits and Repetition",
