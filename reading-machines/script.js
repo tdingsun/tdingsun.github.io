@@ -144,13 +144,14 @@ var th;
 
 $(document).ready(function(event){
   makeLinks();
+  tv = setInterval(rotateVertical, 1000);
+  th = setInterval(rotateHorizontal, 1200);
 
   Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
   let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
   $("#mute-btn").text(text);
 
-  tv = setInterval(rotateVertical, 1000);
-  th = setInterval(rotateHorizontal, 1200);
+
 });
 
 $(window).resize(function(){
