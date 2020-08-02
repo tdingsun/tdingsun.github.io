@@ -123,6 +123,11 @@ function brickBuilding(){
 }
 
 // Common
+
+$(window).click(function(){
+  Tone.context.resume();
+});
+
 function displayTitle(title, author){
   $("#title").html(title + "<br>by " + author);
   setTimeout(() => {
