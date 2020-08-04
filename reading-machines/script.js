@@ -8,6 +8,7 @@ var links = {
     "number": "17",
     "name": "GUSHGUSHGUSH",
     "author": "Emma Kemp",
+    "bio": "is a writer, artist and educator based in LA. <a href='http://emmakemp.com'>Website</a>",
     "mobile": false
   }, 
   "wen": {
