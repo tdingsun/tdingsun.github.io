@@ -119,25 +119,11 @@ var links = {
   }
 }
 
-if ( window.location !== window.parent.location ) {	
-  $("#mute-btn").hide();
-  $("#clockContainer").hide();
-  $("#more-info").hide();
-  $(".bio").hide();
-  Tone.Master.mute = true;
-  // The page is in an iframe	
-} else {
+var volume;
+var synth;
+var notes;
 
-  // StartAudioContext(Tone.context, window);  
-  $(window).click(function(){
-    Tone.context.resume();
-  });
 
-  var volume = new Tone.Volume(-12);
-  var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
-  var notes = Tone.Frequency("G2").harmonize([0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 31, 33, 36, 38]);
-
-}
 
 
 var tv;
@@ -151,6 +137,26 @@ $(document).ready(function(event){
   Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
   let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
   $("#mute-btn").text(text);
+
+  if ( window.location !== window.parent.location ) {	
+    $("#mute-btn").hide();
+    $("#clockContainer").hide();
+    $("#more-info").hide();
+    $(".bio").hide();
+    Tone.Master.mute = true;
+    // The page is in an iframe	
+  } else {
+  
+    // StartAudioContext(Tone.context, window);  
+    $(window).click(function(){
+      Tone.context.resume();
+    });
+  
+    volume = new Tone.Volume(-12);
+    synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
+    notes = Tone.Frequency("G2").harmonize([0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 31, 33, 36, 38]);
+  
+  }
 
 
 });
