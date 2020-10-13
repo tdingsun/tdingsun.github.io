@@ -62,6 +62,9 @@ var noteIdx = 0;
 
 //have to click to start audio context
 StartAudioContext(Tone.context, window);
+$(window).click(function(){
+  Tone.context.resume();
+});
 
 $(document).ready(function(event){
   //mute
