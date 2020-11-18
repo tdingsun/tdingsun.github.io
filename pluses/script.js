@@ -4,7 +4,7 @@ var notes;
 
 var rotateAllSpeed = 666;
 var rotateSpeed = 500;
-var colorSpeed = 10000;
+var colorSpeed = 60000;
 var fixedAngle = 180;
 var rotateAllNote = 0;
 var randRotate = true;
