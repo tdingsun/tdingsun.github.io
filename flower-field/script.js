@@ -28,8 +28,7 @@ $(document).ready(function() {
     $(window).one('click', function(){
         Tone.context.resume();
         for(var i = 0; i < 60; i++){
-            // makeFlower(size, i);
-            makePlus(size, i);
+            makeFlower(size, i);
         }
 
         setClock();
