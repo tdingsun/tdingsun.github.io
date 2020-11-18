@@ -3,7 +3,7 @@ var synth;
 var notes;
 
 var rotateAllSpeed = 666;
-var rotateSpeed = 50000;
+var rotateSpeed = 1000;
 var modeChangeSpeed = 60000;
 var fixedAngle = 90;
 var rotateAllNote = 0;

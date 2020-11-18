@@ -3,14 +3,14 @@ var synth;
 var notes;
 
 var rotateAllSpeed = 666;
-var rotateSpeed = 50000;
+var rotateSpeed = 500;
 var modeChangeSpeed = 60000;
 var fixedAngle = 90;
 var rotateAllNote = 0;
 
 var randRotate = false;
-var backgroundColor = 'cornflowerblue';
-var color = 'cornsilk';
+var backgroundColor = 'cornsilk';
+var color = 'cornflowerblue';
 
 var noteBases = ["G2", "B2", "C3", "E3", "F3"];
 var noteBase = 0;

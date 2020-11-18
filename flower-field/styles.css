@@ -81,7 +81,6 @@ html, body {
     height: 20px;
     border-radius: 20px;
     background-color: cornsilk;
-    transition: 0.25s;
     position: absolute;
 }
 
