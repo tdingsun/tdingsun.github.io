@@ -128,12 +128,21 @@ function rotateAll(){
 
 }
 
+function moveDown(factor, size){
+    if(factor < 1){
+        return Math.random()*size*((1-factor) * 2);
+    } else {
+        return 0
+    }
+}
 function makeFlower(size, index) {
     var flower = $("<div></div>").addClass("flower").appendTo($('.container'));
-    size = (Math.random()+0.25) * size;
+    var factor = (Math.random()*0.75) + 0.375;
+    size = factor * size;
     flower.css({
         'height': size,
-        'width': size
+        'width': size,
+        'top': moveDown(factor, size)
     });
     var color = colors[Math.floor(Math.random() * colors.length)];
     var numPetals = Math.floor(Math.random()*5) + 5;
