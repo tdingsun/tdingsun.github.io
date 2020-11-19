@@ -1,24 +1,22 @@
-var pluses = [];
+var flowers = [];
 var synth;
 var notes;
 
 var rotateAllSpeed = 666;
-var rotateSpeed = 1000;
-var modeChangeSpeed = 60000;
+var rotateSpeed = 500;
 var fixedAngle = 90;
 var rotateAllNote = 0;
 
 var randRotate = false;
-var backgroundColor = 'cornflowerblue';
-var color = 'cornsilk';
 
+var colors = ["gold", "yellowgreen", "tomato", "salmon", "plum", "palevioletred", "orchid", "orangered", "orange", "mediumorchid", "lightcoral", "goldenrod", "cornflowerblue", "coral", "thistle", "darkkhaki", "darkcyan", "pink", "dodgerblue", "deepskyblue"]
+// var colors = ["snow", "ghostwhite", "whitesmoke", "seashell", "beige", "oldlace", "floralwhite", "ivory", "linen"];
 var noteBases = ["G2", "B2", "C3", "E3", "F3"];
 var noteBase = 0;
 $(document).ready(function() {
     var width = $(".container").width();
     var height = $(".container").height();
-    console.log(width);
-    console.log(height);
+
     var size = width/10;
     if(size > height/6){
         size = height/6;
@@ -34,12 +32,9 @@ $(document).ready(function() {
         setClock();
         setInterval(setClock, 1000);
 
-        switchMode();
-        setInterval(switchMode, modeChangeSpeed);
-
         setInterval(rotateAll, rotateAllSpeed);
 
-        $('.plus').on('mouseenter', function(e) {
+        $('.flower').on('mouseenter', function(e) {
             e.stopPropagation();
             rotate(e.currentTarget, 6);
         });
@@ -56,44 +51,6 @@ $(document).ready(function() {
 
 })
 
-var mode = 0;
-function switchMode() {
-    switchKey();
-
-    if(mode == 0){ //cross
-        $('.vbar').css('background-color', color);
-        $('.hbar').css('background-color', color);
-        fixedAngle = 90;
-
-        mode++;
-
-        
-    } else if(mode == 1) { //hbar only
-        $('.hbar').css('background-color', color);
-        $('.vbar').css('background-color', backgroundColor);
-        $('.hbar').css('z-index', -1);
-        $('.vbar').css('z-index', 2);
-        fixedAngle = 180;
-
-        mode++;
-    } else if(mode == 2) { //vbar only
-        $('.hbar').css('background-color', backgroundColor);
-        $('.vbar').css('background-color', color);
-        $('.hbar').css('z-index', 2);
-        $('.vbar').css('z-index', -1);
-        fixedAngle = 180;
-
-        mode++;
-
-    } else if(mode == 3) { //bars flip 90
-        $('.hbar').css('background-color', color);
-        $('.vbar').css('background-color', backgroundColor);
-        $('.hbar').css('z-index', -1);
-        $('.vbar').css('z-index', 2);
-        fixedAngle = 90;
-        mode = 0;
-    }
-}
 
 function switchKey() {
     noteBase++;
@@ -147,16 +104,15 @@ function rotate(object, i){
     }
 
     $(object).find(".petal").toggleClass("flowerColor2");
-    $(object).find(".center").toggleClass("centerColor2");
 }
 
 var currM = 1;
 function rotateAll(){
     randRotate = false;
 
-    for(i = 0; i < pluses.length; i++){
+    for(i = 0; i < flowers.length; i++){
         if((i + 1) % currM == 0){
-            rotate(pluses[i], rotateAllNote);
+            rotate(flowers[i], rotateAllNote);
 
         }
     }
@@ -172,34 +128,21 @@ function rotateAll(){
 
 }
 
-function makePlus(size, index) {
-    var plus = $("<div></div>").addClass("plus").appendTo($('.container'));
-    plus.css({
-        'height': size,
-        'width': size
-    })
-    var vBar = $("<div></div>").addClass("vbar");
-    var hBar = $("<div></div>").addClass("hbar");
-    plus.append(vBar);
-    plus.append(hBar);
-
-    pluses.push(plus);
-    setInterval(rotate, (index + 1) * rotateSpeed, plus, index);
-}
-
 function makeFlower(size, index) {
-    var plus = $("<div></div>").addClass("plus").appendTo($('.container'));
-    plus.css({
+    var flower = $("<div></div>").addClass("flower").appendTo($('.container'));
+    size = (Math.random()+0.25) * size;
+    flower.css({
         'height': size,
         'width': size
     });
-
+    var color = colors[Math.floor(Math.random() * colors.length)];
     var numPetals = Math.floor(Math.random()*5) + 5;
     for(let i = 0; i < numPetals; i++){
         let petalcontainer = $("<div></div>").addClass("petalcontainer");
         petalcontainer.css({
             'height': size,
-            'width': size
+            'width': size,
+            'border-color': color
         });
         let petal = $("<div></div>").addClass("petal");
         petal.css({
@@ -207,10 +150,11 @@ function makeFlower(size, index) {
             'width': size/numPetals*1.75,
             'border-radius': size,
             'left': `calc(50% - ${size/numPetals*0.875}px)`,
+            'background-color': color
         })
         petalcontainer.css('transform', `rotate(${i*360/numPetals}deg)`);
         petalcontainer.append(petal);
-        plus.append(petalcontainer);
+        flower.append(petalcontainer);
     }
     var center = $("<div></div>").addClass("center");
     center.css({
@@ -220,9 +164,9 @@ function makeFlower(size, index) {
         'left': `calc(50% - ${size/7}px)`,
         'top': `calc(50% - ${size/7}px)`
     })
-    plus.append(center);
-    pluses.push(plus);
+    flower.append(center);
+    flowers.push(flower);
 
-    setInterval(rotate, (index + 1) * rotateSpeed, plus, index);
+    setInterval(rotate, (index + 1) * rotateSpeed, flower, index);
 }
 

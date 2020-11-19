@@ -9,11 +9,11 @@ html, body {
     flex-direction: column;
     height: 100vh;
     align-items: center;
-
 }
+
 .container {
     margin: 20px;
-    width: 100%;
+    width: calc(100% - 40px);
     box-sizing: border-box;
     position: relative;
     top: 0;
@@ -24,8 +24,8 @@ html, body {
     justify-content: center;
     flex: 1 1;
 }
+
 .plus {
-    /* background-color: red; */
     width: 40px;
     height: 40px;
     transition: 0.5s;
@@ -33,11 +33,7 @@ html, body {
     flex-grow: 0;
     position: relative;
     transform: rotate(0deg);
-
 }
-/* .plus:hover {
-    transform: rotate(180deg);
-} */
 
 .vbar {
     background-color: cornflowerblue;
@@ -46,7 +42,7 @@ html, body {
     position: absolute;
     margin-left: calc(50% - 5px);
     transition: 0.5s;
-    border-radius: 20px;
+    border-radius: 1px;
 
     
 }
@@ -59,7 +55,7 @@ html, body {
     top: 50%;
     margin-top: -5px;
     transition: 0.5s;
-    border-radius: 20px;
+    border-radius: 1px;
 
 
 }
@@ -73,34 +69,6 @@ html, body {
     text-align: center;
     color: cornflowerblue;
     flex: none;
-}
-
-.petalcontainer {
-    /* border: 1px solid black; */
-    position: absolute;
-}
-.petal {
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    background-color: cornsilk;
-    transition: 0.25s;
-    position: absolute;
-}
-
-.center {
-    width: 40px;
-    height: 40px;
-    background-color: cornflowerblue;
-    border-radius: 40px;
-    position: absolute;
-    left: calc(50% - 20px);
-    top: calc(50% - 20px);
-}
-
-.flowerColor2 {
-    background-color: cornflowerblue;
-    border: 2px solid cornsilk;
 }
 
 .button {
