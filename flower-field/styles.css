@@ -86,3 +86,43 @@ html {
     border-radius:20px;
     background-color: coral;
 }
+
+.lefteye {
+    background-color: green;
+    width: 15%;
+    height: 15%;
+    left: 20%;
+    top: 25%;
+    border-radius: 50px;
+    position: absolute;
+}
+
+.righteye {
+    background-color: green;
+    width: 15%;
+    height: 15%;
+    right: 20%;
+    top: 25%;
+    border-radius: 50px;
+    position: absolute;
+}
+
+.smile {
+    background-color: transparent;
+    border: 2px solid;
+    border-top-width: 0px;
+    box-sizing: border-box;
+    width: 70%;
+    height: 35%;
+    right: 15%;
+    bottom: 15%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    position: absolute;
+}
+
+.hidden {
+    visibility: hidden;
+}

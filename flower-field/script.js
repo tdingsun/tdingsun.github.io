@@ -104,6 +104,7 @@ function rotate(object, i){
     }
 
     $(object).find(".petal").toggleClass("flowerColor2");
+    $(object).find(".center").children().toggleClass("hidden");
 }
 
 var currM = 1;
@@ -166,6 +167,7 @@ function makeFlower(size, index) {
         flower.append(petalcontainer);
     }
     var center = $("<div></div>").addClass("center");
+    addSmile(center, color);
     center.css({
         'width': size/3.5,
         'height': size/3.5,
@@ -177,5 +179,11 @@ function makeFlower(size, index) {
     flowers.push(flower);
 
     setInterval(rotate, (index + 1) * rotateSpeed, flower, index);
+}
+
+function addSmile(center, color){
+    $("<div></div>").addClass("lefteye").appendTo($(center)).css('background-color', color);
+    $("<div></div>").addClass("righteye").appendTo($(center)).css('background-color', color);
+    $("<div></div>").addClass("smile").appendTo($(center)).css('border-color', color);
 }
 
