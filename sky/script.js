@@ -25,16 +25,9 @@ $('div').click(function(){
   console.log("clicked");
 });
 
-$(document).ready(function(event){
-  // if(navigator.onLine){
-  //   $(".container").html("You are connected");
-  // } else {
-  //   $(".container").html("Welcome to the world of disconnection");
-  // }
-  
+$(document).ready(function(event){  
   resize();
   timer();
-
 });
 
 $(window).resize(function(){

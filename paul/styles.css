@@ -1,0 +1,178 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: seashell;
+  overflow: hidden;
+  font-size: 16px;
+  background-color: lightblue;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#title {
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 0.9em;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+  z-index: 1;
+}
+
+.title-small {
+  font-size: 2rem!important;
+  letter-spacing: -1.5px!important;
+}
+
+#container {
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding: 5px;
+  padding-bottom: 50px;
+  padding-top: 100px;
+  overflow-y: scroll;
+}
+
+#background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.word {
+  position: relative;
+  width: auto;
+  display: inline-block;
+  padding: 3px;
+  padding-bottom: 0px;
+  font-size: 2rem;
+}
+
+.last {
+  background-color: seashell;
+  color: lightblue;
+  z-index: 1;
+
+}
+
+
+@keyframes wave {
+  0% { transform: translateY(0) rotate(0deg)}
+  50% { transform: translateY(70vh) rotate(90deg)}
+  100% { transform: translateY(0) rotate(0deg)}
+}
+
+@keyframes wave-2 {
+  0% { transform: translateY(0) rotate(0deg)}
+  50% { transform: translateY(70vh) rotate(-90deg)}
+  100% { transform: translateY(0) rotate(0deg)}
+}
+
+.grid-box {
+  border: 1px solid seashell;
+  margin: -0.5px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  transition: 0.5s;
+}
+
+
+.paragraph {
+  display: inline-block;
+  min-width: 500px;
+  padding: 0 20px 40px 20px;
+  position: absolute;
+}
+
+@media only screen and (max-width: 1080px) {
+  .paragraph {
+    width: 100%;
+  }
+}
+
+/* Common */
+
+#clockContainer {
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
+  position: fixed;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 2;
+  
+}
+
+#vertical {
+  width: 12px;
+  height: 70px;
+  background-color: beige;
+  position: absolute;
+  left: 29px;
+  transition: background-color 0.25s;
+}
+
+#horizontal{
+  width: 70px;
+  height: 12px;
+  position: absolute;
+  top: 29px;
+  background-color: beige;
+  transition: background-color 0.25s;
+}
+
+#mute-btn {
+  color: beige;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: lightblue;
+  background-color: beige;
+}
+
+#nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 0px;
+  height: 100vh;
+  border: 0;
+  transition: 0.25s;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.showNav {
+  width: 400px!important;
+}
+
+.navClock {
+  background-color: cornsilk!important;
+}

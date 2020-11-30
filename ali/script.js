@@ -31,8 +31,8 @@ var syl_i;
 wordID = 0;
 
 var volume = new Tone.Volume(-6);
-var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
-var notes = Tone.Frequency("C3").harmonize([0, 4, 7, 12, 16, 19, 24, 28, 31, 36]);
+var synth = new Tone.PolySynth(3, Tone.Synth).chain(volume, Tone.Master);
+var notes = Tone.Frequency("C2").harmonize([0, 4, 7, 12, 16, 19, 24, 28, 31, 36]);
 
 //have to click to start audio context
 StartAudioContext(Tone.context, window);
@@ -49,6 +49,10 @@ $(document).ready(function(event){
   setTimeout(startText1, 1500, 0);
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 2000);
+  
+  $(window).click(function () {
+    Tone.context.resume();
+  })
 });
 
 function startText1(gridid){
@@ -79,10 +83,6 @@ function startText1(gridid){
   $("#container").get(0).scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
 
 }
-
-// function beat(note){
-//   synth.triggerAttackRelease(notes[note], "4n");
-// }
 
 // Common
 

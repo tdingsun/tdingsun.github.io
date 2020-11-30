@@ -56,7 +56,7 @@ var chunks = [
 var chunkIdx = 0;
 
 var volume = new Tone.Volume(-12);
-var synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
+var synth = new Tone.PolySynth(3, Tone.Synth).chain(volume, Tone.Master);
 var notes = Tone.Frequency("G3").harmonize([7, 5, 3, 2, 0, -1, -3, -5, -7, 12, 10, 8, 7, 5, 3, 2, 0, -2, 15, 14, 12, 10, 8, 7, 5, 3, 2, 19, 17, 15, 14, 12, 11, 9, 7, 5, 3, 2]);
 var noteIdx = 0;
 
