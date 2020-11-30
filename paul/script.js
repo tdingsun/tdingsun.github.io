@@ -1,7 +1,7 @@
 var width;
 var height;
 var title = "TITLE";
-var author = "AUTHOR"
+var author = "Paul Bouigue"
 var speed = 250;
 
 var texts = ["au bout des deux piscines, il y a toujours, au centre de la largeur des deux bassins, un escabeau sur lequel est posté quelqu’un qui ressemble à un maître nageur dans un short rouge, qui tient d’une main une canne claire au bout de laquelle pend un grand cercle de bois peint en blanc. Ce qui fait voir que c’est du bois, c’est la tranche beige d’environ 3 centimètres qui n’est pas peinte. Sur ce grand cercle de bois épais, il y a des traits noirs à chaque heure, une grande et une petite aiguille de peinte. Si je m’approche, c’est une horloge, le dos est peint en jaune, si elle tournoie sur le fil, c’est le soleil.",
@@ -76,7 +76,7 @@ function makeGrid(x, y) {
   }
 }
 
-function initText2(p){
+function initText(p){
   wDivs = [];
   let paragraph = $("<div></div>").addClass('paragraph');
   $('#container').append(paragraph);
@@ -130,49 +130,16 @@ function startAnimation(i, p) {
     setTimeout(function(){
       $('.word').removeClass('last');
     }, 1000);
-    setTimeout(initText2, speed, p+1);
+    setTimeout(initText, speed, p+1);
   }
 }
-
-// function initText(p){
-//   if(p < texts.length){
-//     var words = texts[p].split(" ");
-//     initWord(words, 0, p);
-//   }
-// }
-
-// function initWord(words, i, p){
-//   let wDiv = $("<div></div>").addClass('word').addClass(`word-${p}`).addClass('last');
-//   let word = words[i];
-
-//   wDiv.text(word);
-//   $('#container').append(wDiv);
-
-//   let randNote = Math.floor(Math.random() * notes.length);
-//   synth.triggerAttackRelease(notes[randNote], "8n");
-
-//   wDiv.css({
-//     "animation": `wave 20s ease-in-out infinite`
-//   });
-
-//   var syllables = RiTa.getSyllables(word);
-//   var syllables_arr = syllables.split("/");
-//   var time = syllables_arr.length * speed;
-
-//   if(i < words.length){
-//     setTimeout(initWord, time, words, i+1, p);
-//   } else {
-//     $('.word').removeClass('last');
-//     setTimeout(initText, 5000, p+1);
-//   }
-// }
 
 // Common
 function displayTitle(title, author){
   $("#title").html(title + "<br>by " + author);
   setTimeout(() => {
     $("#title").addClass("title-small");
-    initText2(0);
+    initText(0);
   }, 1500);
 }
 

@@ -63,16 +63,14 @@ body, html {
   display: inline-block;
   padding: 3px;
   padding-bottom: 0px;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .last {
   background-color: seashell;
   color: lightblue;
   z-index: 1;
-
 }
-
 
 @keyframes wave {
   0% { transform: translateY(0) rotate(0deg)}
@@ -101,7 +99,6 @@ body, html {
   display: inline-block;
   min-width: 500px;
   padding: 0 20px 40px 20px;
-  position: absolute;
 }
 
 @media only screen and (max-width: 1080px) {
