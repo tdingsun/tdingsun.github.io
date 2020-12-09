@@ -11,7 +11,7 @@ var randRotate = false;
 
 var colors = ["gold", "yellowgreen", "tomato", "salmon", "plum", "palevioletred", "orchid", "orangered", "orange", "mediumorchid", "lightcoral", "goldenrod", "cornflowerblue", "coral", "thistle", "darkkhaki", "darkcyan", "pink", "dodgerblue", "deepskyblue"]
 // var colors = ["snow", "ghostwhite", "whitesmoke", "seashell", "beige", "oldlace", "floralwhite", "ivory", "linen"];
-var noteBases = ["c4", "B2", "C3", "E3", "F3"];
+var noteBases = ["c3", "B2", "C3", "E3", "F3"];
 var noteBase = 0;
 $(document).ready(function() {
     var width = $(".container").width();
@@ -43,11 +43,6 @@ $(document).ready(function() {
     
     var volume = new Tone.Volume(-12);
     synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
-    synth.set({
-        oscillator: {
-        type: "sine"
-        }
-      });
     notes = Tone.Frequency(noteBases[noteBase]).harmonize([0, 4, 7, 
                                             12, 16, 19,
                                             24]);
