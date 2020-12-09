@@ -48,7 +48,7 @@ $(document).ready(function() {
     });
     
     var volume = new Tone.Volume(-12);
-    synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
+    synth = new Tone.PolySynth(60, Tone.Synth).chain(volume, Tone.Master);
     notes = Tone.Frequency(noteBases[noteBase]).harmonize([0, 4, 5, 7, 9, 11, 
                                             12, 16, 17, 19, 21, 23, 
                                             24]);
