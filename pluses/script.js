@@ -42,7 +42,7 @@ $(document).ready(function() {
 
         $('.plus').on('mouseenter', function(e) {
             e.stopPropagation();
-            rotate(e.currentTarget, 6);
+            rotate(e.currentTarget, Math.floor(Math.random()*6));
         });
     
     });
@@ -51,8 +51,7 @@ $(document).ready(function() {
     synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
     notes = Tone.Frequency(noteBases[noteBase]).harmonize([0, 4, 5, 7, 9, 11, 
                                             12, 16, 17, 19, 21, 23, 
-                                            24, 28, 29, 31, 33, 35,
-                                            36]);
+                                            24]);
 
 
 })
