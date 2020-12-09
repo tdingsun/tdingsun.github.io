@@ -1,5 +1,3 @@
-var width;
-var height;
 var title = "TITLE";
 var author = "Paul Bouigue"
 var speed = 250;
@@ -9,14 +7,12 @@ var texts = ["au bout des deux piscines, il y a toujours, au centre de la largeu
 "dans le bassin principal, lorsque je nage, je vois au fond une grande mosaïque de couleur terre rouge (le même rouge que le ventre des linottes) dont chacun des carrés qui la constitue est cerné de blanc. Lorsque je passe au-dessus et que j’ouvre les yeux, je vois les carrés serpenter, comme ~ si ~ uniquement ~ la ~ ligne ~ horizontale ~ qui ~ les ~ encadre ~ était ~ de ~ travers, ~ complètement ~ de ~ traviole ~ même à onduler à cause d’un phénomène entre le soleil, l’air et l’eau. Puis lorsque je sors de l’eau et que je regarde la mosaïque debout sur le rebord de la piscine, elle fuit vers l’horizon, les carrés sont encore ondulés mais cette fois ils ne bougent pas.",
 "il y a quatre mètres de cabine à rayure jaunes de chaque côté de l’allée principale, comme à la plage; huit salles avec deux sèche-cheveux au bout; le sol carrelé grisâtre est en pente vers un trou au centre de la pièce — pour que l’eau continue de s’écouler de mon maillot que je presse —, presque trop pentu, de telle manière qu’il faut être sur la pointe des pieds pour se sentir parallèle à la terre. Mais lorsque l’on est sur la pointe des pieds dans une cabine, la tête dépasse à coup sur."
 ];
-
 var wDivs = [];
-
-var text = texts.join(' ');
 
 var tv;
 var th;
 
+///TONE.JS STUFF
 var volume = new Tone.Volume(-12);
 var synth = new Tone.PolySynth(5, Tone.Synth).chain(volume, Tone.Master);
 synth.set({
@@ -36,16 +32,15 @@ notes.push(Tone.Frequency("C2").harmonize([4, 5, 7, 11, 12, 16, 19, 24, 28, 31, 
 //have to click to start audio context
 StartAudioContext(Tone.context, window);
 
+//MAIN FUNCTION
 $(document).ready(function(event){
-  //mute
+  //mute setting retrieval
   Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
   let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
   $("#mute-btn").text(text);
 
-  width = $(window).innerWidth();
-  height = $(window).innerHeight();
-
   displayTitle(title, author);
+
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 2000);
 
@@ -62,7 +57,7 @@ function makeGrid(x, y) {
 
   for(let i = 0; i < y-1; i++){
     let row = $('<div></div>').addClass('row');
-    let rowlength = (i % 2 == 0 )? x-1 : x;
+    let rowlength = (i % 2 == 0) ? x-1 : x;
     for(let j = 0; j < rowlength; j++){
       let box = $('<div></div>').addClass('grid-box');
       box.css({
@@ -91,9 +86,6 @@ function initText(p){
     }
     setTimeout(startAnimation, 1000, 0, p); 
   }
-
-
-
 }
 
 function startAnimation(i, p) {

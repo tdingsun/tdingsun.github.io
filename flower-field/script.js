@@ -4,7 +4,7 @@ var notes;
 
 var rotateAllSpeed = 666;
 var rotateSpeed = 500;
-var fixedAngle = 90;
+var fixedAngle = 360;
 var rotateAllNote = 0;
 
 var randRotate = false;
@@ -42,7 +42,7 @@ $(document).ready(function() {
     });
     
     var volume = new Tone.Volume(-12);
-    synth = new Tone.PolySynth(60, Tone.Synth).chain(volume, Tone.Master);
+    synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
     notes = Tone.Frequency(noteBases[noteBase]).harmonize([0, 4, 5, 7, 9, 11, 
                                             12, 16, 17, 19, 21, 23, 
                                             24, 28, 29, 31, 33, 35,
@@ -104,7 +104,9 @@ function rotate(object, i){
     }
 
     $(object).find(".petal").toggleClass("flowerColor2");
+    // $(object).find(".smile").toggleClass("hidden");
     $(object).find(".center").children().toggleClass("hidden");
+
 }
 
 var currM = 1;
@@ -129,21 +131,13 @@ function rotateAll(){
 
 }
 
-function moveDown(factor, size){
-    if(factor < 1){
-        return Math.random()*size*((1-factor) * 2);
-    } else {
-        return 0
-    }
-}
 function makeFlower(size, index) {
     var flower = $("<div></div>").addClass("flower").appendTo($('.container'));
-    var factor = (Math.random()*0.75) + 0.375;
-    size = factor * size;
+    // var factor = (Math.random()*0.75) + 0.375;
+    // size = factor * size;
     flower.css({
         'height': size,
         'width': size,
-        'top': moveDown(factor, size)
     });
     var color = colors[Math.floor(Math.random() * colors.length)];
     var numPetals = Math.floor(Math.random()*5) + 5;
@@ -166,7 +160,7 @@ function makeFlower(size, index) {
         petalcontainer.append(petal);
         flower.append(petalcontainer);
     }
-    var center = $("<div></div>").addClass("center");
+    var center = $("<div></div>").addClass("center").css('border-color', color);
     addSmile(center, color);
     center.css({
         'width': size/3.5,
@@ -185,5 +179,6 @@ function addSmile(center, color){
     $("<div></div>").addClass("lefteye").appendTo($(center)).css('background-color', color);
     $("<div></div>").addClass("righteye").appendTo($(center)).css('background-color', color);
     $("<div></div>").addClass("smile").appendTo($(center)).css('border-color', color);
+
 }
 

@@ -44,7 +44,7 @@ html {
     padding-bottom: 40px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    color: coral;
+    color: pink;
     flex: none;
 }
 
@@ -56,8 +56,9 @@ html {
     width: 20px;
     height: 20px;
     border-radius: 20px;
-    background-color: coral;
+    background-color: pink;
     position: absolute;
+    transition: 0.5s background-color;
 }
 
 .center {
@@ -71,10 +72,7 @@ html {
 }
 
 .flowerColor2 {
-    border: 2px solid;
-    border-bottom: 0px;
-    border-color: inherit;
-    background-color: cornsilk!important;
+    background-color: mistyrose!important;
 }
 
 .button {
@@ -84,7 +82,7 @@ html {
     width: 20px;
     height: 20px;
     border-radius:20px;
-    background-color: coral;
+    background-color: pink;
 }
 
 .lefteye {
@@ -121,6 +119,16 @@ html {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     position: absolute;
+}
+
+.openMouth {
+    width: 70%;
+    height: 45%;
+    border-radius: 10px;
+    bottom: 10%;
+    left: 15%;
+    position: absolute;
+    border: none!important;
 }
 
 .hidden {
