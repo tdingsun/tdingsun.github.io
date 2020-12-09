@@ -2,7 +2,7 @@ var pluses = [];
 var synth;
 var notes;
 
-var rotateAllSpeed = 666;
+var rotateAllSpeed = 2000/3;
 var rotateSpeed = 500;
 var modeChangeSpeed = 60000;
 var fixedAngle = 90;
@@ -48,7 +48,7 @@ $(document).ready(function() {
     });
     
     var volume = new Tone.Volume(-12);
-    synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
+    synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
     notes = Tone.Frequency(noteBases[noteBase]).harmonize([0, 4, 5, 7, 9, 11, 
                                             12, 16, 17, 19, 21, 23, 
                                             24, 28, 29, 31, 33, 35,
@@ -104,8 +104,7 @@ function switchKey() {
     }
     notes = Tone.Frequency(noteBases[noteBase]).harmonize([0, 4, 5, 7, 11, 
         12, 16, 17, 19, 23, 
-        24, 28, 29, 31, 35,
-        36]);
+        24]);
 }
 
 function setClock() {
@@ -124,7 +123,7 @@ function checkTime(i) {
   }
 
 function rotate(object, i){
-    synth.triggerAttackRelease(notes[i % notes.length], "4n");
+    synth.triggerAttackRelease(notes[i % notes.length], "2n");
 
     let rand = Math.random() * 180 + 15;
 
@@ -146,9 +145,6 @@ function rotate(object, i){
             $(object).css('transform', `rotate(${fixedAngle}deg)`);
         }
     }
-
-    $(object).find(".petal").toggleClass("flowerColor2");
-    $(object).find(".center").toggleClass("centerColor2");
 }
 
 var currM = 1;

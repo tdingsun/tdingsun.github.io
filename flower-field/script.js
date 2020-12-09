@@ -2,9 +2,9 @@ var flowers = [];
 var synth;
 var notes;
 
-var rotateAllSpeed = 666;
+var rotateAllSpeed = 2000/3;
 var rotateSpeed = 500;
-var fixedAngle = 360;
+var fixedAngle = 90;
 var rotateAllNote = 0;
 
 var randRotate = false;
@@ -36,17 +36,16 @@ $(document).ready(function() {
 
         $('.flower').on('mouseenter', function(e) {
             e.stopPropagation();
-            rotate(e.currentTarget, 6);
+            rotate(e.currentTarget, Math.floor(Math.random()*6));
         });
     
     });
     
     var volume = new Tone.Volume(-12);
-    synth = new Tone.PolySynth(7, Tone.Synth).chain(volume, Tone.Master);
-    notes = Tone.Frequency(noteBases[noteBase]).harmonize([0, 4, 5, 7, 9, 11, 
-                                            12, 16, 17, 19, 21, 23, 
-                                            24, 28, 29, 31, 33, 35,
-                                            36]);
+    synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
+    notes = Tone.Frequency(noteBases[noteBase]).harmonize([0, 4, 7, 
+                                            12, 16, 19,
+                                            24]);
 
 
 })
@@ -80,7 +79,7 @@ function checkTime(i) {
   }
 
 function rotate(object, i){
-    synth.triggerAttackRelease(notes[i % notes.length], "4n");
+    synth.triggerAttackRelease(notes[i % notes.length], "2n");
 
     let rand = Math.random() * 180 + 15;
 
@@ -104,8 +103,10 @@ function rotate(object, i){
     }
 
     $(object).find(".petal").toggleClass("flowerColor2");
-    // $(object).find(".smile").toggleClass("hidden");
     $(object).find(".center").children().toggleClass("hidden");
+
+    $(object).find(".center2").toggleClass("hidden");
+
 
 }
 
@@ -154,12 +155,14 @@ function makeFlower(size, index) {
             'width': size/numPetals*1.75,
             'border-radius': size,
             'left': `calc(50% - ${size/numPetals*0.875}px)`,
-            'background-color': color
+            'background-color': color,
+            'border-color': color
         })
         petalcontainer.css('transform', `rotate(${i*360/numPetals}deg)`);
         petalcontainer.append(petal);
         flower.append(petalcontainer);
     }
+    var hiddenCenter = $("<div></div>").addClass("center2 hidden");
     var center = $("<div></div>").addClass("center").css('border-color', color);
     addSmile(center, color);
     center.css({
@@ -169,6 +172,7 @@ function makeFlower(size, index) {
         'left': `calc(50% - ${size/7}px)`,
         'top': `calc(50% - ${size/7}px)`
     })
+    flower.append(hiddenCenter);
     flower.append(center);
     flowers.push(flower);
 
