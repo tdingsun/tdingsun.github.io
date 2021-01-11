@@ -5,8 +5,7 @@ body, html {
   color: seashell;
   overflow: hidden;
   font-size: 16px;
-  background-color: lightblue;
-
+  background-color: darkturquoise;
 }
 
 * {
@@ -31,14 +30,14 @@ body, html {
 }
 
 #container {
-
   position: fixed;
   width: 100vw;
   height: 100vh;
-  padding: 5px;
+  padding: 20px;
   padding-bottom: 50px;
   padding-top: 100px;
   overflow-y: scroll;
+
 }
 
 #background {
@@ -50,6 +49,7 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+
 }
 
 .row {
@@ -63,12 +63,13 @@ body, html {
   display: inline-block;
   padding: 3px;
   padding-bottom: 0px;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 .last {
   background-color: seashell;
-  color: lightblue;
+  border-radius: 5px;
+  color: darkturquoise;
   z-index: 1;
 }
 
@@ -82,6 +83,12 @@ body, html {
   0% { transform: translateY(0) rotate(0deg)}
   50% { transform: translateY(70vh) rotate(-90deg)}
   100% { transform: translateY(0) rotate(0deg)}
+}
+
+@keyframes wade {
+  0% { transform: translateX(0px) translateY(10px)}
+  50% { transform: translateX(10px) translateY(0px)}
+  100% { transform: translateX(0px) translateY(10px)}
 }
 
 .grid-box {
@@ -135,12 +142,12 @@ body, html {
   height: 12px;
   position: absolute;
   top: 29px;
-  background-color: beige;
+  background-color: seashell;
   transition: background-color 0.25s;
 }
 
 #mute-btn {
-  color: beige;
+  color: seashell;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -150,8 +157,8 @@ body, html {
 }
 
 #mute-btn:hover {
-  color: lightblue;
-  background-color: beige;
+  color: darkturquoise;
+  background-color: seashell;
 }
 
 #nav {
@@ -171,5 +178,5 @@ body, html {
 }
 
 .navClock {
-  background-color: cornsilk!important;
+  background-color: seashell!important;
 }

@@ -1,12 +1,21 @@
 var title = "TITLE";
 var author = "Paul Bouigue"
-var speed = 250;
+var speed = 500;
 
 var texts = ["au bout des deux piscines, il y a toujours, au centre de la largeur des deux bassins, un escabeau sur lequel est posté quelqu’un qui ressemble à un maître nageur dans un short rouge, qui tient d’une main une canne claire au bout de laquelle pend un grand cercle de bois peint en blanc. Ce qui fait voir que c’est du bois, c’est la tranche beige d’environ 3 centimètres qui n’est pas peinte. Sur ce grand cercle de bois épais, il y a des traits noirs à chaque heure, une grande et une petite aiguille de peinte. Si je m’approche, c’est une horloge, le dos est peint en jaune, si elle tournoie sur le fil, c’est le soleil.",
 "le plafond du grand bâtiment années 60 de la piscine est assez haut pour être voûté, le moindre bruit d’eau et de cris résonne jusqu’aux cabines; dans les bassins, ce qui donne la sensation d’un miroir, c’est le plafond bleu comme celui d’une église que l’on viendrait de repeindre : orné de dorures d’anges, d’étoiles et de fleurs le long de la structure gothique en briquette rouge; parfois il goûte à cause de l’humidité et de la condensation, on dirait qu’il se décolle, ce qui est amusant pour une piscine.",
 "dans le bassin principal, lorsque je nage, je vois au fond une grande mosaïque de couleur terre rouge (le même rouge que le ventre des linottes) dont chacun des carrés qui la constitue est cerné de blanc. Lorsque je passe au-dessus et que j’ouvre les yeux, je vois les carrés serpenter, comme ~ si ~ uniquement ~ la ~ ligne ~ horizontale ~ qui ~ les ~ encadre ~ était ~ de ~ travers, ~ complètement ~ de ~ traviole ~ même à onduler à cause d’un phénomène entre le soleil, l’air et l’eau. Puis lorsque je sors de l’eau et que je regarde la mosaïque debout sur le rebord de la piscine, elle fuit vers l’horizon, les carrés sont encore ondulés mais cette fois ils ne bougent pas.",
 "il y a quatre mètres de cabine à rayure jaunes de chaque côté de l’allée principale, comme à la plage; huit salles avec deux sèche-cheveux au bout; le sol carrelé grisâtre est en pente vers un trou au centre de la pièce — pour que l’eau continue de s’écouler de mon maillot que je presse —, presque trop pentu, de telle manière qu’il faut être sur la pointe des pieds pour se sentir parallèle à la terre. Mais lorsque l’on est sur la pointe des pieds dans une cabine, la tête dépasse à coup sur."
 ];
+
+var pars = [];
+
+pars[0] = texts[0].split(" ");
+pars[1] = texts[1].split(" ");
+pars[2] = texts[2].split(" ");
+pars[3] = texts[3].split(" ");
+
+
 var wDivs = [];
 
 var tv;
@@ -73,29 +82,86 @@ function makeGrid(x, y) {
 
 function initText(p){
   wDivs = [];
-  let paragraph = $("<div></div>").addClass('paragraph');
-  $('#container').append(paragraph);
-  if(p < texts.length){
-    let words = texts[p].split(" ");
-    for(let i = 0; i < words.length; i++){
-      let wDiv = $("<div></div>").addClass('word').addClass(`word-${p}`);
-      let word = words[i];
-      wDiv.text(word);
-      paragraph.append(wDiv);
-      wDivs.push(wDiv);
+  if (p < 4){
+    $('#container').empty();
+    if(p % 2 == 0){
+      par0Animation(0, p);
+    } else {
+      par1Animation(0, p);
+  
     }
-    setTimeout(startAnimation, 1000, 0, p); 
   }
+
 }
 
-function startAnimation(i, p) {
-  let div = wDivs[i];
+function par1Animation(i, par) {
+  let div = $("<div></div>").addClass('word').addClass(`word-${par}`);
+  let word = pars[par][i];
+  div.text(word);
+  $('#container').append(div);
+  wDivs.push(div);
+
+  let theta = i*2*Math.PI/11.5;
+  let r = Math.floor((110 - i)/5) * 2;
+  let x = r * Math.cos(theta);
+  let y = r * Math.sin(theta);
+
+  div.css({
+    top: `${y + 50}%`,
+    left: `${x + 50}%`,
+    position: "fixed",
+    animation: 'wade 5s ease-in-out infinite'
+  })
 
   if(i > 0){
     wDivs[i-1].removeClass('last');
   }
   div.addClass('last');
   
+
+  let randNote = Math.floor(Math.random() * notes[par].length);
+  synth.triggerAttackRelease(notes[par][randNote], "1n");
+
+
+  if(i < pars[par].length - 1){
+    setTimeout(par1Animation, speed, i+1, par);
+  } else {
+    setTimeout(function(){
+      $('.word').removeClass('last');
+    }, 1000);
+    setTimeout(initText, 1000, par+1);
+  }
+}
+
+function par0Animation(i, par) {
+  let div = $("<div></div>").addClass('word').addClass(`word-${par}`);
+  let word = pars[par][i];
+  div.text(word);
+  $('#container').append(div);
+  wDivs.push(div);
+
+  if(i > 0){
+    wDivs[i-1].removeClass('last');
+  }
+  div.addClass('last');
+  
+  addWave(div);
+
+  let randNote = Math.floor(Math.random() * notes[par].length);
+  synth.triggerAttackRelease(notes[par][randNote], "1n");
+
+
+  if(i < pars[par].length - 1){
+    setTimeout(par0Animation, speed, i+1, par);
+  } else {
+    setTimeout(function(){
+      $('.word').removeClass('last');
+    }, 1000);
+    setTimeout(initText, 1000, par+1);
+  }
+}
+
+function addWave(div){
   if(Math.random() < 0.5){
     div.css({
       "animation": `wave 20s ease-in-out infinite`
@@ -105,26 +171,70 @@ function startAnimation(i, p) {
       "animation": `wave-2 20s ease-in-out infinite`
     });
   }
-
-  let randNote = Math.floor(Math.random() * notes[p].length);
-  synth.triggerAttackRelease(notes[p][randNote], "1n");
-
-
-  if(i < wDivs.length - 1){
-    let nextWord = wDivs[i+1].text();
-  
-    var syllables = RiTa.getSyllables(nextWord);
-    var syllables_arr = syllables.split("/");
-    var time = syllables_arr.length * speed;
-
-    setTimeout(startAnimation, time, i+1, p);
-  } else {
-    setTimeout(function(){
-      $('.word').removeClass('last');
-    }, 1000);
-    setTimeout(initText, speed, p+1);
-  }
 }
+
+// function initText(p){
+//   wDivs = [];
+//   let paragraph = $("<div></div>").addClass('paragraph');
+//   $('#container').append(paragraph);
+//   if(p < texts.length){
+//     let words = texts[p].split(" ");
+//     for(let i = 0; i < words.length; i++){
+//       let wDiv = $("<div></div>").addClass('word').addClass(`word-${p}`);
+//       let word = words[i];
+//       wDiv.text(word);
+//       paragraph.append(wDiv);
+//       wDivs.push(wDiv);
+//     }
+//     setTimeout(startAnimation, 1000, 0, p); 
+//   }
+// }
+
+// function startRingAnimation(i, p) {
+
+// }
+
+// function startAnimation(i, p) {
+//   let div = wDivs[i];
+
+//   if(i > 0){
+//     wDivs[i-1].removeClass('last');
+//   }
+//   div.addClass('last');
+  
+//   if(Math.random() < 0.5){
+//     div.css({
+//       "animation": `wave 20s ease-in-out infinite`
+//     });
+//   } else {
+//     div.css({
+//       "animation": `wave-2 20s ease-in-out infinite`
+//     });
+//   }
+
+//   let randNote = Math.floor(Math.random() * notes[p].length);
+//   synth.triggerAttackRelease(notes[p][randNote], "1n");
+
+
+//   if(i < wDivs.length - 1){
+//     let nextWord = wDivs[i+1].text();
+  
+//     var syllables = RiTa.getSyllables(nextWord);
+//     var syllables_arr = syllables.split("/");
+//     var time = syllables_arr.length * speed;
+
+//     setTimeout(startAnimation, time, i+1, p);
+//   } else {
+//     setTimeout(function(){
+//       $('.word').removeClass('last');
+//     }, 1000);
+//     setTimeout(initText, speed, p+1);
+//   }
+// }
+
+
+
+
 
 // Common
 function displayTitle(title, author){
