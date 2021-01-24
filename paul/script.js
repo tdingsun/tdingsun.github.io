@@ -1,6 +1,6 @@
 var title = "TITLE";
 var author = "Paul Bouigue"
-var speed = 500;
+var speed = 350;
 
 var texts = ["au bout des deux piscines, il y a toujours, au centre de la largeur des deux bassins, un escabeau sur lequel est posté quelqu’un qui ressemble à un maître nageur dans un short rouge, qui tient d’une main une canne claire au bout de laquelle pend un grand cercle de bois peint en blanc. Ce qui fait voir que c’est du bois, c’est la tranche beige d’environ 3 centimètres qui n’est pas peinte. Sur ce grand cercle de bois épais, il y a des traits noirs à chaque heure, une grande et une petite aiguille de peinte. Si je m’approche, c’est une horloge, le dos est peint en jaune, si elle tournoie sur le fil, c’est le soleil.",
 "le plafond du grand bâtiment années 60 de la piscine est assez haut pour être voûté, le moindre bruit d’eau et de cris résonne jusqu’aux cabines; dans les bassins, ce qui donne la sensation d’un miroir, c’est le plafond bleu comme celui d’une église que l’on viendrait de repeindre : orné de dorures d’anges, d’étoiles et de fleurs le long de la structure gothique en briquette rouge; parfois il goûte à cause de l’humidité et de la condensation, on dirait qu’il se décolle, ce qui est amusant pour une piscine.",
@@ -22,21 +22,21 @@ var tv;
 var th;
 
 ///TONE.JS STUFF
-var volume = new Tone.Volume(-12);
-var synth = new Tone.PolySynth(5, Tone.Synth).chain(volume, Tone.Master);
+var volume = new Tone.Volume(-4);
+var synth = new Tone.PolySynth(3, Tone.Synth).chain(volume, Tone.Master);
 synth.set({
   oscillator: {
   type: "sine"
   },
   envelope: {
-    attack: '0.05'
+    attack: '0.5'
   }
 });
 var notes = [];
-notes.push(Tone.Frequency("G2").harmonize([4, 5, 7, 11, 12, 16, 19, 24, 28, 31, 36]));
-notes.push(Tone.Frequency("F2").harmonize([4, 5, 7, 11, 12, 16, 19, 24, 28, 31, 36]));
-notes.push(Tone.Frequency("D2").harmonize([4, 5, 7, 11, 12, 16, 19, 24, 28, 31, 36]));
-notes.push(Tone.Frequency("C2").harmonize([4, 5, 7, 11, 12, 16, 19, 24, 28, 31, 36]));
+notes.push(Tone.Frequency("G2").harmonize([4, 5, 7, 11, 12, 16, 19, 24, 28, 31]));
+notes.push(Tone.Frequency("F2").harmonize([4, 5, 7, 11, 12, 16, 19, 24, 28, 31]));
+notes.push(Tone.Frequency("D2").harmonize([4, 5, 7, 11, 12, 16, 19, 24, 28, 31]));
+notes.push(Tone.Frequency("C2").harmonize([4, 5, 7, 11, 12, 16, 19, 24, 28, 31]));
 
 //have to click to start audio context
 StartAudioContext(Tone.context, window);
@@ -120,7 +120,7 @@ function par1Animation(i, par) {
   
 
   let randNote = Math.floor(Math.random() * notes[par].length);
-  synth.triggerAttackRelease(notes[par][randNote], "1n");
+  synth.triggerAttackRelease(notes[par][randNote], "2n");
 
 
   if(i < pars[par].length - 1){
