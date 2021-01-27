@@ -74,15 +74,15 @@ body, html {
 }
 
 @keyframes wave {
-  0% { transform: translateY(0) rotate(0deg)}
-  50% { transform: translateY(70vh) rotate(90deg)}
-  100% { transform: translateY(0) rotate(0deg)}
+  0% { transform: translateY(70vh) rotate(90deg); opacity: 0.1}
+  50% { transform: translateY(0) rotate(0deg); opacity: 1}
+  100% { transform: translateY(70vh) rotate(90deg); opacity: 0.1}
 }
 
 @keyframes wave-2 {
-  0% { transform: translateY(0) rotate(0deg)}
-  50% { transform: translateY(70vh) rotate(-90deg)}
-  100% { transform: translateY(0) rotate(0deg)}
+  0% { transform: translateY(70vh) rotate(-90deg); opacity: 0.1}
+  50% { transform: translateY(0) rotate(0deg); opacity: 1}
+  100% { transform: translateY(70vh) rotate(-90deg); opacity: 0.1}
 }
 
 @keyframes wade {

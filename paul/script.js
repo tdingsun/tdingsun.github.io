@@ -140,15 +140,19 @@ function par0Animation(i, par) {
   $('#container').append(div);
   wDivs.push(div);
 
-  if(i > 0){
-    wDivs[i-1].removeClass('last');
-  }
-  div.addClass('last');
-  
   addWave(div);
 
-  let randNote = Math.floor(Math.random() * notes[par].length);
-  synth.triggerAttackRelease(notes[par][randNote], "1n");
+  setTimeout(function() {
+    if(i > 0){
+      wDivs[i-1].removeClass('last');
+    }
+    div.addClass('last');
+    let randNote = Math.floor(Math.random() * notes[par].length);
+    synth.triggerAttackRelease(notes[par][randNote], "1n");
+  }, 9500)
+
+  
+
 
 
   if(i < pars[par].length - 1){
@@ -156,8 +160,8 @@ function par0Animation(i, par) {
   } else {
     setTimeout(function(){
       $('.word').removeClass('last');
-    }, 1000);
-    setTimeout(initText, 1000, par+1);
+      initText(par+1);
+    }, 12000);
   }
 }
 
@@ -172,69 +176,6 @@ function addWave(div){
     });
   }
 }
-
-// function initText(p){
-//   wDivs = [];
-//   let paragraph = $("<div></div>").addClass('paragraph');
-//   $('#container').append(paragraph);
-//   if(p < texts.length){
-//     let words = texts[p].split(" ");
-//     for(let i = 0; i < words.length; i++){
-//       let wDiv = $("<div></div>").addClass('word').addClass(`word-${p}`);
-//       let word = words[i];
-//       wDiv.text(word);
-//       paragraph.append(wDiv);
-//       wDivs.push(wDiv);
-//     }
-//     setTimeout(startAnimation, 1000, 0, p); 
-//   }
-// }
-
-// function startRingAnimation(i, p) {
-
-// }
-
-// function startAnimation(i, p) {
-//   let div = wDivs[i];
-
-//   if(i > 0){
-//     wDivs[i-1].removeClass('last');
-//   }
-//   div.addClass('last');
-  
-//   if(Math.random() < 0.5){
-//     div.css({
-//       "animation": `wave 20s ease-in-out infinite`
-//     });
-//   } else {
-//     div.css({
-//       "animation": `wave-2 20s ease-in-out infinite`
-//     });
-//   }
-
-//   let randNote = Math.floor(Math.random() * notes[p].length);
-//   synth.triggerAttackRelease(notes[p][randNote], "1n");
-
-
-//   if(i < wDivs.length - 1){
-//     let nextWord = wDivs[i+1].text();
-  
-//     var syllables = RiTa.getSyllables(nextWord);
-//     var syllables_arr = syllables.split("/");
-//     var time = syllables_arr.length * speed;
-
-//     setTimeout(startAnimation, time, i+1, p);
-//   } else {
-//     setTimeout(function(){
-//       $('.word').removeClass('last');
-//     }, 1000);
-//     setTimeout(initText, speed, p+1);
-//   }
-// }
-
-
-
-
 
 // Common
 function displayTitle(title, author){
