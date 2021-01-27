@@ -55,7 +55,7 @@ $(document).ready(function(event){
 
   $(window).click(function () {
     Tone.context.resume();
-  })
+  });
 
   makeGrid(10, 20);
 });
@@ -63,7 +63,6 @@ $(document).ready(function(event){
 function makeGrid(x, y) {
   let w = 100/x;
   let h = 100/y
-
   for(let i = 0; i < y-1; i++){
     let row = $('<div></div>').addClass('row');
     let rowlength = (i % 2 == 0) ? x-1 : x;
@@ -76,7 +75,6 @@ function makeGrid(x, y) {
       row.append(box);
     }
     $('#background').append(row);
-
   }
 }
 
@@ -88,10 +86,8 @@ function initText(p){
       par0Animation(0, p);
     } else {
       par1Animation(0, p);
-  
     }
   }
-
 }
 
 function par1Animation(i, par) {
@@ -117,19 +113,17 @@ function par1Animation(i, par) {
     wDivs[i-1].removeClass('last');
   }
   div.addClass('last');
-  
 
   let randNote = Math.floor(Math.random() * notes[par].length);
   synth.triggerAttackRelease(notes[par][randNote], "2n");
-
 
   if(i < pars[par].length - 1){
     setTimeout(par1Animation, speed, i+1, par);
   } else {
     setTimeout(function(){
       $('.word').removeClass('last');
-    }, 1000);
-    setTimeout(initText, 1000, par+1);
+      initText(par + 1);
+    }, 2000);
   }
 }
 
