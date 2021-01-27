@@ -8,6 +8,7 @@ var curr_subdivide_max = 1;
 var curr_brick_subdivide = 0;
 var curr_brick_subdivide_max = 1;
 var brick_speed = 250;
+let brickInterval;
 var tv;
 var th;
 
@@ -105,10 +106,10 @@ $(document).on("click", ".chunk", function(e){
   chunkIdx++;
     $(e.target).removeClass("chunk");
   if (chunkIdx < chunks.length){
-
     displayText(chunkIdx);
+  } else {
+    clearInterval(brickInterval);
   }
-
 });
 
 function brickBuilding(){
@@ -136,7 +137,7 @@ function displayTitle(title, author){
   setTimeout(() => {
     $("#title").addClass("title-small");
     displayText(chunkIdx);
-    setInterval(brickBuilding, brick_speed);
+    brickInterval = setInterval(brickBuilding, brick_speed);
   }, 1500);
 }
 

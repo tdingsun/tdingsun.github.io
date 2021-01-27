@@ -19,7 +19,6 @@ body, html {
   position: absolute;
   top: 20px;
   left: 20px;
-  cursor: pointer;
   transition: 0.25s;
   z-index: 1;
 }
@@ -47,6 +46,10 @@ body, html {
   justify-content: space-between;
   flex-grow: 1;
   margin-bottom: calc((100vh - 120px) / 13);
+}
+
+.word-container:hover {
+  border-color: green;
 }
 
 .row:last-child {
@@ -147,7 +150,7 @@ body, html {
 }
 
 #mute-btn {
-  color: black;
+  color: darkslategrey;
   position: fixed;
   padding: 25px;
   right: 0;
