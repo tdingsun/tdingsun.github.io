@@ -4,7 +4,7 @@ var title = "dream song";
 var author = "Tiger Dingsun";
 var text = "oh you said, you said, you said i wouldn’t need you for a while and its true I didn’t need you for the longest time but i need you now i wanna feel you in a different way like stroking your cheek after you shave Or lying when I already ate So I could spend more time with you Even when there’s nothing to do dreams operate in symbolic space so logic doesn’t feel the same And people sharing the same face like seeing you and wondering If I was you and you were me Would life feel like an RPG Be with me Stay with me Oh baby please I wanna see You in A different Light Like the dust in the air during golden hour What it feels like holding power Wilting like supermarket flowers Floating by with friends online Wanting more but feeling fine And there’s something that I wanna say dreams exist in symbolic space so logic doesn’t have to be the same And we can be in the same place And I can finally touch your face Superposition’s fucking great They’ll legislate a way to be Lonely in society oh you said you said you said i wouldn’t need you for a while and its true I didn’t need you for the longest time but i need you now oh you said you said you said i wouldn’t need you for a while and its true I didn’t need you for the longest time but i need you now";
 var words = text.split(' ');
-var speed = 250;
+var speed = 100;
 
 var tv;
 var th;
