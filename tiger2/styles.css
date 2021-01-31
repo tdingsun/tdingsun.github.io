@@ -1,0 +1,167 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: darkslategray;
+  color: tomato;
+  overflow: auto;
+  font-size: 16px;
+  width: 200vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#title {
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 0.9em;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.title-small {
+  font-size: 2rem!important;
+  letter-spacing: -1.5px!important;
+}
+
+#container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  padding-top: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: space-between;
+  overflow: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+
+}
+
+.word {
+  font-size: 1.2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  animation: blink 0.5s linear infinite;
+}
+
+#bigwordframe {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  font-size: 5rem;
+  z-index: -1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  letter-spacing: -5px;
+  flex-direction: column;
+}
+
+#syllables {
+  font-size: 1.5rem;
+  letter-spacing: 0;
+  
+}
+
+.spacer {
+  width: 50px;
+}
+
+
+@keyframes blink {
+  0% { visibility: hidden;}
+  50% { visibility: hidden;}
+  100% { visibility: visible;}
+}
+
+/* Common */
+
+#start {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+#clockContainer {
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
+  position: fixed;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 2;
+  
+}
+
+#vertical {
+  width: 12px;
+  height: 70px;
+  background-color: tomato;
+  position: absolute;
+  left: 29px;
+  transition: background-color 0.25s;
+}
+
+#horizontal{
+  width: 70px;
+  height: 12px;
+  position: absolute;
+  top: 29px;
+  background-color: tomato;
+  transition: background-color 0.25s;
+}
+
+#mute-btn {
+  color: tomato;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: darkslategray;
+  background-color: tomato;
+}
+
+#nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 0px;
+  height: 100vh;
+  border: 0;
+  transition: 0.25s;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.showNav {
+  width: 400px!important;
+}
+
+.navClock {
+  background-color: cornsilk!important;
+}
+
