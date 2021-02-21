@@ -124,6 +124,7 @@ a {
   /* background-color: cornflowerblue;
   color: cornsilk; */
   transition: background-color 0.25s;
+  font-style: italic;
 }
 
 .bio a:hover {

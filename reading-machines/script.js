@@ -215,15 +215,15 @@ $("#clockContainer").mouseleave(function(){
 
 $("#container").on('mouseenter', '.line', function(){
   if ( window.location == window.parent.location ) {	
-    $(".bio").removeClass("bio-show");
+    // $(".bio").removeClass("bio-show");
     $(this).find(".bio").addClass("bio-show");
   }
 
 });
 
-$("#container").on('mouseleave', '.line', function(){
-  $(".bio").removeClass("bio-show");
-});
+// $("#container").on('mouseleave', '.line', function(){
+//   $(".bio").removeClass("bio-show");
+// });
 
 function makeLinks() {
 
