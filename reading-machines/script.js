@@ -182,7 +182,6 @@ $(window).resize(function(){
 
 $("#container").on("mouseenter", ".line", function(){
   let i = $(this).index() - 2;
-  console.log(i);
   synth.triggerAttackRelease(notes[i % notes.length], "8n");
 });
 
