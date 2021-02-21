@@ -1,4 +1,4 @@
-var title = "TITLE";
+var title = "25×50";
 var author = "Paul Bouigue"
 var speed = 350;
 
@@ -15,7 +15,6 @@ pars[1] = texts[1].split(" ");
 pars[2] = texts[2].split(" ");
 pars[3] = texts[3].split(" ");
 
-
 var wDivs = [];
 
 var tv;
@@ -27,11 +26,9 @@ var synth = new Tone.PolySynth(3, Tone.Synth).chain(volume, Tone.Master);
 synth.set({
   oscillator: {
   type: "sine"
-  },
-  envelope: {
-    attack: '0.5'
   }
 });
+
 var notes = [];
 notes.push(Tone.Frequency("G2").harmonize([4, 5, 7, 11, 12, 16, 19, 24, 28, 31]));
 notes.push(Tone.Frequency("F2").harmonize([4, 5, 7, 11, 12, 16, 19, 24, 28, 31]));
@@ -174,9 +171,9 @@ function addWave(div){
 // Common
 function displayTitle(title, author){
   $("#title").html(title + "<br>by " + author);
+  initText(0);
   setTimeout(() => {
     $("#title").addClass("title-small");
-    initText(0);
   }, 1500);
 }
 

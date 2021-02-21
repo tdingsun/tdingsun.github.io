@@ -4,6 +4,20 @@ var w = $(window).width();
 var h = $(window).height();
 var linkBody = "https://tdingsun.github.io/";
 var links = {
+  "zainab": {
+    "number": "19",
+    "name": "Affirmations for My Existence",
+    "author": "Zainab Aliyu",
+    "bio": "(\"Zai\") feels most at home when lost in archives.<a href='https://www.instagram.com/beatsbyzai/'>Instagram</a>",
+    "mobile": false
+  }, 
+  "paul": {
+    "number": "18",
+    "name": "25x50",
+    "author": "Paul Bouigue",
+    "bio": "<a href='https://pual.cool'>Website</a>",
+    "mobile": false
+  }, 
   "emma": {
     "number": "17",
     "name": "GUSHGUSHGUSH",
@@ -199,7 +213,7 @@ $("#clockContainer").mouseleave(function(){
   th = setInterval(rotateHorizontal, 1000);
 });
 
-$("#container").on('mouseenter', '.author', function(){
+$("#container").on('mouseenter', '.line', function(){
   if ( window.location == window.parent.location ) {	
     $(".bio").removeClass("bio-show");
     $(this).find(".bio").addClass("bio-show");
