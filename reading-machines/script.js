@@ -8,7 +8,7 @@ var links = {
     "number": "19",
     "name": "Affirmations for My Existence",
     "author": "Zainab Aliyu",
-    "bio": "(\"Zai\") feels most at home when lost in archives.<a href='https://www.instagram.com/beatsbyzai/'>Instagram</a>",
+    "bio": "(\"Zai\") feels most at home when lost in archives.<a href='https://zai.zone'>Website</a>",
     "mobile": false
   }, 
   "paul": {
