@@ -2,8 +2,8 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: tan;
   background-color: darkslategray;
-  color: tomato;
   overflow: auto;
   font-size: 16px;
   width: 200vw;
@@ -61,7 +61,6 @@ body, html {
   height: 100vh;
   position: fixed;
   font-size: 5rem;
-  z-index: -1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -115,7 +114,7 @@ body, html {
 #vertical {
   width: 12px;
   height: 70px;
-  background-color: tomato;
+  background-color: tan;
   position: absolute;
   left: 29px;
   transition: background-color 0.25s;
@@ -126,12 +125,12 @@ body, html {
   height: 12px;
   position: absolute;
   top: 29px;
-  background-color: tomato;
+  background-color: tan;
   transition: background-color 0.25s;
 }
 
 #mute-btn {
-  color: tomato;
+  color: tan;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -142,7 +141,7 @@ body, html {
 
 #mute-btn:hover {
   color: darkslategray;
-  background-color: tomato;
+  background-color: tan;
 }
 
 #nav {

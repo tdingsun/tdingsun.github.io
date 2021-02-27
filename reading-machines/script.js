@@ -4,6 +4,13 @@ var w = $(window).width();
 var h = $(window).height();
 var linkBody = "https://tdingsun.github.io/";
 var links = {
+  "tiger2": {
+    "number": "20",
+    "name": "I Never Believe it Until it Happens Again",
+    "author": "Tiger Dingsun",
+    "bio": "is my second language. <a href='https://tiger.exposed/'>Website</a>",
+    "mobile": false
+  },
   "zainab": {
     "number": "19",
     "name": "Affirmations for My Existence",

@@ -1,8 +1,8 @@
 var width;
 var height;
-var title = "dream song";
+var title = "I Never Believe it <br> Until it Happens Again";
 var author = "Tiger Dingsun";
-var text = "oh you said, you said, you said i wouldn’t need you for a while and its true I didn’t need you for the longest time but i need you now i wanna feel you in a different way like stroking your cheek after you shave Or lying when I already ate So I could spend more time with you Even when there’s nothing to do dreams operate in symbolic space so logic doesn’t feel the same And people sharing the same face like seeing you and wondering If I was you and you were me Would life feel like an RPG Be with me Stay with me Oh baby please I wanna see You in A different Light Like the dust in the air during golden hour What it feels like holding power Wilting like supermarket flowers Floating by with friends online Wanting more but feeling fine And there’s something that I wanna say dreams exist in symbolic space so logic doesn’t have to be the same And we can be in the same place And I can finally touch your face Superposition’s fucking great They’ll legislate a way to be Lonely in society oh you said you said you said i wouldn’t need you for a while and its true I didn’t need you for the longest time but i need you now oh you said you said you said i wouldn’t need you for a while and its true I didn’t need you for the longest time but i need you now";
+var text = "1. I never believe it until it happens again. 2. Acts of god manifest themselves as strikes from a hammer onto a chisel strategically jammed in a crack. But I am on the other side of the stone and I have no idea where these cracks may appear. One function of modernity is the lessening of probability for Grace and Reversals of Fortunes. Bad luck becomes more of a constant. Baselines shift gradually but steadily. Resistance requires diligence in exercising your own agency. You are a being in this world. But affecting it is not an easy task. Godspeed. 3. In those moments when you are alone. The light is exact in its placement A spear of infinite length / And flowers opening slowly And that sound That they make As the water level lowers And its like In those moments when you are alone When I am alone When I am alone When I feel particularly Like I want to atone Daylight flowers on the table yellow patterns on the wall Glasses glinting on the table Plastic shadows on the wall When that low hum Thats constantly Buzzing in your ear Suddenly stops And the silence Floods inward Coming from all sides And flowers Growing slowly And that sound That it makes As the dimness of the bright winter day sweeps across the room And god is like What you would call In those moments When I am alone When I am alone When I feel particularly like I want to atone Something thats has caused everything to happen In this exact way You don’t know what its called But I feel as though One day I may return. 4. If you feel its right Then tell me when the blade is necessary Gripped me through the light Fortune always favors the scary Spiritual error Didn’t you say you never wanted to be the bearer Of bad news Even though you’ve felt this way For way too long. 5. You usually play the fool. But today you sit with me on a bench outside of school right before the denouement. The rain had just cleared up. You see with clear eyes. The ground is wet like the tears that glisten in your eyes as you give a wan smile and reflect on your own losses. The things you’ve held back until now, you finally choose to reveal to impart your wisdom and clarity. You look up, opening your eyes and your face is so beautiful in the sunlight suddenly streaming down on us. I finally know what I must do. I never believe it until it happens again. But it always. happens. again.";
 var words = text.split(' ');
 var speed = 100;
 
@@ -17,6 +17,7 @@ var notes = Tone.Frequency("F3").harmonize([0, 2, 4]);
 StartAudioContext(Tone.context, window);
 
 $(document).ready(function(event){
+
   //mute
   Tone.Master.mute = localStorage.getItem('mute') == 'true' ? true : false;
   let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
@@ -48,6 +49,40 @@ function displayWord(i){
   synth.triggerAttackRelease(notes[randNote], "2n");
 
   let word = words[i];
+
+  if(word == "1.") {
+    notes = Tone.Frequency("F3").harmonize([0, 2]);
+    $('#container').css("background-color", "black");
+    setColor("slategrey");
+  }
+
+  if(word == "2.") {
+    notes = Tone.Frequency("F3").harmonize([0, 2, 4]);
+    $('#container').css("background-color", "darkslategrey");
+    setColor("tan");
+  }
+
+  if(word == "3.") {
+    notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7]);
+    $('#container').css("background-color", "darkkhaki");
+    setColor('orangered');
+
+  }
+
+  if(word == "4.") {
+    notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7, 11]);
+    $('#container').css("background-color", "tan");
+    setColor('seashell');
+
+  }
+
+  if(word == "5.") {
+    notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7, 12]);
+    $('#container').css("background-color", "seashell");
+    setColor('darkkhaki');
+
+  }
+
   $('#bigword').text(word);
   addSmallWord(word);
   if(i < words.length - 1);
@@ -60,11 +95,21 @@ function displayWord(i){
   $('#syllables').text(syllables_str);
   var time = syllables_arr.length * speed;
   if( word.charAt(word.length - 1) == '.' || word.charAt(word.length - 1) == '?'){
-    time = 1500;
+    time = 1000;
   }
   if(i < words.length - 1){
     setTimeout(displayWord, time, i+1);
   }
+
+}
+
+function setColor(color){
+  $('#container').css("color", color);
+  $('#title').css("color", color);
+  $('#bigwordframe').css("color", color);
+  $('#mute-btn').css("color", color);
+  $('#horizontal').css("background-color", color);
+  $('#vertical').css("background-color", color);
 
 }
 
