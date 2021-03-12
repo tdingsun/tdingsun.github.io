@@ -1,6 +1,6 @@
 *Key Words: Poetics, World-Building, Structure, Mythos, Narrative, Ambiguity, Epistemic Disobedience, Non-Teleological Reading.*
 
-# ![Worldbuilding](md/title-img.png)
+![Worldbuilding](md/title-img.png)
 <span class="caption">*Various frameworks for phylogenetic diagrams – right-to-left rectangular layout (A), bottom-up rectangular layout (B), top-down rectangular layout (Dendrogram) (C), rotated rectangular layout (D), bottom-up slanted layout (E), top-down slanted layout (Cladogram) (F), circular layout (G), circular inward layout (H and I).*</span>
 
 ***
