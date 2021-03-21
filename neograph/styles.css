@@ -4,6 +4,7 @@ body {
   font-family: sans-serif;
   text-align: left;
   font-size: 1.75vw;
+  letter-spacing: -0.5px;
 
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -32,7 +33,6 @@ body {
 .title-small {
   font-size: 2rem!important;
   letter-spacing: -1.5px!important;
-
 }
 
 #container {
@@ -58,9 +58,8 @@ body {
   word-wrap: break-word;
   align-content: center;
   align-items: center;
+
 }
-
-
 
 .line {
   background-color: royalblue;
@@ -69,12 +68,12 @@ body {
 
 .worda {
   cursor: pointer;
+  padding: 5px 10px;
+
 }
 
 .worda:hover {
   text-decoration: underline;
-  /* text-transform: uppercase; */
-  /* letter-spacing: -1px; */
 }
 
 @media only screen and (max-width: 790px) {

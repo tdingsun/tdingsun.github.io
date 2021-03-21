@@ -15,7 +15,7 @@ var author = "Tiger Dingsun"
 
 var volume = new Tone.Volume(-12);
 var synth = new Tone.PolySynth(4, Tone.Synth).chain(volume, Tone.Master);
-var notes = Tone.Frequency("G3").harmonize([0, 4, 7, 12]);
+var notes = Tone.Frequency("G2").harmonize([0, 4, 7, 12]);
 
 StartAudioContext(Tone.context, window);
 $(window).click(function(){
@@ -32,6 +32,10 @@ $(document).ready(function(){
     displayTitle(title, author);
     tv = setInterval(rotateVertical, 1000);
     th = setInterval(rotateHorizontal, 2000);
+
+    $(window).resize(function(){
+        $("#container").find(".line").remove();
+    });
 });
 
 function modelLoaded() {
@@ -46,6 +50,8 @@ function displayTitle(title, author){
 $("#container").on('click', '.worda', function() {
     makeNewWord(this);
 });
+
+
 
 function makeNewWord(el) {
     if(!runningInference){
@@ -208,9 +214,8 @@ function makeLines(el) {
         })
 
         $(el).append(line);
-
-
     }
+
     if(n.NW != null  && r[7]){
         let neighbor = $(`#${n.NW}`);
         neighbor.children('.line').remove();
