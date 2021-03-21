@@ -1,0 +1,138 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: whitesmoke;
+  color: darkgoldenrod;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#title {
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 0.9em;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.title-small {
+  font-size: 2rem!important;
+  letter-spacing: -1.5px!important;
+}
+
+#container {
+  position: absolute;
+  padding: 5px;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.block {
+  position: absolute;
+  background-color: whitesmoke;
+  border-radius: 2px;
+  color: darkgoldenrod;
+  display: flex;
+  justify-content: center;
+  padding: 1px 4px;
+}
+
+@keyframes shake {
+  0% {transform: rotate(1deg); background-color: darkgoldenrod; color: seashell;}
+  50% {transform: rotate(-1deg); background-color: darkgoldenrod; color: seashell;}
+  100% {transform: rotate(1deg); background-color: darkgoldenrod; color: seashell;}
+}
+
+@keyframes shake-reverse {
+  0% {transform: rotate(-1deg); background-color: darkgoldenrod; color: seashell;}
+  50% {transform: rotate(1deg); background-color: darkgoldenrod; color: seashell;}
+  100% {transform: rotate(-1deg); background-color: darkgoldenrod; color: seashell;}
+}
+
+
+
+/* Common */
+#start {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+#clockContainer {
+  width: 70px;
+  height: 70px;
+  bottom: 5px;
+  right: 5px;
+  position: fixed;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 2;
+  
+}
+
+#vertical {
+  width: 12px;
+  height: 70px;
+  background-color: darkgoldenrod;
+  position: absolute;
+  left: 29px;
+  transition: background-color 0.25s;
+}
+
+#horizontal{
+  width: 70px;
+  height: 12px;
+  position: absolute;
+  top: 29px;
+  background-color: darkgoldenrod;
+  transition: background-color 0.25s;
+}
+
+#mute-btn {
+  color: darkgoldenrod;
+  position: fixed;
+  padding: 25px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#mute-btn:hover {
+  color: seashell;
+  background-color: darkgoldenrod;
+}
+
+#nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 0px;
+  height: 100vh;
+  border: 0;
+  transition: 0.25s;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.showNav {
+  width: 400px!important;
+}
+
+.navClock {
+  background-color: cornsilk!important;
+}
