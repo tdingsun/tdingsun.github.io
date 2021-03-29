@@ -1,7 +1,7 @@
 var width;
 var height;
 var title = "the distance between anything at all and the center";
-var author = "Hannah McCain"
+var author = "Hannah Joyce"
 var speed = 500;
 var fontSize = 100;
 var text = "a a pinecone *hit my back a *pinecone hit my back a pinecone hit *my back an ant and the sun on my ankle hair curling across my cheek and the nape of my neck braided sound of birdsong and distant traffic two planes tracing powdery lines overhead the way the light settles softly on the grass. what distances / what closenesses to be a consciousness in and of a body to be smelling dry summer grasses to have the sun on my very own shoulders. a pinecone fell from the red pine and hit the curve of my spine."
