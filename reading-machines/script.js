@@ -1,9 +1,14 @@
-
-
 var w = $(window).width();
 var h = $(window).height();
 var linkBody = "https://tdingsun.github.io/";
 var links = {
+  "hannah": {
+    "number": "21",
+    "name": "the distance between anything at all and the center",
+    "author": "Hannah Joyce",
+    "bio": "is the beginning of a story. <a href='http://www.imaginaryhannah.com'>Website</a>",
+    "mobile": false
+  },
   "tiger2": {
     "number": "20",
     "name": "I Never Believe it Until it Happens Again",
