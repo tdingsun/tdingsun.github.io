@@ -1,15 +1,15 @@
-var width;
-var height;
 var title = "the distance between anything at all and the center";
 var author = "Hannah Joyce"
 var speed = 500;
-var fontSize = 100;
-var text = "a a pinecone *hit my back a *pinecone hit my back a pinecone hit *my back an ant and the sun on my ankle hair curling across my cheek and the nape of my neck braided sound of birdsong and distant traffic two planes tracing powdery lines overhead the way the light settles softly on the grass. what distances / what closenesses to be a consciousness in and of a body to be smelling dry summer grasses to have the sun on my very own shoulders. a pinecone fell from the red pine and hit the curve of my spine."
+var sentenceEndTime = 500;
+var text = "a pinecone *hit my back a *pinecone hit my back a pinecone hit *my back an ant and the sun on my ankle hair curling across my cheek and the nape of my neck braided sound of birdsong and distant traffic two planes tracing powdery lines overhead the way the light settles softly on the grass. what distances what closenesses to be a consciousness in and of a body to be smelling dry summer grasses to have the sun on my very own shoulders. a pinecone fell from the red pine and hit the curve of my spine."
 
 var textArray = text.split(" ");
 var currWord;
 var tv;
 var th;
+var numSteps = textArray.length;
+
 
 var volume = new Tone.Volume(-12);
 var synth = new Tone.PolySynth(9, Tone.Synth).chain(volume, Tone.Master);
@@ -24,29 +24,18 @@ $(document).ready(function(event){
   let text = Tone.Master.mute ? "SOUND ON" : "MUTE";
   $("#mute-btn").text(text);
 
-  width = $(window).innerWidth();
-  height = $(window).innerHeight();
-
   displayTitle(title, author);
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 2000);
 
   $('#start').on('click', function(event){
     $('#start').hide();
-
     $("#title").addClass("title-small");
-
     setTimeout(() => {
       init();
-      let numSteps = textArray.length;
-      for(let i = 1; i < numSteps; i++){
-        setTimeout(step, speed* i, i);
-      }
+      step(0);
     }, 500);
-
   });
-
-
 });
 
 var gridSize = 49;
@@ -56,23 +45,33 @@ var queue = [];
 
 class Block {
   constructor(xCoord, yCoord, wordIndex){
+    this.x = xCoord;
+    this.y = yCoord;
+
     this.div = $("<div></div>").addClass("block");
     let word = textArray[wordIndex];
+    
+    this.div.css("left", xCoord*2 + "vw");
+    this.div.css("top", yCoord*2 + "vh");
+    if(Math.random() > 0.5){
+      this.div.css("animation", `shake 0.15s linear 0s infinite`);
+    } else {
+      this.div.css("animation", `shake-reverse 0.15s linear 0s infinite`);
+    }
     if(word[0] == '*'){
       word = word.substring(1);
       this.div.css("font-style", "italic");
       this.div.css("font-family", "serif");
+      if(Math.random() > 0.5){
+        this.div.css("animation", `big-shake 0.15s linear 0s infinite`);
+      } else {
+        this.div.css("animation", `big-shake-reverse 0.15s linear 0s infinite`);
+      }
     }
+
     this.div.text(word);
-    this.div.css("left", xCoord*2 + "vw");
-    this.div.css("top", yCoord*2 + "vh");
-    if(Math.random() > 0.5){
-      this.div.css("animation", `shake 0.15s linear 0s infinite`)
-    } else {
-      this.div.css("animation", `shake-reverse 0.15s linear 0s infinite`)
-    }
-    this.x = xCoord;
-    this.y = yCoord;
+
+
     model[xCoord][yCoord] = this;
     $('#container').append(this.div);
     queue.push(this);
@@ -86,6 +85,7 @@ function init() {
   tripleNote(0);
   new Block(oXp, oYp, 0);
 }
+
 function step(stepIndex) {
   tripleNote(stepIndex);
 
@@ -110,146 +110,163 @@ function step(stepIndex) {
       $(block.div).remove();
       model[x][y] = null;
     }, speed* Math.random() * 25 + 500);
-    neighbors = getEmptyNeighbors(x, y);
-    c = neighbors.length;
-    if(c == 8){
-      addCross(x, y, stepIndex);
-    } else if(c == 5){
-      if(hasTopLeft(x, y) && hasTop(x, y) && hasTopRight(x, y)){
-        addBottom(x, y, stepIndex);
-      }
-      else if(hasTopLeft(x, y) && hasLeft(x, y) && hasBottomLeft(x, y)){
-        addRight(x, y, stepIndex);
-      }
-      else if(hasTopRight(x, y) && hasRight(x, y) && hasBottomRight(x, y)){
-        addLeft(x, y, stepIndex);
-      }
-      else if(hasBottomLeft(x, y) && hasBottom(x, y) && hasBottomRight(x, y)){
-        addTop(x, y, stepIndex);
-      }
-    } else if(c == 7){
-      if(hasTopLeft(x, y)){
-        let r = Math.random();
-        if(r > 0.5){
-          addBottomRight(x, y, stepIndex);
-        } else if(r > 0.75) {
-          addTopRight(x, y, stepIndex);
-          addBottomLeft(x, y, stepIndex);
-          addBottomRight(x, y, stepIndex);
-        } else {
-          addBottom(x, y, stepIndex);
-          addRight(x, y, stepIndex);
-        }
-      }
-      if(hasTopRight(x, y)){
-        let r = Math.random();
-        if(Math.random() > 0.5){
-          addBottomLeft(x, y, stepIndex);
-        } else if(r > 0.75) {
-          addTopRight(x, y, stepIndex);
-          addTopLeft(x, y, stepIndex);
-          addBottomRight(x, y, stepIndex);
-        } else {
-          addBottom(x, y, stepIndex);
-          addLeft(x, y, stepIndex);
-        }
-      }
-      if(hasBottomLeft(x, y)){
-        let r = Math.random();
-        if(r > 0.5){
-          addTopRight(x, y, stepIndex);
-        } else if(r > 0.75) {
-          addTopLeft(x, y, stepIndex);
-          addBottomLeft(x, y, stepIndex);
-          addBottomRight(x, y, stepIndex);
-        } else {
-          addTop(x, y, stepIndex);
-          addRight(x, y, stepIndex);
-        }
-      }
-      if(hasBottomRight(x, y)){
-        let r = Math.random();
-        if(r > 0.5){
-          addTopLeft(x, y, stepIndex);
-        } else if (r > 0.75) {
-          addTopRight(x, y, stepIndex);
-          addBottomLeft(x, y, stepIndex);
-          addBottomRight(x, y, stepIndex);
-        } else {
-          addTop(x, y, stepIndex);
-          addLeft(x, y, stepIndex);
-        }
-      }
-      if(hasBottom(x, y)){
-        if(Math.random() > 0.5){
-          addTop(x, y, stepIndex);
-          addRight(x, y, stepIndex);
-          addLeft(x, y, stepIndex);
-        } else {
-          let r = Math.random();
-          if(r > 0.33){
-            addTop(x, y, stepIndex);
-          } else if(r > 0.66){
-            addTopRight(x, y, stepIndex);
-          } else {
-            addTopLeft(x, y, stepIndex);
-          }
-        }
-      }
-      if(hasTop(x, y)){
-        if(Math.random() > 0.5){
-          addBottom(x, y, stepIndex);
-          addRight(x, y, stepIndex);
-          addLeft(x, y, stepIndex);
-        } else {
-          let r = Math.random();
-          if(r > 0.33){
-            addBottom(x, y, stepIndex);
-          } else if(r > 0.66){
-            addBottomRight(x, y, stepIndex);
-          } else {
-            addBottomLeft(x, y, stepIndex);
-          }
-        }
 
-      }
-      if(hasRight(x, y)){
-        if(Math.random() > 0.5){
-          addLeft(x, y, stepIndex);
-          addBottom(x, y, stepIndex);
-          addTop(x, y, stepIndex);
-        } else {
-          let r = Math.random();
-          if(r > 0.33){
-            addLeft(x, y, stepIndex);
-          } else if(r > 0.66){
-            addTopLeft(x, y, stepIndex);
-          } else {
-            addBottomLeft(x, y, stepIndex);
-          }
-        }
-      }
-      if(hasLeft(x, y)){
-        if(Math.random() > 0.5){
-          addRight(x, y, stepIndex);
-          addBottom(x, y, stepIndex);
-          addTop(x, y, stepIndex);
-        } else {
-          let r = Math.random();
-          if(r > 0.33){
-            addRight(x, y, stepIndex);
-          } else if(r > 0.66){
-            addTopRight(x, y, stepIndex);
-          } else {
-            addBottomRight(x, y, stepIndex);
-          }
-        }
-      }
-    }    
+    addBlocks(x, y, stepIndex);
+  }
+
+  var timeout = speed;
+  var word = textArray[stepIndex];
+  if (word.charAt(word.length - 1) == '.') {
+    console.log("PERIOD");
+    timeout = timeout + sentenceEndTime;
+  }
+  if(stepIndex < numSteps - 1){
+    setTimeout(step, timeout, stepIndex+1);
+  } else {
+    setTimeout(() => {
+      $('#poem').show();
+    }, timeout)
   }
 }
 
+function addBlocks(x, y, stepIndex) {
+  neighbors = getEmptyNeighbors(x, y);
+  c = neighbors.length;
+  if(c == 8){
+    addCross(x, y, stepIndex);
+  } else if(c == 5){
+    if(hasTopLeft(x, y) && hasTop(x, y) && hasTopRight(x, y)){
+      addBottom(x, y, stepIndex);
+    }
+    else if(hasTopLeft(x, y) && hasLeft(x, y) && hasBottomLeft(x, y)){
+      addRight(x, y, stepIndex);
+    }
+    else if(hasTopRight(x, y) && hasRight(x, y) && hasBottomRight(x, y)){
+      addLeft(x, y, stepIndex);
+    }
+    else if(hasBottomLeft(x, y) && hasBottom(x, y) && hasBottomRight(x, y)){
+      addTop(x, y, stepIndex);
+    }
+  } else if(c == 7){
+    if(hasTopLeft(x, y)){
+      let r = Math.random();
+      if(r > 0.5){
+        addBottomRight(x, y, stepIndex);
+      } else if(r > 0.75) {
+        addTopRight(x, y, stepIndex);
+        addBottomLeft(x, y, stepIndex);
+        addBottomRight(x, y, stepIndex);
+      } else {
+        addBottom(x, y, stepIndex);
+        addRight(x, y, stepIndex);
+      }
+    }
+    if(hasTopRight(x, y)){
+      let r = Math.random();
+      if(Math.random() > 0.5){
+        addBottomLeft(x, y, stepIndex);
+      } else if(r > 0.75) {
+        addTopRight(x, y, stepIndex);
+        addTopLeft(x, y, stepIndex);
+        addBottomRight(x, y, stepIndex);
+      } else {
+        addBottom(x, y, stepIndex);
+        addLeft(x, y, stepIndex);
+      }
+    }
+    if(hasBottomLeft(x, y)){
+      let r = Math.random();
+      if(r > 0.5){
+        addTopRight(x, y, stepIndex);
+      } else if(r > 0.75) {
+        addTopLeft(x, y, stepIndex);
+        addBottomLeft(x, y, stepIndex);
+        addBottomRight(x, y, stepIndex);
+      } else {
+        addTop(x, y, stepIndex);
+        addRight(x, y, stepIndex);
+      }
+    }
+    if(hasBottomRight(x, y)){
+      let r = Math.random();
+      if(r > 0.5){
+        addTopLeft(x, y, stepIndex);
+      } else if (r > 0.75) {
+        addTopRight(x, y, stepIndex);
+        addBottomLeft(x, y, stepIndex);
+        addBottomRight(x, y, stepIndex);
+      } else {
+        addTop(x, y, stepIndex);
+        addLeft(x, y, stepIndex);
+      }
+    }
+    if(hasBottom(x, y)){
+      if(Math.random() > 0.5){
+        addTop(x, y, stepIndex);
+        addRight(x, y, stepIndex);
+        addLeft(x, y, stepIndex);
+      } else {
+        let r = Math.random();
+        if(r > 0.33){
+          addTop(x, y, stepIndex);
+        } else if(r > 0.66){
+          addTopRight(x, y, stepIndex);
+        } else {
+          addTopLeft(x, y, stepIndex);
+        }
+      }
+    }
+    if(hasTop(x, y)){
+      if(Math.random() > 0.5){
+        addBottom(x, y, stepIndex);
+        addRight(x, y, stepIndex);
+        addLeft(x, y, stepIndex);
+      } else {
+        let r = Math.random();
+        if(r > 0.33){
+          addBottom(x, y, stepIndex);
+        } else if(r > 0.66){
+          addBottomRight(x, y, stepIndex);
+        } else {
+          addBottomLeft(x, y, stepIndex);
+        }
+      }
 
+    }
+    if(hasRight(x, y)){
+      if(Math.random() > 0.5){
+        addLeft(x, y, stepIndex);
+        addBottom(x, y, stepIndex);
+        addTop(x, y, stepIndex);
+      } else {
+        let r = Math.random();
+        if(r > 0.33){
+          addLeft(x, y, stepIndex);
+        } else if(r > 0.66){
+          addTopLeft(x, y, stepIndex);
+        } else {
+          addBottomLeft(x, y, stepIndex);
+        }
+      }
+    }
+    if(hasLeft(x, y)){
+      if(Math.random() > 0.5){
+        addRight(x, y, stepIndex);
+        addBottom(x, y, stepIndex);
+        addTop(x, y, stepIndex);
+      } else {
+        let r = Math.random();
+        if(r > 0.33){
+          addRight(x, y, stepIndex);
+        } else if(r > 0.66){
+          addTopRight(x, y, stepIndex);
+        } else {
+          addBottomRight(x, y, stepIndex);
+        }
+      }
+    }
+  }    
+}
 
 function getEmptyNeighbors(x, y){
   let n = [];
@@ -271,14 +288,14 @@ function getEmptyNeighbors(x, y){
 }
 
 //has blocks helper functions
-function hasTopLeft(x, y){ return model[x-1][y-1] != null; }
-function hasTop(x, y){ return model[x][y-1] != null; }
-function hasTopRight(x, y){ return model[x+1][y-1] != null; }
-function hasLeft(x, y){ return model[x-1][y] != null; }
-function hasRight(x, y){ return model[x+1][y] != null; }
-function hasBottomLeft(x, y){ return model[x-1][y+1] != null; }
-function hasBottom(x, y){ return model[x][y+1] != null; }
-function hasBottomRight(x, y){ return model[x+1][y+1] != null; }
+function hasTopLeft(x, y){ return (x == 0 || y == 0 || model[x-1][y-1] != null); }
+function hasTop(x, y){ return (y == 0 || model[x][y-1] != null); }
+function hasTopRight(x, y){ return (x == (gridSize - 1) || y == 0 || model[x+1][y-1] != null); }
+function hasLeft(x, y){ return (x == 0 || model[x-1][y] != null); }
+function hasRight(x, y){ return (x == (gridSize - 1) || model[x+1][y] != null); }
+function hasBottomLeft(x, y){ return x == 0 || y == (gridSize - 1) || model[x-1][y+1] != null; }
+function hasBottom(x, y){ return (y == (gridSize - 1) || model[x][y+1] != null); }
+function hasBottomRight(x, y){ return ( x == (gridSize - 1) || y == (gridSize - 1) || model[x+1][y+1] != null); }
 
 //add blocks helper functions
 function addTopLeft(x, y, i){ new Block(x-1, y-1, i); }

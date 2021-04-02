@@ -32,7 +32,13 @@ body, html {
   padding: 5px;
   width: 100vw;
   height: 100vh;
+}
 
+#poem {
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  display: none;
 }
 
 .block {
@@ -55,6 +61,18 @@ body, html {
   0% {transform: rotate(-1deg); background-color: darkgoldenrod; color: seashell;}
   50% {transform: rotate(1deg); background-color: darkgoldenrod; color: seashell;}
   100% {transform: rotate(-1deg); background-color: darkgoldenrod; color: seashell;}
+}
+
+@keyframes big-shake {
+  0% {transform: rotate(10deg); background-color: darkgoldenrod; color: seashell;}
+  50% {transform: rotate(-10deg); background-color: darkgoldenrod; color: seashell;}
+  100% {transform: rotate(10deg); background-color: darkgoldenrod; color: seashell;}
+}
+
+@keyframes big-shake-reverse {
+  0% {transform: rotate(-10deg); background-color: darkgoldenrod; color: seashell;}
+  50% {transform: rotate(10deg); background-color: darkgoldenrod; color: seashell;}
+  100% {transform: rotate(-10deg); background-color: darkgoldenrod; color: seashell;}
 }
 
 
