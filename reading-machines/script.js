@@ -110,8 +110,6 @@ var links = {
     "author": "Jorge Palacios",
     "mobile": true
   },
-
-
   "theia": {
     "number": "05",
     "name": "#hot sports girl",

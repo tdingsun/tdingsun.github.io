@@ -22,14 +22,24 @@ $(document).ready(function(event){
 
   width = $(window).innerWidth();
   height = $(window).innerHeight();
-
+  
   displayTitle(title, author);
   tv = setInterval(rotateVertical, 1000);
   th = setInterval(rotateHorizontal, 2000);
+  
+  $('#start').on('click', function(event){
+    $('#start').hide();
+    $("#title").addClass("title-small");
+    setTimeout(() => {
+      init();
+    }, 500);
+  });
+});
 
+function init() {
   var randNote = Math.floor(Math.random() * notes.length);
   synth.triggerAttackRelease(notes[randNote], "8n");
-});
+}
 
 // Common
 function displayTitle(title, author){

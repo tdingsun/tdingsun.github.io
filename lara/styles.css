@@ -2,8 +2,8 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: seashell;
-  color: black;
+  background-color: whitesmoke;
+  color: darkslategray;
   overflow: hidden;
   font-size: 16px;
 }
@@ -35,6 +35,49 @@ body, html {
   padding: 5px;
 }
 
+.block {
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-word;
+  padding: 5px;
+  font-size: 2rem;
+  overflow: hidden;
+  color: darkslategrey;
+  background-color: seashell;
+  line-height: 0.75;
+  letter-spacing: -1px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.block.vertical {
+  border-left: 1px solid darkslategrey;
+  border-right: 1px solid darkslategrey;
+  /* background-color: blue; */
+  writing-mode: vertical-lr;
+  
+}
+
+.block.horizontal {
+  border-top: 1px solid darkslategrey;
+  border-bottom: 1px solid darkslategrey;
+  /* background-color: red; */
+
+  /* background-color: blue; */
+}
+
+
+.block.disabled {
+  background-color: darkslategrey;
+  color: seashell;
+}
+.block:hover {
+  transform: rotate(5deg);
+  border: 1px solid darkslategrey;
+}
 /* Common */
 #start {
   position: fixed;
@@ -62,7 +105,7 @@ body, html {
 #vertical {
   width: 12px;
   height: 70px;
-  background-color: black;
+  background-color: darkslategrey;
   position: absolute;
   left: 29px;
   transition: background-color 0.25s;
@@ -73,12 +116,12 @@ body, html {
   height: 12px;
   position: absolute;
   top: 29px;
-  background-color: black;
+  background-color: darkslategrey;
   transition: background-color 0.25s;
 }
 
 #mute-btn {
-  color: black;
+  color: darkslategrey;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -89,7 +132,7 @@ body, html {
 
 #mute-btn:hover {
   color: darkkhaki;
-  background-color: black;
+  background-color: darkslategrey;
 }
 
 #nav {
