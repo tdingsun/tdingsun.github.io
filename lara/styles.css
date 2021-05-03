@@ -74,7 +74,7 @@ body, html {
   color: seashell;
 }
 .block.hasWord:hover {
-  transform: rotate(5deg);
+  transform: rotate(10deg);
   border: 1px solid dodgerblue;
   cursor: pointer;
   z-index: 999;
@@ -132,7 +132,7 @@ body, html {
 }
 
 #mute-btn:hover {
-  color: darkkhaki;
+  color: seashell;
   background-color: dodgerblue;
 }
 
