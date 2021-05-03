@@ -4,7 +4,7 @@ var title = "TITLE";
 var author = "AUTHOR"
 var speed = 150;
 
-var text = "5.11.20 // home rain 9.00 alarm Listening to my liked songs in the background. Coffee machine, taktak, door opening, Workout music, Turn on the lights, turn off the lights, door closing, Louder workout music- louder- louder- louder- -faster - faster- construction ------- craw call construction - drill sound :-)))(((-: ～～～～～still listening to my liked songs in the background～～～～～ sound of my necklaces vacuum cleanerrrrrrr ddddddrrrriiiiilllllllllllll sounddddddddddd DRILLLLLL SOUND D R I L LLLLLLLL and construction… ***** russian music ***** 13.30 alarm friends- laptop fan ambulance LAPTOP FAAAAAA AAAAAA AAAA NNNNNNNNNNNNNN. 6.11.20 // home 8.20 alarm ----- Erik Satie piano oo o ooooooo upstairs neighbor stomping 7.11.20// home 9.00 alarm breakfast sound People chatting People chatting driiillll people chatting chatting people chatting //// windows closing //// curtain closing /// driiilll taktaktaktaktaktak ---- people screaming ---- laughing ----- horoscopes--- ～～～～～ body language ～～～～～ 9.11.20 // home 8.20 alarm sound of children, going to school :-/ **** Coffee machine--- construction construction …...drilllllllll….. washing machine -beeeeep beeeep-** 10.11.20 //home from my bed”””” ticking clock sound coming from the hall -.-.-. -.-.-. -.-.-. 9.00 alarm siren 11.11.20 // home Wild imagination could never touch us 12.11.20 // home Drrrriiillllllllll”””””” “””””””” “ “ “ “ “””” “” “ “ “ “ Clock ticking plane passing by--- Drilll --- 20.1.21 Small things are making you happy,,, Like what? Sipping a good coffee, a sunny day and music";
+var text = "5.11.20 // home rain 9.00 alarm Listening to my liked songs in the background. Coffee machine, taktak, door opening, Workout music, Turn on the lights, turn off the lights, door closing, Louder workout music- louder- louder- louder- -faster - faster- construction ------- craw call construction - drill sound :-)))(((-: ～～～～～still listening to my liked songs in the background～～～～～ sound of my necklaces vacuum cleanerrrrrrr ddddddrrrriiiiilllllllllllll sounddddddddddd DRILLLLLL SOUND D R I L LLLLLLLL and construction… ***** russian music ***** 13.30 alarm friends- laptop fan ambulance LAPTOP FAAAAAA AAAAAA AAAA NNNNNNNNNNNNNN. 6.11.20 // home 8.20 alarm ----- Erik Satie piano oo o ooooooo upstairs neighbor stomping 7.11.20// home 9.00 alarm breakfast sound People chatting People chatting driiillll people chatting chatting people chatting //// windows closing //// curtain closing /// driiilll taktaktaktaktaktak ---- people screaming ---- laughing ----- horoscopes--- ～～～～～ body language ～～～～～ 9.11.20 // home 8.20 alarm sound of children, going to school :-/ **** Coffee machine--- construction construction …...drilllllllll….. washing machine -beeeeep beeeep-** 10.11.20 // home from my bed”””” ticking clock sound coming from the hall -.-.-. -.-.-. -.-.-. 9.00 alarm siren 11.11.20 // home Wild imagination could never touch us 12.11.20 // home Drrrriiillllllllll”””””” “””””””” “ “ “ “ “””” “” “ “ “ “ Clock ticking plane passing by--- Drilll --- 20.1.21 Small things are making you happy,,, Like what? Sipping a good coffee, a sunny day and music";
 var textArray = text.split(' ');
 var blocks = [];
 var total_blocks;
@@ -50,7 +50,7 @@ $(document).ready(function(event){
   });
 });
 
-$(document).on('click', '.block', function(e){
+$(document).on('click', '.hasWord', function(e){
   let id = parseInt(e.target.id);
   if($(e.target).hasClass('disabled')){
     blocks.push(id);
@@ -78,11 +78,19 @@ function init() {
   showWord(0);
 }
 
+function disableAll() {
+  for(let id of blocks){
+    $(`#${id}`).addClass('disabled');
+  }
+  blocks = [];
+}
+ 
 function showWord(i) {
   var randNote = Math.floor(Math.random() * notes.length);
   synth.triggerAttackRelease(notes[randNote], "8n");
   let randBlockIndex = Math.floor(Math.random() * blocks.length);
   $(`#${blocks[randBlockIndex]}`).text(textArray[i]);
+  $(`#${blocks[randBlockIndex]}`).addClass('hasWord')
   if(i == textArray.length){
     i = 0;
   }

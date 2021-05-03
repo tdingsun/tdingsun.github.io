@@ -3,7 +3,7 @@ body, html {
   padding: 0;
   font-family: sans-serif;
   background-color: whitesmoke;
-  color: darkslategray;
+  color: dodgerblue;
   overflow: hidden;
   font-size: 16px;
 }
@@ -45,25 +45,24 @@ body, html {
   padding: 5px;
   font-size: 2rem;
   overflow: hidden;
-  color: darkslategrey;
+  color: dodgerblue;
   background-color: seashell;
   line-height: 0.75;
   letter-spacing: -1px;
-  cursor: pointer;
   transition: 0.25s;
 }
 
 .block.vertical {
-  border-left: 1px solid darkslategrey;
-  border-right: 1px solid darkslategrey;
+  border-left: 1px solid dodgerblue;
+  border-right: 1px solid dodgerblue;
   /* background-color: blue; */
   writing-mode: vertical-lr;
   
 }
 
 .block.horizontal {
-  border-top: 1px solid darkslategrey;
-  border-bottom: 1px solid darkslategrey;
+  border-top: 1px solid dodgerblue;
+  border-bottom: 1px solid dodgerblue;
   /* background-color: red; */
 
   /* background-color: blue; */
@@ -71,12 +70,14 @@ body, html {
 
 
 .block.disabled {
-  background-color: darkslategrey;
+  background-color: dodgerblue;
   color: seashell;
 }
-.block:hover {
+.block.hasWord:hover {
   transform: rotate(5deg);
-  border: 1px solid darkslategrey;
+  border: 1px solid dodgerblue;
+  cursor: pointer;
+  z-index: 999;
 }
 /* Common */
 #start {
@@ -105,7 +106,7 @@ body, html {
 #vertical {
   width: 12px;
   height: 70px;
-  background-color: darkslategrey;
+  background-color: dodgerblue;
   position: absolute;
   left: 29px;
   transition: background-color 0.25s;
@@ -116,12 +117,12 @@ body, html {
   height: 12px;
   position: absolute;
   top: 29px;
-  background-color: darkslategrey;
+  background-color: dodgerblue;
   transition: background-color 0.25s;
 }
 
 #mute-btn {
-  color: darkslategrey;
+  color: dodgerblue;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -132,7 +133,7 @@ body, html {
 
 #mute-btn:hover {
   color: darkkhaki;
-  background-color: darkslategrey;
+  background-color: dodgerblue;
 }
 
 #nav {
