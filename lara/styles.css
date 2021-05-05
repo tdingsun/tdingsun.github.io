@@ -42,30 +42,32 @@ body, html {
   justify-content: center;
   align-items: center;
   word-break: break-word;
-  padding: 5px;
   font-size: 2rem;
   overflow: hidden;
   color: dodgerblue;
   background-color: seashell;
   line-height: 0.75;
   letter-spacing: -1px;
-  transition: 0.25s;
+  transition: transform 0.25s;
+  padding: 5px;
+}
+
+.block p {
+  pointer-events: none;
 }
 
 .block.vertical {
   border-left: 1px solid dodgerblue;
   border-right: 1px solid dodgerblue;
-  /* background-color: blue; */
-  writing-mode: vertical-lr;
-  
+}
+
+.block.vertical p {
+  writing-mode: vertical-rl;
 }
 
 .block.horizontal {
   border-top: 1px solid dodgerblue;
   border-bottom: 1px solid dodgerblue;
-  /* background-color: red; */
-
-  /* background-color: blue; */
 }
 
 
