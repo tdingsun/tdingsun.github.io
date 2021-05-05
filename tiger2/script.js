@@ -54,39 +54,42 @@ function displayWord(i){
     notes = Tone.Frequency("F3").harmonize([0, 2]);
     $('#container').css("background-color", "black");
     setColor("slategrey");
+    word = "one";
   }
 
   if(word == "2.") {
     notes = Tone.Frequency("F3").harmonize([0, 2, 4]);
     $('#container').css("background-color", "darkslategrey");
     setColor("tan");
+    word = "two";
+
   }
 
   if(word == "3.") {
     notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7]);
     $('#container').css("background-color", "darkkhaki");
     setColor('orangered');
-
+    word = "three";
   }
 
   if(word == "4.") {
     notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7, 11]);
     $('#container').css("background-color", "tan");
     setColor('seashell');
-
+    word = "four";
   }
 
   if(word == "5.") {
     notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7, 12]);
     $('#container').css("background-color", "seashell");
     setColor('darkkhaki');
-
+    word = "five";
   }
 
   $('#bigword').text(word);
   addSmallWord(word);
   if(i < words.length - 1);
-  var syllables = RiTa.getSyllables(word);
+  var syllables = RiTa.syllables(word);
   var syllables_arr = syllables.split("/");
   let syllables_str = '';
   for(let syl of syllables_arr){
