@@ -45,51 +45,50 @@ $(document).ready(function(event){
 
 
 function displayWord(i){
-  var randNote = Math.floor(Math.random() * notes.length);
+  let randNote = Math.floor(Math.random() * notes.length);
   synth.triggerAttackRelease(notes[randNote], "2n");
 
   let word = words[i];
 
-  if(word == "1.") {
-    notes = Tone.Frequency("F3").harmonize([0, 2]);
-    $('#container').css("background-color", "black");
-    setColor("slategrey");
-    word = "one";
-  }
-
-  if(word == "2.") {
-    notes = Tone.Frequency("F3").harmonize([0, 2, 4]);
-    $('#container').css("background-color", "darkslategrey");
-    setColor("tan");
-    word = "two";
-
-  }
-
-  if(word == "3.") {
-    notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7]);
-    $('#container').css("background-color", "darkkhaki");
-    setColor('orangered');
-    word = "three";
-  }
-
-  if(word == "4.") {
-    notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7, 11]);
-    $('#container').css("background-color", "tan");
-    setColor('seashell');
-    word = "four";
-  }
-
-  if(word == "5.") {
-    notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7, 12]);
-    $('#container').css("background-color", "seashell");
-    setColor('darkkhaki');
-    word = "five";
+  switch(word){
+    case "1.":
+      notes = Tone.Frequency("F3").harmonize([0, 2]);
+      $('#container').css("background-color", "black");
+      setColor("slategrey");
+      syllables = RiTa.syllables("one");
+      break;
+    case "2.":
+      notes = Tone.Frequency("F3").harmonize([0, 2, 4]);
+      $('#container').css("background-color", "darkslategrey");
+      setColor("tan");
+      syllables = RiTa.syllables("two");
+      break;
+    case "3.":
+      notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7]);
+      $('#container').css("background-color", "darkkhaki");
+      setColor('orangered');
+      syllables = RiTa.syllables("three");
+      break;
+    case "4.":
+      notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7, 11]);
+      $('#container').css("background-color", "tan");
+      setColor('seashell');
+      syllables = RiTa.syllables("four");
+      break;
+    case "5.":
+      notes = Tone.Frequency("F3").harmonize([0, 2, 4, 7, 12]);
+      $('#container').css("background-color", "seashell");
+      setColor('darkkhaki');
+      syllables = RiTa.syllables("five");
+      break;
+    default:
+      syllables = RiTa.syllables(word);
+      break;
   }
 
   $('#bigword').text(word);
   addSmallWord(word);
-  if(i < words.length - 1);
-  var syllables = RiTa.syllables(word);
+
   var syllables_arr = syllables.split("/");
   let syllables_str = '';
   for(let syl of syllables_arr){
@@ -113,7 +112,6 @@ function setColor(color){
   $('#mute-btn').css("color", color);
   $('#horizontal').css("background-color", color);
   $('#vertical').css("background-color", color);
-
 }
 
 function addSmallWord(word){
@@ -127,12 +125,10 @@ function addSmallWord(word){
     let div = $('<div class="spacer"></div>');
     $('#container').append(div);
   }
-
 }
 // Common
 function displayTitle(title, author){
   $("#title").html(title + "<br>by " + author);
-
 }
 
 var currRotateV = 0;

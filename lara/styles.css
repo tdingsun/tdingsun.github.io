@@ -2,8 +2,8 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: whitesmoke;
-  color: dodgerblue;
+  background-color: darkkhaki;
+  color: cornsilk;
   overflow: hidden;
   font-size: 16px;
 }
@@ -44,8 +44,8 @@ body, html {
   word-break: break-word;
   font-size: 2rem;
   overflow: hidden;
-  color: dodgerblue;
-  background-color: seashell;
+  color: darkkhaki;
+  background-color: cornsilk;
   line-height: 0.75;
   letter-spacing: -1px;
   transition: transform 0.25s;
@@ -57,8 +57,8 @@ body, html {
 }
 
 .block.vertical {
-  border-left: 1px solid dodgerblue;
-  border-right: 1px solid dodgerblue;
+  border-left: 1px solid darkkhaki;
+  border-right: 1px solid darkkhaki;
 }
 
 .block.vertical p {
@@ -66,18 +66,19 @@ body, html {
 }
 
 .block.horizontal {
-  border-top: 1px solid dodgerblue;
-  border-bottom: 1px solid dodgerblue;
+  border-top: 1px solid darkkhaki;
+  border-bottom: 1px solid darkkhaki;
 }
 
 
 .block.disabled {
-  background-color: dodgerblue;
-  color: seashell;
+  background-color: darkkhaki;
+  color: cornsilk;
+  border-color: cornsilk;
 }
 .block.hasWord:hover {
   transform: rotate(10deg);
-  border: 1px solid dodgerblue;
+  border: 1px solid cornsilk;
   cursor: pointer;
   z-index: 999;
 }
@@ -108,7 +109,7 @@ body, html {
 #vertical {
   width: 12px;
   height: 70px;
-  background-color: dodgerblue;
+  background-color: cornsilk;
   position: absolute;
   left: 29px;
   transition: background-color 0.25s;
@@ -119,12 +120,12 @@ body, html {
   height: 12px;
   position: absolute;
   top: 29px;
-  background-color: dodgerblue;
+  background-color: cornsilk;
   transition: background-color 0.25s;
 }
 
 #mute-btn {
-  color: dodgerblue;
+  color: cornsilk;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -134,8 +135,8 @@ body, html {
 }
 
 #mute-btn:hover {
-  color: seashell;
-  background-color: dodgerblue;
+  color: darkkhaki;
+  background-color: cornsilk;
 }
 
 #nav {
