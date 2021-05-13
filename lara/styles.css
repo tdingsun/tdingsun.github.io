@@ -1,9 +1,14 @@
+:root {
+  --bg: steelblue;
+  --fg: thistle;
+}
+
 body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: forestgreen;
-  color: lightblue;
+  background-color: var(--bg);
+  color: var(--fg);
   overflow: hidden;
   font-size: 16px;
 }
@@ -44,8 +49,9 @@ body, html {
   word-break: break-word;
   font-size: 2rem;
   overflow: hidden;
-  color: forestgreen;
-  background-color: lightblue;
+  color: var(--bg);
+  background-color: var(--fg);
+  border-color: var(--bg);
   line-height: 0.75;
   letter-spacing: -1px;
   transition: transform 0.25s;
@@ -57,8 +63,8 @@ body, html {
 }
 
 .block.vertical {
-  border-left: 1px solid forestgreen;
-  border-right: 1px solid forestgreen;
+  border-left: 1px solid;
+  border-right: 1px solid;
 }
 
 .block.vertical p {
@@ -66,19 +72,19 @@ body, html {
 }
 
 .block.horizontal {
-  border-top: 1px solid forestgreen;
-  border-bottom: 1px solid forestgreen;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }
 
 
 .block.disabled {
-  background-color: forestgreen;
-  color: lightblue;
-  border-color: lightblue;
+  background-color: var(--bg);
+  color: var(--fg);
+  border-color: var(--fg);
 }
 .block.hasWord:hover {
   transform: rotate(10deg);
-  border: 1px solid lightblue;
+  border: 1px solid;
   cursor: pointer;
   z-index: 999;
 }
@@ -109,7 +115,7 @@ body, html {
 #vertical {
   width: 12px;
   height: 70px;
-  background-color: lightblue;
+  background-color: var(--fg);
   position: absolute;
   left: 29px;
   transition: background-color 0.25s;
@@ -120,12 +126,12 @@ body, html {
   height: 12px;
   position: absolute;
   top: 29px;
-  background-color: lightblue;
+  background-color: var(--fg);
   transition: background-color 0.25s;
 }
 
 #mute-btn {
-  color: lightblue;
+  color: var(--fg);
   position: fixed;
   padding: 25px;
   right: 0;
@@ -135,8 +141,8 @@ body, html {
 }
 
 #mute-btn:hover {
-  color: forestgreen;
-  background-color: lightblue;
+  color: var(--bg);
+  background-color: var(--fg);
 }
 
 #nav {
@@ -156,5 +162,5 @@ body, html {
 }
 
 .navClock {
-  background-color: lightblue!important;
+  background-color: cornsilk!important;
 }
