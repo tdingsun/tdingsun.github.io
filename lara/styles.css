@@ -1,14 +1,9 @@
-:root {
-  --bg: steelblue;
-  --fg: thistle;
-}
-
 body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: var(--bg);
-  color: var(--fg);
+  background-color: steelblue;
+  color: thistle;
   overflow: hidden;
   font-size: 16px;
 }
@@ -49,9 +44,9 @@ body, html {
   word-break: break-word;
   font-size: 2rem;
   overflow: hidden;
-  color: var(--bg);
-  background-color: var(--fg);
-  border-color: var(--bg);
+  color: steelblue;
+  background-color: thistle;
+  border-color: steelblue;
   line-height: 0.75;
   letter-spacing: -1px;
   transition: transform 0.25s;
@@ -78,9 +73,9 @@ body, html {
 
 
 .block.disabled {
-  background-color: var(--bg);
-  color: var(--fg);
-  border-color: var(--fg);
+  background-color: steelblue;
+  color: thistle;
+  border-color: thistle;
 }
 .block.hasWord:hover {
   transform: rotate(10deg);
@@ -115,7 +110,7 @@ body, html {
 #vertical {
   width: 12px;
   height: 70px;
-  background-color: var(--fg);
+  background-color: thistle;
   position: absolute;
   left: 29px;
   transition: background-color 0.25s;
@@ -126,12 +121,12 @@ body, html {
   height: 12px;
   position: absolute;
   top: 29px;
-  background-color: var(--fg);
+  background-color: thistle;
   transition: background-color 0.25s;
 }
 
 #mute-btn {
-  color: var(--fg);
+  color: thistle;
   position: fixed;
   padding: 25px;
   right: 0;
@@ -141,8 +136,8 @@ body, html {
 }
 
 #mute-btn:hover {
-  color: var(--bg);
-  background-color: var(--fg);
+  color: steelblue;
+  background-color: thistle;
 }
 
 #nav {
