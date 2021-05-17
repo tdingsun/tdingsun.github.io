@@ -2,6 +2,13 @@ var w = $(window).width();
 var h = $(window).height();
 var linkBody = "https://tdingsun.github.io/";
 var links = {
+  "lara": {
+    "number": "22",
+    "name": "and I still welcome you home,,,,",
+    "author": "Lara Kalecik",
+    "bio": "My heart was an artichoke and I had given it to the sun. <a href='https://www.larakalecik.com'>Website</a>",
+    "mobile": false
+  },
   "hannah": {
     "number": "21",
     "name": "the distance between anything at all and the center",
