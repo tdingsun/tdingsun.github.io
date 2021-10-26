@@ -1,0 +1,41 @@
+body, html {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: cornsilk;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: pink;
+}
+
+#title, #index {
+    height: 3.5rem;
+    flex-shrink: 0;
+    border-top: 1px solid cornsilk;
+    font-size: 3rem;
+    letter-spacing: -2px;
+    vertical-align: baseline;
+
+}
+
+#container {
+    flex-grow: 1;
+    overflow: auto;
+    font-size: 4rem;
+    letter-spacing: -3px;
+}
+
+#container div {
+    text-align: center;
+    
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
