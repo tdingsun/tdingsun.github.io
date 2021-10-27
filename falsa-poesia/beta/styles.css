@@ -11,13 +11,11 @@ body, html {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    font-size: 4rem;
 }
 
 #title, #index, #timer {
-    height: 3.5rem;
     flex-shrink: 0;
-    font-size: 3rem;
-    letter-spacing: -2px;
     vertical-align: baseline;
     margin: 0 10px;
 
@@ -25,19 +23,22 @@ body, html {
 
 #index {
     border-top: 1px solid maroon;
+    letter-spacing: -2px;
+    height: 4rem;
 }
 
 #title {
+    font-size: 1.4rem;
+    letter-spacing: -1px;
     align-items: flex-start;
-    margin-bottom: 3.5rem;
-    border-bottom: 1px solid maroon;
     border-top: 1px solid maroon;
 }
 
 #timer {
     border-bottom: 1px solid maroon;
+    letter-spacing: -2px;
+    height: 4rem;
 }
-
 #container {
     flex-grow: 1;
     overflow: auto;
