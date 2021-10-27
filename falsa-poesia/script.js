@@ -2,8 +2,14 @@ const NUM_POEMS = 179;
 let poems = [];
 let poemIndex = 0;
 let wordIndex = 0;
-let speedBase = 250;
-let lightness = 90;
+const speedBase = 250;
+const lightnessMin = 40;
+const lightnessMax = 90;
+const lightnessDelta = 5;
+let lightness = lightnessMax;
+const hueMin = 330;
+const hueMax = 370;
+let hue = hueMax;
 let s = 0;
 let m = 0;
 let h = 0;
@@ -43,11 +49,12 @@ function main() {
 }
 
 function setBackgroundColor() {
-    $('#page').css('background', `linear-gradient(pink, hsl(350, 75%, ${lightness}%))`);
-    if(lightness <= 40){
-        lightness = 90;
+    hue = Math.floor(Math.random() * (hueMax - hueMin) + hueMin);
+    $('#page').css('background', `linear-gradient(pink, hsl(${hue}, 75%, ${lightness}%))`);
+    if(lightness <= lightnessMin){
+        lightness = lightnessMax;
     } else {
-        lightness-=2
+        lightness-=lightnessDelta;
     }
 }
 
@@ -77,9 +84,6 @@ async function getPoems() {
     }
     return poems_unsplit;
 }
-
-
-
 
 //logic for progressing through poem/resetting
 function updateIndices(numWords, numPoems) {
