@@ -2,8 +2,11 @@ const NUM_POEMS = 179;
 let poems = [];
 let poemIndex = 0;
 let wordIndex = 0;
-let speedBase = 150;
+let speedBase = 250;
 let lightness = 90;
+let s = 0;
+let m = 0;
+let h = 0;
 
 $(document).ready(start());
 
@@ -12,6 +15,9 @@ async function start() {
     poems = await getPoems();
     shuffle(poems);
     split(poems);
+    getStartTime();
+    setClock();
+    setInterval(setClock, 1000);
     main();
 }
 
@@ -46,13 +52,13 @@ function setBackgroundColor() {
 }
 
 function displayWord(word) {
-    // let newDiv = $('<div></div>').text(word);
-    // $('#container').append(newDiv);
-    // var d = $('#container');
-    // d.scrollTop(d.prop("scrollHeight"));
+    let newDiv = $('<div></div>').text(word);
+    $('#container').append(newDiv);
+    var d = $('#container');
+    d.scrollTop(d.prop("scrollHeight"));
 
     //just displaying the word
-    $('#container').text(word);
+    // $('#container').text(word);
 }
 
 async function getPoems() {
@@ -123,3 +129,26 @@ function split(array) {
     });
     return array;
 }
+
+function getStartTime() {
+    startTime = new Date();
+}
+
+function setClock() {
+    s++;
+    if(s == 60) {
+        m++;
+        s = 0;
+    }
+    if(m == 60) {
+        h++;
+        m = 0;
+        s = 0;
+    }
+    $('#timer').text(checkTime(h) + ":" + checkTime(m) + ":" + checkTime(s));
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }

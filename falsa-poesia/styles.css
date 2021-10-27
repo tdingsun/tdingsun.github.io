@@ -13,10 +13,9 @@ body, html {
     height: 100vh;
 }
 
-#title, #index {
+#title, #index, #timer {
     height: 3.5rem;
     flex-shrink: 0;
-    border-top: 1px solid maroon;
     font-size: 3rem;
     letter-spacing: -2px;
     vertical-align: baseline;
@@ -24,11 +23,19 @@ body, html {
 
 }
 
+#index {
+    border-top: 1px solid maroon;
+}
+
 #title {
     align-items: flex-start;
     margin-bottom: 3.5rem;
     border-bottom: 1px solid maroon;
+    border-top: 1px solid maroon;
+}
 
+#timer {
+    border-bottom: 1px solid maroon;
 }
 
 #container {
@@ -36,10 +43,15 @@ body, html {
     overflow: auto;
     font-size: 4rem;
     letter-spacing: -3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
 }
 
 #container div {
     text-align: center;
+    line-height: 0.9;
     
 }
 
