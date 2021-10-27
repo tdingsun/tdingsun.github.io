@@ -1,0 +1,68 @@
+body, html {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: maroon;
+    background-color: pink;
+
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#title, #index, #timer {
+    height: 3.5rem;
+    flex-shrink: 0;
+    font-size: 3rem;
+    letter-spacing: -2px;
+    vertical-align: baseline;
+    margin: 0 10px;
+
+}
+
+#index {
+    border-top: 1px solid maroon;
+}
+
+#title {
+    align-items: flex-start;
+    margin-bottom: 3.5rem;
+    border-bottom: 1px solid maroon;
+    border-top: 1px solid maroon;
+}
+
+#timer {
+    border-bottom: 1px solid maroon;
+}
+
+#container {
+    flex-grow: 1;
+    overflow: auto;
+    font-size: 4rem;
+    letter-spacing: -3px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+}
+
+#container::-webkit-scrollbar {
+    display: none;
+  }
+
+#container div {
+    text-align: center;
+    line-height: 0.9;
+    
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
