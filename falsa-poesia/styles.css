@@ -29,8 +29,9 @@ body, html {
 #title {
     font-size: 1.4rem;
     letter-spacing: -1px;
-    align-items: flex-start;
+    align-items: center;
     border-top: 1px solid maroon;
+    height: 2rem;
 }
 
 #timer {
