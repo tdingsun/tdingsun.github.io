@@ -3,8 +3,8 @@ let poems = [];
 let poemIndex = 0;
 let wordIndex = 0;
 const speedBase = 250;
-const lightnessMin = 40;
-const lightnessMax = 90;
+const lightnessMin = 30;
+const lightnessMax = 100;
 const lightnessDelta = 5;
 let lightness = lightnessMax;
 const hueMin = 330;
@@ -49,13 +49,18 @@ function main() {
 }
 
 function setBackgroundColor() {
-    hue = Math.floor(Math.random() * (hueMax - hueMin) + hueMin);
-    $('#page').css('background', `linear-gradient(pink, hsl(${hue}, 75%, ${lightness}%))`);
-    if(lightness <= lightnessMin){
-        lightness = lightnessMax;
-    } else {
-        lightness-=lightnessDelta;
-    }
+    hue = getRandomInRange(hueMin, hueMax);
+    lightness = getRandomInRange(lightnessMin, lightnessMax);
+    $('#page').css('background', `linear-gradient(hsl(${hue}, 75%, ${lightness}%), pink)`);
+    // if(lightness <= lightnessMin){
+    //     lightness = lightnessMax;
+    // } else {
+    //     lightness-=lightnessDelta;
+    // }
+}
+
+function getRandomInRange(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
 function displayWord(word) {
