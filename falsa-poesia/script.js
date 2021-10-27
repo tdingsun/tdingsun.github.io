@@ -34,7 +34,7 @@ function main() {
         setBackgroundColor();
     }
     if(wordIndex === currPoem.length - 1){
-        delay = 1000;
+        delay = 2000;
     }
     //display word
     displayWord(currWord);

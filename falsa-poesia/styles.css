@@ -46,8 +46,14 @@ body, html {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 
 }
+
+#container::-webkit-scrollbar {
+    display: none;
+  }
 
 #container div {
     text-align: center;
