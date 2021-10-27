@@ -33,16 +33,15 @@ function main() {
     //display word
     displayWord(currWord);
     updateIndices(currPoem.length, poems.length);
-
     setTimeout(main, delay);
 }
 
 function setBackgroundColor() {
-    $('#page').css('background-color', `hsl(0, 75%, ${lightness}%)`);
-    if(lightness <= 10){
+    $('#page').css('background', `linear-gradient(pink, hsl(350, 75%, ${lightness}%))`);
+    if(lightness <= 40){
         lightness = 90;
     } else {
-        lightness-=5
+        lightness-=2
     }
 }
 
@@ -73,30 +72,8 @@ async function getPoems() {
     return poems_unsplit;
 }
 
-function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-  
-    // While there remain elements to shuffle...
-    while (currentIndex != 0) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-  
-    return array;
-  }
 
-function split(array) {
-    array.forEach(el => {
-        el.text = el.text.split(/\s/)
-    });
-    return array;
-}
+
 
 //logic for progressing through poem/resetting
 function updateIndices(numWords, numPoems) {
@@ -119,4 +96,30 @@ function clearContainer() {
 function getDelay(word) {
     let numSyllables = RiTa.syllables(word).split('/').length;
     return Math.max(speedBase, numSyllables * speedBase);
+}
+
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
+
+
+function split(array) {
+    array.forEach(el => {
+        el.text = el.text.split(/\s/)
+    });
+    return array;
 }

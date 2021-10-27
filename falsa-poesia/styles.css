@@ -2,23 +2,32 @@ body, html {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
-    color: cornsilk;
+    color: maroon;
+    background-color: pink;
+
 }
 
 #page {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: pink;
 }
 
 #title, #index {
     height: 3.5rem;
     flex-shrink: 0;
-    border-top: 1px solid cornsilk;
+    border-top: 1px solid maroon;
     font-size: 3rem;
     letter-spacing: -2px;
     vertical-align: baseline;
+    margin: 0 10px;
+
+}
+
+#title {
+    align-items: flex-start;
+    margin-bottom: 3.5rem;
+    border-bottom: 1px solid maroon;
 
 }
 
