@@ -3,7 +3,7 @@ let poems = [];
 let poemIndex = 0;
 let wordIndex = 0;
 const speedBase = 250;
-const lightnessMin = 30;
+const lightnessMin = 40;
 const lightnessMax = 100;
 const lightnessDelta = 5;
 let lightness = lightnessMax;
@@ -51,7 +51,7 @@ function main() {
 function setBackgroundColor() {
     hue = getRandomInRange(hueMin, hueMax);
     lightness = getRandomInRange(lightnessMin, lightnessMax);
-    $('#page').css('background', `linear-gradient(hsl(${hue}, 75%, ${lightness}%), pink)`);
+    $('#page').css('background', `linear-gradient(pink, hsl(${hue}, 75%, ${lightness}%))`);
     // if(lightness <= lightnessMin){
     //     lightness = lightnessMax;
     // } else {
