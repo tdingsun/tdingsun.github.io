@@ -27,6 +27,9 @@ function main() {
         clearContainer();
         setBackgroundColor();
     }
+    if(wordIndex === currPoem.length - 1){
+        delay = 1000;
+    }
     //display word
     displayWord(currWord);
     updateIndices(currPoem.length, poems.length);
