@@ -30,10 +30,11 @@ body, html {
 #title {
     font-size: 1.4rem;
     letter-spacing: -1px;
-    align-items: flex-start;
+    align-items: center;
     border-top: 1px solid maroon;
+    padding: 0.3rem 0;
+    line-height: 1;
 }
-
 #timer {
     border-bottom: 1px solid maroon;
     letter-spacing: -2px;
