@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<head>
+	<title>transparencia</title>
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<script type="text/javascript" src="./Tone.js"></script>
+	<script type="text/javascript" src="./scraped_results.js"></script>
+</head>
+<body>
+	<div id="startScreen">[start]</div>
+	
+<style type="text/css">
+	@font-face {
+		font-family: maison;
+		src: url(./Fonts/MaisonNeue-Mono.otf);
+	}
+
+	html, 
+	body {
+		touch-action: none;
+		line-height: 1.2;
+		font-size: 16px;
+		font-family: maison, monospace;
+		margin: 0;
+		padding: 0;
+		background-color: #333;
+		color: beige;
+		border-color: beige;
+	}
+
+	#startScreen {
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		display: flex;
+		background-color: black;
+		color: beige;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.key {
+		color: greenyellow;
+		cursor: pointer;
+	}
+	.key:hover {
+		background-color: greenyellow;
+		color: #333;
+	}
+
+	#container {
+		display: flex;
+		overflow: auto;
+	}
+
+	.page {
+		height: 100vh;
+		padding: 10px;
+		box-sizing: border-box;
+		word-break: break-word;
+		min-width: 250px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.page hr {
+		width: 100%;
+		height: 1px;
+		border: none;
+		background-color: beige;
+	}
+
+	.header {
+		text-transform: uppercase;
+		flex-shrink: 0;
+		flex-grow: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 2px solid;
+		border-color: inherit;
+		padding-bottom: 5px;
+		margin-bottom: 10px;
+	}
+
+	.closeButton {
+		cursor: pointer;
+
+	}
+	.closeButton:hover {
+		background-color: green;
+	}
+
+	.body {
+		flex-grow: 1;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		padding-right: 10px;
+
+	}
+
+	.secondaryColor {
+		background-color: beige;
+		color: #333;
+		border-color: #333;
+	}
+
+	.secondaryColor hr {
+		background-color: #333;
+	}
+
+	.secondaryColor .key {
+		color: green;
+	}
+
+	.secondaryColor .key:hover {
+		background-color: green;
+		color: beige;
+	}
+
+</style>
+
+</body>
+	<script type="text/javascript" src="main2.js"></script>
+</html>
