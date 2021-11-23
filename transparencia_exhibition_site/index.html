@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <head>
 	<title>transparencia</title>
 	<script type="text/javascript" src="./jquery.min.js"></script>
@@ -9,7 +11,26 @@
 </head>
 <body>
 	<div id="startScreen">[start]</div>
-	
+
+	<div id="container">
+		<div id="infoPage" class="page">
+			Transparencia Index
+			<hr>
+			<p>This project consists of a custom-made software that automatically scrapes information from the Plataforma Nacional de Transparencia, a system through which people can request public information from the Mexican government. The software identifies existing requests associated with topics of common interest that were previously denied on the basis of containing information deemed "classified" by authorities. This ever-increasing flow of unanswered civic concerns are organized as an interactive website that aims to register, through labyrinthine hyperlinks, the bureaucratic opacity and strategic silence of the country's administrative institutions. As the code progresses, the system unburies from the government servers a series of "poetic demands" in the form of information requests that the artist inserted into the platform in recent months. </p>
+			<p>Transparencia Index is a project by Federico Pérez Villoro. The web scraper and database was developed by Agnes Cameron with graphic and interaction design by Tiger Dingsun. It was commissioned by Printed Matter + EXILE Books for NADA Miami 2021.</p>
+			<hr>
+			<p>Este proyecto consiste en un programa computacional que extrae automáticamente información de la Plataforma Nacional de Transparencia, un sistema por medio del cual las personas pueden solicitar información pública en poder de los gobiernos en México. El programa identifica solicitudes asociadas con temas de interés común que fueron previamente negadas por contener información determinada como "clasificada" por las autoridades. Este flujo creciente de preocupaciones cívicas sin respuesta es organizado en un sitio web interactivo que busca registrar, en hipervínculos laberínticos, la opacidad burocrática y el silencio estratégico de las instituciones administrativas del país. A medida que el código avanza, el sistema desentierra de los servidores del gobierno una serie de "demandas poéticas" hechas a manera de solicitudes de información que el artista insertó en la plataforma durante los últimos meses.</p>
+			<p>Transparencia Index es un proyecto de Federico Pérez Villoro. El “web scraper” y la base de datos fueron desarrolladas por Agnes Cameron con diseño gráfico y de interacción de Tiger Dingsun. Fue comisionado por Printed Matter + EXILE Books para NADA Miami 2021. </p>
+
+
+
+
+
+
+
+		</div>
+	</div>
+
 <style type="text/css">
 	@font-face {
 		font-family: maison;
@@ -27,6 +48,7 @@
 		background-color: #111;
 		color: whitesmoke;
 		border-color: whitesmoke;
+
 	}
 
 	#startScreen {
@@ -41,6 +63,20 @@
 		cursor: pointer;
 	}
 
+	#infoPage {
+		flex: 0 0 200px;
+		font-size: 0.8rem;
+		
+		height: 100vh;
+		overflow-y: scroll;
+		background-color: rgb(189, 95, 189);
+	}
+	#infoPage hr {
+		width: 100%;
+		border-top: none;
+		margin-top: 10px;
+	}
+
 	.key {
 		color: violet;
 		cursor: pointer;
@@ -53,6 +89,8 @@
 	#container {
 		display: flex;
 		overflow: auto;
+		scroll-behavior: smooth;
+
 	}
 
 	.page {
@@ -65,11 +103,13 @@
 		flex-direction: column;
 	}
 
-	.page hr {
-		width: 100%;
-		height: 1px;
-		border: none;
-		background-color: whitesmoke;
+	@media only screen and (max-width: 600px) {
+		.page {
+			width: calc(100vw - 50px);
+			flex-grow: 0;
+			flex-shrink: 0;
+			border-left: 1px solid #111;
+		}
 	}
 
 	.header {
@@ -79,7 +119,7 @@
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
-		border-bottom: 2px solid;
+		border-bottom: 1px solid;
 		border-color: inherit;
 		padding-bottom: 5px;
 		margin-bottom: 10px;
@@ -118,6 +158,21 @@
 	.secondaryColor .key:hover {
 		background-color: violet;
 		color: whitesmoke;
+	}
+
+	.lockedPage {
+		background-color: rgb(189, 95, 189);
+		color: whitesmoke;
+	}
+	.lockedPage hr {
+		background-color: whitesmoke;
+	}
+	.lockedPage .key {
+		color: #111;
+	}
+	.lockedPage .key:hover {
+		background-color: whitesmoke;
+		color: violet;
 	}
 
 </style>

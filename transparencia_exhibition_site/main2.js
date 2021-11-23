@@ -12,22 +12,36 @@ function shuffle(a) {
 	return a;
 }
 let membrane = new Tone.MembraneSynth().toDestination();
-let synth = new Tone.PolySynth(Tone.MonoSynth).toDestination();
+
+
+let synth = new Tone.PolySynth(Tone.Synth, 
+	{
+		oscillator: {
+			type: "triangle"
+		},
+		envelope: {
+			attack: 0.05
+		}
+	}).toDestination();
+
+
 $(document).ready(() => {
 	setClickHandlers();
-
 });
 
 function setClickHandlers() {
-	$('#startScreen').on('click', () => {
+	$('#startScreen').on('click', (e) => {
 		Tone.start();
 		$('#startScreen').remove();
-		$('body').append($('<div id="container"></div>'));
+		// $('body').append($('<div id="container"></div>'));
 		let randomKey = keys[Math.floor(Math.random() * keys.length)];
 		makePage(randomKey);
 	})
+
 	$(document).on('click', '.key', (e) => {
-		synth.triggerAttackRelease('C4', "32n");
+		synth.triggerAttackRelease('G3', "32n");
+		membrane.triggerAttackRelease('C0', "32n");
+
 		e.stopPropagation();
 		let newTerm = (e.target.id);
 		makePage(newTerm);
@@ -35,7 +49,7 @@ function setClickHandlers() {
 
 	});
 	$(document).on('click', '.closeButton', (e) => {
-		if($('#container').children().length > 1){
+		if ($('#container').children().length > 1) {
 			let pageId = (e.target.id);
 			let pageObject = pages[pageId];
 			clearTimeout(pageObject.appendTimeout);
@@ -45,7 +59,7 @@ function setClickHandlers() {
 	$(document).on('click', '.body', (e) => {
 		let pageId = (e.target.id);
 		let pageObject = pages[pageId];
-		if(!pageObject.currentlyPrinting){
+		if (!pageObject.isCurrentlyPrinting && !pageObject.isLocked) {
 			clearTimeout(pageObject.appendTimeout);
 			pageObject.printAllText();
 		}
@@ -58,7 +72,7 @@ function getResults(term = undefined) {
 	}
 	else {
 		//merge and shuffle arrays
-		return(shuffle([].concat.apply([], Object.values(results))));
+		return (shuffle([].concat.apply([], Object.values(results))));
 	}
 }
 
@@ -73,7 +87,7 @@ function replaceAllSpecialChars(textValue, charSeparator) {
 		.replace('\\', '\\\\')
 		.match(/[a-z 0-9]/g);
 
-	if(arrayReturnValues === null)
+	if (arrayReturnValues === null)
 		return '';
 
 	return arrayReturnValues.join('')
@@ -91,14 +105,14 @@ function makePage(key) {
 
 class Page {
 	constructor(term, id) {
-		this.note = notes[id % notes.length];
-		console.log(this.note);
-		this.currentlyPrinting = false;
+		this.note = notes[Math.floor(Math.random() * notes.length)];
+		this.isCurrentlyPrinting = false;
+		this.isLocked = false;
 		this.resultsIndex = 0;
 		this.results = getResults(term);
 		this.term = term;
 		this.div = $(`<div id="page${id}" class="page"></div>`);
-		
+
 		let header = $('<div class="header"></div>');
 		header.append($(`<span>${term}</span>`));
 		header.append($(`<div class="closeButton" id="${id}">X</div>`));
@@ -123,39 +137,54 @@ class Page {
 
 	async printText() {
 		try {
+			this.isCurrentlyPrinting = true;
+
 			//sound and color
 			synth.triggerAttackRelease(this.note, "32n");
-			if(this.div.hasClass('secondaryColor')){
+			if (this.div.hasClass('secondaryColor')) {
 				this.div.removeClass('secondaryColor');
 			} else {
 				this.div.addClass('secondaryColor');
 			}
 
-			this.currentlyPrinting = true;
+			//generate links
 			const text = this.results[this.resultsIndex]["Descripción de la solicitud"];
 			let words = text.split(" ");
 			keys.forEach(key => {
-				words = words.map(word => 
+				words = words.map(word =>
 					replaceAllSpecialChars(word, ' ').toUpperCase().replace(/s$/, '')
-					=== replaceAllSpecialChars(key, ' ').toUpperCase().replace(/s$/, '')
-					? `<span class='key' id='${key}'>${word}</a>` : word)
+						=== replaceAllSpecialChars(key, ' ').toUpperCase().replace(/s$/, '')
+						? `<span class='key' id='${key}'>${word}</a>` : word)
 			});
-			for(let [idx, word] of words.entries()){
+
+			//display word by word
+			for (let [idx, word] of words.entries()) {
 				await waitForMs(wordSpeed);
-				if(idx % 10 == 0) {
+				if (idx % 10 == 0) {
 					synth.triggerAttackRelease('G2', "32n");
-
 				}
-
 				this.body.append(word + ' ');
 				this.body.scrollTop(this.body.prop('scrollHeight'))
 			};
+
 			this.body.append('<hr>');
-			this.resultsIndex = (this.resultsIndex + 1)%(this.results.length);
-			this.currentlyPrinting = false;			
 		} catch {
-			this.currentlyPrinting = false;
-			this.resultsIndex = (this.resultsIndex + 1)%(this.results.length);
 		}
+
+		this.isCurrentlyPrinting = false;
+		this.resultsIndex += 1;
+		if (this.resultsIndex >= this.results.length) {
+			setTimeout(this.lockPage, 500);
+		}
+	}
+
+	lockPage() {
+		//sound
+		membrane.triggerAttackRelease('C1', "32n");
+
+		this.isLocked = true;
+		clearTimeout(this.appendTimeout);
+		this.div.removeClass('secondaryColor');
+		this.div.addClass('lockedPage');
 	}
 }
