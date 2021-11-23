@@ -114,7 +114,6 @@ class Page {
 		this.isLocked = false;
 		this.resultsIndex = 0;
 		this.results = getResults(term);
-		console.log(this.results.length);
 		this.term = term;
 		this.div = $(`<div id="page${id}" class="page"></div>`);
 

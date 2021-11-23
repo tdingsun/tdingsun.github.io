@@ -1,6 +1,6 @@
 const keys = Object.keys(results);
 const appendSpeed = 30000;
-const wordSpeed = 10;
+const wordSpeed = 100;
 let pages = {};
 let notes = ['C3', 'D3', 'E3', 'F3', 'G3', 'C4'];
 const divider = '<div class="asterisk-divider">*********************************************************************************************************************************************************************************************************************************************************</div>';
@@ -144,7 +144,6 @@ class Page {
 		try {
 			this.isCurrentlyPrinting = true;
 			$(this.div).find('.key').addClass('disabled-key');
-			console.log($(this.div).find('.key'));
 			//sound and color
 			synth.triggerAttackRelease(this.note, "32n");
 			// if (this.div.hasClass('secondaryColor')) {
