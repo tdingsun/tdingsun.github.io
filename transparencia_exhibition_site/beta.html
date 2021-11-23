@@ -46,7 +46,9 @@
 		margin: 0;
 		padding: 0;
 		background-color: #111;
-		color: #F4CE71;
+		color: whitesmoke;
+		border-color: whitesmoke;
+
 	}
 
 	#startScreen {
@@ -55,7 +57,7 @@
 		position: fixed;
 		display: flex;
 		background-color: #111;
-		color: #F4CE71;
+		color: whitesmoke;
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
@@ -67,41 +69,42 @@
 		margin-bottom: 0.65rem;
 		overflow: hidden;
 	}
-/* info panel */
+
 	#infoPage {
 		flex: 0 0 200px;
 		font-size: 0.8rem;
 
 		height: 100vh;
 		overflow-y: scroll;
-		background-color: #F4CE71;
+		background-color: whitesmoke;
 		color: #111;
 	}
 	
 	#infoPage p:first-of-type {
 		margin-top: 3.5px;
 	}
-/* keys */
+
 	.key {
 		color: #111;
-		background-color: #F4CE71;
+		background-color: whitesmoke;
 		padding: 3px 2px 1px 2px;
 		cursor: pointer;
 		border-radius: 1px;
 	}
 	.key:hover {
-		color: #F4CE71;
+		color: whitesmoke;
 	}
 
 	.disabled-key {
 		background-color: unset;
-		color: #F4CE71;
+		color: whitesmoke;
 	}
 
 	#container {
 		display: flex;
 		overflow: auto;
 		scroll-behavior: smooth;
+
 	}
 
 	.page {
@@ -136,7 +139,7 @@
 
 	}
 	.closeButton:hover {
-		font-weight: bold;
+		background-color: violet;
 	}
 
 	.body {
@@ -146,38 +149,40 @@
 	}
 
 	.secondaryColor {
-		background-color: #F4CE71;
+		background-color: whitesmoke;
 		color: #111;
 		border-color: #111;
 	}
-	.secondaryColor .key {
+
+	.secondaryColor hr {
 		background-color: #111;
-		color: #F4CE71;
+	}
+
+	.secondaryColor .key {
+		color: violet;
 	}
 
 	.secondaryColor .key:hover {
-		color: #111;
-	}
-
-	.secondaryColor .disabled-key {
-		color: #111;
-		background-color: unset;
+		background-color: violet;
+		color: whitesmoke;
 	}
 
 	.lockedPage {
 		background-color: #333;
-		color: #F4CE71;
+		color: #aaa;
+	}
+	.lockedPage hr {
+		background-color: whitesmoke;
 	}
 	.lockedPage .key {
 		color: #333;
-		background-color: unset;
 	}
 	.lockedPage .key:hover {
-		color: #F4CE71;
+		color: whitesmoke;
 	}
 
 </style>
 
 </body>
-	<script type="text/javascript" src="main2.js"></script>
+	<script type="text/javascript" src="main_beta.js"></script>
 </html>

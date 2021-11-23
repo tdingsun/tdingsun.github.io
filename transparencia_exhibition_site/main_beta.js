@@ -1,6 +1,6 @@
 const keys = Object.keys(results);
 const appendSpeed = 30000;
-const wordSpeed = 100;
+const wordSpeed = 10;
 let pages = {};
 let notes = ['C3', 'D3', 'E3', 'F3', 'G3', 'C4'];
 const divider = '<div class="asterisk-divider">*********************************************************************************************************************************************************************************************************************************************************</div>';
@@ -114,7 +114,6 @@ class Page {
 		this.isLocked = false;
 		this.resultsIndex = 0;
 		this.results = getResults(term);
-		console.log(this.results.length);
 		this.term = term;
 		this.div = $(`<div id="page${id}" class="page"></div>`);
 
@@ -144,10 +143,15 @@ class Page {
 	async printText() {
 		try {
 			this.isCurrentlyPrinting = true;
-			this.div.addClass('secondaryColor');
 			$(this.div).find('.key').addClass('disabled-key');
+			console.log($(this.div).find('.key'));
 			//sound and color
 			synth.triggerAttackRelease(this.note, "32n");
+			// if (this.div.hasClass('secondaryColor')) {
+			// 	this.div.removeClass('secondaryColor');
+			// } else {
+			// 	this.div.addClass('secondaryColor');
+			// }
 
 			//generate links
 			const text = this.results[this.resultsIndex]["Descripción de la solicitud"];
@@ -176,7 +180,7 @@ class Page {
 		} catch {
 		}
 		$(this.div).find('.key').removeClass('disabled-key');
-		this.div.removeClass('secondaryColor');
+
 		this.isCurrentlyPrinting = false;
 		this.resultsIndex += 1;
 		if (this.resultsIndex >= this.results.length) {
