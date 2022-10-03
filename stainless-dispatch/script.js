@@ -12,7 +12,7 @@ let populationSpeed = 1;
 noise.seed(Math.random());
 
 // const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-const characters = "EARTHearth"
+const characters = "earth"
 
 const NText = "Jock Simulacra Waistband Mannequin Pixel Brush Pounding Beat Unexpected Offer New Touch Hard Carry Spiteful Servitude Sword Option Side Saddle Magic Eye Callus Tissue Boundless Optimism Future State Girl Crush Endgame Earths Shadow Determined Shape Bounce Message Silent Error";
 const NTextArray = shuffle(NText.split(" "));
@@ -56,10 +56,8 @@ $(document).ready(() => {
 })
 
 $('#SECell').hover((e) => {
-    console.log('over');
     e.target.innerHTML = "About the Typefaces"
 }, (e) => {
-    console.log('out');
     e.target.innerHTML = "Stainless / Dispatch"
 
 })
@@ -74,42 +72,6 @@ $('#NWCell').click((e) => {
             cell.style.height = '100px';
             cell.style.fontSize = smallFontSize;
         }
-        // NWCell.style.width = "50px"
-        // NWCell.style.height = "50px"
-        // NWCell.className = "smallCell"
-        // NWCell.style.fontSize = smallFontSize
-        // NWCell.className = "smallCell"
-
-        // NCell.style.width = "50px"
-        // NCell.style.height = "50px"
-        // NCell.style.fontSize = smallFontSize
-        // NCell.className = "smallCell"
-
-
-        // NECell.style.width = "50px"
-        // NECell.style.height = "50px"
-        // NECell.style.fontSize = smallFontSize
-
-        // WCell.style.width = "50px"
-        // WCell.style.height = "50px"
-        // WCell.style.fontSize = smallFontSize
-
-        // ECell.style.width = "50px"
-        // ECell.style.height = "50px"
-        // ECell.style.fontSize = smallFontSize
-
-        // SWCell.style.width = "50px"
-        // SWCell.style.height = "50px"
-        // SWCell.style.fontSize = smallFontSize
-
-        // SCell.style.width = "50px"
-        // SCell.style.height = "50px"
-        // SCell.style.fontSize = smallFontSize
-
-        // SECell.style.width = "50px"
-        // SECell.style.height = "50px"
-        // SECell.style.fontSize = smallFontSize
-
     } else {
 
         setCellDimensions()
@@ -303,29 +265,32 @@ function setCellText() {
 
 }
 function setText(id) {
+
     let el = document.getElementById(id);
-    if (el === null) {
-        console.log(id);
-    }
     let i = id % rowSize;
     let j = Math.floor(id / colSize);
-    let val = noise.simplex2(i / 10, j / 10);
+    let val = (noise.simplex2(i / 32, j / 32) +(noise.simplex2(i / 4, j / 4) / 2) + (noise.simplex2(i / 2, j / 2) / 2));
     let wght = scale(val, -1, 1, 100, 1000);
     let wdth = scale(val, -1, 1, 50, 200);
     // let ital = scale(val, -1, 1, 0, 1);
     let ital = 0;
     let xhgt = scale(val, -1, 1, 0, 100);
 
+    el.innerHTML = getRandomCharacter();
+
+
 
     el.style["font-variation-settings"] = `'wght' ${wght} , 'wdth' ${wdth}, 'ital' ${ital}, 'xhgt' ${xhgt}`;
-    let colorVar = scale(val, -1, 1, 0, 150);
+    let colorVar = scale(val, -1.25, 1.25, 0, 150);
     el.style.color = `rgb(${colorVar * 0.8}, ${colorVar * 1.2 + 60}, 255)`
     el.style.backgroundColor = 'transparent'
     if (val > 0) { //land colors
+        el.style["font-variation-settings"] = `'wght' ${wght} , 'wdth' ${wdth}, 'ital' ${ital}, 'xhgt' ${xhgt}`;
         el.style.color = `rgb(${colorVar * 1.2}, ${colorVar + 50}, 50)`
         // el.style.backgroundColor = 'cornsilk'
+        console.log(el.innerHTML);
+        el.innerHTML = el.innerHTML.toUpperCase();
     }
-    el.innerHTML = getRandomCharacter();
 }
 
 function getRandomCharacter() {
