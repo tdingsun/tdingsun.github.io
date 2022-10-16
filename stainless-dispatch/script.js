@@ -35,10 +35,10 @@ let ETextIndex = 0;
 const SText = "Stillness Flow Money Debt Islands Continents Figure Ground Wave Particle Loss Gain Interpolation Extrapolation Synthesis Fragmenting Clustering Infinity Singularity Branch Root Question Answer Inside Outside Silver Gold Space Time Life Death Day Night Need Want Map Territory Wander Wonder Node Edge Sowing Reaping Growth Rot Wake Dream Reality Illusion Conscious Unconscious Nature Culture Binary Field Loop Knot Volcano Glacier Grassy Knoll Tears Sweat Language Aesthetics Aether Earth Mender Trekker Browser Innocence Guilt Dexter Sinister Immanence Transcendence Biome Bloom Strata Cloud Wave Plastic Petroleum Shell Pebble Grass Stain Numbers Letters Palm Heart Daylight Flowers Bounce Message Silent Error";
 const STextArray = shuffle(NText.split(" "));
 
-const trekkerText = "wandering through forests and woods and deserts and fields and plains and mountains and valleys and tundras and taigas and picking up rocks and stones and crystals and ores and geodes and fossils and sticks and bugs and leaves and mushrooms and moss and peat and loam and clay and shells and wading through rivers and lakes and brooks and ponds and oceans and brooks and creeks and everything changes and everything stays the same and"
+const trekkerText = "&ZeroWidthSpace; &ZeroWidthSpace; wandering through forests and woods and deserts and fields and plains and mountains and valleys and tundras and taigas and picking up rocks and stones and crystals and ores and geodes and fossils and sticks and bugs and leaves and mushrooms and moss and peat and loam and clay and shells and wading through rivers and lakes and brooks and ponds and oceans and brooks and creeks and everything changes and everything stays the same and &ZeroWidthSpace;"
 const trekkerTextArray = trekkerText.split(" ");
 
-const browserText = "wondering about categories and theories and boundaries and dialectics and inputs and outputs and trawling through wikis and lists and indices and documents and records and archives and libraries and shelves and books and pages and paragraphs and sentences and words and traversing down networks and rabbit holes and nodes and graphs and charts and maps and everything changes and everything stays the same and"
+const browserText = "&ZeroWidthSpace; &ZeroWidthSpace; wondering about categories and theories and boundaries and dialectics and inputs and outputs and trawling through wikis and lists and indices and documents and records and archives and libraries and shelves and books and pages and paragraphs and sentences and words and traversing down networks and rabbit holes and nodes and graphs and charts and maps and everything changes and everything stays the same and &ZeroWidthSpace;"
 const browserTextArray = browserText.split(" ");
 
 let STextIndex = 0;
@@ -84,10 +84,10 @@ let browserTextIdx = 0;
 
 function cycleThroughTrekkerBrowserTexts() {
     setInterval(() => {
-        trekkerTextBox.innerHTML = trekkerTextArray[trekkerTextIdx];
-        trekkerTextIdx = trekkerTextIdx >= (trekkerTextArray.length - 1) ? 0 : trekkerTextIdx + 1
-        browserTextBox.innerHTML = browserTextArray[browserTextIdx];
-        browserTextIdx = browserTextIdx >= (browserTextArray.length - 1) ? 0 : browserTextIdx + 1
+        trekkerTextBox.innerHTML = "∙ " + trekkerTextArray[trekkerTextIdx] + " " + trekkerTextArray[trekkerTextIdx + 1] + " " + trekkerTextArray[trekkerTextIdx + 2] + " ∙";
+        trekkerTextIdx = trekkerTextIdx >= (trekkerTextArray.length - 3) ? 0 : trekkerTextIdx + 1
+        browserTextBox.innerHTML = "∙ " + browserTextArray[browserTextIdx] + " " + browserTextArray[browserTextIdx + 1] + " " + browserTextArray[browserTextIdx + 2] + " ∙";
+        browserTextIdx = browserTextIdx >= (browserTextArray.length - 3) ? 0 : browserTextIdx + 1
     }, 500)
 }
 
