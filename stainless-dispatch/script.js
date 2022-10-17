@@ -1,4 +1,4 @@
-let blockSize = 20;
+let blockSize = 16;
 let borderSize = 100;
 let windowWidth = $(window).innerWidth();
 let windowHeight = $(window).innerHeight();
@@ -13,6 +13,7 @@ let populationSpeed = 10;
 
 let dragInterval;
 let moveInterval;
+let dragTime = 30; //in frames at 30 fps, e.g 60 = 2 seconds
 
 noise.seed(Math.random());
 
@@ -45,8 +46,9 @@ let STextIndex = 0;
 
 let currCellIndex = 0;
 
-let maxFontSize = 72;
-let minFontSize = 20;
+let maxFontSize = 60;
+let minFontSize = 24;
+let smallFontSize = 16;
 
 //objects
 const NWCell = document.getElementById('NWCell');
@@ -64,10 +66,30 @@ const lensHeight = lens.offsetHeight + 'px';
 
 const trekkerTextBox = document.getElementById('trekkertextbox');
 const browserTextBox = document.getElementById('browsertextbox');
+const aboutHeader = document.getElementById('aboutheader');
+const about = document.getElementById('about');
+
+StartAudioContext(Tone.context, 'div').then(function(){
+    //started
+    console.log("clicked");
+  
+  });
+  
+
+const player = new Tone.Player("draft.mp3").toDestination();
+// play as soon as the buffer is loaded
+player.volume.value = -12;
+player.autostart = true;
+
 
 $(window).blur(function () {
     stopSimulatedDrag();
+    player.stop();
 });
+
+$(window).focus(function () {
+    player.start();
+})
 
 window.onresize = function () { location.reload(); }
 
@@ -92,57 +114,133 @@ function cycleThroughTrekkerBrowserTexts() {
 }
 
 function startSimulatedDrag() {
-    let maxWidth = windowWidth - (lens.offsetWidth + borderSize)
-    let maxHeight = windowHeight - (lens.offsetHeight + borderSize)
-    let minWidth = borderSize;
-    let minHeight = borderSize;
-    dragInterval = setInterval(() => {
-        let randomX = Math.max(Math.random() * maxWidth, minWidth)
-        let randomY = Math.max(Math.random() * maxHeight, minHeight)
-        simulateDrag(lens, randomX, randomY);
-    }, 3000)
+    clearInterval(dragInterval);
+    clearInterval(moveInterval);
+    dragInterval = setInterval(() => {simulateRandomDragOnce()}, 3000);
 }
 
 function stopSimulatedDrag() {
     clearInterval(dragInterval);
     clearInterval(moveInterval);
+    clearTimeout(populationTimeout);
 }
 
-$('#SECell').hover((e) => {
-    e.target.innerHTML = "About the Typefaces"
-}, (e) => {
-    e.target.innerHTML = "Stainless<br>&<br>Dispatch"
-})
+function simulateRandomDragOnce(){
+    console.log('here');
+    let maxWidth = windowWidth - (lens.offsetWidth + borderSize)
+    let maxHeight = windowHeight - (lens.offsetHeight + borderSize)
+    let minWidth = borderSize;
+    let minHeight = borderSize;
+    let randomX = Math.max(Math.random() * maxWidth, minWidth)
+    let randomY = Math.max(Math.random() * maxHeight, minHeight)
+    simulateDrag(lens, randomX, randomY, dragTime);
+}
 
 let cellToggle = true;
-$('#NWCell').click((e) => {
+
+NWCell.onclick = (e) => {
     for (let cell of cells) {
         cell.style.transition = '0.1s';
     }
     if (cellToggle) {
         stopSimulatedDrag();
-        const smallFontSize = '16px';
-        for (let cell of cells) {
-            cell.className = 'smallCell'
-            cell.style.width = '100px';
-            cell.style.height = '100px';
-            cell.style.fontSize = smallFontSize;
-        }
+        hideAbout();
+        smallCells();
     } else {
+        hideAbout();
+        bigCells();
         startSimulatedDrag();
-        setCellDimensions()
-        for (let cell of cells) {
-            cell.className = 'cell'
-
-            cell.style.fontSize = '20px';
-        }
+        simulateRandomDragOnce();
     }
-    cellToggle = !cellToggle
-})
+
+}
+
+function smallCells () {
+    for (let cell of cells) {
+        cell.className = 'smallCell'
+        cell.style.width = '100px';
+        cell.style.height = '100px';
+        cell.style.fontSize = smallFontSize + 'px';
+        cell.style["font-variation-settings"] = `'wght' ${400} , 'wdth' ${100}`;
+    }
+    if (parseInt(SCell.style.left) < 250){
+        SCell.style.left = '250px';
+    }
+    if (parseInt(ECell.style.top) < 100){
+        ECell.style.top = '100px';
+    }
+    cellToggle = false;
+}
+
+function bigCells() {
+    for (let cell of cells) {
+        cell.className = 'cell'
+    }
+    setCellDimensions()
+    cellToggle = true;
+}
+
+
+
+let aboutToggle = false;
+SECell.onclick = (e) => {
+    stopSimulatedDrag();
+    if (aboutToggle) {
+        hideAbout();
+        bigCells();
+        startSimulatedDrag();
+        simulateRandomDragOnce();
+
+    } else {
+        if(cellToggle) { //big cell
+            if(Math.abs(lens.offsetTop - 100) < 50 && Math.abs(lens.offsetLeft - 100) < 50) {
+                showAbout();            
+            } else {
+                simulateDrag(lens, 100, 100, 15);
+                setTimeout(() => {
+                    showAbout();
+                }, 500)
+            }
+        } else { //small cell
+            showAbout();
+        }
+        
+    }
+}
+
+function hideAbout() {
+    about.style.display = 'none';
+    aboutHeader.classList.remove('header');
+    aboutHeader.innerHTML = "Stainless<br>&<br>Dispatch";
+    SECell.style.justifyContent = 'center'
+    aboutToggle = false;
+}
+
+function showAbout() {
+    stopSimulatedDrag();
+    SECell.style.justifyContent = 'space-between'
+    aboutHeader.classList.add('header');
+    aboutToggle = true;
+
+
+    if(!cellToggle) { //small cell
+        SECell.style.width = (windowWidth - 350) + 'px' 
+        SECell.style.height = (windowHeight - 200) + 'px' 
+        SCell.style.left = '250px';
+        ECell.style.top = '100px';
+    }
+    about.style.display = 'flex';
+    aboutHeader.innerHTML = "About the Typefaces";
+    for (let cell of cells) {
+        cell.style.fontSize = smallFontSize + 'px';
+    }
+}
 
 function setCellDimensions() {
     let bottomHeight = windowHeight - (lens.offsetTop + lens.offsetHeight);
     let eastWidth = windowWidth - (lens.offsetLeft + lens.offsetWidth);
+
+    let TypeWeight = scale(lens.offsetTop, 100, windowHeight - (lens.offsetHeight + 100), 100, 1000)
 
     NWCell.style.top = '0px';
     NWCell.style.left = '0px';
@@ -154,6 +252,8 @@ function setCellDimensions() {
     NCell.style.width = lensWidth;
     NCell.style.height = lens.offsetTop + 'px';
     NCell.style.fontSize = Math.max(Math.min(maxFontSize, lens.offsetTop / 6), minFontSize) + 'px';
+    let NorthTypeWidth = scale(lens.offsetTop, 100, windowHeight - (lens.offsetHeight + 100), 200, 50)
+    NCell.style["font-variation-settings"] = `'wght' ${TypeWeight} , 'wdth' ${NorthTypeWidth}`;
 
     NECell.style.top = '0px';
     NECell.style.right = '0px';
@@ -165,13 +265,16 @@ function setCellDimensions() {
     WCell.style.width = lens.offsetLeft + 'px';
     WCell.style.height = lensHeight;
     WCell.style.fontSize = Math.max(Math.min(maxFontSize, lens.offsetLeft / 6), minFontSize) + 'px';
+    let westTypeWidth = scale(lens.offsetLeft, 100, windowWidth - (lens.offsetWidth + 100), 50, 200)
+    WCell.style["font-variation-settings"] = `'wght' ${TypeWeight} , 'wdth' ${westTypeWidth}`;
 
     ECell.style.top = lens.offsetTop + 'px';
     ECell.style.right = '0px';
     ECell.style.width = eastWidth + 'px';
     ECell.style.height = lensHeight;
-    ECell.style.fontSize = Math.max(Math.min(maxFontSize, eastWidth / 6), minFontSize) + 'px';
-    // el.style["font-variation-settings"] = `'wght' ${wght} , 'wdth' ${wdth}, 'ital' ${ital}, 'xhgt' ${xhgt}`;
+    ECell.style.fontSize = Math.max(Math.min(maxFontSize, eastWidth / 6), 20) + 'px';
+    let eastTypeWidth = scale(eastWidth, 100, windowWidth - (lens.offsetWidth + 100), 50, 200)
+    ECell.style["font-variation-settings"] = `'wght' ${TypeWeight} , 'wdth' ${eastTypeWidth}`;
 
     SWCell.style.bottom = '0px';
     SWCell.style.left = '0px';
@@ -183,6 +286,8 @@ function setCellDimensions() {
     SCell.style.width = lensWidth;
     SCell.style.height = bottomHeight + 'px';
     SCell.style.fontSize = Math.max(Math.min(maxFontSize, bottomHeight / 6), minFontSize) + 'px';
+    let SouthTypeWidth = scale(bottomHeight, 100, windowHeight - (lens.offsetHeight + 100), 200, 50)
+    SCell.style["font-variation-settings"] = `'wght' ${TypeWeight} , 'wdth' ${SouthTypeWidth}`;
 
     SECell.style.bottom = '0px';
     SECell.style.right = '0px';
@@ -217,8 +322,6 @@ function dragElement(elmnt) {
     elmnt.onmousedown = dragMouseDown;
 
     function dragMouseDown(e) {
-        clearTimeout(populationTimeout);
-
         e = e || window.event;
         e.preventDefault();
         pos3 = e.clientX;
@@ -226,7 +329,9 @@ function dragElement(elmnt) {
         document.onmouseup = closeDragElement;
         document.onmousemove = elementDrag;
         stopSimulatedDrag();
-
+        hideAbout();
+        bigCells();
+        clearTimeout(populationTimeout);
         for (let cell of cells) {
             cell.style.transition = 'none';
         }
@@ -249,7 +354,6 @@ function dragElement(elmnt) {
         }
         setCellDimensions();
         setCellText();
-
     }
 
     function closeDragElement() {
@@ -261,7 +365,7 @@ function dragElement(elmnt) {
     }
 }
 
-function simulateDrag(elmnt, randomX, randomY) {
+function simulateDrag(elmnt, randomX, randomY, numFrames) {
     for (let cell of cells) {
         cell.style.transition = 'none';
     }
@@ -269,10 +373,6 @@ function simulateDrag(elmnt, randomX, randomY) {
 
     var deltaX = randomX - parseInt(elmnt.offsetLeft)
     var deltaY = randomY - parseInt(elmnt.offsetTop)
-
-    var numFrames = 60;
-    var deltaXperFrame = deltaX / numFrames;
-    var deltaYperFrame = deltaY / numFrames;
 
     let Xacc = 0;
     let Yacc = 0;
@@ -297,10 +397,11 @@ function simulateDrag(elmnt, randomX, randomY) {
         Yacc = deltaY * easeOutCubic(frame / numFrames);
         frame++
 
-        if (Math.abs(Xacc) >= Math.abs(deltaX)) {
+        if (frame >= numFrames) {
             clearInterval(moveInterval)
             let overlappingBlocks = getOverlappingBlocks(elmnt.style.top, elmnt.style.left);
             slowlyPopulateBlocks(overlappingBlocks);
+            frame = 0;
         }
     }, 33)
 }
