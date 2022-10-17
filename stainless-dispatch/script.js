@@ -1,3 +1,4 @@
+
 let blockSize = 16;
 let borderSize = 100;
 let windowWidth = $(window).innerWidth();
@@ -78,14 +79,18 @@ StartAudioContext(Tone.context, 'div').then(function(){
 
 const player = new Tone.Player("draft.mp3").toDestination();
 // play as soon as the buffer is loaded
-player.volume.value = -12;
+player.volume.value = -24;
 player.autostart = true;
 
+const hitPlayer = new Tone.Player('hit.m4a').toDestination();
+hitPlayer.volume.value = -24;
+hitPlayer.autostart = false;
 
 $(window).blur(function () {
     stopSimulatedDrag();
     player.stop();
-});
+    hitPlayer.stop();
+}); 
 
 $(window).focus(function () {
     player.start();
@@ -126,7 +131,6 @@ function stopSimulatedDrag() {
 }
 
 function simulateRandomDragOnce(){
-    console.log('here');
     let maxWidth = windowWidth - (lens.offsetWidth + borderSize)
     let maxHeight = windowHeight - (lens.offsetHeight + borderSize)
     let minWidth = borderSize;
@@ -366,6 +370,8 @@ function dragElement(elmnt) {
 }
 
 function simulateDrag(elmnt, randomX, randomY, numFrames) {
+    hitPlayer.start();
+
     for (let cell of cells) {
         cell.style.transition = 'none';
     }
@@ -413,6 +419,7 @@ function slowlyPopulateBlocks(overlappingBlocks) {
 
 function populateBlockLoop(blocksArray, id) {
     setText(blocksArray[id]);
+    // hitPlayer.start();
     if (id < blocksArray.length - 1) {
         populationTimeout = setTimeout(populateBlockLoop, populationSpeed, blocksArray, id + 1);
     }
