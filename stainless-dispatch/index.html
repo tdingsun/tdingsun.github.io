@@ -15,42 +15,65 @@
 </head>
 <body>
     <div id="grid-container"></div>
-    <div id="lens"></div>
-    <div class="cell" id="NWCell"></div>
-    <div class="cell" id="NCell"></div>
-    <div class="cell" id="NECell">
-        <div class="header">Trekker</div>
+    <div id="lens" class="grabbable">
+        <div id="blinkers">
+            <div id="topleft-blinker">↘</div>
+            <div id="topright-blinker">↙</div>
+            <div id="bottomleft-blinker">↗</div>
+            <div id="bottomright-blinker">↖</div>
+        </div>
+    </div>
+    <div class="cell" id="NWCell"></div>
+    <div class="cell" id="NCell"></div>
+    <div class="cell" id="NECell"> 
+    </div>
+    <div class="cell" id="WCell">
         <div></div>
-        <div id="trekkertextbox">
+        <div id="mode-header" class="header">Trekker</div>
+        <div></div>
+        </div>
+    </div>
+    <div class="cell" id="ECell">
+        <div id="left-cover">
+            <div id="curved-corner-topleft"></div>
+            <div id="curved-corner-bottomleft"></div>
+        </div>
+        <div id="right-cover">
+            <div id="curved-corner-bottomright"></div>
+            <div id="curved-corner-topright"></div>
+        </div>
 
+        <div class="e-cell-dingbat" id="e-cell-dingbat-top"></div>
+        <div id="mode-body" class="header"></div>
+        <div class="e-cell-dingbat" id="e-cell-dingbat-bottom"></div>
+
+
+    </div>
+    <div class="cell" id="SWCell">
+    </div>
+    <div class="cell" id="SCell">
+        <div id="about-cover">
+            <div>
+                Stainless  Dispatch
+            </div>
+        </div>
+        <div id="about-container">
+            <div id="about-header" class="header">
+                About the Typefaces
+            </div>
+            <div id="about-body">
+                <div>
+                    Stainless and Dispatch are two typecase designed by Occupant Fonts. 
+                    <br><br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque rutrum nisl, ac eleifend tortor ullamcorper nec. Mauris sed volutpat justo. Fusce purus eros, tempor vitae nunc sed, suscipit feugiat nunc. Quisque justo tellus, pharetra sed sollicitudin nec, cursus at neque. Etiam eget feugiat massa. Sed dignissim ullamcorper consequat. Ut gravida erat pharetra bibendum eleifend. Fusce vulputate consectetur dui, in hendrerit felis aliquet sit amet. Mauris quis arcu enim. Donec ornare sapien leo.    
+                    <br><br>
+                    Website designed by Tiger Dingsun.
+                </div>
+            </div>
         </div>
         
     </div>
-    <div class="cell" id="WCell"></div>
-    <div class="cell" id="ECell"></div>
-    <div class="cell" id="SWCell">
-        <div class="header">Browser</div>
-        <div></div>
-        <div id="browsertextbox">
-
-        </div>
-
-    </div>
-    <div class="cell" id="SCell"></div>
     <div class="cell" id="SECell">
-        <div id="aboutheader">
-            Stainless<br><br>Dispatch
-        </div>
-        <div id="about">
-            <div>
-                Stainless and Dispatch are two typecase designed by Occupant Fonts. 
-                <br><br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque rutrum nisl, ac eleifend tortor ullamcorper nec. Mauris sed volutpat justo. Fusce purus eros, tempor vitae nunc sed, suscipit feugiat nunc. Quisque justo tellus, pharetra sed sollicitudin nec, cursus at neque. Etiam eget feugiat massa. Sed dignissim ullamcorper consequat. Ut gravida erat pharetra bibendum eleifend. Fusce vulputate consectetur dui, in hendrerit felis aliquet sit amet. Mauris quis arcu enim. Donec ornare sapien leo.    
-            </div>
-            <div>
-                Website designed by Tiger Dingsun.
-            </div>
-        </div>
     </div>
 
 

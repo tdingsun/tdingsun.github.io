@@ -12,6 +12,16 @@ html, body {
     src: url('./Stainless2_VF.ttf');
 }
 
+@font-face {
+    font-family: DispatchMonoBold;
+    src: url('./Dispatch_Mono-Bold.ttf')
+}
+
+@font-face {
+    font-family: DispatchMono;
+    src: url('./Dispatch_Mono-Regular.ttf')
+}
+
 #grid-container {
     position: absolute;
     width: 100vw;
@@ -27,18 +37,63 @@ html, body {
     height: 160px;
     z-index: 1;
     position: absolute;
-    cursor: pointer;
     top: 100px;
     left: 100px;
+    font-family: 'Stainless';
+}
+
+#blinkers {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: grey;
+    visibility: visible;
+    animation: blink 1s steps(3, start) infinite;
+}
+
+#topleft-blinker {
+    position: absolute;
+    top: -5px;
+    left: 0px;
+}
+
+#topright-blinker {
+    position: absolute;
+    top: -5px;
+    right: 0px;
+}
+ 
+#bottomleft-blinker {
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+}
+ 
+#bottomright-blinker {
+    position: absolute;
+    bottom: -5px;
+    right: 0px;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+
+
+}
+ 
+ 
+.grabbable {
     cursor: grab;
 }
 
-#lens:active {
-    cursor: grabbing
+
+.grabbable:active {
+    cursor: grabbing;
 }
 
 .cell {
-    background-color: grey;
     border-radius: 50px;
     position: absolute;
     /* border: 1px solid white; */
@@ -46,126 +101,160 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: gainsboro;
-    font-size: 16px;
-    font-family: Dispatch;
-    word-wrap: break-word;
-    word-break: break-all;
+    font-family: Stainless;
+
     padding: 10px;
     line-height: 1.2;
     text-align: center;
     overflow: hidden;
-    transition: 0.1s;
-    box-shadow: 0 1px 3px grey;
+    transition: 0.25s;
+    z-index: 1;
 }
 
-.smallCell {
-    background-color: grey;
-    border-radius: 50px;
-    position: absolute;
-    /* border: 1px solid white; */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: whitesmoke;
-    font-size: 20px;
-    font-family: Dispatch;
-    word-wrap: break-word;
-    word-break: break-all;
+.small-cell {
     padding: 3px;
-    text-align: center;
-    overflow: hidden;
-    width: 50px;
-    height: 50px;
-    transition: width 0.25s, height 0.25s;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.trekker-cell {
+    background-color: grey;
+    color: lightgray;
+    box-shadow: 0 1px 3px grey, 0 1px 2px grey;
+}
+
+.browser-cell {
+    background-color: olive;
+    color: cornsilk;
+    box-shadow: 0 1px 3px olive, 0 1px 2px olive;
+}
+
+.trekker-part {
+    background-color: grey!important;
+    color: lightgray;
+}
+
+.browser-part {
+    background-color: olive!important;
+    color: cornsilk;
+}
+
+.trekker-corner {
+    color: grey!important;
+}
+
+.browser-corner {
+    color: olive!important;
 }
 
 .header {
-    border-bottom: 1px dashed whitesmoke;
+    font-style: italic;
     padding-bottom: 3px;
 }
-#NECell.smallCell, #SWCell.smallCell {
-    border-radius: 0px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    word-wrap: break-word;
-    word-break: break-all;
-    width: 250px !important;
-}
 
-#NWCell:hover {
-    /* border-radius: 50px 50px 1000px 50px ; */
-    background-color: cornflowerblue;
-    cursor: pointer;
+#NWCell {
+    overflow: visible;
 }
 
 #NCell {
-    word-wrap: unset;
-    word-break: unset;
-    overflow: visible;
-    z-index: 1;
-
-
+    z-index: 0;
 }
 
 #NECell {
-    line-height: 1.2;
-    word-wrap: unset;
-    word-break: unset;
-    flex-direction: column;
-    justify-content: space-between;
+    overflow: visible;
 }
 
 #WCell {
-
+    line-height: 1.2;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 0;
 }
 
 #ECell {
+    line-height: 1.2;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 0;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    z-index: 0;
 
 }
 
+.e-cell-dingbat {
+    z-index: 1;
+    background-color: grey;
+    width: 100%;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+
+#e-cell-dingbat-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+#left-cover, #right-cover {
+    position: absolute;
+    background-color: grey;
+    z-index: 0;
+
+}
+
+
+#left-cover {
+    height: 100%;
+    width: 50px;
+    left: 0;
+    top: 0;
+    transition: 0.1s;
+}
+
+#right-cover {
+    height: 100%;
+    width: 50px;
+    right: 0;
+    top: 0;
+    transition: 0.1s;
+
+}
 #SWCell {
-    line-height: 1.2;
-    word-wrap: unset;
-    word-break: unset;
-    flex-direction: column;
-    justify-content: space-between;
+    overflow: visible;
 }
 
 #SCell {
-    word-wrap: unset;
-    word-break: unset;
-    overflow: visible;
-    z-index: 1;
+    z-index: 0;
 }
 
 #SECell {
     flex-direction: column;
-    word-wrap: unset;
-    word-break: unset;
     justify-content: center;
+    overflow: visible;
+
 }
 
-#SECell:hover {
+#SCell:hover, #NCell:hover, #WCell:hover {
     background-color: cornflowerblue;
     cursor: pointer;
 }
 
-#SECell.smallCell {
-    line-height: 1;
+#about-cover {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
-.activatedAboutHeader {
-    text-align: left;
-}
-
-#about {
+#about-container {
     display: none;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-#about div {
+#about-body div {
     padding: 20px;
     text-align: left;
     line-height: 1.2;
@@ -173,15 +262,100 @@ html, body {
 
 .block {
     position: absolute;
-    /* border: 0.25px solid grey; */
-    /* color: grey; */
-    /* background-color: rgba(0,0,0,0.5); */
     box-sizing: border-box;
     justify-content: center;
     display: flex;
     align-items: center;
     font-size: 16px;
-    font-family: Stainless;
+    font-family: DispatchMono;
     word-break: break-all;
     line-height: 0.9;
 }
+
+@media only screen and (min-width: 1200px) {
+    .block {
+        font-size: 20px;
+    }
+}
+
+#mode-body {
+    color: grey;
+    min-width: 20px;
+    min-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-variation-settings: 'wght' 300;
+}
+
+.trekker-mode-body {
+    color: grey!important;
+}
+
+.browser-mode-body {
+    color: olive!important;
+}
+
+
+
+#curved-corner-bottomleft,
+#curved-corner-bottomright,
+#curved-corner-topleft,
+#curved-corner-topright {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  color: grey;
+}
+
+#curved-corner-bottomleft {
+    right: -20px;
+    top: 80px;
+    
+}
+#curved-corner-topleft {
+    right: -20px;
+    top: 60px;
+}
+
+#curved-corner-bottomright {
+    left: -20px;
+    top: 80px;
+}
+#curved-corner-topright {
+    left: -20px;
+    top: 60px;
+}
+#curved-corner-bottomleft:before,
+#curved-corner-bottomright:before,
+#curved-corner-topleft:before,
+#curved-corner-topright:before {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  border-radius: 50%;
+}
+#curved-corner-bottomleft:before {
+  bottom: 0;
+  left: 0;
+  box-shadow: -10px 10px 0 0;
+}
+#curved-corner-bottomright:before {
+  bottom: 0;
+  right: 0;
+  box-shadow: 10px 10px 0 0;
+}
+#curved-corner-topleft:before {
+  top: 0;
+  left: 0;
+  box-shadow: -10px -10px 0 0;
+}
+#curved-corner-topright:before {
+  top: 0;
+  right: 0;
+  box-shadow: 10px -10px 0 0;
+}
+  
