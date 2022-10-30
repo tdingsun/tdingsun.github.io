@@ -3,69 +3,75 @@ const gridContainer = document.getElementById("grid-container");
 const lens = document.getElementById('lens');
 const blinkers = document.getElementById('blinkers');
 
-const NWCell = document.getElementById('NWCell');
-const NCell = document.getElementById('NCell');
-const NECell = document.getElementById('NECell');
-const WCell = document.getElementById('WCell');
-const ECell = document.getElementById('ECell');
-const SWCell = document.getElementById('SWCell');
-const SCell = document.getElementById('SCell');
-const SECell = document.getElementById('SECell');
+const NWCell = document.getElementById('NWCell'), 
+    NCell = document.getElementById('NCell'), 
+    NECell = document.getElementById('NECell'), 
+    WCell = document.getElementById('WCell'),
+    ECell = document.getElementById('ECell'),
+    SWCell = document.getElementById('SWCell'),
+    SCell = document.getElementById('SCell'),
+    SECell = document.getElementById('SECell');
 const cells = [NWCell, NCell, NECell, WCell, ECell, SWCell, SCell, SECell];
+const cornerCells = [NWCell, NECell, SWCell, SECell];
+const modeHeader = document.getElementById('mode-header'),
+    modeBody = document.getElementById('mode-body'),
+    smallModeHeader = document.getElementById('WCell-small-header');
 
-const modeHeader = document.getElementById('mode-header');
-const modeBody = document.getElementById('mode-body');
+const eCellLeftCover = document.getElementById('left-cover'),
+    eCellRightCover = document.getElementById('right-cover'),
+    eCellTopCover = document.getElementById('e-cell-dingbat-top'),
+    eCellBottomCover = document.getElementById('e-cell-dingbat-bottom'),
+    topLeftCorner = document.getElementById('curved-corner-topleft'),
+    topRightCorner = document.getElementById('curved-corner-topright'),
+    bottomLeftCorner = document.getElementById('curved-corner-bottomleft'),
+    bottomRightCorner = document.getElementById('curved-corner-bottomright');
+const eCellParts = [eCellLeftCover, eCellRightCover, eCellTopCover, eCellBottomCover];
+const eCellCorners = [topLeftCorner, topRightCorner, bottomLeftCorner, bottomRightCorner];
 
-const eCellLeftCover = document.getElementById('left-cover');
-const eCellRightCover = document.getElementById('right-cover');
-const eCellTopCover = document.getElementById('e-cell-dingbat-top');
-const eCellBottomCover = document.getElementById('e-cell-dingbat-bottom');
-const topLeftCorner = document.getElementById('curved-corner-topleft');
-const topRightCorner = document.getElementById('curved-corner-topright');
-const bottomLeftCorner = document.getElementById('curved-corner-bottomleft');
-const bottomRightCorner = document.getElementById('curved-corner-bottomright');
-let eCellParts = [eCellLeftCover, eCellRightCover, eCellTopCover, eCellBottomCover];
-let eCellCorners = [topLeftCorner, topRightCorner,bottomLeftCorner, bottomRightCorner];
-
-const aboutHeader = document.getElementById('about-header');
-const aboutBody = document.getElementById('about-body');
 const aboutContainer = document.getElementById('about-container');
 const aboutCover = document.getElementById('about-cover');
+
+const NCellSmallCover = document.getElementById('NCell-small');
+const SCellSmallCover = document.getElementById('SCell-small');
+const ECellSmallCover = document.getElementById('ECell-small');
+const WCellSmallCover = document.getElementById('WCell-small');
+const smallCellCovers = [NCellSmallCover, SCellSmallCover, ECellSmallCover, WCellSmallCover]
 
 const stainlessTitle = document.getElementById('stainless-title');
 const dispatchTitle = document.getElementById('dispatch-title');
 
 //grid parameter setup
-let borderSize = 100;
-let blockSize = 16;
-if(window.innerWidth > 1200){
-    blockSize = 20;
-} 
-let rowSize = Math.ceil(window.innerWidth / blockSize);
-let colSize = Math.ceil(window.innerHeight / blockSize);
+const borderSize = 100;
+let blockSize = window.innerWidth > 1200 ? 20 : 16;
 
-let lensWidthInBlocks = Math.floor(parseInt(document.getElementById("lens").offsetWidth) / blockSize);
-let lensHeightInBlocks = Math.floor(parseInt(document.getElementById("lens").offsetHeight) / blockSize);
+const rowSize = Math.ceil(window.innerWidth / blockSize);
+const colSize = Math.ceil(window.innerHeight / blockSize);
+const lensWidthInBlocks = Math.floor(parseInt(document.getElementById("lens").offsetWidth) / blockSize);
+const lensHeightInBlocks = Math.floor(parseInt(document.getElementById("lens").offsetHeight) / blockSize);
+
+const minTypeWeight = 100, 
+    maxTypeWeight = 1000,
+    minTypeWidth = 50,
+    maxTypeWidth = 200;
 
 // timeouts and intervals
 let populationTimeout;
-let populationSpeed = 20;
-
+const populationSpeed = 20;
 let dragInterval;
+const dragTime = 24; //in frames at 24 fps, e.g 48 = 2 seconds
+const dragIntervalTime = 3000; //each simulated drag takes 3 seconds
 let moveInterval;
-let dragTime = 30; //in frames at 30 fps, e.g 60 = 2 seconds
 
 //dimensions calculations
-let minWidth = borderSize;
-let maxWidth = window.innerWidth - (lens.offsetWidth + borderSize);
-let minHeight = borderSize;
-let maxHeight =  window.innerHeight - (lens.offsetHeight + borderSize);
+const minWidth = borderSize,
+    maxWidth = window.innerWidth - (lens.offsetWidth + borderSize),
+    minHeight = borderSize,
+    maxHeight = window.innerHeight - (lens.offsetHeight + borderSize);
 
-let maxFontSizeMax = maxWidth / 7;
-let maxFontSize = Math.min(80, maxFontSizeMax);
-
-let minFontSize = 18;
-let minFontSizeMax = 32;
+const maxFontSizeMax = maxWidth / 7, 
+    maxFontSize = Math.min(80, maxFontSizeMax),
+    minFontSize = 18,
+    minFontSizeMax = 32;
 
 //texts
 const backgroundText = "stillness∙&∙flow∙&∙money∙&∙debt∙&∙islands∙&∙continents∙&∙figure∙&∙ground∙&∙wave∙&∙particle∙&∙loss∙&∙gain∙&∙interpolation∙&∙extrapolation∙&∙synthesis∙&∙fragmenting∙&∙clustering∙&∙infinity∙&∙singularity∙&∙branch∙&∙root∙&∙question∙&∙answer∙&∙inside∙&∙outside∙&∙silver∙&∙gold∙&∙space∙&∙time∙&∙life∙&∙death∙&∙day∙&∙night∙&∙need∙&∙want∙&∙map∙&∙territory∙&∙wander∙&∙wonder∙&∙node∙&∙edge∙&∙sowing∙&∙reaping∙&∙growth∙&∙rot∙&∙wake∙&∙dream∙&∙reality∙&∙illusion∙&∙conscious∙&∙unconscious∙&∙nature∙&∙culture∙&∙binary∙&∙field∙&∙loop∙&∙knot∙&∙volcano∙&∙glacier∙&∙grassy∙&∙knoll∙&∙tears∙&∙sweat∙&∙language∙&∙aesthetics∙&∙aether∙&∙earth∙&∙mender∙&∙trekker∙&∙browser∙&∙innocence∙&∙guilt∙&∙dexter∙&∙sinister∙&∙immanence∙&∙transcendence∙&∙biome∙&∙strata∙&∙cloud∙&∙wave∙&∙plastic∙&∙petroleum∙&∙shell∙&∙pebble∙&∙grass∙&∙stain∙&∙numbers∙&∙letters∙&∙palm∙&∙heart∙&∙daylight∙&∙flowers∙&∙spectra∙&∙specimen∙&∙stereotype∙&∙archetype∙&∙heuristic∙&∙dogma∙&∙continuous∙&∙discrete∙&∙angel∙&∙layer∙&∙slient∙&∙error∙&∙perfect∙&∙mirror∙&∙reality∙&∙tunnel∙&∙gravity∙&∙cryptid∙&∙prose∙&∙poetry∙&∙memory∙&∙paralysis∙&∙everything∙changes∙&∙everything∙stays∙the∙same∙"
@@ -88,14 +94,12 @@ const browserTextArray = browserText.split(" ");
 let modeTextArray = trekkerTextArray;
 let modeTextInterval;
 
-let currCellIndex = 0;
-
 //noise function
 noise.seed(Math.random());
 
 //audio
-StartAudioContext(Tone.context, 'div').then(function(){
-  });
+StartAudioContext(Tone.context, 'div').then(function () {
+});
 
 const player = new Tone.Player("draft.mp3").toDestination();
 player.volume.value = -24;
@@ -119,7 +123,7 @@ window.onblur = function () {
 
 window.onfocus = function () {
     player.start();
-    if(modeToggle) {
+    if (modeToggle && cellToggle) {
         startSimulatedDrag();
     }
 }
@@ -144,7 +148,8 @@ WCell.onclick = (e) => {
     hideAbout();
 
     if (modeToggle) { //TREKKER MODE
-        modeHeader.innerHTML = "{ Trekker Mode }"
+        modeHeader.innerHTML = "{&nbsp;Trekker Mode&nbsp;}";
+        smallModeHeader.innerHTML = "Trekker";
         document.body.style.fontFamily = 'Stainless';
         modeTextArray = trekkerTextArray
         stainlessTitle.classList.add("selected-title");
@@ -153,8 +158,12 @@ WCell.onclick = (e) => {
             cell.classList.add('trekker-cell');
             cell.classList.remove('browser-cell');
         }
+        for (let cover of smallCellCovers) {
+            cover.style.backgroundColor = 'slategrey'
+        }
         if (cellToggle) {
             ECell.style.backgroundColor = 'slategrey';
+            
         }
         for (let part of eCellParts) {
             part.classList.add('trekker-part');
@@ -171,14 +180,18 @@ WCell.onclick = (e) => {
         dragElement(lens);
         lens.classList.add('grabbable');
     } else { //BROWSER MODE
-        modeHeader.innerHTML = "{ Browser Mode }"
+        modeHeader.innerHTML = "{&nbsp;Browser Mode&nbsp;}"
+        smallModeHeader.innerHTML = "Browser";
         dispatchTitle.classList.add("selected-title");
         stainlessTitle.classList.remove("selected-title");
-        modeTextArray = browserTextArray
+        modeTextArray = browserTextArray;
         document.body.style.fontFamily = 'Dispatch';
         for (let cell of cells) {
             cell.classList.add('browser-cell');
             cell.classList.remove('trekker-cell');
+        }
+        for (let cover of smallCellCovers) {
+            cover.style.backgroundColor = 'grey'
         }
         if (cellToggle) {
             ECell.style.backgroundColor = 'grey';
@@ -210,18 +223,14 @@ NCell.onclick = (e) => {
     if (cellToggle) {
         stopSimulatedDrag();
         clearInterval(modeTextInterval);
-        if(modeToggle){
-            ECell.style.backgroundColor = 'grey';
-        } else {
-            ECell.style.backgroundColor = 'slategrey';
-        }
+        ECell.style.backgroundColor = modeToggle ? 'grey' : 'slategrey';
         smallCells();
     } else {
         bigCells();
         setCoverWidth();
         cycleThroughModeText();
         setTimeout(() => {
-            if(modeToggle){
+            if (modeToggle) {
                 startSimulatedDrag();
                 ECell.style.backgroundColor = 'transparent';
             }
@@ -235,28 +244,26 @@ SCell.onclick = (e) => {
     if (aboutToggle) { //hide about
         if (cellToggle) { // big cell
             hideAbout();
-            if(modeToggle){
+            if (modeToggle) {
                 startSimulatedDrag();
             }
         } else { //small cell
-            // SCell.style.height = borderSize + 'px';
-            // SCell.style.width = borderSize + 'px';
+            SCell.classList.remove('about-expanded');
             hideAbout();
         }
-        
+
     } else { //show about
         if (cellToggle) { //big cell
             if (Math.abs(lens.offsetTop - borderSize) < 50) {
                 showAbout();
             } else {
-                simulateDrag(lens, lens.offsetLeft, borderSize, 15);
+                simulateDrag(lens, lens.offsetLeft, borderSize, 10);
                 setTimeout(() => {
                     showAbout();
                 }, 500)
             }
         } else { //small cell
-            // SCell.style.height = window.innerHeight - (borderSize + lens.offsetHeight) + 'px'
-            // SCell.style.width = lens.offsetWidth + 'px'
+            SCell.classList.add('about-expanded');
             showAbout();
         }
     }
@@ -266,12 +273,18 @@ function smallCells() {
     for (let cell of cells) {
         cell.classList.add('small-cell');
     }
+    for (let cover of smallCellCovers) {
+        cover.style.visibility = 'visible';
+    }
     cellToggle = false;
 }
 
 function bigCells() {
     for (let cell of cells) {
         cell.classList.remove('small-cell');
+    }
+    for (let cover of smallCellCovers) {
+        cover.style.visibility = 'hidden';
     }
     setCellDimensions();
     setTimeout(() => {
@@ -306,18 +319,22 @@ function cycleThroughModeText() {
 }
 function setCoverWidth() {
     let coverWidth = Math.max((ECell.offsetWidth - modeBody.offsetWidth - 40) / 2, 0) + 'px';
+    let bottomCornerTop = (ECell.offsetHeight - eCellBottomCover.offsetHeight - 19.5) + 'px';
+    let topCornerTop = (eCellTopCover.offsetHeight - 0.5) + 'px';
     eCellLeftCover.style.width = coverWidth;
     eCellRightCover.style.width = coverWidth;
-    topLeftCorner.style.top = (eCellTopCover.offsetHeight - 0.5) + 'px';
-    topRightCorner.style.top = (eCellTopCover.offsetHeight - 0.5) + 'px';
-    bottomLeftCorner.style.top = (ECell.offsetHeight - eCellBottomCover.offsetHeight - 19.5) + 'px';
-    bottomRightCorner.style.top = (ECell.offsetHeight - eCellBottomCover.offsetHeight - 19.5) + 'px';
+    topLeftCorner.style.top = topCornerTop;
+    topRightCorner.style.top = topCornerTop;
+    bottomLeftCorner.style.top = bottomCornerTop;
+    bottomRightCorner.style.top = bottomCornerTop;
 }
 
+//auto drag
 function startSimulatedDrag() {
+    hideAbout();
     stopSimulatedDrag()
     simulateRandomDragOnce()
-    dragInterval = setInterval(() => { simulateRandomDragOnce() }, 3000);
+    dragInterval = setInterval(simulateRandomDragOnce, dragIntervalTime);
 }
 
 function stopSimulatedDrag() {
@@ -327,26 +344,189 @@ function stopSimulatedDrag() {
 }
 
 function simulateRandomDragOnce() {
-    let randomX = Math.max(Math.random() * maxWidth, minWidth)
-    let randomY = Math.max(Math.random() * maxHeight, minHeight)
+    let randomX = scale(Math.random(), 0, 1, minWidth, maxWidth);
+    randomX = Math.ceil(Math.round(randomX)/blockSize) * blockSize - (blockSize/2);
+
+    let randomY = scale(Math.random(), 0, 1, minHeight, maxHeight);
+    randomY = Math.ceil(Math.round(randomY)/blockSize) * blockSize - (blockSize/2);
     simulateDrag(lens, randomX, randomY, dragTime);
 }
 
+//manual drag
+function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0
+    elmnt.onmousedown = dragMouseDown;
+
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+
+        removeBlinkers();
+        stopSimulatedDrag();
+        hideAbout();
+        bigCells();
+        cycleThroughModeText();
+
+        clearTimeout(populationTimeout);
+        for (let cell of cells) {
+            cell.style.transition = 'none';
+        }
+        eCellLeftCover.style.transition = 'none';
+        eCellRightCover.style.transition = 'none';
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+
+        if ((elmnt.offsetTop - pos2) > borderSize && (elmnt.offsetTop - pos2 + lens.offsetHeight) < (window.innerHeight - borderSize)) {
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        }
+        if ((elmnt.offsetLeft - pos1) > borderSize && (elmnt.offsetLeft - pos1 + lens.offsetWidth) < (window.innerWidth - borderSize)) {
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+        setCellText();
+        setCellDimensions();
+    }
+
+    function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+        let overlappingBlocks = getOverlappingBlocks(elmnt.offsetTop, elmnt.offsetLeft);
+        slowlyPopulateBlocks(overlappingBlocks);
+        eCellLeftCover.style.transition = 'width 0.1s';
+        eCellRightCover.style.transition = 'width 0.1s';
+    }
+}
+
+function clearDragElement(elmnt) {
+    elmnt.onmousedown = null;
+    document.onmouseup = null;
+    document.onmousemove = null;
+}
+
+function simulateDrag(elmnt, Xpos, Ypos, numFrames) {
+    clearInterval(modeTextInterval);
+
+    hitPlayer.start();
+
+    eCellLeftCover.style.transition = 'none';
+    eCellRightCover.style.transition = 'none';
+    for (let cell of cells) {
+        cell.style.transition = 'none';
+    }
+
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0, Xacc = 0, Yacc = 0, frame = 0;
+    var deltaX = Xpos - parseInt(elmnt.offsetLeft);
+    var deltaY = Ypos - parseInt(elmnt.offsetTop);
+    moveInterval = setInterval(() => {
+
+        pos1 = pos3 - Xacc
+        pos2 = pos4 - Yacc
+        pos3 = Xacc
+        pos4 = Yacc
+
+        if ((elmnt.offsetTop - pos2) > borderSize && (elmnt.offsetTop - pos2 + lens.offsetHeight) < (window.innerHeight - borderSize)) {
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        }
+        if ((elmnt.offsetLeft - pos1) > borderSize && (elmnt.offsetLeft - pos1 + lens.offsetWidth) < (window.innerWidth - borderSize)) {
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        setCellText();
+        setCellDimensions();
+
+        Xacc = deltaX * easeInOutQuad(frame / numFrames);
+        Yacc = deltaY * easeOutCubic(frame / numFrames);
+        frame++
+
+        if (frame >= numFrames) {
+            clearInterval(moveInterval)
+            slowlyPopulateBlocks(getOverlappingBlocks(elmnt.offsetTop, elmnt.offsetLeft));
+            eCellLeftCover.style.transition = 'width 0.1s';
+            eCellRightCover.style.transition = 'width 0.1s';
+            cycleThroughModeText();
+        }
+    }, 42)
+}
+
+function slowlyPopulateBlocks(overlappingBlocks) {
+    overlappingBlocks = shuffle(overlappingBlocks);
+    populateBlockLoop(overlappingBlocks, 0);
+}
+
+function populateBlockLoop(blocksArray, id) {
+    setGridText(blocksArray[id]);
+    if (id < blocksArray.length - 1) {
+        populationTimeout = setTimeout(populateBlockLoop, populationSpeed, blocksArray, id + 1);
+    }
+}
+
+//text setters
+let currCellIndex = 0;
+function setCellText() {
+    let currCell = cornerCells[currCellIndex];
+    currCell.innerHTML = modeToggle ? browserWordArray[browserWordIndex++] : trekkerWordArray[trekkerWordIndex++];
+    currCellIndex = currCellIndex === 3 ? 0 : currCellIndex + 1
+    if (trekkerWordIndex === trekkerWordArray.length) {
+        trekkerWordIndex = 0;
+        trekkerWordArray = shuffle(trekkerWordArray)
+    }
+    if (browserWordIndex === browserWordArray.length) {
+        browserWordIndex = 0;
+        browserWordArray = shuffle(browserWordArray)
+    }
+}
+
+function setGridText(id) {
+    let block = document.getElementById(id);
+    let i = id % rowSize;
+    let j = Math.floor(id / colSize);
+    let val = combinedSimplex(i, j);
+    let wght = scale(val, -1, 1, minTypeWeight, maxTypeWeight);
+    let wdth = scale(val, -1, 1, minTypeWidth, maxTypeWidth);
+
+    block.innerHTML = Math.random() > 0.1 ? backgroundText[id % backgroundText.length] : "";
+
+    let colorVar = scale(val, -1.25, 1.25, 0, 150);
+    if (val > 0) { //land colors
+        block.style["font-variation-settings"] = `'wght' ${wght} , 'wdth' ${wdth}`;
+        block.style.color = `rgb(${colorVar * 1.2}, ${colorVar + 50}, 50)`
+        block.innerHTML = block.innerHTML.toUpperCase();
+    } else { // ocean colors
+        block.style["font-variation-settings"] = `'wght' ${wght} , 'wdth' ${wdth}`;
+        block.style.color = `rgb(${colorVar * 0.8}, ${colorVar * 1.2 + 60}, 255)`
+    }
+}
+
+//helper functions
 function setCellDimensions() {
     let bottomHeight = window.innerHeight - (lens.offsetTop + lens.offsetHeight);
     let eastWidth = window.innerWidth - (lens.offsetLeft + lens.offsetWidth);
-    let typeWeight = scale(lens.offsetTop, minHeight, maxHeight, 1000, 100);
-    let actualMinFontSize = scale(typeWeight, 100, 1000, minFontSizeMax, minFontSize);
+    let typeWeight = scale(lens.offsetTop, minHeight, maxHeight, maxTypeWeight, minTypeWeight);
+    let actualMinFontSize = scale(typeWeight, minTypeWeight, maxTypeWeight, minFontSizeMax, minFontSize);
     let NMaxFontSize = scale(lens.offsetTop, minHeight, maxHeight, maxFontSize, maxFontSizeMax);
     let SMaxFontSize = scale(bottomHeight, minHeight, maxHeight, maxFontSize, maxFontSizeMax);
-    let WTypeWidth = scale(lens.offsetLeft, minWidth, maxWidth, 50, 200);
-    let ETypeWidth = scale(eastWidth, minWidth, maxWidth, 50, 200);
+    let WTypeWidth = scale(lens.offsetLeft, minWidth, maxWidth, minTypeWidth, maxTypeWidth);
+    let ETypeWidth = scale(eastWidth, minWidth, maxWidth, minTypeWidth, maxTypeWidth);
 
     //NW CELL
     NWCell.style.width = lens.offsetLeft + 'px';
     NWCell.style.height = lens.offsetTop + 'px';
     NWCell.style.fontSize = scale(lens.offsetLeft, minWidth, maxWidth, actualMinFontSize, NMaxFontSize) + 'px';
     let NWTypeWidth = WTypeWidth - (NWCell.innerHTML.length * 10);
+    console.log(WTypeWidth);
+    console.log(NWTypeWidth);
     NWCell.style["font-variation-settings"] = `'wght' ${typeWeight} , 'wdth' ${NWTypeWidth}`;
 
     //N CELL
@@ -382,12 +562,13 @@ function setCellDimensions() {
     //SE CELL
     SECell.style.width = eastWidth + 'px';
     SECell.style.height = bottomHeight + 'px';
-    SECell.style.fontSize = scale(eastWidth, minWidth, maxWidth,  actualMinFontSize, SMaxFontSize) + 'px';
+    SECell.style.fontSize = scale(eastWidth, minWidth, maxWidth, actualMinFontSize, SMaxFontSize) + 'px';
     let SETypeWidth = ETypeWidth - (SECell.innerHTML.length * 10);
     SECell.style["font-variation-settings"] = `'wght' ${typeWeight} , 'wdth' ${SETypeWidth}`;
 
     setCoverWidth();
 }
+
 
 function makeGrid() {
     for (let i = 0; i < colSize; i++) {
@@ -399,206 +580,9 @@ function makeGrid() {
             block.style.left = (blockSize * j) + 'px';
             block.style.width = blockSize + 'px';
             block.style.height = blockSize + 'px';
+
             gridContainer.appendChild(block);
         }
-    }
-}
-
-function dragElement(elmnt) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0
-    elmnt.onmousedown = dragMouseDown;
-
-    function dragMouseDown(e) {
-        e = e || window.event;
-        e.preventDefault();
-
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        document.onmousemove = elementDrag;
-
-        stopSimulatedDrag();
-        hideAbout();
-        bigCells();
-        cycleThroughModeText();
-
-        clearTimeout(populationTimeout);
-        for (let cell of cells) {
-            cell.style.transition = 'none';
-        }
-        eCellLeftCover.style.transition = 'none';
-        eCellRightCover.style.transition = 'none';
-        removeBlinkers();
-    }
-
-    function elementDrag(e) {
-        e = e || window.event;
-        e.preventDefault();
-
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-
-        if ((elmnt.offsetTop - pos2) > borderSize && (elmnt.offsetTop - pos2 + lens.offsetHeight) < (window.innerHeight - borderSize)) {
-            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-        }
-        if ((elmnt.offsetLeft - pos1) > borderSize && (elmnt.offsetLeft - pos1 + lens.offsetWidth) < (window.innerWidth - borderSize)) {
-            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-        }
-        setCellText();
-        setCellDimensions();
-    }
-
-    function closeDragElement() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-        let overlappingBlocks = getOverlappingBlocks(elmnt.style.top, elmnt.style.left);
-        slowlyPopulateBlocks(overlappingBlocks);
-        eCellLeftCover.style.transition = 'width 0.1s';
-        eCellRightCover.style.transition = 'width 0.1s';
-    }
-}
-
-function clearDragElement(elmnt) {
-    elmnt.onmousedown = null;
-    document.onmouseup = null;
-    document.onmousemove = null;
-}
-
-function simulateDrag(elmnt, Xpos, Ypos, numFrames) {
-    hitPlayer.start();
-
-    for (let cell of cells) {
-        cell.style.transition = 'none';
-    }
-
-    clearInterval(modeTextInterval);
-
-    eCellLeftCover.style.transition = 'none';
-    eCellRightCover.style.transition = 'none';
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0
-
-    var deltaX = Xpos - parseInt(elmnt.offsetLeft)
-    var deltaY = Ypos - parseInt(elmnt.offsetTop)
-
-    let Xacc = 0;
-    let Yacc = 0;
-    let frame = 0;
-    
-    moveInterval = setInterval(() => {
-        setCellText();
-
-        pos1 = pos3 - Xacc
-        pos2 = pos4 - Yacc
-        pos3 = Xacc
-        pos4 = Yacc
-
-        if ((elmnt.offsetTop - pos2) > borderSize && (elmnt.offsetTop - pos2 + lens.offsetHeight) < (window.innerHeight - borderSize)) {
-            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-        }
-        if ((elmnt.offsetLeft - pos1) > borderSize && (elmnt.offsetLeft - pos1 + lens.offsetWidth) < (window.innerWidth - borderSize)) {
-            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-        }
-
-        setCellDimensions();
-        Xacc = deltaX * easeInOutQuad(frame / numFrames);
-        Yacc = deltaY * easeOutCubic(frame / numFrames);
-        frame++
-
-        if (frame >= numFrames) {
-            clearInterval(moveInterval)
-            let overlappingBlocks = getOverlappingBlocks(elmnt.style.top, elmnt.style.left);
-            slowlyPopulateBlocks(overlappingBlocks);
-            frame = 0;
-            eCellLeftCover.style.transition = 'width 0.1s';
-            eCellRightCover.style.transition = 'width 0.1s';
-            cycleThroughModeText();
-        }
-    }, 33)
-}
-
-function slowlyPopulateBlocks(overlappingBlocks) {
-    overlappingBlocks = shuffle(overlappingBlocks);
-    populateBlockLoop(overlappingBlocks, 0);
-}
-
-function populateBlockLoop(blocksArray, id) {
-    setGridText(blocksArray[id]);
-    if (id < blocksArray.length - 1) {
-        populationTimeout = setTimeout(populateBlockLoop, populationSpeed, blocksArray, id + 1);
-    }
-}
-
-function setCellText() {
-    switch (currCellIndex) {
-        case 0:
-            if(modeToggle)  { //BROWSER
-                NWCell.innerHTML = browserWordArray[browserWordIndex++];
-            } else { //TREKKER
-                NWCell.innerHTML = trekkerWordArray[trekkerWordIndex++];
-            }
-            currCellIndex++;
-            break;
-        case 1:
-            if(modeToggle)  { //Trekker
-                NECell.innerHTML = browserWordArray[browserWordIndex++];
-            } else {
-                NECell.innerHTML = trekkerWordArray[trekkerWordIndex++];
-            }
-            currCellIndex++;
-            break;
-        case 2:
-            if(modeToggle)  { //Trekker
-                SECell.innerHTML = browserWordArray[browserWordIndex++];
-            } else {
-                SECell.innerHTML = trekkerWordArray[trekkerWordIndex++];
-            }
-            currCellIndex++;
-            break;
-        case 3:
-            if(modeToggle)  { //Trekker
-                SWCell.innerHTML = browserWordArray[browserWordIndex++];
-            } else {
-                SWCell.innerHTML = trekkerWordArray[trekkerWordIndex++];
-            }
-            currCellIndex = 0;
-            break;
-        default:
-            break;
-    }
-    if (trekkerWordIndex === trekkerWordArray.length) {
-        trekkerWordIndex = 0;
-        trekkerWordArray = shuffle(trekkerWordArray)
-    }
-    if(browserWordIndex === browserWordArray.length) {
-        browserWordIndex = 0;
-        browserWordArray = shuffle(browserWordArray)
-    }
-}
-
-function setGridText(id) {
-    let el = document.getElementById(id);
-    let i = id % rowSize;
-    let j = Math.floor(id / colSize);
-    let val = combinedSimplex(i, j);
-    let wght = scale(val, -1, 1, 100, 1000);
-    let wdth = scale(val, -1, 1, 50, 200);
-    // let ital = scale(val, -1, 1, 0, 1);
-    let ital = 0;
-    let xhgt = scale(val, -1, 1, 0, 100);
-
-    el.innerHTML = Math.random() > 0.1 ? backgroundText[id % backgroundText.length] : "";
-
-    el.style["font-variation-settings"] = `'wght' ${wght} , 'wdth' ${wdth}, 'ital' ${ital}, 'xhgt' ${xhgt}`;
-    let colorVar = scale(val, -1.25, 1.25, 0, 150);
-    el.style.color = `rgb(${colorVar * 0.8}, ${colorVar * 1.2 + 60}, 255)`
-    el.style.backgroundColor = 'transparent'
-    if (val > 0) { //land colors
-        el.style["font-variation-settings"] = `'wght' ${wght} , 'wdth' ${wdth}, 'ital' ${ital}, 'xhgt' ${xhgt}`;
-        el.style.color = `rgb(${colorVar * 1.2}, ${colorVar + 50}, 50)`
-        // el.style.fontFamily = 'DispatchMonoBold';
-        el.innerHTML = el.innerHTML.toUpperCase();
     }
 }
 
@@ -606,19 +590,7 @@ function combinedSimplex(i, j) {
     return (noise.simplex2(i / 32, j / 32) + (noise.simplex2(i / 4, j / 4) / 2) + (noise.simplex2(i / 2, j / 2) / 2));
 }
 
-function shuffle(arr) {
-    let currentIndex = arr.length, randomIndex;
-    while (currentIndex != 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]]
-    }
-    return arr;
-}
-
 function getOverlappingBlocks(lensTop, lensLeft) {
-    lensTop = parseInt(lensTop);
-    lensLeft = parseInt(lensLeft);
     let lensTopInBlocks = Math.ceil(lensTop / blockSize)
     let lensLeftInBlocks = Math.ceil(lensLeft / blockSize)
     let OverlappingBlockIds = [];
@@ -639,30 +611,14 @@ function scale(number, inMin, inMax, outMin, outMax) {
     return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 }
 
-function easeInOutCubic(x) {
-    return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
-}
-
-function easeInOutElastic(x) {
-    const c5 = (2 * Math.PI) / 4.5;
-
-    return x === 0
-        ? 0
-        : x === 1
-            ? 1
-            : x < 0.5
-                ? -(Math.pow(2, 20 * x - 10) * Math.sin((20 * x - 11.125) * c5)) / 2
-                : (Math.pow(2, -20 * x + 10) * Math.sin((20 * x - 11.125) * c5)) / 2 + 1;
-}
-
-function easeInOutCirc(x) {
-    return x < 0.5
-        ? (1 - Math.sqrt(1 - Math.pow(2 * x, 2))) / 2
-        : (Math.sqrt(1 - Math.pow(-2 * x + 2, 2)) + 1) / 2;
-}
-
-function easeInCubic(x) {
-    return x * x * x;
+function shuffle(arr) {
+    let currentIndex = arr.length, randomIndex;
+    while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]]
+    }
+    return arr;
 }
 
 function easeOutCubic(x) {
