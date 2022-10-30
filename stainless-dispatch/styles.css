@@ -1,8 +1,19 @@
+:root {
+    --trekker-bg-color: slategrey;
+    --trekker-color: cornsilk;
+    --browser-bg-color: grey;
+    --browser-color: lightgrey;
+}
 html, body {
     padding: 0;
     margin: 0;
     font-family: Stainless;
 }
+
+* {
+    box-sizing: border-box;
+}
+
 @font-face {
     font-family: Dispatch;
     src: url('./Dispatch2VF.ttf');
@@ -13,16 +24,6 @@ html, body {
     src: url('./Stainless2_VF.ttf');
 }
 
-@font-face {
-    font-family: DispatchMonoBold;
-    src: url('./Dispatch_Mono-Bold.ttf')
-}
-
-@font-face {
-    font-family: DispatchMono;
-    src: url('./Dispatch_Mono-Regular.ttf')
-}
-
 #grid-container {
     position: absolute;
     width: 100vw;
@@ -30,13 +31,12 @@ html, body {
     top: 0;
     left: 0;
     overflow: hidden;
-    background-color: lightgray;
+    background-color: var(--browser-color);
 }
 
 #lens {
     width: 260px;
     height: 160px;
-    z-index: 1;
     position: absolute;
     top: calc(50vh - 80px);
     left: calc(50vw - 130px);
@@ -46,31 +46,26 @@ html, body {
     width: 100%;
     height: 100%;
     font-size: 16px;
-    color: slategrey;
+    color: var(--trekker-bg-color);
     visibility: visible;
     animation: blink 1s steps(3, start) infinite;
 }
-
-#topleft-blinker {
+#blinkers div {
     position: absolute;
+}
+#topleft-blinker {
     top: -5px;
     left: 0px;
 }
-
 #topright-blinker {
-    position: absolute;
     top: -5px;
     right: 0px;
 }
- 
 #bottomleft-blinker {
-    position: absolute;
     bottom: -5px;
     left: 0px;
 }
- 
 #bottomright-blinker {
-    position: absolute;
     bottom: -5px;
     right: 0px;
 }
@@ -79,14 +74,11 @@ html, body {
     to {
         visibility: hidden;
     }
-
-
 }
  
 .grabbable {
     cursor: grab;
 }
-
 
 .grabbable:active {
     cursor: grabbing;
@@ -95,18 +87,13 @@ html, body {
 .cell {
     border-radius: 50px;
     position: absolute;
-    /* border: 1px solid white; */
-    box-sizing: border-box;
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
-
     padding: 10px;
-    line-height: 1.2;
-    text-align: center;
     overflow: hidden;
-    transition: 0.25s;
-    z-index: 1;
+    line-height: 1.2;
 }
 
 .small-cell {
@@ -117,33 +104,33 @@ html, body {
 }
 
 .trekker-cell {
-    background-color: slategrey;
-    color: cornsilk;
-    box-shadow: 0 1px 3px slategrey, 0 1px 2px slategrey;
+    background-color:  var(--trekker-bg-color);
+    color: var(--trekker-color);
+    box-shadow: 0 1px 3px  var(--trekker-bg-color), 0 1px 2px  var(--trekker-bg-color);
 }
 
 .browser-cell {
-    background-color: grey;
-    color: lightgray;
-    box-shadow: 0 1px 3px grey, 0 1px 2px grey;
+    background-color: var(--browser-bg-color);
+    color: var(--browser-color);
+    box-shadow: 0 1px 3px var(--browser-bg-color), 0 1px 2px var(--browser-bg-color);
 }
 
 .trekker-part {
-    background-color: slategrey!important;
-    color: cornsilk;
+    background-color:  var(--trekker-bg-color)!important;
+    color:  var(--trekker-color);
 }
 
 .browser-part {
-    background-color: grey!important;
-    color: lightgray;
+    background-color: var(--browser-bg-color)!important;
+    color: var(--browser-color);
 }
 
 .trekker-corner {
-    color: slategrey!important;
+    color:  var(--trekker-bg-color)!important;
 }
 
 .browser-corner {
-    color: grey!important;
+    color: var(--browser-bg-color)!important;
 }
 
 .header {
@@ -194,7 +181,7 @@ html, body {
 
 .e-cell-dingbat {
     z-index: 1;
-    background-color: slategrey;
+    background-color:  var(--trekker-bg-color);
     width: 100%;
     flex-grow: 1;
     padding: 10px;
@@ -210,7 +197,7 @@ html, body {
 
 #left-cover, #right-cover {
     position: absolute;
-    background-color: slategrey;
+    background-color:  var(--trekker-bg-color);
     z-index: 0;
 
 }
@@ -259,7 +246,7 @@ html, body {
 
 .cell-line {
     position: absolute;
-    background-color:  lightgray;
+    background-color:  var(--browser-color);
 }
 
 #NLine-top {
@@ -330,8 +317,7 @@ html, body {
     align-items: center;
     flex-direction: column;
     padding: 5px;
-    box-sizing: border-box;
-    background-color: slategray;
+    background-color:  var(--trekker-bg-color);
     visibility: hidden;
 }
 
@@ -355,7 +341,6 @@ html, body {
     display: flex;
     justify-content: flex-end;
     padding-right: 10px;
-    box-sizing: border-box;
 }
 #about-title-center {
     flex-grow: 0;
@@ -365,7 +350,6 @@ html, body {
     flex-basis: 50%;
     display: flex;
     padding-left: 10px;
-    box-sizing: border-box;
 }
 #about-cover {
     height: 100%;
@@ -393,12 +377,10 @@ html, body {
 
 .block {
     position: absolute;
-    box-sizing: border-box;
     justify-content: center;
     display: flex;
     align-items: center;
     font-size: 16px;
-    word-break: break-all;
     line-height: 0.9;
 }
 
@@ -413,23 +395,19 @@ html, body {
     left: -1px;
 }
 #mode-body {
-    color: slategrey;
+    color:  var(--trekker-bg-color);
     min-width: 20px;
     min-height: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    /* font-variation-settings: 'wght' 400; */
+    padding: 10px 0;
 }
 
 .trekker-mode-body {
-    color: slategrey!important;
+    color:  var(--trekker-bg-color)!important;
 }
 
 .browser-mode-body {
-    color: grey!important;
+    color: var(--browser-bg-color)!important;
 }
-
-
 
 #curved-corner-bottomleft,
 #curved-corner-bottomright,
@@ -440,7 +418,7 @@ html, body {
   overflow: hidden;
   position: absolute;
   z-index: 1;
-  color: slategrey;
+  color:  var(--trekker-bg-color);
 }
 
 #curved-corner-bottomleft {
