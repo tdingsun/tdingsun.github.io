@@ -1,6 +1,7 @@
 html, body {
     padding: 0;
     margin: 0;
+    font-family: Stainless;
 }
 @font-face {
     font-family: Dispatch;
@@ -37,16 +38,15 @@ html, body {
     height: 160px;
     z-index: 1;
     position: absolute;
-    top: 100px;
-    left: 100px;
-    font-family: 'Stainless';
+    top: calc(50vh - 80px);
+    left: calc(50vw - 130px);
 }
 
 #blinkers {
     width: 100%;
     height: 100%;
     font-size: 16px;
-    color: grey;
+    color: slategrey;
     visibility: visible;
     animation: blink 1s steps(3, start) infinite;
 }
@@ -83,7 +83,6 @@ html, body {
 
 }
  
- 
 .grabbable {
     cursor: grab;
 }
@@ -101,7 +100,6 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Stainless;
 
     padding: 10px;
     line-height: 1.2;
@@ -113,36 +111,40 @@ html, body {
 
 .small-cell {
     padding: 3px;
+    width: 100px!important;
+    height: 100px!important;
+    font-size: 16px!important;
+    font-variation-settings: 'wght'400, 'wdth' 100;
 }
 
 .trekker-cell {
+    background-color: slategrey;
+    color: cornsilk;
+    box-shadow: 0 1px 3px slategrey, 0 1px 2px slategrey;
+}
+
+.browser-cell {
     background-color: grey;
     color: lightgray;
     box-shadow: 0 1px 3px grey, 0 1px 2px grey;
 }
 
-.browser-cell {
-    background-color: olive;
+.trekker-part {
+    background-color: slategrey!important;
     color: cornsilk;
-    box-shadow: 0 1px 3px olive, 0 1px 2px olive;
 }
 
-.trekker-part {
+.browser-part {
     background-color: grey!important;
     color: lightgray;
 }
 
-.browser-part {
-    background-color: olive!important;
-    color: cornsilk;
-}
-
 .trekker-corner {
-    color: grey!important;
+    color: slategrey!important;
 }
 
 .browser-corner {
-    color: olive!important;
+    color: grey!important;
 }
 
 .header {
@@ -152,14 +154,20 @@ html, body {
 
 #NWCell {
     overflow: visible;
+    top: 0;
+    left: 0;
 }
 
 #NCell {
     z-index: 0;
+    top: 0;
+    width: 260px;
 }
 
 #NECell {
     overflow: visible;
+    top: 0;
+    right: 0;
 }
 
 #WCell {
@@ -167,6 +175,8 @@ html, body {
     flex-direction: column;
     justify-content: space-between;
     z-index: 0;
+    left: 0;
+    height: 160px;
 }
 
 #ECell {
@@ -178,12 +188,14 @@ html, body {
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     z-index: 0;
+    right: 0;
+    height: 160px;
 
 }
 
 .e-cell-dingbat {
     z-index: 1;
-    background-color: grey;
+    background-color: slategrey;
     width: 100%;
     flex-grow: 1;
     padding: 10px;
@@ -199,7 +211,7 @@ html, body {
 
 #left-cover, #right-cover {
     position: absolute;
-    background-color: grey;
+    background-color: slategrey;
     z-index: 0;
 
 }
@@ -223,17 +235,22 @@ html, body {
 }
 #SWCell {
     overflow: visible;
+    bottom: 0;
+    left: 0;
 }
 
 #SCell {
     z-index: 0;
+    bottom: 0;
+    width: 260px;
 }
 
 #SECell {
     flex-direction: column;
     justify-content: center;
     overflow: visible;
-
+    bottom: 0;
+    right: 0;
 }
 
 #SCell:hover, #NCell:hover, #WCell:hover {
@@ -241,8 +258,93 @@ html, body {
     cursor: pointer;
 }
 
+.cell-line {
+    position: absolute;
+    background-color:  lightgray;
+}
+
+#NLine-top {
+    height: calc(50% - 30px);
+    left: 50%;
+    top: 10px;
+    width: 0.5px;
+}
+
+#NLine-bottom {
+    height: calc(50% - 30px);
+    width: 0.5px;
+    left: 50%;
+    bottom: 10px;
+}
+
+#WLine-left {
+    width: calc(50% - 80px);
+    height: 0.5px;
+    top: 50%;
+    left: 10px;
+}
+
+#WLine-right {
+    width: calc(50% - 80px);
+    height: 0.5px;
+    top: 50%;
+    right: 10px;
+}
+
+#SLine-top {
+    width: 0.5px;
+    height: calc(50% - 30px);
+    left: 50%;
+    top: 10px;
+}
+
+#SLine-bottom {
+    width: 0.5px;
+    height: calc(50% - 30px);
+    left: 50%;
+    bottom: 10px;
+}
+
+#ELine-left {
+    width: calc(100% - 20px);
+    height: 0.5px;
+    top: 50%;
+    left: 10px;
+}
+
+#ELine-right {
+    width: calc(100% - 20px);
+    height: 0.5px;
+    top: 50%;
+    left: 10px;
+}
+
+#about-title-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#about-title-left {
+    flex-grow: 1;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+#about-title-center {
+    flex-grow: 0;
+}
+#about-title-right {
+    flex-grow: 1;
+    flex-basis: 50%;
+    display: flex;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
 #about-cover {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -252,6 +354,10 @@ html, body {
     height: 100%;
     flex-direction: column;
     justify-content: space-between;
+}
+
+#about-body {
+    overflow: scroll;
 }
 
 #about-body div {
@@ -267,7 +373,6 @@ html, body {
     display: flex;
     align-items: center;
     font-size: 16px;
-    font-family: DispatchMono;
     word-break: break-all;
     line-height: 0.9;
 }
@@ -278,21 +383,25 @@ html, body {
     }
 }
 
+#mode-header {
+    position: relative;
+    left: -1px;
+}
 #mode-body {
     color: grey;
     min-width: 20px;
     min-height: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-variation-settings: 'wght' 300;
+    /* font-variation-settings: 'wght' 400; */
 }
 
 .trekker-mode-body {
-    color: grey!important;
+    color: slategrey!important;
 }
 
 .browser-mode-body {
-    color: olive!important;
+    color: grey!important;
 }
 
 
@@ -306,7 +415,7 @@ html, body {
   overflow: hidden;
   position: absolute;
   z-index: 1;
-  color: grey;
+  color: slategrey;
 }
 
 #curved-corner-bottomleft {
@@ -358,4 +467,11 @@ html, body {
   right: 0;
   box-shadow: 10px -10px 0 0;
 }
-  
+
+.selected-title:before {
+    content: '{ '
+}
+
+.selected-title:after {
+    content: ' }'
+}
