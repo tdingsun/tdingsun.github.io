@@ -397,8 +397,8 @@ html, body {
 #mode-body {
     color:  var(--trekker-bg-color);
     min-width: 20px;
-    min-height: 20px;
-    padding: 10px 0;
+    min-height: 50px;
+    padding: 13px 0 10px 0;
 }
 
 .trekker-mode-body {

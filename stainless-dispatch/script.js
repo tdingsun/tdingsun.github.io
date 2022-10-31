@@ -77,7 +77,7 @@ const maxFontSizeMax = maxWidth / 7,
 const backgroundText = "stillness∙&∙flow∙&∙money∙&∙debt∙&∙islands∙&∙continents∙&∙figure∙&∙ground∙&∙wave∙&∙particle∙&∙loss∙&∙gain∙&∙interpolation∙&∙extrapolation∙&∙synthesis∙&∙fragmenting∙&∙clustering∙&∙infinity∙&∙singularity∙&∙branch∙&∙root∙&∙question∙&∙answer∙&∙inside∙&∙outside∙&∙silver∙&∙gold∙&∙space∙&∙time∙&∙life∙&∙death∙&∙day∙&∙night∙&∙need∙&∙want∙&∙map∙&∙territory∙&∙wander∙&∙wonder∙&∙node∙&∙edge∙&∙sowing∙&∙reaping∙&∙growth∙&∙rot∙&∙wake∙&∙dream∙&∙reality∙&∙illusion∙&∙conscious∙&∙unconscious∙&∙nature∙&∙culture∙&∙binary∙&∙field∙&∙loop∙&∙knot∙&∙volcano∙&∙glacier∙&∙grassy∙&∙knoll∙&∙tears∙&∙sweat∙&∙language∙&∙aesthetics∙&∙aether∙&∙earth∙&∙mender∙&∙trekker∙&∙browser∙&∙innocence∙&∙guilt∙&∙dexter∙&∙sinister∙&∙immanence∙&∙transcendence∙&∙biome∙&∙strata∙&∙cloud∙&∙wave∙&∙plastic∙&∙petroleum∙&∙shell∙&∙pebble∙&∙grass∙&∙stain∙&∙numbers∙&∙letters∙&∙palm∙&∙heart∙&∙daylight∙&∙flowers∙&∙spectra∙&∙specimen∙&∙stereotype∙&∙archetype∙&∙heuristic∙&∙dogma∙&∙continuous∙&∙discrete∙&∙angel∙&∙layer∙&∙slient∙&∙error∙&∙perfect∙&∙mirror∙&∙reality∙&∙tunnel∙&∙gravity∙&∙cryptid∙&∙prose∙&∙poetry∙&∙memory∙&∙paralysis∙&∙everything∙changes∙&∙everything∙stays∙the∙same∙"
 const backgroundTextArray = backgroundText.split(" ");
 
-const trekkerWords = "Aether Algae Anchor Approach Artifact Basalt Basin Binary Biome Bloom Bone Boulder Branch Caldera Callus Canyon Carbon Ceramic Clay Cloud Collagen Continents Critter Crust Crux Cryptid Crystal Culture Cypress Day Daylight Dew Dune Earth Etch Field Flash Flint Floe Flow Flowers Froth Gear Geode Geosmin Glacier Gneiss Granite Grass Grassy Gravel Gravity Growth Halcyon Heart Heliotrope Igneous Islands Knoll Lake Lava Lichen Lithograph Log Magma Magnetic Map Marine Mercury Metallurgy Mineral Mist Moss Mucus Nature Night Oxide Ozone Palm Pebble Petrol Petroleum Pillow Plastic Plateau Pollen Pond Protolith Pumice Quartz Raft Rainwater Range Ravine Reaping Redux Reservoir Ridge Ripple Root Rot Salve Sand Sediment Sentiment Shale Shell Shelter Smear Sound Sowing Stain Stillness Stone Strata Sulphur Swamp Sweat Tears Tectonic Territory Thermal Tissue Titanium Tobacco Trail Volcano Wander Wave Wonder Zipper Zygote"
+const trekkerWords = "Aether Algae Anchor Approach Artifact Basalt Basin Binary Biome Bloom Bone Boulder Branch Caldera Callus Canyon Carbon Ceramic Clay Cloud Collagen Continents Critter Crust Crux Cryptid Crystal Culture Cypress Day Daylight Dew Dune Earth Eon Epoch Etch Field Flash Flint Floe Flow Flowers Fossil Froth Gear Geode Geosmin Glacier Gneiss Granite Grass Grassy Gravel Gravity Growth Halcyon Heart Heliotrope Holocene Igneous Islands Knoll Lake Lava Lichen Lithograph Log Magma Magnetic Map Marine Mercury Metallurgy Mineral Mist Moss Mucus Nature Night Oxide Ozone Palm Pebble Petrification Petrol Petroleum Pillow Plastic Plateau Pollen Pond Protolith Pseudomorph Pumice Quartz Raft Rainwater Range Ravine Reaping Redux Reservoir Ridge Ripple Root Rot Salve Sand Sediment Sentiment Shale Shell Shelter Smear Sound Sowing Spiral Stain Stillness Stone Strata Sulphur Swamp Sweat Tears Tectonic Territory Thermal Tissue Titanium Tobacco Trace Trail Trilobite Undercling Volcano Wander Wave Wonder Zipper Zygote"
 let trekkerWordArray = shuffle(trekkerWords.split(" "));
 let trekkerWordIndex = 0;
 
@@ -98,17 +98,26 @@ let modeTextInterval;
 noise.seed(Math.random());
 
 //audio
-StartAudioContext(Tone.context, 'div').then(function () {
+let ambient = new Audio('draft2.mp3');
+ambient.loop = true;
+ambient.volume = 0.3;
+let ambientStarted = false;
+let ambientLoaded = false;
+ambient.addEventListener("canplaythrough", (event) => {
+    ambientLoaded = true;
 });
 
-const player = new Tone.Player("draft.mp3").toDestination();
-player.volume.value = -24;
-player.autostart = true;
+let hit = new Audio('hit1.wav');
+hit.volume = 0.1;
 
-const hitPlayer = new Tone.Player('hit.m4a').toDestination();
-hitPlayer.volume.value = -24;
-hitPlayer.autostart = false;
+let hit2 = new Audio('hit2.wav');
+hit2.volume = 0.1;
 
+let hit3 = new Audio('hit.wav');
+hit3.volume = 0.1;
+
+let gridSound = new Audio('grid.wav');
+gridSound.volume = 0.05;
 //toggles 
 let modeToggle = false;
 let cellToggle = true;
@@ -117,12 +126,17 @@ let aboutToggle = false;
 //on blur and focus
 window.onblur = function () {
     stopSimulatedDrag();
-    player.stop();
-    hitPlayer.stop();
+    ambient.pause();
+    hit.volume = 0
+    ambientStarted = false;
 }
 
 window.onfocus = function () {
-    player.start();
+    hit.volume = 0.1
+
+    if(!ambientStarted && ambientLoaded) {
+        ambient.play();
+    }
     if (modeToggle && cellToggle) {
         startSimulatedDrag();
     }
@@ -142,6 +156,14 @@ for (let cell of cells) {
 
 //mode toggling
 WCell.onclick = (e) => {
+    gridSound.load();
+
+    hit3.load();
+    hit3.play();
+
+    if(!ambientStarted && ambientLoaded) {
+        ambient.play();
+    }
     removeBlinkers();
     bigCells();
     cycleThroughModeText();
@@ -215,6 +237,14 @@ WCell.onclick = (e) => {
 
 //big cell / small cell toggling
 NCell.onclick = (e) => {
+    gridSound.load();
+    hit3.load();
+    hit3.play();
+
+    if(!ambientStarted && ambientLoaded) {
+        ambient.play();
+        hit.play();
+    }
     for (let cell of cells) {
         cell.style.transition = '0.1s';
     }
@@ -240,6 +270,14 @@ NCell.onclick = (e) => {
 
 //about section toggling
 SCell.onclick = (e) => {
+    gridSound.load();
+
+    hit3.load();
+    hit3.play();
+
+    if(!ambientStarted && ambientLoaded) {
+        ambient.play();
+    }
     stopSimulatedDrag();
     if (aboutToggle) { //hide about
         if (cellToggle) { // big cell
@@ -312,6 +350,9 @@ let modeTextIdx = 0;
 function cycleThroughModeText() {
     clearInterval(modeTextInterval);
     modeTextInterval = setInterval(() => {
+        hit.load();
+        hit.play();
+
         modeBody.innerHTML = modeTextArray[modeTextIdx] + " " + modeTextArray[modeTextIdx + 1] + " " + modeTextArray[modeTextIdx + 2];
         modeTextIdx = modeTextIdx >= (modeTextArray.length - 3) ? 0 : modeTextIdx + 1
         setCoverWidth();
@@ -358,6 +399,11 @@ function dragElement(elmnt) {
     elmnt.onmousedown = dragMouseDown;
 
     function dragMouseDown(e) {
+        if(!ambientStarted && ambientLoaded) {
+            ambient.play();
+        }
+        ambient.volume = 0.3;
+
         e = e || window.event;
         e.preventDefault();
 
@@ -400,6 +446,11 @@ function dragElement(elmnt) {
     }
 
     function closeDragElement() {
+        hit2.load();
+        hit2.play();
+        ambient.volume = 0.2;
+
+
         document.onmouseup = null;
         document.onmousemove = null;
         let overlappingBlocks = getOverlappingBlocks(elmnt.offsetTop, elmnt.offsetLeft);
@@ -417,8 +468,11 @@ function clearDragElement(elmnt) {
 
 function simulateDrag(elmnt, Xpos, Ypos, numFrames) {
     clearInterval(modeTextInterval);
+    hit2.load();
+    hit2.play();
+    gridSound.load();
+    ambient.volume = 0.3;
 
-    hitPlayer.start();
 
     eCellLeftCover.style.transition = 'none';
     eCellRightCover.style.transition = 'none';
@@ -451,6 +505,7 @@ function simulateDrag(elmnt, Xpos, Ypos, numFrames) {
         frame++
 
         if (frame >= numFrames) {
+            ambient.volume = 0.2;
             clearInterval(moveInterval)
             slowlyPopulateBlocks(getOverlappingBlocks(elmnt.offsetTop, elmnt.offsetLeft));
             eCellLeftCover.style.transition = 'width 0.1s';
@@ -461,6 +516,8 @@ function simulateDrag(elmnt, Xpos, Ypos, numFrames) {
 }
 
 function slowlyPopulateBlocks(overlappingBlocks) {
+    gridSound.load();
+    gridSound.play();
     overlappingBlocks = shuffle(overlappingBlocks);
     populateBlockLoop(overlappingBlocks, 0);
 }
@@ -469,6 +526,10 @@ function populateBlockLoop(blocksArray, id) {
     setGridText(blocksArray[id]);
     if (id < blocksArray.length - 1) {
         populationTimeout = setTimeout(populateBlockLoop, populationSpeed, blocksArray, id + 1);
+    } else {
+        if(!modeToggle) {
+            gridSound.load();
+        }
     }
 }
 
@@ -489,6 +550,7 @@ function setCellText() {
 }
 
 function setGridText(id) {
+    
     let block = document.getElementById(id);
     let i = id % rowSize;
     let j = Math.floor(id / colSize);
@@ -578,7 +640,7 @@ function makeGrid() {
             block.style.left = (blockSize * j) + 'px';
             block.style.width = blockSize + 'px';
             block.style.height = blockSize + 'px';
-            
+
             gridContainer.appendChild(block);
         }
     }
