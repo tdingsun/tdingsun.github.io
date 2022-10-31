@@ -339,22 +339,16 @@ html, body {
     width: 100%;
     justify-content: center;
 }
-#about-title-left {
+#about-title-left, #about-title-right {
     flex-grow: 1;
     flex-basis: 50%;
     display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
+    justify-content: center;
 }
 #about-title-center {
     flex-grow: 0;
 }
-#about-title-right {
-    flex-grow: 1;
-    flex-basis: 50%;
-    display: flex;
-    padding-left: 10px;
-}
+
 #about-cover {
     height: 100%;
     width: 100%;
