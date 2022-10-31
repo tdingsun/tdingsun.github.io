@@ -68,7 +68,7 @@ const minWidth = borderSize,
     minHeight = borderSize,
     maxHeight = window.innerHeight - (lens.offsetHeight + borderSize);
 
-const maxFontSizeMax = maxWidth / 7, 
+const maxFontSizeMax = maxWidth / 5.5, 
     maxFontSize = Math.min(80, maxFontSizeMax),
     minFontSize = 18,
     minFontSizeMax = 32;
@@ -359,9 +359,9 @@ function cycleThroughModeText() {
     }, 500)
 }
 function setCoverWidth() {
-    let coverWidth = Math.max((ECell.offsetWidth - modeBody.offsetWidth - 40) / 2, 0) + 'px';
-    let bottomCornerTop = (ECell.offsetHeight - eCellBottomCover.offsetHeight - 19.5) + 'px';
-    let topCornerTop = (eCellTopCover.offsetHeight - 0.5) + 'px';
+    let coverWidth = Math.max((ECell.offsetWidth - modeBody.offsetWidth - 50) / 2, 0) + 'px';
+    let bottomCornerTop = (ECell.offsetHeight - eCellBottomCover.offsetHeight - 25) + 'px';
+    let topCornerTop = eCellTopCover.offsetHeight + 'px';
     eCellLeftCover.style.width = coverWidth;
     eCellRightCover.style.width = coverWidth;
     topLeftCorner.style.top = topCornerTop;
@@ -586,7 +586,7 @@ function setCellDimensions() {
     NWCell.style.width = lens.offsetLeft + 'px';
     NWCell.style.height = lens.offsetTop + 'px';
     NWCell.style.fontSize = scale(lens.offsetLeft, minWidth, maxWidth, actualMinFontSize, NMaxFontSize) + 'px';
-    let NWTypeWidth = WTypeWidth - (NWCell.innerHTML.length * 10);
+    let NWTypeWidth = WTypeWidth - (NWCell.innerHTML.length * 12);
     NWCell.style["font-variation-settings"] = `'wght' ${typeWeight} , 'wdth' ${NWTypeWidth}`;
 
     //N CELL
@@ -597,7 +597,7 @@ function setCellDimensions() {
     NECell.style.width = eastWidth + 'px';
     NECell.style.height = lens.offsetTop + 'px';
     NECell.style.fontSize = scale(eastWidth, minWidth, maxWidth, actualMinFontSize, NMaxFontSize) + 'px';
-    let NETypeWidth = ETypeWidth - (NECell.innerHTML.length * 10);
+    let NETypeWidth = ETypeWidth - (NECell.innerHTML.length * 12);
     NECell.style["font-variation-settings"] = `'wght' ${typeWeight} , 'wdth' ${NETypeWidth}`;
 
     //W CELL
@@ -612,7 +612,7 @@ function setCellDimensions() {
     SWCell.style.width = lens.offsetLeft + 'px';
     SWCell.style.height = bottomHeight + 'px';
     SWCell.style.fontSize = scale(lens.offsetLeft, minWidth, maxWidth, actualMinFontSize, SMaxFontSize) + 'px';
-    let SWTypeWidth = WTypeWidth - (SWCell.innerHTML.length * 10);
+    let SWTypeWidth = WTypeWidth - (SWCell.innerHTML.length * 12);
     SWCell.style["font-variation-settings"] = `'wght' ${typeWeight} , 'wdth' ${SWTypeWidth}`;
 
     //S CELL
@@ -623,7 +623,7 @@ function setCellDimensions() {
     SECell.style.width = eastWidth + 'px';
     SECell.style.height = bottomHeight + 'px';
     SECell.style.fontSize = scale(eastWidth, minWidth, maxWidth, actualMinFontSize, SMaxFontSize) + 'px';
-    let SETypeWidth = ETypeWidth - (SECell.innerHTML.length * 10);
+    let SETypeWidth = ETypeWidth - (SECell.innerHTML.length * 12);
     SECell.style["font-variation-settings"] = `'wght' ${typeWeight} , 'wdth' ${SETypeWidth}`;
 
     setCoverWidth();
