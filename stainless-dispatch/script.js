@@ -3,9 +3,9 @@ const gridContainer = document.getElementById("grid-container");
 const lens = document.getElementById('lens');
 const blinkers = document.getElementById('blinkers');
 
-const NWCell = document.getElementById('NWCell'), 
-    NCell = document.getElementById('NCell'), 
-    NECell = document.getElementById('NECell'), 
+const NWCell = document.getElementById('NWCell'),
+    NCell = document.getElementById('NCell'),
+    NECell = document.getElementById('NECell'),
     WCell = document.getElementById('WCell'),
     ECell = document.getElementById('ECell'),
     SWCell = document.getElementById('SWCell'),
@@ -49,7 +49,7 @@ const colSize = Math.ceil(window.innerHeight / blockSize);
 const lensWidthInBlocks = Math.floor(parseInt(document.getElementById("lens").offsetWidth) / blockSize);
 const lensHeightInBlocks = Math.floor(parseInt(document.getElementById("lens").offsetHeight) / blockSize);
 
-const minTypeWeight = 100, 
+const minTypeWeight = 100,
     maxTypeWeight = 1000,
     minTypeWidth = 50,
     maxTypeWidth = 200;
@@ -68,7 +68,7 @@ const minWidth = borderSize,
     minHeight = borderSize,
     maxHeight = window.innerHeight - (lens.offsetHeight + borderSize);
 
-const maxFontSizeMax = maxWidth / 5.5, 
+const maxFontSizeMax = maxWidth / 5.5,
     maxFontSize = Math.min(80, maxFontSizeMax),
     minFontSize = 18,
     minFontSizeMax = 32;
@@ -100,7 +100,7 @@ noise.seed(Math.random());
 //audio
 let ambient = new Audio('draft2.mp3');
 ambient.loop = true;
-ambient.volume = 0.3;
+ambient.volume = 0.25;
 let ambientStarted = false;
 let ambientLoaded = false;
 ambient.addEventListener("canplaythrough", (event) => {
@@ -134,7 +134,7 @@ window.onblur = function () {
 window.onfocus = function () {
     hit.volume = 0.1
 
-    if(!ambientStarted && ambientLoaded) {
+    if (!ambientStarted && ambientLoaded) {
         ambient.play();
     }
     if (modeToggle && cellToggle) {
@@ -156,19 +156,11 @@ for (let cell of cells) {
 
 //mode toggling
 WCell.onclick = (e) => {
-    gridSound.load();
-
-    hit3.load();
-    hit3.play();
-
-    if(!ambientStarted && ambientLoaded) {
-        ambient.play();
-    }
+    startMusic();
     removeBlinkers();
     bigCells();
     cycleThroughModeText();
     hideAbout();
-
     if (modeToggle) { //TREKKER MODE
         modeHeader.innerHTML = "{&nbsp;Trekker Mode&nbsp;}";
         smallModeHeader.innerHTML = "Trekker";
@@ -185,7 +177,6 @@ WCell.onclick = (e) => {
         }
         if (cellToggle) {
             ECell.style.backgroundColor = 'slategrey';
-            
         }
         for (let part of eCellParts) {
             part.classList.add('trekker-part');
@@ -197,10 +188,7 @@ WCell.onclick = (e) => {
         }
         modeBody.classList.add('trekker-mode-body');
         modeBody.classList.remove('browser-mode-body');
-
         stopSimulatedDrag();
-        dragElement(lens);
-        lens.classList.add('grabbable');
     } else { //BROWSER MODE
         modeHeader.innerHTML = "{&nbsp;Browser Mode&nbsp;}"
         smallModeHeader.innerHTML = "Browser";
@@ -229,22 +217,13 @@ WCell.onclick = (e) => {
         modeBody.classList.add('browser-mode-body');
         modeBody.classList.remove('trekker-mode-body');
         startSimulatedDrag();
-        clearDragElement(lens);
-        lens.classList.remove('grabbable');
     }
     modeToggle = !modeToggle;
 }
 
 //big cell / small cell toggling
 NCell.onclick = (e) => {
-    gridSound.load();
-    hit3.load();
-    hit3.play();
-
-    if(!ambientStarted && ambientLoaded) {
-        ambient.play();
-        hit.play();
-    }
+    startMusic();
     for (let cell of cells) {
         cell.style.transition = '0.1s';
     }
@@ -270,14 +249,7 @@ NCell.onclick = (e) => {
 
 //about section toggling
 SCell.onclick = (e) => {
-    gridSound.load();
-
-    hit3.load();
-    hit3.play();
-
-    if(!ambientStarted && ambientLoaded) {
-        ambient.play();
-    }
+    startMusic();
     stopSimulatedDrag();
     if (aboutToggle) { //hide about
         if (cellToggle) { // big cell
@@ -304,6 +276,15 @@ SCell.onclick = (e) => {
             SCell.classList.add('about-expanded');
             showAbout();
         }
+    }
+}
+
+function startMusic() {
+    gridSound.load();
+    hit3.load();
+    hit3.play();
+    if (!ambientStarted && ambientLoaded) {
+        ambient.play();
     }
 }
 
@@ -386,24 +367,24 @@ function stopSimulatedDrag() {
 
 function simulateRandomDragOnce() {
     let randomX = scale(Math.random(), 0, 1, minWidth, maxWidth);
-    randomX = Math.ceil(Math.round(randomX)/blockSize) * blockSize - (blockSize/2);
-
+    randomX = Math.ceil(Math.round(randomX) / blockSize) * blockSize - (blockSize / 2);
     let randomY = scale(Math.random(), 0, 1, minHeight, maxHeight);
-    randomY = Math.ceil(Math.round(randomY)/blockSize) * blockSize - (blockSize/2);
+    randomY = Math.ceil(Math.round(randomY) / blockSize) * blockSize - (blockSize / 2);
     simulateDrag(lens, randomX, randomY, dragTime);
 }
 
 //manual drag
-function dragElement(elmnt) {
+function dragElement(el) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0
-    elmnt.onmousedown = dragMouseDown;
+    el.onmousedown = dragMouseDown;
 
     function dragMouseDown(e) {
-        if(!ambientStarted && ambientLoaded) {
-            ambient.play();
+        if (modeToggle) { 
+            WCell.click(); 
+        } 
+        if (!ambientStarted && ambientLoaded) { 
+            ambient.play(); 
         }
-        ambient.volume = 0.3;
-
         e = e || window.event;
         e.preventDefault();
 
@@ -435,11 +416,11 @@ function dragElement(elmnt) {
         pos3 = e.clientX;
         pos4 = e.clientY;
 
-        if ((elmnt.offsetTop - pos2) > borderSize && (elmnt.offsetTop - pos2 + lens.offsetHeight) < (window.innerHeight - borderSize)) {
-            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        if ((el.offsetTop - pos2) > borderSize && (el.offsetTop - pos2 + lens.offsetHeight) < (window.innerHeight - borderSize)) {
+            el.style.top = (el.offsetTop - pos2) + "px";
         }
-        if ((elmnt.offsetLeft - pos1) > borderSize && (elmnt.offsetLeft - pos1 + lens.offsetWidth) < (window.innerWidth - borderSize)) {
-            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        if ((el.offsetLeft - pos1) > borderSize && (el.offsetLeft - pos1 + lens.offsetWidth) < (window.innerWidth - borderSize)) {
+            el.style.left = (el.offsetLeft - pos1) + "px";
         }
         setCellText();
         setCellDimensions();
@@ -448,12 +429,10 @@ function dragElement(elmnt) {
     function closeDragElement() {
         hit2.load();
         hit2.play();
-        ambient.volume = 0.2;
-
 
         document.onmouseup = null;
         document.onmousemove = null;
-        let overlappingBlocks = getOverlappingBlocks(elmnt.offsetTop, elmnt.offsetLeft);
+        let overlappingBlocks = getOverlappingBlocks(el.offsetTop, el.offsetLeft);
         slowlyPopulateBlocks(overlappingBlocks);
         eCellLeftCover.style.transition = 'width 0.1s';
         eCellRightCover.style.transition = 'width 0.1s';
@@ -471,8 +450,6 @@ function simulateDrag(elmnt, Xpos, Ypos, numFrames) {
     hit2.load();
     hit2.play();
     gridSound.load();
-    ambient.volume = 0.3;
-
 
     eCellLeftCover.style.transition = 'none';
     eCellRightCover.style.transition = 'none';
@@ -484,7 +461,6 @@ function simulateDrag(elmnt, Xpos, Ypos, numFrames) {
     var deltaX = Xpos - parseInt(elmnt.offsetLeft);
     var deltaY = Ypos - parseInt(elmnt.offsetTop);
     moveInterval = setInterval(() => {
-
         pos1 = pos3 - Xacc
         pos2 = pos4 - Yacc
         pos3 = Xacc
@@ -527,7 +503,7 @@ function populateBlockLoop(blocksArray, id) {
     if (id < blocksArray.length - 1) {
         populationTimeout = setTimeout(populateBlockLoop, populationSpeed, blocksArray, id + 1);
     } else {
-        if(!modeToggle) {
+        if (!modeToggle) {
             gridSound.load();
         }
     }
@@ -550,7 +526,6 @@ function setCellText() {
 }
 
 function setGridText(id) {
-    
     let block = document.getElementById(id);
     let i = id % rowSize;
     let j = Math.floor(id / colSize);
@@ -629,7 +604,6 @@ function setCellDimensions() {
     setCoverWidth();
 }
 
-
 function makeGrid() {
     for (let i = 0; i < colSize; i++) {
         for (let j = 0; j < rowSize; j++) {
@@ -640,7 +614,6 @@ function makeGrid() {
             block.style.left = (blockSize * j) + 'px';
             block.style.width = blockSize + 'px';
             block.style.height = blockSize + 'px';
-
             gridContainer.appendChild(block);
         }
     }

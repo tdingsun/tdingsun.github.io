@@ -50,6 +50,15 @@ html, body {
     visibility: visible;
     animation: blink 1s steps(3, start) infinite;
 }
+
+#dragme {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 #blinkers div {
     position: absolute;
 }
@@ -100,7 +109,7 @@ html, body {
     width: 100px!important;
     height: 100px!important;
     font-size: 16px!important;
-    font-variation-settings: 'wght'400, 'wdth' 100!important;
+    font-variation-settings: 'wght' 400, 'wdth' 100!important;
 }
 
 .trekker-cell {
@@ -134,7 +143,7 @@ html, body {
 }
 
 .header {
-    font-style: italic;
+    font-variation-settings: 'wght' 400, 'wdth' 100, 'ital' 1 !important;
     padding-bottom: 3px;
 }
 
