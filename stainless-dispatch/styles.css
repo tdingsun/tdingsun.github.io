@@ -10,6 +10,14 @@ html, body {
     font-family: Stainless;
 }
 
+a {
+    color: unset;
+}
+
+a:hover {
+    color: slategray;
+}
+
 * {
     box-sizing: border-box;
 }
