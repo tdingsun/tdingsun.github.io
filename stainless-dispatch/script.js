@@ -98,7 +98,7 @@ let modeTextInterval;
 noise.seed(Math.random());
 
 //audio
-let ambient = new Audio('draft2.mp3');
+let ambient = new Audio('audio/stainlessdispatch.mp3');
 ambient.loop = true;
 ambient.volume = 0.25;
 let ambientStarted = false;
@@ -107,16 +107,16 @@ ambient.addEventListener("canplaythrough", (event) => {
     ambientLoaded = true;
 });
 
-let hit = new Audio('hit1.wav');
+let hit = new Audio('audio/hit1.wav');
 hit.volume = 0.1;
 
-let hit2 = new Audio('hit2.wav');
+let hit2 = new Audio('audio/hit2.wav');
 hit2.volume = 0.1;
 
-let hit3 = new Audio('hit.wav');
+let hit3 = new Audio('audio/hit.wav');
 hit3.volume = 0.1;
 
-let gridSound = new Audio('grid.wav');
+let gridSound = new Audio('audio/grid.wav');
 gridSound.volume = 0.05;
 //toggles 
 let modeToggle = false;
@@ -258,6 +258,7 @@ SCell.onclick = (e) => {
                 startSimulatedDrag();
             }
         } else { //small cell
+            SCellSmallCover.style.visibility = 'visible';
             SCell.classList.remove('about-expanded');
             hideAbout();
         }
@@ -274,6 +275,7 @@ SCell.onclick = (e) => {
             }
         } else { //small cell
             SCell.classList.add('about-expanded');
+            SCellSmallCover.style.visibility = 'hidden';
             showAbout();
         }
     }
