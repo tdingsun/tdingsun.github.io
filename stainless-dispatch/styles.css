@@ -385,7 +385,7 @@ a:hover {
 }
 
 #about-body div {
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     text-align: left;
     line-height: 1.2;
 }

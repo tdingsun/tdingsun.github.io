@@ -91,6 +91,7 @@
             </div>
             <br>
             <div></div>
+            <br>
             <div id="about-body">
                 <div>
                     Dispatch 2 and Stainless 2 are typefaces from Cyrus Highsmith & <a href="https://occupantfonts.com" target="_blank">Occupant Fonts</a>.
@@ -116,6 +117,12 @@
     <div class="cell" id="SECell">
     </div>
 </body>
-<script src="./script.js"></script>
+<script>
+    if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {   
+        document.write(`<script type="text/javascript" src='./mobilescript.js'><\/script>`);
+    } else {
+        document.write(`<script type="text/javascript" src='./script.js'><\/script>`);
+    }
+</script>
 
 </html>
