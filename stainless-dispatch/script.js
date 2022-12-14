@@ -260,7 +260,6 @@ SCell.onclick = (e) => {
             }
         } else { //small cell
             SCellSmallCover.style.visibility = 'visible';
-            SCell.classList.remove('about-expanded');
             hideAbout();
         }
 
@@ -317,6 +316,7 @@ function bigCells() {
 }
 
 function hideAbout() {
+    SCell.classList.remove('about-expanded');
     aboutCover.style.display = 'flex';
     aboutContainer.style.display = 'none';
     aboutToggle = false;
