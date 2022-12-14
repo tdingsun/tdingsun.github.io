@@ -150,10 +150,7 @@ window.onresize = function () { location.reload(); }
 makeGrid();
 setCellDimensions();
 dragElement(lens);
-for (let cell of cells) {
-    cell.classList.add('trekker-cell');
-    cell.classList.remove('browser-cell');
-}
+trekkerStyle();
 
 //mode toggling
 WCell.onclick = (e) => {
@@ -163,79 +160,83 @@ WCell.onclick = (e) => {
     cycleThroughModeText();
     hideAbout();
     if (modeToggle) { //TREKKER MODE
-        modeHeader.innerHTML = "{&nbsp;Trekker Mode&nbsp;}";
-        smallModeHeader.innerHTML = "Trekker";
-        document.body.style.fontFamily = 'Stainless';
-        modeTextArray = trekkerTextArray
-        stainlessTitle.classList.add("selected-title");
-        dispatchTitle.classList.remove("selected-title");
-        for (let cell of cells) {
-            cell.classList.add('trekker-cell');
-            cell.classList.remove('browser-cell');
-        }
-        for (let cover of smallCellCovers) {
-            cover.style.backgroundColor = 'slategrey'
-        }
-        if (cellToggle) {
-            ECell.style.backgroundColor = 'slategrey';
-        }
-        for (let part of eCellParts) {
-            part.classList.add('trekker-part');
-            part.classList.remove('browser-part');
-        }
-        for (let corner of eCellCorners) {
-            corner.classList.add('trekker-corner');
-            corner.classList.remove('browser-corner');
-        }
-        modeBody.classList.add('trekker-mode-body');
-        modeBody.classList.remove('browser-mode-body');
+        trekkerStyle();
         stopSimulatedDrag();
     } else { //BROWSER MODE
-        modeHeader.innerHTML = "{&nbsp;Browser Mode&nbsp;}"
-        smallModeHeader.innerHTML = "Browser";
-        dispatchTitle.classList.add("selected-title");
-        stainlessTitle.classList.remove("selected-title");
-        modeTextArray = browserTextArray;
-        document.body.style.fontFamily = 'Dispatch';
-        for (let cell of cells) {
-            cell.classList.add('browser-cell');
-            cell.classList.remove('trekker-cell');
-        }
-        for (let cover of smallCellCovers) {
-            cover.style.backgroundColor = 'grey'
-        }
-        if (cellToggle) {
-            ECell.style.backgroundColor = 'grey';
-        }
-        for (let part of eCellParts) {
-            part.classList.add('browser-part');
-            part.classList.remove('trekker-part');
-        }
-        for (let corner of eCellCorners) {
-            corner.classList.add('browser-corner');
-            corner.classList.remove('trekker-corner');
-        }
-        modeBody.classList.add('browser-mode-body');
-        modeBody.classList.remove('trekker-mode-body');
+        browserStyle();
         startSimulatedDrag();
     }
-    modeToggle = !modeToggle;
 }
 
+function trekkerStyle() {
+    modeHeader.innerHTML = "{&nbsp;Trekker Mode&nbsp;}";
+    smallModeHeader.innerHTML = "Trekker";
+    document.body.style.fontFamily = 'Stainless';
+    modeTextArray = trekkerTextArray
+    stainlessTitle.classList.add("selected-title");
+    dispatchTitle.classList.remove("selected-title");
+    for (let cell of cells) {
+        cell.classList.add('trekker-cell');
+        cell.classList.remove('browser-cell');
+    }
+    for (let cover of smallCellCovers) {
+        cover.style.backgroundColor = 'slategrey'
+    }
+    ECell.style.backgroundColor = 'transparent';
+    for (let part of eCellParts) {
+        part.classList.add('trekker-part');
+        part.classList.remove('browser-part');
+    }
+    for (let corner of eCellCorners) {
+        corner.classList.add('trekker-corner');
+        corner.classList.remove('browser-corner');
+    }
+    modeBody.classList.add('trekker-mode-body');
+    modeBody.classList.remove('browser-mode-body');
+    modeToggle = false;
+}
+
+function browserStyle() {
+    modeHeader.innerHTML = "{&nbsp;Browser Mode&nbsp;}"
+    smallModeHeader.innerHTML = "Browser";
+    dispatchTitle.classList.add("selected-title");
+    stainlessTitle.classList.remove("selected-title");
+    modeTextArray = browserTextArray;
+    document.body.style.fontFamily = 'Dispatch';
+    for (let cell of cells) {
+        cell.classList.add('browser-cell');
+        cell.classList.remove('trekker-cell');
+    }
+    for (let cover of smallCellCovers) {
+        cover.style.backgroundColor = 'grey'
+    }
+    ECell.style.backgroundColor = 'transparent';
+    for (let part of eCellParts) {
+        part.classList.add('browser-part');
+        part.classList.remove('trekker-part');
+    }
+    for (let corner of eCellCorners) {
+        corner.classList.add('browser-corner');
+        corner.classList.remove('trekker-corner');
+    }
+    modeBody.classList.add('browser-mode-body');
+    modeBody.classList.remove('trekker-mode-body');
+    modeToggle = true;
+}
 //big cell / small cell toggling
 NCell.onclick = (e) => {
     startMusic();
+    removeBlinkers();
+    hideAbout();
     for (let cell of cells) {
         cell.style.transition = '0.1s';
     }
-    hideAbout();
-
-    if (cellToggle) {
+    if (cellToggle) { //big to small
+        smallCells();
         stopSimulatedDrag();
         clearInterval(modeTextInterval);
         ECell.style.backgroundColor = modeToggle ? 'grey' : 'slategrey';
-        smallCells();
-    } else {
+    } else { //small to big
         bigCells();
         setCoverWidth();
         cycleThroughModeText();
@@ -251,6 +252,7 @@ NCell.onclick = (e) => {
 //about section toggling
 SCell.onclick = (e) => {
     startMusic();
+    removeBlinkers();
     stopSimulatedDrag();
     if (aboutToggle) { //hide about
         if (cellToggle) { // big cell
