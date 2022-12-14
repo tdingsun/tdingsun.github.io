@@ -99,10 +99,15 @@ lens.style.display = 'flex';
 lens.style.justifyContent = 'center';
 lens.style.alignItems = 'center';
 lens.style.color = 'slategrey';
+lens.style.textAlign = 'center';
+lens.style.fontSize = '42px';
+lens.style.padding = '10px';
+lens.style.lineHeight = '1';
+lens.style["font-variation-settings"] = `'wght' 1000, 'wdth' 75`;
 modeHeader.style.width = '200%';
 modeHeader.style.paddingBottom = '7px';
 modeHeader.style.transform = 'rotate(90deg)'
-WCell.style.background = 'linear-gradient(gainsboro -80%, slategrey 50%, cornflowerblue 180%';
+WCell.style.background = 'linear-gradient(cornflowerblue -80%, slategrey 50%, yellowgreen 180%';
 
 if(Math.random() > 0.5) {
     modeHeader.innerHTML = 'Stainless 2';
