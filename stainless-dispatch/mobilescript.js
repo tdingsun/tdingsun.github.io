@@ -144,7 +144,7 @@ function setTextCycle() {
     NCellText.innerHTML = word;
     typeWeight = scale(word.length, 0, 10, 1000, 100);
     typeWidth = scale(word.length, 0, 10, 200, 50);
-    NCellText.style.fontSize = '50px';
+    NCellText.style.fontSize = '42px';
     NCellText.style["font-variation-settings"] = `'wght' 1000, 'wdth' ${typeWidth}`;    
     if (wordIndex === trekkerTextArray.length) {
         wordIndex = 0;
