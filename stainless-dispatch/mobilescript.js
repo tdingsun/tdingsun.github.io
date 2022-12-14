@@ -12,8 +12,7 @@ const NWCell = document.getElementById('NWCell'),
     SECell = document.getElementById('SECell');
 const cells = [NWCell, NCell, NECell, WCell, ECell, SWCell, SCell, SECell];
 const modeHeader = document.getElementById('mode-header'),
-    modeBody = document.getElementById('mode-body'),
-    smallModeHeader = document.getElementById('WCell-small-header');
+    modeBody = document.getElementById('mode-body')
 
 const eCellLeftCover = document.getElementById('left-cover'),
     eCellRightCover = document.getElementById('right-cover'),
@@ -23,17 +22,9 @@ const eCellLeftCover = document.getElementById('left-cover'),
     topRightCorner = document.getElementById('curved-corner-topright'),
     bottomLeftCorner = document.getElementById('curved-corner-bottomleft'),
     bottomRightCorner = document.getElementById('curved-corner-bottomright');
-const eCellParts = [eCellLeftCover, eCellRightCover, eCellTopCover, eCellBottomCover];
-const eCellCorners = [topLeftCorner, topRightCorner, bottomLeftCorner, bottomRightCorner];
 
 const aboutContainer = document.getElementById('about-container');
 const aboutCover = document.getElementById('about-cover');
-
-const NCellSmallCover = document.getElementById('NCell-small');
-const SCellSmallCover = document.getElementById('SCell-small');
-const ECellSmallCover = document.getElementById('ECell-small');
-const WCellSmallCover = document.getElementById('WCell-small');
-const smallCellCovers = [NCellSmallCover, SCellSmallCover, ECellSmallCover, WCellSmallCover]
 
 //grid parameter setup
 const borderSize = 100;
@@ -107,13 +98,13 @@ lens.style["font-variation-settings"] = `'wght' 1000, 'wdth' 75`;
 modeHeader.style.width = '200%';
 modeHeader.style.paddingBottom = '7px';
 modeHeader.style.transform = 'rotate(90deg)'
-WCell.style.background = 'linear-gradient(cornflowerblue -80%, slategrey 50%, yellowgreen 180%';
+WCell.style.background = 'linear-gradient(cornflowerblue -150%, slategrey 50%, gainsboro 250%';
 
 if(Math.random() > 0.5) {
-    modeHeader.innerHTML = 'Stainless 2';
+    modeHeader.innerHTML = 'Stainless&nbsp;2';
     document.body.style.fontFamily = 'Stainless';
 } else {
-    modeHeader.innerHTML = "Dispatch 2"
+    modeHeader.innerHTML = "Dispatch&nbsp;2"
     document.body.style.fontFamily = 'Dispatch';
     modeToggle = !modeToggle;
 }
@@ -129,10 +120,10 @@ setInterval(setCellText, 500);
 //mode toggling
 WCell.onclick = (e) => {
     if (modeToggle) { //TREKKER MODE
-        modeHeader.innerHTML = "Stainless 2";
+        modeHeader.innerHTML = "Stainless&nbsp;2";
         document.body.style.fontFamily = 'Stainless';
     } else { //BROWSER MODE
-        modeHeader.innerHTML = "Dispatch 2"
+        modeHeader.innerHTML = "Dispatch&nbsp;2"
         document.body.style.fontFamily = 'Dispatch';
     }
     modeToggle = !modeToggle;
