@@ -99,7 +99,10 @@ lens.style.display = 'flex';
 lens.style.justifyContent = 'center';
 lens.style.alignItems = 'center';
 lens.style.color = 'slategrey';
-WCell.style.backgroundColor = 'darkgrey';
+modeHeader.style.width = '200%';
+modeHeader.style.paddingBottom = '7px';
+modeHeader.style.transform = 'rotate(90deg)'
+WCell.style.background = 'linear-gradient(gainsboro -80%, slategrey 50%, cornflowerblue 180%';
 
 if(Math.random() > 0.5) {
     modeHeader.innerHTML = 'Stainless 2';
