@@ -22,40 +22,12 @@ const eCellLeftCover = document.getElementById('left-cover'),
     topRightCorner = document.getElementById('curved-corner-topright'),
     bottomLeftCorner = document.getElementById('curved-corner-bottomleft'),
     bottomRightCorner = document.getElementById('curved-corner-bottomright');
-
+const eCovers = [eCellBottomCover, eCellLeftCover, eCellRightCover, eCellTopCover];
+const eCorners = [topLeftCorner, topRightCorner, bottomLeftCorner, bottomRightCorner];
 const aboutContainer = document.getElementById('about-container');
 const aboutCover = document.getElementById('about-cover');
 
-//grid parameter setup
-const borderSize = 100;
-let blockSize = window.innerWidth > 1200 ? 20 : 16;
-
-const rowSize = Math.ceil(window.innerWidth / blockSize);
-const colSize = Math.ceil(window.innerHeight / blockSize);
-const lensWidthInBlocks = Math.floor(parseInt(document.getElementById("lens").offsetWidth) / blockSize);
-const lensHeightInBlocks = Math.floor(parseInt(document.getElementById("lens").offsetHeight) / blockSize);
-
-const minTypeWeight = 100,
-    maxTypeWeight = 1000,
-    minTypeWidth = 50,
-    maxTypeWidth = 200;
-
-//dimensions calculations
-const minWidth = borderSize,
-    maxWidth = window.innerWidth - (lens.offsetWidth + borderSize),
-    minHeight = borderSize,
-    maxHeight = window.innerHeight - (lens.offsetHeight + borderSize);
-
-const maxFontSizeMax = maxWidth / 5.5,
-    maxFontSize = Math.min(80, maxFontSizeMax),
-    minFontSize = 18,
-    minFontSizeMax = 32;
-
 //texts
-const backgroundText = "knowledge∙comes∙in∙two∙parts:∙the∙grand∙theories∙and∙the∙little∙observations.∙There∙is∙the∙knowledge∙that∙subdivides∙like∙the∙branches∙of∙a∙tree∙—differentiation,∙categorization,∙and∙minutia,∙and∙then∙there∙is∙the∙knowledge∙that∙traces∙things∙to∙their∙roots∙—∙synthesis,∙transcendence,∙and∙wholeness.∙The∙nature-culture∙spectrum.∙cognition∙and∙the∙sensorium.∙Seeing,∙hearing,∙smelling,∙tasting,∙touching.∙Measurement∙and∙quantification.∙Analysis∙and∙pattern-recognition.∙The∙fire∙lookout,∙taking∙measurements∙with∙tools∙and∙devices∙of∙stainless∙steel,∙sends∙out∙dispatches∙by∙phone∙or∙radio.∙To∙wander∙is∙to∙wonder.∙stillness∙∙flow∙∙money∙∙debt∙∙islands∙∙continents∙∙figure∙∙ground∙∙wave∙∙particle∙∙loss∙∙gain∙∙interpolation∙∙extrapolation∙∙synthesis∙∙fragmenting∙∙clustering∙∙infinity∙∙singularity∙∙branch∙∙root∙∙question∙∙answer∙∙inside∙∙outside∙∙silver∙∙gold∙∙space∙∙time∙∙life∙∙death∙∙day∙∙night∙∙need∙∙want∙∙map∙∙territory∙∙wander∙∙wonder∙∙node∙∙edge∙∙sowing∙∙reaping∙∙growth∙∙rot∙∙wake∙∙dream∙∙reality∙∙illusion∙∙conscious∙∙unconscious∙∙nature∙∙culture∙∙binary∙∙field∙∙loop∙∙knot∙∙volcano∙∙glacier∙∙grassy∙∙knoll∙∙tears∙∙sweat∙∙language∙∙aesthetics∙∙aether∙∙earth∙∙mender∙∙trekker∙∙browser∙∙innocence∙∙guilt∙∙dexter∙∙sinister∙∙immanence∙∙transcendence∙∙biome∙∙strata∙∙cloud∙∙wave∙∙plastic∙∙petroleum∙∙shell∙∙pebble∙∙grass∙∙stain∙∙numbers∙∙letters∙∙palm∙∙heart∙∙daylight∙∙flowers∙∙spectra∙∙specimen∙∙stereotype∙∙archetype∙∙heuristic∙∙dogma∙∙continuous∙∙discrete∙∙angel∙∙layer∙∙slient∙∙error∙∙perfect∙∙mirror∙∙reality∙∙tunnel∙∙gravity∙∙cryptid∙∙prose∙∙poetry∙∙memory∙∙paralysis∙∙everything∙changes∙∙everything∙stays∙the∙same∙"
-
-const backgroundTextArray = backgroundText.split(" ");
-
 const trekkerWords = "Aether Algae Anchor Approach Artifact Ashes Basalt Basin Binary Biome Blaze Bloom Bone Boulder Branch Caldera Callus Campfire Canyon Carbon Ceramic Clay Cloud Collagen Continents Critter Crust Crux Cryptid Crystal Culture Cypress Day Daylight Dew Dune Earth Eon Epoch Etch Field Fire Flash Flint Floe Flow Flowers Fossil Froth Gear Geode Geosmin Glacier Gneiss Granite Grass Grassy Gravel Gravity Growth Halcyon Heart Heliotrope Holocene Igneous Islands Kindling Knoll Lake Lava Lichen Lithograph Log Magma Magnetic Map Marine Mercury Metallurgy Mineral Mist Moss Mucus Nature Night Oxide Ozone Palm Pebble Petrification Petrol Petroleum Pillow Plastic Plateau Pollen Pond Protolith Pseudomorph Pumice Quartz Raft Rainwater Range Ravine Reaping Redux Reservoir Ridge Ripple Root Rot Salve Sand Sediment Sentiment Shale Shell Shelter Smear Smoke Sound Sowing Spiral Stain Stillness Stone Strata Sulphur Swamp Sweat Tears Tectonic Territory Thermal Tissue Titanium Tobacco Trace Trail Trilobite Undercling Volcano Wander Wave Wild Wildfire Wonder Zipper Zygote"
 let trekkerWordArray = trekkerWords.split(" ");
 let trekkerWordIndex = 0;
@@ -66,17 +38,14 @@ let browserWordIndex = 0;
 
 const trekkerText = "the fire lookout, taking measurements with tools and devices of stainless steel, sends out dispatches by phone or radio. To wander is to wonder. Wandering through forests and woods and deserts and fields and plains and mountains and valleys and tundras and taigas and picking up rocks and stones and crystals and ores and geodes and fossils and sticks and bugs and leaves and mushrooms and moss and peat and loam and clay and shells and wading through rivers and lakes and brooks and ponds and oceans and brooks and creeks and knowledge that subdivides like the branches of a tree- differentiation, categorization, and minutia, the fire lookout making those little observations and everything changes and everything stays the same and"
 const trekkerTextArray = trekkerText.split(" ");
-console.log(trekkerTextArray.length);
+
 const browserText = "the fire lookout, taking measurements with tools and devices of stainless steel, sends out dispatches by phone or radio. To wander is to wonder. Wondering about categories and theories and boundaries and dialectics and inputs and outputs and discreteness and continuity and calculus and geometry and trawling through wikis and lists and indices and documents and records and archives and libraries and shelves and books and pages and paragraphs and sentences and words and letters and traversing through dense networks and rabbit holes and nodes and graphs and charts and maps and diagrams and knowledge that traces things to their roots— synthesis, transcendence, and wholeness, the fire lookout making those grand theories and everything changes and everything stays the same and"
 const browserTextArray = browserText.split(" ");
-console.log(browserTextArray.length);
 
 let wordIndex = 0;
 
 //toggles 
 let modeToggle = false;
-let cellToggle = true;
-let aboutToggle = false;
 
 //on resize
 window.onresize = function () { location.reload(); }
@@ -89,7 +58,6 @@ lens.innerHTML = "Best viewed on desktop"
 lens.style.display = 'flex';
 lens.style.justifyContent = 'center';
 lens.style.alignItems = 'center';
-lens.style.color = 'slategrey';
 lens.style.textAlign = 'center';
 lens.style.fontSize = '42px';
 lens.style.padding = '10px';
@@ -97,48 +65,100 @@ lens.style.lineHeight = '1';
 lens.style["font-variation-settings"] = `'wght' 1000, 'wdth' 75`;
 modeHeader.style.width = '200%';
 modeHeader.style.paddingBottom = '7px';
-modeHeader.style.transform = 'rotate(90deg)'
-WCell.style.background = 'linear-gradient(cornflowerblue -150%, slategrey 50%, gainsboro 250%';
+modeHeader.style.transform = 'rotate(90deg)';
 
 if(Math.random() > 0.5) {
-    modeHeader.innerHTML = 'Stainless&nbsp;2';
-    document.body.style.fontFamily = 'Stainless';
+    stainlessStyling();
 } else {
-    modeHeader.innerHTML = "Dispatch&nbsp;2"
-    document.body.style.fontFamily = 'Dispatch';
+    dispatchStyling();
     modeToggle = !modeToggle;
 }
 
 setCellDimensions();
-for (let cell of cells) {
-    cell.classList.add('trekker-cell');
-    cell.classList.remove('browser-cell');
-}
 
-setInterval(setCellText, 500);
+
+let NCellText = document.createElement("div");
+let NCellSecondaryText = document.createElement("div");
+NCell.style.flexDirection = 'column';
+setTimeout(() => {
+    NCell.innerHTML = '';
+    NCell.append(NCellText)
+    NCell.append(NCellSecondaryText)
+}, 1000)
+setInterval(setTextCycle, 1000);
+setInterval(setSecondaryTextCycle, 250);
 
 //mode toggling
 WCell.onclick = (e) => {
     if (modeToggle) { //TREKKER MODE
-        modeHeader.innerHTML = "Stainless&nbsp;2";
-        document.body.style.fontFamily = 'Stainless';
+        stainlessStyling();
     } else { //BROWSER MODE
-        modeHeader.innerHTML = "Dispatch&nbsp;2"
-        document.body.style.fontFamily = 'Dispatch';
+        dispatchStyling();
     }
     modeToggle = !modeToggle;
 }
 
+function stainlessStyling() {
+    console.log('stainlessStyling');
+    modeHeader.innerHTML = "Stainless&nbsp;2";
+    document.body.style.fontFamily = 'Stainless';
+    for (let cell of cells) {
+        cell.classList.add('trekker-cell');
+        cell.classList.remove('browser-cell');
+    }
+    for (let cover of eCovers) {
+        cover.classList.add('trekker-part');
+        cover.classList.remove('browser-part');
+    }
+    for (let corner of eCorners) {
+        corner.classList.add('trekker-corner')
+        corner.classList.remove('browser-corner');
+    }
+    WCell.style.background = 'linear-gradient(cornflowerblue -150%, slategrey 50%, gainsboro 300%)';
+    lens.style.color = 'slategrey';
+}
+
+function dispatchStyling() {
+    console.log('dispatchStyling');
+    modeHeader.innerHTML = "Dispatch&nbsp;2"
+    document.body.style.fontFamily = 'Dispatch';
+    for (let cell of cells) {
+        cell.classList.add('browser-cell');
+        cell.classList.remove('trekker-cell');
+    }
+    for (let cover of eCovers) {
+        cover.classList.add('browser-part');
+        cover.classList.remove('trekker-part');
+    }
+    for (let corner of eCorners) {
+        corner.classList.add('browser-corner')
+        corner.classList.remove('trekker-corner');
+    }
+    WCell.style.background = 'linear-gradient(gainsboro -150%, grey 50%, yellowgreen 350%)';
+    lens.style.color = 'grey';
+}
+
 //text setters
-function setCellText() {
+function setTextCycle() {
     let word = modeToggle ? browserTextArray[wordIndex++] : trekkerTextArray[wordIndex++];
-    NCell.innerHTML = word;
+    NCellText.innerHTML = word;
     typeWeight = scale(word.length, 0, 10, 1000, 100);
     typeWidth = scale(word.length, 0, 10, 200, 50);
-    NCell.style.fontSize = '50px';
-    NCell.style["font-variation-settings"] = `'wght' 1000, 'wdth' ${typeWidth}`;    
+    NCellText.style.fontSize = '50px';
+    NCellText.style["font-variation-settings"] = `'wght' 1000, 'wdth' ${typeWidth}`;    
     if (wordIndex === trekkerTextArray.length) {
         wordIndex = 0;
+    }
+}
+
+function setSecondaryTextCycle() {
+    let word = modeToggle ? browserWordArray[browserWordIndex++] : trekkerWordArray[trekkerWordIndex++]
+    NCellSecondaryText.innerHTML = word;
+    if(browserWordIndex === browserWordArray.length) {
+        browserWordIndex = 0;
+    }
+    if(trekkerWordIndex === trekkerWordArray.length) {
+        trekkerWordIndex = 0;
     }
 }
 
