@@ -22,7 +22,7 @@ setInterval(() => {
     if(wordsIndex >= words.length) {
         wordsIndex = 0;
     }
-}, 5000)
+}, 1000)
 const scale = 1000;
 const spacing = 50;
 const barrier = 5000;
@@ -69,7 +69,7 @@ var Engine = Matter.Engine,
 var engine = Engine.create(),
     world = engine.world;
 
-engine.timing.timeScale = 0.5
+engine.timing.timeScale = 0.25
 // create a renderer
 var render = Render.create({
     engine: engine,
@@ -82,7 +82,7 @@ var render = Render.create({
     }
 });
 
-// // run the renderer
+// run the renderer
 // Render.run(render);
 
 // create runner
@@ -92,65 +92,87 @@ Runner.run(runner, engine);
 
 engine.gravity.scale = 0;
 
-var radius = 50;
-var density = 1;
+var wall_n = Bodies.rectangle(windowWidth / 2, -50, windowWidth, 100, {
+    isStatic: true
+})
+var wall_s = Bodies.rectangle(windowWidth / 2, windowHeight + 50, windowWidth, 100, {
+    isStatic: true
+})
+var wall_e = Bodies.rectangle(-50, windowHeight / 2, 100, windowHeight, {
+    isStatic: true
+})
+var wall_w = Bodies.rectangle(windowWidth + 50, windowHeight/2, 100, windowHeight, {
+    isStatic: true
+})
+World.add(world, [wall_n, wall_s, wall_e, wall_w]);
+
+
+
+var radius = 10;
+var density = 100;
 
 var bodyA = Bodies.circle(
     windowWidth / 2,  100, radius,
       {
         density: density,
         frictionAir: 0,
+        friction: 0,
+        restitution: 1,
+        
         plugin: {
             attractors: [
                 MatterAttractors.Attractors.gravity
             ],
-            wrap: {
-                min: {x: 0, y: 0},
-                max: {x: windowWidth, y: windowHeight}
-            }
+            // wrap: {
+            //     min: {x: 0, y: 0},
+            //     max: {x: windowWidth, y: windowHeight}
+            // }
         }
       }
 );
 
 var bodyB = Bodies.circle(
-    100, windowHeight - 100, radius,
+    200, windowHeight - 200, radius,
       {
         density: density,
         frictionAir: 0,
+        restitution: 1,
         plugin: {
             attractors: [
                 MatterAttractors.Attractors.gravity
             ],
-            wrap: {
-                min: {x: 0, y: 0},
-                max: {x: windowWidth, y: windowHeight}
-            }
+            // wrap: {
+            //     min: {x: 0, y: 0},
+            //     max: {x: windowWidth, y: windowHeight}
+            // }
         }
       }
 );
 
 var bodyC = Bodies.circle(
-    windowWidth - 100, windowHeight - 100, radius, {
+    windowWidth - 200, windowHeight - 200, radius, {
         density: density,
         frictionAir: 0,
+        restitution: 1,
         plugin: {
             attractors: [
                 MatterAttractors.Attractors.gravity
-            ], wrap: {
-                min: {x: 0, y: 0},
-                max: {x: windowWidth, y: windowHeight}
-            }
+            ],
+            //  wrap: {
+            //     min: {x: 0, y: 0},
+            //     max: {x: windowWidth, y: windowHeight}
+            // }
         }
     }
 );
 
 
 
-Body.setVelocity(bodyA, {x: 0, y: 5})
-Body.setVelocity(bodyB, {x: 3, y: -2})
-Body.setVelocity(bodyC, {x: -5, y: -5})
-World.add(world, [bodyA, bodyB, bodyC])
+Body.setVelocity(bodyA, {x: 0, y: 10})
+Body.setVelocity(bodyB, {x: 10, y: -10})
+Body.setVelocity(bodyC, {x: -10, y: -10})
 
+World.add(world, [bodyA, bodyB, bodyC])
 
 
 // var mouse = Mouse.create(render.canvas)
@@ -170,7 +192,7 @@ World.add(world, [bodyA, bodyB, bodyC])
 // let charge_1 = new Charge(0, bodyC);
 let charge_2 = new Charge(-5, bodyA);
 let charge_3 = new Charge(5, bodyB);
-let charge_4 = new Charge(5, bodyC)
+let charge_4 = new Charge(0, bodyC)
 
 let charges = [charge_2, charge_3, charge_4]
 
@@ -179,7 +201,7 @@ var ctx = c.getContext("2d");
 c.width = windowWidth
 c.height = windowHeight
 
-ctx.font = "10px sans-serif";
+ctx.font = "15px sans-serif";
 ctx.textAlign = 'center';
 
 window.requestAnimationFrame(step)
@@ -194,24 +216,20 @@ function step() {
 
 function draw() {
     clearCanvas()
-
-    
-
-    for(let i = 0; i < c.width; i+=spacing) {
-        for (let j = 0; j < c.height; j+=spacing) {
+    for(let i = 100; i < (c.width - 100); i+=spacing) {
+        for (let j = 100; j < (c.height - 100); j+=spacing) {
             let vector = getFieldVector(i, j)
          
             let magnitude = Math.floor(Math.sqrt((vector.x * vector.x) + (vector.y * vector.y)))
-            let fontSize = map_range(magnitude, 0, 80, 10, 30);
-            // let color = map_range(magnitude, 0, 50, 0, 255);
-            // ctx.fillStyle = `rgb(${255-color}, ${100}, ${color})`;
-            // ctx.strokeStyle = ctx.fillStyle;
-            // ctx.font = `${fontSize}px sans-serif`;
+            let fontSize = map_range(magnitude, 0, 60, 12, 24);
+            let color = map_range(magnitude, 0, 50, 0, 255);
+            ctx.fillStyle = `rgb(${255-color}, ${100}, ${color})`;
+            ctx.font = `${fontSize}px sans-serif`;
             ctx.save();
             ctx.translate(i + vector.x, j + vector.y);
             let angle = Math.atan2(vector.y, vector.x);
             ctx.rotate(angle);
-            ctx.fillText(letters[((i+j)/spacing) % 2], 0, fontSize/2.25)
+            ctx.fillText(letters[magnitude % 2], 0, fontSize/2.25)
             ctx.restore();
 
             // ctx.beginPath();
