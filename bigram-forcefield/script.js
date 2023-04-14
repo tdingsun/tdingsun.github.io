@@ -159,7 +159,8 @@ const words = shuffle([
     ['ZEROTH', 'HORIZON'],
     ['STATE', 'TRICKS'],
     ['BEDROOM', 'COMMUNITY'],
-    ['POP', 'TWO']
+    ['POP', 'TWO'],
+    ['ANTI', 'FRAGILE'],
 ])
 
 //objects
