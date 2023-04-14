@@ -1,17 +1,21 @@
 //consts
 const abs = Math.abs, min = Math.min, max = Math.max, floor = Math.floor, random = Math.random, PI = Math.PI, PI2 = PI / 2;
-const color = 'black';
-const border = 150;
+const windowWidth = window.innerWidth;
+const windowHeight = window.innerHeight;
+
+const color = 'dodgerblue';
+const border = 100;
 const scale = 1000;
-const spacing = 45; //has to be odd
+const spacing = 49; //has to be odd
 const barrier = 5000;
 const q_limit_top = 60000;
 const q_limit_bottom = -1 * q_limit_top;
 let q_delta = 100
-const windowWidth = window.innerWidth;
-const windowHeight = window.innerHeight;
+
+const radius = windowWidth * 0.01;
+const density = 100;
 const fieldCanvas = document.getElementById("fieldCanvas");
-const ctx = fieldCanvas.getContext("2d", { alpha: false });
+const ctx = fieldCanvas.getContext("2d");
 fieldCanvas.width = windowWidth
 fieldCanvas.height = windowHeight
 ctx.font = "12px sans-serif";
@@ -161,6 +165,7 @@ const words = shuffle([
     ['BEDROOM', 'COMMUNITY'],
     ['POP', 'TWO'],
     ['ANTI', 'FRAGILE'],
+    ['CORN', 'FED'],
 ])
 
 //objects
@@ -205,16 +210,17 @@ var render = Render.create({
 
 // run the renderer
 Render.run(render);
-
 // create runner
 var runner = Runner.create();
 // run the engine
 Runner.run(runner, engine);
 
-const radius = windowWidth * 0.01;
-const density = 100;
+
 
 let charges = [];
+
+//on resize
+window.onresize = function () { location.reload(); }
 
 //setup 
 setupWalls();
@@ -223,6 +229,7 @@ setupSpheres();
 //main
 switchWords();
 window.requestAnimationFrame(step)
+
 
 function switchWords() {
     let word1_before;
@@ -304,11 +311,8 @@ function draw() {
                 }
             }
         }
-
     }
-
     ctx.stroke();
-
 }
 
 function getFieldVector(x, y) {
@@ -357,27 +361,24 @@ function makeBody(x, y, x_speed, y_speed) {
 }
 
 function clearCanvas() {
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, windowWidth, windowHeight);
-    ctx.fillStyle = 'black';
-
+    ctx.clearRect(0, 0, windowWidth, windowHeight);
 }
 
 function setupWalls() {
-    //walls
-    var wall_n = Bodies.rectangle(windowWidth * 0.5, -50, windowWidth, 100, {
-        isStatic: true,
-    })
-    var wall_s = Bodies.rectangle(windowWidth * 0.5, windowHeight + 50, windowWidth, 100, {
-        isStatic: true,
-    })
-    var wall_e = Bodies.rectangle(-50, windowHeight * 0.5, 100, windowHeight, {
-        isStatic: true,
-    })
-    var wall_w = Bodies.rectangle(windowWidth + 50, windowHeight * 0.5, 100, windowHeight, {
-        isStatic: true,
-    })
-    World.add(world, [wall_n, wall_s, wall_e, wall_w]);
+    World.add(world, [
+        Bodies.rectangle(windowWidth * 0.5, -50, windowWidth, 100, {
+            isStatic: true,
+        }),
+        Bodies.rectangle(windowWidth * 0.5, windowHeight + 50, windowWidth, 100, {
+            isStatic: true,
+        }),
+        Bodies.rectangle(-50, windowHeight * 0.5, 100, windowHeight, {
+            isStatic: true,
+        }),
+        Bodies.rectangle(windowWidth + 50, windowHeight * 0.5, 100, windowHeight, {
+            isStatic: true,
+        })
+    ])
 }
 
 function shuffle(a) {
@@ -387,7 +388,6 @@ function shuffle(a) {
     }
     return a;
 }
-
 
 var fastAtan2 = (y, x) => {
      let ax = abs(x);
