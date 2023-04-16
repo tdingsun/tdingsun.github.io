@@ -1,22 +1,22 @@
 //consts
 const abs = Math.abs, min = Math.min, max = Math.max, floor = Math.floor, random = Math.random, PI = Math.PI, PI2 = PI / 2;
-const windowWidth = window.innerWidth;
-const windowHeight = window.innerHeight;
+const ww = window.innerWidth;
+const wh = window.innerHeight;
 
 const color = 'dodgerblue';
 const border = 100;
 const spacing = 49; //has to be odd
 const barrier = 5000;
-const q_limit_top = 60000;
-const q_limit_bottom = -1 * q_limit_top;
+const q_ceiling = 60000;
+const q_floor = -1 * q_ceiling;
 var charges = [];
-const radius = windowWidth * 0.01;
+const radius = ww * 0.01;
 const density = 100;
 
 const fieldCanvas = document.getElementById("fieldCanvas");
 const ctx = fieldCanvas.getContext("2d");
-fieldCanvas.width = windowWidth
-fieldCanvas.height = windowHeight
+fieldCanvas.width = ww
+fieldCanvas.height = wh
 ctx.font = "12px sans-serif";
 ctx.fillStyle = color;
 ctx.strokeStyle = color;
@@ -31,7 +31,7 @@ class Charge {
     }
     step() {
         this.q += q_delta
-        if (this.q > q_limit_top || this.q < q_limit_bottom) {
+        if (this.q > q_ceiling || this.q < q_floor) {
             q_delta *= -1
         }
     }
@@ -163,6 +163,24 @@ const words = shuffle([
     ['CORN', 'FED'],
     ['BINKY', 'BONG'],
     ['KICK', 'ROCKS'],
+    ['PLANETARY', 'ACCRETION'],
+    ['IRON', 'CATASTROPE'],
+    ['DIMENSION', 'STONE'],
+    ['ABILITY', 'CAPSULE'],
+    ['CLEAR', 'AMULET'],
+    ['CLAW', 'FOSSIL'],
+    ['ACCIDENTAL, TAXON'],
+    ['SOIL', 'CRUSTS'],
+    ['PIONEER', 'SPECIES'],
+    ['MOSS', 'BIOREACTOR'],
+    ['POWDERED', 'SUNSHINE'],
+    ['SUNSHINE', 'LICHEN'],
+    ['MOLECULAR', 'FARMING'],
+    ['BARE', 'CLAY'],
+    ['ECHO', 'GRASS'],
+    ['PHOENIX', 'DOWN'],
+    ['DEVELOPMENT', 'HELL'],
+    ['NINE', 'LONGINGS']
 ])
 
 //html objects
@@ -171,9 +189,8 @@ const list = document.getElementById("list");
 
 //setup words
 display.innerHTML = words[0][0] + '<br>' + words[0][1]
-list.innerHTML += '<div>' + words[0][0] + ' ' + words[0][1] + '</div>';
-let wordsIndex = 0;
-const wordTiming = 100;
+var wordsIndex = 0;
+const letterTiming = 100;
 
 //matterjs stuff
 Matter.use('matter-attractors')
@@ -188,7 +205,7 @@ var Engine = Matter.Engine,
 // create an engine
 var engine = Engine.create(),
     world = engine.world;
-engine.timing.timeScale = 0.25
+engine.timing.timeScale = 0.25;
 engine.gravity.scale = 0;
 
 // create a renderer
@@ -197,8 +214,8 @@ var render = Render.create({
     canvas: document.getElementById("matterCanvas"),
     options: {
         background: 'transparent',
-        height: windowHeight,
-        width: windowWidth,
+        height: wh,
+        width: ww,
         wireframes: false
     }
 });
@@ -220,7 +237,6 @@ setupWalls();
 setupCharges();
 
 //main
-switchWords();
 window.requestAnimationFrame(step)
 
 ////////////////////////////
@@ -229,11 +245,18 @@ window.requestAnimationFrame(step)
 var word1_before, word2_before;
 var word1_after, word2_after;
 var maxWordLength;
-var limit;
-var result_1;
-var result_2;
+var letterLimit;
+var switchLetterInterval;
+var letterIndex = 0;
+const wordLimit = words.length - 1;
 function switchWords() {
+    if (wordsIndex >= wordLimit) {
+        wordsIndex = 0;
+    } else {
+        wordsIndex++;
+    }
     if (wordsIndex === 0) {
+        list.innerHTML = '';
         word1_before = words[words.length - 1][0];
         word2_before = words[words.length - 1][1];
     } else {
@@ -243,35 +266,36 @@ function switchWords() {
     word1_after = words[wordsIndex][0];
     word2_after = words[wordsIndex][1];
     maxWordLength = max(word1_before.length, word1_after.length, word2_before.length, word2_after.length);
-    limit = maxWordLength - 1;
-    setTimeout(switchLetters, wordTiming, 0)
+    letterLimit = maxWordLength;
+    switchLetters(0);
 }
 
 function switchLetters(idx) {
-    result_1 = word1_after.substring(0, idx) + word1_before.substring(idx, word1_before.length);
-    result_2 = word2_after.substring(0, idx) + word2_before.substring(idx, word2_before.length);
-    display.innerHTML = result_1 + '<br>' + result_2
-    if (idx <= limit) { //switching letters
-        setTimeout(switchLetters, wordTiming, idx + 1)
-    } else { //end condition
+    display.innerHTML = 
+        word1_after.slice(0, idx) 
+        + word1_before.slice(idx) 
+        + '<br>'
+        + word2_after.slice(0, idx) 
+        + word2_before.slice(idx)
+    letterIndex++;
+    if (idx <= letterLimit) {
+        setTimeout(switchLetters, letterTiming, idx + 1)
+    } else {
         list.innerHTML += '<div>' + words[wordsIndex][0] + ' ' + words[wordsIndex][1] + '</div>';
-        setTimeout(() => {
-            wordsIndex++;
-            if (wordsIndex >= words.length) {
-                wordsIndex = 0;
-                list.innerHTML = '';
-            }
-            switchWords();
-        }, 1000);
     }
 }
 
 var charge;
-function step() {
-    for (charge of charges) {
-        charge.step()
+var last = 0;
+function step(now) {
+    if(!last || now - last >= 4000) {
+        last = now;
+        switchWords();
     }
-    draw()
+    for (charge of charges) {
+        charge.step();
+    }
+    draw();
     window.requestAnimationFrame(step)
 }
 
@@ -329,9 +353,9 @@ function getFieldVector(x, y) {
 
 function setupCharges() {
     charges = [
-        new Charge(0, makeBody(windowWidth * 0.5, 200, 0, -10)),
-        new Charge(3000, makeBody(200, windowHeight - 200, 10, -10)),
-        new Charge(-3000, makeBody(windowWidth - 200, windowHeight - 200, -10, -10))
+        new Charge(0, makeBody(ww * 0.5, 200, 0, -10)),
+        new Charge(3000, makeBody(200, wh - 200, 10, -10)),
+        new Charge(-3000, makeBody(ww - 200, wh - 200, -10, -10))
     ]
 }
 
@@ -352,21 +376,21 @@ function makeBody(x, y, x_speed, y_speed) {
 }
 
 function clearCanvas() {
-    ctx.clearRect(0, 0, windowWidth, windowHeight);
+    ctx.clearRect(0, 0, ww, wh);
 }
 
 function setupWalls() {
     World.add(world, [
-        Bodies.rectangle(windowWidth * 0.5, -50, windowWidth, 100, {
+        Bodies.rectangle(ww * 0.5, -50, ww, 100, {
             isStatic: true,
         }),
-        Bodies.rectangle(windowWidth * 0.5, windowHeight + 50, windowWidth, 100, {
+        Bodies.rectangle(ww * 0.5, wh + 50, ww, 100, {
             isStatic: true,
         }),
-        Bodies.rectangle(-50, windowHeight * 0.5, 100, windowHeight, {
+        Bodies.rectangle(-50, wh * 0.5, 100, wh, {
             isStatic: true,
         }),
-        Bodies.rectangle(windowWidth + 50, windowHeight * 0.5, 100, windowHeight, {
+        Bodies.rectangle(ww + 50, wh * 0.5, 100, wh, {
             isStatic: true,
         })
     ])
