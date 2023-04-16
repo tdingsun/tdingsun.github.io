@@ -4,10 +4,10 @@ const ww = window.innerWidth;
 const wh = window.innerHeight;
 
 const color = 'dodgerblue';
-const border = 100;
-const spacing = 49; //has to be odd
+const border = 150;
+const spacing = 69; //has to be odd
 const barrier = 5000;
-const q_ceiling = 60000;
+const q_ceiling = 30000;
 const q_floor = -1 * q_ceiling;
 var charges = [];
 const radius = ww * 0.01;
@@ -17,7 +17,7 @@ const fieldCanvas = document.getElementById("fieldCanvas");
 const ctx = fieldCanvas.getContext("2d");
 fieldCanvas.width = ww
 fieldCanvas.height = wh
-ctx.font = "12px sans-serif";
+ctx.font = "15px sans-serif";
 ctx.fillStyle = color;
 ctx.strokeStyle = color;
 
@@ -38,7 +38,7 @@ class Charge {
 }
 
 //set up word list
-const words = shuffle([
+var words = shuffle([
     ['JOCK', 'SIMULACRA'],
     ['SACRED', 'CONTAGION'],
     ['WARM', 'RAIN'],
@@ -214,8 +214,8 @@ var render = Render.create({
     canvas: document.getElementById("matterCanvas"),
     options: {
         background: 'transparent',
-        height: wh,
-        width: ww,
+        height: wh - (2*border),
+        width: ww - (2*border),
         wireframes: false
     }
 });
@@ -251,6 +251,7 @@ var letterIndex = 0;
 const wordLimit = words.length - 1;
 function switchWords() {
     if (wordsIndex >= wordLimit) {
+        words = shuffle(words);
         wordsIndex = 0;
     } else {
         wordsIndex++;
@@ -267,6 +268,7 @@ function switchWords() {
     word2_after = words[wordsIndex][1];
     maxWordLength = max(word1_before.length, word1_after.length, word2_before.length, word2_after.length);
     letterLimit = maxWordLength;
+
     switchLetters(0);
 }
 
@@ -316,7 +318,7 @@ function draw() {
             ctx.save();
             ctx.translate(new_x, new_y);
             ctx.rotate(angle);
-            if (magnitude_2 < 100) { //word
+            if (magnitude_2 < 500) { //word
                 ctx.fillText(words[wordsIndex][parity], -5, 5);
                 ctx.restore();
             } else {
@@ -353,9 +355,9 @@ function getFieldVector(x, y) {
 
 function setupCharges() {
     charges = [
-        new Charge(0, makeBody(ww * 0.5, 200, 0, -10)),
-        new Charge(3000, makeBody(200, wh - 200, 10, -10)),
-        new Charge(-3000, makeBody(ww - 200, wh - 200, -10, -10))
+        new Charge(0, makeBody(ww * 0.5 - border, wh - (2*border), 0, -10)),
+        new Charge(3000, makeBody(200, wh * 0.5, 10, -10)),
+        new Charge(-3000, makeBody(ww - 400, wh * 0.5, -10, -10))
     ]
 }
 
@@ -381,17 +383,29 @@ function clearCanvas() {
 
 function setupWalls() {
     World.add(world, [
-        Bodies.rectangle(ww * 0.5, -50, ww, 100, {
+        Bodies.rectangle(ww * 0.5, - 50, ww, 100, {
             isStatic: true,
+            render: {
+                visible: false
+            }
         }),
-        Bodies.rectangle(ww * 0.5, wh + 50, ww, 100, {
+        Bodies.rectangle(ww * 0.5, wh - (2*border) + 50, ww, 100, {
             isStatic: true,
+            render: {
+                visible: false
+            }
         }),
         Bodies.rectangle(-50, wh * 0.5, 100, wh, {
             isStatic: true,
+            render: {
+                visible: false
+            }
         }),
-        Bodies.rectangle(ww + 50, wh * 0.5, 100, wh, {
+        Bodies.rectangle(ww - (2*border) + 50, wh * 0.5, 100, wh, {
             isStatic: true,
+            render: {
+                visible: false
+            }
         })
     ])
 }
