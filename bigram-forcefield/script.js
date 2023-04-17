@@ -233,7 +233,7 @@ var Engine = Matter.Engine,
 // create an engine
 var engine = Engine.create(),
     world = engine.world;
-engine.timing.timeScale = 0;
+engine.timing.timeScale = 0.1;
 engine.gravity.scale = 0;
 
 // create a renderer
@@ -259,27 +259,36 @@ Runner.run(runner, engine);
 // window.onresize = function () { location.reload(); }
 
 //tonejs
-const pingPong = new Tone.PingPongDelay("8n", 0.01).toDestination();
+const pingPong = new Tone.PingPongDelay("4n", 0.2);
+const limiter = new Tone.Limiter(-12);
+const filter = new Tone.Filter(1000, "bandpass");
+const volume = new Tone.Volume(-12);
 
-var synth = new Tone.PolySynth(Tone.Synth).connect(pingPong).toMaster();
+const reverb = new Tone.Reverb(0.5);
+const lfo = new Tone.LFO("2m", 200, 400);
+lfo.connect(filter.frequency);
+lfo.start();
+
+var synth = new Tone.PolySynth(Tone.Synth).chain(limiter, filter, volume, Tone.Destination);
 synth.set({
     oscillator: {
-    type: "sine4"
+    type: "sine6"
     }
   });
-var drivingSynth = new Tone.PolySynth(Tone.Synth).toMaster();
+var drivingSynth = new Tone.PolySynth(Tone.Synth).chain(pingPong, limiter, reverb, filter, volume, Tone.Destination);
 drivingSynth.set({
     oscillator: {
-    type: "sine8",
+    type: "sine6",
 
     }
   });
   
-var notes = Tone.Frequency("C2").harmonize(
-    [0, 2, 4, 5, 7, 9, 11, 12,
-        14, 16, 17, 19, 21, 23, 24,
+var notes = Tone.Frequency("G2").harmonize(
+    [0, 2, 4, 7, 9, 12,
+        14, 16, 19, 21, 24,
     ]);
-var drivingNotes = Tone.Frequency("G2").harmonize(
+
+var drivingNotes = Tone.Frequency("G1").harmonize(
     [0, 2, 4, 5, 7, 9, 11, 12]);
 
 var noteIndex = 0;
@@ -287,19 +296,17 @@ var drivingNoteIndex = 0;
 StartAudioContext(Tone.context, 'document.body').then(function () {
     console.log("audocontextfromdocumentbody");
 });
-StartAudioContext(Tone.context, 'div').then(function () {
-    console.log("audiocontextfromdocumentbody");
-});
 
 ////////////////////////////
 
 //setup
 
 title_screen.addEventListener('click', () => {
+    title_screen.parentNode.remove();
+    Tone.start();
     setupWalls();
     setupCharges();
     window.requestAnimationFrame(step)
-    title_screen.parentNode.remove();
 })
 //main
 
@@ -354,7 +361,7 @@ function switchLetters(idx) {
         if(randNote % 2 === 0){
             letterTiming = 250
         } else {
-            letterTiming = 375
+            letterTiming = 125
         }
     
     if (idx <= letterLimit) {
@@ -364,7 +371,7 @@ function switchLetters(idx) {
 
         setTimeout(() => {
             wordsActive = false;
-        }, 500);
+        }, 2000);
         drivingNoteIndex = floor(random() * drivingNotes.length);
         list.innerHTML += '<div>' + words[wordsIndex][0] + ' ' + words[wordsIndex][1] + '</div>';
         left_circle.innerHTML = words[wordsIndex][0];
@@ -381,25 +388,14 @@ function switchLetters(idx) {
     }
 }
 
-var charge;
 function step() {
-
     if (!wordsActive) {
         switchWords();
     }
-    engine.timing.timeScale = 0.05;
-    // q_delta = 10;
-
-    if(fieldActive) {
-       engine.timing.timeScale = 0.15;
-    //    q_delta = 50;
-
+    for (let charge of charges) {
+        charge.step();
     }
-    
     draw();
-
-  
-    
     window.requestAnimationFrame(step)
 }
 
@@ -409,9 +405,7 @@ var x_point_limit = ww - 20;
 var y_point_limit = wh - 20;
 function draw() {
     clearCanvas();
-    for (charge of charges) {
-        charge.step();
-    }
+
     ctx.beginPath();
     for (j = y_end; j >= y_start; j -= spacing) {
         for (i = x_end; i >= x_start; i -= spacing) {
@@ -445,6 +439,9 @@ function draw() {
                 ctx.restore();
             } else if (magnitude_2 < 50000) {
                 ctx.fillText(wordsIndex.toString(), -5, 5);
+                ctx.restore();
+            } else if (magnitude_2 < 60000) {
+                ctx.fillText(words[wordsIndex][parity], -5, 5);
                 ctx.restore();
             } else {
                 ctx.moveTo(-4, -4);
