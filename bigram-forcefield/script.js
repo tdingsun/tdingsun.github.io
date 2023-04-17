@@ -192,7 +192,8 @@ var words = shuffle([
     ['ECHO', 'GRASS'],
     ['PHOENIX', 'DOWN'],
     ['DEVELOPMENT', 'HELL'],
-    ['NINE', 'LONGINGS']
+    ['NINE', 'LONGINGS'],
+    ['BIGRAM', 'FORCEFIELD'],
 ])
 
 //html objects
