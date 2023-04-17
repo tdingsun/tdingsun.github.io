@@ -70,7 +70,7 @@ canvas {
     top: calc(50vh - 50px);
     width: 100px;
     height: 100px;
-    border-radius: 50px;
+    border-radius: 3px;
     border: 1px solid darkslategrey;
     color: darkslategrey;
     display: flex;
