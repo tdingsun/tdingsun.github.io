@@ -3,9 +3,9 @@ const abs = Math.abs, min = Math.min, max = Math.max, floor = Math.floor, random
 const ww = window.innerWidth;
 const wh = window.innerHeight;
 
-const color = 'dodgerblue';
-const border = 150;
-const spacing = 69; //has to be odd
+const color = 'darkslategray';
+const border = 200;
+const spacing = 49; //has to be odd
 const barrier = 5000;
 const q_ceiling = 30000;
 const q_floor = -1 * q_ceiling;
@@ -13,13 +13,22 @@ var charges = [];
 const radius = ww * 0.01;
 const density = 100;
 
+const limit_x = ww - border;
+const limit_y = wh - border;
+const limit = min(limit_x, limit_y);
+const x_start = (ww - limit)*0.5;
+const x_end = ww - x_start;
+const y_start = (wh - limit)*0.5;
+const y_end = wh - y_start;
+
 const fieldCanvas = document.getElementById("fieldCanvas");
 const ctx = fieldCanvas.getContext("2d");
 fieldCanvas.width = ww
 fieldCanvas.height = wh
-ctx.font = "15px sans-serif";
+ctx.font = "12px sans-serif";
 ctx.fillStyle = color;
 ctx.strokeStyle = color;
+ctx.lineWidth = 1;
 
 var q_delta = 50
 class Charge {
@@ -169,7 +178,7 @@ var words = shuffle([
     ['ABILITY', 'CAPSULE'],
     ['CLEAR', 'AMULET'],
     ['CLAW', 'FOSSIL'],
-    ['ACCIDENTAL, TAXON'],
+    ['ACCIDENTAL', 'TAXON'],
     ['SOIL', 'CRUSTS'],
     ['PIONEER', 'SPECIES'],
     ['MOSS', 'BIOREACTOR'],
@@ -186,6 +195,8 @@ var words = shuffle([
 //html objects
 const display = document.getElementById("display");
 const list = document.getElementById("list");
+const left_circle = document.getElementById("left-circle");
+const right_circle = document.getElementById("right-circle");
 
 //setup words
 display.innerHTML = words[0][0] + '<br>' + words[0][1]
@@ -205,7 +216,7 @@ var Engine = Matter.Engine,
 // create an engine
 var engine = Engine.create(),
     world = engine.world;
-engine.timing.timeScale = 0.25;
+engine.timing.timeScale = 0.1;
 engine.gravity.scale = 0;
 
 // create a renderer
@@ -214,8 +225,8 @@ var render = Render.create({
     canvas: document.getElementById("matterCanvas"),
     options: {
         background: 'transparent',
-        height: wh - (2*border),
-        width: ww - (2*border),
+        height: limit,
+        width: limit,
         wireframes: false
     }
 });
@@ -284,6 +295,8 @@ function switchLetters(idx) {
         setTimeout(switchLetters, letterTiming, idx + 1)
     } else {
         list.innerHTML += '<div>' + words[wordsIndex][0] + ' ' + words[wordsIndex][1] + '</div>';
+        left_circle.innerHTML = words[wordsIndex][0];
+        right_circle.innerHTML = words[wordsIndex][1];
     }
 }
 
@@ -301,30 +314,34 @@ function step(now) {
     window.requestAnimationFrame(step)
 }
 
-const limit_x = fieldCanvas.width - border;
-const limit_y = fieldCanvas.height - border;
-var i, j, vector, parity, magnitude_2, angle, new_x, new_y
+
+var i = border, j = border, vector, parity, magnitude_2, angle, new_x, new_y
+var x_point_limit = ww - 20;
+var y_point_limit = wh - 20;
 function draw() {
     clearCanvas()
     ctx.beginPath();
-    for (i = border; i < limit_x; i += spacing) {
-        for (j = border; j < limit_y; j += spacing) {
+    for (j = y_end; j >= y_start; j -= spacing) {
+        for (i = x_end; i >= x_start; i -= spacing) {
             vector = getFieldVector(i, j);
             parity = (i + j) & 1;
             magnitude_2 = (vector.x * vector.x) + (vector.y * vector.y);
             angle = fastAtan2(vector.y, vector.x);
-            new_x = i + vector.x;
-            new_y = j + vector.y;
+            new_x = min(max(20, i + vector.x), x_point_limit);
+            new_y = min(max(20, j + vector.y), y_point_limit);
             ctx.save();
             ctx.translate(new_x, new_y);
             ctx.rotate(angle);
             if (magnitude_2 < 500) { //word
                 ctx.fillText(words[wordsIndex][parity], -5, 5);
                 ctx.restore();
+            } else if (magnitude_2 < 1000) {
+                ctx.fillText(wordsIndex.toString(), -5, 5);
+                ctx.restore();
             } else {
                 ctx.moveTo(-4, -4);
                 ctx.lineTo(-4, 4);
-                if (magnitude_2 < 10000) { // line and plus
+                if (magnitude_2 < 20000) { // line and plus
                     ctx.restore();
                     ctx.moveTo(i, j);
                     ctx.lineTo(new_x, new_y)
@@ -339,12 +356,14 @@ function draw() {
     ctx.stroke();
 }
 
-var vector_acc, dx, dy, distance_2, m
+var vector_acc, dx, dy, distance_2, m;
+const x_offset = (ww - limit)*0.5;
+const y_offset = (wh - limit)*0.5;
 function getFieldVector(x, y) {
     vector_acc = { x: 0, y: 0 }
     for (let charge of charges) {
-        dx = charge.body.position.x - x
-        dy = charge.body.position.y - y
+        dx = charge.body.position.x + x_offset - x
+        dy = charge.body.position.y + y_offset - y
         distance_2 = dx * dx + dy * dy
         m = (charge.q / distance_2)
         vector_acc.x += dx * m
@@ -355,9 +374,9 @@ function getFieldVector(x, y) {
 
 function setupCharges() {
     charges = [
-        new Charge(0, makeBody(ww * 0.5 - border, wh - (2*border), 0, -10)),
-        new Charge(3000, makeBody(200, wh * 0.5, 10, -10)),
-        new Charge(-3000, makeBody(ww - 400, wh * 0.5, -10, -10))
+        new Charge(0, makeBody(0, limit*0.5, 0, -10)),
+        new Charge(10000, makeBody(limit, limit*0.5, 10, -10)),
+        new Charge(-10000, makeBody(limit*0.5, 0, -10, -10))
     ]
 }
 
@@ -383,25 +402,25 @@ function clearCanvas() {
 
 function setupWalls() {
     World.add(world, [
-        Bodies.rectangle(ww * 0.5, - 50, ww, 100, {
+        Bodies.rectangle(ww * 0.5, -50, ww, 100, {
             isStatic: true,
             render: {
                 visible: false
             }
         }),
-        Bodies.rectangle(ww * 0.5, wh - (2*border) + 50, ww, 100, {
+        Bodies.rectangle(ww * 0.5, wh - border + 50, ww, 100, {
+            isStatic: true,
+            render: {
+                visible: false
+            }
+        }),
+        Bodies.rectangle(limit + 50, wh * 0.5, 100, wh, {
             isStatic: true,
             render: {
                 visible: false
             }
         }),
         Bodies.rectangle(-50, wh * 0.5, 100, wh, {
-            isStatic: true,
-            render: {
-                visible: false
-            }
-        }),
-        Bodies.rectangle(ww - (2*border) + 50, wh * 0.5, 100, wh, {
             isStatic: true,
             render: {
                 visible: false
