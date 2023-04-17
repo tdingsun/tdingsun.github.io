@@ -9,8 +9,7 @@ var spacing = 49; //has to be odd
 if (ww < 800) {
     var spacing = 29;
 }
-const barrier = 5000;
-const q_ceiling = 30000;
+const q_ceiling = 50000;
 const q_floor = -1 * q_ceiling;
 var charges = [];
 const radius = ww * 0.01;
@@ -215,7 +214,7 @@ const display = document.getElementById("display");
 const list = document.getElementById("list");
 const left_circle = document.getElementById("left-circle");
 const right_circle = document.getElementById("right-circle");
-
+const title_screen = document.getElementById("title");
 //setup words
 display.innerHTML = words[0][0] + '<br>' + words[0][1]
 var wordsIndex = 0;
@@ -234,7 +233,7 @@ var Engine = Matter.Engine,
 // create an engine
 var engine = Engine.create(),
     world = engine.world;
-engine.timing.timeScale = 0.1;
+engine.timing.timeScale = 0;
 engine.gravity.scale = 0;
 
 // create a renderer
@@ -257,31 +256,32 @@ var runner = Runner.create();
 Runner.run(runner, engine);
 
 //on resize
-window.onresize = function () { location.reload(); }
+// window.onresize = function () { location.reload(); }
 
 //tonejs
-var synth = new Tone.PolySynth(Tone.Synth).toMaster();
+const pingPong = new Tone.PingPongDelay("8n", 0.01).toDestination();
+
+var synth = new Tone.PolySynth(Tone.Synth).connect(pingPong).toMaster();
 synth.set({
     oscillator: {
-    type: "sine"
+    type: "sine4"
     }
   });
 var drivingSynth = new Tone.PolySynth(Tone.Synth).toMaster();
+drivingSynth.set({
+    oscillator: {
+    type: "sine8",
 
+    }
+  });
   
-var notes = Tone.Frequency("G2").harmonize(
-    [0, 2, 4,  7, 9,
-    12, 14, 16,  19, 21, 
-    24, 26, 28,  31, 33, 36
-    ]);
-var sequentialNotes = Tone.Frequency("G2").harmonize(
+var notes = Tone.Frequency("C2").harmonize(
     [0, 2, 4, 5, 7, 9, 11, 12,
         14, 16, 17, 19, 21, 23, 24,
-        26, 28, 29, 31, 33, 35, 36
     ]);
 var drivingNotes = Tone.Frequency("G2").harmonize(
-    [4, 7, 12, 16, 19, 24]
-)
+    [0, 2, 4, 5, 7, 9, 11, 12]);
+
 var noteIndex = 0;
 var drivingNoteIndex = 0;
 StartAudioContext(Tone.context, 'document.body').then(function () {
@@ -294,11 +294,14 @@ StartAudioContext(Tone.context, 'div').then(function () {
 ////////////////////////////
 
 //setup
-setupWalls();
-setupCharges();
 
+title_screen.addEventListener('click', () => {
+    setupWalls();
+    setupCharges();
+    window.requestAnimationFrame(step)
+    title_screen.parentNode.remove();
+})
 //main
-window.requestAnimationFrame(step)
 
 ////////////////////////////
 
@@ -309,8 +312,12 @@ var maxWordLength;
 var letterLimit;
 var switchLetterInterval;
 var letterIndex = 0;
+var wordsActive = false;
+var fieldActive = true;
 const wordLimit = words.length - 1;
 function switchWords() {
+    wordsActive = true;
+    fieldActive = false;
     if (wordsIndex >= wordLimit) {
         words = shuffle(words);
         wordsIndex = 0;
@@ -334,15 +341,9 @@ function switchWords() {
 }
 
 function switchLetters(idx) {
-    var randNote = floor(random() * notes.length);
-    synth.triggerAttackRelease(notes[randNote], "4n");
-    // synth.triggerAttackRelease(sequentialNotes[noteIndex], "16n");
-    drivingSynth.triggerAttackRelease(drivingNotes[drivingNoteIndex], "16n");
-    noteIndex++;
-    if (noteIndex >= sequentialNotes.length) {
-        noteIndex = 0;
-    }
-
+    var randNote = floor(random() * notes.length); 
+    synth.triggerAttackRelease(notes[randNote], "2n");
+    drivingSynth.triggerAttackRelease(drivingNotes[drivingNoteIndex],"16n");
     display.innerHTML =
         word1_after.slice(0, idx)
         + word1_before.slice(idx)
@@ -350,14 +351,20 @@ function switchLetters(idx) {
         + word2_after.slice(0, idx)
         + word2_before.slice(idx)
     letterIndex++;
-    if(letterIndex % 3 === 0){
-        letterTiming = 125
-    } else {
-        letterTiming = 250
-    }
+        if(randNote % 2 === 0){
+            letterTiming = 250
+        } else {
+            letterTiming = 375
+        }
+    
     if (idx <= letterLimit) {
         setTimeout(switchLetters, letterTiming, idx + 1)
     } else {
+        fieldActive = true;
+
+        setTimeout(() => {
+            wordsActive = false;
+        }, 500);
         drivingNoteIndex = floor(random() * drivingNotes.length);
         list.innerHTML += '<div>' + words[wordsIndex][0] + ' ' + words[wordsIndex][1] + '</div>';
         left_circle.innerHTML = words[wordsIndex][0];
@@ -375,17 +382,24 @@ function switchLetters(idx) {
 }
 
 var charge;
-var last = 0;
-function step(now) {
+function step() {
 
-    if (!last || now - last >= 4000) {
-        last = now;
+    if (!wordsActive) {
         switchWords();
     }
-    for (charge of charges) {
-        charge.step();
+    engine.timing.timeScale = 0.05;
+    // q_delta = 10;
+
+    if(fieldActive) {
+       engine.timing.timeScale = 0.15;
+    //    q_delta = 50;
+
     }
+    
     draw();
+
+  
+    
     window.requestAnimationFrame(step)
 }
 
@@ -394,7 +408,10 @@ var i = border, j = border, vector, parity, magnitude_2, angle, new_x, new_y
 var x_point_limit = ww - 20;
 var y_point_limit = wh - 20;
 function draw() {
-    clearCanvas()
+    clearCanvas();
+    for (charge of charges) {
+        charge.step();
+    }
     ctx.beginPath();
     for (j = y_end; j >= y_start; j -= spacing) {
         for (i = x_end; i >= x_start; i -= spacing) {
@@ -407,24 +424,34 @@ function draw() {
             ctx.save();
             ctx.translate(new_x, new_y);
             ctx.rotate(angle);
-            if (magnitude_2 < 500) { //word
+        
+
+               if(magnitude_2 < 1000 ) {
                 ctx.fillText(words[wordsIndex][parity], -5, 5);
                 ctx.restore();
-            } else if (magnitude_2 < 1000) {
+            } else if (magnitude_2 < 10000) {
+                ctx.moveTo(-4, -4);
+                ctx.lineTo(-4, 4);
+                ctx.restore();
+                ctx.moveTo(i, j);
+                ctx.lineTo(new_x, new_y)
+
+           
+            } else if (magnitude_2 < 40000) {
+                ctx.moveTo(-4, -4);
+                ctx.lineTo(-4, 4);
+                ctx.moveTo(0, 0);
+                ctx.lineTo(-8, 0);
+                ctx.restore();
+            } else if (magnitude_2 < 50000) {
                 ctx.fillText(wordsIndex.toString(), -5, 5);
                 ctx.restore();
             } else {
                 ctx.moveTo(-4, -4);
                 ctx.lineTo(-4, 4);
-                if (magnitude_2 < 20000) { // line and plus
-                    ctx.restore();
-                    ctx.moveTo(i, j);
-                    ctx.lineTo(new_x, new_y)
-                } else { // plus only
-                    ctx.moveTo(0, 0);
-                    ctx.lineTo(-8, 0);
-                    ctx.restore();
-                }
+                ctx.moveTo(0, 0);
+                ctx.lineTo(-8, 0);
+                ctx.restore();
             }
         }
     }
@@ -440,9 +467,10 @@ function getFieldVector(x, y) {
         dx = charge.body.position.x + x_offset - x
         dy = charge.body.position.y + y_offset - y
         distance_2 = dx * dx + dy * dy
-        m = (charge.q / distance_2)
-        vector_acc.x += dx * m
-        vector_acc.y += dy * m
+            m = charge.q / distance_2
+            vector_acc.x += dx * m
+            vector_acc.y += dy * m
+
     }
     return vector_acc
 }
@@ -450,8 +478,8 @@ function getFieldVector(x, y) {
 function setupCharges() {
     charges = [
         new Charge(0, makeBody(0, limit * 0.5, 0, -10)),
-        new Charge(10000, makeBody(limit, limit * 0.5, 10, -10)),
-        new Charge(-10000, makeBody(limit * 0.5, 0, -10, -10))
+        new Charge(-10000, makeBody(limit, limit * 0.5, 10, -10)),
+        new Charge(10000, makeBody(limit * 0.5, 0, -10, -10))
     ]
 }
 
