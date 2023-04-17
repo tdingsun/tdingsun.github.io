@@ -198,6 +198,15 @@ var words = shuffle([
     ['CAVE', 'PEARL'],
     ['KARST', 'FOREST'],
     ['NATURAL', 'PIT'],
+    ['TWIN', 'TRACK'],
+    ['KNIGHT\'S', 'TOUR'],
+    ['PEBBLE', 'MOTION'],
+    ['BOOTSTRAP', 'PERCOLATION'],
+    ['BRAVELY', 'DEFAULT'],
+    ['STRONGLY', 'CHORDAL'],
+    ['TRIVIALLY', 'PERFECT'],
+    ['ROOK\'S', 'GRAPH'],
+    ['SEMANTIC', 'NET'],
 
 ])
 
