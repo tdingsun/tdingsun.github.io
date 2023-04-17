@@ -261,7 +261,7 @@ Runner.run(runner, engine);
 //tonejs
 const pingPong = new Tone.PingPongDelay("4n", 0.2);
 const limiter = new Tone.Limiter(-12);
-const filter = new Tone.Filter(1000, "bandpass");
+const filter = new Tone.Filter(600, "bandpass");
 const volume = new Tone.Volume(-12);
 
 const reverb = new Tone.Reverb(0.5);
@@ -269,13 +269,13 @@ const lfo = new Tone.LFO("2m", 200, 400);
 lfo.connect(filter.frequency);
 lfo.start();
 
-var synth = new Tone.PolySynth(Tone.Synth).chain(limiter, filter, volume, Tone.Destination);
+var synth = new Tone.PolySynth(Tone.Synth).chain(pingPong, limiter, reverb, filter, volume, Tone.Destination);
 synth.set({
     oscillator: {
     type: "sine6"
     }
   });
-var drivingSynth = new Tone.PolySynth(Tone.Synth).chain(pingPong, limiter, reverb, filter, volume, Tone.Destination);
+var drivingSynth = new Tone.PolySynth(Tone.Synth).chain(limiter, filter, volume, Tone.Destination);
 drivingSynth.set({
     oscillator: {
     type: "sine6",
@@ -284,12 +284,19 @@ drivingSynth.set({
   });
   
 var notes = Tone.Frequency("G2").harmonize(
-    [0, 2, 4, 7, 9, 12,
-        14, 16, 19, 21, 24,
+    [0, 2, 4, 7, 9, 
+    0, 2, 4, 7, 9,
+    12, 14, 16, 19, 21, 
+    12, 14, 16, 19, 21, 
+    24, 26, 28, 31, 33,
+    36, 38, 40, 43, 45,
+    48
+
     ]);
 
 var drivingNotes = Tone.Frequency("G1").harmonize(
-    [0, 2, 4, 5, 7, 9, 11, 12]);
+    [0, 2, 4, 5, 7, 9, 11, 
+    12, 14, 16, 19, 21, 24]);
 
 var noteIndex = 0;
 var drivingNoteIndex = 0;
@@ -320,11 +327,9 @@ var letterLimit;
 var switchLetterInterval;
 var letterIndex = 0;
 var wordsActive = false;
-var fieldActive = true;
 const wordLimit = words.length - 1;
 function switchWords() {
     wordsActive = true;
-    fieldActive = false;
     if (wordsIndex >= wordLimit) {
         words = shuffle(words);
         wordsIndex = 0;
@@ -348,8 +353,9 @@ function switchWords() {
 }
 
 function switchLetters(idx) {
+    engine.timing.timeScale = 0.03;
     var randNote = floor(random() * notes.length); 
-    synth.triggerAttackRelease(notes[randNote], "2n");
+    synth.triggerAttackRelease(notes[randNote], "4n");
     drivingSynth.triggerAttackRelease(drivingNotes[drivingNoteIndex],"16n");
     display.innerHTML =
         word1_after.slice(0, idx)
@@ -367,7 +373,7 @@ function switchLetters(idx) {
     if (idx <= letterLimit) {
         setTimeout(switchLetters, letterTiming, idx + 1)
     } else {
-        fieldActive = true;
+        engine.timing.timeScale = 0.1;
 
         setTimeout(() => {
             wordsActive = false;
