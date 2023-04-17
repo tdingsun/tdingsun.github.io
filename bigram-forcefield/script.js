@@ -264,7 +264,7 @@ const limiter = new Tone.Limiter(-12);
 const filter = new Tone.Filter(600, "bandpass");
 const volume = new Tone.Volume(-12);
 
-const reverb = new Tone.Reverb(0.5);
+const reverb = new Tone.Reverb(1);
 const lfo = new Tone.LFO("2m", 200, 400);
 lfo.connect(filter.frequency);
 lfo.start();
@@ -278,7 +278,7 @@ synth.set({
 var drivingSynth = new Tone.PolySynth(Tone.Synth).chain(limiter, filter, volume, Tone.Destination);
 drivingSynth.set({
     oscillator: {
-    type: "sine6",
+    type: "sine12",
 
     }
   });
@@ -351,9 +351,13 @@ function switchWords() {
 
     switchLetters(0);
 }
+right_circle.classList.toggle('alt')
 
 function switchLetters(idx) {
-    engine.timing.timeScale = 0.03;
+        left_circle.classList.toggle('alt')
+        right_circle.classList.toggle('alt')
+
+    // engine.timing.timeScale = 0.03;
     var randNote = floor(random() * notes.length); 
     synth.triggerAttackRelease(notes[randNote], "4n");
     drivingSynth.triggerAttackRelease(drivingNotes[drivingNoteIndex],"16n");
@@ -367,13 +371,13 @@ function switchLetters(idx) {
         if(randNote % 2 === 0){
             letterTiming = 250
         } else {
-            letterTiming = 125
+            letterTiming = 375
         }
     
     if (idx <= letterLimit) {
         setTimeout(switchLetters, letterTiming, idx + 1)
     } else {
-        engine.timing.timeScale = 0.1;
+        // engine.timing.timeScale = 0.1;
 
         setTimeout(() => {
             wordsActive = false;
@@ -382,15 +386,7 @@ function switchLetters(idx) {
         list.innerHTML += '<div>' + words[wordsIndex][0] + ' ' + words[wordsIndex][1] + '</div>';
         left_circle.innerHTML = words[wordsIndex][0];
         right_circle.innerHTML = words[wordsIndex][1];
-        if (wordsIndex % 2 === 0) {
-            left_circle.classList.toggle('alt')
-        }
-        right_circle.classList.toggle('alt')
-        if (wordsIndex % 7 === 0) {
-            
-            left_circle.innerHTML = '2-word';
-            right_circle.innerHTML = 'poems';
-        }
+        
     }
 }
 
