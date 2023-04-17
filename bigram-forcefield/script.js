@@ -6,7 +6,7 @@ const wh = window.innerHeight;
 const color = 'darkslategray';
 const border = 200;
 var spacing = 49; //has to be odd
-if(ww < 800) {
+if (ww < 800) {
     var spacing = 29;
 }
 const barrier = 5000;
@@ -19,9 +19,9 @@ const density = 100;
 const limit_x = ww - border;
 const limit_y = wh - border;
 const limit = min(limit_x, limit_y);
-const x_start = (ww - limit)*0.5;
+const x_start = (ww - limit) * 0.5;
 const x_end = ww - x_start;
-const y_start = (wh - limit)*0.5;
+const y_start = (wh - limit) * 0.5;
 const y_end = wh - y_start;
 
 const fieldCanvas = document.getElementById("fieldCanvas");
@@ -194,6 +194,11 @@ var words = shuffle([
     ['DEVELOPMENT', 'HELL'],
     ['NINE', 'LONGINGS'],
     ['BIGRAM', 'FORCEFIELD'],
+    ['VISCOUS', 'FLOWSTONES'],
+    ['CAVE', 'PEARL'],
+    ['KARST', 'FOREST'],
+    ['NATURAL', 'PIT'],
+
 ])
 
 //html objects
@@ -205,7 +210,7 @@ const right_circle = document.getElementById("right-circle");
 //setup words
 display.innerHTML = words[0][0] + '<br>' + words[0][1]
 var wordsIndex = 0;
-const letterTiming = 100;
+var letterTiming = 125;
 
 //matterjs stuff
 Matter.use('matter-attractors')
@@ -244,6 +249,38 @@ Runner.run(runner, engine);
 
 //on resize
 window.onresize = function () { location.reload(); }
+
+//tonejs
+var synth = new Tone.PolySynth(Tone.Synth).toMaster();
+synth.set({
+    oscillator: {
+    type: "sine"
+    }
+  });
+var drivingSynth = new Tone.PolySynth(Tone.Synth).toMaster();
+
+  
+var notes = Tone.Frequency("G2").harmonize(
+    [0, 2, 4,  7, 9,
+    12, 14, 16,  19, 21, 
+    24, 26, 28,  31, 33, 36
+    ]);
+var sequentialNotes = Tone.Frequency("G2").harmonize(
+    [0, 2, 4, 5, 7, 9, 11, 12,
+        14, 16, 17, 19, 21, 23, 24,
+        26, 28, 29, 31, 33, 35, 36
+    ]);
+var drivingNotes = Tone.Frequency("G2").harmonize(
+    [4, 7, 12, 16, 19, 24]
+)
+var noteIndex = 0;
+var drivingNoteIndex = 0;
+StartAudioContext(Tone.context, 'document.body').then(function () {
+    console.log("audocontextfromdocumentbody");
+});
+StartAudioContext(Tone.context, 'div').then(function () {
+    console.log("audiocontextfromdocumentbody");
+});
 
 ////////////////////////////
 
@@ -288,24 +325,40 @@ function switchWords() {
 }
 
 function switchLetters(idx) {
-    display.innerHTML = 
-        word1_after.slice(0, idx) 
-        + word1_before.slice(idx) 
+    var randNote = floor(random() * notes.length);
+    synth.triggerAttackRelease(notes[randNote], "4n");
+    // synth.triggerAttackRelease(sequentialNotes[noteIndex], "16n");
+    drivingSynth.triggerAttackRelease(drivingNotes[drivingNoteIndex], "16n");
+    noteIndex++;
+    if (noteIndex >= sequentialNotes.length) {
+        noteIndex = 0;
+    }
+
+    display.innerHTML =
+        word1_after.slice(0, idx)
+        + word1_before.slice(idx)
         + '<br>'
-        + word2_after.slice(0, idx) 
+        + word2_after.slice(0, idx)
         + word2_before.slice(idx)
     letterIndex++;
+    if(letterIndex % 3 === 0){
+        letterTiming = 125
+    } else {
+        letterTiming = 250
+    }
     if (idx <= letterLimit) {
         setTimeout(switchLetters, letterTiming, idx + 1)
     } else {
+        drivingNoteIndex = floor(random() * drivingNotes.length);
         list.innerHTML += '<div>' + words[wordsIndex][0] + ' ' + words[wordsIndex][1] + '</div>';
         left_circle.innerHTML = words[wordsIndex][0];
         right_circle.innerHTML = words[wordsIndex][1];
-        if(wordsIndex % 2 === 0){
+        if (wordsIndex % 2 === 0) {
             left_circle.classList.toggle('alt')
         }
         right_circle.classList.toggle('alt')
-        if(wordsIndex % 7 === 0){
+        if (wordsIndex % 7 === 0) {
+            
             left_circle.innerHTML = '2-word';
             right_circle.innerHTML = 'poems';
         }
@@ -315,7 +368,8 @@ function switchLetters(idx) {
 var charge;
 var last = 0;
 function step(now) {
-    if(!last || now - last >= 8000) {
+
+    if (!last || now - last >= 4000) {
         last = now;
         switchWords();
     }
@@ -369,8 +423,8 @@ function draw() {
 }
 
 var vector_acc, dx, dy, distance_2, m;
-const x_offset = (ww - limit)*0.5;
-const y_offset = (wh - limit)*0.5;
+const x_offset = (ww - limit) * 0.5;
+const y_offset = (wh - limit) * 0.5;
 function getFieldVector(x, y) {
     vector_acc = { x: 0, y: 0 }
     for (let charge of charges) {
@@ -386,9 +440,9 @@ function getFieldVector(x, y) {
 
 function setupCharges() {
     charges = [
-        new Charge(0, makeBody(0, limit*0.5, 0, -10)),
-        new Charge(10000, makeBody(limit, limit*0.5, 10, -10)),
-        new Charge(-10000, makeBody(limit*0.5, 0, -10, -10))
+        new Charge(0, makeBody(0, limit * 0.5, 0, -10)),
+        new Charge(10000, makeBody(limit, limit * 0.5, 10, -10)),
+        new Charge(-10000, makeBody(limit * 0.5, 0, -10, -10))
     ]
 }
 
@@ -396,13 +450,13 @@ var body;
 function makeBody(x, y, x_speed, y_speed) {
     body = Bodies.circle(
         x, y, radius, {
-            density: density,
-            velocity: { x: x_speed, y: y_speed },
-            frictionAir: 0,
-            restitution: 1,
-            render: { fillStyle: color },
-            plugin: { attractors: [ MatterAttractors.Attractors.gravity ] }
-        }
+        density: density,
+        velocity: { x: x_speed, y: y_speed },
+        frictionAir: 0,
+        restitution: 1,
+        render: { fillStyle: color },
+        plugin: { attractors: [MatterAttractors.Attractors.gravity] }
+    }
     );
     World.add(world, body);
     return body
