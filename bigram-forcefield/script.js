@@ -5,7 +5,10 @@ const wh = window.innerHeight;
 
 const color = 'darkslategray';
 const border = 200;
-const spacing = 49; //has to be odd
+var spacing = 49; //has to be odd
+if(ww < 800) {
+    var spacing = 29;
+}
 const barrier = 5000;
 const q_ceiling = 30000;
 const q_floor = -1 * q_ceiling;
@@ -297,13 +300,17 @@ function switchLetters(idx) {
         list.innerHTML += '<div>' + words[wordsIndex][0] + ' ' + words[wordsIndex][1] + '</div>';
         left_circle.innerHTML = words[wordsIndex][0];
         right_circle.innerHTML = words[wordsIndex][1];
+        if(wordsIndex % 2 === 0){
+            left_circle.classList.toggle('alt')
+        }
+        right_circle.classList.toggle('alt')
     }
 }
 
 var charge;
 var last = 0;
 function step(now) {
-    if(!last || now - last >= 4000) {
+    if(!last || now - last >= 8000) {
         last = now;
         switchWords();
     }

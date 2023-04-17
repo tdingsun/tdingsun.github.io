@@ -76,8 +76,7 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: blur(1px);
-    font-size: 24px;
+    font-size: 18px;
     text-transform:lowercase;
     word-wrap: break-word;
     word-break: break-all;
@@ -89,4 +88,9 @@ canvas {
 }
 #right-circle {
     right: 20px;
+}
+
+.circle.alt {
+    color: gainsboro;
+    background-color: darkslategray;
 }
