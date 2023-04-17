@@ -304,6 +304,10 @@ function switchLetters(idx) {
             left_circle.classList.toggle('alt')
         }
         right_circle.classList.toggle('alt')
+        if(wordsIndex % 7 === 0){
+            left_circle.innerHTML = '2-word';
+            right_circle.innerHTML = 'poems';
+        }
     }
 }
 
