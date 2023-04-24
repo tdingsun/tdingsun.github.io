@@ -323,7 +323,24 @@ var words = shuffle([
     ['DARK', 'KHAKI'],
     ['FOREST', 'GREEN'],
     ['THISTLE', 'DOWN'],
-    ['HERALDIC', 'ORDINARY']
+    ['HERALDIC', 'ORDINARY'],
+    ['AEOLIAN', 'PROCESS'],
+    ['FUGITIVE', 'DUST'],
+    ['HYPER', 'ARID'],
+    ['HYPER', 'BALLAD'],
+    ['ZODIACAL', 'LIGHT'],
+    ['FALSE', 'DAWN'],
+    ['FIFTH', 'GIANT'],
+    ['WATER', 'SKY'],
+    ['BEAM', 'SPLITTER'],
+    ['MEDICAL', 'GEOLOGY'],
+    ['DEAR', 'NAVIGATOR'],
+    ['LITURGICAL', 'YEAR'],
+    ['HOLY', 'GROUND'],
+    ['ORDINARY', 'TIME'],
+    ['REFLECT', 'RAID'],
+    ['LITTLE', 'HOURS']
+
 ])
 
 //html objects
