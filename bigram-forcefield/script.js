@@ -11,7 +11,7 @@ if (ww < 800) {
 }
 const q_ceiling = 50000;
 const q_floor = -1 * q_ceiling;
-var charges = [];
+var q_delta = 50
 const radius = ww * 0.01;
 const density = 100;
 
@@ -32,7 +32,7 @@ ctx.fillStyle = color;
 ctx.strokeStyle = color;
 ctx.lineWidth = 1;
 
-var q_delta = 50
+var charges = [];
 class Charge {
     q;
     body;
@@ -336,8 +336,8 @@ const right_square = document.getElementById("right-square");
 const title_screen = document.getElementById("title");
 //setup words
 display.innerHTML = words[0][0] + '<br>' + words[0][1]
-var wordsIndex = 0;
-var letterTiming = 125;
+var wordIndex = 0;
+
 
 //matterjs stuff
 Matter.use('matter-attractors')
@@ -391,31 +391,31 @@ lfo.start();
 var synth = new Tone.PolySynth(Tone.Synth).chain(pingPong, limiter, reverb, filter, volume, Tone.Destination);
 synth.set({
     oscillator: {
-    type: "sine6"
+        type: "sine6"
     }
-  });
+});
 var drivingSynth = new Tone.PolySynth(Tone.Synth).chain(limiter, filter, volume, Tone.Destination);
 drivingSynth.set({
     oscillator: {
-    type: "sine12",
+        type: "sine12",
 
     }
-  });
-  
+});
+
 var notes = Tone.Frequency("G2").harmonize(
-    [0, 2, 4, 7, 9, 
-    0, 2, 4, 7, 9,
-    12, 14, 16, 19, 21, 
-    12, 14, 16, 19, 21, 
-    24, 26, 28, 31, 33,
-    36, 38, 40, 43, 45,
-    48
+    [0, 2, 4, 7, 9,
+        0, 2, 4, 7, 9,
+        12, 14, 16, 19, 21,
+        12, 14, 16, 19, 21,
+        24, 26, 28, 31, 33,
+        36, 38, 40, 43, 45,
+        48
 
     ]);
 
 var drivingNotes = Tone.Frequency("G1").harmonize(
-    [0, 2, 4, 5, 7, 9, 11, 
-    12, 14, 16, 19, 21, 24]);
+    [0, 2, 4, 5, 7, 9, 11,
+        12, 14, 16, 19, 21, 24]);
 
 var noteIndex = 0;
 var drivingNoteIndex = 0;
@@ -423,59 +423,47 @@ StartAudioContext(Tone.context, 'document.body').then(function () {
     console.log("audocontextfromdocumentbody");
 });
 
-////////////////////////////
-
-//setup
+//MAIN //////////////////////////
 
 title_screen.addEventListener('click', () => {
-    title_screen.parentNode.remove();
     Tone.start();
+    title_screen.parentNode.remove();
     setupWalls();
     setupCharges();
     setInterval(() => {
-        synth.triggerAttackRelease(drivingNotes[randNote % drivingNotes.length],"16n");
+        synth.triggerAttackRelease(drivingNotes[randNote % drivingNotes.length], "16n");
     }, 500);
-    
+
     setTimeout(() => {
         wordsActive = false
     }, 2000);
     window.requestAnimationFrame(step)
 })
-//main
 
 ////////////////////////////
 
 //helper functions
-var word1_before, word2_before;
-var word1_after, word2_after;
+var prev_w1, prev_w2, curr_w1, curr_w2;
 var maxWordLength;
-var letterLimit;
-var switchLetterInterval;
-var letterIndex = 0;
 var wordsActive = true;
-const wordLimit = words.length - 1;
 function switchWords() {
     wordsActive = true;
-    if (wordsIndex >= wordLimit) {
+    if (wordIndex >= words.length - 1) {
         words = shuffle(words);
-        wordsIndex = 0;
-    } else {
-        wordsIndex++;
-    }
-    if (wordsIndex === 0) {
+        wordIndex = 0;
         list.innerHTML = '';
-        word1_before = words[words.length - 1][0];
-        word2_before = words[words.length - 1][1];
+        prev_w1 = words[words.length - 1][0];
+        prev_w2 = words[words.length - 1][1];
     } else {
-        word1_before = words[wordsIndex - 1][0];
-        word2_before = words[wordsIndex - 1][1];
+        wordIndex++;
+        prev_w1 = words[wordIndex - 1][0];
+        prev_w2 = words[wordIndex - 1][1];
     }
-    word1_after = words[wordsIndex][0];
-    word2_after = words[wordsIndex][1];
-    maxWordLength = max(word1_before.length, word1_after.length, word2_before.length, word2_after.length);
-    letterLimit = maxWordLength;
-    left_square.innerHTML = words[wordsIndex][0];
-    right_square.innerHTML = words[wordsIndex][1];
+    curr_w1 = words[wordIndex][0];
+    curr_w2 = words[wordIndex][1];
+    maxWordLength = max(prev_w1.length, curr_w1.length, prev_w2.length, curr_w2.length);
+    left_square.innerHTML = words[wordIndex][0];
+    right_square.innerHTML = words[wordIndex][1];
     switchLetters(0);
 }
 var randNote = 0;
@@ -483,27 +471,19 @@ function switchLetters(idx) {
     left_square.classList.toggle('alt')
     right_square.classList.toggle('alt')
     // engine.timing.timeScale = 0.03;
-    randNote = floor(random() * notes.length); 
+    randNote = floor(random() * notes.length);
     synth.triggerAttackRelease(notes[randNote], "4n");
-    drivingSynth.triggerAttackRelease(drivingNotes[drivingNoteIndex],"16n");
-
-    display.innerHTML =
-        word1_after.slice(0, idx)
-        + word1_before.slice(idx)
-        + '<br>'
-        + word2_after.slice(0, idx)
-        + word2_before.slice(idx)
-    letterIndex++;
-    letterTiming = random() > 0.5 ? 250 : 375
-    if (idx <= letterLimit) {
-        setTimeout(switchLetters, letterTiming, idx + 1)
+    drivingSynth.triggerAttackRelease(drivingNotes[drivingNoteIndex], "16n");
+    display.innerHTML = curr_w1.slice(0, idx) + prev_w1.slice(idx) + '<br>' + curr_w2.slice(0, idx) + prev_w2.slice(idx);
+    if (idx <= maxWordLength) {
+        setTimeout(switchLetters, random() > 0.5 ? 250 : 375, idx + 1)
     } else {
         // engine.timing.timeScale = 0.1;
         setTimeout(() => {
             wordsActive = false;
         }, 2000);
         drivingNoteIndex = floor(random() * drivingNotes.length);
-        list.innerHTML += '<div>' + words[wordsIndex][0] + ' ' + words[wordsIndex][1] + '</div>';
+        list.innerHTML += '<div>' + words[wordIndex][0] + ' ' + words[wordIndex][1] + '</div>';
     }
 }
 
@@ -523,7 +503,6 @@ var x_point_limit = ww - 20;
 var y_point_limit = wh - 20;
 function draw() {
     clearCanvas();
-
     ctx.beginPath();
     for (j = y_end; j >= y_start; j -= spacing) {
         for (i = x_end; i >= x_start; i -= spacing) {
@@ -536,7 +515,7 @@ function draw() {
             ctx.save();
             ctx.translate(new_x, new_y);
             ctx.rotate(angle);
-            if(magnitude_2 < 1000 ) {
+            if (magnitude_2 < 1000) {
                 drawWord()
             } else if (magnitude_2 < 10000) {
                 drawLine()
@@ -554,7 +533,7 @@ function draw() {
     ctx.stroke();
 
     function drawWord() {
-        ctx.fillText(words[wordsIndex][parity], -5, 5);
+        ctx.fillText(words[wordIndex][parity], -5, 5);
         ctx.restore();
     }
     function drawLine() {
@@ -572,11 +551,10 @@ function draw() {
         ctx.restore();
     }
     function drawNumber() {
-        ctx.fillText(wordsIndex.toString(), -5, 5);
+        ctx.fillText(wordIndex.toString(), -5, 5);
         ctx.restore();
     }
 }
-
 
 var vector_acc, dx, dy, distance_2, m;
 const x_offset = (ww - limit) * 0.5;
@@ -587,10 +565,9 @@ function getFieldVector(x, y) {
         dx = charge.body.position.x + x_offset - x
         dy = charge.body.position.y + y_offset - y
         distance_2 = dx * dx + dy * dy
-            m = charge.q / distance_2
-            vector_acc.x += dx * m
-            vector_acc.y += dy * m
-
+        m = charge.q / distance_2
+        vector_acc.x += dx * m
+        vector_acc.y += dy * m
     }
     return vector_acc
 }
@@ -625,10 +602,10 @@ function clearCanvas() {
 
 function setupWalls() {
     World.add(world, [
-        makeWall(ww * 0.5,  -50,        ww,     100),
-        makeWall(ww * 0.5,  limit+50,   ww,     100),
-        makeWall(limit+50,  wh * 0.5,   100,    wh),
-        makeWall(-50,       wh * 0.5,   100,    wh)
+        makeWall(ww * 0.5, -50, ww, 100),
+        makeWall(ww * 0.5, limit + 50, ww, 100),
+        makeWall(limit + 50, wh * 0.5, 100, wh),
+        makeWall(-50, wh * 0.5, 100, wh)
     ])
 }
 
