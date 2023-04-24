@@ -109,7 +109,7 @@ var words = shuffle([
     ['GRAFT', 'CHIMAERA'],
     ['SHARP', 'WAVES'],
     ['PROTOPLAST', 'RELIGION'],
-    ['RANDOMNESS', 'HISTORY'],
+    ['RANDOMNESS', 'STUDIES'],
     ['DIAMOND', 'DUST'],
     ['ICE', 'THREE'],
     ['PREHISTORIC', 'MUSIC'],
@@ -206,7 +206,126 @@ var words = shuffle([
     ['TRIVIALLY', 'PERFECT'],
     ['ROOK\'S', 'GRAPH'],
     ['SEMANTIC', 'NET'],
-
+    ['ENDING', 'FAIRY'],
+    ['GOD', 'SPEED'],
+    ['ENDING', 'FAIRY'],
+    ['VOLCANIC', 'ARC'],
+    ['CONTINENTAL', 'CRUST'],
+    ['HYDROUS', 'CURTAIN'],
+    ['RIFT', 'ZONE'],
+    ['PARASITIC', 'CONE'],
+    ['MAGMATIC', 'LULL'],
+    ['FISHERIES', 'ACOUSTICS'],
+    ['ECHO', 'INTEGRATION'],
+    ['DEEP', 'SCATTERING'],
+    ['ARRAY', 'CURSE'],
+    ['SEAGRASS', 'MEADOWS'],
+    ['SULFER', 'CYCLE'],
+    ['PYROCLASTIC', 'SHIELD'],
+    ['VOLCANO', 'NUMBER'],
+    ['EARTH', 'TIMELINE'],
+    ['EARTH', 'ANGELS'],
+    ['SERPENTINE', 'MINERALS'],
+    ['PROSPEROUS', 'WEAPONS'],
+    ['DIEGETIC', 'SWITCH'],
+    ['CONTINUITY', 'DRIFT'],
+    ['WISH', 'FULFILLMENT'],
+    ['REVERSE', 'REBIRTH'],
+    ['TRAVERSE', 'CITY'],
+    ['ANIMAL', 'TALE'],
+    ['BEAST', 'EPIC'],
+    ['SELF-FULFILLING', 'PROPHECY'],
+    ['REGENERATIVE', 'CIRCUITS'],
+    ['THERMAL', 'RUNAWAY'],
+    ['CASCADING', 'FAILURE'],
+    ['VARIABLE', 'STAR'],
+    ['ANTI', 'PATTERNS'],
+    ['OAK', 'SCREEN'],
+    ['TATTOO', 'KISS'],
+    ['HARMONY', 'HALL'],
+    ['INTERNET', 'SPLINTER'],
+    ['AVAILABILITY', 'CASCADE'],
+    ['OPINION', 'CORRIDOR'],
+    ['SNEAKER', 'NET'],
+    ['EMOTIONAL', 'CONTAGION'],
+    ['CONCEPT', 'CREEP'],
+    ['MINCED', 'OATH'],
+    ['WOODEN', 'LANGUAGE'],
+    ['TERMINISTIC', 'SCREEN'],
+    ['WEASEL', 'WORD'],
+    ['TERROR', 'MANAGEMENT'],
+    ['EVOLUTIONARY', 'BACKDROP'],
+    ['ANXIETY', 'BUFFER'],
+    ['MORTALITY', 'SALIENCE'],
+    ['REPLICATION', 'FAILURE'],
+    ['TERMITE', 'SHIELD'],
+    ['MONUMENT', 'VALLEY'],
+    ['WILD', 'TYPE'],
+    ['FOUR', 'CORNERS'],
+    ['TACIT', 'KNOWLEDGE'],
+    ['CONSOLE', 'WAR'],
+    ['CREEPING', 'NORMALITY'],
+    ['LANDSCAPE', 'AMNESIA'],
+    ['SPONTANEOUS', 'ORDER'],
+    ['ALGAE', 'BLOOM'],
+    ['BACTERIAL', 'GLIDING'],
+    ['NOCLIP', 'MODE'],
+    ['BATTLE', 'PASS'],
+    ['BULLET', 'HELL'],
+    ['COMPULSION', 'LOOP'],
+    ['DOOM', 'CLONE'],
+    ['DUNGEON', 'CRAWL'],
+    ['BOSS', 'FIGHT'],
+    ['RHYTHM', 'HEAVEN'],
+    ['SAVE', 'POINT'],
+    ['SEQUENCE', 'BREAKING'],
+    ['SECRET', 'HEART'],
+    ['WALKING', 'SIMULATOR'],
+    ['CANDLE', 'COVE'],
+    ['COW', 'TIPPING'],
+    ['BAD-LUCK', 'SPOT'],
+    ['MYSTERY', 'RANCH'],
+    ['STRAWBERRY', 'SWITCHBLADE'],
+    ['DUSTY', 'ROAMERS'],
+    ['SHATTERED', 'JAW'],
+    ['FURROWED', 'BROW'],
+    ['SEPIA-TONED', 'NIGHTMARE'],
+    ['INSTINCTUAL', 'PERFECTIONS'],
+    ['HARMONIC', 'STIMULI'],
+    ['SELFISH', 'CORE'],
+    ['DIVINE', 'BINARIES'],
+    ['STONE', 'SKIPPING'],
+    ['FOX', 'BOUNDING'],
+    ['DRYING', 'EYES'],
+    ['DEARLY', 'DEPARTED'],
+    ['SCATTERED', 'CONFIGURATIONS'],
+    ['SOUL', 'SEEKER'],
+    ['OCEAN', 'GRIME'],
+    ['SUNSOAKED', 'IMAGES'],
+    ['QUIET', 'MUSIC'],
+    ['LIMP', 'WRIST'],
+    ['DIVINE', 'IGNORANCE'],
+    ['STRATEGIC', 'JAMMING'],
+    ['RUTHLESS', 'INNOCENT'],
+    ['HAPPY', 'SKIN'],
+    ['GENTLE', 'RESENTMENT'],
+    ['CHILLING', 'RELATIVITY'],
+    ['RANDOM', 'TETHERS'],
+    ['FAVORITE', 'ZOMBIE'],
+    ['CLUMSY', 'GRAMMAR'],
+    ['AIRY', 'WISDOM'],
+    ['LENS', 'FLARE'],
+    ['HAPPY', 'SONGS'],
+    ['CAUTIOUS', 'INTERREGNUM'],
+    ['BLANK', 'OFFSPRING'],
+    ['SIMPLE', 'REQUEST'],
+    ['WOOD', 'PIGEON'],
+    ['ANTIQUE', 'WHITE'],
+    ['CORNFLOWER', 'BLUE'],
+    ['DARK', 'KHAKI'],
+    ['FOREST', 'GREEN'],
+    ['THISTLE', 'DOWN'],
+    ['HERALDIC', 'ORDINARY']
 ])
 
 //html objects
@@ -313,6 +432,13 @@ title_screen.addEventListener('click', () => {
     Tone.start();
     setupWalls();
     setupCharges();
+    setInterval(() => {
+        synth.triggerAttackRelease(drivingNotes[randNote % drivingNotes.length],"16n");
+    }, 500);
+    
+    setTimeout(() => {
+        wordsActive = false
+    }, 2000);
     window.requestAnimationFrame(step)
 })
 //main
@@ -326,7 +452,7 @@ var maxWordLength;
 var letterLimit;
 var switchLetterInterval;
 var letterIndex = 0;
-var wordsActive = false;
+var wordsActive = true;
 const wordLimit = words.length - 1;
 function switchWords() {
     wordsActive = true;
@@ -348,19 +474,21 @@ function switchWords() {
     word2_after = words[wordsIndex][1];
     maxWordLength = max(word1_before.length, word1_after.length, word2_before.length, word2_after.length);
     letterLimit = maxWordLength;
-
+    left_circle.innerHTML = words[wordsIndex][0];
+    right_circle.innerHTML = words[wordsIndex][1];
     switchLetters(0);
 }
 right_circle.classList.toggle('alt')
-
+var randNote = 0;
 function switchLetters(idx) {
         left_circle.classList.toggle('alt')
         right_circle.classList.toggle('alt')
 
     // engine.timing.timeScale = 0.03;
-    var randNote = floor(random() * notes.length); 
+    randNote = floor(random() * notes.length); 
     synth.triggerAttackRelease(notes[randNote], "4n");
     drivingSynth.triggerAttackRelease(drivingNotes[drivingNoteIndex],"16n");
+
     display.innerHTML =
         word1_after.slice(0, idx)
         + word1_before.slice(idx)
@@ -382,13 +510,18 @@ function switchLetters(idx) {
         setTimeout(() => {
             wordsActive = false;
         }, 2000);
+        while(!wordsActive) {
+            setTimeout()
+            
+        }
         drivingNoteIndex = floor(random() * drivingNotes.length);
         list.innerHTML += '<div>' + words[wordsIndex][0] + ' ' + words[wordsIndex][1] + '</div>';
-        left_circle.innerHTML = words[wordsIndex][0];
-        right_circle.innerHTML = words[wordsIndex][1];
+        
         
     }
 }
+
+
 
 function step() {
     if (!wordsActive) {

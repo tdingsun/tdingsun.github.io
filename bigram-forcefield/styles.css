@@ -37,7 +37,7 @@ canvas {
     filter: blur(0.5vw);
     letter-spacing: -1.5vw;
     text-align: center;
-    line-height: 0.55;
+    line-height: 0.6;
     text-transform:lowercase;
 }
 
