@@ -4,24 +4,22 @@ const ww = window.innerWidth;
 const wh = window.innerHeight;
 
 const color = 'darkslategray';
-const border = 200;
+var border = 200;
 var spacing = 49; //has to be odd
 if (ww < 800) {
-    var spacing = 29;
+    spacing = 29;
+    border = 50;
 }
 const q_ceiling = 50000;
 const q_floor = -1 * q_ceiling;
 var q_delta = 50
 const radius = ww * 0.01;
 const density = 100;
-
-const limit_x = ww - border;
-const limit_y = wh - border;
-const limit = min(limit_x, limit_y);
-const x_start = (ww - limit) * 0.5;
-const x_end = ww - x_start;
-const y_start = (wh - limit) * 0.5;
-const y_end = wh - y_start;
+const canvasSize = min(ww - border, wh - border);
+const canvas_x_start = (ww - canvasSize) * 0.5;
+const canvas_x_end = ww - canvas_x_start;
+const canvas_y_start = (wh - canvasSize) * 0.5;
+const canvas_y_end = wh - canvas_y_start;
 
 const fieldCanvas = document.getElementById("fieldCanvas");
 const ctx = fieldCanvas.getContext("2d");
@@ -338,7 +336,6 @@ const title_screen = document.getElementById("title");
 display.innerHTML = words[0][0] + '<br>' + words[0][1]
 var wordIndex = 0;
 
-
 //matterjs stuff
 Matter.use('matter-attractors')
 // module aliases
@@ -361,8 +358,8 @@ var render = Render.create({
     canvas: document.getElementById("matterCanvas"),
     options: {
         background: 'transparent',
-        height: limit,
-        width: limit,
+        height: canvasSize,
+        width: canvasSize,
         wireframes: false
     }
 });
@@ -403,22 +400,25 @@ drivingSynth.set({
 });
 
 var notes = Tone.Frequency("G2").harmonize(
-    [0, 2, 4, 7, 9,
+    [
+        0, 2, 4, 7, 9,
         0, 2, 4, 7, 9,
         12, 14, 16, 19, 21,
         12, 14, 16, 19, 21,
         24, 26, 28, 31, 33,
         36, 38, 40, 43, 45,
         48
-
     ]);
 
 var drivingNotes = Tone.Frequency("G1").harmonize(
-    [0, 2, 4, 5, 7, 9, 11,
-        12, 14, 16, 19, 21, 24]);
+    [
+        0, 2, 4, 5, 7, 9, 11,
+        12, 14, 16, 19, 21, 24
+    ]);
 
 var noteIndex = 0;
 var drivingNoteIndex = 0;
+
 StartAudioContext(Tone.context, 'document.body').then(function () {
     console.log("audocontextfromdocumentbody");
 });
@@ -433,7 +433,6 @@ title_screen.addEventListener('click', () => {
     setInterval(() => {
         synth.triggerAttackRelease(drivingNotes[randNote % drivingNotes.length], "16n");
     }, 500);
-
     setTimeout(() => {
         wordsActive = false
     }, 2000);
@@ -449,7 +448,7 @@ var wordsActive = true;
 function switchWords() {
     wordsActive = true;
     if (wordIndex >= words.length - 1) {
-        words = shuffle(words);
+        shuffle(words);
         wordIndex = 0;
         list.innerHTML = '';
         prev_w1 = words[words.length - 1][0];
@@ -462,8 +461,8 @@ function switchWords() {
     curr_w1 = words[wordIndex][0];
     curr_w2 = words[wordIndex][1];
     maxWordLength = max(prev_w1.length, curr_w1.length, prev_w2.length, curr_w2.length);
-    left_square.innerHTML = words[wordIndex][0];
-    right_square.innerHTML = words[wordIndex][1];
+    left_square.innerHTML = curr_w1;
+    right_square.innerHTML = curr_w2;
     switchLetters(0);
 }
 var randNote = 0;
@@ -488,24 +487,20 @@ function switchLetters(idx) {
 }
 
 function step() {
-    if (!wordsActive) {
-        switchWords();
-    }
-    for (let charge of charges) {
-        charge.step();
-    }
+    if (!wordsActive) { switchWords() }
+    for (let charge of charges) { charge.step() }
     draw();
     window.requestAnimationFrame(step)
 }
 
-var i = border, j = border, vector, parity, magnitude_2, angle, new_x, new_y
+var i, j, vector, parity, magnitude_2, angle, new_x, new_y
 var x_point_limit = ww - 20;
 var y_point_limit = wh - 20;
 function draw() {
     clearCanvas();
     ctx.beginPath();
-    for (j = y_end; j >= y_start; j -= spacing) {
-        for (i = x_end; i >= x_start; i -= spacing) {
+    for (j = canvas_y_end; j >= canvas_y_start; j -= spacing) {
+        for (i = canvas_x_end; i >= canvas_x_start; i -= spacing) {
             vector = getFieldVector(i, j);
             parity = (i + j) & 1;
             magnitude_2 = (vector.x * vector.x) + (vector.y * vector.y);
@@ -515,19 +510,12 @@ function draw() {
             ctx.save();
             ctx.translate(new_x, new_y);
             ctx.rotate(angle);
-            if (magnitude_2 < 1000) {
-                drawWord()
-            } else if (magnitude_2 < 10000) {
-                drawLine()
-            } else if (magnitude_2 < 40000) {
-                drawCross()
-            } else if (magnitude_2 < 50000) {
-                drawNumber()
-            } else if (magnitude_2 < 60000) {
-                drawWord()
-            } else {
-                drawCross()
-            }
+            if (magnitude_2 < 1000) { drawWord() }
+            else if (magnitude_2 < 10000) { drawLine() }
+            else if (magnitude_2 < 40000) { drawCross() }
+            else if (magnitude_2 < 50000) { drawNumber() }
+            else if (magnitude_2 < 60000) { drawWord() }
+            else { drawCross() }
         }
     }
     ctx.stroke();
@@ -557,8 +545,8 @@ function draw() {
 }
 
 var vector_acc, dx, dy, distance_2, m;
-const x_offset = (ww - limit) * 0.5;
-const y_offset = (wh - limit) * 0.5;
+const x_offset = (ww - canvasSize) * 0.5;
+const y_offset = (wh - canvasSize) * 0.5;
 function getFieldVector(x, y) {
     vector_acc = { x: 0, y: 0 }
     for (let charge of charges) {
@@ -574,9 +562,9 @@ function getFieldVector(x, y) {
 
 function setupCharges() {
     charges = [
-        new Charge(0, makeBody(0, limit * 0.5, 0, -10)),
-        new Charge(-10000, makeBody(limit, limit * 0.5, 10, -10)),
-        new Charge(10000, makeBody(limit * 0.5, 0, -10, -10))
+        new Charge(0, makeBody(0, canvasSize * 0.5, 0, -10)),
+        new Charge(-10000, makeBody(canvasSize, canvasSize * 0.5, 10, -10)),
+        new Charge(10000, makeBody(canvasSize * 0.5, 0, -10, -10))
     ]
 }
 
@@ -603,8 +591,8 @@ function clearCanvas() {
 function setupWalls() {
     World.add(world, [
         makeWall(ww * 0.5, -50, ww, 100),
-        makeWall(ww * 0.5, limit + 50, ww, 100),
-        makeWall(limit + 50, wh * 0.5, 100, wh),
+        makeWall(ww * 0.5, canvasSize + 50, ww, 100),
+        makeWall(canvasSize + 50, wh * 0.5, 100, wh),
         makeWall(-50, wh * 0.5, 100, wh)
     ])
 }
