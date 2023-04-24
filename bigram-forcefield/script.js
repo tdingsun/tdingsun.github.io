@@ -331,8 +331,8 @@ var words = shuffle([
 //html objects
 const display = document.getElementById("display");
 const list = document.getElementById("list");
-const left_circle = document.getElementById("left-circle");
-const right_circle = document.getElementById("right-circle");
+const left_square = document.getElementById("left-square");
+const right_square = document.getElementById("right-square");
 const title_screen = document.getElementById("title");
 //setup words
 display.innerHTML = words[0][0] + '<br>' + words[0][1]
@@ -474,16 +474,14 @@ function switchWords() {
     word2_after = words[wordsIndex][1];
     maxWordLength = max(word1_before.length, word1_after.length, word2_before.length, word2_after.length);
     letterLimit = maxWordLength;
-    left_circle.innerHTML = words[wordsIndex][0];
-    right_circle.innerHTML = words[wordsIndex][1];
+    left_square.innerHTML = words[wordsIndex][0];
+    right_square.innerHTML = words[wordsIndex][1];
     switchLetters(0);
 }
-right_circle.classList.toggle('alt')
 var randNote = 0;
 function switchLetters(idx) {
-        left_circle.classList.toggle('alt')
-        right_circle.classList.toggle('alt')
-
+    left_square.classList.toggle('alt')
+    right_square.classList.toggle('alt')
     // engine.timing.timeScale = 0.03;
     randNote = floor(random() * notes.length); 
     synth.triggerAttackRelease(notes[randNote], "4n");
@@ -496,32 +494,18 @@ function switchLetters(idx) {
         + word2_after.slice(0, idx)
         + word2_before.slice(idx)
     letterIndex++;
-        if(randNote % 2 === 0){
-            letterTiming = 250
-        } else {
-            letterTiming = 375
-        }
-    
+    letterTiming = random() > 0.5 ? 250 : 375
     if (idx <= letterLimit) {
         setTimeout(switchLetters, letterTiming, idx + 1)
     } else {
         // engine.timing.timeScale = 0.1;
-
         setTimeout(() => {
             wordsActive = false;
         }, 2000);
-        while(!wordsActive) {
-            setTimeout()
-            
-        }
         drivingNoteIndex = floor(random() * drivingNotes.length);
         list.innerHTML += '<div>' + words[wordsIndex][0] + ' ' + words[wordsIndex][1] + '</div>';
-        
-        
     }
 }
-
-
 
 function step() {
     if (!wordsActive) {
@@ -533,7 +517,6 @@ function step() {
     draw();
     window.requestAnimationFrame(step)
 }
-
 
 var i = border, j = border, vector, parity, magnitude_2, angle, new_x, new_y
 var x_point_limit = ww - 20;
@@ -553,42 +536,47 @@ function draw() {
             ctx.save();
             ctx.translate(new_x, new_y);
             ctx.rotate(angle);
-        
-
-               if(magnitude_2 < 1000 ) {
-                ctx.fillText(words[wordsIndex][parity], -5, 5);
-                ctx.restore();
+            if(magnitude_2 < 1000 ) {
+                drawWord()
             } else if (magnitude_2 < 10000) {
-                ctx.moveTo(-4, -4);
-                ctx.lineTo(-4, 4);
-                ctx.restore();
-                ctx.moveTo(i, j);
-                ctx.lineTo(new_x, new_y)
-
-           
+                drawLine()
             } else if (magnitude_2 < 40000) {
-                ctx.moveTo(-4, -4);
-                ctx.lineTo(-4, 4);
-                ctx.moveTo(0, 0);
-                ctx.lineTo(-8, 0);
-                ctx.restore();
+                drawCross()
             } else if (magnitude_2 < 50000) {
-                ctx.fillText(wordsIndex.toString(), -5, 5);
-                ctx.restore();
+                drawNumber()
             } else if (magnitude_2 < 60000) {
-                ctx.fillText(words[wordsIndex][parity], -5, 5);
-                ctx.restore();
+                drawWord()
             } else {
-                ctx.moveTo(-4, -4);
-                ctx.lineTo(-4, 4);
-                ctx.moveTo(0, 0);
-                ctx.lineTo(-8, 0);
-                ctx.restore();
+                drawCross()
             }
         }
     }
     ctx.stroke();
+
+    function drawWord() {
+        ctx.fillText(words[wordsIndex][parity], -5, 5);
+        ctx.restore();
+    }
+    function drawLine() {
+        ctx.moveTo(-4, -4);
+        ctx.lineTo(-4, 4);
+        ctx.restore();
+        ctx.moveTo(i, j);
+        ctx.lineTo(new_x, new_y)
+    }
+    function drawCross() {
+        ctx.moveTo(-4, -4);
+        ctx.lineTo(-4, 4);
+        ctx.moveTo(0, 0);
+        ctx.lineTo(-8, 0);
+        ctx.restore();
+    }
+    function drawNumber() {
+        ctx.fillText(wordsIndex.toString(), -5, 5);
+        ctx.restore();
+    }
 }
+
 
 var vector_acc, dx, dy, distance_2, m;
 const x_offset = (ww - limit) * 0.5;
@@ -637,31 +625,20 @@ function clearCanvas() {
 
 function setupWalls() {
     World.add(world, [
-        Bodies.rectangle(ww * 0.5, -50, ww, 100, {
-            isStatic: true,
-            render: {
-                visible: false
-            }
-        }),
-        Bodies.rectangle(ww * 0.5, wh - border + 50, ww, 100, {
-            isStatic: true,
-            render: {
-                visible: false
-            }
-        }),
-        Bodies.rectangle(limit + 50, wh * 0.5, 100, wh, {
-            isStatic: true,
-            render: {
-                visible: false
-            }
-        }),
-        Bodies.rectangle(-50, wh * 0.5, 100, wh, {
-            isStatic: true,
-            render: {
-                visible: false
-            }
-        })
+        makeWall(ww * 0.5,  -50,        ww,     100),
+        makeWall(ww * 0.5,  limit+50,   ww,     100),
+        makeWall(limit+50,  wh * 0.5,   100,    wh),
+        makeWall(-50,       wh * 0.5,   100,    wh)
     ])
+}
+
+function makeWall(x, y, w, h) {
+    return Bodies.rectangle(x, y, w, h, {
+        isStatic: true,
+        render: {
+            visible: false
+        }
+    })
 }
 
 function shuffle(a) {

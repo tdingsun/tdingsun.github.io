@@ -60,7 +60,7 @@ canvas {
     margin-left: 20px;
     margin-right: 20px;
 }
-.circle {
+.square {
     position: absolute;
     top: calc(50vh - 50px);
     width: 100px;
@@ -78,14 +78,14 @@ canvas {
     text-align: center;
     line-height: 0.8;
 }
-#left-circle {
+#left-square {
     left: 20px;
 }
-#right-circle {
+#right-square {
     right: 20px;
 }
 
-.circle.alt {
+.square.alt {
     color: gainsboro;
     background-color: darkslategray;
 }
