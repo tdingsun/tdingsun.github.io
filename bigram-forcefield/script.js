@@ -391,8 +391,8 @@ synth.set({
         type: "sine6"
     }
 });
-var drivingSynth = new Tone.PolySynth(Tone.Synth).chain(limiter, filter, volume, Tone.Destination);
-drivingSynth.set({
+var bassSynth = new Tone.PolySynth(Tone.Synth).chain(limiter, filter, volume, Tone.Destination);
+bassSynth.set({
     oscillator: {
         type: "sine12",
 
@@ -410,14 +410,14 @@ var notes = Tone.Frequency("G2").harmonize(
         48
     ]);
 
-var drivingNotes = Tone.Frequency("G1").harmonize(
+var bassNotes = Tone.Frequency("G1").harmonize(
     [
         0, 2, 4, 5, 7, 9, 11,
         12, 14, 16, 19, 21, 24
     ]);
 
-var noteIndex = 0;
-var drivingNoteIndex = 0;
+var noteIdx = 0;
+var bassIdx = 0;
 
 StartAudioContext(Tone.context, 'document.body').then(function () {
     console.log("audocontextfromdocumentbody");
@@ -431,7 +431,7 @@ title_screen.addEventListener('click', () => {
     setupWalls();
     setupCharges();
     setInterval(() => {
-        synth.triggerAttackRelease(drivingNotes[randNote % drivingNotes.length], "16n");
+        synth.triggerAttackRelease(bassNotes[randNote % bassNotes.length], "16n");
     }, 500);
     setTimeout(() => {
         wordsActive = false
@@ -439,9 +439,8 @@ title_screen.addEventListener('click', () => {
     window.requestAnimationFrame(step)
 })
 
-////////////////////////////
+//helper functions//////////////////////////
 
-//helper functions
 var prev_w1, prev_w2, curr_w1, curr_w2;
 var maxWordLength;
 var wordsActive = true;
@@ -467,21 +466,21 @@ function switchWords() {
 }
 var randNote = 0;
 function switchLetters(idx) {
+    //blinking squares
     left_square.classList.toggle('alt')
     right_square.classList.toggle('alt')
-    // engine.timing.timeScale = 0.03;
+    //sound
     randNote = floor(random() * notes.length);
     synth.triggerAttackRelease(notes[randNote], "4n");
-    drivingSynth.triggerAttackRelease(drivingNotes[drivingNoteIndex], "16n");
+    bassSynth.triggerAttackRelease(bassNotes[bassIdx], "16n");
+    //display changing word
     display.innerHTML = curr_w1.slice(0, idx) + prev_w1.slice(idx) + '<br>' + curr_w2.slice(0, idx) + prev_w2.slice(idx);
-    if (idx <= maxWordLength) {
-        setTimeout(switchLetters, random() > 0.5 ? 250 : 375, idx + 1)
-    } else {
-        // engine.timing.timeScale = 0.1;
-        setTimeout(() => {
-            wordsActive = false;
-        }, 2000);
-        drivingNoteIndex = floor(random() * drivingNotes.length);
+    if (idx <= maxWordLength) { //continue condition
+        setTimeout(switchLetters, randNote % 2 === 0 ? 250 : 375, idx + 1)
+    } else { // end condition
+        setTimeout(() => { wordsActive = false; }, 2000); //2 second pause
+        bassIdx = randNote % bassNotes.length;
+        //add to list
         list.innerHTML += '<div>' + words[wordIndex][0] + ' ' + words[wordIndex][1] + '</div>';
     }
 }
@@ -494,8 +493,8 @@ function step() {
 }
 
 var i, j, vector, parity, magnitude_2, angle, new_x, new_y
-var x_point_limit = ww - 20;
-var y_point_limit = wh - 20;
+const x_point_limit = ww - 20;
+const y_point_limit = wh - 20;
 function draw() {
     clearCanvas();
     ctx.beginPath();
@@ -544,16 +543,13 @@ function draw() {
     }
 }
 
-var vector_acc, dx, dy, distance_2, m;
-const x_offset = (ww - canvasSize) * 0.5;
-const y_offset = (wh - canvasSize) * 0.5;
+var vector_acc, dx, dy, m;
 function getFieldVector(x, y) {
     vector_acc = { x: 0, y: 0 }
     for (let charge of charges) {
-        dx = charge.body.position.x + x_offset - x
-        dy = charge.body.position.y + y_offset - y
-        distance_2 = dx * dx + dy * dy
-        m = charge.q / distance_2
+        dx = charge.body.position.x + canvas_x_start - x
+        dy = charge.body.position.y + canvas_y_start - y
+        m = charge.q / (dx * dx + dy * dy)
         vector_acc.x += dx * m
         vector_acc.y += dy * m
     }
