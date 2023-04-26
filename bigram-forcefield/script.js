@@ -341,7 +341,8 @@ var words = shuffle([
     ['REFLECT', 'RAID'],
     ['LITTLE', 'HOURS'],
     ['LEVEL', 'SET'],
-    ['RUST', 'LANGUAGE']
+    ['RUST', 'LANGUAGE'],
+    ['UNDERWATER', 'LEVEL']
 ])
 
 //html objects
