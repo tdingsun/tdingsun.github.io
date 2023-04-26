@@ -373,14 +373,14 @@ var words = shuffle([
     ['MUSICAL', 'FRISSON'],
     ['FICTIONAL', 'TECHNOLOGY'],
     ['PLASMA', 'WINDOW'],
-    ['STASIS', 'FIELD'],
+    ['YEAR', 'ONE'],
     ['VIRTUOUS', 'FORCEFIELD'],
     ['UNPROMISING', 'VILLAGE'],
     ['BALSAM', 'FIR'],
     ['MINIMUM', 'AUTHORSHIP'],
     ['RARE', 'BONE'],
     ['ANCIENT', 'WORLD'],
-    ['YEAR', 'ONE'],
+    ['LEY', 'LINES'],
 ])
 
 //html objects
