@@ -255,7 +255,7 @@ var words = shuffle([
     ['EVOLUTIONARY', 'BACKDROP'],
     ['ANXIETY', 'BUFFER'],
     ['MORTALITY', 'SALIENCE'],
-    ['REPLICATION', 'FAILURE'],
+    ['REPLICATION', 'CRISIS'],
     ['TERMITE', 'SHIELD'],
     ['MONUMENT', 'VALLEY'],
     ['WILD', 'TYPE'],
@@ -375,7 +375,12 @@ var words = shuffle([
     ['PLASMA', 'WINDOW'],
     ['STASIS', 'FIELD'],
     ['VIRTUOUS', 'FORCEFIELD'],
-    ['UNPROMISING', 'VILLAGE']
+    ['UNPROMISING', 'VILLAGE'],
+    ['BALSAM', 'FIR'],
+    ['MINIMUM', 'AUTHORSHIP'],
+    ['RARE', 'BONE'],
+    ['ANCIENT', 'WORLD'],
+    ['YEAR', 'ONE'],
 ])
 
 //html objects
