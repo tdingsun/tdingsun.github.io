@@ -321,7 +321,7 @@ var words = shuffle([
     ['ANTIQUE', 'WHITE'],
     ['CORNFLOWER', 'BLUE'],
     ['DARK', 'KHAKI'],
-    ['FOREST', 'GREEN'],
+    ['FOREST', 'PATHOLOGY'],
     ['THISTLE', 'DOWN'],
     ['HERALDIC', 'ORDINARY'],
     ['AEOLIAN', 'PROCESS'],
