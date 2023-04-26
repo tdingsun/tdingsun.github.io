@@ -106,6 +106,12 @@ canvas {
 #title:hover {
     filter: blur(2vw);
 }
+#title:hover::before {
+    content: '2-word ';
+}
+#title::before {
+    content: 'toward ';
+}
 
 .fullscreen {
     width: 100vw;
