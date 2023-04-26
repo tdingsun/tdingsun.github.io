@@ -95,8 +95,8 @@ canvas {
 }
 
 #title {
-    font-size: 20vw;
-    letter-spacing: -1.5vw;
+    font-size: 15vw;
+    letter-spacing: -1vw;
     text-align: center;
     line-height: 0.55;
     cursor: pointer;
@@ -104,7 +104,7 @@ canvas {
     transition: filter 1s;
 }
 #title:hover {
-    filter: blur(2vw);
+    filter: blur(1.5vw);
 }
 #title:hover::before {
     content: '2-word ';
