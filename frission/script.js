@@ -267,7 +267,7 @@ var words = shuffle([
     ['SPONTANEOUS', 'ORDER'],
     ['ALGAE', 'BLOOM'],
     ['BACTERIAL', 'GLIDING'],
-    ['NOCLIP', 'MODE'],
+    ['NO-CLIP', 'MODE'],
     ['BATTLE', 'PASS'],
     ['BULLET', 'HELL'],
     ['COMPULSION', 'LOOP'],
@@ -381,6 +381,8 @@ var words = shuffle([
     ['RARE', 'BONE'],
     ['ANCIENT', 'WOODLAND'],
     ['LEY', 'LINES'],
+    ['HOLY', 'ANGLE'],
+    ['FISSION-FUSION', 'SOCIETY']
 ])
 
 //html objects
