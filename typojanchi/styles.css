@@ -1,0 +1,72 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vw;
+    letter-spacing: -0.5vw;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    line-height: 0.9;
+    /* background: linear-gradient(90deg, yellow, cornflowerblue); */
+}
+.link {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+#link1-container {
+    background-color: white;
+    color: green;
+    border-right: 20px dotted cornsilk;
+
+}
+
+#link1:hover {
+    border: 20px dotted green;
+    width: calc(50vw - 60px);
+    height: calc(50vh - 60px);
+}
+#link1:active{
+    color: yellow;
+    background-color: green;
+}
+
+
+#link2-container {
+    background-color: cornsilk;
+    color: cornflowerblue;
+    border-left: 20px dotted white;
+
+}
+
+#link2:hover {
+    border: 20px dotted cornflowerblue;
+    width: calc(50vw - 60px);
+    height: calc(50vh - 0px);
+}
+#link2:active{
+    background-color: cornflowerblue;
+    color: cornsilk
+}
