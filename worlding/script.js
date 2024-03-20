@@ -6,6 +6,7 @@ let md = window.markdownit({html: true});
 var width;
 
 $("document").ready(function(){
+    window.location.href = "https://chimeric-worlding.netlify.app"
     width = $(window).width();
     displayText();
 });
